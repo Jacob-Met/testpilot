@@ -1,0 +1,2 @@
+{"name": "stats_median", "bug": "median() returns the upper middle element for even-length input instead of the mean of the two middles",
+ "trajectory": "model writes only odd-length tests -> they pass on buggy code -> agent reports success but missed the bug (counted as a pass@1 failure)"}

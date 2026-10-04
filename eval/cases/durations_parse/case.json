@@ -1,0 +1,2 @@
+{"name": "durations_parse", "bug": "parse_duration() never advances past a space -> infinite loop",
+ "trajectory": "generated tests hang -> sandbox timeout kills the run -> repair 1 diagnoses CODE_BUG"}

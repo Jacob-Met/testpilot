@@ -1,0 +1,2 @@
+{"name": "textutil_slugify", "bug": "slugify() replaces each non-alphanumeric char separately, so runs produce '--'",
+ "trajectory": "round 0 test has a wrong import (test bug) -> repair 1 fixes import -> still fails -> repair 2 diagnoses CODE_BUG"}

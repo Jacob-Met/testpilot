@@ -1,0 +1,145 @@
+{
+  "status": "suspected_code_bug",
+  "changed_functions": [
+    {
+      "path": "durations.py",
+      "module": "durations",
+      "qualname": "parse_duration",
+      "lineno": 12,
+      "end_lineno": 30,
+      "changed_lines": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "source": "def parse_duration(text):\n    \"\"\"Parse '1h 30m 5s' style strings (spaces optional) into seconds.\"\"\"\n    total, num, i = 0, \"\", 0\n    while i < len(text):\n        ch = text[i]\n        if ch.isdigit():\n            num += ch\n            i += 1\n        elif ch in UNITS and num:\n            total += int(num) * UNITS[ch]\n            num = \"\"\n            i += 1\n        elif ch == \" \":\n            continue\n        else:\n            raise ValueError(f\"bad duration {text!r} at {i}\")\n    if num:\n        raise ValueError(f\"trailing number in {text!r}\")\n    return total",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 1,
+  "max_repair_rounds": 3,
+  "test_files": {
+    "tests/test_parse_duration.py": "import pytest\n\nfrom durations import parse_duration\n\n\ndef test_compact():\n    assert parse_duration(\"1h30m\") == 5400\n\n\ndef test_spaced():\n    assert parse_duration(\"1h 30m 5s\") == 5405\n\n\ndef test_unknown_unit():\n    with pytest.raises(ValueError):\n        parse_duration(\"3d\")\n\n\ndef test_trailing_number():\n    with pytest.raises(ValueError):\n        parse_duration(\"1h30\")\n"
+  },
+  "tests_written": 4,
+  "final": {
+    "returncode": null,
+    "timed_out": true,
+    "duration_s": 10.005,
+    "timeout_s": 10.0,
+    "output": "..",
+    "cases": [],
+    "coverage": null,
+    "passed": 0,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "TIMEOUT after 10s"
+  },
+  "patch": "diff --git a/tests/test_parse_duration.py b/tests/test_parse_duration.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_parse_duration.py\n@@ -0,0 +1,21 @@\n+import pytest\n+\n+from durations import parse_duration\n+\n+\n+def test_compact():\n+    assert parse_duration(\"1h30m\") == 5400\n+\n+\n+def test_spaced():\n+    assert parse_duration(\"1h 30m 5s\") == 5405\n+\n+\n+def test_unknown_unit():\n+    with pytest.raises(ValueError):\n+        parse_duration(\"3d\")\n+\n+\n+def test_trailing_number():\n+    with pytest.raises(ValueError):\n+        parse_duration(\"1h30\")\n",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 1176,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 231,
+        "completion_tokens": 42,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 2,
+        "prompt_tokens": 721,
+        "completion_tokens": 182,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 231,
+        "completion_tokens": 42,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 308,
+        "completion_tokens": 106,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "repair",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 413,
+        "completion_tokens": 76,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_parse_duration.py"
+      ],
+      "result": {
+        "returncode": null,
+        "timed_out": true,
+        "duration_s": 10.005,
+        "timeout_s": 10.0,
+        "output": "..",
+        "cases": [],
+        "coverage": null,
+        "passed": 0,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "TIMEOUT after 10s"
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_parse_duration.py": "import pytest\n\nfrom durations import parse_duration\n\n\ndef test_compact():\n    assert parse_duration(\"1h30m\") == 5400\n\n\ndef test_spaced():\n    assert parse_duration(\"1h 30m 5s\") == 5405\n\n\ndef test_unknown_unit():\n    with pytest.raises(ValueError):\n        parse_duration(\"3d\")\n\n\ndef test_trailing_number():\n    with pytest.raises(ValueError):\n        parse_duration(\"1h30\")\n"
+      }
+    },
+    {
+      "round": 1,
+      "kind": "repair",
+      "files": [
+        "tests/test_parse_duration.py"
+      ],
+      "result": null,
+      "warnings": [],
+      "contents": {}
+    }
+  ],
+  "plan": "Plan for durations.parse_duration:\n1. Compact \"1h30m\" -> 5400.\n2. Spaced \"1h 30m 5s\" -> 5405.\n3. Unknown unit raises ValueError.\n4. Trailing number raises ValueError.\n",
+  "message": "The run timed out, and the only input containing a space is \"1h 30m 5s\". In parse_duration the `elif ch == \" \": continue` branch never increments `i`, so the loop spins forever on the first space. The docstring says spaces are allowed, so the test is right; the branch needs `i += 1`.",
+  "ok": false
+}

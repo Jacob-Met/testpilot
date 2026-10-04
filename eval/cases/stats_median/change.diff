@@ -1,0 +1,17 @@
+diff --git a/stats.py b/stats.py
+index 1031c7b..a851be6 100644
+--- a/stats.py
++++ b/stats.py
+@@ -3,3 +3,12 @@
+ 
+ def total(values):
+     return sum(values)
++
++
++def median(values):
++    """Median of a non-empty sequence (mean of the two middle values if even)."""
++    if not values:
++        raise ValueError("median of empty sequence")
++    s = sorted(values)
++    mid = len(s) // 2
++    return s[mid]

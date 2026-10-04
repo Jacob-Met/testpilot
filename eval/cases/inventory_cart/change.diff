@@ -1,0 +1,16 @@
+diff --git a/inventory.py b/inventory.py
+index c427706..f891e53 100644
+--- a/inventory.py
++++ b/inventory.py
+@@ -10,5 +10,9 @@ class Cart:
+             raise ValueError("qty must be >= 1")
+         self.items.append((name, price, qty))
+ 
+-    def total(self):
+-        return round(sum(p * q for _, p, q in self.items), 2)
++    def total(self, discount_pct=0):
++        """Cart total after a percentage discount (0-100)."""
++        if not 0 <= discount_pct <= 100:
++            raise ValueError("discount_pct must be within 0..100")
++        subtotal = sum(p * q for _, p, q in self.items)
++        return round(subtotal * (1 - discount_pct), 2)

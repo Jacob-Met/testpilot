@@ -1,0 +1,26 @@
+[project]
+name = "testpilot"
+version = "0.1.0"
+description = "Diff-aware pytest generation with a sandboxed run/repair loop (Nebius Token Factory + NVIDIA Nemotron)"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Jacob Scott-Metoyer" }]
+requires-python = ">=3.12"
+dependencies = ["pytest>=8"]
+
+[project.optional-dependencies]
+coverage = ["coverage>=7"]
+
+[project.scripts]
+testpilot = "testpilot.__main__:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["testpilot"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = ["eval/cases", "eval/results", ".git", "*.egg-info"]

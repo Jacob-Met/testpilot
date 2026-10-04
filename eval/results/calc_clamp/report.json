@@ -1,0 +1,240 @@
+{
+  "status": "suspected_code_bug",
+  "changed_functions": [
+    {
+      "path": "calc.py",
+      "module": "calc",
+      "qualname": "clamp",
+      "lineno": 8,
+      "end_lineno": 12,
+      "changed_lines": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": "def clamp(x, lo, hi):\n    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n    if lo > hi:\n        raise ValueError(\"lo must be <= hi\")\n    return max(hi, min(lo, x))",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 1,
+  "max_repair_rounds": 3,
+  "test_files": {
+    "tests/test_calc_clamp.py": "import pytest\n\nfrom calc import clamp\n\n\ndef test_inside_range_unchanged():\n    assert clamp(5, 0, 10) == 5\n\n\ndef test_below_and_above():\n    assert clamp(-3, 0, 10) == 0\n    assert clamp(42, 0, 10) == 10\n\n\ndef test_boundaries():\n    assert clamp(0, 0, 10) == 0\n    assert clamp(10, 0, 10) == 10\n\n\ndef test_inverted_bounds_raise():\n    with pytest.raises(ValueError):\n        clamp(1, 10, 0)\n"
+  },
+  "tests_written": 4,
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "duration_s": 0.237,
+    "timeout_s": 10.0,
+    "output": "FFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n=========================== short test summary info ============================\nFAILED ../../../../tmp/testpilot-94343tti/repo/tests/test_calc_clamp.py::test_inside_range_unchanged\nFAILED ../../../../tmp/testpilot-94343tti/repo/tests/test_calc_clamp.py::test_below_and_above\nFAILED ../../../../tmp/testpilot-94343tti/repo/tests/test_calc_clamp.py::test_boundaries\n3 failed, 3 passed in 0.04s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+        "outcome": "failed",
+        "message": "assert 10 == 5\n +  where 10 = clamp(5, 0, 10)\ndef test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_below_and_above",
+        "outcome": "failed",
+        "message": "assert 10 == 0\n +  where 10 = clamp(-3, 0, 10)\ndef test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_boundaries",
+        "outcome": "failed",
+        "message": "assert 10 == 0\n +  where 10 = clamp(0, 0, 10)\ndef test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_existing::test_add",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_existing::test_mean",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": {
+      "percent_total": 90.0,
+      "files": {
+        "calc.py": {
+          "executed": [
+            4,
+            5,
+            8,
+            10,
+            11,
+            12,
+            15,
+            16,
+            18
+          ],
+          "missing": [
+            17
+          ]
+        }
+      }
+    },
+    "passed": 3,
+    "failed": 3,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1)"
+  },
+  "patch": "diff --git a/tests/test_calc_clamp.py b/tests/test_calc_clamp.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_calc_clamp.py\n@@ -0,0 +1,22 @@\n+import pytest\n+\n+from calc import clamp\n+\n+\n+def test_inside_range_unchanged():\n+    assert clamp(5, 0, 10) == 5\n+\n+\n+def test_below_and_above():\n+    assert clamp(-3, 0, 10) == 0\n+    assert clamp(42, 0, 10) == 10\n+\n+\n+def test_boundaries():\n+    assert clamp(0, 0, 10) == 0\n+    assert clamp(10, 0, 10) == 10\n+\n+\n+def test_inverted_bounds_raise():\n+    with pytest.raises(ValueError):\n+        clamp(1, 10, 0)\n",
+  "coverage": {
+    "total_before": 60.0,
+    "total_after": 90.0,
+    "total_delta": 30.0,
+    "changed_lines_executable": 4,
+    "changed_lines_before": 25.0,
+    "changed_lines_after": 100.0
+  },
+  "ledger": {
+    "total_tokens": 1051,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 125,
+        "completion_tokens": 51,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 2,
+        "prompt_tokens": 699,
+        "completion_tokens": 176,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 125,
+        "completion_tokens": 51,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 211,
+        "completion_tokens": 109,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "repair",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 488,
+        "completion_tokens": 67,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_calc_clamp.py"
+      ],
+      "result": {
+        "returncode": 1,
+        "timed_out": false,
+        "duration_s": 0.237,
+        "timeout_s": 10.0,
+        "output": "FFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n=========================== short test summary info ============================\nFAILED ../../../../tmp/testpilot-94343tti/repo/tests/test_calc_clamp.py::test_inside_range_unchanged\nFAILED ../../../../tmp/testpilot-94343tti/repo/tests/test_calc_clamp.py::test_below_and_above\nFAILED ../../../../tmp/testpilot-94343tti/repo/tests/test_calc_clamp.py::test_boundaries\n3 failed, 3 passed in 0.04s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+            "outcome": "failed",
+            "message": "assert 10 == 5\n +  where 10 = clamp(5, 0, 10)\ndef test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError"
+          },
+          {
+            "nodeid": "tests.test_calc_clamp::test_below_and_above",
+            "outcome": "failed",
+            "message": "assert 10 == 0\n +  where 10 = clamp(-3, 0, 10)\ndef test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError"
+          },
+          {
+            "nodeid": "tests.test_calc_clamp::test_boundaries",
+            "outcome": "failed",
+            "message": "assert 10 == 0\n +  where 10 = clamp(0, 0, 10)\ndef test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError"
+          },
+          {
+            "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_existing::test_add",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_existing::test_mean",
+            "outcome": "passed",
+            "message": ""
+          }
+        ],
+        "coverage": {
+          "percent_total": 90.0,
+          "files": {
+            "calc.py": {
+              "executed": [
+                4,
+                5,
+                8,
+                10,
+                11,
+                12,
+                15,
+                16,
+                18
+              ],
+              "missing": [
+                17
+              ]
+            }
+          }
+        },
+        "passed": 3,
+        "failed": 3,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1)"
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_calc_clamp.py": "import pytest\n\nfrom calc import clamp\n\n\ndef test_inside_range_unchanged():\n    assert clamp(5, 0, 10) == 5\n\n\ndef test_below_and_above():\n    assert clamp(-3, 0, 10) == 0\n    assert clamp(42, 0, 10) == 10\n\n\ndef test_boundaries():\n    assert clamp(0, 0, 10) == 0\n    assert clamp(10, 0, 10) == 10\n\n\ndef test_inverted_bounds_raise():\n    with pytest.raises(ValueError):\n        clamp(1, 10, 0)\n"
+      }
+    },
+    {
+      "round": 1,
+      "kind": "repair",
+      "files": [
+        "tests/test_calc_clamp.py"
+      ],
+      "result": null,
+      "warnings": [],
+      "contents": {}
+    }
+  ],
+  "plan": "Plan for calc.clamp:\n1. Value inside [lo, hi] is returned unchanged.\n2. Value below lo returns lo; value above hi returns hi.\n3. Boundaries lo and hi are returned unchanged.\n4. lo > hi raises ValueError.\n",
+  "message": "clamp(5, 0, 10) returns 10 and clamp(-3, 0, 10) returns 10: the expression `max(hi, min(lo, x))` has lo and hi swapped, so it always returns hi. The tests encode the documented contract (\"clamp x into [lo, hi]\"); the fix is `max(lo, min(hi, x))`.",
+  "ok": false
+}

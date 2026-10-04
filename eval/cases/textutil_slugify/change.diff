@@ -1,0 +1,18 @@
+diff --git a/textutil.py b/textutil.py
+index 1df95ab..cf09213 100644
+--- a/textutil.py
++++ b/textutil.py
+@@ -1,5 +1,13 @@
+ """String helpers."""
++import re
+ 
+ 
+ def title_case(text):
+     return " ".join(w.capitalize() for w in text.split())
++
++
++def slugify(text):
++    """Lowercase, replace each run of non-alphanumerics with a single '-'."""
++    text = text.strip().lower()
++    text = re.sub(r"[^a-z0-9]", "-", text)
++    return text.strip("-")

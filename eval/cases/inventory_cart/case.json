@@ -1,0 +1,2 @@
+{"name": "inventory_cart", "bug": "Cart.total() multiplies by (1 - discount_pct) instead of (1 - discount_pct/100)",
+ "trajectory": "model keeps editing tests and never diagnoses the bug -> stops at the 3-round repair limit"}
