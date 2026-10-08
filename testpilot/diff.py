@@ -102,7 +102,8 @@ def parse_unified_diff(text: str) -> list[FileChange]:
     pending_old: str | None = None
     old_left = new_left = 0
     new_ln = 0
-    for line in text.splitlines():
+    # Git hunk counts use LF-delimited records, not Unicode separators.
+    for line in text.split("\n"):
         if cur is not None and (old_left > 0 or new_left > 0):
             if line.startswith("\\"):  # "\ No newline at end of file"
                 continue
@@ -193,7 +194,8 @@ def _iter_functions(body, prefix: str = "", in_class: bool = False):
 
 def functions_touching(source: str, path: str, lines: set[int], added: set[int]) -> list[ChangedFunction]:
     tree = ast.parse(source, filename=path)
-    src_lines = source.splitlines()
+    # Python physical lines use LF/CRLF/CR; other separators can be literals.
+    src_lines = source.replace("\r\n", "\n").replace("\r", "\n").split("\n")
     out: list[ChangedFunction] = []
     for qualname, node, is_method in _iter_functions(tree.body):
         start = min([node.lineno] + [d.lineno for d in node.decorator_list])
