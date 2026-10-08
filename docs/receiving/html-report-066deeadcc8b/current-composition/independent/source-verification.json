@@ -1,0 +1,25 @@
+{
+  "schema": "independent-testpilot-pr20-source-composition-v1",
+  "canonical_base": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "canonical_tree": "2045a73704f752d374704657fccf90fd5e774258",
+  "canonical_leaves": 432,
+  "reviewed_projection": "fe791af1a0908b2379dd7cbb87a9fb8f3cad87de",
+  "source_manifest_sha256": "510f4dc179c71970444e4e97389272b763b1ce3b1f6229d86e13c6a08769b29a",
+  "source_files": 80,
+  "unowned_current_files_exact": 74,
+  "four_other_reviewed_files_exact": [
+    "docs/receiving/html-report-066deeadcc8b/capture_runs.py",
+    "docs/receiving/html-report-066deeadcc8b/check_browser.mjs",
+    "testpilot/html_report.py",
+    "tests/test_html_report.py"
+  ],
+  "current_loop_reconstructed_byte_identically": true,
+  "current_readme_reconstructed_byte_identically": true,
+  "unchanged_current_loop_top_level_definitions": 22,
+  "only_changed_definition": [
+    "write_outputs"
+  ],
+  "composed_loop_sha256": "cdbe364296b8a81ea852a5c70f757db894e52cb9a66db9cc9a6f60b4569d3539",
+  "composed_readme_sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+  "agent_instruction_files": []
+}

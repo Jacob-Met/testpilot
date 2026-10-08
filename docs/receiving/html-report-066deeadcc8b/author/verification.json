@@ -1,0 +1,37 @@
+{
+  "schema": "testpilot.html_report.author_verification.v1",
+  "archive_sha256": "38427d84487956f1296cdca9b65bd3178fbc661be17a0c9b1174d9dcab99f725",
+  "native_manifest_sha256": "edd7d9a329750b20365a92fded19de7ad3db88aff488c157b9fa3830176ad4d2",
+  "ordinary_members": 837,
+  "artifacts_verified": 836,
+  "source_files": {
+    "baseline": 73,
+    "source": 77,
+    "current-source": 79
+  },
+  "frozen_scoped_files_unchanged": 6,
+  "current_unowned_source_blobs_verified": 73,
+  "current_base": "dc9735cbbd9c271bdf2bc68656aff1f56d88c0fa",
+  "current_tree": "c79b55004d28ebcd9592dcdd27cb77dd49644f39",
+  "cli_cases": {
+    "baseline-cli-v2": 9,
+    "candidate-cli-v2": 9,
+    "candidate-cli-final": 9,
+    "current-cli": 9,
+    "literal-cli": 1
+  },
+  "browser_checks": {
+    "browser-v1": 132,
+    "browser-final": 133,
+    "current-browser": 133
+  },
+  "literal_browser_checks": 9,
+  "initial_complete_suite": {
+    "passed": 191,
+    "failed": 5
+  },
+  "baseline_reproduced_failures": 5,
+  "final_focused_tests": 19,
+  "existing_output_integration": "Only HTML import/key/write added; independent original-writer byte replay is in the separate receiving packet.",
+  "verification_execution": "Reads saved artifacts only; does not replay native TestPilot or browser execution."
+}

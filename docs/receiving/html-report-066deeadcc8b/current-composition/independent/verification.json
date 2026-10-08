@@ -1,0 +1,54 @@
+{
+  "schema": "independent-testpilot-pr20-recomputed-v1",
+  "decision": "accepted",
+  "canonical_base": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "canonical_tree": "2045a73704f752d374704657fccf90fd5e774258",
+  "canonical_leaves": 432,
+  "source_files": 80,
+  "current_unowned_files_exact": 74,
+  "current_loop_other_definitions_exact": 22,
+  "current_loop_and_readme_reconstructed": true,
+  "original_other_four_scoped_files_exact": true,
+  "native_archive": {
+    "bytes": 1077732,
+    "sha256": "8f480e0b9edb7bfa29c4e75bbcf8f5298e9d735fdc3ca0a65205dd6b3bb0670a"
+  },
+  "native_members_verified": 134,
+  "native_artifacts_verified": 133,
+  "author_native_commands_received": 3,
+  "author_browser_checks_received": 39,
+  "independently_recomputed_html_tables": 14,
+  "independently_recomputed_data_cells": 92,
+  "actual_downloads_received_byte_exact": 4,
+  "cases": [
+    {
+      "name": "passed",
+      "generated_files": [
+        "tests/integration/test_calc_testpilot_2.py",
+        "tests/unit/test_calc_testpilot.py"
+      ],
+      "total_passed": 3,
+      "generated_passed": 2,
+      "repairs": 0,
+      "html": {
+        "bytes": 26629,
+        "sha256": "95b7aac5fa80f1da129bac8ac131d406c9e43bd6b2b7c1aadb9664697a23c72f"
+      }
+    },
+    {
+      "name": "repair",
+      "generated_files": [
+        "tests/integration/test_calc_testpilot_2.py",
+        "tests/unit/test_calc_testpilot.py"
+      ],
+      "total_passed": 3,
+      "generated_passed": 2,
+      "repairs": 1,
+      "html": {
+        "bytes": 35139,
+        "sha256": "a4c9d5a86dedb51a94c86fa96bc9d66c8cba21ecdb998c89e1f984ba5034b623"
+      }
+    }
+  ],
+  "boundary": "Independent source reconstruction and archived raw-evidence recomputation. The author executed the two current CLI cases and browser; this receiver did not repeat a native product run."
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "independent-testpilot-final-parent-v1",
+  "decision": "accepted for normal exact-head source integration gates",
+  "canonical_base": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "canonical_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
+  "canonical_leaves": 728,
+  "direct_primary_files": 4,
+  "author_manifest_artifacts_verified": 13,
+  "proposed_scoped_files": 6,
+  "native_qualified_scoped_files_unchanged": 5,
+  "only_loop_delta_since_native_qualification": "Inherited Markdown coverage-unavailable wording",
+  "current_loop_and_readme_reconstructed": true,
+  "other_current_loop_definitions_exact": 22,
+  "proposed_loop": {
+    "bytes": 23828,
+    "sha256": "41506f3c29febd3b10c4dce43f7f8e0695c32885ddc08e56e1c96d5bb2f212a4"
+  },
+  "proposed_readme": {
+    "bytes": 11550,
+    "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00"
+  },
+  "upstream_model_and_sandbox": "Exact canonical primary bytes; not part of the six-path overlay.",
+  "boundary": "Independent source-only custody and reconstruction. Native CLI/browser qualification remains pinned to PR20 parent269e5533 and earlier freezes; no new runtime pass is attributed to this final parent."
+}

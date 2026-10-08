@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/dev/shm/hamon-066deeadcc8b-research-testpilot-final-parent/verify_final_parent.py",
+    "/dev/shm/hamon-066deeadcc8b-testpilot-html/publication-parent",
+    "/dev/shm/hamon-066deeadcc8b-testpilot-html/composition-pr20/pr20-native.tar.xz"
+  ],
+  "exit_code": 0,
+  "captured_at": "2026-10-08T13:05:50.378696+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+}

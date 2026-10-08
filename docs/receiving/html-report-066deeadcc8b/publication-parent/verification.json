@@ -1,0 +1,16 @@
+{
+  "schema": "testpilot.html_report.publication_parent_reconstruction.v1",
+  "canonical_base": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "canonical_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
+  "canonical_leaves": 728,
+  "canonical_files_verified": 4,
+  "proposed_loop_sha256": "41506f3c29febd3b10c4dce43f7f8e0695c32885ddc08e56e1c96d5bb2f212a4",
+  "proposed_readme_sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+  "unchanged_reviewed_files": 4,
+  "canonical_loop_and_readme_reconstructed": true,
+  "prior_qualified_loop_preserved_except_current_markdown_wording": true,
+  "current_loop_other_definitions_exact": 22,
+  "unchanged_result_and_round_schema": true,
+  "canonical_model_and_sandbox_preserved_as_parent_leaves": true,
+  "boundary": "Source and archived-evidence reconstruction only. No native product execution was repeated on this final parent; exact-head hosted CI is the final integration gate."
+}

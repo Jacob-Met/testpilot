@@ -1,0 +1,65 @@
+{
+  "schema": "testpilot.html_report.author_receipt.v1",
+  "author": "/root/product_execution",
+  "claim": "https://github.com/Jacob-Met/testpilot/issues/17",
+  "repository": "Jacob-Met/testpilot",
+  "baseline_commit": "d7c28b0ad261e78d681f40e355447dffa4d435ed",
+  "frozen_projection_commit": "fe791af1a0908b2379dd7cbb87a9fb8f3cad87de",
+  "current_composition_base": "dc9735cbbd9c271bdf2bc68656aff1f56d88c0fa",
+  "archive": {
+    "path": "author-native.tar.xz",
+    "bytes": 2308044,
+    "sha256": "38427d84487956f1296cdca9b65bd3178fbc661be17a0c9b1174d9dcab99f725",
+    "ordinary_members": 837
+  },
+  "native_manifest": {
+    "path": "author-native-manifest.json",
+    "bytes": 150604,
+    "sha256": "edd7d9a329750b20365a92fded19de7ad3db88aff488c157b9fa3830176ad4d2",
+    "listed_artifacts": 836
+  },
+  "runtime_scope": "Actual local CLI invokes explicitly authored ScriptedModel replies and real pytest/coverage subprocesses on disposable Git projects. Configured model names in reports are routing labels, not provider execution evidence. No installed runtime was activated.",
+  "final_source_gates": {
+    "focused_tests_passed": 19,
+    "actual_cli_cases_passed": 9,
+    "actual_browser_checks_passed": 133,
+    "literal_cli_cases_passed": 1,
+    "literal_browser_checks_passed": 9
+  },
+  "current_source_gates": {
+    "source_files_verified": 79,
+    "frozen_scoped_files_preserved": 6,
+    "actual_cli_cases_passed": 9,
+    "actual_browser_checks_passed": 133
+  },
+  "initial_complete_suite": {
+    "source": "Pre-phone renderer preserved at evidence/html_report-before-phone.py",
+    "passed": 191,
+    "failed": 5,
+    "unchanged_baseline_reproduced_failures": 5,
+    "interpretation": "Final changes after this full run are table CSS and table-region markup; the final focused, CLI and browser gates were repeated. This is not an all-green full-suite claim."
+  },
+  "baseline_failure_ids": [
+    "tests/test_generated_collection.py::test_configured_roots_and_project_hooks_are_preserved",
+    "tests/test_generated_collection_receiving.py::test_configured_suite_and_only_requested_generated_file_are_kept",
+    "tests/test_git_quoted_paths.py::test_octal_filename_bytes_round_trip_through_the_filesystem",
+    "tests/test_report_text_encoding.py::test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch",
+    "tests/test_report_text_encoding.py::test_real_cli_preserves_runner_failure_and_still_writes_readable_report"
+  ],
+  "failure_interpretation": "Two existing collection assertions fail on this native setup; no unproved cause is assigned. Three raw-filename fixtures fail on APFS with OSError 92 Illegal byte sequence before report output. The exact five also fail in the immutable baseline.",
+  "visual_review": {
+    "reviewer": "/root/product_execution",
+    "actual_images": [
+      "evidence/browser-v1/desktop-repair.png",
+      "evidence/browser-v1/phone-repair.png",
+      "evidence/browser-final/phone-repair.png",
+      "evidence/literal-browser/literal-plan.png"
+    ],
+    "interpretation": "The original phone ledger was visually cramped despite passing overflow checks. Final table scroll regions and minimum widths were inspected at 375 CSS pixels, with keyboard scrolling observed by the browser driver. These are actual headless Chrome captures, not a physical-phone or screen-reader audit."
+  },
+  "known_observer_corrections": [
+    "Initial no_changes fixture supplied no ScriptedModel response and produced configuration exit 2; the corrected unused response preserves no model call for an empty diff. Original driver and failure remain.",
+    "Initial phone-table visual defect and before-phone source remain alongside final qualification."
+  ],
+  "custody": "Native archive transferred in 47 bounded chunks; the missing first attempt at chunk 16 was reread through the same normal route. Whole archive SHA256, all 837 ordinary members and all 836 receipt-listed artifact sizes/hashes match after transfer."
+}

@@ -1,0 +1,20 @@
+--- 269e5533/testpilot/sandbox.py
++++ 3e745e6b/testpilot/sandbox.py
+@@ -261,9 +261,13 @@
+         cases = parse_junit(junit) if junit_available else []
+         cov = None
+         if use_cov and not timed_out:
+-            cov_json = tdp / "cov.json"
+-            crc, _, _ = _run([python, "-m", "coverage", "json", f"--data-file={data_file}", "-o", str(cov_json), "-q"],
+-                             work, env, 60)
+-            cov = _parse_coverage(cov_json, work) if crc == 0 and cov_json.exists() else CoverageReport(0.0)
++            # Reserve the report destination after pytest so a failed report
++            # command cannot reuse a file left by the test run.
++            with tempfile.TemporaryDirectory(prefix="coverage-report-", dir=tdp) as report_dir:
++                cov_json = Path(report_dir) / "cov.json"
++                crc, _, _ = _run([python, "-m", "coverage", "json", f"--data-file={data_file}", "-o", str(cov_json), "-q"],
++                                 work, env, 60)
++                # Exit 2 can mean a complete report is below configured fail_under.
++                cov = _parse_coverage(cov_json, work) if crc in (0, 2) and cov_json.exists() else None
+         return SandboxResult(rc, timed_out, round(dur, 3), timeout, out, cases, cov,
+                              generated_files, junit_available)
