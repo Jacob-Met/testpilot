@@ -1,0 +1,297 @@
+{
+  "reviewer": "estate_coordination-3dcb83a1",
+  "source_parent": "f350150259c00dd25c43a95d65157022612d15a8",
+  "decision": "accept revised f6ae697f model source for measured terminal HTTP timeout and CLI reporting boundary",
+  "test_sha256": "59ea8a59bbfe3e3fde97863589df243326fda6960d0eee909d3fa2c352f01ae2",
+  "review_sha256": "1251a565ef9c471fea6333ab4895058501b8a00a6eb2c707031aec35eec4b5ee",
+  "variants": {
+    "baseline": {
+      "source": "/home/jacob/hamon-testpilot-timeout-independent-3dcb83a1/baseline",
+      "tests_run": 4,
+      "failures": 3,
+      "errors": 0,
+      "skips": 0,
+      "successful": false,
+      "package": {
+        "testpilot/__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "bytes": 390
+        },
+        "testpilot/__main__.py": {
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+          "bytes": 3316
+        },
+        "testpilot/diff.py": {
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+          "bytes": 9059
+        },
+        "testpilot/loop.py": {
+          "sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+          "git_blob": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+          "bytes": 21001
+        },
+        "testpilot/model.py": {
+          "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+          "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+          "bytes": 9730
+        },
+        "testpilot/sandbox.py": {
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+          "bytes": 9286
+        }
+      },
+      "observations": {
+        "complete_400": {
+          "exception": {
+            "type": "ModelError",
+            "message": "HTTP 400 from http://127.0.0.1:38815/v1/chat/completions: {\"error\":\"authored terminal diagnostic\"}",
+            "cause_type": "HTTPError",
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "report_status": null
+        },
+        "current_cli": {
+          "exception": {
+            "type": "TimeoutError",
+            "message": "timed out",
+            "cause_type": null,
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "exit_code": null,
+          "source_unchanged": true,
+          "output_names": [],
+          "report_status": null
+        },
+        "stalled_final_503": {
+          "exception": {
+            "type": "TimeoutError",
+            "message": "timed out",
+            "cause_type": null,
+            "context_type": "HTTPError"
+          },
+          "request_count": 2,
+          "delays": [
+            2
+          ],
+          "report_status": null
+        },
+        "stalled_400": {
+          "exception": {
+            "type": "TimeoutError",
+            "message": "timed out",
+            "cause_type": null,
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "report_status": null
+        }
+      },
+      "raw_receipts": {
+        "baseline.json": "5bdc83349f39a7f6be9fef2139b6b380fe056d8ff5f895ab3d9f18c08248c629",
+        "baseline.stdout.log": "d6ceb2323901bedd4e35c5ece4de0d9b5bc2e9c3b84d297a1e5b3a40feb3c4e4",
+        "baseline.stderr.log": "827786c1c4d7c7fa735baad45e70328e9fceb55b8235ab6070add00c98a0547f"
+      }
+    },
+    "candidate": {
+      "source": "/home/jacob/hamon-testpilot-timeout-independent-3dcb83a1/candidate",
+      "tests_run": 4,
+      "failures": 3,
+      "errors": 0,
+      "skips": 0,
+      "successful": false,
+      "package": {
+        "testpilot/__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "bytes": 390
+        },
+        "testpilot/__main__.py": {
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+          "bytes": 3316
+        },
+        "testpilot/diff.py": {
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+          "bytes": 9059
+        },
+        "testpilot/loop.py": {
+          "sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+          "git_blob": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+          "bytes": 21001
+        },
+        "testpilot/model.py": {
+          "sha256": "7d09afbb738f349a04756a9b69559b3bfabfe096e632409a80563b0dac635547",
+          "git_blob": "af0c0662faed09dc1db286233719b90d1504b229",
+          "bytes": 9918
+        },
+        "testpilot/sandbox.py": {
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+          "bytes": 9286
+        }
+      },
+      "observations": {
+        "complete_400": {
+          "exception": {
+            "type": "ModelError",
+            "message": "HTTP 400 from http://127.0.0.1:36707/v1/chat/completions: {\"error\":\"authored terminal diagnostic\"}",
+            "cause_type": "HTTPError",
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "report_status": null
+        },
+        "current_cli": {
+          "exception": {
+            "type": "TimeoutError",
+            "message": "timed out",
+            "cause_type": null,
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "exit_code": null,
+          "source_unchanged": true,
+          "output_names": [],
+          "report_status": null
+        },
+        "stalled_final_503": {
+          "exception": {
+            "type": "TimeoutError",
+            "message": "timed out",
+            "cause_type": null,
+            "context_type": "HTTPError"
+          },
+          "request_count": 2,
+          "delays": [
+            2
+          ],
+          "report_status": null
+        },
+        "stalled_400": {
+          "exception": {
+            "type": "TimeoutError",
+            "message": "timed out",
+            "cause_type": null,
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "report_status": null
+        }
+      },
+      "raw_receipts": {
+        "candidate.json": "ba7fa85e660b41565b0c8c108221e614e1f68cb326cdc3278980837b56f4a7df",
+        "candidate.stdout.log": "a7197c04be4b2f1e149f3a7a2f4ef455428a9d08596805bd67797e856bd66d62",
+        "candidate.stderr.log": "1363b2ac73793e1b472590093044cab032db059df5177279cf6071c48911d0f1"
+      }
+    },
+    "receiving-v2": {
+      "source": "/home/jacob/hamon-testpilot-timeout-independent-3dcb83a1/receiving-v2",
+      "tests_run": 4,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "successful": true,
+      "package": {
+        "testpilot/__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "bytes": 390
+        },
+        "testpilot/__main__.py": {
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+          "bytes": 3316
+        },
+        "testpilot/diff.py": {
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+          "bytes": 9059
+        },
+        "testpilot/loop.py": {
+          "sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+          "git_blob": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+          "bytes": 21001
+        },
+        "testpilot/model.py": {
+          "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+          "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+          "bytes": 10175
+        },
+        "testpilot/sandbox.py": {
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+          "bytes": 9286
+        }
+      },
+      "observations": {
+        "complete_400": {
+          "exception": {
+            "type": "ModelError",
+            "message": "HTTP 400 from http://127.0.0.1:39535/v1/chat/completions: {\"error\":\"authored terminal diagnostic\"}",
+            "cause_type": "HTTPError",
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "report_status": null
+        },
+        "current_cli": {
+          "exception": null,
+          "request_count": 1,
+          "delays": [],
+          "exit_code": 1,
+          "source_unchanged": true,
+          "output_names": [
+            "report.json",
+            "report.md",
+            "testpilot.patch"
+          ],
+          "report_status": "model_error"
+        },
+        "stalled_final_503": {
+          "exception": {
+            "type": "ModelError",
+            "message": "HTTP 503 from http://127.0.0.1:42873/v1/chat/completions: response body timed out",
+            "cause_type": "HTTPError",
+            "context_type": "HTTPError"
+          },
+          "request_count": 2,
+          "delays": [
+            2
+          ],
+          "report_status": null
+        },
+        "stalled_400": {
+          "exception": {
+            "type": "ModelError",
+            "message": "HTTP 400 from http://127.0.0.1:42987/v1/chat/completions: response body timed out",
+            "cause_type": "HTTPError",
+            "context_type": "HTTPError"
+          },
+          "request_count": 1,
+          "delays": [],
+          "report_status": null
+        }
+      },
+      "raw_receipts": {
+        "receiving-v2.json": "d73a2b9b5a3ac86e4d7b4f0f6923af591ffcf5772f4c9ecffd25096ed712f845",
+        "receiving-v2.stdout.log": "9d7b79b1a1f728bcf820ea1e9b735d5a0bda931ec1b86e1c1cae7200709b0cab",
+        "receiving-v2.stderr.log": "a3da945914d2067e5fe532e504e25b2f15f71134841b17722fac60b3730f9cd1"
+      }
+    }
+  },
+  "limitations": "Four unchanged unittest methods per variant in normal Python. Only local authored HTTP and Git fixtures; CLI fails at planner before pytest. No full-suite, provider, installation or deployment claim."
+}
