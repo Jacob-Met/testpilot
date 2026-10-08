@@ -125,6 +125,15 @@ all four files: a later replacement error or a process/system failure can leave 
 mixture of old and new files. Concurrent writers are not coordinated. Use a separate
 output directory when separate runs need independent saved results.
 
+## Inspect a saved-test recheck
+
+The model-free `testpilot recheck` command also writes **`recheck.html`** beside
+its existing JSON and Markdown. Open it directly to inspect the actual current
+cases, diagnostics, retained test source, timing and source identity. Its exact
+JSON download travels with the file. Missing JUnit stays unavailable, and the
+original report's status stays historical. See the [recheck guide](docs/RECHECK.md)
+for the command, execution boundaries and output-delivery limits.
+
 ## Running on Nebius Token Factory
 
 Token Factory has an OpenAI-compatible API. Its quickstart (<https://docs.tokenfactory.nebius.com/quickstart>, read 2026-10-04) uses:

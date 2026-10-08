@@ -226,7 +226,7 @@ def test_cli_skips_generation_and_recheck_output_is_reusable(project, tmp_path, 
     assert cli.main(["recheck", "--repo", str(project), "--report", str(report),
                      "--out", str(output)]) == 0
     assert "New model calls: 0" in capsys.readouterr().out
-    assert sorted(p.name for p in output.iterdir()) == ["recheck.json", "recheck.md"]
+    assert sorted(p.name for p in output.iterdir()) == ["recheck.html", "recheck.json", "recheck.md"]
     current = json.loads((output / "recheck.json").read_text())
     assert current["test_files"] == {TEST_PATH: content}
     again = recheck.recheck_report(project, output / "recheck.json", timeout_s=10)

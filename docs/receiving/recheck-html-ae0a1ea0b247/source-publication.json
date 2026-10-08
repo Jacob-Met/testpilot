@@ -1,0 +1,160 @@
+{
+  "schema": "testpilot.recheck-html.source/1",
+  "baseline_commit": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "baseline_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "source": [
+    {
+      "path": "testpilot/recheck_html.py",
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "sha": "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 12115,
+      "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "sha": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52"
+    },
+    {
+      "path": "tests/test_recheck_html.py",
+      "bytes": 8685,
+      "sha256": "d14f0186aee3eef85dba24e6407232e276364ed97c94e40dbabed4b0e728f974",
+      "sha": "416ebc35d8c5bd6b9900abd9f4a9f07b08b3e438"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13668,
+      "sha256": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+      "sha": "426085b7824979a764056c528d2ca2ccfc647d77"
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "bytes": 7125,
+      "sha256": "1742c8da5eb15e770ebcad06c4e0ac5e465e5d0bec79db2dd58c7c2e9b6e7ea4",
+      "sha": "7ac4a71d60add1ee718ab777c74aff887a453c29"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13171,
+      "sha256": "741d39d5951aa08550b16c0ffc294024e6a498c2411df8a57c888f3605b623b7",
+      "sha": "0a302f3dea5edc6688793e32da8dd5754ce2b907"
+    }
+  ],
+  "unchanged_dependency_closure": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha": "86a3236e38155506b5fe6077322d508f7f676649"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "sha": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "sha": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "sha": "29dd325ab288ac1d43fd70f33b207281f5375d4b"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "sha": "bb30d903542d836f5afe8e116ba894f93d9d3a0c"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "sha": "ed0f5f7f057c217b931a1756bd679ae087247e0a"
+    },
+    {
+      "path": "testpilot/model.py",
+      "sha": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "sha": "8ca4a4102c7890e89eae99548e28ba8325974f1e"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha": "2a855d9fdb8debae0b082088580a4c41e499e33c"
+    },
+    {
+      "path": "tests/test_html_report.py",
+      "sha": "655c4ce97b5ffbd2fe81f5b602a2ca12388c27b7"
+    }
+  ],
+  "unchanged_recheck_ast_bodies": [
+    "RecheckError",
+    "SavedTests",
+    "_unique_object",
+    "_reject_constant",
+    "read_saved_tests",
+    "_placement",
+    "recheck_report",
+    "render_recheck",
+    "_output_destination",
+    "_write_console",
+    "run_recheck_command"
+  ],
+  "author_archive": {
+    "path": "author-evidence.tar.gz",
+    "bytes": 45455,
+    "sha256": "a72042ef969dbacfe75cef7d42330f17056cd73003022a5ead54ccebdad5bff8",
+    "git_blob": "9c9143b6da834d6b6bd6dc068f480e49ffe474e7"
+  },
+  "author_gate": {
+    "tests": 44,
+    "elapsed_seconds": 3.29,
+    "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=<source> TMPDIR=<owned temporary directory> <existing Python 3.12 pytest runtime> -m pytest -q -p no:cacheprovider tests/test_recheck_html.py tests/test_recheck.py"
+  },
+  "independent_review": {
+    "status": "accepted",
+    "pre_candidate_contract_sha256": "f6914c4de4e9555527f865adb6979034f828edc4dc8e2652fd2a21a55165f22d",
+    "fixture_builder_sha256": "1392d3346215b66a490d9539612505a6fa8ecadf438822120d847eb8c90523be",
+    "native_contract": "https://github.com/Jacob-Met/testpilot/issues/37#issuecomment-6064067702",
+    "source_head": "93ab250df63fdcc063d33e78812502634d2e985f",
+    "groups": 5,
+    "downloads": 5,
+    "archive": {
+      "path": "independent-recheck-html.tar.gz",
+      "bytes": 161908,
+      "sha256": "67f48f765f20f066ee89268eb54340b108e6bd99655980adc2ce97fd8c3d44ac",
+      "git_blob": "6dcad3820246d3e9006e97474ddd5883a9451562",
+      "regular_members": 46
+    },
+    "browser": {
+      "name": "Chromium",
+      "version": "153.0.8010.0",
+      "requests": 0,
+      "page_errors": 0,
+      "dialogs": 0,
+      "popups": 0
+    },
+    "consumer_limits": [
+      "Two vectors are exact original native CLI outputs; three additional vectors are authored through original SandboxResult.to_dict, not measured test execution.",
+      "Phone layout and English readability were visually accepted; installed CJK font coverage is incomplete, while Unicode DOM/source/download bytes remain exact.",
+      "Carriage returns are visible escaped text in the HTML reading view; the download retains exact CRLF artifact bytes."
+    ],
+    "concise_disposition": {
+      "path": "independent-review.json",
+      "bytes": 8627,
+      "sha256": "9eb1bf4c34ec16089f6565ac8ae7088d05a2838f9798e7010eb07971da3c05b0",
+      "git_blob": "2967863eda3490722356d75372250cd7ec048f00"
+    }
+  },
+  "hosted_evidence": {
+    "receipt": "hosted-ci.json",
+    "log": "hosted-ci.log.txt",
+    "source_head": "93ab250df63fdcc063d33e78812502634d2e985f",
+    "run": 37807062511,
+    "job": 113413995657,
+    "result": "372 passed, 18 subtests passed in 99.77s (0:01:39)"
+  }
+}
