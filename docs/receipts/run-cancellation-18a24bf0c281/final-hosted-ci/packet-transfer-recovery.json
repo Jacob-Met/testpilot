@@ -1,0 +1,13 @@
+{
+  "original_process": 698011,
+  "transport_failure": "A completed RDC process ceased to be addressable after a partial read; only its header reached root.",
+  "original_packet_identity": {
+    "bytes": 108402,
+    "sha256": "6b16564a0aeedc133e11f2b94fb4af9c10eb80c3e7bd9913a72115fd9d22fd9c",
+    "git_blob": "4f82a319b4b605fcf10da9a692d8d3466a29ef55"
+  },
+  "recovery": "Packaging-only regeneration from unchanged authoritative source/raw receipts; entire packet hash matches the original sealed108402-byte packet. No product/test replay or cleanup.",
+  "custody_path": "/dev/shm/tp-18a24bf0c281-ps-publication-packet.json",
+  "storage": "private tmpfs custody pending root publication",
+  "old_native_zero_byte_recipe_preserved": true
+}

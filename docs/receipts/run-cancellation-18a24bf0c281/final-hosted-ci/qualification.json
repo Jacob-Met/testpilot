@@ -1,0 +1,72 @@
+{
+  "schema": "testpilot-final-hosted-receiving/v1",
+  "recorded_at": "2026-10-08T20:02:39.261Z",
+  "repository": "Jacob-Met/testpilot",
+  "issue": 35,
+  "pull_request": 43,
+  "source": {
+    "head": "37985347ec7957902cc51223a0916b86ed5ef1f5",
+    "tree": "0760ae5048eaee2177493081def4c7735d0aad65",
+    "sandbox_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+    "corrected_test_blob": "35a8152aa41be8aafffcc1f5713bedbf2abd7533"
+  },
+  "hosted": {
+    "run_id": 37833468085,
+    "attempt": 1,
+    "job_id": 113504469109,
+    "status": "completed",
+    "conclusion": "success",
+    "runtime": "CPython 3.12.15",
+    "platform": "Ubuntu",
+    "tests_passed": 457,
+    "subtests_passed": 25,
+    "test_duration_seconds": 89.21,
+    "checkout": "fc1793cb048693e082e5abf18f577212ebe3792c",
+    "checkout_tree": "29c33bd4dcd7d6d05d68e87b21530a7f3e69c3d8",
+    "decoded_log": {
+      "bytes": 16866,
+      "sha256": "ee9b7b0e5407aaf3d9f56d6275c15859a36cf370f080c9b8e630e15b6df4f8fc",
+      "git_blob": "e9ee3bbc02ac51acaef66a3ff7f6baf52e8c5ee6"
+    }
+  },
+  "integration": {
+    "merge": "6c1c4973f6d88c3cc3d120c76a3b6e30f9008bbb",
+    "tree": "29c33bd4dcd7d6d05d68e87b21530a7f3e69c3d8",
+    "parents": [
+      "513f17454af378ee042ccd29dc930ef332a48734",
+      "37985347ec7957902cc51223a0916b86ed5ef1f5"
+    ],
+    "tree_equals_tested_tree": true,
+    "leaves": 1477,
+    "owned": 52,
+    "unrelated_preserved": 1425,
+    "pr_readback": "closed and merged",
+    "issue_readback": "closed",
+    "main_readback": "6c1c4973f6d88c3cc3d120c76a3b6e30f9008bbb"
+  },
+  "earlier_failure": {
+    "run_id": 37820525113,
+    "job_id": 113460074077,
+    "tests_passed": 397,
+    "subtests_passed": 25,
+    "failed_tests": 2,
+    "cause": "The pytest helper captured ordinary ps output at 80 columns and could not see the full escaped worker path. Native tracing preserved original subprocess results and verified live process identity; the production cancellation handler did not change.",
+    "correction": "Add only -ww to the test helper's ps command, plus one explanatory comment. Root verified exact textual and AST inverse.",
+    "original_native_tests": "2 passed, 2 failed",
+    "corrected_native_tests": "4 passed",
+    "complete_failed_log_in": "../ps-width-correction/evidence.tar.xz",
+    "failed_log_sha256": "7563982662d40069caadd14a04d382836d25d70cab0cf1cc7050c5474f321068"
+  },
+  "limits": [
+    "Native Mac and ThinkPad receiving remain bound to their recorded commits and environments.",
+    "The current-parent review is static source/input composition review; the hosted run provides the exact combined-tree execution gate.",
+    "No Windows or Python -O qualification and no deployment are claimed.",
+    "This separate evidence-only branch preserves the qualified source head and all merged leaves."
+  ],
+  "provenance": [
+    "Complete corrected-head hosted job log retained as decoded by the GitHub connector.",
+    "Full tested merge tree proof records every owned leaf and the count of all unrelated preserved leaves.",
+    "Small native receipts were transferred through RDC; an omitted final newline is restored only when exact expected hashes match.",
+    "Earlier transport, setup and observation failures remain in their original receipts and correction archive."
+  ]
+}

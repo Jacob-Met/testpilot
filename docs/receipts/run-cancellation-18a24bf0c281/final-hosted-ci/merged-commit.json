@@ -1,0 +1,40 @@
+{
+  "sha": "6c1c4973f6d88c3cc3d120c76a3b6e30f9008bbb",
+  "node_id": "C_kwDOU7nhDNoAKDZjMWM0OTczZjZkODhjM2NjM2QxMjBjNzZhM2I2ZTMwZjkwMDhiYmI",
+  "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/6c1c4973f6d88c3cc3d120c76a3b6e30f9008bbb",
+  "html_url": "https://github.com/Jacob-Met/testpilot/commit/6c1c4973f6d88c3cc3d120c76a3b6e30f9008bbb",
+  "author": {
+    "name": "Jacob Metoyer",
+    "email": "150724801+Jacob-Met@users.noreply.github.com",
+    "date": "2026-10-08T19:50:56Z"
+  },
+  "committer": {
+    "name": "GitHub",
+    "email": "noreply@github.com",
+    "date": "2026-10-08T19:50:56Z"
+  },
+  "tree": {
+    "sha": "29c33bd4dcd7d6d05d68e87b21530a7f3e69c3d8",
+    "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/trees/29c33bd4dcd7d6d05d68e87b21530a7f3e69c3d8"
+  },
+  "message": "Stop owned test groups when a run is cancelled\n\nPreserve KeyboardInterrupt while killing and reaping the owned POSIX test process group. Retain ordinary execution and timeout behavior, complete native author/independent receipts, the original hosted observation failure and its test-only ps-width correction.\n\nExact corrected-head hosted receiving: 457 tests and 25 subtests passed on CPython 3.12.15. The tested merge tree preserves all 52 contribution paths and all 1,425 unrelated current-main leaves.",
+  "parents": [
+    {
+      "sha": "513f17454af378ee042ccd29dc930ef332a48734",
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/513f17454af378ee042ccd29dc930ef332a48734",
+      "html_url": "https://github.com/Jacob-Met/testpilot/commit/513f17454af378ee042ccd29dc930ef332a48734"
+    },
+    {
+      "sha": "37985347ec7957902cc51223a0916b86ed5ef1f5",
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/37985347ec7957902cc51223a0916b86ed5ef1f5",
+      "html_url": "https://github.com/Jacob-Met/testpilot/commit/37985347ec7957902cc51223a0916b86ed5ef1f5"
+    }
+  ],
+  "verification": {
+    "verified": true,
+    "reason": "valid",
+    "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqx/QgCRC1aQ7uu5UhlAAAYQAQAKJ5Ccn8C+wfmk0n6osc9zLM\nBLnDCZl2XEiVLOWdQEk+MlCvdiH4n80IYsnPsrxya1EPPSP3qlQpGPwjWw2xK+nK\nNb8RvBo93Zklvi/R2H9OjWlBt6dEvr9JRxgYCQgg/MEibiqOa6gUAlnBJeN0vDNu\nnAvIiEILx34aRzPw0dlFABOu+LR3N4N51mmSTHjh/BcOBJpA+5rFFOKgHEbtRcGY\nDQVdifee+8ZlCPjaOB0dUVqbOhbofeYdmdz+v6Un+be47byoy9YYtd5IMpQN6tmv\nMOu2QV+JK9PHUMLt6NwSO+JhBaaGNyScag0vDPsL8nqzBghawktyTCcefpwNbLRb\n8rOqxA++NUlPgAc0H1uHPf5ONzpMQYhDZ4StYaZkzX32WwHVlv3kBtrgwwtPnqmB\nHt1n21yJB0bSzP5eiHgkSznh6QKl6EVEixIbkPaVVXomAeosKFWzLbJxUciy6qn2\nqDlJaaQE3q64+LMR4KWYFVIrqeypgc2k9m8a/Zj2fFfcEkB73yNW2uiAWCezaS+h\nOR+w3XegOsLSvQESLCCFZdybH4HGkCh6PKTgEbmrruRe7FkQVzeA9ybDxhk29zCg\nSEMxkZej1kbarXYz7xmq9uUgxtTYPAGLeklNm85uY57kpPmcKE+yYl6Y5DgF5ax8\ntwAY+V0m9PXhwY1w5Uqe\n=LG8J\n-----END PGP SIGNATURE-----\n",
+    "payload": "tree 29c33bd4dcd7d6d05d68e87b21530a7f3e69c3d8\nparent 513f17454af378ee042ccd29dc930ef332a48734\nparent 37985347ec7957902cc51223a0916b86ed5ef1f5\nauthor Jacob Metoyer <150724801+Jacob-Met@users.noreply.github.com> 1791489056 -0700\ncommitter GitHub <noreply@github.com> 1791489056 -0700\n\nStop owned test groups when a run is cancelled\n\nPreserve KeyboardInterrupt while killing and reaping the owned POSIX test process group. Retain ordinary execution and timeout behavior, complete native author/independent receipts, the original hosted observation failure and its test-only ps-width correction.\n\nExact corrected-head hosted receiving: 457 tests and 25 subtests passed on CPython 3.12.15. The tested merge tree preserves all 52 contribution paths and all 1,425 unrelated current-main leaves.",
+    "verified_at": "2026-10-08T19:50:57Z"
+  }
+}

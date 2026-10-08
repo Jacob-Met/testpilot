@@ -1,0 +1,383 @@
+{
+  "checked_at": "2026-10-08T19:49:52.059Z",
+  "run": 37833468085,
+  "job": 113504469109,
+  "source_head": "37985347ec7957902cc51223a0916b86ed5ef1f5",
+  "source_tree": "0760ae5048eaee2177493081def4c7735d0aad65",
+  "current_parent": "513f17454af378ee042ccd29dc930ef332a48734",
+  "current_tree": "ffded624f1e44bed9e10872dfb795dae2dda1a46",
+  "checkout": "fc1793cb048693e082e5abf18f577212ebe3792c",
+  "checkout_tree": "29c33bd4dcd7d6d05d68e87b21530a7f3e69c3d8",
+  "owned_paths": [
+    "testpilot/sandbox.py",
+    "docs/receipts/run-cancellation-18a24bf0c281/README.md",
+    "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-composition.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-receipt.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli.stdout",
+    "docs/receipts/run-cancellation-18a24bf0c281/candidate-pytest-receipt.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/candidate-sandbox.stdout",
+    "docs/receipts/run-cancellation-18a24bf0c281/candidate-source-freeze.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-baseline.stdout",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-focused-receipt.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/REVIEW.md",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current-parent-review.tar.xz",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-REVIEW.md",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-qualification.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/qualification.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/current-parent-source.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/focused-test-baseline-freeze.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/README.md",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/baseline-report.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-intake.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-report.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/driver-freeze.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/candidate_intake.py",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/prepare.py",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/receive.py",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/environment.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/native-receiving.tar.gz",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/qualification.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/raw-manifest.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/source-intake.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/static-candidate-review.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/original-cli-receipt.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/original-v1.stderr",
+    "docs/receipts/run-cancellation-18a24bf0c281/original-v2.stdout",
+    "docs/receipts/run-cancellation-18a24bf0c281/production.patch",
+    "docs/receipts/run-cancellation-18a24bf0c281/proposed-scope.md",
+    "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/REVIEW.md",
+    "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/evidence.tar.xz",
+    "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/qualification.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/root-receiving.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/test-only.diff",
+    "docs/receipts/run-cancellation-18a24bf0c281/qualification.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/raw-manifest.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/raw-native.tar.gz",
+    "docs/receipts/run-cancellation-18a24bf0c281/receive-cancellation.py",
+    "docs/receipts/run-cancellation-18a24bf0c281/receiver-correction.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/root-integration.json",
+    "docs/receipts/run-cancellation-18a24bf0c281/run-cli-gate.py",
+    "docs/receipts/run-cancellation-18a24bf0c281/run-pytest-gate.py",
+    "docs/receipts/run-cancellation-18a24bf0c281/source-intake.json",
+    "docs/run-cancellation.md",
+    "tests/test_sandbox_interrupt.py"
+  ],
+  "owned_entries": [
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "deb55abd1c1d2798b37624bc27f1a22db91f0157"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-composition.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b6cd7d66aaff692356009971a2019bb5523feea"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2085a157eba487e28bac8b345da3f07c2e9c2772"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb886d4c487d7e139ec806bca8ca36ab849982d8"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-pytest-receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "374e295581f16b6fb8cd40020788fe3175331e55"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-sandbox.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73864201930de820b6a537c4f1b53898acf340a8"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-source-freeze.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccc0de3d637d2e5c14f4f7e8b4f0e5b665f275b3"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-baseline.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "36165fb6307abc4fe41c24ef57ef5deae24c0b61"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-focused-receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "002d058626f4a378d5b603f7318dee7a8b97a6c3"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/REVIEW.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6d0f13c603532a4e9ff0ef307a2f6f322e7b004"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current-parent-review.tar.xz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "774b319d45efb5e5a0c07fe6b4b4d9ec6be25e3b"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-REVIEW.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b930c5d44f2186c9cd747a73e11b1eb2b0b85851"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a5d72d87c9650c807ad902c3d97cfc66122d4e84"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb1ed2a27bb0583c186cd03d4763f1f69fa967e1"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-source.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf6c3f7cfd933e627d93d3962d6e3fa05ac88f70"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/focused-test-baseline-freeze.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80dab7fa1b72df0fbada5d957fb518062f5a3db8"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b432de0b3f6d3c351f748ff04a4e4dd7deaf138a"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/baseline-report.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48e15856a490363d1c2b04f9dcd4d6ac482915f9"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-intake.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8798030fda8e7d28a19b54ba74b35521d262ee74"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-report.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4170dc6e1ba9f4624f47576db5056dac65fc9901"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/driver-freeze.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e82afa952f097bc4815648af347e7e7ebf08c8db"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/candidate_intake.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3f77326a35fc7f8fef5942d143bb6281b11c63b"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/prepare.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edfa81b25d9069f3d1960bd1c4b11056e5cd228e"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/receive.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a2276af9c1a319a50dfdf357ebf6ca759c7f7c5e"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/environment.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17cb6934bbbdef03ac80bdcc8b1ed60e3c16295f"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/native-receiving.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eba0a7fcfe8f1444a01f7ad5695c228966695fb2"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6fbb6e982de262663f9af1094ae0da58655c3c49"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/raw-manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6daadb1ad9f99ab537fb511078ac59fb72275f2"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/source-intake.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ce2379a481bb5fe8ff8a5efbc0d2b32906bd0e2"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/static-candidate-review.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2e98bf644ab06c8439c36c58e905b847cd2da14"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/original-cli-receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b458fd364c04678dd13a69020b8ddaf2465d59d"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v1.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7ec158428b4ad110208410cb5ae7a28632ddece3"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v2.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfa1082fd8f66a9d62303d5983516a5b6f6c442a"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/production.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e93681c0ed313d773dcc79a985de05a42cca8dd2"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/proposed-scope.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2d0be2f421e188121654173045daf20fea1b70a"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/REVIEW.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ee3bf901aa0963d2cc0609d4fdcf296e0b3d9d9"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/evidence.tar.xz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c53ae4c83f0b7f9827b1114e9c20533d24981130"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f137127ed3f63fd89922255f984f6b8ccc5be56a"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/root-receiving.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10fe69ba5f4a8f555ac6dabc32846089c3d0f80b"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/test-only.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff6c427b68d6761dabf7ca5ac5724f646a705e3a"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "388c8842cfbdf8ffd4259bd06510acf07e5ee161"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f66f1686b0b7ca0d8d01fb1b1dfa9f9c11f183d5"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-native.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d32a27c42f2f2ceef4a730138ad0100703ddda13"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/receive-cancellation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57c18d72bce9277ca01c6ee58baf23f3c0dcbee3"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/receiver-correction.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46e3aabd682c9afe97800cd1c1e4d8a1b31b3753"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/root-integration.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76b5eb59b1746fd76adad99d73be41e7327e9266"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/run-cli-gate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "984c7b62368eff029792a12f7facda4bf6550833"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/run-pytest-gate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58f613b11474c28401fd505bf180e57c7996a907"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/source-intake.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f1c9b0e7293ac63c29a39fdcb32f36c6663f74a"
+    },
+    {
+      "path": "docs/run-cancellation.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8956abb39915e235531c3e217050ccc2089173d"
+    },
+    {
+      "path": "tests/test_sandbox_interrupt.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35a8152aa41be8aafffcc1f5713bedbf2abd7533"
+    }
+  ],
+  "unrelated_preserved": 1425,
+  "leaves": 1477,
+  "conflicts": [],
+  "mismatches": []
+}

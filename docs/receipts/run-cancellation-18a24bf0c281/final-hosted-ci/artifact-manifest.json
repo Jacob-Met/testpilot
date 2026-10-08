@@ -1,0 +1,77 @@
+{
+  "schema": "testpilot-final-hosted-artifact-manifest/v1",
+  "files": [
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 1823,
+      "sha256": "f919619715fdb40f5c92c5a203e50cecec2c9f4e5c0a7cce44f4cc8cb3628bc0",
+      "git_blob": "5ea4ff0d9654a75417bcdc0d75cc99c9ab2b8dc7"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/qualification.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 3286,
+      "sha256": "9da36f5e78c7cb83576eb50c64e22fa092732b296237b40c0edd0662dad3ee1d",
+      "git_blob": "97abded353d5d1294ed0746622fa01d54e576671"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/hosted-test-job.log",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 16866,
+      "sha256": "ee9b7b0e5407aaf3d9f56d6275c15859a36cf370f080c9b8e630e15b6df4f8fc",
+      "git_blob": "e9ee3bbc02ac51acaef66a3ff7f6baf52e8c5ee6"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/workflow-run.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 14693,
+      "sha256": "c11d337125959e31ed568a8a2de35c386f4f9ab9c4aae92f8bc47838254f8dcb",
+      "git_blob": "46fd900e32c5e36820b5bb6140d2a459b84ab9b8"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/workflow-jobs.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 3370,
+      "sha256": "4e82fe294420d2a95e6774bb7d0e6734d12f0f059dcc7b0fae31502784efe399",
+      "git_blob": "6c4771aef634e87c539bcef0c25c948ecc438c1a"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/tested-merge-tree-proof.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 15579,
+      "sha256": "701f792cfe798930d12c5094181fdf7a7d3ae3a20d27ef20dc84c9f8fb1331e1",
+      "git_blob": "4e5cabf849cfc62b139f41ee893ccaeb1cebdf35"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/merged-commit.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 3703,
+      "sha256": "c0c908308dc85057378123f1314371c91f6dbd6096e547509e9f7b54d649f976",
+      "git_blob": "7ff420c3767ce280c062ced491d5078b108d1343"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/current-parent-static-review.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 3380,
+      "sha256": "294b0b38e05e89ce49ea525a5f929bd7effafbdae1231b239870960935a3590b",
+      "git_blob": "e8d28f8f56fdf2ad9c52267446b2b6bd9b994c12"
+    },
+    {
+      "path": "docs/receipts/run-cancellation-18a24bf0c281/final-hosted-ci/packet-transfer-recovery.json",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 740,
+      "sha256": "0ff6479347f9c0812d23b760d9dc6b3f9b70f600e56ca845bc663466a1327314",
+      "git_blob": "29f22aeb93a55dcf231ddda6fd3d3b9b5c461630"
+    }
+  ]
+}

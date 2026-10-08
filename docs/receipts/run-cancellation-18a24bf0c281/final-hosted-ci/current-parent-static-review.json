@@ -1,0 +1,95 @@
+{
+  "schema": "testpilot-current-parent-static-review/v1",
+  "repository": "Jacob-Met/testpilot",
+  "previous": {
+    "commit": "cec50d8df4499ba509615e179d82ef3861379bd2",
+    "tree": "c0c6f5fe6bf5c4e94e196882a7f28246b42c05bb",
+    "leaves": 1297,
+    "truncated": false
+  },
+  "current": {
+    "commit": "513f17454af378ee042ccd29dc930ef332a48734",
+    "tree": "ffded624f1e44bed9e10872dfb795dae2dda1a46",
+    "leaves": 1426,
+    "truncated": false
+  },
+  "delta": {
+    "added": 129,
+    "modified": 3,
+    "removed": 0,
+    "production": [
+      {
+        "path": "testpilot/__main__.py",
+        "before": "44f485af279e66f75c6e4ef881b5a75e5d0cdef2",
+        "after": "53b9436ca572c0cb9e9a10e32252197bdd9ffd98",
+        "inverse_hunks": 4
+      },
+      {
+        "path": "testpilot/diff.py",
+        "before": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+        "after": "ab4d562bdad9e5e2ecd977df8245562d16f1cbd9",
+        "inverse_hunks": 3
+      }
+    ],
+    "inverse_exact_previous_bytes": true,
+    "other_modified_path": "README.md"
+  },
+  "unchanged": {
+    "remaining_package_modules": 9,
+    "loop": "a9de8356f3454334578bdfd1af19d6382b8a64a0",
+    "sandbox_original": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+    "workflow": "86a3236e38155506b5fe6077322d508f7f676649",
+    "pyproject": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+  },
+  "contribution": {
+    "published_head": "95a3116c175debdf97fd9dc1c984a587a90a5d3b",
+    "sandbox_candidate": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+    "corrected_test": "35a8152aa41be8aafffcc1f5713bedbf2abd7533",
+    "test_and_receipt_paths_absent_in_current_main": true
+  },
+  "fixtures": [
+    {
+      "driver": "57c18d72bce9277ca01c6ee58baf23f3c0dcbee3",
+      "timeout_s": 12,
+      "diff_bytes": 108,
+      "diff_sha256": "69cfd2f0d3edc665b15d20f12dffd8e7084a9c7291f8dff4a60ee7699dee3eab",
+      "path": "sample.py",
+      "function": "double",
+      "declared_old": 2,
+      "declared_new": 2,
+      "actual_old": 2,
+      "actual_new": 2,
+      "changed_line": 2
+    },
+    {
+      "driver": "a2276af9c1a319a50dfdf357ebf6ca759c7f7c5e",
+      "prepare": "edfa81b25d9069f3d1960bd1c4b11056e5cd228e",
+      "timeout_s": 30,
+      "diff_bytes": 164,
+      "diff_sha256": "fdf29283205d641bea9625d96c87d85601df9edf64aed5c0588756ff4018e9c3",
+      "path": "pair_math.py",
+      "function": "combine",
+      "declared_old": 2,
+      "declared_new": 2,
+      "actual_old": 2,
+      "actual_new": 2,
+      "changed_line": 2
+    }
+  ],
+  "assessment": {
+    "input_mode": "saved diff files, no explicit target",
+    "positive_finite_timeouts_admitted": true,
+    "default_timeout_60_preserved": true,
+    "complete_hunks_admitted": true,
+    "changed_functions_and_path_source_helpers_byte_exact": true,
+    "keyboard_interrupt_not_caught_by_added_diff_errors": true,
+    "ownership": "PR48 and PR49 merged; both scopes preserve cancellation",
+    "native_replay_required_by_delta": false,
+    "required_next_gate": "Corrected-head actual synthetic merge hosted CI"
+  },
+  "limits": [
+    "Static source and literal-input inspection only; no product import or execution, native writes, provider calls or suite reruns.",
+    "Original native receiving remains bound to its recorded source; no current-parent execution claim.",
+    "The ps-width correction packet and previous failed hosted/native evidence remain unchanged."
+  ]
+}

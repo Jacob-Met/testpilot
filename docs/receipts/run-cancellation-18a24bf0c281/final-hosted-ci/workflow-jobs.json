@@ -1,0 +1,97 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 113504469109,
+      "run_id": 37833468085,
+      "workflow_name": "ci",
+      "head_branch": "work/run-cancellation-18a24bf0c281-20261008",
+      "run_url": "https://api.github.com/repos/Jacob-Met/testpilot/actions/runs/37833468085",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOU7nhDM8AAAAabWTAdQ",
+      "head_sha": "37985347ec7957902cc51223a0916b86ed5ef1f5",
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/actions/jobs/113504469109",
+      "html_url": "https://github.com/Jacob-Met/testpilot/actions/runs/37833468085/job/113504469109",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-08T19:38:33Z",
+      "started_at": "2026-10-08T19:38:35Z",
+      "completed_at": "2026-10-08T19:40:12Z",
+      "name": "tests",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-08T19:38:36Z",
+          "completed_at": "2026-10-08T19:38:36Z"
+        },
+        {
+          "name": "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-08T19:38:36Z",
+          "completed_at": "2026-10-08T19:38:38Z"
+        },
+        {
+          "name": "Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-08T19:38:38Z",
+          "completed_at": "2026-10-08T19:38:38Z"
+        },
+        {
+          "name": "Run pip install \"pytest>=8\" \"coverage>=7\"",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-08T19:38:38Z",
+          "completed_at": "2026-10-08T19:38:41Z"
+        },
+        {
+          "name": "Run python -m pytest -q",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-08T19:38:41Z",
+          "completed_at": "2026-10-08T19:40:10Z"
+        },
+        {
+          "name": "Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-08T19:40:10Z",
+          "completed_at": "2026-10-08T19:40:10Z"
+        },
+        {
+          "name": "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-08T19:40:10Z",
+          "completed_at": "2026-10-08T19:40:10Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-08T19:40:10Z",
+          "completed_at": "2026-10-08T19:40:10Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/Jacob-Met/testpilot/check-runs/113504469109",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000008510,
+      "runner_name": "GitHub Actions 1000008510",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
