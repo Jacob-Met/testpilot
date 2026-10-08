@@ -1,0 +1,159 @@
+{
+  "argv": [
+    "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-rA",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-sandbox-gate/temporary-fixtures",
+    "--junitxml",
+    "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-sandbox-gate/junit.xml",
+    "tests/test_sandbox_interrupt.py",
+    "tests/test_sandbox_deadline.py",
+    "tests/test_sandbox.py"
+  ],
+  "source": "/Users/me/testpilot-cancellation-18a24bf0c281/candidate",
+  "exit_code": 0,
+  "elapsed_s": 11.327836457989179,
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "pytest": "9.1.1",
+  "canonical_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "source_before": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "README.md": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+    "testpilot/loop.py": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    "tests/test_sandbox_deadline.py": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1",
+    "tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+    "tests/test_sandbox_interrupt.py": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+    "docs/run-cancellation.md": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+  },
+  "source_after": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "README.md": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+    "testpilot/loop.py": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    "tests/test_sandbox_deadline.py": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1",
+    "tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+    "tests/test_sandbox_interrupt.py": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+    "docs/run-cancellation.md": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+  },
+  "source_unchanged": true,
+  "cases": [
+    {
+      "name": "test_interrupt_stops_same_group_descendant_and_reaps_leader[group-wait]",
+      "class": "tests.test_sandbox_interrupt",
+      "status": "passed"
+    },
+    {
+      "name": "test_interrupt_stops_same_group_descendant_and_reaps_leader[group-exit]",
+      "class": "tests.test_sandbox_interrupt",
+      "status": "passed"
+    },
+    {
+      "name": "test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-wait]",
+      "class": "tests.test_sandbox_interrupt",
+      "status": "passed"
+    },
+    {
+      "name": "test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-exit]",
+      "class": "tests.test_sandbox_interrupt",
+      "status": "passed"
+    },
+    {
+      "name": "test_combined_output_and_returncode_remain_available",
+      "class": "tests.test_sandbox_deadline",
+      "status": "passed"
+    },
+    {
+      "name": "test_timeout_finishes_when_detached_helper_retains_pipe[False]",
+      "class": "tests.test_sandbox_deadline",
+      "status": "passed"
+    },
+    {
+      "name": "test_timeout_finishes_when_detached_helper_retains_pipe[True]",
+      "class": "tests.test_sandbox_deadline",
+      "status": "passed"
+    },
+    {
+      "name": "test_timeout_preserves_partial_multibyte_diagnostics",
+      "class": "tests.test_sandbox_deadline",
+      "status": "passed"
+    },
+    {
+      "name": "test_empty_timeout_output_stays_empty",
+      "class": "tests.test_sandbox_deadline",
+      "status": "passed"
+    },
+    {
+      "name": "test_real_pytest_timeout_then_fresh_success",
+      "class": "tests.test_sandbox_deadline",
+      "status": "passed"
+    },
+    {
+      "name": "test_pass_and_isolation",
+      "class": "tests.test_sandbox",
+      "status": "passed"
+    },
+    {
+      "name": "test_failure_reported",
+      "class": "tests.test_sandbox",
+      "status": "passed"
+    },
+    {
+      "name": "test_collection_error_counts_as_error",
+      "class": "tests.test_sandbox",
+      "status": "passed"
+    },
+    {
+      "name": "test_timeout_kills",
+      "class": "tests.test_sandbox",
+      "status": "passed"
+    },
+    {
+      "name": "test_rejects_escape",
+      "class": "tests.test_sandbox",
+      "status": "passed"
+    },
+    {
+      "name": "test_no_tests_is_not_ok",
+      "class": "tests.test_sandbox",
+      "status": "passed"
+    },
+    {
+      "name": "test_env_scrubbed",
+      "class": "tests.test_sandbox",
+      "status": "passed"
+    },
+    {
+      "name": "test_coverage_collected",
+      "class": "tests.test_sandbox",
+      "status": "skipped"
+    }
+  ],
+  "raw_logs": {
+    "pytest.stdout": "90377ed6a70b2516f23e24108f544af75def2980a7991fd83bb62dc25007f4e0",
+    "pytest.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "junit.xml": "2fa1a8cb8a9ef0be6c91afb6f0e4cc892c58733c2e04b96f5ffab53e352ba452"
+  }
+}

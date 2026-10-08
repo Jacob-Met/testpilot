@@ -1,0 +1,1 @@
+{"checks": {"interrupted_cli_failed_without_publishing_result": true, "interrupted_pytest_work_stops_before_parent_returns": true, "ordinary_scripted_run_passes": true, "all_original_source_bytes_unchanged": true}, "passed": 4, "total": 4, "interrupted_returncode": -2, "post_cancel_work_observed": false}

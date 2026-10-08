@@ -1,0 +1,22 @@
+.................s                                                       [100%]
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_sandbox_interrupt.py::test_interrupt_stops_same_group_descendant_and_reaps_leader[group-wait]
+PASSED tests/test_sandbox_interrupt.py::test_interrupt_stops_same_group_descendant_and_reaps_leader[group-exit]
+PASSED tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-wait]
+PASSED tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-exit]
+PASSED tests/test_sandbox_deadline.py::test_combined_output_and_returncode_remain_available
+PASSED tests/test_sandbox_deadline.py::test_timeout_finishes_when_detached_helper_retains_pipe[False]
+PASSED tests/test_sandbox_deadline.py::test_timeout_finishes_when_detached_helper_retains_pipe[True]
+PASSED tests/test_sandbox_deadline.py::test_timeout_preserves_partial_multibyte_diagnostics
+PASSED tests/test_sandbox_deadline.py::test_empty_timeout_output_stays_empty
+PASSED tests/test_sandbox_deadline.py::test_real_pytest_timeout_then_fresh_success
+PASSED tests/test_sandbox.py::test_pass_and_isolation
+PASSED tests/test_sandbox.py::test_failure_reported
+PASSED tests/test_sandbox.py::test_collection_error_counts_as_error
+PASSED tests/test_sandbox.py::test_timeout_kills
+PASSED tests/test_sandbox.py::test_rejects_escape
+PASSED tests/test_sandbox.py::test_no_tests_is_not_ok
+PASSED tests/test_sandbox.py::test_env_scrubbed
+SKIPPED [1] tests/test_sandbox.py:61: coverage not installed
+17 passed, 1 skipped in 11.18s

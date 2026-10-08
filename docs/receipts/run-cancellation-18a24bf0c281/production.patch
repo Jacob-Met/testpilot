@@ -1,0 +1,31 @@
+--- a/testpilot/sandbox.py
++++ b/testpilot/sandbox.py
+@@ -150,12 +150,27 @@
+ 
+ 
+ def _run(cmd: list[str], cwd: Path, env: dict, timeout: float) -> tuple[int | None, str, bool]:
+-    """Collect output, with at most one extra second of POSIX timeout cleanup."""
++    """Collect output, bounding POSIX timeout and interrupt cleanup."""
+     proc = subprocess.Popen(cmd, cwd=cwd, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
+                             stderr=subprocess.STDOUT, text=True, errors="replace", start_new_session=True)
+     try:
+         out, _ = proc.communicate(timeout=timeout)
+         return proc.returncode, out, False
++    except KeyboardInterrupt:
++        if os.name == "posix":
++            try:
++                try:
++                    os.killpg(proc.pid, signal.SIGKILL)
++                except ProcessLookupError:
++                    pass
++                # Reap the leader without draining an escaped helper's pipe.
++                proc.wait(timeout=1.0)
++            except (OSError, subprocess.TimeoutExpired):
++                # Cleanup failure must not replace the caller's cancellation.
++                pass
++            finally:
++                proc.stdout.close()
++        raise
+     except subprocess.TimeoutExpired:
+         try:
+             os.killpg(proc.pid, signal.SIGKILL)
