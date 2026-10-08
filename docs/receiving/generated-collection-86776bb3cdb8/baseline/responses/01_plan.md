@@ -1,0 +1,1 @@
+Check that normalization strips and lowercases.

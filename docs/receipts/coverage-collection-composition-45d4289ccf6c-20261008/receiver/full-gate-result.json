@@ -1,0 +1,57 @@
+{
+  "case_modules": {
+    "other": {
+      "error": 0,
+      "failed": 4,
+      "passed": 111,
+      "skipped": 0
+    },
+    "test_coverage_reporting": {
+      "error": 0,
+      "failed": 0,
+      "passed": 7,
+      "skipped": 0
+    },
+    "test_generated_collection": {
+      "error": 0,
+      "failed": 0,
+      "passed": 15,
+      "skipped": 0
+    },
+    "test_generated_collection_receiving": {
+      "error": 0,
+      "failed": 0,
+      "passed": 11,
+      "skipped": 0
+    },
+    "test_loop": {
+      "error": 0,
+      "failed": 0,
+      "passed": 13,
+      "skipped": 0
+    },
+    "test_sandbox": {
+      "error": 0,
+      "failed": 0,
+      "passed": 8,
+      "skipped": 0
+    }
+  },
+  "completed_utc": "2026-10-08T11:39:18.968170+00:00",
+  "counts": {
+    "error": 0,
+    "failed": 4,
+    "passed": 165,
+    "skipped": 0
+  },
+  "receipt_sha256": "f755d79edae67ea09de46c7379f02885b057c4738b7f0639615899b01a5fb4f0",
+  "returncode": 1,
+  "source_unchanged": true,
+  "stdout_tail": "())\n        assert report[\"status\"] == \"passed\"\n        assert report[\"repair_rounds_used\"] == 1\n        assert report[\"tests_written\"] == 1\n        assert report[\"rounds\"][0][\"result\"][\"failed\"] == 1\n        assert report[\"final\"][\"passed\"] == 2\n        if importlib.util.find_spec(\"coverage\"):\n>           assert report[\"coverage\"][\"changed_lines_after\"] == 100.0\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: 'NoneType' object is not subscriptable\n\n../../composition-dcd353-worktree/tests/test_cli_python.py:114: TypeError\n_ test_project_environment_runs_baseline_generation_and_repair[symlink-parent] _\n\ntmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3')\nproject = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...stpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/script'))\nprepared_python = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...9ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/physical/prepared environment'))\nspelling = 'symlink-parent'\n\n    @pytest.mark.parametrize(\"spelling\", [\"absolute\", \"relative\", \"path\", pytest.param(\n        \"symlink-parent\", marks=pytest.mark.skipif(os.name == \"nt\", reason=\"directory symlinks need optional Windows privileges\"),\n    )])\n    def test_project_environment_runs_baseline_generation_and_repair(tmp_path, project, prepared_python, spelling):\n        python, environment = prepared_python\n        receipt = tmp_path / \"executions.jsonl\"\n        env = {\"PROJECT_ENV_RECEIPT\": str(receipt)}\n        selected = str(python)\n        if spelling == \"relative\":\n            selected = os.path.relpath(python, tmp_path)\n        elif spelling == \"path\":\n            selected = python.name\n            env[\"PATH\"] = str(python.parent) + os.pathsep + os.environ.get(\"PATH\", \"\")\n        elif spelling == \"symlink-parent\":\n            child = environment.parent / \"child\"\n            child.mkdir()\n            (tmp_path / \"bridge\").symlink_to(child, target_is_directory=True)\n            selected = str(Path(\"bridge\") / \"..\" / environment.name / python.parent.name / python.name)\n        repo, _, _ = project\n        original = {p.relative_to(repo).as_posix(): p.read_bytes() for p in repo.rglob(\"*\") if p.is_file()}\n    \n        result = invoke(tmp_path, project, [\"--python\", selected], env)\n    \n        assert result.returncode == 0, result.stderr + result.stdout\n        report = json.loads((tmp_path / \"output/report.json\").read_text())\n        assert report[\"status\"] == \"passed\"\n        assert report[\"repair_rounds_used\"] == 1\n        assert report[\"tests_written\"] == 1\n        assert report[\"rounds\"][0][\"result\"][\"failed\"] == 1\n        assert report[\"final\"][\"passed\"] == 2\n        if importlib.util.find_spec(\"coverage\"):\n>           assert report[\"coverage\"][\"changed_lines_after\"] == 100.0\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE           TypeError: 'NoneType' object is not subscriptable\n\n../../composition-dcd353-worktree/tests/test_cli_python.py:114: TypeError\n=========================== short test summary info ============================\nFAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[absolute]\nFAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[relative]\nFAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[path]\nFAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[symlink-parent]\n4 failed, 165 passed in 118.25s (0:01:58)\n",
+  "temporary_children": [],
+  "versions": {
+    "coverage": "7.16.2",
+    "pytest": "9.0.2",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  }
+}

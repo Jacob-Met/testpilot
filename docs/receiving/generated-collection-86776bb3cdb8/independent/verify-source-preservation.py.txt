@@ -1,0 +1,125 @@
+"""Read immutable Git objects and retained runtime evidence; do not rerun tests."""
+from __future__ import annotations
+
+import ast
+import hashlib
+import json
+import subprocess
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+REPO = ROOT / "repo"
+BASE = "9f01fcb6de085850eca00db746380795eb548d62"
+FIRST = "2e32efee7fec4b97f3756083c66f4b860359957b"
+FIXED = "76df7c0fb389f31f2101894f305ca3d49eac9185"
+MAIN = "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125"
+FINAL = "c556e9b883fb372b938c50240977ddb5785c43bb"
+
+def git(*args):
+    return subprocess.check_output(["git", "-C", str(REPO), *args])
+
+def content(pin, path):
+    return git("show", f"{pin}:{path}")
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def leaves(pin):
+    result = {}
+    for row in git("ls-tree", "-rz", pin).split(b"\0"):
+        if row:
+            head, path = row.split(b"\t", 1)
+            mode, kind, oid = head.decode().split()
+            result[path.decode()] = {"mode": mode, "type": kind, "sha": oid}
+    return result
+
+def changed(left, right):
+    return sorted(p for p in left.keys() | right.keys() if left.get(p) != right.get(p))
+
+trees = {pin: leaves(pin) for pin in (BASE, FIRST, FIXED, MAIN, FINAL)}
+own_paths = ["README.md", "testpilot/_pytest_generated.py", "testpilot/loop.py", "testpilot/sandbox.py", "tests/test_generated_collection.py", "tests/test_generated_collection_receiving.py"]
+assert changed(trees[MAIN], trees[FINAL]) == own_paths
+assert changed(trees[FIXED], trees[FINAL]) == [".github/workflows/ci.yml", "tests/test_eval.py"]
+for path in own_paths:
+    assert trees[FIXED][path] == trees[FINAL][path]
+for path in trees[MAIN].keys() - set(own_paths):
+    assert trees[MAIN][path] == trees[FINAL][path]
+for path in (".github/workflows/ci.yml", "tests/test_eval.py"):
+    assert trees[MAIN][path] == trees[FINAL][path]
+assert git("show", "-s", "--format=%P", FINAL).decode().strip().split() == [FIXED, MAIN]
+assert content(FIRST, "testpilot/_pytest_generated.py") == content(FINAL, "testpilot/_pytest_generated.py")
+assert content(FINAL, "tests/test_generated_collection_receiving.py") == (ROOT / "test_generated_collection_receiving.py").read_bytes()
+
+# Only the report-presence gate changed in these production files after the 11-case run.
+fixed_loop = content(FIXED, "testpilot/loop.py").decode()
+assert fixed_loop.replace("result.generated_files and result.junit_available:", "result.generated_files:", 1) == content(FIRST, "testpilot/loop.py").decode()
+fixed_sandbox = content(FIXED, "testpilot/sandbox.py").decode()
+normalized = fixed_sandbox.replace("    junit_available: bool = False\n", "", 1)
+normalized = normalized.replace("        junit_available = junit.exists() and not timed_out\n        cases = parse_junit(junit) if junit_available else []", "        cases = parse_junit(junit) if junit.exists() and not timed_out else []", 1)
+normalized = normalized.replace("        return SandboxResult(rc, timed_out, round(dur, 3), timeout, out, cases, cov,\n                             generated_files, junit_available)", "        return SandboxResult(rc, timed_out, round(dur, 3), timeout, out, cases, cov, generated_files)", 1)
+assert normalized == content(FIRST, "testpilot/sandbox.py").decode()
+
+def definitions(source):
+    text = source.decode()
+    return {node.name: ast.get_source_segment(text, node) for node in ast.parse(text).body if isinstance(node, (ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef))}
+
+preserved_definitions = {}
+for path, changed_names in {
+    "testpilot/sandbox.py": {"CaseResult", "SandboxResult", "parse_junit", "run_pytest"},
+    "testpilot/loop.py": {"count_tests", "TestPilot"},
+}.items():
+    before = definitions(content(BASE, path))
+    after = definitions(content(FINAL, path))
+    names = sorted(before.keys() - changed_names)
+    assert all(before[name] == after[name] for name in names)
+    preserved_definitions[path] = names
+
+# Removing just the two explicit loop additions recreates the original loop byte for byte.
+final_loop = content(FINAL, "testpilot/loop.py").decode()
+before_loop = final_loop.replace("    if result is not None and result.generated_files and result.junit_available:\n        return len(result.generated_cases)\n", "", 1)
+before_loop = before_loop.replace('            elif (final.generated_files and not final.timed_out and final.returncode in (0, 5)\n                  and not final.failed and not final.errors):\n                status = "no_tests"\n                message = ("no generated test case passed; existing-suite passes do not qualify "\n                           f"the generated patch: {final.summary()}")\n', "", 1)
+assert before_loop == content(BASE, "testpilot/loop.py").decode()
+
+runtime_guards = []
+for name, pin in (("baseline", BASE), ("candidate", FIRST)):
+    runtime = json.loads((ROOT / f"{name}-runtime.json").read_text())
+    receipt = json.loads((ROOT / f"{name}-controls-receipt.json").read_text())
+    for module in runtime["modules"]:
+        path = module["module"].replace(".", "/") + ".py"
+        assert module["sha256"] == sha(content(pin, path))
+        assert Path(module["path"]) == REPO / path
+    for key, file in (("test_sha256", "test_independent_collection_receiving.py"), ("runtime_sha256", f"{name}-runtime.json"), ("log_sha256", f"{name}-controls.log"), ("junit_sha256", f"{name}-junit.xml")):
+        assert receipt[key] == sha((ROOT / file).read_bytes())
+    runtime_guards.append({"run": name, "source": pin, "loaded_modules_exact": True, "receipt_files_exact": True})
+
+primary_paths = [path for path in trees[MAIN] if Path(path).name == "AGENTS.md" or path.startswith(".github/workflows/")]
+receipt = {
+    "observed_at": datetime.now(timezone.utc).isoformat(),
+    "source": FINAL,
+    "tree": git("rev-parse", f"{FINAL}^{{tree}}").decode().strip(),
+    "parents": [FIXED, MAIN],
+    "base": BASE,
+    "tested_first_source": FIRST,
+    "fixed_source": FIXED,
+    "current_main": MAIN,
+    "current_main_tree": git("rev-parse", f"{MAIN}^{{tree}}").decode().strip(),
+    "leaf_counts": {pin: len(mapping) for pin, mapping in trees.items()},
+    "changed_paths_from_main": own_paths,
+    "unchanged_current_main_leaves": len(trees[MAIN].keys() - set(own_paths)),
+    "current_main_extra_files_preserved": [".github/workflows/ci.yml", "tests/test_eval.py"],
+    "all_six_contribution_files_equal_fixed_source": True,
+    "runner_equal_first_tested_source": True,
+    "successor_production_delta": "Only an additive junit_available field, explicit report presence local/result wiring, and a provenance-count presence check; reversing them recreates tested production files exactly.",
+    "preserved_definition_names": preserved_definitions,
+    "loop_outside_two_added_blocks_byte_exact": True,
+    "portable_test_byte_exact": True,
+    "runtime_receipt_guards": runtime_guards,
+    "instructions_and_workflows": primary_paths,
+    "source_files": [{"path": path, **trees[FINAL][path], "sha256": sha(content(FINAL, path))} for path in own_paths],
+    "scope": "Immutable Git source/readback only. The current-main source composition introduced no contribution-source change. Native controls are retained at their actual tested pins."
+}
+(ROOT / "source-preservation.json").write_text(json.dumps(receipt, indent=2) + "\n")
+(ROOT / "source-leaves.json").write_text(json.dumps(trees[FINAL], sort_keys=True, indent=2) + "\n")
+(ROOT / "current-main-leaves.json").write_text(json.dumps(trees[MAIN], sort_keys=True, indent=2) + "\n")
+print(json.dumps({"source": FINAL, "tree": receipt["tree"], "final_leaves": len(trees[FINAL]), "unchanged_current_main_leaves": receipt["unchanged_current_main_leaves"], "guards": "all passed", "files": receipt["source_files"]}, indent=2))

@@ -1,0 +1,11 @@
+# TestPilot report: **no_changes**
+
+diff touches no Python functions outside tests
+
+- Changed functions: none
+- Tests written: 0 in -
+- Repair rounds used: 0/0
+- Coverage: unavailable (install `coverage`)
+- Tokens: 0; cost: $0.000000
+
+wrote /srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/baseline-output/testpilot.patch, /srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/baseline-output/report.json, /srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/baseline-output/report.md

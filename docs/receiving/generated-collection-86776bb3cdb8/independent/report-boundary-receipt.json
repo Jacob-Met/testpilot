@@ -1,0 +1,104 @@
+{
+  "observed_at": "2026-10-08T11:08:47.388023+00:00",
+  "source": "c556e9b883fb372b938c50240977ddb5785c43bb",
+  "tree": "b394b312f490338557cc6be7b03e53f6b51e1b4a",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_executable": "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+  "loaded_sandbox": "/dev/shm/86776bb3cdb8-receiving-testpilot/repo/testpilot/sandbox.py",
+  "sandbox_sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+  "loop_sha256": "99225601277132368efc52ba6cdc9df3329f144d50f3d322c372ca77258195c7",
+  "driver_sha256": "053806772d671b286d6330753cf649d0a6c1c138623f13691951b6fd2e888c9c",
+  "controls": [
+    {
+      "name": "complete_empty_report",
+      "written_count": 0,
+      "result": {
+        "returncode": 5,
+        "timed_out": false,
+        "duration_s": 0.329,
+        "timeout_s": 1.0,
+        "output": "\n3 deselected in 0.00s\n",
+        "cases": [],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_authored.py"
+        ],
+        "junit_available": true,
+        "passed": 0,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "0 passed, 0 failed, 0 errors, 0 skipped (rc=5); generated: 0 passed of 0 collected",
+        "generated": {
+          "collected": 0,
+          "passed": 0,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "abrupt_exit_without_report",
+      "written_count": 2,
+      "result": {
+        "returncode": 17,
+        "timed_out": false,
+        "duration_s": 0.207,
+        "timeout_s": 1.0,
+        "output": ".",
+        "cases": [],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_authored.py"
+        ],
+        "junit_available": false,
+        "passed": 0,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "0 passed, 0 failed, 0 errors, 0 skipped (rc=17); generated: 0 passed of 0 collected",
+        "generated": {
+          "collected": 0,
+          "passed": 0,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      }
+    },
+    {
+      "name": "timeout_without_report",
+      "written_count": 2,
+      "result": {
+        "returncode": null,
+        "timed_out": true,
+        "duration_s": 1.004,
+        "timeout_s": 1.0,
+        "output": ".",
+        "cases": [],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_authored.py"
+        ],
+        "junit_available": false,
+        "passed": 0,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "TIMEOUT after 1s",
+        "generated": {
+          "collected": 0,
+          "passed": 0,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      }
+    }
+  ],
+  "scope": "Three actual native pytest processes; complete-empty report distinguishes zero collected tests from timeout or abrupt termination without a report. No broad collection-suite rerun."
+}

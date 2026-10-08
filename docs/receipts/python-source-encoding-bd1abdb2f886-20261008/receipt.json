@@ -1,0 +1,93 @@
+{
+  "source_base": "f350150259c00dd25c43a95d65157022612d15a8",
+  "base_tree": "1fabd676af1bf4cc8c396fc1962b2ea1bc618b66",
+  "original_runtime_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+  "native_source_test_fixture_metadata_files_checked": 84,
+  "unrelated_native_files_preserved": 83,
+  "new_tests_frozen_before_runtime_edit": true,
+  "baseline_new_tests": {
+    "passed": 7,
+    "failed": 8,
+    "skipped": 0
+  },
+  "candidate_selection_suites": {
+    "passed": 81,
+    "failed": 0,
+    "skipped": 0
+  },
+  "candidate_full_suite": {
+    "passed": 144,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 44.72
+  },
+  "actual_cli_cases": 2,
+  "per_cli_case": {
+    "original_exit": 1,
+    "candidate_exit": 0,
+    "tests_written": 1,
+    "final_pytest_passed": 2,
+    "changed_line_coverage_before": 0.0,
+    "changed_line_coverage_after": 100.0,
+    "git_apply_check": true,
+    "input_source_and_test_unchanged": true
+  },
+  "independent_root_source_review": "accepted exact runtime and complete 15-case regression; no blocking source defect",
+  "scope_limit": "Selected Python source encoding only; the existing UTF-8 diff-text transport is unchanged. Windows and installed runtime not exercised.",
+  "files": [
+    {
+      "path": "testpilot/diff.py",
+      "bytes": 9206,
+      "sha256": "d5fce39356d8fba48557907184b18d55796aa22dce71072cb4b3ec89423d037c",
+      "git_blob": "d7d4c194c3730e4c7a8093b485491a7873afe814"
+    },
+    {
+      "path": "tests/test_python_source_encoding.py",
+      "bytes": 5598,
+      "sha256": "85196e144916098af0fe677f01382eeb48c6f175008c76446756c438ee741b89",
+      "git_blob": "903abd6db569a80e3a5a61d734bf376c0ac4c8dd"
+    },
+    {
+      "path": "docs/receipts/python-source-encoding-bd1abdb2f886-20261008/README.md",
+      "bytes": 6222,
+      "sha256": "28963fd21d2211dbf27d54445d96b01429ca91ae1867993b0160f3efabaa3d24",
+      "git_blob": "16f0d7e97aafc3124bf8726252e5a4487bedcb5d"
+    },
+    {
+      "path": "docs/receipts/python-source-encoding-bd1abdb2f886-20261008/baseline-focused.log",
+      "bytes": 20879,
+      "sha256": "a4f23c7c096c2b00f65c4bb09e462bf32cab941fe39b8c35597f0ecabe3507e9",
+      "git_blob": "b5c1244af5e1b74cfe7d85f7a3d05e83e9fb7570"
+    },
+    {
+      "path": "docs/receipts/python-source-encoding-bd1abdb2f886-20261008/baseline-workflow.json",
+      "bytes": 6467,
+      "sha256": "204e9cb7807ba24f947d05f1d37d7130e9d2d44accc6f3230bf403e883592050",
+      "git_blob": "6c3da52db3d3053ee5d7e09e606be7035433ed71"
+    },
+    {
+      "path": "docs/receipts/python-source-encoding-bd1abdb2f886-20261008/candidate-focused.log",
+      "bytes": 179,
+      "sha256": "1990d66aaa35609bdb2fbc4a30feedbe5a76b8aff270a6ee8fe77a967a9637d0",
+      "git_blob": "49f1dc784dca48b8e6de6a80b54a6eecf469a7b9"
+    },
+    {
+      "path": "docs/receipts/python-source-encoding-bd1abdb2f886-20261008/candidate-full.log",
+      "bytes": 181,
+      "sha256": "d82539b67aceedd7d0df3bdc9bbb47267347fa2e60e4c9c39cffc3e111d0f8a4",
+      "git_blob": "8fb56079f7fa8af9eddd017727bee79e6f028cb7"
+    },
+    {
+      "path": "docs/receipts/python-source-encoding-bd1abdb2f886-20261008/candidate-workflow.json",
+      "bytes": 17199,
+      "sha256": "0a79bc15f2b7e310e2caef64b380ecdc7e67eeea2bf218398b46494892ccc494",
+      "git_blob": "17f6ed54862fa9b24a9d7b2c67ea57ae611f388e"
+    },
+    {
+      "path": "docs/receipts/python-source-encoding-bd1abdb2f886-20261008/check_encoded_workflow.py",
+      "bytes": 6535,
+      "sha256": "397ad93a5fb9a388b5ddbaf0d162d7be413418d5c090bce307dd5ea931c94771",
+      "git_blob": "2129594b3bd902f188a99912e4604a41381acafe"
+    }
+  ]
+}

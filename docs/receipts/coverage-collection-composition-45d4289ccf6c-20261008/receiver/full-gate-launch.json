@@ -1,0 +1,29 @@
+{
+  "started_utc": "2026-10-08T11:37:19.978008+00:00",
+  "command": [
+    "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+    "-B",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/run_receiving.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_cli_python.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_coverage_reporting.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_diff.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_diff_source_boundary.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_eval.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_generated_collection.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_generated_collection_receiving.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_generated_test_preservation.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_git_quoted_paths.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_loop.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_match_targets.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_model.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_report_text_encoding.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_sandbox.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_sandbox_deadline.py"
+  ],
+  "source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "receiver_sha256": "8755aaea0cde012820762e306be7b7f2d607cd3ae7f1ec3a5aa030452af148c1",
+  "one_material_combined_run": true,
+  "standalone_tests_repeated": false
+}

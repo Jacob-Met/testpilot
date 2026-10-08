@@ -1,0 +1,434 @@
+{
+  "actual_cli_receiving": [
+    {
+      "case_index": 0,
+      "case_name": "test_project_environment_runs_baseline_generation_and_repair[absolute]",
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "execution_count": 5,
+      "executions_sha256": "4763f94f5bc8a976d9e23dd052032b6f15f3248f742eef3432afb0706a5dc097",
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "original_negative_patch_equal": true,
+      "patch_sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9",
+      "report_sha256": "b5c24fa5ba4b1b8af76ffe2b606dab83036cba8efe422e63463f41f39ca4806d",
+      "selected_prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/selected-python-aligned/fixtures/test_project_environment_runs_0/physical/prepared environment",
+      "tooling_parent": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages"
+    },
+    {
+      "case_index": 1,
+      "case_name": "test_project_environment_runs_baseline_generation_and_repair[relative]",
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "execution_count": 5,
+      "executions_sha256": "67c1f4bffc8e19ac3c0163bff2d9fc7772b2fb9b206e6ba68ffca577e57b3c87",
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "original_negative_patch_equal": true,
+      "patch_sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9",
+      "report_sha256": "498306381e110c96404fddeb5bf2524bc91d5d8b0174b5aac5b22107f40dff0f",
+      "selected_prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/selected-python-aligned/fixtures/test_project_environment_runs_1/physical/prepared environment",
+      "tooling_parent": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages"
+    },
+    {
+      "case_index": 2,
+      "case_name": "test_project_environment_runs_baseline_generation_and_repair[path]",
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "execution_count": 5,
+      "executions_sha256": "57455ee89f23b7e040256cd87453fbebe475e3abca22e626a30a15f75b223618",
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "original_negative_patch_equal": true,
+      "patch_sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9",
+      "report_sha256": "fb28b86178c3b9e61ae4dd59584a368bbe60730e2fe7f249a91c9fe60556c1b8",
+      "selected_prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/selected-python-aligned/fixtures/test_project_environment_runs_2/physical/prepared environment",
+      "tooling_parent": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages"
+    },
+    {
+      "case_index": 3,
+      "case_name": "test_project_environment_runs_baseline_generation_and_repair[symlink-parent]",
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "execution_count": 5,
+      "executions_sha256": "bc26616289a76fd0d2bebb940c1b38bd200965d2e0a7687d969f0727089102bf",
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "original_negative_patch_equal": true,
+      "patch_sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9",
+      "report_sha256": "126e703205297517b9c136f14487ce5a66ce74c03eac0c9060ec74eee7c9d79f",
+      "selected_prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/selected-python-aligned/fixtures/test_project_environment_runs_3/physical/prepared environment",
+      "tooling_parent": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages"
+    }
+  ],
+  "aligned_four_case_run": {
+    "cases": 4,
+    "errors": 0,
+    "failed": 0,
+    "junit_case_set_exactly_original_four_failures": true,
+    "passed": 4,
+    "python": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/bin/python",
+    "receipt_sha256": "4dafb4710b12ee424ab8322773cbd76895381b24dbb199bdb782460006637647",
+    "sandbox_temp_empty": true,
+    "seconds": 15.16,
+    "skipped": 0,
+    "source_unchanged": true
+  },
+  "aligned_runtime_manifest_sha256": "c3e05c74ea93660c14157a0df1279795561182fe245230b7006c180d03b211f2",
+  "captures": [
+    {
+      "bytes": 89795,
+      "path": "evidence/aligned-tooling-manifest.json",
+      "sha256": "c3e05c74ea93660c14157a0df1279795561182fe245230b7006c180d03b211f2"
+    },
+    {
+      "bytes": 4447,
+      "path": "evidence/align-receiving-tooling.py",
+      "sha256": "d87d3d867019700b3ff3451a41096ed3e79f9c356f342edb2691ff3370b449ad"
+    },
+    {
+      "bytes": 868,
+      "path": "evidence/aligned-tooling-initial-setup-error.txt",
+      "sha256": "4ced85593e01d7125a9cdf080bd2223236ed8f240f5d5250096b902f734cd723"
+    },
+    {
+      "bytes": 1993,
+      "path": "evidence/aligned-tooling-resume-setup-error.txt",
+      "sha256": "f9d64f958bcdd5cf4eff90987ea116a2d802419dee8b0f763c0d231e73eb492e"
+    },
+    {
+      "bytes": 516,
+      "path": "evidence/aligned-tooling-probe.stdout.txt",
+      "sha256": "e5543f464a1b4c1ea1a13de2e093b5627ee91dd257e40660c633e3e323b28532"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/aligned-tooling-probe.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2041,
+      "path": "evidence/run-selected-python-aligned.py",
+      "sha256": "0be7f4eae4b38f34a75e1ffc265b07df990f19720fcc3e499c6392111832bdb1"
+    },
+    {
+      "bytes": 1009,
+      "path": "evidence/selected-python-aligned-launch.json",
+      "sha256": "2f4480edb42bca993991aca2e037ca98ed196202c3f024decc19b71e00283aea"
+    },
+    {
+      "bytes": 730,
+      "path": "evidence/selected-python-aligned-result.json",
+      "sha256": "f12e5329ce931ae4855f20f6bbd6d1b47e64778d50e127b8b4dfa1c51aa2485e"
+    },
+    {
+      "bytes": 67361,
+      "path": "evidence/selected-python-aligned/receipt.json",
+      "sha256": "4dafb4710b12ee424ab8322773cbd76895381b24dbb199bdb782460006637647"
+    },
+    {
+      "bytes": 801,
+      "path": "evidence/selected-python-aligned/junit.xml",
+      "sha256": "27453d8fadf9bbcc943f4e24435898570c988b4fa1cdb41bc3f34c88eeecd307"
+    },
+    {
+      "bytes": 99,
+      "path": "evidence/selected-python-aligned/stdout.txt",
+      "sha256": "9b074d0368c33a120e71b944b7a10ef846a3ad8ad7e877edfbcc46751f4c671d"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/selected-python-aligned/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 3012,
+      "path": "evidence/run_receiving.py",
+      "sha256": "8755aaea0cde012820762e306be7b7f2d607cd3ae7f1ec3a5aa030452af148c1"
+    },
+    {
+      "bytes": 6973,
+      "path": "evidence/negative-cli-0/output/report.json",
+      "sha256": "065bfc60fb87698a4cdb86c30314a58356baf4237a582047b9cf4e3249fe3260"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/negative-cli-0/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1857,
+      "path": "evidence/negative-cli-0/executions.jsonl",
+      "sha256": "5b8ef853d41a3b035bed16ebb8a3573a54159a68caa18fa30b4425b0dddb4ef9"
+    },
+    {
+      "bytes": 7842,
+      "path": "evidence/aligned-cli-0/output/report.json",
+      "sha256": "b5c24fa5ba4b1b8af76ffe2b606dab83036cba8efe422e63463f41f39ca4806d"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/aligned-cli-0/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1987,
+      "path": "evidence/aligned-cli-0/executions.jsonl",
+      "sha256": "4763f94f5bc8a976d9e23dd052032b6f15f3248f742eef3432afb0706a5dc097"
+    },
+    {
+      "bytes": 6974,
+      "path": "evidence/negative-cli-1/output/report.json",
+      "sha256": "3b4c1ed218146327b0132ec2097a3d9d87e7994cd172251b487b6b752307b433"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/negative-cli-1/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1857,
+      "path": "evidence/negative-cli-1/executions.jsonl",
+      "sha256": "6ed806498cf1e3b4771942c7d9b2e91f811b4cd59c73bf81df898ce9bdbab695"
+    },
+    {
+      "bytes": 7842,
+      "path": "evidence/aligned-cli-1/output/report.json",
+      "sha256": "498306381e110c96404fddeb5bf2524bc91d5d8b0174b5aac5b22107f40dff0f"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/aligned-cli-1/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1987,
+      "path": "evidence/aligned-cli-1/executions.jsonl",
+      "sha256": "67c1f4bffc8e19ac3c0163bff2d9fc7772b2fb9b206e6ba68ffca577e57b3c87"
+    },
+    {
+      "bytes": 6974,
+      "path": "evidence/negative-cli-2/output/report.json",
+      "sha256": "327881595188fd610eb0c65d68df84ef625c4b39001377d3f26f6f277a97df3f"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/negative-cli-2/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1857,
+      "path": "evidence/negative-cli-2/executions.jsonl",
+      "sha256": "21d13423d679c28ef88c2042c782af2378b501e1989b307bae25e0990053fd22"
+    },
+    {
+      "bytes": 7842,
+      "path": "evidence/aligned-cli-2/output/report.json",
+      "sha256": "fb28b86178c3b9e61ae4dd59584a368bbe60730e2fe7f249a91c9fe60556c1b8"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/aligned-cli-2/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1987,
+      "path": "evidence/aligned-cli-2/executions.jsonl",
+      "sha256": "57455ee89f23b7e040256cd87453fbebe475e3abca22e626a30a15f75b223618"
+    },
+    {
+      "bytes": 6974,
+      "path": "evidence/negative-cli-3/output/report.json",
+      "sha256": "c41a0ec94c99ee23bc60979f7ceb8cf76f9a77ab73d648d189f32dc9f4afe281"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/negative-cli-3/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1857,
+      "path": "evidence/negative-cli-3/executions.jsonl",
+      "sha256": "571810a078ed15a178e58d9a5b154690bc3796d307f4a64e88f83bff1823bfd5"
+    },
+    {
+      "bytes": 7841,
+      "path": "evidence/aligned-cli-3/output/report.json",
+      "sha256": "126e703205297517b9c136f14487ce5a66ce74c03eac0c9060ec74eee7c9d79f"
+    },
+    {
+      "bytes": 300,
+      "path": "evidence/aligned-cli-3/output/testpilot.patch",
+      "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+    },
+    {
+      "bytes": 1987,
+      "path": "evidence/aligned-cli-3/executions.jsonl",
+      "sha256": "bc26616289a76fd0d2bebb940c1b38bd200965d2e0a7687d969f0727089102bf"
+    }
+  ],
+  "original_full_suite": {
+    "cases": 169,
+    "failed": 4,
+    "module_counts": {
+      "tests.test_cli_python": {
+        "failed": 4,
+        "passed": 5
+      },
+      "tests.test_coverage_reporting": {
+        "passed": 7
+      },
+      "tests.test_diff": {
+        "passed": 6
+      },
+      "tests.test_diff_source_boundary": {
+        "passed": 18
+      },
+      "tests.test_eval": {
+        "passed": 2
+      },
+      "tests.test_generated_collection": {
+        "passed": 15
+      },
+      "tests.test_generated_collection_receiving": {
+        "passed": 11
+      },
+      "tests.test_generated_test_preservation": {
+        "passed": 18
+      },
+      "tests.test_git_quoted_paths": {
+        "passed": 31
+      },
+      "tests.test_loop": {
+        "passed": 13
+      },
+      "tests.test_match_targets": {
+        "passed": 11
+      },
+      "tests.test_model": {
+        "passed": 7
+      },
+      "tests.test_report_text_encoding": {
+        "passed": 7
+      },
+      "tests.test_sandbox": {
+        "passed": 8
+      },
+      "tests.test_sandbox_deadline": {
+        "passed": 6
+      }
+    },
+    "passed": 165,
+    "python": "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+    "receipt_sha256": "f755d79edae67ea09de46c7379f02885b057c4738b7f0639615899b01a5fb4f0"
+  },
+  "pending": "Source-owner estate-86776 and receiver estate-965 disposition and actual final-headed hosted gate remain pending as recorded at author preflight. No GitHub mutation performed.",
+  "product_or_test_edits_by_reviewer": false,
+  "prospective_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "qualification": "Accept native prospective composition with split execution evidence: original full run 165 pass / 4 fail, followed by exactly those four cases passing in an aligned private tooling environment. This is not a single-environment 169-pass run or a hosted-headed gate.",
+  "reviewed_at": "2026-10-08T11:55:02.644254+00:00",
+  "reviewer": "chatgpt-45d4289ccf6c/native_execution",
+  "runtime": {
+    "coverage": "7.16.2",
+    "coverage_origin": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/coverage/__init__.py",
+    "fixture_tooling_parent": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages",
+    "pytest": "9.0.2",
+    "pytest_origin": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/pytest/__init__.py",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "schema": "testpilot-aligned-four-case-independent-review-v1",
+  "source_and_negative_review_sha256": "140c79ac1e31b38215a9744dee4fe049c52540fabf7b3c7ec814e9e4e2a1dde4",
+  "source_and_test_bytes_unchanged_between_runs": true,
+  "tests_executed_by_reviewer": 0,
+  "verified_runtime_modules": [
+    {
+      "files_verified": 72,
+      "method": "read-only use through private symlink; original bytes not modified",
+      "name": "_pytest",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/_pytest",
+      "source": "/usr/lib/python3/dist-packages/_pytest"
+    },
+    {
+      "files_verified": 53,
+      "method": "read-only use through private symlink; original bytes not modified",
+      "name": "coverage",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/coverage",
+      "source": "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/lib/python3.14/site-packages/coverage"
+    },
+    {
+      "files_verified": 5,
+      "method": "read-only use through private symlink; original bytes not modified",
+      "name": "iniconfig",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/iniconfig",
+      "source": "/usr/lib/python3/dist-packages/iniconfig"
+    },
+    {
+      "files_verified": 18,
+      "method": "read-only use through private symlink; original bytes not modified",
+      "name": "packaging",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/packaging",
+      "source": "/usr/lib/python3/dist-packages/packaging"
+    },
+    {
+      "files_verified": 9,
+      "method": "read-only use through private symlink; original bytes not modified",
+      "name": "pluggy",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/pluggy",
+      "source": "/usr/lib/python3/dist-packages/pluggy"
+    },
+    {
+      "files_verified": 1,
+      "method": "read-only use through private symlink; original bytes not modified",
+      "name": "py",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/py.py",
+      "source": "/usr/lib/python3/dist-packages/py.py"
+    },
+    {
+      "files_verified": 338,
+      "method": "read-only use through private symlink; original bytes not modified",
+      "name": "pygments",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/pygments",
+      "source": "/usr/lib/python3/dist-packages/pygments"
+    },
+    {
+      "files_verified": 3,
+      "method": "physical copy, all non-cache bytes checked against unchanged installed package",
+      "name": "pytest",
+      "receiving_path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/pytest",
+      "source": "/usr/lib/python3/dist-packages/pytest"
+    }
+  ],
+  "verified_runtime_payload_files": 499
+}

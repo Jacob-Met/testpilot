@@ -1,0 +1,20 @@
+{
+  "files": [
+    {
+      "bytes": 4276,
+      "path": "README.md",
+      "sha256": "092e668002991f401fffdc0dfd271ec192155f6d4e701a34b63cb2c659f0868d"
+    },
+    {
+      "bytes": 1741,
+      "path": "native-preparation.json",
+      "sha256": "896bb5c160695809178b461d67005209306db6f7fd3fde4fb098ba2c9bcd348b"
+    },
+    {
+      "bytes": 1219,
+      "path": "scope-disposition.json",
+      "sha256": "e92e424bb081c016e3ee3d7df13e481ae47c60a3fc9a44c2f045c72ba3d8a64a"
+    }
+  ],
+  "schema": "testpilot-current-coverage-receipt-files/1"
+}

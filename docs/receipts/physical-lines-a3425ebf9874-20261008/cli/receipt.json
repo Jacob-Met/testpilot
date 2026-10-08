@@ -1,0 +1,226 @@
+{
+  "schema": "hamon.testpilot.physical_line_cli_receiving.v1",
+  "qualification": "PASS",
+  "claim": "https://github.com/Jacob-Met/testpilot/issues/16",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "fixture_base": "c92967418aaa91f2316ec5287316a0e075bee6e4",
+  "fixture_input_sha256": {
+    "sample.py": "8c3a9d56b2528608f155941be09898a5b1390dafb25d586fa9be258ec1912297",
+    "tests/test_existing.py": "1081de4e6956e65f6a2a06978d27620e439ce544f58191868b9f4513de82b729",
+    "pyproject.toml": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f"
+  },
+  "original_source_and_existing_test_preserved": true,
+  "baseline_expected_feature_failure": {
+    "returncode": 1,
+    "source_commit": "47a197fd46b107a797b1547db02cb5ed5ad2abe1",
+    "source_module_sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e"
+  },
+  "baseline_status": "no_changes",
+  "candidate": {
+    "returncode": 0,
+    "source_commit": "caab0c4d2f76f0a410edd9ac5f793b716a938212",
+    "source_module_sha256": "4e55b107023427a124f2cf45f10ff44c03b4e385b736acc17644a9a696934240"
+  },
+  "candidate_status": "passed",
+  "selected_function": {
+    "path": "sample.py",
+    "module": "sample",
+    "qualname": "answer",
+    "lineno": 3,
+    "end_lineno": 4,
+    "changed_lines": [
+      4
+    ],
+    "source": "def answer():\n    return 2",
+    "is_method": false
+  },
+  "scripted_calls": 2,
+  "generated_tests": 2,
+  "delivered_patch_check": 0,
+  "delivered_patch_apply": 0,
+  "delivered_existing_plus_generated_tests": 3,
+  "provider_calls": 0,
+  "commands": [
+    {
+      "label": "git-init",
+      "argv": [
+        "git",
+        "init",
+        "-q"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "git-newlines",
+      "argv": [
+        "git",
+        "config",
+        "core.autocrlf",
+        "false"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "git-add",
+      "argv": [
+        "git",
+        "add",
+        "sample.py",
+        "tests",
+        "pyproject.toml"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "git-commit",
+      "argv": [
+        "git",
+        "-c",
+        "user.name=Synthetic native fixture",
+        "-c",
+        "user.email=fixture@example.invalid",
+        "commit",
+        "-qm",
+        "Baseline"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "git-head",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "git-diff",
+      "argv": [
+        "git",
+        "diff",
+        "HEAD",
+        "--",
+        "*.py"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "baseline-cli",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+        "--git-base",
+        "HEAD",
+        "--backend",
+        "scripted",
+        "--script",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/responses",
+        "--rounds",
+        "0",
+        "--timeout",
+        "20",
+        "--out",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/baseline-output"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 1,
+      "source_path": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/baseline-source"
+    },
+    {
+      "label": "candidate-cli",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+        "--git-base",
+        "HEAD",
+        "--backend",
+        "scripted",
+        "--script",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/responses",
+        "--rounds",
+        "0",
+        "--timeout",
+        "20",
+        "--out",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/candidate-output"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/project",
+      "returncode": 0,
+      "source_path": "/srv/hamon-estate/testpilot-physical-lines-a3425ebf9874"
+    },
+    {
+      "label": "patch-check",
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/candidate-output/testpilot.patch"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/patch-receiver",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "patch-apply",
+      "argv": [
+        "git",
+        "apply",
+        "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/candidate-output/testpilot.patch"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/patch-receiver",
+      "returncode": 0,
+      "source_path": null
+    },
+    {
+      "label": "delivered-tests",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "--junitxml=/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/delivered-tests.xml"
+      ],
+      "cwd": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/cli-native/patch-receiver",
+      "returncode": 0,
+      "source_path": null
+    }
+  ],
+  "report_and_patch_sha256": {
+    "baseline": {
+      "report.json": "03012d5b93fc6c3f5c2b1afa11d8fa4cd897e3803084935cd821b1f8860c08af",
+      "report.md": "095363d5b819675bd1ef5f0e887aeb2bf20646269193396d959f8c670d1dbefa",
+      "testpilot.patch": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate": {
+      "report.json": "809b85593c190fccadecb6277fffd3e54caf3ed475baf028c463541871c5815b",
+      "report.md": "008a5c88c53a601a59a1fe262dcb54d3d7f74c0dfbc988534a861c45751f4f6b",
+      "testpilot.patch": "64e69e2acc9c3bb2ccdc58565b7bfea8ab9647ebb834b1e32d9a343b0057f4b7"
+    }
+  }
+}

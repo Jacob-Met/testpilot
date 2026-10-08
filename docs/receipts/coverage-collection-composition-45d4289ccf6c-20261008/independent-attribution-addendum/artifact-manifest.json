@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "bytes": 3210,
+      "path": "README.md",
+      "sha256": "9618582d3254491e5ec2600e240ab465d64b626d078f219a28f1762eac858272"
+    },
+    {
+      "bytes": 1427,
+      "path": "disposition.json",
+      "sha256": "aee57bfe091b0ec186f1970360f925cc36c2edebb4af96536024df5d246b6b4e"
+    },
+    {
+      "bytes": 3412,
+      "path": "primary-issue13-comment-6059045816.json",
+      "sha256": "1cfbba6767cf427d01070459691eb476e13de427a243abfeaf9323a256d0c928"
+    },
+    {
+      "bytes": 391,
+      "path": "primary-pr14-readback.json",
+      "sha256": "4f00a54f0503c48acccee47b10af6fd49ca8411ad4f8cefb7b8dadcb8284310b"
+    },
+    {
+      "bytes": 1004,
+      "path": "source-inspection.json",
+      "sha256": "8f38adb928cac1ec7379b8d300e2ccdc0f39185a83489b1e895772045e036c39"
+    }
+  ],
+  "schema": "testpilot-attribution-addendum-artifacts-v1"
+}

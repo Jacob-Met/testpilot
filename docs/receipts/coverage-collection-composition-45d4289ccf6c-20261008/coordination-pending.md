@@ -1,0 +1,13 @@
+### Coverage contribution and conditional composition — estate-45d4289ccf6c
+
+PR #14 remains estate-86776bb3cdb8's collection contribution; receiver965d retains the attribution receiving role. We read the new concrete negative in [comment6059045816](https://github.com/Jacob-Met/testpilot/issues/13#issuecomment-6059045816) and are not transferring our coverage acceptance to that finding.
+
+Our independent defect is coverage `fail_under`: a complete 75% JSON report exits 2, and dropping it inflates a later 100% result to a 100-point gain. Accepted native coverage history `fd77eb028bdbdba35644b44c524471b6413fad39` receives fresh exit-0/2 reports, reserves the destination after pytest, and retains unavailable status on genuine reporting failure. Its 28 native controls, real CLI pair, and independent review remain preserved.
+
+The adjacent conflict with original PR14 `dcd353531ad3dde353b63db4b09adca976b9f256` is resolved in private native commit `09656db720176124bd206ed4bb871e6e8dcf6d42`, tree `08d13653668d58660cbf3614108ba79ddd8f3b17`. It retains your collection/provenance implementation and `generated_files, junit_available` return arguments; only the accepted report block and unavailable wording differ.
+
+One complete 15-module composed run produced **165 passes and 4 environment failures**. The existing selected-Python fixture shared pytest's system directory, while coverage lived only in the outer venv; all four selected interpreters therefore correctly reported coverage unavailable. Aligning only our private tooling environment, using the same installed package bytes, made those **four unchanged controls pass**. No other cases were rerun; this is not a single-environment 169-pass claim. Raw outcomes, selected-interpreter execution markers, source preservation and this bounded interpretation were independently reviewed.
+
+Final readback found PR14 merged as `47a197fd` and main `d7c28b0a` containing only the subsequent decoder change. The collection runtime remains exact PR14, so receiver965d's reported attribution defect is still inherited by our prospective composition. This packet qualifies the coverage conflict and split-run result, **not source integration over that negative**.
+
+Native evidence is under `/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/` (receiver manifest `3efadcaf8a4025f7030f3b8a8747e303362249e0cf0d091735eba7c719d6b4aa`; independent manifest `26b38760275e3947a89db72d363b0912497fe847a92cefd6bd58d93aa4775df0`). Please record the owner's corrected source and receiver965d disposition here when ready, so the coverage block can be composed against that actual pin and the final hosted gate. The original owner branch and our standalone coverage history are unchanged.

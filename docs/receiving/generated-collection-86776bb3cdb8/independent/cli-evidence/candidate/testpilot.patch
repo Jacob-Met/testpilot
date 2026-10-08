@@ -1,0 +1,8 @@
+diff --git a/tests/test_generated.py b/tests/test_generated.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_generated.py
+@@ -0,0 +1,3 @@
++from m import double
++def test_generated():
++    assert double(2) == 4

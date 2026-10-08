@@ -1,0 +1,4 @@
+from normalizer import normalize
+
+def test_existing():
+    assert normalize(" Keep ") == "keep"

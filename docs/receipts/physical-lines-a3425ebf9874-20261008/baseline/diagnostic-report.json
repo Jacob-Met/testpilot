@@ -1,0 +1,70 @@
+{
+  "schema": "hamon.testpilot_physical_line_baseline.v1",
+  "python": "3.14.4",
+  "source_commit": "47a197fd46b107a797b1547db02cb5ed5ad2abe1",
+  "diff_module_sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+  "probe_sha256": "83899a775069a524a23683af209c06afebb21f5b80cc3867482f947ab23d8079",
+  "production_source_unmodified": true,
+  "cases": [
+    {
+      "case": "unicode_context",
+      "source_executes_and_returns": "2",
+      "separator_codepoint": 8232,
+      "newline": "'\\n'",
+      "expected_added_lines": [
+        4
+      ],
+      "actual_added_lines": [],
+      "expected_target": "answer",
+      "actual_targets": [],
+      "target_selected_correctly": false,
+      "diff": "diff --git a/sample.py b/sample.py\nindex 059ed3a..9529530 100644\n--- a/sample.py\n+++ b/sample.py\n@@ -1,4 +1,4 @@\n note = \"left\u2028right\"\n \n def answer():\n-    return 1\n+    return 2\n"
+    },
+    {
+      "case": "ordinary_lf",
+      "source_executes_and_returns": "2",
+      "separator_codepoint": null,
+      "newline": "'\\n'",
+      "expected_added_lines": [
+        4
+      ],
+      "actual_added_lines": [
+        4
+      ],
+      "expected_target": "answer",
+      "actual_targets": [
+        "answer"
+      ],
+      "target_selected_correctly": true,
+      "diff": "diff --git a/sample.py b/sample.py\nindex bae0430..3157bb7 100644\n--- a/sample.py\n+++ b/sample.py\n@@ -1,4 +1,4 @@\n note = \"leftright\"\n \n def answer():\n-    return 1\n+    return 2\n"
+    },
+    {
+      "case": "ordinary_crlf",
+      "source_executes_and_returns": "2",
+      "separator_codepoint": null,
+      "newline": "'\\r\\n'",
+      "expected_added_lines": [
+        4
+      ],
+      "actual_added_lines": [
+        4
+      ],
+      "expected_target": "answer",
+      "actual_targets": [
+        "answer"
+      ],
+      "target_selected_correctly": true,
+      "diff": "diff --git a/sample.py b/sample.py\nindex b8e9899..4142209 100644\n--- a/sample.py\n+++ b/sample.py\n@@ -1,4 +1,4 @@\n note = \"leftright\"\n \n def answer():\n-    return 1\n+    return 2\n"
+    },
+    {
+      "case": "literal_source_slice",
+      "literal_source_compiles": true,
+      "expected_source": "def answer():\n    return \"left\u2028right\"",
+      "actual_source": "def answer():\n    return \"left",
+      "source_preserved": false
+    }
+  ],
+  "provider_calls": 0,
+  "model_calls": 0,
+  "pytest_runs": 0
+}

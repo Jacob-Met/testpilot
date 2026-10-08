@@ -1,0 +1,23 @@
+..................................F..................................... [ 48%]
+........................................................................ [ 97%]
+....                                                                     [100%]
+=================================== FAILURES ===================================
+_________________________ test_scripted_eval_outcomes __________________________
+
+    def test_scripted_eval_outcomes():
+        rows = [evaluate_case(c, coverage=False, timeout=5) for c in load_cases()]
+        by = {r["case"]: r for r in rows}
+        assert by["calc_clamp"]["solved"] and by["calc_clamp"]["rounds_used"] == 1
+        assert by["textutil_slugify"]["solved"] and by["textutil_slugify"]["rounds_used"] == 2
+        assert by["durations_parse"]["solved"]
+        assert by["inventory_cart"]["status"] == "failed" and by["inventory_cart"]["rounds_used"] == 3
+        assert by["inventory_cart"]["bug_revealing"] and not by["inventory_cart"]["solved"]
+        assert by["stats_median"]["status"] == "passed" and not by["stats_median"]["bug_revealing"]
+        s = summarize(rows)
+>       assert s["pass@1"] == 0.6 and s["tests_written"] == 19 and s["rounds_used"] == 7
+E       assert (0.6 == 0.6 and 15 == 19)
+
+tests/test_eval.py:18: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_eval.py::test_scripted_eval_outcomes - assert (0.6 == 0.6 a...
+1 failed, 147 passed in 48.63s

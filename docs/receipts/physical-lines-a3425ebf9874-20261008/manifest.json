@@ -1,0 +1,132 @@
+{
+  "schema": "hamon.testpilot.native_receiving_manifest.v1",
+  "source_commit": "caab0c4d2f76f0a410edd9ac5f793b716a938212",
+  "independent_receipt_sha256": "2d2641b9e534007926d74f4dc83735e9c16821d8b86fd58408253c2c7f9721e8",
+  "files": [
+    {
+      "path": "baseline/diagnostic-report.json",
+      "bytes": 2413,
+      "sha256": "f5d00018b77cf278e6e69c0d5e6547804ffe936e8457c705e86b8659f0f1e7d5"
+    },
+    {
+      "path": "baseline/pytest-junit.xml",
+      "bytes": 9789,
+      "sha256": "9e776d28cbde9d271dd3882e815ff04bf64ee84317c19eb815c3c2af3cd9f13f"
+    },
+    {
+      "path": "baseline/pytest.stdout.txt",
+      "bytes": 8099,
+      "sha256": "ff5fc9c1e37a2245a80a159cba1585f06a72d6899cdb08ab83c3d2805c6910d5"
+    },
+    {
+      "path": "baseline/reproduce_physical_lines.py",
+      "bytes": 3836,
+      "sha256": "83899a775069a524a23683af209c06afebb21f5b80cc3867482f947ab23d8079"
+    },
+    {
+      "path": "cli/baseline-report.json",
+      "bytes": 476,
+      "sha256": "03012d5b93fc6c3f5c2b1afa11d8fa4cd897e3803084935cd821b1f8860c08af"
+    },
+    {
+      "path": "cli/baseline-report.md",
+      "bytes": 234,
+      "sha256": "095363d5b819675bd1ef5f0e887aeb2bf20646269193396d959f8c670d1dbefa"
+    },
+    {
+      "path": "cli/baseline-stdout.txt",
+      "bytes": 581,
+      "sha256": "d54e7e9aa1745ced758b8e9143fe9561687669b4175f5ecf2954ab5946defe5d"
+    },
+    {
+      "path": "cli/candidate-report.json",
+      "bytes": 5077,
+      "sha256": "809b85593c190fccadecb6277fffd3e54caf3ed475baf028c463541871c5815b"
+    },
+    {
+      "path": "cli/candidate-report.md",
+      "bytes": 827,
+      "sha256": "008a5c88c53a601a59a1fe262dcb54d3d7f74c0dfbc988534a861c45751f4f6b"
+    },
+    {
+      "path": "cli/candidate-stdout.txt",
+      "bytes": 816,
+      "sha256": "f215edaf3dc4799a1b8fa4d2738655fc916dee64144d69af0568fc92435ce074"
+    },
+    {
+      "path": "cli/delivered-tests.stdout.txt",
+      "bytes": 98,
+      "sha256": "bf22e88f0e3a0e89eddb09d252b1661a48c9dfc4bd5aa177b5efca41f2700a18"
+    },
+    {
+      "path": "cli/delivered-tests.xml",
+      "bytes": 527,
+      "sha256": "b9619afcef79430a957169b4c776687a8e0d6552e016c2c89ba1f374d8e26ba9"
+    },
+    {
+      "path": "cli/input.diff",
+      "bytes": 181,
+      "sha256": "10bbae68a316e0a7888435ad7afd0a737a92e39a7b2c3643fdb085340907b862"
+    },
+    {
+      "path": "cli/receipt.json",
+      "bytes": 7179,
+      "sha256": "6041b4ed5c2839af025a5218da6d193ea6640fca871bb6f2598815d9e121d6a1"
+    },
+    {
+      "path": "cli/receive_physical_line_cli.py",
+      "bytes": 9343,
+      "sha256": "03a6ac0238c9d0c82d1baf46f9cdc91f0b6b917695b69ff960b8585ba6ac8560"
+    },
+    {
+      "path": "cli/testpilot.patch",
+      "bytes": 338,
+      "sha256": "64e69e2acc9c3bb2ccdc58565b7bfea8ab9647ebb834b1e32d9a343b0057f4b7"
+    },
+    {
+      "path": "focus/pytest-junit.xml",
+      "bytes": 10759,
+      "sha256": "d73f97d22fd372a6c36645545fe7fb2d02821c947b0a101422c67689c43d8623"
+    },
+    {
+      "path": "focus/pytest.stdout.txt",
+      "bytes": 179,
+      "sha256": "fe23b0623339f9ca7e2873c893a3290b9fcb9836495505be9d924efd33f3b2c0"
+    },
+    {
+      "path": "independent/baseline.log",
+      "bytes": 2015,
+      "sha256": "690ad51601015e9060ca30f82bd6bcf1272fbdc2cd68068e72042a4bf84b3a4c"
+    },
+    {
+      "path": "independent/candidate.log",
+      "bytes": 450,
+      "sha256": "e617be4f73b31299cf0a165c60e51f67dfc2af5267340e2c71bbe4380c89edad"
+    },
+    {
+      "path": "independent/independent-review-receipt.json",
+      "bytes": 1837,
+      "sha256": "2d2641b9e534007926d74f4dc83735e9c16821d8b86fd58408253c2c7f9721e8"
+    },
+    {
+      "path": "independent/review_consumers.py",
+      "bytes": 6114,
+      "sha256": "2880899237ef16cd9e3591b6118419e8308d0d52f8db3427139cf2f6aa02d9d1"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7959,
+      "sha256": "7136ad8144ad801c96184edff6e69a96622e5d3065e94bec899733b93d54026a"
+    },
+    {
+      "path": "runtime.patch",
+      "bytes": 1210,
+      "sha256": "bc80580cb839b704f1715406b404cb86de013dc34de5aa3e527a72ec20b6fbb6"
+    },
+    {
+      "path": "source-pins.json",
+      "bytes": 708,
+      "sha256": "3074e9228c03737ad1f566cf9f9c0c15f6bd6de1c65911d9ba12077f68e4ea6f"
+    }
+  ]
+}

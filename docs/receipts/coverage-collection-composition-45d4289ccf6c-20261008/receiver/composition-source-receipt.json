@@ -1,0 +1,64 @@
+{
+  "all_coverage_tests_docs_evidence_exact": true,
+  "all_other_owner_files_exact": true,
+  "branch": "review/45d4289ccf6c-testpilot-coverage-collection-dcd353",
+  "conflict_resolved_only_at": "testpilot/sandbox.py coverage block plus preserved owner return arguments",
+  "created_utc": "2026-10-08T11:36:15.242057+00:00",
+  "head_before_merge": "fd77eb028bdbdba35644b44c524471b6413fad39",
+  "loop_relative_to_owner": "only accepted unavailable-report wording",
+  "merge_head": "dcd353531ad3dde353b63db4b09adca976b9f256",
+  "original_pr14_review_sha256": "ce34c5d18bb1ecc9bd80f75848ee4e8c0a835e6807b437de71b4563c1c3e60c1",
+  "owner_standalone_tests_reexecuted": false,
+  "relative_runtime_patch_sha256": "18f94215862313558bf694d61ab58a85bf5c3221082e00bcbeea8f3a7333b9c2",
+  "schema": "testpilot-prospective-composition-source/1",
+  "source_files": [
+    {
+      "bytes": 1446,
+      "git_blob": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+      "mode": "100644",
+      "path": "testpilot/_pytest_generated.py",
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+    },
+    {
+      "bytes": 21628,
+      "git_blob": "f1e571cef1fedb67c87e91c49b54aef7f2174d40",
+      "mode": "100644",
+      "path": "testpilot/loop.py",
+      "sha256": "dea26d8eeec2364d3dbb702671b579ae3890881d866a76ab9d98dfe2992decee"
+    },
+    {
+      "bytes": 11877,
+      "git_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "mode": "100644",
+      "path": "testpilot/sandbox.py",
+      "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    {
+      "bytes": 6636,
+      "git_blob": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "mode": "100644",
+      "path": "tests/test_coverage_reporting.py",
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede"
+    },
+    {
+      "bytes": 10208,
+      "git_blob": "a8dacdd9f6c402cbed66b716e8ec396fb633ded9",
+      "mode": "100644",
+      "path": "tests/test_generated_collection.py",
+      "sha256": "19905510581afe3b0b56883ea2268761eda100ce6fe585a58d83ad3f5742914b"
+    },
+    {
+      "bytes": 9055,
+      "git_blob": "b1007ff47fc6c536fb5c315904d00c21d0b0cb5d",
+      "mode": "100644",
+      "path": "tests/test_generated_collection_receiving.py",
+      "sha256": "2af73df91390e3b44526c5ba1e4d325fb48d99fb668d6d3d565668b8347c9a83"
+    }
+  ],
+  "source_leaves": 451,
+  "source_manifest_sha256": "5020c8f32ef7ab3069c08e541ef2a128ece2357102577f970942d6e77a12465c",
+  "source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "state": "prospective native composition only; original PR14 owner and receiver965 disposition pending",
+  "suite_test_modules": 15,
+  "worktree": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree"
+}

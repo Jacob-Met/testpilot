@@ -1,0 +1,63 @@
+"""Bounded independent native receiving for absent versus complete-empty JUnit."""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+import subprocess
+import sys
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+SOURCE = ROOT / "repo"
+PIN = "c556e9b883fb372b938c50240977ddb5785c43bb"
+assert subprocess.check_output(["git", "-C", str(SOURCE), "rev-parse", "HEAD"], text=True).strip() == PIN
+sys.path.insert(0, str(SOURCE))
+import testpilot.sandbox as sandbox  # noqa: E402
+from testpilot.loop import count_tests  # noqa: E402
+
+assert Path(sandbox.__file__).resolve() == SOURCE / "testpilot/sandbox.py"
+os.environ["TMPDIR"] = str(ROOT / "tmp")
+tempfile.tempdir = None
+records = []
+with tempfile.TemporaryDirectory(prefix="receiving-report-boundary-", dir=ROOT / "tmp") as temporary:
+    project = Path(temporary) / "project"
+    project.mkdir()
+    (project / "pyproject.toml").write_text('[tool.pytest.ini_options]\ntestpaths = ["checks"]\n', encoding="utf-8")
+    (project / "checks").mkdir()
+    (project / "checks/test_existing.py").write_text("def test_existing():\n    assert True\n", encoding="utf-8")
+    controls = [
+        ("complete_empty_report", "    assert True", ("-k", "nothing_matches_here"), 5, False, True, 0),
+        ("abrupt_exit_without_report", "    __import__('os')._exit(17)", (), 17, False, False, 2),
+        ("timeout_without_report", "    __import__('time').sleep(30)", (), None, True, False, 2),
+    ]
+    for name, body, selectors, returncode, timed_out, available, written in controls:
+        files = {"tests/test_authored.py": f"def test_authored():\n{body}\n\ndef test_unreached():\n    assert True\n"}
+        result = sandbox.run_pytest(project, files, coverage=False, timeout=1.0, pytest_args=selectors)
+        observed_written = count_tests(files, result, {"checks.test_existing::test_existing"})
+        assert result.returncode == returncode, (name, result.to_dict())
+        assert result.timed_out == timed_out, (name, result.to_dict())
+        assert result.junit_available == available, (name, result.to_dict())
+        assert observed_written == written, (name, observed_written)
+        assert not result.ok and not result.cases and result.generated_counts() == {
+            "collected": 0, "passed": 0, "failed": 0, "error": 0, "skipped": 0
+        }, (name, result.to_dict())
+        records.append({"name": name, "written_count": observed_written, "result": result.to_dict()})
+        print(f"PASS {name}: JUnit={available}, written={written}, verified=0, ok=False")
+
+receipt = {
+    "observed_at": datetime.now(timezone.utc).isoformat(),
+    "source": PIN,
+    "tree": subprocess.check_output(["git", "-C", str(SOURCE), "rev-parse", "HEAD^{tree}"], text=True).strip(),
+    "python": sys.version,
+    "python_executable": sys.executable,
+    "loaded_sandbox": str(Path(sandbox.__file__).resolve()),
+    "sandbox_sha256": hashlib.sha256(Path(sandbox.__file__).read_bytes()).hexdigest(),
+    "loop_sha256": hashlib.sha256((SOURCE / "testpilot/loop.py").read_bytes()).hexdigest(),
+    "driver_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+    "controls": records,
+    "scope": "Three actual native pytest processes; complete-empty report distinguishes zero collected tests from timeout or abrupt termination without a report. No broad collection-suite rerun."
+}
+(ROOT / "report-boundary-receipt.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")

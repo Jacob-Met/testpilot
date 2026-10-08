@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-10-08T11:11:08.354Z",
+  "repository": "Jacob-Met/testpilot",
+  "main": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+  "tree": "2609ac32021e4cb994fa603c3e6cf89e4abd7f45",
+  "remote_tree_truncated": false,
+  "remote_tree_entries": 377,
+  "complete_remote_leaves": 295,
+  "all_remote_leaf_blobs_modes_types_equal_local_parent": true,
+  "local_composition": "c556e9b883fb372b938c50240977ddb5785c43bb",
+  "parent_is_exact_current_main": true,
+  "read_urls": [
+    "https://api.github.com/repos/Jacob-Met/TestPilot/git/ref/heads/main",
+    "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+    "https://api.github.com/repos/Jacob-Met/testpilot/git/trees/2609ac32021e4cb994fa603c3e6cf89e4abd7f45?recursive=1"
+  ],
+  "scope": "Fresh source-only current-main readback. No hosted test result is implied."
+}

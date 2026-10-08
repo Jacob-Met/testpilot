@@ -1,0 +1,7 @@
+test_multifile_context_lookalikes_and_decorated_async_span (__main__.IndependentPhysicalLineConsumers.test_multifile_context_lookalikes_and_decorated_async_span) ... ok
+test_pure_deletion_anchors_keep_complete_literal_bearing_function (__main__.IndependentPhysicalLineConsumers.test_pure_deletion_anchors_keep_complete_literal_bearing_function) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.092s
+
+OK

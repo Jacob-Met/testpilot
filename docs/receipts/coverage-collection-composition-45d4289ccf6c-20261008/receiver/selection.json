@@ -1,0 +1,17 @@
+[
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_cli_python.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_coverage_reporting.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_diff.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_diff_source_boundary.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_eval.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_generated_collection.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_generated_collection_receiving.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_generated_test_preservation.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_git_quoted_paths.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_loop.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_match_targets.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_model.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_report_text_encoding.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_sandbox.py",
+  "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_sandbox_deadline.py"
+]

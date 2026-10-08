@@ -1,0 +1,367 @@
+..FFFFFFFF.....                                                          [100%]
+=================================== FAILURES ===================================
+__ test_importable_source_keeps_decoded_function_and_line_identity[utf8-bom] ___
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_importable_source_keeps_d2')
+prefix = b'\xef\xbb\xbf', encoding = 'utf-8', label = 'café', newline = b'\n'
+
+    @pytest.mark.parametrize("prefix,encoding,label,newline", [
+        (b"", "utf-8", "café", b"\n"),
+        (b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8, "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8 + b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (b"# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"# coding: cp1252\n", "cp1252", "café €", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: cp1252\n", "cp1252", "café €", b"\r\n"),
+    ], ids=["default-utf8", "declared-utf8", "utf8-bom", "utf8-bom-cookie",
+            "latin1-first-line", "latin1-second-line", "cp1252", "cp1252-crlf"])
+    def test_importable_source_keeps_decoded_function_and_line_identity(tmp_path, prefix, encoding, label, newline):
+        source, diff = edited_source(tmp_path, prefix, encoding, label, newline)
+        original = source.read_bytes()
+        imported = python_import(tmp_path)
+        assert imported.returncode == 0, imported.stderr
+        assert imported.stdout == "17\n"
+    
+>       selected = changed_functions(tmp_path, diff)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_python_source_encoding.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/diff.py:251: in changed_functions
+    result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:194: in functions_touching
+    tree = ast.parse(source, filename=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+source = '\ufeffdef price():\n    """Return the café price."""\n    total = 0\n    total += 1\n    total += 2\n    total += 3\n    total += 4\n    total += 5\n    return total + 2\n'
+filename = 'price.py', mode = 'exec', type_comments = False
+feature_version = -1
+
+    def parse(source, filename='<unknown>', mode='exec', *,
+              type_comments=False, feature_version=None):
+        """
+        Parse the source into an AST node.
+        Equivalent to compile(source, filename, mode, PyCF_ONLY_AST).
+        Pass type_comments=True to get back type comments where the syntax allows.
+        """
+        flags = PyCF_ONLY_AST
+        if type_comments:
+            flags |= PyCF_TYPE_COMMENTS
+        if feature_version is None:
+            feature_version = -1
+        elif isinstance(feature_version, tuple):
+            major, minor = feature_version  # Should be a 2-tuple.
+            if major != 3:
+                raise ValueError(f"Unsupported major version: {major}")
+            feature_version = minor
+        # Else it should be an int giving the minor version for 3.x.
+>       return compile(source, filename, mode, flags,
+                       _feature_version=feature_version)
+E         File "price.py", line 1
+E           ﻿def price():
+E           ^
+E       SyntaxError: invalid non-printable character U+FEFF
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/ast.py:52: SyntaxError
+_ test_importable_source_keeps_decoded_function_and_line_identity[utf8-bom-cookie] _
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_importable_source_keeps_d3')
+prefix = b'\xef\xbb\xbf# coding: utf-8\n', encoding = 'utf-8', label = 'café'
+newline = b'\n'
+
+    @pytest.mark.parametrize("prefix,encoding,label,newline", [
+        (b"", "utf-8", "café", b"\n"),
+        (b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8, "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8 + b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (b"# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"# coding: cp1252\n", "cp1252", "café €", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: cp1252\n", "cp1252", "café €", b"\r\n"),
+    ], ids=["default-utf8", "declared-utf8", "utf8-bom", "utf8-bom-cookie",
+            "latin1-first-line", "latin1-second-line", "cp1252", "cp1252-crlf"])
+    def test_importable_source_keeps_decoded_function_and_line_identity(tmp_path, prefix, encoding, label, newline):
+        source, diff = edited_source(tmp_path, prefix, encoding, label, newline)
+        original = source.read_bytes()
+        imported = python_import(tmp_path)
+        assert imported.returncode == 0, imported.stderr
+        assert imported.stdout == "17\n"
+    
+>       selected = changed_functions(tmp_path, diff)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_python_source_encoding.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/diff.py:251: in changed_functions
+    result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:194: in functions_touching
+    tree = ast.parse(source, filename=path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+source = '\ufeff# coding: utf-8\ndef price():\n    """Return the café price."""\n    total = 0\n    total += 1\n    total += 2\n    total += 3\n    total += 4\n    total += 5\n    return total + 2\n'
+filename = 'price.py', mode = 'exec', type_comments = False
+feature_version = -1
+
+    def parse(source, filename='<unknown>', mode='exec', *,
+              type_comments=False, feature_version=None):
+        """
+        Parse the source into an AST node.
+        Equivalent to compile(source, filename, mode, PyCF_ONLY_AST).
+        Pass type_comments=True to get back type comments where the syntax allows.
+        """
+        flags = PyCF_ONLY_AST
+        if type_comments:
+            flags |= PyCF_TYPE_COMMENTS
+        if feature_version is None:
+            feature_version = -1
+        elif isinstance(feature_version, tuple):
+            major, minor = feature_version  # Should be a 2-tuple.
+            if major != 3:
+                raise ValueError(f"Unsupported major version: {major}")
+            feature_version = minor
+        # Else it should be an int giving the minor version for 3.x.
+>       return compile(source, filename, mode, flags,
+                       _feature_version=feature_version)
+E         File "price.py", line 1
+E           ﻿# coding: utf-8
+E           ^
+E       SyntaxError: invalid non-printable character U+FEFF
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/ast.py:52: SyntaxError
+_ test_importable_source_keeps_decoded_function_and_line_identity[latin1-first-line] _
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_importable_source_keeps_d4')
+prefix = b'# coding: latin-1\n', encoding = 'latin-1', label = 'café'
+newline = b'\n'
+
+    @pytest.mark.parametrize("prefix,encoding,label,newline", [
+        (b"", "utf-8", "café", b"\n"),
+        (b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8, "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8 + b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (b"# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"# coding: cp1252\n", "cp1252", "café €", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: cp1252\n", "cp1252", "café €", b"\r\n"),
+    ], ids=["default-utf8", "declared-utf8", "utf8-bom", "utf8-bom-cookie",
+            "latin1-first-line", "latin1-second-line", "cp1252", "cp1252-crlf"])
+    def test_importable_source_keeps_decoded_function_and_line_identity(tmp_path, prefix, encoding, label, newline):
+        source, diff = edited_source(tmp_path, prefix, encoding, label, newline)
+        original = source.read_bytes()
+        imported = python_import(tmp_path)
+        assert imported.returncode == 0, imported.stderr
+        assert imported.stdout == "17\n"
+    
+>       selected = changed_functions(tmp_path, diff)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_python_source_encoding.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/diff.py:251: in changed_functions
+    result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x7f4bff40adb0>
+input = b'# coding: latin-1\ndef price():\n    """Return the caf\xe9 price."""\n    total = 0\n    total += 1\n    total += 2\n    total += 3\n    total += 4\n    total += 5\n    return total + 2\n'
+final = True
+
+>   ???
+E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 52: invalid continuation byte
+
+<frozen codecs>:322: UnicodeDecodeError
+_ test_importable_source_keeps_decoded_function_and_line_identity[latin1-second-line] _
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_importable_source_keeps_d5')
+prefix = b'#!/usr/bin/env python\n# coding: latin-1\n', encoding = 'latin-1'
+label = 'café', newline = b'\n'
+
+    @pytest.mark.parametrize("prefix,encoding,label,newline", [
+        (b"", "utf-8", "café", b"\n"),
+        (b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8, "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8 + b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (b"# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"# coding: cp1252\n", "cp1252", "café €", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: cp1252\n", "cp1252", "café €", b"\r\n"),
+    ], ids=["default-utf8", "declared-utf8", "utf8-bom", "utf8-bom-cookie",
+            "latin1-first-line", "latin1-second-line", "cp1252", "cp1252-crlf"])
+    def test_importable_source_keeps_decoded_function_and_line_identity(tmp_path, prefix, encoding, label, newline):
+        source, diff = edited_source(tmp_path, prefix, encoding, label, newline)
+        original = source.read_bytes()
+        imported = python_import(tmp_path)
+        assert imported.returncode == 0, imported.stderr
+        assert imported.stdout == "17\n"
+    
+>       selected = changed_functions(tmp_path, diff)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_python_source_encoding.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/diff.py:251: in changed_functions
+    result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x7f4bff40f9e0>
+input = b'#!/usr/bin/env python\n# coding: latin-1\ndef price():\n    """Return the caf\xe9 price."""\n    total = 0\n    total += 1\n    total += 2\n    total += 3\n    total += 4\n    total += 5\n    return total + 2\n'
+final = True
+
+>   ???
+E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 74: invalid continuation byte
+
+<frozen codecs>:322: UnicodeDecodeError
+___ test_importable_source_keeps_decoded_function_and_line_identity[cp1252] ____
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_importable_source_keeps_d6')
+prefix = b'# coding: cp1252\n', encoding = 'cp1252', label = 'café €'
+newline = b'\n'
+
+    @pytest.mark.parametrize("prefix,encoding,label,newline", [
+        (b"", "utf-8", "café", b"\n"),
+        (b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8, "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8 + b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (b"# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"# coding: cp1252\n", "cp1252", "café €", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: cp1252\n", "cp1252", "café €", b"\r\n"),
+    ], ids=["default-utf8", "declared-utf8", "utf8-bom", "utf8-bom-cookie",
+            "latin1-first-line", "latin1-second-line", "cp1252", "cp1252-crlf"])
+    def test_importable_source_keeps_decoded_function_and_line_identity(tmp_path, prefix, encoding, label, newline):
+        source, diff = edited_source(tmp_path, prefix, encoding, label, newline)
+        original = source.read_bytes()
+        imported = python_import(tmp_path)
+        assert imported.returncode == 0, imported.stderr
+        assert imported.stdout == "17\n"
+    
+>       selected = changed_functions(tmp_path, diff)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_python_source_encoding.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/diff.py:251: in changed_functions
+    result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x7f4bff40c050>
+input = b'# coding: cp1252\ndef price():\n    """Return the caf\xe9 \x80 price."""\n    total = 0\n    total += 1\n    total += 2\n    total += 3\n    total += 4\n    total += 5\n    return total + 2\n'
+final = True
+
+>   ???
+E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 51: invalid continuation byte
+
+<frozen codecs>:322: UnicodeDecodeError
+_ test_importable_source_keeps_decoded_function_and_line_identity[cp1252-crlf] _
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_importable_source_keeps_d7')
+prefix = b'#!/usr/bin/env python\n# coding: cp1252\n', encoding = 'cp1252'
+label = 'café €', newline = b'\r\n'
+
+    @pytest.mark.parametrize("prefix,encoding,label,newline", [
+        (b"", "utf-8", "café", b"\n"),
+        (b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8, "utf-8", "café", b"\n"),
+        (codecs.BOM_UTF8 + b"# coding: utf-8\n", "utf-8", "café", b"\n"),
+        (b"# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: latin-1\n", "latin-1", "café", b"\n"),
+        (b"# coding: cp1252\n", "cp1252", "café €", b"\n"),
+        (b"#!/usr/bin/env python\n# coding: cp1252\n", "cp1252", "café €", b"\r\n"),
+    ], ids=["default-utf8", "declared-utf8", "utf8-bom", "utf8-bom-cookie",
+            "latin1-first-line", "latin1-second-line", "cp1252", "cp1252-crlf"])
+    def test_importable_source_keeps_decoded_function_and_line_identity(tmp_path, prefix, encoding, label, newline):
+        source, diff = edited_source(tmp_path, prefix, encoding, label, newline)
+        original = source.read_bytes()
+        imported = python_import(tmp_path)
+        assert imported.returncode == 0, imported.stderr
+        assert imported.stdout == "17\n"
+    
+>       selected = changed_functions(tmp_path, diff)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_python_source_encoding.py:78: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/diff.py:251: in changed_functions
+    result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1028: in read_text
+    return f.read()
+           ^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x7f4bff40fec0>
+input = b'#!/usr/bin/env python\r\n# coding: cp1252\r\ndef price():\r\n    """Return the caf\xe9 \x80 price."""\r\n    total = 0\r\n    total += 1\r\n    total += 2\r\n    total += 3\r\n    total += 4\r\n    total += 5\r\n    return total + 2\r\n'
+final = True
+
+>   ???
+E   UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 76: invalid continuation byte
+
+<frozen codecs>:322: UnicodeDecodeError
+_____ test_invalid_python_encoding_is_not_silently_replaced[unknown-codec] _____
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_invalid_python_encoding_i0')
+prefix = b'# coding: not-a-python-codec\n', encoding = 'utf-8'
+
+    @pytest.mark.parametrize("prefix,encoding", [
+        (b"# coding: not-a-python-codec\n", "utf-8"),
+        (b"# coding: ascii\n", "utf-8"),
+        (codecs.BOM_UTF8 + b"# coding: latin-1\n", "utf-8"),
+        (b"", "latin-1"),
+    ], ids=["unknown-codec", "declared-ascii-invalid-byte", "conflicting-bom-cookie", "invalid-default-utf8"])
+    def test_invalid_python_encoding_is_not_silently_replaced(tmp_path, prefix, encoding):
+        source, diff = edited_source(tmp_path, prefix, encoding, "café")
+        original = source.read_bytes()
+        assert python_import(tmp_path).returncode != 0
+    
+>       with pytest.raises((SyntaxError, UnicodeDecodeError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (SyntaxError, UnicodeDecodeError)
+
+tests/test_python_source_encoding.py:102: Failed
+_ test_invalid_python_encoding_is_not_silently_replaced[declared-ascii-invalid-byte] _
+
+tmp_path = PosixPath('/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/baseline-focused/test_invalid_python_encoding_i1')
+prefix = b'# coding: ascii\n', encoding = 'utf-8'
+
+    @pytest.mark.parametrize("prefix,encoding", [
+        (b"# coding: not-a-python-codec\n", "utf-8"),
+        (b"# coding: ascii\n", "utf-8"),
+        (codecs.BOM_UTF8 + b"# coding: latin-1\n", "utf-8"),
+        (b"", "latin-1"),
+    ], ids=["unknown-codec", "declared-ascii-invalid-byte", "conflicting-bom-cookie", "invalid-default-utf8"])
+    def test_invalid_python_encoding_is_not_silently_replaced(tmp_path, prefix, encoding):
+        source, diff = edited_source(tmp_path, prefix, encoding, "café")
+        original = source.read_bytes()
+        assert python_import(tmp_path).returncode != 0
+    
+>       with pytest.raises((SyntaxError, UnicodeDecodeError)):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE any of (SyntaxError, UnicodeDecodeError)
+
+tests/test_python_source_encoding.py:102: Failed
+=========================== short test summary info ============================
+FAILED tests/test_python_source_encoding.py::test_importable_source_keeps_decoded_function_and_line_identity[utf8-bom]
+FAILED tests/test_python_source_encoding.py::test_importable_source_keeps_decoded_function_and_line_identity[utf8-bom-cookie]
+FAILED tests/test_python_source_encoding.py::test_importable_source_keeps_decoded_function_and_line_identity[latin1-first-line]
+FAILED tests/test_python_source_encoding.py::test_importable_source_keeps_decoded_function_and_line_identity[latin1-second-line]
+FAILED tests/test_python_source_encoding.py::test_importable_source_keeps_decoded_function_and_line_identity[cp1252]
+FAILED tests/test_python_source_encoding.py::test_importable_source_keeps_decoded_function_and_line_identity[cp1252-crlf]
+FAILED tests/test_python_source_encoding.py::test_invalid_python_encoding_is_not_silently_replaced[unknown-codec]
+FAILED tests/test_python_source_encoding.py::test_invalid_python_encoding_is_not_silently_replaced[declared-ascii-invalid-byte]
+8 failed, 7 passed in 0.51s

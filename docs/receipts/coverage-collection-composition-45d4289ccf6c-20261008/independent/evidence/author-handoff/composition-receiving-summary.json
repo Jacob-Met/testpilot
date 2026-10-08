@@ -1,0 +1,568 @@
+{
+  "aligned_tooling_manifest_sha256": "c3e05c74ea93660c14157a0df1279795561182fe245230b7006c180d03b211f2",
+  "both_sandbox_temporary_directories_empty": true,
+  "bounded_corrected_gate": {
+    "errors": 0,
+    "exit": 0,
+    "failed": 0,
+    "passed": 4,
+    "receipt_sha256": "4dafb4710b12ee424ab8322773cbd76895381b24dbb199bdb782460006637647",
+    "skips": 0
+  },
+  "coverage_parent": "fd77eb028bdbdba35644b44c524471b6413fad39",
+  "environment_diagnosis_sha256": "8938dbb037c0383d83dc1a28788ee55dc7ad1db0b064ef640ca07a419aee9157",
+  "full_gate_source_and_receiving": "15 complete configured test modules, including seven coverage tests and 26 owner/independent generated collection tests. The four failures were the existing selected-Python fixture's coverage assertion.",
+  "future_integration_conditions": [
+    "Current owner86776 source and receiver965d disposition",
+    "Composition against the actual accepted integration head",
+    "Existing hosted CI on the published final head"
+  ],
+  "initial_full_gate": {
+    "errors": 0,
+    "exit": 1,
+    "failed": 4,
+    "passed": 165,
+    "receipt_sha256": "f755d79edae67ea09de46c7379f02885b057c4738b7f0639615899b01a5fb4f0",
+    "skips": 0
+  },
+  "owner_parent": "dcd353531ad3dde353b63db4b09adca976b9f256",
+  "qualification": "Prospective native composition is supported by one 165-pass/4-failure full run and an environment-only correction with all four affected controls passing. This is not a single-environment 169-pass run, hosted acceptance, or disposition of owner86776/receiver965d review.",
+  "schema": "testpilot-prospective-composition-receiving/1",
+  "selected_cli": [
+    {
+      "coverage": null,
+      "files": [
+        {
+          "bytes": 6973,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/full-suite/absolute/output/report.json",
+          "sha256": "065bfc60fb87698a4cdb86c30314a58356baf4237a582047b9cf4e3249fe3260"
+        },
+        {
+          "bytes": 790,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/full-suite/absolute/output/report.md",
+          "sha256": "67dc257b8c20b3c1de01f0f5420c12a577d006ea915b2c2404ac4b5554b178b1"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/full-suite/absolute/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1857,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/full-suite/absolute/executions.jsonl",
+          "sha256": "5b8ef853d41a3b035bed16ebb8a3573a54159a68caa18fa30b4425b0dddb4ef9"
+        },
+        {
+          "bytes": 458,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/full-suite/absolute/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "541e81353d67037f90be9a8228dbcccb1689c6d90da82b24ff0e1d908e20d93d"
+        },
+        {
+          "bytes": 31,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/full-suite/absolute/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "442291ba22e04b8bee0cf1a2a7105672d708479c7d8a48ac7e4895f0719b584e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/full-suite/absolute/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/full-suite/absolute/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "full-suite",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "absolute",
+      "status": "passed"
+    },
+    {
+      "coverage": null,
+      "files": [
+        {
+          "bytes": 6974,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/full-suite/relative/output/report.json",
+          "sha256": "3b4c1ed218146327b0132ec2097a3d9d87e7994cd172251b487b6b752307b433"
+        },
+        {
+          "bytes": 790,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/full-suite/relative/output/report.md",
+          "sha256": "4859b5725731f9234dcd208b906f6b286d851e0f19511a38d5eda790e3fd6ce2"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/full-suite/relative/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1857,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/full-suite/relative/executions.jsonl",
+          "sha256": "6ed806498cf1e3b4771942c7d9b2e91f811b4cd59c73bf81df898ce9bdbab695"
+        },
+        {
+          "bytes": 458,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/full-suite/relative/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "1d880d7ae0756c7fe9b11acd14c821516d9f3d3fdd59329363cb9af74a922550"
+        },
+        {
+          "bytes": 31,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/full-suite/relative/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "442291ba22e04b8bee0cf1a2a7105672d708479c7d8a48ac7e4895f0719b584e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/full-suite/relative/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/full-suite/relative/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "full-suite",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "relative",
+      "status": "passed"
+    },
+    {
+      "coverage": null,
+      "files": [
+        {
+          "bytes": 6974,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/full-suite/path/output/report.json",
+          "sha256": "327881595188fd610eb0c65d68df84ef625c4b39001377d3f26f6f277a97df3f"
+        },
+        {
+          "bytes": 790,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/full-suite/path/output/report.md",
+          "sha256": "9d1e5fc984c90c0e679543d3ccaa50111e198883c85756cf0b3e5c0651f89fde"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/full-suite/path/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1857,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/full-suite/path/executions.jsonl",
+          "sha256": "21d13423d679c28ef88c2042c782af2378b501e1989b307bae25e0990053fd22"
+        },
+        {
+          "bytes": 458,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/full-suite/path/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "333519bd069f0e9927430a07dcfe411054a57ae104421131b7d775b80b506f6c"
+        },
+        {
+          "bytes": 31,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/full-suite/path/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "442291ba22e04b8bee0cf1a2a7105672d708479c7d8a48ac7e4895f0719b584e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/full-suite/path/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/full-suite/path/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "full-suite",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "path",
+      "status": "passed"
+    },
+    {
+      "coverage": null,
+      "files": [
+        {
+          "bytes": 6974,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/full-suite/symlink-parent/output/report.json",
+          "sha256": "c41a0ec94c99ee23bc60979f7ceb8cf76f9a77ab73d648d189f32dc9f4afe281"
+        },
+        {
+          "bytes": 790,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/full-suite/symlink-parent/output/report.md",
+          "sha256": "b93d57520bae749bd410a65283dc30b07b9afe0c73c44e837cef7180d8d1e7a0"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/full-suite/symlink-parent/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1857,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/full-suite/symlink-parent/executions.jsonl",
+          "sha256": "571810a078ed15a178e58d9a5b154690bc3796d307f4a64e88f83bff1823bfd5"
+        },
+        {
+          "bytes": 458,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/full-suite/symlink-parent/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "8517287b7e648fbc3a2afb4e6bf02a79810639a92d08771bcd0c6a506ffcf002"
+        },
+        {
+          "bytes": 31,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/full-suite/symlink-parent/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "442291ba22e04b8bee0cf1a2a7105672d708479c7d8a48ac7e4895f0719b584e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/full-suite/symlink-parent/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/full-suite/symlink-parent/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "full-suite",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "symlink-parent",
+      "status": "passed"
+    },
+    {
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "files": [
+        {
+          "bytes": 7842,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/output/report.json",
+          "sha256": "b5c24fa5ba4b1b8af76ffe2b606dab83036cba8efe422e63463f41f39ca4806d"
+        },
+        {
+          "bytes": 864,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/output/report.md",
+          "sha256": "cd9878e48d84c9a117274853e45fd9406e45289a60401ed8db76c24fd297be16"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1987,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/executions.jsonl",
+          "sha256": "4763f94f5bc8a976d9e23dd052032b6f15f3248f742eef3432afb0706a5dc097"
+        },
+        {
+          "bytes": 411,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "424364f0c393468dce260997cbc9e3e16bad7c898813d2664d18edce475b1db2"
+        },
+        {
+          "bytes": 100,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "6d46aad39bff6cd562839c55496140bebdd1fafb73e601249ac0db778242c74e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/selected-python-aligned/absolute/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "selected-python-aligned",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "absolute",
+      "status": "passed"
+    },
+    {
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "files": [
+        {
+          "bytes": 7842,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/selected-python-aligned/relative/output/report.json",
+          "sha256": "498306381e110c96404fddeb5bf2524bc91d5d8b0174b5aac5b22107f40dff0f"
+        },
+        {
+          "bytes": 864,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/selected-python-aligned/relative/output/report.md",
+          "sha256": "7d65f6979ad3d0e5c988643befb4885afc11d53965b60afa4e7ca584a12fbb7e"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/selected-python-aligned/relative/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1987,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/selected-python-aligned/relative/executions.jsonl",
+          "sha256": "67c1f4bffc8e19ac3c0163bff2d9fc7772b2fb9b206e6ba68ffca577e57b3c87"
+        },
+        {
+          "bytes": 411,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/selected-python-aligned/relative/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "c0a5de453eb12e108c19483699e92ca399950cec161422a5e7a46ca4a9f6d958"
+        },
+        {
+          "bytes": 100,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/selected-python-aligned/relative/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "6d46aad39bff6cd562839c55496140bebdd1fafb73e601249ac0db778242c74e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/selected-python-aligned/relative/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/selected-python-aligned/relative/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "selected-python-aligned",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "relative",
+      "status": "passed"
+    },
+    {
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "files": [
+        {
+          "bytes": 7842,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/selected-python-aligned/path/output/report.json",
+          "sha256": "fb28b86178c3b9e61ae4dd59584a368bbe60730e2fe7f249a91c9fe60556c1b8"
+        },
+        {
+          "bytes": 864,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/selected-python-aligned/path/output/report.md",
+          "sha256": "f764e236755453058966ec47292bd1e9b93ab21f36f404547e1ab8481388dadc"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/selected-python-aligned/path/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1987,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/selected-python-aligned/path/executions.jsonl",
+          "sha256": "57455ee89f23b7e040256cd87453fbebe475e3abca22e626a30a15f75b223618"
+        },
+        {
+          "bytes": 411,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/selected-python-aligned/path/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "6efa5b884eced0b45d88465927574d5c87339f1d4e53e8e5ea37f919d6f641ab"
+        },
+        {
+          "bytes": 100,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/selected-python-aligned/path/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "6d46aad39bff6cd562839c55496140bebdd1fafb73e601249ac0db778242c74e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/selected-python-aligned/path/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/selected-python-aligned/path/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "selected-python-aligned",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "path",
+      "status": "passed"
+    },
+    {
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 2,
+        "total_after": 100.0,
+        "total_before": 100.0,
+        "total_delta": 0.0
+      },
+      "files": [
+        {
+          "bytes": 7841,
+          "fixture_path": "output/report.json",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/output/report.json",
+          "sha256": "126e703205297517b9c136f14487ce5a66ce74c03eac0c9060ec74eee7c9d79f"
+        },
+        {
+          "bytes": 864,
+          "fixture_path": "output/report.md",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/output/report.md",
+          "sha256": "4797e43f016748faf769379b14d595f93c48cb6b673044c5c377699c63fc723b"
+        },
+        {
+          "bytes": 300,
+          "fixture_path": "output/testpilot.patch",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/output/testpilot.patch",
+          "sha256": "993dca8a99643534f5ba8e14c0d822e7f121c74d23ec2ee3ea74a720d64934d9"
+        },
+        {
+          "bytes": 1987,
+          "fixture_path": "executions.jsonl",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/executions.jsonl",
+          "sha256": "bc26616289a76fd0d2bebb940c1b38bd200965d2e0a7687d969f0727089102bf"
+        },
+        {
+          "bytes": 411,
+          "fixture_path": "physical/prepared environment/pyvenv.cfg",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/physical/prepared-environment/pyvenv.cfg",
+          "sha256": "ec81e354436d35e51cfe14a4c1493076a4dee5911599c816163f24c04451c651"
+        },
+        {
+          "bytes": 100,
+          "fixture_path": "physical/prepared environment/lib/python3.14/site-packages/test-tooling.pth",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/physical/prepared-environment/lib/python3.14/site-packages/test-tooling.pth",
+          "sha256": "6d46aad39bff6cd562839c55496140bebdd1fafb73e601249ac0db778242c74e"
+        },
+        {
+          "bytes": 101,
+          "fixture_path": "project source/subject.py",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/project-source/subject.py",
+          "sha256": "b76ddba9eecbce36f9b7be169bff2204da05192b23b7c909ad6bd168d38f49e0"
+        },
+        {
+          "bytes": 156,
+          "fixture_path": "project source/tests/test_existing.py",
+          "packet_path": "selected-cli/selected-python-aligned/symlink-parent/project-source/tests/test_existing.py",
+          "sha256": "81d459a2a0805b72ee301e83e4079cd48c30d50d19d10319647751a38e921c22"
+        }
+      ],
+      "final_passed": 2,
+      "generated_collected": 1,
+      "generated_passed": 1,
+      "junit_available": true,
+      "phase": "selected-python-aligned",
+      "repair_rounds_used": 1,
+      "selected_interpreter_executions": 5,
+      "source_and_tests_unchanged": true,
+      "spelling": "symlink-parent",
+      "status": "passed"
+    }
+  ],
+  "source_changes_between_runs": false,
+  "source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "utc": "2026-10-08T11:54:00.316057+00:00"
+}

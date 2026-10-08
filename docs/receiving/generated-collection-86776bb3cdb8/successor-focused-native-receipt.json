@@ -1,0 +1,29 @@
+{
+  "source": "76df7c0fb389f31f2101894f305ca3d49eac9185",
+  "tree": "eee3cb2e71e1496adfbdf8218293a003e51e6171",
+  "command": [
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/dev/shm/86776bb3cdb8-product-next/testpilot-evidence/tmp/successor-focused",
+    "tests/test_generated_collection.py",
+    "tests/test_eval.py"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-product-next/testpilot",
+  "source_environment": {
+    "PYTHONPATH": "/dev/shm/86776bb3cdb8-product-next/testpilot",
+    "TMPDIR": "/dev/shm/86776bb3cdb8-product-next/testpilot-evidence/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "observed_utc": "2026-10-08T11:05:44.367935+00:00",
+  "elapsed_seconds": 15.779,
+  "exit_code": 0,
+  "log": "successor-focused-native.log",
+  "log_sha256": "45b0539284e1b51517f7ab2cfb14b2a20206a6b254b786e4d9596347d439d20c",
+  "result_tail": ".................                                                        [100%]\n17 passed in 15.60s\n"
+}

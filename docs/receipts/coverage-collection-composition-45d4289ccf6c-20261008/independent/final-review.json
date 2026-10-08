@@ -1,0 +1,43 @@
+{
+  "aligned_four_case_review_sha256": "d1162a801cbc5e73735ad40a6abfe58b100f80c1806242708c5d65bfe294795e",
+  "author_handoff_manifest_sha256": "3efadcaf8a4025f7030f3b8a8747e303362249e0cf0d091735eba7c719d6b4aa",
+  "author_handoff_payload_bytes_verified": 600823,
+  "author_handoff_payload_files_verified": 100,
+  "decision": "accept exact prospective native composition for the explicitly split execution scope",
+  "github_mutations": 0,
+  "native_source_commit": "09656db720176124bd206ed4bb871e6e8dcf6d42",
+  "native_source_parents": [
+    "fd77eb028bdbdba35644b44c524471b6413fad39",
+    "dcd353531ad3dde353b63db4b09adca976b9f256"
+  ],
+  "native_source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "original_collection_owner_published_head": "dcd353531ad3dde353b63db4b09adca976b9f256",
+  "original_standalone_coverage_qualification": "fd77eb028bdbdba35644b44c524471b6413fad39",
+  "owner_source_edits": 0,
+  "qualification": {
+    "actual_final_head_hosted_gate": "pending",
+    "initial_full_gate": {
+      "errors": 0,
+      "failed": 4,
+      "passed": 165,
+      "runtime": "Original outer venv; four selected-interpreter fixtures lacked coverage",
+      "skipped": 0
+    },
+    "single_environment_full_green_run_claimed": false,
+    "source_owner_86776_and_receiver_965_disposition": "pending in author preflight; this reviewer does not transfer or impersonate their acceptance",
+    "source_unchanged_between_runs": true,
+    "targeted_followup": {
+      "errors": 0,
+      "failed": 0,
+      "passed": 4,
+      "runtime": "Private aligned tooling parent with the same recorded pytest/coverage package bytes",
+      "skipped": 0
+    }
+  },
+  "reviewed_at": "2026-10-08T11:56:17.457179+00:00",
+  "reviewer": "chatgpt-45d4289ccf6c/native_execution",
+  "schema": "testpilot-coverage-collection-final-independent-review-v1",
+  "source_and_negative_review_sha256": "140c79ac1e31b38215a9744dee4fe049c52540fabf7b3c7ec814e9e4e2a1dde4",
+  "source_commit_receipt_sha256": "7687809c53a514bb0728f47556a6dfe8100ba37c5e4065ef4f51d26835b64f38",
+  "tests_executed_by_reviewer": 0
+}

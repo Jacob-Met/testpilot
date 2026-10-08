@@ -1,0 +1,92 @@
+{
+  "finding": "The existing prepared_python fixture shares only the directory containing pytest. Here pytest is system-installed and coverage is in the outer venv, so all four prepared project interpreters lack coverage while the test's assertion checks the outer interpreter. Genuine unavailable coverage is therefore expected in the actual CLI reports; no coverage-json collection failure is reached for those interpreters.",
+  "observed_utc": "2026-10-08T11:42:22.611163+00:00",
+  "probe_rows": [
+    {
+      "argv": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+        "-B",
+        "-c",
+        "import importlib.util,json,sys; print(json.dumps({'python':sys.version,'prefix':sys.prefix,'pytest_origin':(s.origin if (s:=importlib.util.find_spec('pytest')) else None),'coverage_origin':(s.origin if (s:=importlib.util.find_spec('coverage')) else None)}))"
+      ],
+      "kind": "outer_receiver",
+      "result": {
+        "coverage_origin": "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/lib/python3.14/site-packages/coverage/__init__.py",
+        "prefix": "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native",
+        "pytest_origin": "/usr/lib/python3/dist-packages/pytest/__init__.py",
+        "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+      }
+    },
+    {
+      "coverage_command": {
+        "returncode": 1,
+        "stderr": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_0/physical/prepared environment/bin/python: No module named coverage\n",
+        "stdout": ""
+      },
+      "kind": "prepared_project_0",
+      "python": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_0/physical/prepared environment/bin/python",
+      "result": {
+        "coverage_origin": null,
+        "prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_0/physical/prepared environment",
+        "pytest_origin": "/usr/lib/python3/dist-packages/pytest/__init__.py",
+        "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+      },
+      "tooling_pth": "/usr/lib/python3/dist-packages\n"
+    },
+    {
+      "coverage_command": {
+        "returncode": 1,
+        "stderr": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_1/physical/prepared environment/bin/python: No module named coverage\n",
+        "stdout": ""
+      },
+      "kind": "prepared_project_1",
+      "python": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_1/physical/prepared environment/bin/python",
+      "result": {
+        "coverage_origin": null,
+        "prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_1/physical/prepared environment",
+        "pytest_origin": "/usr/lib/python3/dist-packages/pytest/__init__.py",
+        "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+      },
+      "tooling_pth": "/usr/lib/python3/dist-packages\n"
+    },
+    {
+      "coverage_command": {
+        "returncode": 1,
+        "stderr": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_2/physical/prepared environment/bin/python: No module named coverage\n",
+        "stdout": ""
+      },
+      "kind": "prepared_project_2",
+      "python": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_2/physical/prepared environment/bin/python",
+      "result": {
+        "coverage_origin": null,
+        "prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_2/physical/prepared environment",
+        "pytest_origin": "/usr/lib/python3/dist-packages/pytest/__init__.py",
+        "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+      },
+      "tooling_pth": "/usr/lib/python3/dist-packages\n"
+    },
+    {
+      "coverage_command": {
+        "returncode": 1,
+        "stderr": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/physical/prepared environment/bin/python: No module named coverage\n",
+        "stdout": ""
+      },
+      "kind": "prepared_project_3",
+      "python": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/physical/prepared environment/bin/python",
+      "result": {
+        "coverage_origin": null,
+        "prefix": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/physical/prepared environment",
+        "pytest_origin": "/usr/lib/python3/dist-packages/pytest/__init__.py",
+        "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+      },
+      "tooling_pth": "/usr/lib/python3/dist-packages\n"
+    }
+  ],
+  "qualification": "Preserved 165/4 full-gate negative; this dependency diagnosis alone is not a replacement pass.",
+  "schema": "testpilot-combined-selected-python-tooling-diagnosis/1",
+  "source_changes": false,
+  "source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "test_source_sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+  "test_source_unchanged_from_main": true,
+  "tests_executed": 0
+}

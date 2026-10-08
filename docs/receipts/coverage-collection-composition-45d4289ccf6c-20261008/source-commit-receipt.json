@@ -1,0 +1,17 @@
+{
+  "author": "ChatGPT estate-45d4289ccf6c <chatgpt@localhost>",
+  "branch": "review/45d4289ccf6c-testpilot-coverage-collection-dcd353",
+  "commit": "09656db720176124bd206ed4bb871e6e8dcf6d42",
+  "original_coverage_branch_unchanged": true,
+  "owner_remote_branch_unchanged": true,
+  "parents": [
+    "fd77eb028bdbdba35644b44c524471b6413fad39",
+    "dcd353531ad3dde353b63db4b09adca976b9f256"
+  ],
+  "receiver_packet_manifest_sha256": "3efadcaf8a4025f7030f3b8a8747e303362249e0cf0d091735eba7c719d6b4aa",
+  "schema": "testpilot-prospective-source-commit/1",
+  "state": "Prospective native source; original owner86776 and receiver965d disposition and actual-head hosted CI remain required.",
+  "tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "utc": "2026-10-08T11:55:13.389712+00:00",
+  "worktree": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree"
+}

@@ -1,0 +1,87 @@
+{
+  "observed_at": "2026-10-08T11:00:20.795861+00:00",
+  "base": "9f01fcb6de085850eca00db746380795eb548d62",
+  "head": "2e32efee7fec4b97f3756083c66f4b860359957b",
+  "ruff_findings": {
+    "9f01fcb6de085850eca00db746380795eb548d62": [
+      {
+        "path": "testpilot/sandbox.py",
+        "code": "UP033",
+        "message": "Use `@functools.cache` instead of `@functools.lru_cache(maxsize=None)`",
+        "source_line": "@lru_cache(maxsize=None)"
+      },
+      {
+        "path": "testpilot/sandbox.py",
+        "code": "PLW1510",
+        "message": "`subprocess.run` without explicit `check` argument",
+        "source_line": "    return subprocess.run([python, \"-c\", \"import coverage\"], capture_output=True).returncode == 0"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.S`",
+        "source_line": "_FENCE = re.compile(r\"```([^\\n`]*)\\n(.*?)```\", re.S)"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.I`",
+        "source_line": "_PATH_COMMENT = re.compile(r\"^#\\s*(?:file|path)\\s*:\\s*(\\S+)\\s*\\n\", re.I)"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.S`",
+        "source_line": "    m = re.search(r\"VERDICT:\\s*CODE_BUG\\s*(.*)\", text, re.S)"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.M`",
+        "source_line": "    return sum(len(re.findall(r\"^\\s*(?:async\\s+)?def test_\", c, re.M)) for c in files.values())"
+      }
+    ],
+    "HEAD": [
+      {
+        "path": "testpilot/sandbox.py",
+        "code": "UP033",
+        "message": "Use `@functools.cache` instead of `@functools.lru_cache(maxsize=None)`",
+        "source_line": "@lru_cache(maxsize=None)"
+      },
+      {
+        "path": "testpilot/sandbox.py",
+        "code": "PLW1510",
+        "message": "`subprocess.run` without explicit `check` argument",
+        "source_line": "    return subprocess.run([python, \"-c\", \"import coverage\"], capture_output=True).returncode == 0"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.S`",
+        "source_line": "_FENCE = re.compile(r\"```([^\\n`]*)\\n(.*?)```\", re.S)"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.I`",
+        "source_line": "_PATH_COMMENT = re.compile(r\"^#\\s*(?:file|path)\\s*:\\s*(\\S+)\\s*\\n\", re.I)"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.S`",
+        "source_line": "    m = re.search(r\"VERDICT:\\s*CODE_BUG\\s*(.*)\", text, re.S)"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "code": "FURB167",
+        "message": "Use of regular expression alias `re.M`",
+        "source_line": "    return sum(len(re.findall(r\"^\\s*(?:async\\s+)?def test_\", c, re.M)) for c in files.values())"
+      }
+    ]
+  },
+  "introduced_findings": [],
+  "whitespace_exit": 0,
+  "whitespace_output": "",
+  "note": "Auxiliary inherited Ruff profile has six unchanged findings in original code; no source cleanup or profile override was applied."
+}

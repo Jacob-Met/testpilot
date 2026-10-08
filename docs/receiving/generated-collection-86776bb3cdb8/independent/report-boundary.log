@@ -1,0 +1,3 @@
+PASS complete_empty_report: JUnit=True, written=0, verified=0, ok=False
+PASS abrupt_exit_without_report: JUnit=False, written=2, verified=0, ok=False
+PASS timeout_without_report: JUnit=False, written=2, verified=0, ok=False
