@@ -1,0 +1,132 @@
+{
+  "base_commit": "981eb6c1cc6765c922f2e1fc394b9e28499c5440",
+  "base_tree": "27679113fae59641fea51eb6caefd18f5429d6dc",
+  "baseline_new_tests": {
+    "errors": 0,
+    "failed_cases": [
+      "test_retries_a_real_response_body_timeout_then_returns_usage",
+      "test_real_timeout_exhaustion_becomes_model_error_with_bounded_attempts[0]",
+      "test_real_timeout_exhaustion_becomes_model_error_with_bounded_attempts[2]",
+      "test_http_and_direct_timeout_failures_share_the_existing_retry_budget",
+      "test_real_cli_recovers_and_writes_passing_tests_and_reports",
+      "test_real_cli_repair_timeout_retains_failing_patch_and_writes_error_report"
+    ],
+    "failures": 6,
+    "skips": 0,
+    "tests": 8
+  },
+  "baseline_probe": {
+    "base": "981eb6c1cc6765c922f2e1fc394b9e28499c5440",
+    "exception": "TimeoutError",
+    "message": "timed out",
+    "requests": [
+      "/v1/chat/completions"
+    ],
+    "retry_delays": [],
+    "source": {
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc"
+    }
+  },
+  "candidate_new_and_existing_model_tests": {
+    "errors": 0,
+    "failed_cases": [],
+    "failures": 0,
+    "skips": 0,
+    "tests": 15
+  },
+  "candidate_pins": {
+    "testpilot/model.py": {
+      "bytes": 9918,
+      "git_blob": "af0c0662faed09dc1db286233719b90d1504b229",
+      "sha256": "7d09afbb738f349a04756a9b69559b3bfabfe096e632409a80563b0dac635547"
+    },
+    "tests/test_model_timeouts.py": {
+      "bytes": 10152,
+      "git_blob": "661fea7f966acc5c199c7c8bf6c7316e563f50ed",
+      "sha256": "1d1789544582acbacd2bb4c47742ea469e0f0714943c7d56ea6052ba4f340613"
+    }
+  },
+  "environment": {
+    "fixture_transport": "stdlib urllib to authored HTTP server bound to 127.0.0.1 only",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+    "provider_requests": 0,
+    "pytest": "9.0.2",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]"
+  },
+  "native_commands": [
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/jacob/hamon-testpilot-timeout-3dcb83a1/baseline python3 -m pytest -q -p no:cacheprovider /home/jacob/hamon-testpilot-timeout-3dcb83a1/test_model_timeouts.py",
+    "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/jacob/hamon-testpilot-timeout-3dcb83a1/candidate python3 -m pytest -q -p no:cacheprovider /home/jacob/hamon-testpilot-timeout-3dcb83a1/candidate/tests/test_model_timeouts.py /home/jacob/hamon-testpilot-timeout-3dcb83a1/candidate/tests/test_model.py"
+  ],
+  "prepared_utc": "2026-10-08T09:41:05.486292+00:00",
+  "qualification_limits": [
+    "Scoped model suite; no full-repository suite or hosted-CI result inferred.",
+    "CLI fixture injects only the local model client and short request deadline; source CLI, loop and pytest runner execute.",
+    "Retries keep the existing configured attempt count and exponential schedule. The test records delays instead of sleeping.",
+    "No provider/model-quality or unknown usage of failed attempts is measured."
+  ],
+  "receiving_assertions": {
+    "recovered_cli": {
+      "entrypoint": "testpilot.__main__.main; make_client injected with actual local urllib client/deadline",
+      "exit_code": 0,
+      "generated_tests": 2,
+      "git_apply_check": 0,
+      "http_requests": 3,
+      "pytest_passed": 3,
+      "retry_delays": [
+        2
+      ],
+      "status": "passed"
+    },
+    "repair_timeout_cli": {
+      "entrypoint": "testpilot.__main__.main; make_client injected with actual local urllib client/deadline",
+      "exit_code": 1,
+      "generated_tests": 1,
+      "git_apply_check": 0,
+      "http_requests": 4,
+      "pytest_failed": 1,
+      "retry_delays": [
+        2
+      ],
+      "status": "model_error"
+    },
+    "shared": {
+      "generated_patch_not_applied_to_original": true,
+      "json_and_markdown_outputs_written": true,
+      "ledger_returned_response_entries": 2,
+      "ledger_returned_response_tokens": 20,
+      "original_source_and_existing_test_unchanged": true
+    }
+  },
+  "repository": "Jacob-Met/testpilot",
+  "source_pins": {
+    "testpilot/__init__.py": {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    "testpilot/__main__.py": {
+      "git_blob": "7e71f9a08227075f5b5a1e02b9bc3bd64afcd8e3",
+      "sha256": "c5896dd64beddb360a8c1864711800752ed6d19b1bf9ac028c88c501f7328786"
+    },
+    "testpilot/diff.py": {
+      "git_blob": "d176701aebb56ce7507ee5f0111245247393f35f",
+      "sha256": "d1f22e3b594f9b8c657de6a69e4c44bb32c2a24819165dadb9e8a5a50d0dc5fc"
+    },
+    "testpilot/loop.py": {
+      "git_blob": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+      "sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf"
+    },
+    "testpilot/model.py": {
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc"
+    },
+    "testpilot/sandbox.py": {
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3"
+    }
+  },
+  "source_scope": [
+    "testpilot/model.py::OpenAICompatClient.chat",
+    "tests/test_model_timeouts.py"
+  ]
+}

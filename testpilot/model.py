@@ -157,12 +157,14 @@ class OpenAICompatClient:
                     continue
                 detail = e.read().decode("utf-8", "replace")[:500] if hasattr(e, "read") else ""
                 raise ModelError(f"HTTP {e.code} from {url}: {detail}") from e
-            except urllib.error.URLError as e:
+            except (urllib.error.URLError, TimeoutError) as e:
+                # urllib can raise TimeoutError directly while reading a response body.
                 if attempt < self.retries:
                     attempt += 1
                     self._sleep(2 ** attempt)
                     continue
-                raise ModelError(f"connection error to {url}: {e.reason}") from e
+                reason = e.reason if isinstance(e, urllib.error.URLError) else str(e)
+                raise ModelError(f"connection error to {url}: {reason}") from e
         try:
             content = data["choices"][0]["message"]["content"] or ""
         except (KeyError, IndexError, TypeError) as e:
