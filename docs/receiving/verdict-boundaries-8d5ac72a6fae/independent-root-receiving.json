@@ -1,0 +1,500 @@
+{
+  "schema": "testpilot.verdict.independent-receiving.v1",
+  "oracle_git_blob": "f4672046910c8a5096379cb18dd9ad319b2c687e",
+  "base": "e114902b4c938dbf701f30a8299460a86a32dc0a",
+  "original_git_blob": "fb105c23a535d1b446c913f4df0a461b3bfcad75",
+  "candidate_git_blob": "b9ba4870f9dd0a373fb48b94434656540251a15c",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "boundary": "Actual maintained parse_verdict AST under native Python; separate author CLI receiving covers full TestPilot execution.",
+  "results": [
+    {
+      "source": "original",
+      "sha256": "af87b8921060cc4f515635f87fd402763f68b76469a5f4268ba16597d33fa5ef",
+      "cases": [
+        {
+          "name": "plain",
+          "expected": "model reported a code bug",
+          "actual": "model reported a code bug",
+          "pass": true
+        },
+        {
+          "name": "reason same line",
+          "expected": "Missing negative branch.",
+          "actual": "Missing negative branch.",
+          "pass": true
+        },
+        {
+          "name": "reason CRLF",
+          "expected": "first\r\nsecond",
+          "actual": "first\r\nsecond",
+          "pass": true
+        },
+        {
+          "name": "prose before header",
+          "expected": "The zero result is wrong.",
+          "actual": "The zero result is wrong.",
+          "pass": true
+        },
+        {
+          "name": "three spaces",
+          "expected": "reason",
+          "actual": "reason",
+          "pass": true
+        },
+        {
+          "name": "horizontal gap",
+          "expected": "reason",
+          "actual": "reason",
+          "pass": true
+        },
+        {
+          "name": "ordinary fenced repair",
+          "expected": null,
+          "actual": "\"\n```",
+          "pass": false
+        },
+        {
+          "name": "triple-quoted fixture",
+          "expected": null,
+          "actual": "\"\"\"\n```",
+          "pass": false
+        },
+        {
+          "name": "quoted prose",
+          "expected": null,
+          "actual": "\" is the literal value.",
+          "pass": false
+        },
+        {
+          "name": "blockquote",
+          "expected": null,
+          "actual": "example",
+          "pass": false
+        },
+        {
+          "name": "embedded prose",
+          "expected": null,
+          "actual": ".",
+          "pass": false
+        },
+        {
+          "name": "larger token",
+          "expected": null,
+          "actual": "GY bad",
+          "pass": false
+        },
+        {
+          "name": "larger underscore token",
+          "expected": null,
+          "actual": "_EXTRA bad",
+          "pass": false
+        },
+        {
+          "name": "split header",
+          "expected": null,
+          "actual": "bad",
+          "pass": false
+        },
+        {
+          "name": "lowercase header",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "lowercase token",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "indented four",
+          "expected": null,
+          "actual": "code",
+          "pass": false
+        },
+        {
+          "name": "unfinished backtick fence",
+          "expected": null,
+          "actual": "bad",
+          "pass": false
+        },
+        {
+          "name": "unfinished tilde fence",
+          "expected": null,
+          "actual": "bad",
+          "pass": false
+        },
+        {
+          "name": "different closer",
+          "expected": null,
+          "actual": "bad",
+          "pass": false
+        },
+        {
+          "name": "short closer",
+          "expected": null,
+          "actual": "bad",
+          "pass": false
+        },
+        {
+          "name": "valid after complete fence",
+          "expected": "actual",
+          "actual": "example\n~~~\nVERDICT: CODE_BUG actual",
+          "pass": false
+        },
+        {
+          "name": "valid after longer closer",
+          "expected": "actual",
+          "actual": "example\n````\nVERDICT: CODE_BUG actual",
+          "pass": false
+        },
+        {
+          "name": "quoted then actual",
+          "expected": "actual",
+          "actual": "\" is quoted.\nVERDICT: CODE_BUG actual",
+          "pass": false
+        },
+        {
+          "name": "ordinary repair no protocol",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "empty reply",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "inline native fence opener",
+          "expected": null,
+          "actual": "```",
+          "pass": false
+        }
+      ],
+      "passed": 10,
+      "failed": 17
+    },
+    {
+      "source": "candidate",
+      "sha256": "4bedd7d03eba1294b14884ea246499410a6492fdd89dab038e38ee514d17c948",
+      "cases": [
+        {
+          "name": "plain",
+          "expected": "model reported a code bug",
+          "actual": "model reported a code bug",
+          "pass": true
+        },
+        {
+          "name": "reason same line",
+          "expected": "Missing negative branch.",
+          "actual": "Missing negative branch.",
+          "pass": true
+        },
+        {
+          "name": "reason CRLF",
+          "expected": "first\r\nsecond",
+          "actual": "first\r\nsecond",
+          "pass": true
+        },
+        {
+          "name": "prose before header",
+          "expected": "The zero result is wrong.",
+          "actual": "The zero result is wrong.",
+          "pass": true
+        },
+        {
+          "name": "three spaces",
+          "expected": "reason",
+          "actual": "reason",
+          "pass": true
+        },
+        {
+          "name": "horizontal gap",
+          "expected": "reason",
+          "actual": "reason",
+          "pass": true
+        },
+        {
+          "name": "ordinary fenced repair",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "triple-quoted fixture",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "quoted prose",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "blockquote",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "embedded prose",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "larger token",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "larger underscore token",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "split header",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "lowercase header",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "lowercase token",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "indented four",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "unfinished backtick fence",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "unfinished tilde fence",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "different closer",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "short closer",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "valid after complete fence",
+          "expected": "actual",
+          "actual": "actual",
+          "pass": true
+        },
+        {
+          "name": "valid after longer closer",
+          "expected": "actual",
+          "actual": "actual",
+          "pass": true
+        },
+        {
+          "name": "quoted then actual",
+          "expected": "actual",
+          "actual": "actual",
+          "pass": true
+        },
+        {
+          "name": "ordinary repair no protocol",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "empty reply",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        },
+        {
+          "name": "inline native fence opener",
+          "expected": null,
+          "actual": null,
+          "pass": true
+        }
+      ],
+      "passed": 27,
+      "failed": 0
+    }
+  ],
+  "methodOnlySourceProof": {
+    "onlyParseVerdictChanged": true,
+    "originalBlob": "fb105c23a535d1b446c913f4df0a461b3bfcad75",
+    "candidateBlob": "b9ba4870f9dd0a373fb48b94434656540251a15c",
+    "outsideBytesIdentical": true
+  },
+  "oracle": {
+    "schema": "testpilot.verdict.independent-oracle.v1",
+    "receiver": "estate-8d5ac72a6fae/root",
+    "base": "e114902b4c938dbf701f30a8299460a86a32dc0a",
+    "frozenBeforeCandidateAccess": true,
+    "cases": [
+      {
+        "name": "plain",
+        "input": "VERDICT: CODE_BUG",
+        "expected": "model reported a code bug"
+      },
+      {
+        "name": "reason same line",
+        "input": "VERDICT: CODE_BUG Missing negative branch.",
+        "expected": "Missing negative branch."
+      },
+      {
+        "name": "reason CRLF",
+        "input": "VERDICT: CODE_BUG\r\nfirst\r\nsecond",
+        "expected": "first\r\nsecond"
+      },
+      {
+        "name": "prose before header",
+        "input": "I checked the tests.\nVERDICT: CODE_BUG\nThe zero result is wrong.",
+        "expected": "The zero result is wrong."
+      },
+      {
+        "name": "three spaces",
+        "input": "   VERDICT: CODE_BUG reason",
+        "expected": "reason"
+      },
+      {
+        "name": "horizontal gap",
+        "input": "VERDICT:\t  CODE_BUG\t reason",
+        "expected": "reason"
+      },
+      {
+        "name": "ordinary fenced repair",
+        "input": "```python tests/test_fix.py\ndef test_text():\n    assert f() == \"VERDICT: CODE_BUG\"\n```",
+        "expected": null
+      },
+      {
+        "name": "triple-quoted fixture",
+        "input": "```python tests/test_fix.py\nmessage = \"\"\"\nVERDICT: CODE_BUG\n\"\"\"\n```",
+        "expected": null
+      },
+      {
+        "name": "quoted prose",
+        "input": "\"VERDICT: CODE_BUG\" is the literal value.",
+        "expected": null
+      },
+      {
+        "name": "blockquote",
+        "input": "> VERDICT: CODE_BUG example",
+        "expected": null
+      },
+      {
+        "name": "embedded prose",
+        "input": "The fixture contains VERDICT: CODE_BUG.",
+        "expected": null
+      },
+      {
+        "name": "larger token",
+        "input": "VERDICT: CODE_BUGGY bad",
+        "expected": null
+      },
+      {
+        "name": "larger underscore token",
+        "input": "VERDICT: CODE_BUG_EXTRA bad",
+        "expected": null
+      },
+      {
+        "name": "split header",
+        "input": "VERDICT:\nCODE_BUG bad",
+        "expected": null
+      },
+      {
+        "name": "lowercase header",
+        "input": "verdict: CODE_BUG bad",
+        "expected": null
+      },
+      {
+        "name": "lowercase token",
+        "input": "VERDICT: code_bug bad",
+        "expected": null
+      },
+      {
+        "name": "indented four",
+        "input": "    VERDICT: CODE_BUG code",
+        "expected": null
+      },
+      {
+        "name": "unfinished backtick fence",
+        "input": "```python\nVERDICT: CODE_BUG bad",
+        "expected": null
+      },
+      {
+        "name": "unfinished tilde fence",
+        "input": "~~~python\nVERDICT: CODE_BUG bad",
+        "expected": null
+      },
+      {
+        "name": "different closer",
+        "input": "````python\n~~~\nVERDICT: CODE_BUG bad",
+        "expected": null
+      },
+      {
+        "name": "short closer",
+        "input": "````python\n```\nVERDICT: CODE_BUG bad",
+        "expected": null
+      },
+      {
+        "name": "valid after complete fence",
+        "input": "~~~python\nVERDICT: CODE_BUG example\n~~~\nVERDICT: CODE_BUG actual",
+        "expected": "actual"
+      },
+      {
+        "name": "valid after longer closer",
+        "input": "```python\nVERDICT: CODE_BUG example\n````\nVERDICT: CODE_BUG actual",
+        "expected": "actual"
+      },
+      {
+        "name": "quoted then actual",
+        "input": "\"VERDICT: CODE_BUG\" is quoted.\nVERDICT: CODE_BUG actual",
+        "expected": "actual"
+      },
+      {
+        "name": "ordinary repair no protocol",
+        "input": "```python tests/test_fix.py\ndef test_fix():\n    assert f() == 2\n```",
+        "expected": null
+      },
+      {
+        "name": "empty reply",
+        "input": "",
+        "expected": null
+      },
+      {
+        "name": "inline native fence opener",
+        "input": "Corrected tests: ```python tests/test_fix.py\nVERDICT: CODE_BUG\n```",
+        "expected": null
+      }
+    ]
+  }
+}

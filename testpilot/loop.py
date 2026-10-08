@@ -165,11 +165,27 @@ def parse_test_files(text: str) -> tuple[dict[str, str], list[str]]:
 
 
 def parse_verdict(text: str) -> str | None:
-    m = re.search(r"VERDICT:\s*CODE_BUG\s*(.*)", text, re.S)
-    if m is None:
-        return None
-    return m.group(1).strip() or "model reported a code bug"
-
+    """Read an explicit prose verdict without treating quoted test text as control."""
+    fence = ""
+    # Physical CR/LF lines keep Unicode separators inside their original text.
+    for physical in re.finditer(r"[^\r\n]*(?:\r\n|\r|\n|$)", text):
+        line = physical.group().rstrip("\r\n")
+        if fence:
+            closer = r"[ \t]*" + re.escape(fence[0]) + "{" + str(len(fence)) + r",}[ \t]*"
+            if re.fullmatch(closer, line):
+                fence = ""
+            continue
+        # Four spaces or a leading tab denote an indented code example.
+        header = re.match(r" {0,3}VERDICT:[ \t]*CODE_BUG(?=[ \t]|$)", line)
+        if header is not None:
+            reason = text[physical.start() + header.end():].strip()
+            return reason or "model reported a code bug"
+        # The existing file parser also admits backtick openers after prose.
+        # Keep an unfinished fence open rather than guessing that its text is a verdict.
+        opener = re.search(r"`{3,}|~{3,}", line)
+        if opener is not None:
+            fence = opener.group()
+    return None
 
 class _GeneratedPathConflict(ValueError):
     pass
