@@ -34,15 +34,12 @@ SYSTEM_EDITOR = (
     "You are TestPilot's test writer. Write pytest tests for the changed functions. "
     "Import the code under test by its module path. Tests must be deterministic, fast, "
     "offline, and must not sleep or touch the network. Output each file as a fenced block "
-    "whose info string is `python path=tests/test_<name>.py`. Add new test files; do not "
-    "replace the repository's existing tests. Output only test files."
+    "whose info string is `python path=tests/test_<name>.py`. Output only test files."
 )
 SYSTEM_REPAIR = (
     "You are TestPilot's test repairer. The tests below failed. If the TEST is wrong "
     "(bad expectation, import, fixture, timing), output the corrected files in the same "
-    "fenced format, using the current generated file paths. Omitted files are kept unchanged; "
-    "output only the generated files that need repair. Existing repository tests cannot be "
-    "changed by this workflow. If the failure shows a genuine bug in the CODE under test, do not "
+    "fenced format. If the failure shows a genuine bug in the CODE under test, do not "
     "weaken the test: reply with a line `VERDICT: CODE_BUG` followed by a one-paragraph "
     "explanation."
 )
@@ -160,73 +157,14 @@ def parse_verdict(text: str) -> str | None:
     return m.group(1).strip() or "model reported a code bug"
 
 
-class _GeneratedPathConflict(ValueError):
-    pass
-
-
-def _path_occupied(repo: Path, rel: str) -> bool:
-    """A new regular file must not replace a path or traverse a symlink."""
-    path = repo
-    parts = PurePosixPath(rel).parts
-    for i, part in enumerate(parts):
-        path = path / part
-        if path.is_symlink() or (path.exists() and (i == len(parts) - 1 or not path.is_dir())):
-            return True
-    return False
-
-
-def _require_additions(repo: Path, files: dict[str, str]) -> None:
-    for rel in files:
-        if _path_occupied(repo, rel):
-            raise _GeneratedPathConflict(f"cannot add generated tests without replacing repository path {rel!r}")
-
-
-def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, str],
-                     aliases: dict[str, str]) -> tuple[dict[str, str], list[str]]:
-    """Apply a partial repair to generated files, reserving every original repo path.
-
-    Keep aliases for renamed suggestions so a repair using either the original
-    suggestion or the displayed generated path updates the same generated file.
-    """
-    merged, remapped = dict(current), dict(aliases)
-    reserved = set(current) | set(incoming) | set(aliases.values())
-    updates: dict[str, str] = {}
-    warnings: list[str] = []
-    for rel, content in incoming.items():
-        target = aliases.get(rel, rel)
-        if target not in current and _path_occupied(repo, target):
-            test_root = repo / "tests"
-            if test_root.is_symlink() or (test_root.exists() and not test_root.is_dir()):
-                raise _GeneratedPathConflict("cannot add generated tests: repository 'tests' is not a regular directory")
-            stem = PurePosixPath(rel).stem
-            suffix = 1
-            while True:
-                tag = "" if suffix == 1 else f"_{suffix}"
-                target = f"tests/{stem}_testpilot{tag}.py"
-                if target not in reserved and not _path_occupied(repo, target):
-                    break
-                suffix += 1
-        if target != rel:
-            warnings.append(f"kept repository path {rel!r}; generated tests use {target!r}")
-        if target in updates and updates[target] != content:
-            raise _GeneratedPathConflict(f"conflicting repair blocks resolve to generated path {target!r}; kept previous tests")
-        updates[target] = content
-        remapped[rel] = target
-        reserved.add(target)
-        merged[target] = content
-    _require_additions(repo, merged)
-    aliases.update(remapped)
-    return merged, warnings
-
-
 # ----------------------------------------------------------------- patch/coverage
-def make_patch(repo: Path, files: dict[str, str], *, additions_only: bool = False) -> str:
-    """Unified diff; generated patches use additions only so git refuses collisions."""
+def make_patch(repo: Path, files: dict[str, str]) -> str:
+    """Unified diff (git-apply compatible) adding/updating ``files`` in ``repo``."""
     chunks = []
     for rel in sorted(files):
         new = files[rel].splitlines(keepends=True)
         target = repo / rel
-        if not additions_only and target.exists():
+        if target.exists():
             old = target.read_text(encoding="utf-8").splitlines(keepends=True)
             header = [f"diff --git a/{rel} b/{rel}\n"]
             body = difflib.unified_diff(old, new, f"a/{rel}", f"b/{rel}")
@@ -361,7 +299,6 @@ class TestPilot:
         funcs = changed_functions(repo, diff_text)
         rounds: list[RoundRecord] = []
         files: dict[str, str] = {}
-        aliases: dict[str, str] = {}
         plan = ""
         final: SandboxResult | None = None
         repairs = 0
@@ -369,18 +306,12 @@ class TestPilot:
 
         def result(st: str, msg: str = "", baseline: SandboxResult | None = None) -> LoopResult:
             existing = {c.nodeid for c in baseline.cases} if baseline else set()
-            patch = ""
-            try:
-                _require_additions(repo, files)
-                patch = make_patch(repo, files, additions_only=True)
-            except _GeneratedPathConflict as e:
-                st, msg = "failed", str(e)
             return LoopResult(
                 status=st, changed_functions=[f.to_dict() for f in funcs], repair_rounds_used=repairs,
                 max_repair_rounds=self.max_repair_rounds, test_files=files,
                 tests_written=count_tests(files, final, existing) if files else 0,
                 final=final.to_dict() if final else None,
-                patch=patch,
+                patch=make_patch(repo, files) if files else "",
                 coverage=coverage_delta(baseline, final, funcs), ledger=ledger.to_dict(), rounds=rounds,
                 plan=plan, message=msg)
 
@@ -394,12 +325,10 @@ class TestPilot:
             reply = self._ask(ledger, "editor", SYSTEM_EDITOR,
                               f"Test plan:\n{plan}\n\nChanged functions:\n\n{_functions_block(funcs)}\n\n"
                               "Write the pytest file(s).")
-            proposed, warns = parse_test_files(reply)
-            if not proposed:
+            files, warns = parse_test_files(reply)
+            if not files:
                 rounds.append(RoundRecord(0, "generate", [], None, warns + ["no python code block in reply"]))
                 return result("no_tests", "model produced no test files", baseline)
-            files, path_warnings = _merge_test_files(repo, files, proposed, aliases)
-            warns.extend(path_warnings)
             final = self._run(repo, files)
             rounds.append(RoundRecord(0, "generate", sorted(files), final.to_dict(), warns, dict(files)))
 
@@ -417,8 +346,7 @@ class TestPilot:
                     warns.append("repair reply had no code block; keeping previous tests")
                     rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns))
                     continue
-                files, path_warnings = _merge_test_files(repo, files, new_files, aliases)
-                warns.extend(path_warnings)
+                files = new_files
                 final = self._run(repo, files)
                 rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns, dict(files)))
             if final.ok:
@@ -429,10 +357,6 @@ class TestPilot:
             status, message = "budget_exhausted", str(e)
         except ModelError as e:
             status, message = "model_error", str(e)
-        except _GeneratedPathConflict as e:
-            status, message = "failed", str(e)
-            rounds.append(RoundRecord(repairs, "repair" if repairs else "generate", sorted(files),
-                                      None, [message], dict(files)))
         return result(status, message, baseline)
 
 

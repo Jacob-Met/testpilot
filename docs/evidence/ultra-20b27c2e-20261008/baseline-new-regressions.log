@@ -1,0 +1,289 @@
+FFFFFF.FF.FFFFF.                                                         [100%]
+=================================== FAILURES ===================================
+_ test_existing_failing_test_survives_generation_and_patch[tests/test_double.py] _
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_existing_failing_test_sur0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_existing_failing_test_sur0')
+suggestion = 'tests/test_double.py'
+
+    @pytest.mark.parametrize("suggestion", ["tests/test_double.py", "./tests/test_double.py"])
+    def test_existing_failing_test_survives_generation_and_patch(repo, tmp_path, suggestion):
+        original = b'def test_double():\n    assert False, "existing regression"\n'
+        target = repo / "tests/test_double.py"
+        target.write_bytes(original)
+    
+        result = run(repo, [block(suggestion, GOOD)])
+    
+>       assert result.status == "failed"
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+tests/test_generated_test_preservation.py:50: AssertionError
+_ test_existing_failing_test_survives_generation_and_patch[./tests/test_double.py] _
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_existing_failing_test_sur1/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_existing_failing_test_sur1')
+suggestion = './tests/test_double.py'
+
+    @pytest.mark.parametrize("suggestion", ["tests/test_double.py", "./tests/test_double.py"])
+    def test_existing_failing_test_survives_generation_and_patch(repo, tmp_path, suggestion):
+        original = b'def test_double():\n    assert False, "existing regression"\n'
+        target = repo / "tests/test_double.py"
+        target.write_bytes(original)
+    
+        result = run(repo, [block(suggestion, GOOD)])
+    
+>       assert result.status == "failed"
+E       AssertionError: assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+tests/test_generated_test_preservation.py:50: AssertionError
+_____________ test_reserved_names_and_all_requested_files_survive ______________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_reserved_names_and_all_re0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_reserved_names_and_all_re0')
+
+    def test_reserved_names_and_all_requested_files_survive(repo, tmp_path):
+        originals = {
+            "tests/test_double.py": b"def test_original():\n    assert True\n",
+            "tests/test_double_testpilot.py": b"def test_other_original():\n    assert True\n",
+        }
+        for path, content in originals.items():
+            (repo / path).write_bytes(content)
+        reply = block("tests/test_double.py", GOOD) + "\n" + block("tests/test_double_testpilot_2.py", GOOD)
+    
+        result = run(repo, [reply])
+    
+>       assert result.status == "passed" and result.final["passed"] == 4
+E       AssertionError: assert ('passed' == 'passed'
+E         
+E           passed and 3 == 4)
+
+tests/test_generated_test_preservation.py:73: AssertionError
+________________ test_partial_repair_keeps_unmentioned_failure _________________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_partial_repair_keeps_unme0/repo')
+
+    def test_partial_repair_keeps_unmentioned_failure(repo):
+        first = block("tests/test_a.py", BAD) + "\n" + block("tests/test_b.py", BAD)
+    
+        result = run(repo, [first, block("tests/test_a.py", GOOD)], rounds=1)
+    
+>       assert result.status == "failed" and result.repair_rounds_used == 1
+E       AssertionError: assert ('passed' == 'failed'
+E         
+E         - failed
+E         + passed)
+
+tests/test_generated_test_preservation.py:87: AssertionError
+__________ test_incremental_repairs_finish_the_whole_generated_suite ___________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_incremental_repairs_finis0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_incremental_repairs_finis0')
+
+    def test_incremental_repairs_finish_the_whole_generated_suite(repo, tmp_path):
+        first = block("tests/test_a.py", BAD) + "\n" + block("tests/test_b.py", BAD)
+    
+        result = run(repo, [first, block("tests/test_a.py", GOOD), block("tests/test_b.py", GOOD)], rounds=2)
+    
+>       assert result.status == "passed" and result.repair_rounds_used == 2
+E       assert ('passed' == 'passed'
+E         
+E           passed and 1 == 2)
+E        +  where 1 = LoopResult(status='passed', changed_functions=[{'path': 'm.py', 'module': 'm', 'qualname': 'double', 'lineno': 1, 'end...from m import double\n\ndef test_double():\n    assert double(2) == 4\n'})], plan="Pin double's behavior.", message='').repair_rounds_used
+
+tests/test_generated_test_preservation.py:101: AssertionError
+____ test_repair_of_renamed_file_uses_stable_alias[./tests/test_double.py] _____
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_repair_of_renamed_file_us0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_repair_of_renamed_file_us0')
+repair_path = './tests/test_double.py'
+
+    @pytest.mark.parametrize("repair_path", ["./tests/test_double.py", "tests/test_double_testpilot.py"])
+    def test_repair_of_renamed_file_uses_stable_alias(repo, tmp_path, repair_path):
+        target = repo / "tests/test_double.py"
+        original = b"def test_original():\n    assert True\n"
+        target.write_bytes(original)
+    
+        result = run(repo, [block("tests/test_double.py", BAD), block(repair_path, GOOD)], rounds=1)
+    
+>       assert result.status == "passed" and result.final["passed"] == 2
+E       AssertionError: assert ('passed' == 'passed'
+E         
+E           passed and 1 == 2)
+
+tests/test_generated_test_preservation.py:118: AssertionError
+____________ test_repair_can_add_a_file_without_losing_other_files _____________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_repair_can_add_a_file_wit0/repo')
+
+    def test_repair_can_add_a_file_without_losing_other_files(repo):
+        first = block("tests/test_a.py", BAD) + "\n" + block("tests/test_b.py", GOOD)
+        repair = block("tests/test_a.py", GOOD) + "\n" + block("tests/test_c.py", GOOD)
+    
+        result = run(repo, [first, repair], rounds=1)
+    
+>       assert result.status == "passed" and result.final["passed"] == 3
+E       AssertionError: assert ('passed' == 'passed'
+E         
+E           passed and 2 == 3)
+
+tests/test_generated_test_preservation.py:131: AssertionError
+___________ test_new_filename_in_repair_does_not_remove_failing_file ___________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_new_filename_in_repair_do0/repo')
+
+    def test_new_filename_in_repair_does_not_remove_failing_file(repo):
+        result = run(repo, [block("tests/test_a.py", BAD), block("tests/test_b.py", GOOD)], rounds=1)
+    
+>       assert result.status == "failed" and result.final["failed"] == 1
+E       AssertionError: assert ('passed' == 'failed'
+E         
+E         - failed
+E         + passed)
+
+tests/test_generated_test_preservation.py:139: AssertionError
+_____________ test_model_error_after_partial_repair_preserves_work _____________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_model_error_after_partial0/repo')
+
+    def test_model_error_after_partial_repair_preserves_work(repo):
+        first = block("tests/test_a.py", BAD) + "\n" + block("tests/test_b.py", BAD)
+        result = run(repo, [first, block("tests/test_a.py", GOOD)], rounds=2)
+    
+>       assert result.status == "model_error"
+E       AssertionError: assert 'passed' == 'model_error'
+E         
+E         - model_error
+E         + passed
+
+tests/test_generated_test_preservation.py:158: AssertionError
+_________ test_nested_symlink_is_relocated_without_touching_its_target _________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_nested_symlink_is_relocat0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_nested_symlink_is_relocat0')
+
+    def test_nested_symlink_is_relocated_without_touching_its_target(repo, tmp_path):
+        outside = tmp_path / "outside"
+        outside.mkdir()
+        original = b"def test_original():\n    assert True\n"
+        target = outside / "test_double.py"
+        target.write_bytes(original)
+        link = repo / "tests/linked"
+        symlink(outside, link)
+    
+        result = run(repo, [block("tests/linked/test_double.py", GOOD)])
+    
+>       assert result.status == "passed" and result.final["passed"] == 2
+E       AssertionError: assert ('passed' == 'passed'
+E         
+E           passed and 1 == 2)
+
+tests/test_generated_test_preservation.py:181: AssertionError
+_____________ test_symlinked_tests_root_is_refused_without_a_patch _____________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_symlinked_tests_root_is_r0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_symlinked_tests_root_is_r0')
+
+    def test_symlinked_tests_root_is_refused_without_a_patch(repo, tmp_path):
+        outside = tmp_path / "outside"
+        outside.mkdir()
+        original = b"def test_original():\n    assert True\n"
+        target = outside / "test_double.py"
+        target.write_bytes(original)
+        (repo / "tests").rmdir()
+        symlink(outside, repo / "tests")
+    
+        result = run(repo, [block("tests/test_double.py", GOOD)])
+    
+>       assert result.status == "failed" and "regular directory" in result.message
+E       AssertionError: assert ('passed' == 'failed'
+E         
+E         - failed
+E         + passed)
+
+tests/test_generated_test_preservation.py:198: AssertionError
+______________ test_file_blocking_a_parent_directory_is_preserved ______________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_file_blocking_a_parent_di0/repo')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_file_blocking_a_parent_di0')
+
+    def test_file_blocking_a_parent_directory_is_preserved(repo, tmp_path):
+        target = repo / "tests/unit"
+        target.write_bytes(b"reserved repository file\n")
+    
+>       result = run(repo, [block("tests/unit/test_double.py", GOOD)])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_generated_test_preservation.py:207: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_generated_test_preservation.py:31: in run
+    max_repair_rounds=rounds, timeout_s=30, coverage=False).run(repo, DIFF)
+                                                            ^^^^^^^^^^^^^^^
+testpilot/loop.py:332: in run
+    final = self._run(repo, files)
+            ^^^^^^^^^^^^^^^^^^^^^^
+testpilot/loop.py:294: in _run
+    return run_pytest(repo, files, timeout=self.timeout_s, coverage=self.coverage, python=self.python)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/sandbox.py:191: in run_pytest
+    dest.parent.mkdir(parents=True, exist_ok=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/tmp/testpilot-9zxi63bq/repo/tests/unit'), mode = 511
+parents = True, exist_ok = True
+
+    def mkdir(self, mode=0o777, parents=False, exist_ok=False):
+        """
+        Create a new directory at this given path.
+        """
+        try:
+>           os.mkdir(self, mode)
+E           FileExistsError: [Errno 17] File exists: '/tmp/testpilot-9zxi63bq/repo/tests/unit'
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1311: FileExistsError
+_____________ test_path_occupied_during_repair_is_not_overwritten ______________
+
+repo = PosixPath('/tmp/pytest-of-root/pytest-4/test_path_occupied_during_repa0/repo')
+
+    def test_path_occupied_during_repair_is_not_overwritten(repo):
+        target = repo / "tests/test_double.py"
+        responses = iter(["Pin double.", block("tests/test_double.py", BAD), block("tests/test_double.py", GOOD)])
+        calls = 0
+    
+        def answer(model, messages):
+            nonlocal calls
+            calls += 1
+            if calls == 3:
+                target.write_bytes(b"# New repository file from concurrent work.\n")
+            return next(responses)
+    
+        result = TestPilot(ScriptedModel(answer), max_repair_rounds=1, timeout_s=30,
+                           coverage=False).run(repo, DIFF)
+    
+>       assert result.status == "failed" and "replacing repository path" in result.message
+E       AssertionError: assert ('passed' == 'failed'
+E         
+E         - failed
+E         + passed)
+
+tests/test_generated_test_preservation.py:230: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_generated_test_preservation.py::test_existing_failing_test_survives_generation_and_patch[tests/test_double.py]
+FAILED tests/test_generated_test_preservation.py::test_existing_failing_test_survives_generation_and_patch[./tests/test_double.py]
+FAILED tests/test_generated_test_preservation.py::test_reserved_names_and_all_requested_files_survive
+FAILED tests/test_generated_test_preservation.py::test_partial_repair_keeps_unmentioned_failure
+FAILED tests/test_generated_test_preservation.py::test_incremental_repairs_finish_the_whole_generated_suite
+FAILED tests/test_generated_test_preservation.py::test_repair_of_renamed_file_uses_stable_alias[./tests/test_double.py]
+FAILED tests/test_generated_test_preservation.py::test_repair_can_add_a_file_without_losing_other_files
+FAILED tests/test_generated_test_preservation.py::test_new_filename_in_repair_does_not_remove_failing_file
+FAILED tests/test_generated_test_preservation.py::test_model_error_after_partial_repair_preserves_work
+FAILED tests/test_generated_test_preservation.py::test_nested_symlink_is_relocated_without_touching_its_target
+FAILED tests/test_generated_test_preservation.py::test_symlinked_tests_root_is_refused_without_a_patch
+FAILED tests/test_generated_test_preservation.py::test_file_blocking_a_parent_directory_is_preserved
+FAILED tests/test_generated_test_preservation.py::test_path_occupied_during_repair_is_not_overwritten
+13 failed, 3 passed in 7.09s

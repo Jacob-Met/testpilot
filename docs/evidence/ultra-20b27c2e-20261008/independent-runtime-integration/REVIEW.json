@@ -1,0 +1,85 @@
+{
+  "reviewer": "ultra-20b27c2e-20261008/runtime_integration",
+  "source_base_commit": "a565cc365fdf9cf346b6104a6abdd77d0b12d2fd",
+  "candidate_pins": {
+    "loop": {
+      "path": "source/testpilot/loop.py",
+      "sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf"
+    },
+    "authored_tests": {
+      "path": "source/tests/test_generated_test_preservation.py",
+      "sha256": "f6efd91dc4554a6cc0d1c162ae41aeec25dc94d81bad3cc5c7cd61ea674cdab7"
+    },
+    "independent_tests": {
+      "path": "test_independent_preservation.py",
+      "sha256": "a1264486855fa3262c2840a6e0d2f303b0c51f3220fd28bf42bc8317bf42508d"
+    },
+    "junit": {
+      "path": "independent-results.xml",
+      "sha256": "a8908a2ee4bead8fd192e1260078ce32d995787c6a01cf5404f5cb5f4988978c"
+    }
+  },
+  "command": "PYTHONPATH=<review>/source <estate-production>/venv/bin/python -m pytest <review>/test_independent_preservation.py -q --junitxml=<review>/independent-results.xml",
+  "result": {
+    "cases": [
+      {
+        "name": "test_numbered_alias_repair_preserves_an_omitted_second_failure",
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "test_conflicting_aliases_roll_back_the_entire_multifile_repair",
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "test_identical_alias_and_canonical_repair_converges_to_one_file",
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "test_new_repository_collision_in_partial_repair_keeps_prior_failed_file",
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "test_late_directory_collision_refuses_patch_and_retains_failed_evidence",
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "test_addition_patch_refuses_even_identical_later_destination",
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "test_source_collision_after_green_run_prevents_publishable_patch",
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ],
+    "tests": 7,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "python_executable": "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python",
+    "git": "git version 2.51.1"
+  },
+  "finding": "No additional defect found in the reviewed preservation behavior after the author's alias conflict refinement.",
+  "limits": [
+    "Authored model replies; no live model/provider calls.",
+    "Real generated pytest subprocesses and actual git apply run in disposable repositories.",
+    "No review claim about hostile generated code, live model quality, or native Windows filesystem behavior.",
+    "Owner source was copied and hash-checked; no owner files edited."
+  ]
+}

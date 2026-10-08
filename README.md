@@ -33,6 +33,7 @@ Design choices:
 * **Tests are not bent to fit buggy code.** The repair prompt lets the model say `VERDICT: CODE_BUG` instead of weakening an assertion. The loop then stops with status `suspected_code_bug` and keeps the failing tests in the patch, since those tests are the bug report.
 * **Planner/editor routing.** One planning call goes to the large model. Generation and repair go to the small, fast model. Routing is set in `RoutingConfig`.
 * **Generated files are confined** to `tests/**/test_*.py`. Any path containing `..`, an absolute path, or an unexpected name is rewritten. The sandbox also refuses writes outside its temp dir.
+* **Existing tests stay in the run and out of the generated patch.** A suggested filename that already exists, or would traverse a symlink or blocked directory, is moved to an unused `tests/test_<name>_testpilot.py` path (with a numeric suffix when needed). The report's round warnings record the mapping. Repairs can use the suggested name or the displayed generated name; a reply that mentions only some generated files updates those files and keeps the others. TestPilot refuses generation when `tests` itself is a symlink or a file. Its patches add files only, so `git apply` refuses to overwrite a file that appeared after generation.
 * **Ledger.** Every model call records its role, model, and prompt/completion tokens. If the API returns `usage`, those counts are used. The stub uses a chars/4 estimate and flags it. Cost is computed only from prices you supply; TestPilot never guesses prices.
 
 ## Layout
@@ -46,7 +47,7 @@ Design choices:
 | `testpilot/__main__.py` | CLI |
 | `eval/cases/*` | 5 toy repos with injected bugs, diffs, ground-truth fixes, scripted model replies |
 | `eval/harness.py` | Scores pass@1, tests written, and rounds used. Writes `eval/results/` |
-| `tests/` | 36 unit/integration tests |
+| `tests/` | Unit/integration tests, including generated-file preservation and real `git apply` checks |
 
 ## Quickstart (offline, no key)
 
@@ -56,7 +57,7 @@ Requirements: Python 3.12+, `pytest`. `coverage` is optional; without it, covera
 python3.12 -m venv .venv && . .venv/bin/activate
 pip install pytest coverage
 
-python -m pytest                       # 36 passed
+python -m pytest                       # run the unit/integration suite
 python -m eval.harness                 # eval table → eval/results/results.md
 
 python -m testpilot run \

@@ -1,0 +1,304 @@
+{
+  "status": "passed",
+  "changed_functions": [
+    {
+      "path": "m.py",
+      "module": "m",
+      "qualname": "double",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        1,
+        2
+      ],
+      "source": "def double(value):\n    return value * 2",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 2,
+  "max_repair_rounds": 2,
+  "test_files": {
+    "tests/test_double_testpilot.py": "from m import double\n\ndef test_generated():\n    assert double(2) == 4\n",
+    "tests/test_tripled_input.py": "from m import double\n\ndef test_generated():\n    assert double(3) == 6\n"
+  },
+  "tests_written": 2,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.333,
+    "timeout_s": 30.0,
+    "output": "...                                                                      [100%]\n3 passed in 0.03s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_double::test_existing",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_double_testpilot::test_generated",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_tripled_input::test_generated",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": {
+      "percent_total": 100.0,
+      "files": {
+        "m.py": {
+          "executed": [
+            1,
+            2
+          ],
+          "missing": []
+        }
+      }
+    },
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "patch": "diff --git a/tests/test_double_testpilot.py b/tests/test_double_testpilot.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_double_testpilot.py\n@@ -0,0 +1,4 @@\n+from m import double\n+\n+def test_generated():\n+    assert double(2) == 4\ndiff --git a/tests/test_tripled_input.py b/tests/test_tripled_input.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_tripled_input.py\n@@ -0,0 +1,4 @@\n+from m import double\n+\n+def test_generated():\n+    assert double(3) == 6\n",
+  "coverage": {
+    "total_before": 100.0,
+    "total_after": 100.0,
+    "total_delta": 0.0,
+    "changed_lines_executable": 2,
+    "changed_lines_before": 100.0,
+    "changed_lines_after": 100.0
+  },
+  "ledger": {
+    "total_tokens": 1059,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 92,
+        "completion_tokens": 16,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 3,
+        "prompt_tokens": 836,
+        "completion_tokens": 115,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 92,
+        "completion_tokens": 16,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 159,
+        "completion_tokens": 57,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "repair",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 370,
+        "completion_tokens": 28,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "repair",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 307,
+        "completion_tokens": 30,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_double_testpilot.py",
+        "tests/test_tripled_input.py"
+      ],
+      "result": {
+        "returncode": 1,
+        "timed_out": false,
+        "duration_s": 0.371,
+        "timeout_s": 30.0,
+        "output": ".FF                                                                      [100%]\n=================================== FAILURES ===================================\n________________________________ test_generated ________________________________\n\n    def test_generated():\n>       assert double(2) == 5\nE       assert 4 == 5\nE        +  where 4 = double(2)\n\ntests/test_double_testpilot.py:4: AssertionError\n________________________________ test_generated ________________________________\n\n    def test_generated():\n>       assert double(3) == 7\nE       assert 6 == 7\nE        +  where 6 = double(3)\n\ntests/test_tripled_input.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_double_testpilot.py::test_generated - assert 4 == 5\nFAILED tests/test_tripled_input.py::test_generated - assert 6 == 7\n2 failed, 1 passed in 0.04s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_double::test_existing",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_double_testpilot::test_generated",
+            "outcome": "failed",
+            "message": "assert 4 == 5\n +  where 4 = double(2)\ndef test_generated():\n>       assert double(2) == 5\nE       assert 4 == 5\nE        +  where 4 = double(2)\n\ntests/test_double_testpilot.py:4: AssertionError"
+          },
+          {
+            "nodeid": "tests.test_tripled_input::test_generated",
+            "outcome": "failed",
+            "message": "assert 6 == 7\n +  where 6 = double(3)\ndef test_generated():\n>       assert double(3) == 7\nE       assert 6 == 7\nE        +  where 6 = double(3)\n\ntests/test_tripled_input.py:4: AssertionError"
+          }
+        ],
+        "coverage": {
+          "percent_total": 100.0,
+          "files": {
+            "m.py": {
+              "executed": [
+                1,
+                2
+              ],
+              "missing": []
+            }
+          }
+        },
+        "passed": 1,
+        "failed": 2,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "1 passed, 2 failed, 0 errors, 0 skipped (rc=1)"
+      },
+      "warnings": [
+        "kept repository path 'tests/test_double.py'; generated tests use 'tests/test_double_testpilot.py'"
+      ],
+      "contents": {
+        "tests/test_double_testpilot.py": "from m import double\n\ndef test_generated():\n    assert double(2) == 5\n",
+        "tests/test_tripled_input.py": "from m import double\n\ndef test_generated():\n    assert double(3) == 7\n"
+      }
+    },
+    {
+      "round": 1,
+      "kind": "repair",
+      "files": [
+        "tests/test_double_testpilot.py",
+        "tests/test_tripled_input.py"
+      ],
+      "result": {
+        "returncode": 1,
+        "timed_out": false,
+        "duration_s": 0.333,
+        "timeout_s": 30.0,
+        "output": "..F                                                                      [100%]\n=================================== FAILURES ===================================\n________________________________ test_generated ________________________________\n\n    def test_generated():\n>       assert double(3) == 7\nE       assert 6 == 7\nE        +  where 6 = double(3)\n\ntests/test_tripled_input.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_tripled_input.py::test_generated - assert 6 == 7\n1 failed, 2 passed in 0.04s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_double::test_existing",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_double_testpilot::test_generated",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_tripled_input::test_generated",
+            "outcome": "failed",
+            "message": "assert 6 == 7\n +  where 6 = double(3)\ndef test_generated():\n>       assert double(3) == 7\nE       assert 6 == 7\nE        +  where 6 = double(3)\n\ntests/test_tripled_input.py:4: AssertionError"
+          }
+        ],
+        "coverage": {
+          "percent_total": 100.0,
+          "files": {
+            "m.py": {
+              "executed": [
+                1,
+                2
+              ],
+              "missing": []
+            }
+          }
+        },
+        "passed": 2,
+        "failed": 1,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "2 passed, 1 failed, 0 errors, 0 skipped (rc=1)"
+      },
+      "warnings": [
+        "kept repository path 'tests/test_double.py'; generated tests use 'tests/test_double_testpilot.py'"
+      ],
+      "contents": {
+        "tests/test_double_testpilot.py": "from m import double\n\ndef test_generated():\n    assert double(2) == 4\n",
+        "tests/test_tripled_input.py": "from m import double\n\ndef test_generated():\n    assert double(3) == 7\n"
+      }
+    },
+    {
+      "round": 2,
+      "kind": "repair",
+      "files": [
+        "tests/test_double_testpilot.py",
+        "tests/test_tripled_input.py"
+      ],
+      "result": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.333,
+        "timeout_s": 30.0,
+        "output": "...                                                                      [100%]\n3 passed in 0.03s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_double::test_existing",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_double_testpilot::test_generated",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_tripled_input::test_generated",
+            "outcome": "passed",
+            "message": ""
+          }
+        ],
+        "coverage": {
+          "percent_total": 100.0,
+          "files": {
+            "m.py": {
+              "executed": [
+                1,
+                2
+              ],
+              "missing": []
+            }
+          }
+        },
+        "passed": 3,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_double_testpilot.py": "from m import double\n\ndef test_generated():\n    assert double(2) == 4\n",
+        "tests/test_tripled_input.py": "from m import double\n\ndef test_generated():\n    assert double(3) == 6\n"
+      }
+    }
+  ],
+  "plan": "Keep the existing zero case and test double with two and three.",
+  "message": "",
+  "ok": true
+}

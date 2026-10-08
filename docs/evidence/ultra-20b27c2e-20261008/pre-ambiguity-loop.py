@@ -190,7 +190,6 @@ def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, s
     """
     merged, remapped = dict(current), dict(aliases)
     reserved = set(current) | set(incoming) | set(aliases.values())
-    updates: dict[str, str] = {}
     warnings: list[str] = []
     for rel, content in incoming.items():
         target = aliases.get(rel, rel)
@@ -208,9 +207,6 @@ def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, s
                 suffix += 1
         if target != rel:
             warnings.append(f"kept repository path {rel!r}; generated tests use {target!r}")
-        if target in updates and updates[target] != content:
-            raise _GeneratedPathConflict(f"conflicting repair blocks resolve to generated path {target!r}; kept previous tests")
-        updates[target] = content
         remapped[rel] = target
         reserved.add(target)
         merged[target] = content
