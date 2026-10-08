@@ -211,16 +211,38 @@ def functions_touching(source: str, path: str, lines: set[int], added: set[int])
     return out
 
 
+class DiffSourceError(ValueError):
+    """A diff selects a source path outside the requested repository."""
+
+
+def _source_path(repo: Path, raw: str) -> Path:
+    """Resolve a relative diff path without admitting an outside source file."""
+    relative = Path(raw)
+    if relative.anchor or ".." in relative.parts:
+        raise DiffSourceError(f"diff source must be repository-relative: {raw!r}")
+    try:
+        resolved = (repo / relative).resolve()
+    except (OSError, RuntimeError, ValueError) as exc:
+        raise DiffSourceError(f"cannot resolve diff source: {raw!r}") from exc
+    if not resolved.is_relative_to(repo):
+        raise DiffSourceError(f"diff source resolves outside repository: {raw!r}")
+    return resolved
+
+
 def changed_functions(repo: str | Path, diff_text: str, include_tests: bool = False) -> list[ChangedFunction]:
-    """Return the Python functions in ``repo`` touched by ``diff_text``."""
-    repo = Path(repo)
+    """Return touched Python functions, rejecting selected sources outside ``repo``.
+
+    Paths must be relative without parent traversal. Symlinks are supported
+    when their resolved destination remains inside the resolved repository.
+    """
+    repo = Path(repo).resolve()
     result: list[ChangedFunction] = []
     for fc in parse_unified_diff(diff_text):
         if fc.is_deleted or not fc.path.endswith(".py"):
             continue
         if not include_tests and is_test_path(fc.path):
             continue
-        f = repo / fc.path
+        f = _source_path(repo, fc.path)
         if not f.is_file():
             continue
         result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))

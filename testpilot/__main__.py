@@ -6,6 +6,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from .diff import DiffSourceError
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
 
@@ -42,7 +43,11 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     pilot = TestPilot(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
                       max_total_tokens=a.max_tokens)
-    res = pilot.run(a.repo, diff_text)
+    try:
+        res = pilot.run(a.repo, diff_text)
+    except DiffSourceError as e:
+        print(f"testpilot: invalid diff source: {e}", file=sys.stderr)
+        return 2
     paths = write_outputs(res, a.out)
     print(render_report(res).split("\n## Patch")[0])
     print(f"wrote {', '.join(str(p) for p in paths.values())}")
