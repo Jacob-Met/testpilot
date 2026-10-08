@@ -1,0 +1,86 @@
+[
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/fixture",
+      "--diff",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/change.diff",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/script",
+      "--rounds",
+      "0",
+      "--timeout",
+      "30",
+      "--out",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/current-baseline"
+    ],
+    "base_commit": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+    "changed_functions": [],
+    "diff_sha256": "d1f22e3b594f9b8c657de6a69e4c44bb32c2a24819165dadb9e8a5a50d0dc5fc",
+    "exit": 1,
+    "fixture_unchanged": true,
+    "label": "current-baseline",
+    "loop_git_blob": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+    "provider": "ScriptedModel_only",
+    "runtime_source_sha256": {
+      "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "__main__.py": "c5896dd64beddb360a8c1864711800752ed6d19b1bf9ac028c88c501f7328786",
+      "diff.py": "d1f22e3b594f9b8c657de6a69e4c44bb32c2a24819165dadb9e8a5a50d0dc5fc",
+      "loop.py": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+      "model.py": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "sandbox.py": "d2c6b810180b1f1aa5aac1d2ae89c84a737fa009b33a3c19c8b392072047d881"
+    },
+    "status": "no_changes",
+    "tests_written": 0
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/fixture",
+      "--diff",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/change.diff",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/script",
+      "--rounds",
+      "0",
+      "--timeout",
+      "30",
+      "--out",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/current-candidate"
+    ],
+    "base_commit": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+    "changed_functions": [
+      "total"
+    ],
+    "diff_sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+    "exit": 0,
+    "fixture_unchanged": true,
+    "generated_pytest_passed": 2,
+    "git_apply_check_exit": 0,
+    "label": "current-candidate",
+    "loop_git_blob": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+    "provider": "ScriptedModel_only",
+    "runtime_source_sha256": {
+      "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "__main__.py": "c5896dd64beddb360a8c1864711800752ed6d19b1bf9ac028c88c501f7328786",
+      "diff.py": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "loop.py": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+      "model.py": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "sandbox.py": "d2c6b810180b1f1aa5aac1d2ae89c84a737fa009b33a3c19c8b392072047d881"
+    },
+    "status": "passed",
+    "tests_written": 2
+  }
+]

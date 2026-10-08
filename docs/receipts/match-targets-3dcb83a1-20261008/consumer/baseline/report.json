@@ -1,0 +1,23 @@
+{
+  "status": "no_changes",
+  "changed_functions": [],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 0,
+  "test_files": {},
+  "tests_written": 0,
+  "final": null,
+  "patch": "",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": true,
+    "tokens_estimated": false,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "",
+  "message": "diff touches no Python functions outside tests",
+  "ok": false
+}

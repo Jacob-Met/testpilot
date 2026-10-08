@@ -1,0 +1,10 @@
+{
+  "actual_targets": [],
+  "changed_lines": [
+    5
+  ],
+  "expected_target": "total",
+  "git_diff": "diff --git a/backend.py b/backend.py\nindex a5f1f33..7cc044c 100644\n--- a/backend.py\n+++ b/backend.py\n@@ -2,7 +2,7 @@ BACKEND = \"basic\"\n match BACKEND:\n     case \"basic\":\n         def total(items):\n-            return sum(items) + 1\n+            return sum(items) + 2\n     case _:\n         def total(items):\n             return sum(items)\n",
+  "source_sha256": "d1f22e3b594f9b8c657de6a69e4c44bb32c2a24819165dadb9e8a5a50d0dc5fc",
+  "status": "FAIL_expected_target_omitted"
+}
