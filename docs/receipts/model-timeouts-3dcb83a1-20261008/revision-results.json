@@ -1,0 +1,85 @@
+{
+  "base_commit": "f350150259c00dd25c43a95d65157022612d15a8",
+  "candidate_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/jacob/hamon-testpilot-timeout-3dcb83a1/candidate-v2 python3 -m pytest -q -p no:cacheprovider /home/jacob/hamon-testpilot-timeout-3dcb83a1/candidate-v2/tests/test_model_timeouts.py /home/jacob/hamon-testpilot-timeout-3dcb83a1/candidate-v2/tests/test_model.py",
+  "final_current_source_tests": {
+    "errors": 0,
+    "failed_cases": [],
+    "failures": 0,
+    "skips": 0,
+    "tests": 17
+  },
+  "final_source_pins": {
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 3316,
+      "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+      "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5"
+    },
+    "testpilot/diff.py": {
+      "bytes": 9059,
+      "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+      "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e"
+    },
+    "testpilot/loop.py": {
+      "bytes": 21001,
+      "git_blob": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+      "sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf"
+    },
+    "testpilot/model.py": {
+      "bytes": 10175,
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 9286,
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3"
+    },
+    "tests/test_model_timeouts.py": {
+      "bytes": 10911,
+      "git_blob": "dc4e91e557586ea63f99355ac1611e1679989ff5",
+      "sha256": "9a5160e63970c39081770e0d35ea0a7dc85a45fb2fd03bdd66aef8e1aef95f9c"
+    }
+  },
+  "first_candidate_added_terminal_cases": {
+    "errors": 0,
+    "failed_cases": [
+      "test_http_error_body_timeout_preserves_terminal_status_and_retry_policy[400-1-expected_delays0]",
+      "test_http_error_body_timeout_preserves_terminal_status_and_retry_policy[503-3-expected_delays1]"
+    ],
+    "failures": 2,
+    "skips": 0,
+    "tests": 2
+  },
+  "first_candidate_sha256": "7d09afbb738f349a04756a9b69559b3bfabfe096e632409a80563b0dac635547",
+  "first_published_candidate_commit": "320dcdfe88a85f7495d5fc90e39bf6f5e41058b5",
+  "initial_history": "results.json",
+  "original_candidate_new_cases_command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/home/jacob/hamon-testpilot-timeout-3dcb83a1/candidate python3 -m pytest -q -p no:cacheprovider /home/jacob/hamon-testpilot-timeout-3dcb83a1/test_model_timeouts_v2.py -k http_error_body_timeout",
+  "prepared_utc": "2026-10-08T10:07:11.378436+00:00",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "source_scope_verification": [
+    "OpenAICompatClient.chat"
+  ],
+  "source_unchanged_after_execution": true,
+  "terminal_http_contract": {
+    "400": {
+      "error_type": "ModelError",
+      "expected_requests": 1,
+      "preserved_cause": "HTTPError",
+      "retry_delays": []
+    },
+    "503": {
+      "error_type": "ModelError",
+      "expected_requests": 3,
+      "preserved_cause": "HTTPError",
+      "retry_delays": [
+        2,
+        4
+      ]
+    }
+  }
+}

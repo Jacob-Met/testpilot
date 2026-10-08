@@ -1,79 +1,109 @@
 # Model response timeouts
 
-A response-body timeout could terminate TestPilot before it wrote its result
-and reports. Native urllib raised `TimeoutError` directly after an authored
-HTTP server sent valid response headers and stalled the body. The existing
-client caught HTTP/URL errors only, so a client configured with one retry made
-one request, performed no retry and leaked the timeout past the loop's
-`ModelError` receiver.
+A stalled response could terminate TestPilot before it wrote a result or
+reports. Native urllib can raise `TimeoutError` directly after response
+headers arrive. The original client caught HTTP/URL errors only, so that
+timeout bypassed both its retry policy and the loop's `ModelError` receiver.
 
-## Repair
+The first candidate repaired that path. Independent receiving then confirmed
+a second existing boundary: reading a terminal HTTP error's diagnostic body
+could itself time out inside the HTTPError handler. Both the original and
+first candidate leaked that exception and left the CLI without output files.
 
-`OpenAICompatClient.chat` now handles direct `TimeoutError` through the same
-existing retry counter and exponential delay as `URLError`. Exhaustion raises
-a chained `ModelError`. The loop can then write its existing `model_error`
-result, including any generated failing tests retained from earlier rounds.
+## Repair and behavior
 
-The configured retry limit and delay schedule are unchanged. HTTP status
-handling, successful response parsing/usage and unrelated exception behavior
-are unchanged. No CLI, loop, runner, routing or provider configuration changes.
+`OpenAICompatClient.chat` handles direct transport timeouts through the
+existing shared retry counter and backoff. Exhaustion raises a chained
+`ModelError`. A timeout while reading a terminal HTTP error body instead
+retains the known HTTP status, reports that its body timed out and closes the
+terminal response. It does not restart the request budget or turn HTTP 400
+into a retryable status.
 
-Scope was announced in [issue 2](https://github.com/Jacob-Met/testpilot/issues/2#issuecomment-6056997400).
+The existing loop can consequently write its normal error result, including
+any failing generated-test patch retained from earlier rounds. HTTP status
+policy, routing, successful response parsing and reported usage are unchanged.
+No CLI, loop, sandbox or provider configuration source is changed.
 
-## Source and native qualification
+[Source ownership](https://github.com/Jacob-Met/testpilot/issues/2#issuecomment-6056997400)
+covers this one handler, its regression module and these compact receipts.
+The first published candidate remains in commit
+`320dcdfe88a85f7495d5fc90e39bf6f5e41058b5`.
+
+## Exact source
 
 | Material | Identity |
 | --- | --- |
 | Initial tested main | `981eb6c1cc6765c922f2e1fc394b9e28499c5440` |
-| Current receiving base | `f350150259c00dd25c43a95d65157022612d15a8` |
+| Final receiving base | `f350150259c00dd25c43a95d65157022612d15a8` |
 | Original model Git blob | `20294ab3ad529b142ae955e1c4bc0ce71f87ae8b` |
-| Candidate model Git blob | `af0c0662faed09dc1db286233719b90d1504b229` |
-| Candidate model SHA-256 | `7d09afbb738f349a04756a9b69559b3bfabfe096e632409a80563b0dac635547` |
-| New regression SHA-256 | `1d1789544582acbacd2bb4c47742ea469e0f0714943c7d56ea6052ba4f340613` |
+| First candidate SHA-256 | `7d09afbb738f349a04756a9b69559b3bfabfe096e632409a80563b0dac635547` |
+| Final model Git blob | `6d4abca38cc1c256df00bcac7923e2dc0bd42b16` |
+| Final model SHA-256 | `f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673` |
+| Final regression SHA-256 | `9a5160e63970c39081770e0d35ea0a7dc85a45fb2fd03bdd66aef8e1aef95f9c` |
 
-On native CPython 3.14.4 / pytest 9.0.2, the frozen eight new cases produce
-**six failures and two passes on the original**. The candidate passes all
-**eight new plus seven existing model cases: 15/15, zero skips/errors**.
+The final native composition includes the integrated match selector, project
+Python CLI and current runner. Their five unmodified module pins are recorded
+with the final candidate.
 
-The new tests use actual urllib and an HTTP fixture bound to `127.0.0.1`.
-They cover recovery, zero/exhausted retries, a retry budget shared with HTTP
-503, unchanged terminal HTTP 400 handling and unchanged unrelated exceptions.
-The fixture records the requested backoff instead of sleeping through it.
+## Native results
 
-Two tests execute the real CLI entrypoint, current loop and native pytest.
-Only the client factory is injected to provide the local endpoint and short
-request deadline. A recovered planning response leads to exit 0, two generated
-tests plus one existing test passing, and a Git-applicable patch. An exhausted
-repair timeout leads to exit 1 and `model_error`, with the already generated
-failing-test patch, JSON and Markdown reports retained. Original source and
-existing tests stay unchanged in both controls. Reported usage remains the
-usage returned with the two successful responses.
+CPython 3.14.4 / pytest 9.0.2, authored HTTP fixtures bound to `127.0.0.1`:
 
-Main subsequently incorporated the match selector and project-Python CLI.
-The current receiving tree preserves their exact source; the model, loop and
-sandbox blobs remained unchanged from the initial qualification.
+| Check | Observed result |
+| --- | --- |
+| Initial eight new cases on original source | Six failures / two inherited-behavior passes |
+| First candidate, eight new plus seven existing model cases | 15/15 |
+| Added terminal-body cases on unchanged first candidate | HTTP 400 and exhausted 503 both fail with bare TimeoutError |
+| Final current-source composition, ten new plus seven existing model cases | **17/17**, zero skips/errors |
+
+Tests cover body-stall recovery, zero/exhausted retries, budgets shared across
+HTTP and timeout failures, terminal HTTP status retention and unchanged
+unrelated exceptions. The original eight test assertions are retained.
+
+Two controls execute the real CLI entrypoint, loop and native pytest, injecting
+only a local urllib client and short read timeout. Recovery after a
+planning timeout yields exit 0, two generated tests plus one existing test
+passing, and a Git-applicable patch. Exhaustion during a later repair yields
+exit 1 and `model_error`, with the failing-test patch and JSON/Markdown reports
+retained. Original source and existing tests remain unchanged.
 
 ## Independent receiving
 
-A separately assigned independent source/receiving review is in progress.
-The model and regression hashes above are frozen. This initial source
-publication remains a draft until that receiving decision is recorded.
+The separately assigned reviewer accepted the final candidate after the
+**unchanged four-method receiver passed 4/4**, zero skips/errors, on the exact
+integrated source. Both original and first-candidate controls had one pass
+and three failures. The retained complete-body HTTP 400 control passed in
+every version.
 
-## Repeat
+The independent server sends a partial error body before stalling. HTTP 400
+now produces `ModelError` with its HTTPError cause after one request and no
+backoff. An exhausted HTTP 503 keeps two requests and delay `[2]` for the
+reviewer's one-retry configuration. Its real current CLI explicitly exercises
+`--python`, returns exit 1 / `model_error`, writes all three output files and
+preserves input source, with no leaked exception. These four cases remain
+separate from the author's 17-case model selection.
 
-From the candidate checkout with its existing pytest dependency:
+[Independent executable](independent_review.py) SHA-256:
+`59ea8a59bbfe3e3fde97863589df243326fda6960d0eee909d3fa2c352f01ae2`.
+[Compact independent results](independent-results.json) preserve all three
+source identities, the original findings, final observations and raw-receipt
+hashes. Replay the unchanged executable with a source checkout directory and
+an output JSON path as its two arguments.
+
+## Repeat and retained history
 
 ```bash
 python3 -m pytest -q tests/test_model.py tests/test_model_timeouts.py
 ```
 
-For the negative control, place the unchanged new regression into a separate
-checkout at the initial tested main and run that module. Its six timeout
-failures and two inherited-behavior passes are expected. No copied baseline
-source is needed; Git retains the exact original.
+[results.json](results.json) retains the initial witness and qualification.
+[revision-results.json](revision-results.json) records the two newly exposed
+first-candidate failures, final commands and source pins. The unchanged
+independent executable and compact observations are retained alongside them.
+The exact original and first candidate source remain in Git; no copied
+baseline modules are needed to replay the controls.
 
-[results.json](results.json) records the original witness, commands, source
-pins and scoped results. The independent note records its distinct receiving
-control. No full-repository suite, hosted-CI pass, provider/model-quality result
-or usage for failed remote attempts is inferred. All endpoints, programs and
-replies here were authored fixtures; no provider or account credential was used.
+The HTTP fixtures record requested backoff instead of sleeping through it.
+Usage assertions concern returned successful responses, not unknown failed
+remote attempts. These are scoped source/native controls; no full-repository,
+hosted-CI, provider-quality, installed-runtime or deployment result is inferred.

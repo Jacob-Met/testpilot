@@ -29,7 +29,7 @@ BAD = (FENCE + "python path=tests/test_generated_double.py\n"
 
 
 @contextmanager
-def local_chat(replies):
+def local_chat(replies, status=200):
     """None sends valid headers and then stalls the body until finalization."""
     release = threading.Event()
     lock = threading.Lock()
@@ -50,7 +50,7 @@ def local_chat(replies):
                 "choices": [{"message": {"content": content or "stalled fixture"}}],
                 "usage": {"prompt_tokens": 7, "completion_tokens": 3},
             }).encode()
-            self.send_response(200)
+            self.send_response(status)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
@@ -237,3 +237,20 @@ def test_real_cli_repair_timeout_retains_failing_patch_and_writes_error_report(t
     assert "== 5" in (output / "testpilot.patch").read_text()
     assert delays == [2]
     assert_originals_and_patch(repo, output, source, existing)
+
+
+@pytest.mark.parametrize("status, expected_attempts, expected_delays", [
+    (400, 1, []),
+    (503, 3, [2, 4]),
+])
+def test_http_error_body_timeout_preserves_terminal_status_and_retry_policy(
+        status, expected_attempts, expected_delays):
+    delays = []
+    with local_chat([], status=status) as (url, requests):
+        with pytest.raises(ModelError, match=f"HTTP {status}") as caught:
+            local_client(url, delays, retries=2).chat("fixture-model", MESSAGES)
+        assert isinstance(caught.value.__cause__, urllib.error.HTTPError)
+        assert caught.value.__cause__.code == status
+        assert "timed out" in str(caught.value)
+        assert len(requests) == expected_attempts
+        assert delays == expected_delays

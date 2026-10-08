@@ -155,7 +155,13 @@ class OpenAICompatClient:
                     attempt += 1
                     self._sleep(2 ** attempt)
                     continue
-                detail = e.read().decode("utf-8", "replace")[:500] if hasattr(e, "read") else ""
+                try:
+                    detail = e.read().decode("utf-8", "replace")[:500] if hasattr(e, "read") else ""
+                except TimeoutError:
+                    # Preserve a terminal status even if its diagnostic body stalls.
+                    detail = "response body timed out"
+                finally:
+                    e.close()
                 raise ModelError(f"HTTP {e.code} from {url}: {detail}") from e
             except (urllib.error.URLError, TimeoutError) as e:
                 # urllib can raise TimeoutError directly while reading a response body.
