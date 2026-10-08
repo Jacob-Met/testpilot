@@ -1,0 +1,14 @@
+{
+  "baseline-normal.json": "af5e3ecaf042dfbf57ef72dfac30ebbd88195505b4e25fa4f580738652e5b243",
+  "baseline-normal.stderr.log": "69b72670c9b0860b80934ca98f13416bac1ed9dcbbf6d4c61cd1d430b7652b40",
+  "baseline-normal.stdout.log": "ab847ee372ce705f2fb8837d8a993736073e1e48eded4b06d0d88a54261b10b8",
+  "candidate-normal.json": "138c2b9e427615f7990bf2f03534c23fa378a4e83f245551722637d352e62449",
+  "candidate-normal.stderr.log": "16601e6ea8da1c34394924e9a49c9952f93b972935ac834165e2eb5218fd763c",
+  "candidate-normal.stdout.log": "1a0f55c5d5cdfd8e3e324f1b84ef6ce0ca5c2a2e64c3a13906a5ba04ffa595fa",
+  "candidate-optimized.json": "96ff98fcb15e4316230ea6331f3761b403b517cc567dbb74469da6c1c3471c48",
+  "candidate-optimized.stderr.log": "c4499881195db4db85309ae008e7d3e0f39323863194cb02ee6ee8b110499c72",
+  "candidate-optimized.stdout.log": "5657fe99fac055ffe7e2432402c20decede1f8f6bc0477a18f589317bbb0f003",
+  "independent_review.py": "9e0732fdc2c297e432259748199f740bc34ecd7e3f1a2cd15ba65073623e4608",
+  "run-summary.json": "895457f37c660806a8c2d2485ccbd05b49aef2407f959e3b13eebc36ec5f4eff",
+  "source-manifest.json": "72c37820685c9dbd9a7b31e200cb0749aadfd9313abf5836d17315b0ebad0610"
+}

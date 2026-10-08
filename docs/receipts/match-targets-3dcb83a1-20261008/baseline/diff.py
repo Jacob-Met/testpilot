@@ -171,16 +171,13 @@ def _iter_functions(body, prefix: str = "", in_class: bool = False):
     """Yield (qualname, node, is_method) for top-level functions and methods.
 
     Nested functions are attributed to their enclosing function. Functions
-    defined under ``if``/``try``/``with``/``match`` blocks at module/class level count.
+    defined under ``if``/``try``/``with`` blocks at module/class level count.
     """
     for node in body:
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
             yield prefix + node.name, node, in_class
         elif isinstance(node, ast.ClassDef):
             yield from _iter_functions(node.body, prefix + node.name + ".", True)
-        elif isinstance(node, ast.Match):
-            for case in node.cases:
-                yield from _iter_functions(case.body, prefix, in_class)
         else:
             for attr in ("body", "orelse", "finalbody"):
                 sub = getattr(node, attr, None)

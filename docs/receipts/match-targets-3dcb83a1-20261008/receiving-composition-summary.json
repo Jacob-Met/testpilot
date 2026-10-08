@@ -1,0 +1,36 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_diff.py",
+    "tests/test_git_quoted_paths.py",
+    "tests/test_diff_source_boundary.py",
+    "tests/test_match_targets.py",
+    "tests/test_generated_test_preservation.py",
+    "--junitxml=/home/jacob/hamon-testpilot-match-3dcb83a1/evidence/receiving-composition.xml"
+  ],
+  "base": {
+    "sha": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+    "tree": "cd0c4f3033b79138e4a6fa0def03b9208fef1a35"
+  },
+  "exit": 0,
+  "suites": [
+    {
+      "errors": "0",
+      "failures": "0",
+      "hostname": "hamon-thinkpad",
+      "name": "pytest",
+      "skipped": "0",
+      "tests": "84",
+      "time": "21.862",
+      "timestamp": "2026-10-08T09:06:05.868721+00:00"
+    }
+  ],
+  "tail": [
+    "........................................................................ [ 85%]",
+    "............                                                             [100%]",
+    "84 passed in 21.87s"
+  ]
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "exit": 0,
+    "label": "baseline-existing",
+    "suites": [
+      {
+        "errors": "0",
+        "failures": "0",
+        "hostname": "hamon-thinkpad",
+        "name": "pytest",
+        "skipped": "0",
+        "tests": "55",
+        "time": "2.124",
+        "timestamp": "2026-10-08T09:03:08.598515+00:00"
+      }
+    ],
+    "tail": [
+      ".......................................................                  [100%]",
+      "55 passed in 2.11s"
+    ]
+  },
+  {
+    "exit": 0,
+    "label": "candidate-existing-and-new",
+    "suites": [
+      {
+        "errors": "0",
+        "failures": "0",
+        "hostname": "hamon-thinkpad",
+        "name": "pytest",
+        "skipped": "0",
+        "tests": "66",
+        "time": "3.491",
+        "timestamp": "2026-10-08T09:03:11.680433+00:00"
+      }
+    ],
+    "tail": [
+      "..................................................................       [100%]",
+      "66 passed in 3.49s"
+    ]
+  }
+]

@@ -1,0 +1,269 @@
+FFFFFFF.FFF                                                              [100%]
+=================================== FAILURES ===================================
+______________ test_changed_match_branch_has_exact_public_target _______________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_changed_match_branch_has_0')
+
+    def test_changed_match_branch_has_exact_public_target(tmp_path):
+        after = SOURCE.replace("sum(items) + 1", "sum(items) + 2")
+        _, diff = git_change(tmp_path, SOURCE, after)
+        parsed = parse_unified_diff(diff)
+        assert parsed[0].added_lines == {5}
+        targets = changed_functions(tmp_path, diff)
+>       assert [target.qualname for target in targets] == ["total"]
+E       AssertionError: assert [] == ['total']
+E         
+E         Right contains one more item: 'total'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:52: AssertionError
+___________ test_decorated_async_match_method_retains_class_identity ___________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_decorated_async_match_met0')
+
+    def test_decorated_async_match_method_retains_class_identity(tmp_path):
+        before = """class Backend:
+        match "async":
+            case "async":
+                @classmethod
+                async def total(cls, items):
+                    return sum(items) + 1
+    """
+        after = before.replace("sum(items) + 1", "sum(items) + 2")
+        _, diff = git_change(tmp_path, before, after, "src/pkg/backend.py")
+        targets = changed_functions(tmp_path, diff)
+>       assert len(targets) == 1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+focused-tests/test_match_targets.py:71: AssertionError
+________ test_nested_branch_containers_reach_only_changed_callable[if] _________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_nested_branch_containers_0')
+wrapper = 'if'
+
+    @pytest.mark.parametrize("wrapper", ["if", "try", "with", "match"])
+    def test_nested_branch_containers_reach_only_changed_callable(tmp_path, wrapper):
+        block = """match "inner":
+        case "inner":
+            def chosen():
+                return 1
+        case _:
+            def untouched():
+                return 9
+    """
+        indented = textwrap.indent(block, "    ")
+        if wrapper == "if":
+            before = "if True:\n" + indented
+        elif wrapper == "try":
+            before = "try:\n" + indented + "finally:\n    pass\n"
+        elif wrapper == "with":
+            before = "with __import__('contextlib').nullcontext():\n" + indented
+        else:
+            before = "match 'outer':\n    case 'outer':\n" + textwrap.indent(block, "        ")
+        after = before.replace("return 1", "return 2")
+        _, diff = git_change(tmp_path, before, after)
+        targets = changed_functions(tmp_path, diff)
+>       assert [target.qualname for target in targets] == ["chosen"]
+E       AssertionError: assert [] == ['chosen']
+E         
+E         Right contains one more item: 'chosen'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:103: AssertionError
+________ test_nested_branch_containers_reach_only_changed_callable[try] ________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_nested_branch_containers_1')
+wrapper = 'try'
+
+    @pytest.mark.parametrize("wrapper", ["if", "try", "with", "match"])
+    def test_nested_branch_containers_reach_only_changed_callable(tmp_path, wrapper):
+        block = """match "inner":
+        case "inner":
+            def chosen():
+                return 1
+        case _:
+            def untouched():
+                return 9
+    """
+        indented = textwrap.indent(block, "    ")
+        if wrapper == "if":
+            before = "if True:\n" + indented
+        elif wrapper == "try":
+            before = "try:\n" + indented + "finally:\n    pass\n"
+        elif wrapper == "with":
+            before = "with __import__('contextlib').nullcontext():\n" + indented
+        else:
+            before = "match 'outer':\n    case 'outer':\n" + textwrap.indent(block, "        ")
+        after = before.replace("return 1", "return 2")
+        _, diff = git_change(tmp_path, before, after)
+        targets = changed_functions(tmp_path, diff)
+>       assert [target.qualname for target in targets] == ["chosen"]
+E       AssertionError: assert [] == ['chosen']
+E         
+E         Right contains one more item: 'chosen'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:103: AssertionError
+_______ test_nested_branch_containers_reach_only_changed_callable[with] ________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_nested_branch_containers_2')
+wrapper = 'with'
+
+    @pytest.mark.parametrize("wrapper", ["if", "try", "with", "match"])
+    def test_nested_branch_containers_reach_only_changed_callable(tmp_path, wrapper):
+        block = """match "inner":
+        case "inner":
+            def chosen():
+                return 1
+        case _:
+            def untouched():
+                return 9
+    """
+        indented = textwrap.indent(block, "    ")
+        if wrapper == "if":
+            before = "if True:\n" + indented
+        elif wrapper == "try":
+            before = "try:\n" + indented + "finally:\n    pass\n"
+        elif wrapper == "with":
+            before = "with __import__('contextlib').nullcontext():\n" + indented
+        else:
+            before = "match 'outer':\n    case 'outer':\n" + textwrap.indent(block, "        ")
+        after = before.replace("return 1", "return 2")
+        _, diff = git_change(tmp_path, before, after)
+        targets = changed_functions(tmp_path, diff)
+>       assert [target.qualname for target in targets] == ["chosen"]
+E       AssertionError: assert [] == ['chosen']
+E         
+E         Right contains one more item: 'chosen'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:103: AssertionError
+_______ test_nested_branch_containers_reach_only_changed_callable[match] _______
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_nested_branch_containers_3')
+wrapper = 'match'
+
+    @pytest.mark.parametrize("wrapper", ["if", "try", "with", "match"])
+    def test_nested_branch_containers_reach_only_changed_callable(tmp_path, wrapper):
+        block = """match "inner":
+        case "inner":
+            def chosen():
+                return 1
+        case _:
+            def untouched():
+                return 9
+    """
+        indented = textwrap.indent(block, "    ")
+        if wrapper == "if":
+            before = "if True:\n" + indented
+        elif wrapper == "try":
+            before = "try:\n" + indented + "finally:\n    pass\n"
+        elif wrapper == "with":
+            before = "with __import__('contextlib').nullcontext():\n" + indented
+        else:
+            before = "match 'outer':\n    case 'outer':\n" + textwrap.indent(block, "        ")
+        after = before.replace("return 1", "return 2")
+        _, diff = git_change(tmp_path, before, after)
+        targets = changed_functions(tmp_path, diff)
+>       assert [target.qualname for target in targets] == ["chosen"]
+E       AssertionError: assert [] == ['chosen']
+E         
+E         Right contains one more item: 'chosen'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:103: AssertionError
+________ test_pure_deletion_in_match_branch_selects_surviving_callable _________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_pure_deletion_in_match_br0')
+
+    def test_pure_deletion_in_match_branch_selects_surviving_callable(tmp_path):
+        before = SOURCE.replace("            return sum(items) + 1",
+                                "            ignored = 7\n            return sum(items) + 1")
+        _, diff = git_change(tmp_path, before, SOURCE)
+        targets = changed_functions(tmp_path, diff)
+>       assert [target.qualname for target in targets] == ["total"]
+E       AssertionError: assert [] == ['total']
+E         
+E         Right contains one more item: 'total'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:113: AssertionError
+____________ test_selection_does_not_execute_match_subject_or_guard ____________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_selection_does_not_execut0')
+
+    def test_selection_does_not_execute_match_subject_or_guard(tmp_path):
+        before = """def must_not_run():
+        raise AssertionError("source inspection executed code")
+    
+    match must_not_run():
+        case value if must_not_run():
+            def chosen():
+                return 1
+    """
+        after = before.replace("return 1", "return 2")
+        _, diff = git_change(tmp_path, before, after)
+        targets = changed_functions(tmp_path, diff)
+>       assert [target.qualname for target in targets] == ["chosen"]
+E       AssertionError: assert [] == ['chosen']
+E         
+E         Right contains one more item: 'chosen'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:148: AssertionError
+____________ test_new_and_deleted_match_source_keep_diff_semantics _____________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_new_and_deleted_match_sou0')
+
+    def test_new_and_deleted_match_source_keep_diff_semantics(tmp_path):
+        source = """match "a":
+        case "a":
+            def selected():
+                return 1
+    """
+        _, diff = git_change(tmp_path, None, source)
+        assert parse_unified_diff(diff)[0].is_new
+>       assert [target.qualname for target in changed_functions(tmp_path, diff)] == ["selected"]
+E       AssertionError: assert [] == ['selected']
+E         
+E         Right contains one more item: 'selected'
+E         Use -v to get more diff
+
+focused-tests/test_match_targets.py:159: AssertionError
+___________ test_actual_pipeline_generates_tests_for_match_callable ____________
+
+tmp_path = PosixPath('/home/jacob/hamon-testpilot-match-3dcb83a1/tmp/pytest-of-jacob/pytest-0/test_actual_pipeline_generates0')
+
+    def test_actual_pipeline_generates_tests_for_match_callable(tmp_path):
+        after = SOURCE.replace("sum(items) + 1", "sum(items) + 2")
+        target, diff = git_change(tmp_path, SOURCE, after)
+        original = target.read_bytes()
+        client = ScriptedModel([
+            "Check the active basic backend total on positive and empty inputs.",
+            "```python path=tests/test_backend.py\n"
+            "from backend import total\n\n"
+            "def test_total():\n    assert total([1, 2]) == 5\n\n"
+            "def test_empty():\n    assert total([]) == 2\n```",
+        ])
+        report = TestPilot(client, RoutingConfig(planner_model="P", editor_model="E"),
+                           coverage=False, timeout_s=30, max_repair_rounds=0).run(tmp_path, diff)
+>       assert report.status == "passed"
+E       AssertionError: assert 'no_changes' == 'passed'
+E         
+E         - passed
+E         + no_changes
+
+focused-tests/test_match_targets.py:182: AssertionError
+=========================== short test summary info ============================
+FAILED focused-tests/test_match_targets.py::test_changed_match_branch_has_exact_public_target
+FAILED focused-tests/test_match_targets.py::test_decorated_async_match_method_retains_class_identity
+FAILED focused-tests/test_match_targets.py::test_nested_branch_containers_reach_only_changed_callable[if]
+FAILED focused-tests/test_match_targets.py::test_nested_branch_containers_reach_only_changed_callable[try]
+FAILED focused-tests/test_match_targets.py::test_nested_branch_containers_reach_only_changed_callable[with]
+FAILED focused-tests/test_match_targets.py::test_nested_branch_containers_reach_only_changed_callable[match]
+FAILED focused-tests/test_match_targets.py::test_pure_deletion_in_match_branch_selects_surviving_callable
+FAILED focused-tests/test_match_targets.py::test_selection_does_not_execute_match_subject_or_guard
+FAILED focused-tests/test_match_targets.py::test_new_and_deleted_match_source_keep_diff_semantics
+FAILED focused-tests/test_match_targets.py::test_actual_pipeline_generates_tests_for_match_callable
+10 failed, 1 passed in 0.84s

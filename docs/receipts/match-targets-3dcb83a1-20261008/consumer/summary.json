@@ -1,0 +1,66 @@
+[
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/fixture",
+      "--diff",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/change.diff",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/script",
+      "--rounds",
+      "0",
+      "--timeout",
+      "30",
+      "--out",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/baseline"
+    ],
+    "changed_functions": [],
+    "exit": 1,
+    "fixture_unchanged": true,
+    "label": "baseline",
+    "provider": "ScriptedModel_only",
+    "source_sha256": "d1f22e3b594f9b8c657de6a69e4c44bb32c2a24819165dadb9e8a5a50d0dc5fc",
+    "status": "no_changes",
+    "tests_written": 0
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-m",
+      "testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/fixture",
+      "--diff",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/change.diff",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/script",
+      "--rounds",
+      "0",
+      "--timeout",
+      "30",
+      "--out",
+      "/home/jacob/hamon-testpilot-match-3dcb83a1/consumer/candidate"
+    ],
+    "changed_functions": [
+      "total"
+    ],
+    "exit": 0,
+    "fixture_unchanged": true,
+    "generated_pytest_passed": 2,
+    "git_apply_check_exit": 0,
+    "label": "candidate",
+    "provider": "ScriptedModel_only",
+    "source_sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+    "status": "passed",
+    "tests_written": 2
+  }
+]

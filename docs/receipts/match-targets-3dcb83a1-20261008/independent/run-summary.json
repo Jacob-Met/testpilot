@@ -1,0 +1,73 @@
+[
+  {
+    "errors": 0,
+    "failures": 3,
+    "label": "baseline-normal",
+    "pipeline": {
+      "final_passed": null,
+      "fixture_generated_test_absent": true,
+      "generated_files": [],
+      "git_apply_check_returncode": 128,
+      "model_calls": [],
+      "original_source_and_existing_tests_unchanged": true,
+      "selected": [],
+      "status": "no_changes",
+      "tests_written": 0
+    },
+    "returncode": 1,
+    "source_unchanged": true,
+    "tests": 4
+  },
+  {
+    "errors": 0,
+    "failures": 0,
+    "label": "candidate-normal",
+    "pipeline": {
+      "final_passed": 3,
+      "fixture_generated_test_absent": true,
+      "generated_files": [
+        "tests/test_scale_testpilot.py"
+      ],
+      "git_apply_check_returncode": 0,
+      "model_calls": [
+        "fixture-plan",
+        "fixture-editor"
+      ],
+      "original_source_and_existing_tests_unchanged": true,
+      "selected": [
+        "Scale.times"
+      ],
+      "status": "passed",
+      "tests_written": 2
+    },
+    "returncode": 0,
+    "source_unchanged": true,
+    "tests": 4
+  },
+  {
+    "errors": 0,
+    "failures": 0,
+    "label": "candidate-optimized",
+    "pipeline": {
+      "final_passed": 3,
+      "fixture_generated_test_absent": true,
+      "generated_files": [
+        "tests/test_scale_testpilot.py"
+      ],
+      "git_apply_check_returncode": 0,
+      "model_calls": [
+        "fixture-plan",
+        "fixture-editor"
+      ],
+      "original_source_and_existing_tests_unchanged": true,
+      "selected": [
+        "Scale.times"
+      ],
+      "status": "passed",
+      "tests_written": 2
+    },
+    "returncode": 0,
+    "source_unchanged": true,
+    "tests": 4
+  }
+]

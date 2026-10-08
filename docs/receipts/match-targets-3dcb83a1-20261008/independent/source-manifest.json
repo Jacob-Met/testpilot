@@ -1,0 +1,14 @@
+{
+  "baseline/testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+  "baseline/testpilot/__main__.py": "c5896dd64beddb360a8c1864711800752ed6d19b1bf9ac028c88c501f7328786",
+  "baseline/testpilot/diff.py": "d1f22e3b594f9b8c657de6a69e4c44bb32c2a24819165dadb9e8a5a50d0dc5fc",
+  "baseline/testpilot/loop.py": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+  "baseline/testpilot/model.py": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+  "baseline/testpilot/sandbox.py": "d2c6b810180b1f1aa5aac1d2ae89c84a737fa009b33a3c19c8b392072047d881",
+  "candidate/testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+  "candidate/testpilot/__main__.py": "c5896dd64beddb360a8c1864711800752ed6d19b1bf9ac028c88c501f7328786",
+  "candidate/testpilot/diff.py": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+  "candidate/testpilot/loop.py": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+  "candidate/testpilot/model.py": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+  "candidate/testpilot/sandbox.py": "d2c6b810180b1f1aa5aac1d2ae89c84a737fa009b33a3c19c8b392072047d881"
+}

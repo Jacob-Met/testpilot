@@ -1,0 +1,17 @@
+{
+  "candidate/testpilot/diff.py": {
+    "bytes": 9059,
+    "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+    "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e"
+  },
+  "candidate/tests/test_match_targets.py": {
+    "bytes": 7619,
+    "git_blob": "713fe67e06d0534da5b685159e0a36ed75eb0b8e",
+    "sha256": "95935deb9d9627f073d6e000675b40c6eb87a1837742e0cb627cda9bf16b40e5"
+  },
+  "evidence/candidate.patch": {
+    "bytes": 956,
+    "git_blob": "a154ae895d880a51b7ff6d8cedfd93503cebaf60",
+    "sha256": "4be19a161ceab7b6137a364f413b4d2f3cf37156c5edcb17a581d4125dfbbda1"
+  }
+}

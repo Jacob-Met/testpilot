@@ -1,0 +1,18 @@
+{
+  "ast_changed_top_level": [
+    "_iter_functions"
+  ],
+  "coverage": "not installed; no coverage claim",
+  "frozen_sources": {
+    "baseline/testpilot/diff.py": "d1f22e3b594f9b8c657de6a69e4c44bb32c2a24819165dadb9e8a5a50d0dc5fc",
+    "candidate/testpilot/diff.py": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+    "receiving/testpilot/diff.py": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+    "receiving/tests/test_match_targets.py": "95935deb9d9627f073d6e000675b40c6eb87a1837742e0cb627cda9bf16b40e5"
+  },
+  "git": "git version 2.53.0",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+  "pytest": "9.0.2",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "python_executable": "/usr/bin/python3",
+  "top_level_node_count": 20
+}
