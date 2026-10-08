@@ -1,0 +1,170 @@
+{
+  "coverage_version": "7.16.2",
+  "defect_reproduced": true,
+  "executable": "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+  "executions": [
+    {
+      "argv": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+        "-m",
+        "coverage",
+        "run",
+        "--data-file=/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/oracle.coverage",
+        "--source=/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/threshold/fixture",
+        "--omit=*/tests/*",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "cwd": "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/threshold/fixture",
+      "exit": 0,
+      "name": "oracle-run",
+      "seconds": 1.759
+    },
+    {
+      "argv": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+        "-m",
+        "coverage",
+        "json",
+        "--data-file=/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/oracle.coverage",
+        "-o",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/oracle.json",
+        "-q"
+      ],
+      "cwd": "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/threshold/fixture",
+      "exit": 2,
+      "name": "oracle-json",
+      "seconds": 0.668
+    },
+    {
+      "argv": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/threshold/fixture",
+        "--diff",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/threshold/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/threshold/script",
+        "--rounds",
+        "0",
+        "--timeout",
+        "30",
+        "--out",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/threshold/user-output"
+      ],
+      "cwd": "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first",
+      "exit": 0,
+      "name": "threshold-cli",
+      "seconds": 4.594
+    },
+    {
+      "argv": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/ordinary/fixture",
+        "--diff",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/ordinary/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/ordinary/script",
+        "--rounds",
+        "0",
+        "--timeout",
+        "30",
+        "--out",
+        "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first/ordinary/user-output"
+      ],
+      "cwd": "/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-first",
+      "exit": 0,
+      "name": "ordinary-cli",
+      "seconds": 4.373
+    }
+  ],
+  "expected": {
+    "total_after": 100.0,
+    "total_before": 75.0,
+    "total_delta": 25.0
+  },
+  "fixture_hashes": {
+    "ordinary": {
+      ".coveragerc": "68131c934dc32cc8cc1bb1d1037ec473c9167d997f32f44fec3b1586d085b5c6",
+      "calc.py": "44584419ae1477b96d29e0c1949650ff07af46d32550361065ed7a3a183d6e76",
+      "tests/test_existing.py": "26520d0c97d0a8b50bbcb9e1ae6096468788f7e69fa2cff77a666f8cd3f6fa1f"
+    },
+    "threshold": {
+      ".coveragerc": "58411d684c4ee10219ca7b2eff01acf77c4457bb2294de3ea09b7a5f177881ea",
+      "calc.py": "44584419ae1477b96d29e0c1949650ff07af46d32550361065ed7a3a183d6e76",
+      "tests/test_existing.py": "26520d0c97d0a8b50bbcb9e1ae6096468788f7e69fa2cff77a666f8cd3f6fa1f"
+    }
+  },
+  "limits": [
+    "Authored local projects and ScriptedModel responses only",
+    "No real provider, repository or deployed service effects",
+    "No change to source policy or coverage configuration"
+  ],
+  "oracle_json_exit": 2,
+  "oracle_total_before": 75.0,
+  "pytest_version": "9.0.2",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "reported": {
+    "ordinary": {
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": 100.0,
+        "changed_lines_executable": 1,
+        "total_after": 100.0,
+        "total_before": 75.0,
+        "total_delta": 25.0
+      },
+      "markdown": "# TestPilot report: **passed**\n\n- Changed functions: calc.py::classify\n- Tests written: 1 in tests/test_negative.py\n- Repair rounds used: 0/0\n- Final run: 2 passed, 0 failed, 0 errors, 0 skipped (rc=0) in 1.195s\n- Coverage (total): 75.0% -> 100.0% (+25.0 pts)\n- Coverage (changed lines, n=1): 100.0% -> 100.0%\n- Tokens: 315 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 107 in / 9 out\n  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 167 in / 32 out\n\n## Patch\n\n```diff\ndiff --git a/tests/test_negative.py b/tests/test_negative.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_negative.py\n@@ -0,0 +1,4 @@\n+from calc import classify\n+\n+def test_negative():\n+    assert classify(-1) == \"negative\"\n```\n",
+      "patch_sha256": "38884cfd4de68165cc0551b22eee3114dc8a244ca71b4cb721570ba97cc7418c",
+      "report_sha256": "f85f2ea0e5155cf2cb2b8e13d6e857c45dbcaec9c05a276710e39122c859cec4",
+      "status": "passed",
+      "tests_passed": 2,
+      "tests_written": 1
+    },
+    "threshold": {
+      "coverage": {
+        "changed_lines_after": 100.0,
+        "changed_lines_before": null,
+        "changed_lines_executable": 0,
+        "total_after": 100.0,
+        "total_before": 0.0,
+        "total_delta": 100.0
+      },
+      "markdown": "# TestPilot report: **passed**\n\n- Changed functions: calc.py::classify\n- Tests written: 1 in tests/test_negative.py\n- Repair rounds used: 0/0\n- Final run: 2 passed, 0 failed, 0 errors, 0 skipped (rc=0) in 1.218s\n- Coverage (total): 0.0% -> 100.0% (+100.0 pts)\n- Coverage (changed lines, n=0): None% -> 100.0%\n- Tokens: 315 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 107 in / 9 out\n  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 167 in / 32 out\n\n## Patch\n\n```diff\ndiff --git a/tests/test_negative.py b/tests/test_negative.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_negative.py\n@@ -0,0 +1,4 @@\n+from calc import classify\n+\n+def test_negative():\n+    assert classify(-1) == \"negative\"\n```\n",
+      "patch_sha256": "38884cfd4de68165cc0551b22eee3114dc8a244ca71b4cb721570ba97cc7418c",
+      "report_sha256": "d439be4b3cc7ebefa0f5ae555fc8fe9aedc1363c029f5ff667bc2dad8367d1da",
+      "status": "passed",
+      "tests_passed": 2,
+      "tests_written": 1
+    }
+  },
+  "schema": "testpilot-configured-coverage-receiving/1",
+  "source": "/home/jacob/testpilot-coverage-45d4289ccf6c/source-original",
+  "source_hashes": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+    "testpilot/diff.py": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+    "testpilot/loop.py": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+    "testpilot/model.py": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+    "testpilot/sandbox.py": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+    "tests/conftest.py": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+    "tests/test_loop.py": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc",
+    "tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+  },
+  "source_unchanged": true
+}

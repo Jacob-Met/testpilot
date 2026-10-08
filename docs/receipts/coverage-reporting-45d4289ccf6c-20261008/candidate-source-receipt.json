@@ -1,0 +1,31 @@
+{
+  "base_commit": "9f01fcb6de085850eca00db746380795eb548d62",
+  "base_tree": "34191a66ec22f8630aea83559cfb16f1e464ab3e",
+  "files": [
+    {
+      "bytes": 9626,
+      "git_blob": "164206206f8896f4bc6cee23ae030bb000671b33",
+      "path": "testpilot/sandbox.py",
+      "sha256": "90c1401cba1f5c488f1aa0b89b90293fda41b7971471904381d6b0b8279e18f7"
+    },
+    {
+      "bytes": 21143,
+      "git_blob": "bee54ddce48f6d5251fef56317a0ffceb0aab5a8",
+      "path": "testpilot/loop.py",
+      "sha256": "aa0a7a1459fabe7016e4d4f55fd7ee5fc2a5af64ec9df24445868fcaa59f620b"
+    },
+    {
+      "bytes": 6636,
+      "git_blob": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "path": "tests/test_coverage_reporting.py",
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede"
+    },
+    {
+      "bytes": 2365,
+      "git_blob": "340179e676d90c744b4a826e7824efb1cda3dab4",
+      "path": "docs/coverage-reporting.md",
+      "sha256": "697fcbf3d7276c0e34ba704b0a611908b0192f4e3c01f554dae3fc8a2bd063dd"
+    }
+  ],
+  "patch_sha256": "a5f4d44aa8eb5a9aac082a3472ea5c21e99d3a6e45efc96fad573c6e6ccfa1ee"
+}

@@ -1,0 +1,44 @@
+{
+  "argv": [
+    "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp=/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-regressions/tmp",
+    "--junitxml=/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-regressions/junit.xml",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/regressions/test_coverage_reporting.py"
+  ],
+  "cases": [
+    {
+      "name": "test_partial_report_preserves_measured_lines_below_threshold[0]",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_partial_report_preserves_measured_lines_below_threshold[100]",
+      "outcome": "failed"
+    },
+    {
+      "name": "test_measured_zero_retains_its_executable_population",
+      "outcome": "failed"
+    },
+    {
+      "name": "test_failed_collection_is_unavailable_while_test_outcome_survives",
+      "outcome": "failed"
+    },
+    {
+      "name": "test_below_threshold_measurement_does_not_hide_failed_tests",
+      "outcome": "failed"
+    },
+    {
+      "name": "test_public_cli_keeps_reports_when_final_collection_is_unavailable",
+      "outcome": "failed"
+    }
+  ],
+  "exit": 1,
+  "receiver_sha256": "f1614f9e343eaac0d84aa63d8d06a77f9b36258c57396fc8220ad38e4b2ddf53",
+  "seconds": 6.96,
+  "source_pin": "9f01fcb6de085850eca00db746380795eb548d62"
+}

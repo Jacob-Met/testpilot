@@ -1,0 +1,78 @@
+{
+  "captured_at": "2026-10-08T10:48:36.541936+00:00",
+  "files": [
+    {
+      "bytes": 390,
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "100644",
+      "path": "testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "bytes": 3316,
+      "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+      "mode": "100644",
+      "path": "testpilot/__main__.py",
+      "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5"
+    },
+    {
+      "bytes": 9059,
+      "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+      "mode": "100644",
+      "path": "testpilot/diff.py",
+      "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e"
+    },
+    {
+      "bytes": 21164,
+      "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+      "mode": "100644",
+      "path": "testpilot/loop.py",
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323"
+    },
+    {
+      "bytes": 9730,
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "mode": "100644",
+      "path": "testpilot/model.py",
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc"
+    },
+    {
+      "bytes": 9286,
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+      "mode": "100644",
+      "path": "testpilot/sandbox.py",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3"
+    },
+    {
+      "bytes": 676,
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "mode": "100644",
+      "path": "pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "bytes": 2545,
+      "git_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "mode": "100644",
+      "path": "tests/test_sandbox.py",
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+    },
+    {
+      "bytes": 5465,
+      "git_blob": "8540b31caf7c258e9345e62d11cd4796c5e92ba5",
+      "mode": "100644",
+      "path": "tests/test_loop.py",
+      "sha256": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc"
+    },
+    {
+      "bytes": 144,
+      "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "mode": "100644",
+      "path": "tests/conftest.py",
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52"
+    }
+  ],
+  "schema": "testpilot-coverage-source/1",
+  "source_commit": "9f01fcb6de085850eca00db746380795eb548d62",
+  "source_tree": "34191a66ec22f8630aea83559cfb16f1e464ab3e"
+}
