@@ -1,0 +1,1 @@
+First staging attempt stopped before writing source because its locally authored Git-blob hash recipe encoded the NUL separator as two literal characters. The recipe was corrected to bytes([0]); all seven fetched source blobs then matched. No product behavior was executed by the failed setup.

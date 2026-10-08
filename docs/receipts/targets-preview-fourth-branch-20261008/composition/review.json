@@ -1,0 +1,70 @@
+{
+  "verdict": "PASS",
+  "publication_base": "d7c28b0ad261e78d681f40e355447dffa4d435ed",
+  "publication_base_tree": "99f94e3c7b0774b04a7e28fa13730b7e464252d6",
+  "accepted_CLI_unchanged": "fc455a5b4866fd27503585a50903a80ff179513e",
+  "current_package_blobs": {
+    "pyproject.toml": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+    "testpilot/__init__.py": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+    "testpilot/__main__.py": "1f724ba942628f0b337f16594710bff11083ed33",
+    "testpilot/_pytest_generated.py": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+    "testpilot/diff.py": "d7d4c194c3730e4c7a8093b485491a7873afe814",
+    "testpilot/loop.py": "f4e9671b32cabda7e66ef79eb4a3a94c58d2f824",
+    "testpilot/model.py": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+    "testpilot/sandbox.py": "ca0360375bdcaace0e6014b4767acad546380242"
+  },
+  "candidate_changes_only_accepted_CLI_in_current_package": true,
+  "current_native_source_attribution": {
+    "PR14": "Generated-test collection/result changes in loop.py and sandbox.py plus _pytest_generated.py; all exact current bytes preserved.",
+    "PR15": "Python source decoding through tokenize.open after existing containment; exact current bytes preserved.",
+    "PR1": "Existing .github/workflows/ci.yml retained; hosted result is recorded separately after publication."
+  },
+  "receiver_adaptation": "Only three SUPPORT blob literals changed; reversing those substitutions reconstructs the original frozen receiver byte-for-byte.",
+  "current_receiver": {
+    "actual_Python_CLI_children": 10,
+    "native_Git_diff_inside_CLI_children": 1,
+    "candidate_conditions": 34,
+    "candidate_failed_conditions": 0,
+    "baseline_failed_conditions": 11,
+    "run_dispatch_exact_pair": true
+  },
+  "BOM_preview": {
+    "conditions": 7,
+    "failures": 0,
+    "actual_Python_CLI_children": 1
+  },
+  "evidence": {
+    "bom-results.json": {
+      "git_blob": "3e80b1ec26f528fb8174ac4d959d91e9151d0c69",
+      "sha256": "0a4c7a0e42de26260781cb501ef40823025aabff70cee6b88fef403b1381aee0",
+      "bytes": 2668
+    },
+    "current-package-pins.json": {
+      "git_blob": "ea6cf1164bfcea16898b6f97a6670786551bdf2c",
+      "sha256": "293c2996cad37fdf3db869440cb25e300354d226269df5d549f0ba7ac979abd6",
+      "bytes": 868
+    },
+    "current-results.json": {
+      "git_blob": "497b69373b7c113abce86650b8fc8e11911c4c1f",
+      "sha256": "5215dc615ec948b8546ecbc3a3debcc44eabebb716b5b30827a5c78138959e0b",
+      "bytes": 19717
+    },
+    "receive_bom_preview.py": {
+      "git_blob": "6f4874b34ecd9def57bcd6c5f935b46a69f7b4a5",
+      "sha256": "3baf4d44b77d7d2bee564f42d0922da6bfe6b8c25192e7b3e76d9561c756d94d",
+      "bytes": 5417
+    },
+    "receive_targets_current.py": {
+      "git_blob": "8c9349f8ec3eb74fd5e9482aa765650b8866e387",
+      "sha256": "bd35c876578dc3dc99f9d5ebb1a1ca0fe923480d9734fbbb44cd215f810ed551",
+      "bytes": 17867
+    }
+  },
+  "original_author_and_reviewer_freezes_unchanged": true,
+  "full_local_or_owner_suite_rerun": false,
+  "limits": [
+    "Exact current source package plus accepted CLI; no native owner runtime modification.",
+    "Actual local Git and CLI children, with declared model/runner/writer tripwires and run-dispatch doubles.",
+    "No provider, live host/account/service, installed activation or native Windows qualification."
+  ]
+}

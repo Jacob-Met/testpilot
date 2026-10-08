@@ -1,0 +1,400 @@
+diff --git a/docs/targets-preview.md b/docs/targets-preview.md
+new file mode 100644
+index 0000000..e8c89fa
+--- /dev/null
++++ b/docs/targets-preview.md
+@@ -0,0 +1,78 @@
++# Preview the functions selected by a diff
++
++Use `testpilot targets` to inspect what TestPilot's existing selector would send into generation. The command prints changed Python functions and methods before a developer chooses to run test generation.
++
++## Inspect a working tree
++
++From a TestPilot checkout or installed package:
++
++```sh
++python -m testpilot targets --repo /path/to/project --git-base main
++```
++
++The default output contains a quoted source path, inclusive line range, and qualified function name for each target:
++
++```text
++1 changed Python function outside tests
++"src/cart.py":7-12  "total"
++```
++
++Paths and names use JSON quoting so Unicode escapes, tabs, or newlines cannot be confused with another output row. The concise view does not print function bodies.
++
++## Inspect a saved diff or pipe
++
++The source choices match the generation command:
++
++```sh
++python -m testpilot targets --repo /path/to/project --diff change.diff
++git diff main -- '*.py' | python -m testpilot targets --repo . --diff -
++```
++
++Exactly one of `--diff` or `--git-base` is required. `--diff -` reads standard input. With `--git-base`, the command invokes the same native Git working-tree diff used by `run`; this retains Git's configured repository behavior.
++
++## Read the selected source as JSON
++
++```sh
++python -m testpilot targets --repo /path/to/project --git-base main --json
++```
++
++The top-level `changed_functions` array uses the native selector's records, with no second AST walk or new selection rules. Each record contains:
++
++| Field | Meaning |
++| --- | --- |
++| `path` | Exact repository-relative diff path |
++| `module` | Existing selector's import module name |
++| `qualname` | Function or class-qualified method name |
++| `lineno`, `end_lineno` | Inclusive source range, including decorators |
++| `changed_lines` | Added lines within the selected function |
++| `source` | Current function source returned by the selector |
++| `is_method` | Whether the function is selected in a class |
++
++The same `changed_functions` field appears in a generation report. JSON strings preserve the native path and source values, including escaped characters.
++
++A successful empty preview is `{"changed_functions": []}`. It means the selector found no eligible changed Python functions. It does not establish that the repository is clean or that tests pass.
++
++## What preview executes
++
++The preview calls the existing `changed_functions` reader. It parses selected source rather than importing project modules, constructs no model client, runs no pytest, and does not invoke the report or patch writer. It needs no scripted replies or model configuration. Redirecting stdout to a file is an ordinary caller-controlled way to save the preview.
++
++The existing native selector still controls test-path exclusion, deleted-file handling, decorated and conditional definitions, containment checks, source decoding, and line attribution. Source and diff inputs are read at invocation time. A preview does not reserve those bytes: edits between preview and generation can change the selected context. A supplied diff is interpreted against the current working tree, just as in `run`.
++
++This command is an inspection interface, not an execution sandbox or a new Git configuration policy. Generation remains a separate explicit `testpilot run` invocation, with all existing backend, project-Python, sandbox, reporting, and exit behavior retained.
++
++## Exit codes
++
++- `0`: the preview was produced, including an empty selection.
++- `2`: invalid command arguments, unreadable diff input, failed Git diff, or a native source-selection/parse error. There is no partial success output.
++
++Generation's existing exit codes remain unchanged. The `--python`, `--script`, backend, repair, timeout, token-budget, and output-directory options belong to `run`, not `targets`.
++
++## Focused verification
++
++The new tests use real disposable Git diffs and actual module CLI processes, plus a saved-diff call with explicit model, runner, subprocess, and output-writer tripwires:
++
++```sh
++python -m unittest discover -s tests -p test_cli_targets.py
++```
++
++They also retain an actual native `run` control that produces the existing zero-target report without consuming a scripted model reply. Full repository pytest qualification and model quality are separate from this CLI receiving boundary.
+diff --git a/testpilot/__main__.py b/testpilot/__main__.py
+index 1f724ba..fc455a5 100644
+--- a/testpilot/__main__.py
++++ b/testpilot/__main__.py
+@@ -1,14 +1,15 @@
+-"""CLI: python -m testpilot run --repo PATH (--diff FILE | --git-base REF) [--script DIR] --out DIR"""
++"""CLI for test generation and native diff-target inspection."""
+ from __future__ import annotations
+ 
+ import argparse
++import json
+ import os
+ import shutil
+ import subprocess
+ import sys
+ from pathlib import Path
+ 
+-from .diff import DiffSourceError
++from .diff import DiffSourceError, changed_functions
+ from .loop import TestPilot, render_report, write_outputs
+ from .model import ModelError, RoutingConfig, make_client
+ 
+@@ -23,6 +24,35 @@ def _python_executable(value: str) -> str:
+     return str(path.parent.resolve() / path.name)
+ 
+ 
++def _preview_targets(args) -> int:
++    """Print the native selector's result without starting generation or tests."""
++    try:
++        if args.diff == "-":
++            diff_text = sys.stdin.read()
++        elif args.diff:
++            diff_text = Path(args.diff).read_text(encoding="utf-8")
++        else:
++            diff_text = subprocess.run(
++                ["git", "-C", args.repo, "diff", args.git_base, "--", "*.py"],
++                check=True, capture_output=True, text=True,
++            ).stdout
++        functions = changed_functions(args.repo, diff_text)
++    except (OSError, ValueError, SyntaxError, subprocess.CalledProcessError) as exc:
++        print(f"testpilot: cannot inspect targets: {exc}", file=sys.stderr)
++        return 2
++
++    if args.json:
++        print(json.dumps({"changed_functions": [f.to_dict() for f in functions]}, indent=2))
++    else:
++        noun = "function" if len(functions) == 1 else "functions"
++        print(f"{len(functions)} changed Python {noun} outside tests")
++        for function in functions:
++            path = json.dumps(function.path)
++            name = json.dumps(function.qualname)
++            print(f"{path}:{function.lineno}-{function.end_lineno}  {name}")
++    return 0
++
++
+ def main(argv: list[str] | None = None) -> int:
+     ap = argparse.ArgumentParser(prog="testpilot")
+     sub = ap.add_subparsers(dest="cmd", required=True)
+@@ -41,8 +71,18 @@ def main(argv: list[str] | None = None) -> int:
+                    help="project Python for all test runs; path or PATH command (default: this interpreter)")
+     r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
+     r.add_argument("--out", default="testpilot-out")
++
++    preview = sub.add_parser("targets", help="inspect changed functions without generating or running tests")
++    preview.add_argument("--repo", required=True)
++    source = preview.add_mutually_exclusive_group(required=True)
++    source.add_argument("--diff", help="unified diff file ('-' for stdin)")
++    source.add_argument("--git-base", help="diff the working tree against this git ref")
++    preview.add_argument("--json", action="store_true", help="include full native target records and source")
+     a = ap.parse_args(argv)
+ 
++    if a.cmd == "targets":
++        return _preview_targets(a)
++
+     if a.diff == "-":
+         diff_text = sys.stdin.read()
+     elif a.diff:
+diff --git a/tests/test_cli_targets.py b/tests/test_cli_targets.py
+new file mode 100644
+index 0000000..2815509
+--- /dev/null
++++ b/tests/test_cli_targets.py
+@@ -0,0 +1,233 @@
++"""Native CLI receiving for target previews; no model or pytest dependency."""
++from __future__ import annotations
++
++from contextlib import redirect_stderr, redirect_stdout
++import hashlib
++import io
++import json
++import os
++from pathlib import Path
++import subprocess
++import sys
++import tempfile
++import unittest
++from unittest.mock import patch
++
++import testpilot
++from testpilot import __main__ as cli
++
++PACKAGE_ROOT = Path(testpilot.__file__).resolve().parent.parent
++CLI_RECEIPTS = []
++
++
++class TargetPreviewTests(unittest.TestCase):
++    def setUp(self):
++        self.temp = tempfile.TemporaryDirectory(prefix="testpilot-target-preview-")
++        self.root = Path(self.temp.name)
++        self.repo = self.root / "project"
++        (self.repo / "src").mkdir(parents=True)
++        (self.repo / "tests").mkdir()
++        self.subject = self.repo / "src" / "caf\u00e9.py"
++        self.original = (
++            "from pathlib import Path\n"
++            'Path(__file__).with_name("source-imported").write_text("unexpected")\n'
++            'raise RuntimeError("project source must not be imported")\n\n'
++            "def unchanged(value):\n    return value\n\n"
++            "class Arithmetic:\n"
++            "    @staticmethod\n"
++            "    def scale(value):\n        return value * 2\n"
++        )
++        self.subject.write_text(self.original, encoding="utf-8")
++        (self.repo / "conftest.py").write_text(
++            "from pathlib import Path\n"
++            'Path(__file__).with_name("pytest-started").write_text("unexpected")\n'
++            'raise RuntimeError("project pytest must not run")\n',
++            encoding="utf-8",
++        )
++        self.env = {
++            "PATH": os.defpath,
++            "LANG": "C.UTF-8",
++            "PYTHONDONTWRITEBYTECODE": "1",
++            "TMPDIR": str(self.root),
++            "TESTPILOT_BACKEND": "preview-must-not-construct-a-backend",
++        }
++        self.git("init", "-q")
++        self.git("add", ".")
++        self.git("-c", "user.name=TestPilot Fixture",
++                 "-c", "user.email=testpilot-fixture@invalid.local",
++                 "-c", "commit.gpgsign=false", "commit", "-q", "-m", "before")
++        self.subject.write_text(self.original.replace("value * 2", "value * 3"), encoding="utf-8")
++        self.diff_text = self.git("diff", "HEAD", "--", "*.py")
++        self.diff = self.root / "change.diff"
++        self.diff.write_text(self.diff_text, encoding="utf-8")
++        self.before = self.project_bytes()
++
++    def tearDown(self):
++        self.temp.cleanup()
++
++    def git(self, *args):
++        return subprocess.run(
++            ["git", "-C", str(self.repo), *args], check=True,
++            capture_output=True, text=True, timeout=15, env=self.env,
++        ).stdout
++
++    def project_bytes(self):
++        return {
++            str(path.relative_to(self.repo)): hashlib.sha256(path.read_bytes()).hexdigest()
++            for path in self.repo.rglob("*")
++            if path.is_file() and ".git" not in path.relative_to(self.repo).parts
++        }
++
++    def run_cli(self, *args, stdin=None):
++        optimize = ["-" + "O" * sys.flags.optimize] if sys.flags.optimize else []
++        argv = [sys.executable, *optimize, "-B", "-m", "testpilot", *map(str, args)]
++        result = subprocess.run(
++            argv, cwd=PACKAGE_ROOT, env=self.env, input=stdin,
++            capture_output=True, text=True, timeout=15,
++        )
++        CLI_RECEIPTS.append({
++            "test": self.id(), "argv": argv, "returncode": result.returncode,
++            "stdout": result.stdout, "stderr": result.stderr,
++        })
++        return result
++
++    def preview(self, *args, stdin=None):
++        return self.run_cli("targets", "--repo", self.repo, *args, stdin=stdin)
++
++    def test_git_preview_selects_native_target_without_executing_project(self):
++        result = self.preview("--git-base", "HEAD", "--json")
++        self.assertEqual(result.returncode, 0, result.stderr)
++        self.assertEqual(result.stderr, "")
++        data = json.loads(result.stdout)
++        self.assertEqual(set(data), {"changed_functions"})
++        self.assertEqual(len(data["changed_functions"]), 1)
++        target = data["changed_functions"][0]
++        self.assertEqual(target["path"], "src/caf\u00e9.py")
++        self.assertEqual(target["module"], "caf\u00e9")
++        self.assertEqual(target["qualname"], "Arithmetic.scale")
++        self.assertEqual((target["lineno"], target["end_lineno"]), (9, 11))
++        self.assertEqual(target["changed_lines"], [11])
++        self.assertTrue(target["is_method"])
++        self.assertEqual(target["source"],
++                         "    @staticmethod\n    def scale(value):\n        return value * 3")
++        self.assertEqual(self.project_bytes(), self.before)
++
++    def test_file_and_stdin_preview_have_identical_target_records(self):
++        saved = self.preview("--diff", self.diff, "--json")
++        piped = self.preview("--diff", "-", "--json", stdin=self.diff_text)
++        self.assertEqual(saved.returncode, 0, saved.stderr)
++        self.assertEqual(piped.returncode, 0, piped.stderr)
++        self.assertEqual(saved.stdout, piped.stdout)
++        self.assertEqual(saved.stderr + piped.stderr, "")
++        self.assertEqual(self.project_bytes(), self.before)
++
++    def test_default_human_preview_names_the_exact_location(self):
++        result = self.preview("--diff", self.diff)
++        self.assertEqual(result.returncode, 0, result.stderr)
++        self.assertEqual(
++            result.stdout,
++            '1 changed Python function outside tests\n'
++            '"src/caf\\u00e9.py":9-11  "Arithmetic.scale"\n',
++        )
++        self.assertNotIn("return value", result.stdout)
++        self.assertEqual(self.project_bytes(), self.before)
++
++    def test_empty_diff_is_a_successful_empty_preview(self):
++        result = self.preview("--diff", "-", "--json", stdin="")
++        self.assertEqual(result.returncode, 0, result.stderr)
++        self.assertEqual(json.loads(result.stdout), {"changed_functions": []})
++        human = self.preview("--diff", "-", stdin="")
++        self.assertEqual(human.returncode, 0, human.stderr)
++        self.assertEqual(human.stdout, "0 changed Python functions outside tests\n")
++        self.assertEqual(self.project_bytes(), self.before)
++
++    def test_input_and_native_selector_failures_have_no_success_output(self):
++        outside = self.root / "outside.py"
++        outside.write_text("def outside():\n    return 7\n", encoding="utf-8")
++        invalid = (
++            "--- a/../outside.py\n+++ b/../outside.py\n"
++            "@@ -1,2 +1,2 @@\n def outside():\n-    return 6\n+    return 7\n"
++        )
++        cases = [
++            (("--diff", self.root / "missing.diff"), None),
++            (("--git-base", "missing-ref"), None),
++            (("--diff", "-"), invalid),
++        ]
++        for args, stdin in cases:
++            with self.subTest(args=args):
++                result = self.preview(*args, "--json", stdin=stdin)
++                self.assertEqual(result.returncode, 2, result.stderr)
++                self.assertEqual(result.stdout, "")
++                self.assertIn("testpilot: cannot inspect targets:", result.stderr)
++                self.assertNotIn("Traceback", result.stderr)
++        self.subject.write_text("def broken(:\n", encoding="utf-8")
++        result = self.preview("--diff", self.diff, "--json")
++        self.assertEqual(result.returncode, 2, result.stderr)
++        self.assertEqual(result.stdout, "")
++        self.assertIn("testpilot: cannot inspect targets:", result.stderr)
++        self.assertEqual(outside.read_text(encoding="utf-8"), "def outside():\n    return 7\n")
++        self.assertFalse((self.repo / "src/source-imported").exists())
++        self.assertFalse((self.repo / "pytest-started").exists())
++
++    def test_saved_diff_preview_never_constructs_model_or_test_runner(self):
++        output, errors = io.StringIO(), io.StringIO()
++        tripwire = AssertionError("preview entered generation, subprocess, or pytest")
++        with (
++            patch.object(cli, "make_client", side_effect=tripwire),
++            patch.object(cli, "TestPilot", side_effect=tripwire),
++            patch.object(cli, "write_outputs", side_effect=tripwire),
++            patch.object(cli.RoutingConfig, "from_env", side_effect=tripwire),
++            patch.object(cli.subprocess, "run", side_effect=tripwire),
++            patch("testpilot.sandbox.run_pytest", side_effect=tripwire),
++            redirect_stdout(output), redirect_stderr(errors),
++        ):
++            result = cli.main(["targets", "--repo", str(self.repo),
++                               "--diff", str(self.diff), "--json"])
++        self.assertEqual(result, 0)
++        self.assertEqual(errors.getvalue(), "")
++        self.assertEqual(len(json.loads(output.getvalue())["changed_functions"]), 1)
++        self.assertEqual(self.project_bytes(), self.before)
++
++    def test_help_and_source_options_do_not_accept_generation_options(self):
++        help_result = self.run_cli("targets", "--help")
++        self.assertEqual(help_result.returncode, 0, help_result.stderr)
++        self.assertIn("--git-base", help_result.stdout)
++        self.assertIn("--json", help_result.stdout)
++        for args in (
++            (),
++            ("--diff", self.diff, "--git-base", "HEAD"),
++            ("--diff", self.diff, "--script", self.root),
++        ):
++            with self.subTest(args=args):
++                result = self.preview(*args)
++                self.assertEqual(result.returncode, 2)
++                self.assertEqual(result.stdout, "")
++        self.assertEqual(self.project_bytes(), self.before)
++
++    def test_existing_run_retains_native_no_changes_reports(self):
++        script = self.root / "script"
++        script.mkdir()
++        (script / "01.md").write_text("Unused response; no target exists.", encoding="utf-8")
++        empty = self.root / "empty.diff"
++        empty.write_text("", encoding="utf-8")
++        out = self.root / "run-output"
++        result = self.run_cli(
++            "run", "--repo", self.repo, "--diff", empty,
++            "--backend", "scripted", "--script", script,
++            "--python", sys.executable, "--rounds", "2", "--out", out,
++        )
++        self.assertEqual(result.returncode, 1, result.stderr)
++        self.assertEqual(result.stderr, "")
++        report = json.loads((out / "report.json").read_text(encoding="utf-8"))
++        self.assertEqual(report["status"], "no_changes")
++        self.assertEqual(report["changed_functions"], [])
++        self.assertEqual(report["max_repair_rounds"], 2)
++        self.assertEqual(report["ledger"]["total_tokens"], 0)
++        self.assertEqual(report["ledger"]["by_model"], {})
++        self.assertEqual((out / "testpilot.patch").read_bytes(), b"")
++        self.assertIn("no_changes", (out / "report.md").read_text(encoding="utf-8"))
++        self.assertEqual(self.project_bytes(), self.before)
++
++
++if __name__ == "__main__":
++    unittest.main()
