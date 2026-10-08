@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="12" time="0.279" timestamp="2026-10-08T11:45:16.571373+00:00" hostname="hamon-thinkpad"><testcase classname="tests.test_physical_lines" name="test_real_git_context_retains_the_changed_function[formfeed]" time="0.026"><failure message="assert set() == {4}&#10;  &#10;  Extra items in the right set:&#10;  4&#10;  Use -v to get more diff">tmp_path = PosixPath('/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/baseline-pytest-tmp/test_real_git_context_retains_0')
+separator = '\x0c'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_real_git_context_retains_the_changed_function(tmp_path, separator):
+        diff = _context_change(tmp_path, separator)
+        changes = parse_unified_diff(diff)
+        assert len(changes) == 1
+&gt;       assert changes[0].added_lines == {4}
+E       assert set() == {4}
+E         
+E         Extra items in the right set:
+E         4
+E         Use -v to get more diff
+
+tests/test_physical_lines.py:48: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_real_git_context_retains_the_changed_function[next-line]" time="0.023"><failure message="assert set() == {4}&#10;  &#10;  Extra items in the right set:&#10;  4&#10;  Use -v to get more diff">tmp_path = PosixPath('/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/baseline-pytest-tmp/test_real_git_context_retains_1')
+separator = '\x85'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_real_git_context_retains_the_changed_function(tmp_path, separator):
+        diff = _context_change(tmp_path, separator)
+        changes = parse_unified_diff(diff)
+        assert len(changes) == 1
+&gt;       assert changes[0].added_lines == {4}
+E       assert set() == {4}
+E         
+E         Extra items in the right set:
+E         4
+E         Use -v to get more diff
+
+tests/test_physical_lines.py:48: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_real_git_context_retains_the_changed_function[line-separator]" time="0.036"><failure message="assert set() == {4}&#10;  &#10;  Extra items in the right set:&#10;  4&#10;  Use -v to get more diff">tmp_path = PosixPath('/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/baseline-pytest-tmp/test_real_git_context_retains_2')
+separator = '\u2028'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_real_git_context_retains_the_changed_function(tmp_path, separator):
+        diff = _context_change(tmp_path, separator)
+        changes = parse_unified_diff(diff)
+        assert len(changes) == 1
+&gt;       assert changes[0].added_lines == {4}
+E       assert set() == {4}
+E         
+E         Extra items in the right set:
+E         4
+E         Use -v to get more diff
+
+tests/test_physical_lines.py:48: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_real_git_context_retains_the_changed_function[paragraph-separator]" time="0.028"><failure message="assert set() == {4}&#10;  &#10;  Extra items in the right set:&#10;  4&#10;  Use -v to get more diff">tmp_path = PosixPath('/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/baseline-pytest-tmp/test_real_git_context_retains_3')
+separator = '\u2029'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_real_git_context_retains_the_changed_function(tmp_path, separator):
+        diff = _context_change(tmp_path, separator)
+        changes = parse_unified_diff(diff)
+        assert len(changes) == 1
+&gt;       assert changes[0].added_lines == {4}
+E       assert set() == {4}
+E         
+E         Extra items in the right set:
+E         4
+E         Use -v to get more diff
+
+tests/test_physical_lines.py:48: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_selected_source_preserves_valid_literal_characters[formfeed]" time="0.002"><failure message="assert 'def answer()... return &quot;left' == 'def answer()...eft\x0cright&quot;'&#10;  &#10;    def answer():&#10;  -     return &quot;left&#10;  &#10;  ?                 -&#10;  +     return &quot;left&#10;  - right&quot;">separator = '\x0c'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_selected_source_preserves_valid_literal_characters(separator):
+        source = f'def answer():\n    return "left{separator}right"\n'
+        original = {}
+        exec(compile(source, "literal.py", "exec"), original)
+        selected = functions_touching(source, "literal.py", {2}, {2})
+        assert len(selected) == 1
+&gt;       assert selected[0].source == source[:-1]
+E       assert 'def answer()... return "left' == 'def answer()...eft\x0cright"'
+E         
+E           def answer():
+E         -     return "left
+E         
+E         ?                 -
+E         +     return "left
+E         - right"
+
+tests/test_physical_lines.py:62: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_selected_source_preserves_valid_literal_characters[next-line]" time="0.001"><failure message="assert 'def answer()... return &quot;left' == 'def answer()...eft\x85right&quot;'&#10;  &#10;    def answer():&#10;  -     return &quot;left&#10;  &#10;  ?                 -&#10;  +     return &quot;left&#10;  - right&quot;">separator = '\x85'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_selected_source_preserves_valid_literal_characters(separator):
+        source = f'def answer():\n    return "left{separator}right"\n'
+        original = {}
+        exec(compile(source, "literal.py", "exec"), original)
+        selected = functions_touching(source, "literal.py", {2}, {2})
+        assert len(selected) == 1
+&gt;       assert selected[0].source == source[:-1]
+E       assert 'def answer()... return "left' == 'def answer()...eft\x85right"'
+E         
+E           def answer():
+E         -     return "left
+E         
+E         ?                 -
+E         +     return "left
+E         - right"
+
+tests/test_physical_lines.py:62: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_selected_source_preserves_valid_literal_characters[line-separator]" time="0.001"><failure message="assert 'def answer()... return &quot;left' == 'def answer()...t\u2028right&quot;'&#10;  &#10;    def answer():&#10;  -     return &quot;left&#10;  &#10;  ?                 -&#10;  +     return &quot;left&#10;  - right&quot;">separator = '\u2028'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_selected_source_preserves_valid_literal_characters(separator):
+        source = f'def answer():\n    return "left{separator}right"\n'
+        original = {}
+        exec(compile(source, "literal.py", "exec"), original)
+        selected = functions_touching(source, "literal.py", {2}, {2})
+        assert len(selected) == 1
+&gt;       assert selected[0].source == source[:-1]
+E       assert 'def answer()... return "left' == 'def answer()...t\u2028right"'
+E         
+E           def answer():
+E         -     return "left
+E         
+E         ?                 -
+E         +     return "left
+E         - right"
+
+tests/test_physical_lines.py:62: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_selected_source_preserves_valid_literal_characters[paragraph-separator]" time="0.002"><failure message="assert 'def answer()... return &quot;left' == 'def answer()...t\u2029right&quot;'&#10;  &#10;    def answer():&#10;  -     return &quot;left&#10;  &#10;  ?                 -&#10;  +     return &quot;left&#10;  - right&quot;">separator = '\u2029'
+
+    @pytest.mark.parametrize("separator", SEPARATORS)
+    def test_selected_source_preserves_valid_literal_characters(separator):
+        source = f'def answer():\n    return "left{separator}right"\n'
+        original = {}
+        exec(compile(source, "literal.py", "exec"), original)
+        selected = functions_touching(source, "literal.py", {2}, {2})
+        assert len(selected) == 1
+&gt;       assert selected[0].source == source[:-1]
+E       assert 'def answer()... return "left' == 'def answer()...t\u2029right"'
+E         
+E           def answer():
+E         -     return "left
+E         
+E         ?                 -
+E         +     return "left
+E         - right"
+
+tests/test_physical_lines.py:62: AssertionError</failure></testcase><testcase classname="tests.test_physical_lines" name="test_python_physical_newlines_keep_source_spans[lf]" time="0.001" /><testcase classname="tests.test_physical_lines" name="test_python_physical_newlines_keep_source_spans[crlf]" time="0.001" /><testcase classname="tests.test_physical_lines" name="test_python_physical_newlines_keep_source_spans[cr]" time="0.001" /><testcase classname="tests.test_physical_lines" name="test_real_git_crlf_source_keeps_unicode_context" time="0.024"><failure message="AssertionError: assert [] == ['answer']&#10;  &#10;  Right contains one more item: 'answer'&#10;  Use -v to get more diff">tmp_path = PosixPath('/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/baseline-pytest-tmp/test_real_git_crlf_source_keep0')
+
+    def test_real_git_crlf_source_keeps_unicode_context(tmp_path):
+        diff = _context_change(tmp_path, "\u2028", "\r\n")
+        selected = changed_functions(tmp_path, diff)
+&gt;       assert [item.qualname for item in selected] == ["answer"]
+E       AssertionError: assert [] == ['answer']
+E         
+E         Right contains one more item: 'answer'
+E         Use -v to get more diff
+
+tests/test_physical_lines.py:80: AssertionError</failure></testcase></testsuite></testsuites>

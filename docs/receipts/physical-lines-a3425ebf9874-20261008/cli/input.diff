@@ -1,0 +1,10 @@
+diff --git a/sample.py b/sample.py
+index 059ed3a..9529530 100644
+--- a/sample.py
++++ b/sample.py
+@@ -1,4 +1,4 @@
+ note = "left right"
+ 
+ def answer():
+-    return 1
++    return 2

@@ -1,0 +1,109 @@
+{
+  "format": 1,
+  "scope": "Generated pytest module-name allocation; authored offline projects only",
+  "coordination": "https://github.com/Jacob-Met/testpilot/issues/2#issuecomment-6059513394",
+  "pull_request": "https://github.com/Jacob-Met/testpilot/pull/20",
+  "source_baseline": {
+    "commit": "d7c28b0ad261e78d681f40e355447dffa4d435ed",
+    "tree": "99f94e3c7b0774b04a7e28fa13730b7e464252d6",
+    "loop_blob": "f4e9671b32cabda7e66ef79eb4a3a94c58d2f824",
+    "loop_sha256": "99225601277132368efc52ba6cdc9df3329f144d50f3d322c372ca77258195c7"
+  },
+  "current_composition": {
+    "main": "9efb47561544db608613d7055f5f1226b2d7f7e7",
+    "tree": "644b9a522f3516fe7fbb40138a65d05633f552d9",
+    "detail": "Original owner's physical-line PR18 is included; allocator, sandbox, collection plugin, README and maintained workflow remain unchanged from the baseline."
+  },
+  "initial_negative": {
+    "commit": "b5bd77373f8d5425fe1e9058c6994e533d56a31b",
+    "tree": "692bb2907706ca7ba68a1bc4aa4c51b30c743735",
+    "test_blob": "53f5f93c933fd1d57801c5fccd799a6ba7adc47f",
+    "test_sha256": "9ce286321978ade7f7c652e19a1d6b1f197fb8028b49021dda909a5cf3310432",
+    "run": 37775096780,
+    "job": 113303832536,
+    "checkout": "a8f00bd85ad7a7c053a94ad8905c8a7e4e4986fb",
+    "checkout_tree": "368bebdabfc7614d17a5051e9d8ba61dc8ac9eda",
+    "log_url": "https://github.com/Jacob-Met/testpilot/actions/runs/37775096780/job/113303832536",
+    "log_sha256": "6341ac14c3ffd9627fc28310dee744e4ddc6df30768bf03323f22a133172ff18",
+    "result": {
+      "new_failed": 6,
+      "new_passed": 3,
+      "existing_passed": 189,
+      "total_failed": 6,
+      "total_passed": 192,
+      "seconds": 70.02
+    },
+    "evidence_boundary": "The nested result is abbreviated by outer pytest. It exposes rc=2 with one collection error and zero generated cases, but not the inner exception text.",
+    "native_log_lines": [
+      "2026-10-08T12:11:18.3116284Z HEAD is now at a8f00bd Merge b5bd77373f8d5425fe1e9058c6994e533d56a31b into 9efb47561544db608613d7055f5f1226b2d7f7e7",
+      "2026-10-08T12:11:18.4987435Z Successfully set up CPython (3.12.14)",
+      "2026-10-08T12:11:22.3424652Z Successfully installed coverage-7.16.2 iniconfig-2.3.1 packaging-26.3 pluggy-1.6.0 pygments-2.21.0 pytest-9.1.1",
+      "2026-10-08T12:12:32.7671558Z 6 failed, 192 passed in 70.02s (0:01:10)",
+      "2026-10-08T12:12:32.7912769Z ##[error]Process completed with exit code 1."
+    ]
+  },
+  "diagnostic_negative": {
+    "commit": "c822ae1171ac900c87f4cf1184a2d3da60183461",
+    "tree": "6df2c31113e2a8d822742cfc310b3ef497f97aba",
+    "test_blob": "86b15042ff870e7a6625338f24519502ce0b5aef",
+    "test_sha256": "14074eaad278b5b9b30b9ff764fe2a65757865e3a8ef4d210c2839754177c6cb",
+    "test_bytes": 8145,
+    "change": "Add exactly two failure-only print lines; all nine case inputs and assertions are unchanged.",
+    "run": 37775398314,
+    "job": 113304841842,
+    "checkout": "6b1cd763f60900b4b456ddbd828adea4cf575fb2",
+    "checkout_tree": "a287025aa4dd3c97591166fc362e37088071e534",
+    "log_url": "https://github.com/Jacob-Met/testpilot/actions/runs/37775398314/job/113304841842",
+    "log_sha256": "5446fe32a36fb37f093dafaf93ccc3366e133a41949da639fb91e0a53cb7bc27",
+    "result": {
+      "new_failed": 6,
+      "new_passed": 3,
+      "existing_passed": 189,
+      "total_failed": 6,
+      "total_passed": 192,
+      "seconds": 71.26
+    },
+    "native_log_lines": [
+      "2026-10-08T12:13:56.1071546Z HEAD is now at 6b1cd76 Merge c822ae1171ac900c87f4cf1184a2d3da60183461 into 9efb47561544db608613d7055f5f1226b2d7f7e7",
+      "2026-10-08T12:13:56.3126507Z Successfully set up CPython (3.12.15)",
+      "2026-10-08T12:13:59.7963634Z Successfully installed coverage-7.16.2 iniconfig-2.3.1 packaging-26.3 pluggy-1.6.0 pygments-2.21.0 pytest-9.1.1",
+      "2026-10-08T12:15:11.4359792Z 6 failed, 192 passed in 71.26s (0:01:11)",
+      "2026-10-08T12:15:11.4639206Z ##[error]Process completed with exit code 1."
+    ],
+    "native_import_mismatch_excerpts": [
+      "2026-10-08T12:15:11.4214433Z ==================================== ERRORS ====================================\n2026-10-08T12:15:11.4214849Z ___________________ ERROR collecting tests/unit/test_calc.py ___________________\n2026-10-08T12:15:11.4215217Z import file mismatch:\n2026-10-08T12:15:11.4215501Z imported module 'test_calc' has this __file__ attribute:\n2026-10-08T12:15:11.4215902Z   /tmp/testpilot-9mf3uwbi/repo/tests/integration/test_calc.py\n2026-10-08T12:15:11.4216313Z which is not the same as the test file we want to collect:\n2026-10-08T12:15:11.4216705Z   /tmp/testpilot-9mf3uwbi/repo/tests/unit/test_calc.py\n2026-10-08T12:15:11.4217170Z HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules\n2026-10-08T12:15:11.4217661Z =========================== short test summary info ============================\n2026-10-08T12:15:11.4218001Z ERROR tests/unit/test_calc.py\n2026-10-08T12:15:11.4218724Z !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n2026-10-08T12:15:11.4219328Z 1 error in 0.11s",
+      "2026-10-08T12:15:11.4233835Z ==================================== ERRORS ====================================\n2026-10-08T12:15:11.4234243Z ___________________ ERROR collecting tests/unit/test_calc.py ___________________\n2026-10-08T12:15:11.4234615Z import file mismatch:\n2026-10-08T12:15:11.4234889Z imported module 'test_calc' has this __file__ attribute:\n2026-10-08T12:15:11.4235244Z   /tmp/testpilot-j0kecten/repo/legacy/test_calc.py\n2026-10-08T12:15:11.4235599Z which is not the same as the test file we want to collect:\n2026-10-08T12:15:11.4235984Z   /tmp/testpilot-j0kecten/repo/tests/unit/test_calc.py\n2026-10-08T12:15:11.4236462Z HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules\n2026-10-08T12:15:11.4236952Z =========================== short test summary info ============================\n2026-10-08T12:15:11.4237294Z ERROR tests/unit/test_calc.py\n2026-10-08T12:15:11.4237622Z !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n2026-10-08T12:15:11.4237961Z 1 error in 0.11s",
+      "2026-10-08T12:15:11.4250829Z ==================================== ERRORS ====================================\n2026-10-08T12:15:11.4251232Z ___________________ ERROR collecting tests/unit/test_calc.py ___________________\n2026-10-08T12:15:11.4251591Z import file mismatch:\n2026-10-08T12:15:11.4251862Z imported module 'test_calc' has this __file__ attribute:\n2026-10-08T12:15:11.4252216Z   /tmp/testpilot-c5gfurnv/repo/legacy/test_calc.py\n2026-10-08T12:15:11.4252573Z which is not the same as the test file we want to collect:\n2026-10-08T12:15:11.4252937Z   /tmp/testpilot-c5gfurnv/repo/tests/unit/test_calc.py\n2026-10-08T12:15:11.4253411Z HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules\n2026-10-08T12:15:11.4253904Z =========================== short test summary info ============================\n2026-10-08T12:15:11.4254239Z ERROR tests/unit/test_calc.py\n2026-10-08T12:15:11.4254558Z !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n2026-10-08T12:15:11.4254896Z 1 error in 0.11s",
+      "2026-10-08T12:15:11.4267897Z ==================================== ERRORS ====================================\n2026-10-08T12:15:11.4268651Z ________________ ERROR collecting tests/test_calc_testpilot.py _________________\n2026-10-08T12:15:11.4269341Z import file mismatch:\n2026-10-08T12:15:11.4269856Z imported module 'test_calc_testpilot' has this __file__ attribute:\n2026-10-08T12:15:11.4270302Z   /tmp/testpilot-m8gubu4i/repo/legacy/test_calc_testpilot.py\n2026-10-08T12:15:11.4270706Z which is not the same as the test file we want to collect:\n2026-10-08T12:15:11.4271097Z   /tmp/testpilot-m8gubu4i/repo/tests/test_calc_testpilot.py\n2026-10-08T12:15:11.4271588Z HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules\n2026-10-08T12:15:11.4272093Z =========================== short test summary info ============================\n2026-10-08T12:15:11.4272439Z ERROR tests/test_calc_testpilot.py\n2026-10-08T12:15:11.4272782Z !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n2026-10-08T12:15:11.4273130Z 1 error in 0.11s",
+      "2026-10-08T12:15:11.4287367Z ==================================== ERRORS ====================================\n2026-10-08T12:15:11.4287777Z ___________________ ERROR collecting tests/unit/test_calc.py ___________________\n2026-10-08T12:15:11.4288375Z import file mismatch:\n2026-10-08T12:15:11.4288677Z imported module 'test_calc' has this __file__ attribute:\n2026-10-08T12:15:11.4289030Z   /tmp/testpilot-wfc_uru2/repo/legacy/test_calc.py\n2026-10-08T12:15:11.4289380Z which is not the same as the test file we want to collect:\n2026-10-08T12:15:11.4289739Z   /tmp/testpilot-wfc_uru2/repo/tests/unit/test_calc.py\n2026-10-08T12:15:11.4290221Z HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules\n2026-10-08T12:15:11.4290710Z =========================== short test summary info ============================\n2026-10-08T12:15:11.4291045Z ERROR tests/unit/test_calc.py\n2026-10-08T12:15:11.4291367Z !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n2026-10-08T12:15:11.4291712Z 1 error in 0.11s",
+      "2026-10-08T12:15:11.4306022Z ==================================== ERRORS ====================================\n2026-10-08T12:15:11.4306429Z ___________________ ERROR collecting tests/unit/test_calc.py ___________________\n2026-10-08T12:15:11.4306792Z import file mismatch:\n2026-10-08T12:15:11.4307100Z imported module 'test_calc' has this __file__ attribute:\n2026-10-08T12:15:11.4307458Z   /tmp/testpilot-tzitrtan/repo/legacy/test_calc.py\n2026-10-08T12:15:11.4307816Z which is not the same as the test file we want to collect:\n2026-10-08T12:15:11.4308400Z   /tmp/testpilot-tzitrtan/repo/tests/unit/test_calc.py\n2026-10-08T12:15:11.4308890Z HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules\n2026-10-08T12:15:11.4309378Z =========================== short test summary info ============================\n2026-10-08T12:15:11.4309721Z ERROR tests/unit/test_calc.py\n2026-10-08T12:15:11.4310042Z !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n2026-10-08T12:15:11.4310378Z 1 error in 0.11s"
+    ]
+  },
+  "candidate_source": {
+    "loop_sha256": "54a203ace8816159202e3f2df5bc8ae15b0e08e424fc1447112c9eb0a23fe082",
+    "loop_bytes": 23639,
+    "test_blob": "86b15042ff870e7a6625338f24519502ce0b5aef",
+    "test_sha256": "14074eaad278b5b9b30b9ff764fe2a65757865e3a8ef4d210c2839754177c6cb",
+    "readme_sha256": "bda76089d4ca14f8ce8c89b209a4031c909ebd1169b7210cd25ed5b95c3dba89",
+    "note": "Final candidate acceptance and exact hosted checkout are recorded in PR20 after the unchanged maintained CI runs. This baseline receipt does not claim a candidate pass."
+  },
+  "maintained_gate": {
+    "path": ".github/workflows/ci.yml",
+    "command": "python -m pytest -q",
+    "python": "3.12",
+    "observed_python": "3.12.15",
+    "observed_pytest": "9.1.1",
+    "observed_coverage": "7.16.2",
+    "workflow_changes": 0,
+    "dependency_changes": 0
+  },
+  "preserved_boundaries": [
+    "All existing source except allocator identity/_merge_test_files and additive IGNORE import",
+    "Existing path/symlink conflict root fallback and additions-only patch guard",
+    "Original and resolved repair aliases; conflicting updates remain refused transactionally",
+    "Distinct continuous valid regular-package chains; no import-mode or collection-policy changes",
+    "No directory-symlink traversal; shared sandbox.IGNORE pruning",
+    "Current owner's CLI, model, physical lines/source decoding, sandbox, generated collection, coverage, HTML and browser scopes"
+  ],
+  "receiving_notes": "Three distinct-package controls already pass on the original. All nine cases require actual ScriptedModel/pytest counts; successful cases apply the actual patch, rerun pytest and verify original file bytes. The supported current project config does not opt into namespace-package consideration or change pytest's default import mode. Provider/model quality, arbitrary project plugin policies, and installed-runtime adoption are outside this receipt."
+}

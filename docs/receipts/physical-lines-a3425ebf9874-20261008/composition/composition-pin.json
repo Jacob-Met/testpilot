@@ -1,0 +1,26 @@
+{
+  "base": "d7c28b0ad261e78d681f40e355447dffa4d435ed",
+  "original_source": "caab0c4d2f76f0a410edd9ac5f793b716a938212",
+  "original_evidence": "feccd2d37bfbed45dcda2a97942ad7ff25c9b56a",
+  "composed_source": "a9e8394bfeb8f70bcef61be8db27d249d0701c0b",
+  "composed_evidence": "2137ee30291af6ad0d5df581e0e7a03c8e62f952",
+  "source_sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+  "source_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+  "test_blob": "d25916fd9bc0cf98647e2678ce942fa6f2d2ba1c",
+  "source_diff_from_actual_parent": "diff --git a/testpilot/diff.py b/testpilot/diff.py\nindex d7d4c19..f92280a 100644\n--- a/testpilot/diff.py\n+++ b/testpilot/diff.py\n@@ -102,7 +102,8 @@ def parse_unified_diff(text: str) -> list[FileChange]:\n     pending_old: str | None = None\n     old_left = new_left = 0\n     new_ln = 0\n-    for line in text.splitlines():\n+    # Git hunk counts use LF-delimited records, not Unicode separators.\n+    for line in text.split(\"\\n\"):\n         if cur is not None and (old_left > 0 or new_left > 0):\n             if line.startswith(\"\\\\\"):  # \"\\ No newline at end of file\"\n                 continue\n@@ -193,7 +194,8 @@ def _iter_functions(body, prefix: str = \"\", in_class: bool = False):\n \n def functions_touching(source: str, path: str, lines: set[int], added: set[int]) -> list[ChangedFunction]:\n     tree = ast.parse(source, filename=path)\n-    src_lines = source.splitlines()\n+    # Python physical lines use LF/CRLF/CR; other separators can be literals.\n+    src_lines = source.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\").split(\"\\n\")\n     out: list[ChangedFunction] = []\n     for qualname, node, is_method in _iter_functions(tree.body):\n         start = min([node.lineno] + [d.lineno for d in node.decorator_list])",
+  "independent_original_receipt": "2d2641b9e534007926d74f4dc83735e9c16821d8b86fd58408253c2c7f9721e8",
+  "results": [
+    {
+      "label": "encoding-owner-negative",
+      "exit": 1
+    },
+    {
+      "label": "composed-consumers",
+      "exit": 0
+    },
+    {
+      "label": "focused-encoding",
+      "exit": 0
+    }
+  ]
+}

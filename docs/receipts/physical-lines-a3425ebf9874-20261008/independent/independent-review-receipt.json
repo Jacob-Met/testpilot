@@ -1,0 +1,40 @@
+{
+  "reviewer": "estate-a3425ebf9874/remote_estate",
+  "reviewed_at": "2026-10-08T11:56:39.437Z",
+  "root": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/independent-remote-review",
+  "driver_sha256": "2880899237ef16cd9e3591b6118419e8308d0d52f8db3427139cf2f6aa02d9d1",
+  "results": [
+    {
+      "mode": "baseline",
+      "commit": "47a197fd46b107a797b1547db02cb5ed5ad2abe1",
+      "exit": 1,
+      "source": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/independent-remote-review/baseline-diff.py",
+      "source_sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "driver_sha256": "2880899237ef16cd9e3591b6118419e8308d0d52f8db3427139cf2f6aa02d9d1",
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "tests": 2,
+      "failures": 2,
+      "errors": 0,
+      "passed": false,
+      "synthetic_git_only": true,
+      "owner_checkout_mutated": false
+    },
+    {
+      "mode": "candidate",
+      "commit": "caab0c4d2f76f0a410edd9ac5f793b716a938212",
+      "exit": 0,
+      "source": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/independent-remote-review/candidate-diff.py",
+      "source_sha256": "4e55b107023427a124f2cf45f10ff44c03b4e385b736acc17644a9a696934240",
+      "driver_sha256": "2880899237ef16cd9e3591b6118419e8308d0d52f8db3427139cf2f6aa02d9d1",
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "passed": true,
+      "synthetic_git_only": true,
+      "owner_checkout_mutated": false
+    }
+  ],
+  "static_scope": "Complete diff inspected: LF split in parse_unified_diff; CRLF/CR physical-line normalization then LF split in functions_touching; no other production edits.",
+  "source_integration": false
+}
