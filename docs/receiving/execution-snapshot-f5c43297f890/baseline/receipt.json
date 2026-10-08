@@ -1,0 +1,323 @@
+{
+  "schema": "hamon.testpilot_execution_snapshot.cli_receiving.v1",
+  "recorded_at": "2026-10-08T18:48:32.060656+00:00",
+  "source": "/home/jacob/testpilot-snapshot-f5c43297f890/source",
+  "source_base": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "source_before": {
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "testpilot/loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "source_after": {
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "testpilot/loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "source_unchanged": true,
+  "cases": [
+    {
+      "case": "misleading_success",
+      "expected_amount": 7,
+      "caller_edits_checkout": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/misleading_success/project",
+        "--git-base",
+        "HEAD",
+        "--script",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/misleading_success/script",
+        "--out",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/misleading_success/out",
+        "--rounds",
+        "0",
+        "--timeout",
+        "10",
+        "--no-coverage"
+      ],
+      "returncode": 0,
+      "duration_seconds": 4.138,
+      "initial_source_sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+      "later_source_sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66",
+      "caller_source_after_sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66",
+      "caller_source_expected_preserved": true,
+      "recorded_selected_source": "def amount():\n    return 2",
+      "status": "passed",
+      "final": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 1.101,
+        "timeout_s": 10.0,
+        "output": "..                                                                       [100%]\n2 passed in 0.05s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "tests.test_generated::test_generated",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_generated.py"
+          }
+        ],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_generated.py"
+        ],
+        "junit_available": true,
+        "passed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "generated": {
+          "collected": 1,
+          "passed": 1,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "report_sha256": "ac6eb623be6a0da164ca1bfa62e29b951817dc2f1b6826f4eadba31a086a28ee",
+      "patch_sha256": "da80d572022b9baf6017fabffa0b1a1abb7439751b6ba11afb2be22eee43fb5e",
+      "ledger_entries": 2,
+      "pytest_phase_events": [
+        {
+          "sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+          "source": "def amount():\n    return 2\n",
+          "generated_present": false
+        },
+        {
+          "sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66",
+          "source": "def amount():\n    return 7\n",
+          "generated_present": true
+        }
+      ],
+      "patch_applies_to_captured_checkout": true,
+      "patch_pytest_on_captured_checkout_returncode": 1,
+      "oracles": {
+        "baseline_and_generation_share_initial_source": false,
+        "recorded_success_matches_captured_checkout": false,
+        "ordinary_caller_edit_preserved": true
+      }
+    },
+    {
+      "case": "keep_initial_checkout",
+      "expected_amount": 2,
+      "caller_edits_checkout": true,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/keep_initial_checkout/project",
+        "--git-base",
+        "HEAD",
+        "--script",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/keep_initial_checkout/script",
+        "--out",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/keep_initial_checkout/out",
+        "--rounds",
+        "0",
+        "--timeout",
+        "10",
+        "--no-coverage"
+      ],
+      "returncode": 1,
+      "duration_seconds": 5.442,
+      "initial_source_sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+      "later_source_sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66",
+      "caller_source_after_sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66",
+      "caller_source_expected_preserved": true,
+      "recorded_selected_source": "def amount():\n    return 2",
+      "status": "failed",
+      "final": {
+        "returncode": 1,
+        "timed_out": false,
+        "duration_s": 1.406,
+        "timeout_s": 10.0,
+        "output": ".F                                                                       [100%]\n=================================== FAILURES ===================================\n________________________________ test_generated ________________________________\n\n    def test_generated():\n>       assert amount() == 2\nE       assert 7 == 2\nE        +  where 7 = amount()\n\ntests/test_generated.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_generated.py::test_generated - assert 7 == 2\n1 failed, 1 passed in 0.07s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "tests.test_generated::test_generated",
+            "outcome": "failed",
+            "message": "assert 7 == 2\n +  where 7 = amount()\ndef test_generated():\n>       assert amount() == 2\nE       assert 7 == 2\nE        +  where 7 = amount()\n\ntests/test_generated.py:4: AssertionError",
+            "generated_file": "tests/test_generated.py"
+          }
+        ],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_generated.py"
+        ],
+        "junit_available": true,
+        "passed": 1,
+        "failed": 1,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected",
+        "generated": {
+          "collected": 1,
+          "passed": 0,
+          "failed": 1,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "report_sha256": "1e81e3aafb12af83baa089eed30580b63ada3b7f0de76b0a8cf7d9658795fcb9",
+      "patch_sha256": "924e0978ecf9994e9b2b908b1f516d32a5bfc769387a5a4e12af3d5d41f050e4",
+      "ledger_entries": 2,
+      "pytest_phase_events": [
+        {
+          "sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+          "source": "def amount():\n    return 2\n",
+          "generated_present": false
+        },
+        {
+          "sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66",
+          "source": "def amount():\n    return 7\n",
+          "generated_present": true
+        }
+      ],
+      "patch_applies_to_captured_checkout": true,
+      "patch_pytest_on_captured_checkout_returncode": 0,
+      "oracles": {
+        "baseline_and_generation_share_initial_source": false,
+        "recorded_success_matches_captured_checkout": false,
+        "ordinary_caller_edit_preserved": true
+      }
+    },
+    {
+      "case": "unchanged_control",
+      "expected_amount": 2,
+      "caller_edits_checkout": false,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/unchanged_control/project",
+        "--git-base",
+        "HEAD",
+        "--script",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/unchanged_control/script",
+        "--out",
+        "/home/jacob/testpilot-snapshot-f5c43297f890/baseline/unchanged_control/out",
+        "--rounds",
+        "0",
+        "--timeout",
+        "10",
+        "--no-coverage"
+      ],
+      "returncode": 0,
+      "duration_seconds": 14.476,
+      "initial_source_sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+      "later_source_sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66",
+      "caller_source_after_sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+      "caller_source_expected_preserved": true,
+      "recorded_selected_source": "def amount():\n    return 2",
+      "status": "passed",
+      "final": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 3.176,
+        "timeout_s": 10.0,
+        "output": "..                                                                       [100%]\n2 passed in 0.11s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "tests.test_generated::test_generated",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_generated.py"
+          }
+        ],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_generated.py"
+        ],
+        "junit_available": true,
+        "passed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "generated": {
+          "collected": 1,
+          "passed": 1,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "report_sha256": "14fb6b6c4dc20ee10ae40e66395a71ccf95d222687a80538d415c5668862c3df",
+      "patch_sha256": "924e0978ecf9994e9b2b908b1f516d32a5bfc769387a5a4e12af3d5d41f050e4",
+      "ledger_entries": 2,
+      "pytest_phase_events": [
+        {
+          "sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+          "source": "def amount():\n    return 2\n",
+          "generated_present": false
+        },
+        {
+          "sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7",
+          "source": "def amount():\n    return 2\n",
+          "generated_present": true
+        }
+      ],
+      "patch_applies_to_captured_checkout": true,
+      "patch_pytest_on_captured_checkout_returncode": 0,
+      "oracles": {
+        "baseline_and_generation_share_initial_source": true,
+        "recorded_success_matches_captured_checkout": true,
+        "ordinary_caller_edit_preserved": true
+      }
+    }
+  ],
+  "claim_limits": [
+    "Actual module CLI and native pytest in authored private fixtures; zero provider calls.",
+    "Controller edits the original fixture after baseline copy and before generation.",
+    "This fixture demonstrates cross-phase input inconsistency; it does not claim atomic capture during copying."
+  ]
+}

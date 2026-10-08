@@ -1,0 +1,49 @@
+{
+  "schema": "hamon.testpilot_execution_snapshot.environment_block.v1",
+  "device_id": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+  "date_utc": "2026-10-08",
+  "read_only_observations": [
+    {
+      "pid": 711423,
+      "path": "/home/jacob/testpilot-snapshot-f5c43297f890",
+      "available_bytes": 3341484032,
+      "available_inodes": 10684613,
+      "uid": 1000,
+      "mode": "0700",
+      "writable": true
+    },
+    {
+      "pid": 753341,
+      "path": "/home/jacob/testpilot-snapshot-f5c43297f890",
+      "available_blocks": 0,
+      "block_bytes": 4096,
+      "available_inodes": 10677824,
+      "filesystem": "ext4",
+      "mount": "/",
+      "mount_options": "rw,relatime"
+    }
+  ],
+  "attempts": [
+    {
+      "wrapper_pid": 745644,
+      "receiver": "receive_readonly_link.py",
+      "source": "/home/jacob/testpilot-timeout-f5c43297f890/composed",
+      "destination": "/home/jacob/testpilot-snapshot-f5c43297f890/readonly-original",
+      "returncode": 1,
+      "failing_operation": "destination.mkdir()",
+      "exception": "OSError: [Errno 28] No space left on device",
+      "product_reached": false
+    },
+    {
+      "wrapper_pid": 745644,
+      "receiver": "receive_readonly_link.py",
+      "source": "/home/jacob/testpilot-snapshot-f5c43297f890/source",
+      "destination": "/home/jacob/testpilot-snapshot-f5c43297f890/readonly-first-candidate",
+      "returncode": 1,
+      "failing_operation": "destination.mkdir()",
+      "exception": "OSError: [Errno 28] No space left on device",
+      "product_reached": false
+    }
+  ],
+  "disposition": "Environment block retained. Subsequent work was read-only source export and in-memory proposal construction. Root assigned the existing hosted CI for remaining execution. Alternate-mount metadata was inspected but no alternate test files were written."
+}

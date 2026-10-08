@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "addopts=",
+    "tests/test_generated.py"
+  ],
+  "returncode": 0,
+  "stdout": ".                                                                        [100%]\n1 passed in 0.05s\n",
+  "stderr": ""
+}

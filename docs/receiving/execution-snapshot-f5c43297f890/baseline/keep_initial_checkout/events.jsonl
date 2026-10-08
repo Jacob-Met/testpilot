@@ -1,0 +1,3 @@
+{"sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7", "source": "def amount():\n    return 2\n", "generated_present": false}
+{"sha256": "8c36977816c933809c8aff3768de364d204c26811ef60e221aae2567389d3b66", "source": "def amount():\n    return 7\n", "generated_present": true}
+{"sha256": "e5e18fc91a606071f7a4f3d075a4d53df3f119b5cf16e84ff3fa53ac27fbbbc7", "source": "def amount():\n    return 2\n", "generated_present": true}

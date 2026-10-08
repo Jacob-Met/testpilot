@@ -1,0 +1,758 @@
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -30,6 +30,7 @@
+ 
+ Design choices:
+ 
++* **One captured project per run.** TestPilot reads selected functions and runs baseline, generation, and repairs against the same captured project input. Every pytest phase still gets a fresh disposable copy, so its writes do not change later phases. New test paths and module names are reserved against both the captured input and the caller's current checkout. The initial copy is not atomic, and external runtime dependencies are not frozen. See [Captured project execution](docs/EXECUTION_SNAPSHOT.md) for the boundary and link behavior.
+ * **Tests are not bent to fit buggy code.** The repair prompt lets the model say `VERDICT: CODE_BUG` instead of weakening an assertion. The loop then stops with status `suspected_code_bug` and keeps the failing tests in the patch, since those tests are the bug report.
+ * **Planner/editor routing.** One planning call goes to the large model. Generation and repair go to the small, fast model. Routing is set in `RoutingConfig`.
+ * **Generated files are confined** to `tests/**/test_*.py`. Any path containing `..`, an absolute path, or an unexpected name is rewritten. The sandbox also refuses writes outside its temp dir.
+diff --git a/docs/EXECUTION_SNAPSHOT.md b/docs/EXECUTION_SNAPSHOT.md
+new file mode 100644
+--- /dev/null
++++ b/docs/EXECUTION_SNAPSHOT.md
+@@ -0,0 +1,83 @@
++# Captured project execution
++
++A generation run uses one captured project input for its selected function source,
++model prompts, baseline pytest run, generated-test run, and repairs. Every pytest
++phase still executes in its own fresh disposable sandbox.
++
++This keeps a caller's edit during a model response from silently changing the code
++being tested. For example, if the selected function returns `2` when captured and
++the caller later changes it to return `7`, generation and repair still execute
++the captured function returning `2`. The report describes that captured input.
++The caller's edited file remains untouched.
++
++## Selection and execution
++
++TestPilot first captures the project using the sandbox's existing ignore policy.
++It then resolves changed functions or explicit targets and builds the model
++context from the private captured view, before running the baseline. Reading the
++supplied diff to identify source paths does not read function bodies.
++
++Source selection retains link identity. A selected source link resolving outside
++the repository is still refused; internal aliases retain canonical
++deduplication. Internal links are rebound into the private view so that later
++caller edits do not change the admitted source. Referenced internal targets
++omitted by the normal ignore patterns are retained when needed to preserve the
++existing source admission and link behavior. This does not turn ignored
++directories into additional pytest collection roots.
++
++After source admission, TestPilot materializes a stable execution template using
++the sandbox's existing copy and ignore behavior. Each baseline, generation, and
++repair phase copies that template into its own worktree. Writes made by a pytest
++hook or test in one worktree do not become input to the next phase.
++
++Readable source directories can be read-only. During construction, TestPilot may
++temporarily add write permission to directories in its own private selection
++copy to recreate their links or fill a referenced target. It restores those
++copied directory modes before execution. It does not change the original
++directories or chmod through their links.
++
++Temporary selection and execution copies are removed when the run returns or
++raises, including model failures and interruptions.
++
++## Existing tests and the caller's checkout
++
++Generated tests remain additions. Path and pytest module-name reservations check
++both the captured input and the caller's current checkout. If the caller deletes
++an existing test while model work is in progress, that test remains in the
++captured suite and its name stays reserved. If the caller creates a conflicting
++path, the existing allocation and final addition checks still protect that path.
++
++The generated patch does not include the captured project or the caller's edits.
++A result applies to the captured input. Applying its patch to a subsequently
++changed checkout may produce a different test outcome; run TestPilot again when
++you want a result for those later edits.
++
++## Boundaries
++
++The initial capture is a finite filesystem copy, not an atomic filesystem
++snapshot. Changes while that initial copy is in progress can produce a mixed
++input. Once the template is materialized, later generation phases reuse its
++project bytes.
++
++Links to external data keep the sandbox's normal materialization behavior and
++are copied into the execution template after source admission. Prepared Python
++interpreters, installed packages, files accessed outside the copied project, and
++external services are not frozen. This feature does not create a security
++boundary around project code.
++
++The additional private selection view and execution template require temporary
++disk space. Existing per-pytest timeout and process handling remain unchanged.
++No new command-line option, report schema, or recheck behavior is introduced.
++
++## Focused verification
++
++`tests/test_execution_snapshot.py` exercises actual pytest runs with scripted
++model responses. Its fixtures cover both directions of source drift, an
++unselected dependency, repair, per-phase writes, cleanup, existing-test
++reservations, internal aliases, ignored targets, external data links, and source
++admission. The separate receiving driver reproduces the CLI drift case and
++applies the exact emitted patch to the initially captured checkout.
++
++Historical source pins, raw baseline outcomes, and the qualification boundary for
++each candidate are recorded under
++`docs/receiving/execution-snapshot-f5c43297f890/`.
+diff --git a/testpilot/loop.py b/testpilot/loop.py
+--- a/testpilot/loop.py
++++ b/testpilot/loop.py
+@@ -26,11 +26,12 @@
+ from dataclasses import asdict, dataclass, field
+ from pathlib import Path, PurePosixPath
+ 
+-from .diff import ChangedFunction, changed_functions
++from .diff import ChangedFunction, changed_functions, is_test_path, parse_unified_diff
+ from .html_report import render_html_report
+ from .model import ChatClient, ModelError, RoutingConfig, Usage
+ from .sandbox import IGNORE, SandboxResult, run_pytest
+-from .targets import resolve_targets, selection_record
++from .targets import TargetSelectionError, resolve_targets, selection_record
++from .snapshot import capture_project
+ 
+ SYSTEM_PLANNER = (
+     "You are TestPilot's planner. Given changed Python functions from a pull request, "
+@@ -217,28 +218,38 @@
+ 
+ 
+ def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, str],
+-                     aliases: dict[str, str]) -> tuple[dict[str, str], list[str]]:
++                     aliases: dict[str, str], *,
++                     reserve_repo: Path | None = None) -> tuple[dict[str, str], list[str]]:
+     """Apply a partial repair, reserving repository paths and pytest module names.
+ 
+     Keep aliases for renamed suggestions so a repair using either the original
+     suggestion or the displayed generated path updates the same generated file.
+     """
++    roots = (repo,) if reserve_repo is None else (repo, reserve_repo)
++
++    def occupied(rel: str) -> bool:
++        return any(_path_occupied(root, rel) for root in roots)
++
++    def module_names(rel: str) -> set[str]:
++        return {_pytest_module_name(root, rel) for root in roots}
++
+     merged, remapped = dict(current), dict(aliases)
+     reserved = set(current) | set(incoming) | set(aliases.values())
+-    reserved_modules = {_pytest_module_name(repo, rel) for rel in reserved}
+-    occupied_modules = _repository_module_names(repo)
+-    occupied_modules.update(_pytest_module_name(repo, rel) for rel in current)
++    reserved_modules = {name for rel in reserved for name in module_names(rel)}
++    occupied_modules = {name for root in roots for name in _repository_module_names(root)}
++    occupied_modules.update(name for rel in current for name in module_names(rel))
+     updates: dict[str, str] = {}
+     warnings: list[str] = []
+     for rel, content in incoming.items():
+         target = aliases.get(rel, rel)
+-        path_conflict = target not in current and _path_occupied(repo, target)
++        path_conflict = target not in current and occupied(target)
+         module_conflict = (target not in current
+-                           and _pytest_module_name(repo, target) in occupied_modules)
++                           and bool(module_names(target) & occupied_modules))
+         if path_conflict or module_conflict:
+-            test_root = repo / "tests"
+-            if test_root.is_symlink() or (test_root.exists() and not test_root.is_dir()):
+-                raise _GeneratedPathConflict("cannot add generated tests: repository 'tests' is not a regular directory")
++            for root in roots:
++                test_root = root / "tests"
++                if test_root.is_symlink() or (test_root.exists() and not test_root.is_dir()):
++                    raise _GeneratedPathConflict("cannot add generated tests: repository 'tests' is not a regular directory")
+             # Path conflicts retain the safe root fallback; import-name-only
+             # conflicts keep local fixtures and relative imports in their scope.
+             parent = PurePosixPath("tests") if path_conflict else PurePosixPath(target).parent
+@@ -247,9 +258,9 @@
+             while True:
+                 tag = "" if suffix == 1 else f"_{suffix}"
+                 target = str(parent / f"{stem}_testpilot{tag}.py")
+-                module = _pytest_module_name(repo, target)
+-                if (target not in reserved and not _path_occupied(repo, target)
+-                        and module not in occupied_modules and module not in reserved_modules):
++                modules = module_names(target)
++                if (target not in reserved and not occupied(target)
++                        and not modules & occupied_modules and not modules & reserved_modules):
+                     break
+                 suffix += 1
+         if target != rel:
+@@ -259,11 +270,12 @@
+         updates[target] = content
+         remapped[rel] = target
+         reserved.add(target)
+-        module = _pytest_module_name(repo, target)
+-        reserved_modules.add(module)
+-        occupied_modules.add(module)
++        modules = module_names(target)
++        reserved_modules.update(modules)
++        occupied_modules.update(modules)
+         merged[target] = content
+-    _require_additions(repo, merged)
++    for root in roots:
++        _require_additions(root, merged)
+     aliases.update(remapped)
+     return merged, warnings
+ 
+@@ -413,10 +425,30 @@
+     def run(self, repo: str | Path, diff_text: str, *,
+             targets: Sequence[str] | None = None) -> LoopResult:
+         repo = Path(repo)
++        selection = selection_record(diff_text, targets) if targets is not None else None
++        if selection is None:
++            source_paths = [change.path for change in parse_unified_diff(diff_text)
++                            if not change.is_deleted and change.path.endswith(".py")
++                            and not is_test_path(change.path)]
++            if not source_paths or not repo.is_dir():
++                funcs = changed_functions(repo, diff_text)
++                return self._run_selected(repo, repo, funcs, diff_text, selection)
++        else:
++            if not repo.is_dir():
++                raise TargetSelectionError(f"repository is not a directory: {str(repo)!r}")
++            source_paths = [spec.rpartition("::")[0] for spec in selection["requested"]
++                            if "::" in spec]
++        with capture_project(repo, source_paths) as captured:
++            funcs = (changed_functions(captured.selection_root, diff_text) if selection is None
++                     else resolve_targets(captured.selection_root, diff_text, selection["requested"]))
++            execution = captured.materialize() if funcs else captured.selection_root
++            return self._run_selected(repo, execution, funcs, diff_text, selection,
++                                      reserve_repo=captured.selection_root)
++
++    def _run_selected(self, repo: Path, execution_repo: Path, funcs: list[ChangedFunction],
++                      diff_text: str, selection: dict | None, *,
++                      reserve_repo: Path | None = None) -> LoopResult:
+         ledger = Ledger(self.routing, self.max_total_tokens)
+-        selection = selection_record(diff_text, targets) if targets is not None else None
+-        funcs = (changed_functions(repo, diff_text) if selection is None
+-                 else resolve_targets(repo, diff_text, selection["requested"]))
+         context = f"Changed functions:\n\n{_functions_block(funcs)}"
+         planner_system, editor_system, repair_system = SYSTEM_PLANNER, SYSTEM_EDITOR, SYSTEM_REPAIR
+         if selection is not None:
+@@ -440,6 +472,8 @@
+             patch = ""
+             try:
+                 _require_additions(repo, files)
++                if reserve_repo is not None:
++                    _require_additions(reserve_repo, files)
+                 patch = make_patch(repo, files, additions_only=True)
+             except _GeneratedPathConflict as e:
+                 st, msg = "failed", str(e)
+@@ -455,7 +489,7 @@
+         if not funcs:
+             return result("no_changes", "diff touches no Python functions outside tests")
+ 
+-        baseline = self._run(repo, None)
++        baseline = self._run(execution_repo, None)
+         try:
+             plan = self._ask(ledger, "planner", planner_system,
+                              f"{context}\n\nWrite the test plan.")
+@@ -465,9 +499,9 @@
+             if not proposed:
+                 rounds.append(RoundRecord(0, "generate", [], None, warns + ["no python code block in reply"]))
+                 return result("no_tests", "model produced no test files", baseline)
+-            files, path_warnings = _merge_test_files(repo, files, proposed, aliases)
++            files, path_warnings = _merge_test_files(repo, files, proposed, aliases, reserve_repo=reserve_repo)
+             warns.extend(path_warnings)
+-            final = self._run(repo, files)
++            final = self._run(execution_repo, files)
+             rounds.append(RoundRecord(0, "generate", sorted(files), final.to_dict(), warns, dict(files)))
+ 
+             while not final.ok and repairs < self.max_repair_rounds:
+@@ -484,9 +518,9 @@
+                     warns.append("repair reply had no code block; keeping previous tests")
+                     rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns))
+                     continue
+-                files, path_warnings = _merge_test_files(repo, files, new_files, aliases)
++                files, path_warnings = _merge_test_files(repo, files, new_files, aliases, reserve_repo=reserve_repo)
+                 warns.extend(path_warnings)
+-                final = self._run(repo, files)
++                final = self._run(execution_repo, files)
+                 rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns, dict(files)))
+             if final.ok:
+                 status = "passed"
+diff --git a/testpilot/snapshot.py b/testpilot/snapshot.py
+new file mode 100644
+--- /dev/null
++++ b/testpilot/snapshot.py
+@@ -0,0 +1,173 @@
++"""Capture one project input while retaining source-path and alias admission."""
++from __future__ import annotations
++
++from collections import deque
++from collections.abc import Iterator, Sequence
++from contextlib import contextmanager
++from dataclasses import dataclass
++import os
++from pathlib import Path
++import shutil
++import stat
++import tempfile
++
++from .diff import DiffSourceError, _source_path
++from .sandbox import IGNORE
++
++
++def _links(root: Path) -> Iterator[Path]:
++    for directory, names, files in os.walk(root, followlinks=False):
++        for name in names + files:
++            path = Path(directory) / name
++            if path.is_symlink():
++                yield path
++
++
++def _selection_view(project: Path, view: Path, source_paths: Sequence[str]) -> None:
++    # Keep links until the existing selector has admitted source identity.
++    # Materializing them first would turn an outside source into an inside file.
++    shutil.copytree(project, view, symlinks=True, ignore=IGNORE)
++    complete = {Path(directory) for directory, _, _ in os.walk(view, followlinks=False)}
++    pending = deque(_links(view))
++    rebound: set[Path] = set()
++
++    @contextmanager
++    def private_write(directory: Path) -> Iterator[None]:
++        # Only our private copy is adjusted, and only during construction.
++        # Source directories can be readable without permitting new entries.
++        if directory.is_symlink() or not directory.resolve().is_relative_to(view):
++            raise OSError("captured input write escaped its private directory")
++        mode = stat.S_IMODE(directory.stat().st_mode)
++        writable = mode | stat.S_IWUSR | stat.S_IXUSR
++        if writable != mode:
++            directory.chmod(writable)
++        try:
++            yield
++        finally:
++            if writable != mode:
++                directory.chmod(mode)
++
++    def parents(destination: Path) -> None:
++        cursor = view
++        for part in destination.relative_to(view).parts[:-1]:
++            cursor /= part
++            if cursor.is_symlink() or (cursor.exists() and not cursor.is_dir()):
++                raise OSError(f"captured input parent changed while copying: {cursor.relative_to(view)}")
++            with private_write(cursor.parent):
++                cursor.mkdir(exist_ok=True)
++
++    def fill(source: Path, destination: Path) -> None:
++        """Copy an admitted internal link target omitted by the normal ignore policy."""
++        if source.is_symlink():
++            if not destination.exists() and not destination.is_symlink():
++                parents(destination)
++                with private_write(destination.parent):
++                    shutil.copy2(source, destination, follow_symlinks=False)
++                pending.append(destination)
++            return
++        if source.is_dir():
++            if destination in complete:
++                return
++            parents(destination)
++            if destination.is_symlink() or (destination.exists() and not destination.is_dir()):
++                raise OSError(f"captured input target changed while copying: {destination.relative_to(view)}")
++            with private_write(destination.parent):
++                destination.mkdir(exist_ok=True)
++            children = list(source.iterdir())
++            ignored = IGNORE(str(source), [child.name for child in children])
++            for child in children:
++                if child.name not in ignored:
++                    fill(child, destination / child.name)
++            shutil.copystat(source, destination)
++            complete.add(destination)
++            return
++        if source.exists() and not destination.exists() and not destination.is_symlink():
++            parents(destination)
++            with private_write(destination.parent):
++                shutil.copy2(source, destination)
++
++    def rebind() -> None:
++        while pending:
++            link = pending.popleft()
++            if link in rebound:
++                continue
++            relative = link.relative_to(view)
++            target = (project / relative).parent / link.readlink()
++            try:
++                resolved = target.resolve()
++            except (OSError, RuntimeError):
++                # Preserve a dangling/cyclic identity for the ordinary selector
++                # or copy operation to refuse, without reading through the link.
++                resolved = Path(os.path.abspath(target))
++            if resolved.is_relative_to(project):
++                captured = view / resolved.relative_to(project)
++                fill(resolved, captured)
++                rewritten = os.path.relpath(captured, link.parent)
++            else:
++                # Relative links outside the project must still name their
++                # original target after the containing directory moves.
++                rewritten = str(resolved)
++            with private_write(link.parent):
++                link.unlink()
++                link.symlink_to(rewritten, target_is_directory=resolved.is_dir())
++            rebound.add(link)
++
++    rebind()
++    for raw in source_paths:
++        try:
++            resolved = _source_path(project, raw)
++        except DiffSourceError:
++            # The unchanged selector supplies the command's normal diagnostic.
++            continue
++        if not resolved.is_file():
++            continue
++        fill(resolved, view / resolved.relative_to(project))
++        # Explicit or diff-selected source can itself lie under an ignored
++        # directory. Preserve its path identity without copying that whole tree.
++        original, captured = project, view
++        for part in Path(raw).parts:
++            original /= part
++            captured /= part
++            if original.is_symlink():
++                fill(original, captured)
++                break
++            if original.is_dir():
++                parents(captured)
++                if captured.is_symlink() or (captured.exists() and not captured.is_dir()):
++                    raise OSError("captured source parent changed while copying")
++                with private_write(captured.parent):
++                    captured.mkdir(exist_ok=True)
++            else:
++                fill(original, captured)
++    rebind()
++
++
++@dataclass
++class CapturedProject:
++    selection_root: Path
++    execution_root: Path
++
++    def materialize(self) -> Path:
++        """Freeze the bytes each existing sandbox invocation will copy."""
++        shutil.copytree(self.selection_root, self.execution_root, ignore=IGNORE)
++        return self.execution_root
++
++
++@contextmanager
++def capture_project(repo: Path, source_paths: Sequence[str]) -> Iterator[CapturedProject]:
++    """Yield private selection and execution inputs, cleaning both on every exit.
++
++    This is a finite copy window, not an atomic filesystem snapshot. Source
++    selection reads only the private link-preserving view. The execution copy
++    then freezes the sandbox's ordinary materialized input, including referenced
++    data links; each pytest phase still gets its own fresh disposable worktree.
++    """
++    project = repo.resolve()
++    with tempfile.TemporaryDirectory(prefix="testpilot-capture-") as temporary:
++        base = Path(temporary)
++        selection = base / "selection" / (project.name or "repo")
++        execution = base / "execution" / "repo"
++        selection.parent.mkdir()
++        execution.parent.mkdir()
++        _selection_view(project, selection, source_paths)
++        yield CapturedProject(selection, execution)
+diff --git a/tests/test_execution_snapshot.py b/tests/test_execution_snapshot.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_execution_snapshot.py
+@@ -0,0 +1,304 @@
++"""One captured execution input across real baseline/generation/repair phases."""
++from __future__ import annotations
++
++import json
++from pathlib import Path
++import stat
++import tempfile
++
++import pytest
++
++from testpilot.loop import TestPilot
++from testpilot.model import ModelError, ScriptedModel
++
++INITIAL = "def amount():\n    return 2\n"
++LATER = "def amount():\n    return 7\n"
++DIFF = (
++    "--- a/values.py\n+++ b/values.py\n@@ -1,2 +1,2 @@\n"
++    " def amount():\n-    return 1\n+    return 2\n"
++)
++
++
++def generated(expected):
++    return (
++        "```python path=tests/test_generated.py\n"
++        f"from values import amount\n\ndef test_generated():\n    assert amount() == {expected}\n"
++        "```\n"
++    )
++
++
++def project(tmp_path, *, source=INITIAL, dependency=None, change_sandbox=False):
++    repo = tmp_path / "repo"
++    (repo / "tests").mkdir(parents=True)
++    (repo / "values.py").write_text(source, encoding="utf-8")
++    if dependency is not None:
++        (repo / "helper.py").write_text(dependency, encoding="utf-8")
++    (repo / "tests/test_existing.py").write_text(
++        "from values import amount\n\ndef test_existing():\n    assert amount() in (2, 7)\n",
++        encoding="utf-8")
++    events = tmp_path / "phase-events.jsonl"
++    hook = (
++        "from pathlib import Path\nimport json\n\n"
++        "def pytest_sessionstart(session):\n"
++        "    root = Path(__file__).parent\n"
++        "    record = {'generated': (root / 'tests/test_generated.py').exists(),\n"
++        "              'source': (root / 'values.py').read_text()}\n"
++        "    if (root / 'helper.py').exists():\n"
++        "        record['helper'] = (root / 'helper.py').read_text()\n"
++        f"    with Path({str(events)!r}).open('a') as stream:\n"
++        "        stream.write(json.dumps(record) + '\\n')\n"
++    )
++    if change_sandbox:
++        hook += (
++            "\ndef pytest_sessionfinish(session):\n"
++            f"    Path(__file__).with_name('values.py').write_text({LATER!r})\n"
++        )
++    (repo / "conftest.py").write_text(hook, encoding="utf-8")
++    return repo, events
++
++
++def observations(events):
++    return [json.loads(line) for line in events.read_text().splitlines()]
++
++
++@pytest.mark.parametrize(("expectation", "status"), [(2, "passed"), (7, "failed")])
++def test_generation_uses_initial_checkout_after_caller_edit(tmp_path, expectation, status):
++    repo, events = project(tmp_path)
++    replies = iter(["Test the selected function.", generated(expectation)])
++    calls = 0
++
++    def answer(model, messages):
++        nonlocal calls
++        calls += 1
++        if calls == 1:
++            # A caller edits their checkout while the planner is responding.
++            (repo / "values.py").write_text(LATER, encoding="utf-8")
++        return next(replies)
++
++    result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, DIFF)
++    assert result.status == status, result.final
++    assert result.changed_functions[0]["source"] == INITIAL.rstrip("\n")
++    assert [item["source"] for item in observations(events)] == [INITIAL, INITIAL]
++    assert (repo / "values.py").read_text() == LATER
++    assert len(result.ledger["entries"]) == 2
++
++
++def test_unselected_dependency_is_captured_with_the_selected_source(tmp_path):
++    source = "from helper import FACTOR\n\ndef amount():\n    return FACTOR\n"
++    repo, events = project(tmp_path, source=source, dependency="FACTOR = 2\n")
++    diff = "--- a/values.py\n+++ b/values.py\n@@ -4 +4 @@\n-    return 1\n+    return FACTOR\n"
++    replies = iter(["Test the selected function.", generated(7)])
++    calls = 0
++
++    def answer(model, messages):
++        nonlocal calls
++        calls += 1
++        if calls == 2:
++            (repo / "helper.py").write_text("FACTOR = 7\n", encoding="utf-8")
++        return next(replies)
++
++    result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, diff)
++    assert result.status == "failed", result.final
++    assert [item["helper"] for item in observations(events)] == ["FACTOR = 2\n"] * 2
++    assert (repo / "helper.py").read_text() == "FACTOR = 7\n"
++
++
++def test_repair_uses_same_input_as_baseline_and_generation(tmp_path):
++    repo, events = project(tmp_path)
++    replies = iter(["Test the selected function.", generated(99), generated(2)])
++    calls = 0
++
++    def answer(model, messages):
++        nonlocal calls
++        calls += 1
++        if calls == 3:
++            (repo / "values.py").write_text(LATER, encoding="utf-8")
++        return next(replies)
++
++    result = TestPilot(ScriptedModel(answer), max_repair_rounds=1, coverage=False).run(repo, DIFF)
++    assert result.status == "passed", result.final
++    assert result.repair_rounds_used == 1
++    assert [item["source"] for item in observations(events)] == [INITIAL] * 3
++    assert [item["generated"] for item in observations(events)] == [False, True, True]
++    assert (repo / "values.py").read_text() == LATER
++    assert [item.kind for item in result.rounds] == ["generate", "repair"]
++
++
++def test_pytest_writes_do_not_change_the_next_phase_input(tmp_path):
++    repo, events = project(tmp_path, change_sandbox=True)
++    result = TestPilot(ScriptedModel(["Test amount.", generated(2)]),
++                       max_repair_rounds=0, coverage=False).run(repo, DIFF)
++    assert result.status == "passed", result.final
++    assert [item["source"] for item in observations(events)] == [INITIAL, INITIAL]
++    assert (repo / "values.py").read_text() == INITIAL
++
++
++@pytest.mark.parametrize("interrupt", [False, True], ids=["model-error", "keyboard-interrupt"])
++def test_temporary_inputs_are_removed_when_model_work_stops(tmp_path, monkeypatch, interrupt):
++    repo, events = project(tmp_path)
++    temporary = tmp_path / "temporary"
++    temporary.mkdir()
++    monkeypatch.setattr(tempfile, "tempdir", str(temporary))
++
++    def answer(model, messages):
++        if interrupt:
++            raise KeyboardInterrupt("authored model-stage interruption")
++        raise ModelError("authored model failure")
++
++    pilot = TestPilot(ScriptedModel(answer), coverage=False)
++    if interrupt:
++        with pytest.raises(KeyboardInterrupt, match="authored"):
++            pilot.run(repo, DIFF)
++    else:
++        result = pilot.run(repo, DIFF)
++        assert result.status == "model_error"
++        assert result.test_files == {}
++    assert len(observations(events)) == 1
++    assert list(temporary.iterdir()) == []
++    assert (repo / "values.py").read_text() == INITIAL
++
++
++def test_empty_selection_keeps_existing_no_copy_behavior(tmp_path):
++    client = ScriptedModel([])
++    result = TestPilot(client, coverage=False).run(tmp_path / "absent-repository", "")
++    assert result.status == "no_changes"
++    assert result.test_files == {}
++    assert client.calls == []
++
++
++def test_removed_existing_test_is_retained_and_generated_path_stays_new(tmp_path):
++    repo, events = project(tmp_path)
++    existing = repo / "tests/test_generated.py"
++    existing.write_text("def test_original_failure():\n    assert False\n", encoding="utf-8")
++    replies = iter(["Test amount.", generated(2)])
++    calls = 0
++
++    def answer(model, messages):
++        nonlocal calls
++        calls += 1
++        if calls == 1:
++            existing.unlink()
++        return next(replies)
++
++    result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, DIFF)
++    assert result.status == "failed", result.final
++    assert "tests/test_generated.py" not in result.test_files
++    assert "tests/test_generated_testpilot.py" in result.test_files
++    assert any("test_original_failure" in c["nodeid"] and c["outcome"] == "failed"
++               for c in result.final["cases"])
++    assert not existing.exists()
++
++
++def test_module_name_of_removed_existing_test_remains_reserved(tmp_path):
++    repo, events = project(tmp_path)
++    (repo / "checks").mkdir()
++    existing = repo / "checks/test_generated.py"
++    existing.write_text("def test_original_check():\n    assert True\n", encoding="utf-8")
++    (repo / "pytest.ini").write_text("[pytest]\ntestpaths = checks\n", encoding="utf-8")
++    replies = iter(["Test amount.", generated(2)])
++    calls = 0
++
++    def answer(model, messages):
++        nonlocal calls
++        calls += 1
++        if calls == 1:
++            existing.unlink()
++        return next(replies)
++
++    result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, DIFF)
++    assert result.status == "passed", result.final
++    assert "tests/test_generated_testpilot.py" in result.test_files
++    assert any("test_original_check" in c["nodeid"] and c["outcome"] == "passed"
++               for c in result.final["cases"])
++    assert not existing.exists()
++
++
++@pytest.mark.parametrize("absolute", [False, True], ids=["relative-link", "absolute-link"])
++def test_internal_source_links_preserve_explicit_alias_identity(tmp_path, absolute):
++    repo, events = project(tmp_path)
++    (repo / "alias.py").symlink_to(repo / "values.py" if absolute else "values.py")
++    result = TestPilot(ScriptedModel(["Test amount.", generated(2)]),
++                       max_repair_rounds=0, coverage=False).run(
++                           repo, DIFF, targets=["alias.py::amount", "values.py::amount"])
++    assert result.status == "passed", result.final
++    assert len(result.changed_functions) == 1
++    assert result.changed_functions[0]["path"] == "alias.py"
++    assert result.changed_functions[0]["changed_lines"] == [2]
++    assert (repo / "alias.py").is_symlink()
++
++
++def test_source_alias_to_ignored_directory_keeps_its_runtime_bytes(tmp_path):
++    repo, events = project(tmp_path)
++    (repo / ".venv").mkdir()
++    (repo / ".venv/values.py").write_text(INITIAL, encoding="utf-8")
++    (repo / "values.py").unlink()
++    (repo / "values.py").symlink_to(".venv/values.py")
++    result = TestPilot(ScriptedModel(["Test amount.", generated(2)]),
++                       max_repair_rounds=0, coverage=False).run(repo, DIFF)
++    assert result.status == "passed", result.final
++    assert result.changed_functions[0]["source"] == INITIAL.rstrip("\n")
++    assert [item["source"] for item in observations(events)] == [INITIAL, INITIAL]
++    assert (repo / "values.py").is_symlink()
++
++
++def test_relative_external_data_alias_keeps_existing_execution_behavior(tmp_path):
++    source = "from helper import FACTOR\n\ndef amount():\n    return FACTOR\n"
++    repo, events = project(tmp_path, source=source)
++    outside = tmp_path / "outside.py"
++    outside.write_text("FACTOR = 2\n", encoding="utf-8")
++    (repo / "helper.py").symlink_to("../outside.py")
++    diff = "--- a/values.py\n+++ b/values.py\n@@ -4 +4 @@\n-    return 1\n+    return FACTOR\n"
++    result = TestPilot(ScriptedModel(["Test amount.", generated(2)]),
++                       max_repair_rounds=0, coverage=False).run(repo, diff)
++    assert result.status == "passed", result.final
++    assert [item["helper"] for item in observations(events)] == ["FACTOR = 2\n"] * 2
++    assert outside.read_text() == "FACTOR = 2\n"
++    assert (repo / "helper.py").is_symlink()
++
++
++def test_outward_selected_source_still_refuses_before_reading_it(tmp_path, monkeypatch):
++    import builtins
++    from testpilot.diff import DiffSourceError
++
++    repo, events = project(tmp_path)
++    outside = tmp_path / "outside.py"
++    outside.write_text(INITIAL, encoding="utf-8")
++    (repo / "values.py").unlink()
++    (repo / "values.py").symlink_to(outside)
++    original_open = builtins.open
++    reads = []
++
++    def observed_open(file, mode="r", *args, **kwargs):
++        if isinstance(file, (str, Path)) and Path(file).resolve() == outside.resolve():
++            reads.append((str(file), mode))
++        return original_open(file, mode, *args, **kwargs)
++
++    client = ScriptedModel([])
++    monkeypatch.setattr(builtins, "open", observed_open)
++    with pytest.raises(DiffSourceError, match="outside repository"):
++        TestPilot(client, coverage=False).run(repo, DIFF)
++    assert reads == []
++    assert client.calls == []
++    assert not events.exists()
++
++
++def test_internal_source_link_in_read_only_directory_keeps_input_mode(tmp_path):
++    repo, events = project(tmp_path)
++    locked = repo / "locked"
++    locked.mkdir()
++    (locked / "alias.py").symlink_to("../values.py")
++    locked.chmod(0o555)
++    try:
++        result = TestPilot(ScriptedModel(["Test amount.", generated(2)]),
++                           max_repair_rounds=0, coverage=False).run(
++                               repo, DIFF, targets=["locked/alias.py::amount", "values.py::amount"])
++        assert result.status == "passed", result.final
++        assert len(result.changed_functions) == 1
++        assert result.changed_functions[0]["path"] == "locked/alias.py"
++        assert [item["source"] for item in observations(events)] == [INITIAL, INITIAL]
++        assert stat.S_IMODE(locked.stat().st_mode) == 0o555
++        assert (locked / "alias.py").readlink() == Path("../values.py")
++        assert (repo / "values.py").read_text() == INITIAL
++    finally:
++        # This is the authored fixture, restored so pytest can remove it.
++        locked.chmod(0o755)

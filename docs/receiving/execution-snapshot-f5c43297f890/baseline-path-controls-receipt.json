@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_execution_snapshot.py",
+    "-k",
+    "removed or links or alias or outward"
+  ],
+  "returncode": 1,
+  "duration_seconds": 21.404,
+  "log_sha256": "68182352caa6bfb1e98e2d193bc6e525dd9b624ecaf14ad994ca0b0431a50f26",
+  "source_loop_sha256": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+  "test_sha256": "3298b60b0cae734b2e4b5c61d5a183394897b00f88f4d63987fe609a1c0a0545"
+}

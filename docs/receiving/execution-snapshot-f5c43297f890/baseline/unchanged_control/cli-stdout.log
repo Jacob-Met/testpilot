@@ -1,0 +1,12 @@
+# TestPilot report: **passed**
+
+- Changed functions: values.py::amount
+- Tests written: 1 in tests/test_generated.py
+- Repair rounds used: 0/0
+- Final run: 2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected in 3.176s
+- Coverage: unavailable
+- Tokens: 281 (estimated); cost: unpriced (set TESTPILOT_PRICES)
+  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 91 in / 9 out
+  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 151 in / 30 out
+
+wrote /home/jacob/testpilot-snapshot-f5c43297f890/baseline/unchanged_control/out/testpilot.patch, /home/jacob/testpilot-snapshot-f5c43297f890/baseline/unchanged_control/out/report.json, /home/jacob/testpilot-snapshot-f5c43297f890/baseline/unchanged_control/out/report.md, /home/jacob/testpilot-snapshot-f5c43297f890/baseline/unchanged_control/out/report.html

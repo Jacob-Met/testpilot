@@ -1,0 +1,175 @@
+{
+  "schema": "hamon.testpilot_execution_snapshot.independent_receiving_design.v1",
+  "qualification": "UNRUN hosted receiving design and source review; no native receiving was executed or written by this lane.",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/50",
+  "composition_base": {
+    "sha": "513f17454af378ee042ccd29dc930ef332a48734",
+    "tree": "ffded624f1e44bed9e10872dfb795dae2dda1a46",
+    "parents": [
+      "e5b7ac4a00704c0fad0c5d70da0aaafa40a722df",
+      "65c5c2e7d3f42a21f65affdecca932ae3b22df61"
+    ]
+  },
+  "fence": {
+    "source": [
+      "testpilot/loop.py",
+      "testpilot/snapshot.py"
+    ],
+    "tests": "tests/test_execution_snapshot_independent.py",
+    "preserve": [
+      "Current CLI timeout admission",
+      "Current complete-hunk diff parser",
+      "Target selector",
+      "Sandbox/process custody",
+      "Recheck",
+      "Models",
+      "Schema",
+      "Output writers"
+    ],
+    "github_mutations": "root only",
+    "native_capacity": "No new native writes or alternate-mount testing."
+  },
+  "source_contract": "One captured selection view supplies selected function/report/prompt source, then one materialized execution template supplies separately disposable baseline, generation and repair sandboxes. The live caller root remains a separate path/module reservation source.",
+  "retained_evidence": {
+    "baseline_cli": {
+      "sha256": "fdce9a7da42b6f2dce6dc8ee7e51cb21fd90376e59d3856c64ec9f4d1719f092",
+      "base": "cec50d8df4499ba509615e179d82ef3861379bd2",
+      "cases": "False pass after live 2-to-7 edit; inverse false failure; unchanged healthy control. Emitted patches actually applied and ran against captured source."
+    },
+    "first_candidate": {
+      "cases": 15,
+      "passed": 15,
+      "failed": 0,
+      "receipt_sha256": "404b57a6bd2585f44d3f41c47ffe5cfdd480d7a5403cf9f14ce25178f0182061",
+      "loop_sha256": "cb4b92ef79080be4d26af78c861e3604968953c809e7d07bd1f917eb624d60e5",
+      "helper_sha256": "ec1ab4df0b92727defc176d04b1df771aa677195bec0f5502cc62e8d7091f1a3"
+    },
+    "readonly_attempts": "Both original and first-candidate fixture creation failed at destination.mkdir with ENOSPC before any product code. Neither a product pass nor a product failure is inferred."
+  },
+  "static_findings": [
+    {
+      "name": "Read-only private link parent",
+      "assessment": "Material first-candidate risk independently confirmed in source; behavioral outcome remains unrun.",
+      "mechanism": "copytree(symlinks=True) restores source directory modes before rebind unlinks and recreates captured links. An unprivileged process cannot rewrite entries in mode 0555 directories."
+    },
+    {
+      "name": "Private-write amendment",
+      "helper_sha256": "6896d9b700935a2c57c2c13aed6ea934034137a51b41a03800ad1220868ea0ae",
+      "assessment": "Structurally suitable for hosted qualification; no runtime acceptance.",
+      "mechanism": "Only non-link directories resolving inside the private selection view gain owner write/execute during construction; finally restores exact prior mode. Parent creation, ignored-target copying, and link rewrites are covered. Caller directories are never adjusted."
+    },
+    {
+      "name": "Current main composition",
+      "assessment": "Current main loop remains the original baseline source. Current CLI rejects malformed complete-hunk input before client construction, and is preserved wholesale."
+    }
+  ],
+  "finite_independent_cases": [
+    {
+      "id": "readonly-current-baseline",
+      "expect": "Actual original current-main TestPilot loop selects the alias once, runs baseline and generated test successfully, preserves caller bytes/link/modes and uses distinct phase directories."
+    },
+    {
+      "id": "readonly-first-candidate",
+      "expect": "Actual current capture-aware loop with the exact frozen first helper raises PermissionError through rebind before model/pytest work; caller bytes/link/modes remain exact."
+    },
+    {
+      "id": "readonly-corrected-candidate",
+      "expect": "Same read-only input succeeds with exact initial source in both actual pytest phases and caller identity preserved."
+    },
+    {
+      "id": "readonly-root-ignored-target",
+      "expect": "Mode-0555 project root and internal alias to ignored .venv source are captured and materialized with source bytes, alias selection/dedup and original root/locked modes preserved."
+    },
+    {
+      "id": "private-mode-success",
+      "expect": "Private selection construction restores directory modes; every observed explicit Path.chmod addresses a non-link path inside the owned view."
+    },
+    {
+      "id": "private-mode-link-error",
+      "expect": "Injected owned-view symlink recreation failure propagates after exact mode restoration; no caller mode change."
+    },
+    {
+      "id": "late-live-path",
+      "expect": "A caller test created after capture remains byte exact; generated tests get a new path and patch, and execute against captured source."
+    },
+    {
+      "id": "late-live-module",
+      "expect": "A caller test of the same import name added under another directory remains byte exact and forces a fresh generated module name."
+    },
+    {
+      "id": "actual-cli-three-case-witness",
+      "expect": "The byte-identical authored CLI driver runs on the corrected current composition; misleading-success now fails with rc1 and patch pytest1, initial-source and unchanged controls pass with rc0 and patch pytest0. All source-consistency/caller-preservation oracles are true; exact source pins and actual Git HEAD match the checkout."
+    }
+  ],
+  "baseline_controls": {
+    "loop": "docs/receiving/execution-snapshot-f5c43297f890/independent/baseline_loop.py",
+    "loop_sha256": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "first_helper": "docs/receiving/execution-snapshot-f5c43297f890/independent/first_snapshot.py",
+    "first_helper_sha256": "ec1ab4df0b92727defc176d04b1df771aa677195bec0f5502cc62e8d7091f1a3",
+    "method": "Load the exact frozen control modules under testpilot-qualified names against the current unchanged dependencies. Never overwrite the checkout's CLI, diff parser or source."
+  },
+  "hosted_gate": {
+    "workflow": ".github/workflows/ci.yml",
+    "workflow_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+    "runtime": "Existing ubuntu-latest Python 3.12 job",
+    "command": "python -m pytest -q",
+    "independent_module": "tests/test_execution_snapshot_independent.py",
+    "required": "Nine independent pytest cases actually pass under an unprivileged POSIX account, including the driver's three named actual CLI cases. No permission-case skips count as qualification. Preserve exact source identity and CI result.",
+    "remaining": "Run the authored corrected 16-case source suite and all nine independent cases through current-composition CI. Historical cec receipts and first-candidate 15-pass results remain historical.",
+    "cli_driver": "docs/receiving/execution-snapshot-f5c43297f890/receive_snapshot_cli.py",
+    "cli_driver_sha256": "244f95db22e087a4e595d46808bf5f2f8c2861ae6f1256330d8d26f9e191ec7e"
+  },
+  "limits": [
+    "Initial filesystem capture is a finite copy window, not an atomic filesystem transaction.",
+    "Prepared interpreters, external services and dependencies outside the captured project are not generally frozen.",
+    "Source review and AST parsing are not execution.",
+    "Hosted POSIX permission receiving does not qualify Windows ACL semantics.",
+    "No provider requests, installed service changes, native writes, alternate-mount execution or permission exceptions are authorized by this receiving design."
+  ],
+  "source_span_review": {
+    "existing_functions_and_methods": 28,
+    "changed": [
+      "TestPilot.run",
+      "_merge_test_files"
+    ],
+    "preserved": [
+      "TestPilot.__init__",
+      "Ledger.record",
+      "_repository_module_names",
+      "Ledger.check_budget",
+      "_path_occupied",
+      "make_patch",
+      "LoopResult.ok",
+      "parse_verdict",
+      "_files_block",
+      "Ledger.total_cost_usd",
+      "TestPilot._ask",
+      "parse_test_files",
+      "Ledger.by_model",
+      "LoopResult.to_dict",
+      "_require_additions",
+      "count_tests",
+      "Ledger.total_tokens",
+      "sanitize_test_path",
+      "render_report",
+      "Ledger.to_dict",
+      "_pytest_module_name",
+      "TestPilot._run",
+      "_changed_line_coverage",
+      "_functions_block",
+      "coverage_delta",
+      "write_outputs"
+    ],
+    "added": [
+      "TestPilot._run_selected"
+    ],
+    "removed": []
+  },
+  "frozen_at": "2026-10-08T19:54:46.309665+00:00",
+  "previous_unrun_design": {
+    "carrier_sha256": "a9f448588e2c3a3c6e282333cf819e592adacae731457fa20c6dbe7a9dbf4807",
+    "test_sha256": "fab281120d246f026fa9895c61fe249ed9ee15c3317247e207801ef642582c54",
+    "reason": "Preserved eight-case design; this pre-execution amendment adds automatic collection of the unchanged actual CLI driver through one additional pytest case."
+  },
+  "prior_eight_cases_ast_preserved": true
+}

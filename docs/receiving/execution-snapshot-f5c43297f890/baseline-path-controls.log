@@ -1,0 +1,60 @@
+..FF.....                                                                [100%]
+=================================== FAILURES ===================================
+_____ test_removed_existing_test_is_retained_and_generated_path_stays_new ______
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-256/test_removed_existing_test_is_0')
+
+    def test_removed_existing_test_is_retained_and_generated_path_stays_new(tmp_path):
+        repo, events = project(tmp_path)
+        existing = repo / "tests/test_generated.py"
+        existing.write_text("def test_original_failure():\n    assert False\n", encoding="utf-8")
+        replies = iter(["Test amount.", generated(2)])
+        calls = 0
+    
+        def answer(model, messages):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                existing.unlink()
+            return next(replies)
+    
+        result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, DIFF)
+>       assert result.status == "failed", result.final
+E       AssertionError: {'cases': [{'generated_file': None, 'message': '', 'nodeid': 'tests.test_existing::test_existing', 'outcome': 'passed'...'tests.test_generated::test_generated', 'outcome': 'passed'}], 'coverage': None, 'duration_s': 0.899, 'errors': 0, ...}
+E       assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+tests/test_execution_snapshot.py:183: AssertionError
+__________ test_module_name_of_removed_existing_test_remains_reserved __________
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-256/test_module_name_of_removed_ex0')
+
+    def test_module_name_of_removed_existing_test_remains_reserved(tmp_path):
+        repo, events = project(tmp_path)
+        (repo / "checks").mkdir()
+        existing = repo / "checks/test_generated.py"
+        existing.write_text("def test_original_check():\n    assert True\n", encoding="utf-8")
+        (repo / "pytest.ini").write_text("[pytest]\ntestpaths = checks\n", encoding="utf-8")
+        replies = iter(["Test amount.", generated(2)])
+        calls = 0
+    
+        def answer(model, messages):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                existing.unlink()
+            return next(replies)
+    
+        result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, DIFF)
+        assert result.status == "passed", result.final
+>       assert "tests/test_generated_testpilot.py" in result.test_files
+E       AssertionError: assert 'tests/test_generated_testpilot.py' in {'tests/test_generated.py': 'from values import amount\n\ndef test_generated():\n    assert amount() == 2\n'}
+E        +  where {'tests/test_generated.py': 'from values import amount\n\ndef test_generated():\n    assert amount() == 2\n'} = LoopResult(status='passed', changed_functions=[{'path': 'values.py', 'module': 'values', 'qualname': 'amount', 'lineno...mport amount\n\ndef test_generated():\n    assert amount() == 2\n'})], plan='Test amount.', message='', selection=None).test_files
+
+tests/test_execution_snapshot.py:209: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_execution_snapshot.py::test_removed_existing_test_is_retained_and_generated_path_stays_new
+FAILED tests/test_execution_snapshot.py::test_module_name_of_removed_existing_test_remains_reserved
+2 failed, 7 passed, 6 deselected in 19.63s

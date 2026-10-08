@@ -1,0 +1,97 @@
+{
+  "schema": "hamon.testpilot_execution_snapshot.author_qualification.v1",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/50",
+  "native_source_root": "/home/jacob/testpilot-snapshot-f5c43297f890/source",
+  "native_base": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "proposed_publication_base": "513f17454af378ee042ccd29dc930ef332a48734",
+  "unchanged_base_loop_git_blob": "a9de8356f3454334578bdfd1af19d6382b8a64a0",
+  "current_readme_base_git_blob": "df07258a3f6e3f4a07eb8d6b5584a9aa39712867",
+  "first_candidate_sources": [
+    {
+      "path": "source/testpilot/loop.py",
+      "byte_count": 28826,
+      "sha256": "cb4b92ef79080be4d26af78c861e3604968953c809e7d07bd1f917eb624d60e5",
+      "git_blob": "1a76bdf66ca1423aca3646e0a14534e2c70044ae"
+    },
+    {
+      "path": "source/testpilot/snapshot.py",
+      "byte_count": 6351,
+      "sha256": "ec1ab4df0b92727defc176d04b1df771aa677195bec0f5502cc62e8d7091f1a3",
+      "git_blob": "3836ce73b2c2cc0243ee57269aaf0cc220281f2b"
+    },
+    {
+      "path": "source/tests/test_execution_snapshot.py",
+      "byte_count": 11888,
+      "sha256": "3298b60b0cae734b2e4b5c61d5a183394897b00f88f4d63987fe609a1c0a0545",
+      "git_blob": "fc7f38d06d380d381f55398c513a822d671f2d22"
+    }
+  ],
+  "amendment_sources": [
+    {
+      "path": "testpilot/snapshot.py",
+      "byte_count": 7384,
+      "sha256": "6896d9b700935a2c57c2c13aed6ea934034137a51b41a03800ad1220868ea0ae",
+      "git_blob": "2932e3b1db6b69f6c4d2fb4d21f24ba40a06186e"
+    },
+    {
+      "path": "tests/test_execution_snapshot.py",
+      "byte_count": 12968,
+      "sha256": "ed553803389477a4e91d8523725ca264c566dc9a95177bc7d7e1ca3c7df963de",
+      "git_blob": "05b7dfa44b492a976b49cec56e0cf9d9e2273226"
+    }
+  ],
+  "native_gates": [
+    {
+      "name": "original actual CLI receiver",
+      "receipt": "baseline/receipt.json",
+      "sha256": "fdce9a7da42b6f2dce6dc8ee7e51cb21fd90376e59d3856c64ec9f4d1719f092",
+      "result": "Both drift directions expose source/result inconsistency; unchanged control passes; exact emitted patches independently applied and run on the captured initial checkout."
+    },
+    {
+      "name": "original first eight author tests",
+      "receipt": "baseline-pytest-receipt.json",
+      "returncode": 1,
+      "result": "4 failed, 4 passed in 54.97s",
+      "test_sha256": "41b3bf2cc2fd4d1e8b3cc34bd32882498d8276822f7907d898f21fc08e84e7d2"
+    },
+    {
+      "name": "original path and alias controls",
+      "receipt": "baseline-path-controls-receipt.json",
+      "returncode": 1,
+      "result": "2 failed, 7 passed, 6 deselected in 19.63s",
+      "overlap": "The -k expression also selected two cleanup controls from the earlier eight. Do not add the two run totals as distinct tests."
+    },
+    {
+      "name": "first candidate focused author tests",
+      "receipt": "candidate-pytest-receipt.json",
+      "sha256": "404b57a6bd2585f44d3f41c47ffe5cfdd480d7a5403cf9f14ce25178f0182061",
+      "returncode": 0,
+      "result": "15 passed in 25.48s",
+      "source_unchanged": true
+    },
+    {
+      "name": "read-only link fixture original and first-candidate attempts",
+      "receiver": "receive_readonly_link.py",
+      "native_wrapper_pid": 745644,
+      "result": "Both failed at destination.mkdir with ENOSPC, before product code or pytest. Neither is a product pass or failure."
+    }
+  ],
+  "source_only_checks": [
+    "The proposed helper and 16-test module parsed as Python ASTs; they were not imported or executed.",
+    "Independent source review accepted the private-directory write/restoration structure for hosted qualification.",
+    "README proposal is current 513f174 README plus exactly the documented note; no stale README paragraph or CLI/diff replacement is proposed."
+  ],
+  "pending_at_author_handoff": [
+    "Execute the amended candidate and its read-only-link positive control on legitimate hosted CI.",
+    "Execute independent original/first-helper/current controls on the current composition.",
+    "Run frozen actual CLI receiver against the final candidate; no candidate CLI receipt exists yet.",
+    "Existing whole-suite CI has not run for this snapshot amendment."
+  ],
+  "claim_limits": [
+    "The first 15-pass receipt qualifies its exact cec-based first candidate only; it is not relabeled as qualification of the amendment or current-main composition.",
+    "All native executed model responses were ScriptedModel fixtures; zero provider requests and no installed-runtime mutation.",
+    "Capture is a finite non-atomic copy window. External runtime dependencies and services are not frozen.",
+    "Publication, independent hosted testing, and integration remain root-owned.",
+    "No alternate-mount test area, cleanup of other workers, permission or quota bypass was used after the native capacity block."
+  ]
+}

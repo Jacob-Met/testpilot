@@ -1,0 +1,9 @@
+diff --git a/tests/test_generated.py b/tests/test_generated.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_generated.py
+@@ -0,0 +1,4 @@
++from values import amount
++
++def test_generated():
++    assert amount() == 2

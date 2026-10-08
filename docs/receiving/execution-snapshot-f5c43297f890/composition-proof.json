@@ -1,0 +1,23 @@
+{
+  "schema": "hamon.testpilot_execution_snapshot.composition.v1",
+  "proposed_parent": "513f17454af378ee042ccd29dc930ef332a48734",
+  "modified_existing_paths": [
+    "README.md",
+    "testpilot/loop.py"
+  ],
+  "base_loop_git_blob": "a9de8356f3454334578bdfd1af19d6382b8a64a0",
+  "base_readme_git_blob": "df07258a3f6e3f4a07eb8d6b5584a9aa39712867",
+  "readme_note": "* **One captured project per run.** TestPilot reads selected functions and runs baseline, generation, and repairs against the same captured project input. Every pytest phase still gets a fresh disposable copy, so its writes do not change later phases. New test paths and module names are reserved against both the captured input and the caller's current checkout. The initial copy is not atomic, and external runtime dependencies are not frozen. See [Captured project execution](docs/EXECUTION_SNAPSHOT.md) for the boundary and link behavior.\n",
+  "removing_exact_note_restores_entire_current_readme": true,
+  "all_35_native_evidence_preimages_match": true,
+  "source_syntax": "AST parsing only, not execution",
+  "excluded_owned_product_paths": [
+    "testpilot/__main__.py",
+    "testpilot/diff.py",
+    "testpilot/sandbox.py",
+    "testpilot/targets.py",
+    "testpilot/recheck.py",
+    "testpilot/model.py"
+  ],
+  "claim": "This is a publication carrier over the stated parent, not a claim that a native current-main checkout or hosted integration was executed."
+}

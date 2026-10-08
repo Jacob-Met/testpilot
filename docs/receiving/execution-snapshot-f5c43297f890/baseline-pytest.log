@@ -1,0 +1,116 @@
+FFFF....                                                                 [100%]
+=================================== FAILURES ===================================
+______ test_generation_uses_initial_checkout_after_caller_edit[2-passed] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-252/test_generation_uses_initial_c0')
+expectation = 2, status = 'passed'
+
+    @pytest.mark.parametrize(("expectation", "status"), [(2, "passed"), (7, "failed")])
+    def test_generation_uses_initial_checkout_after_caller_edit(tmp_path, expectation, status):
+        repo, events = project(tmp_path)
+        replies = iter(["Test the selected function.", generated(expectation)])
+        calls = 0
+    
+        def answer(model, messages):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                # A caller edits their checkout while the planner is responding.
+                (repo / "values.py").write_text(LATER, encoding="utf-8")
+            return next(replies)
+    
+        result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, DIFF)
+>       assert result.status == status, result.final
+E       AssertionError: {'cases': [{'generated_file': None, 'message': '', 'nodeid': 'tests.test_existing::test_existing', 'outcome': 'passed'...'tests.test_generated::test_generated', 'outcome': 'failed'}], 'coverage': None, 'duration_s': 7.984, 'errors': 0, ...}
+E       assert 'failed' == 'passed'
+E         
+E         - passed
+E         + failed
+
+tests/test_execution_snapshot.py:78: AssertionError
+______ test_generation_uses_initial_checkout_after_caller_edit[7-failed] _______
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-252/test_generation_uses_initial_c1')
+expectation = 7, status = 'failed'
+
+    @pytest.mark.parametrize(("expectation", "status"), [(2, "passed"), (7, "failed")])
+    def test_generation_uses_initial_checkout_after_caller_edit(tmp_path, expectation, status):
+        repo, events = project(tmp_path)
+        replies = iter(["Test the selected function.", generated(expectation)])
+        calls = 0
+    
+        def answer(model, messages):
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                # A caller edits their checkout while the planner is responding.
+                (repo / "values.py").write_text(LATER, encoding="utf-8")
+            return next(replies)
+    
+        result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, DIFF)
+>       assert result.status == status, result.final
+E       AssertionError: {'cases': [{'generated_file': None, 'message': '', 'nodeid': 'tests.test_existing::test_existing', 'outcome': 'passed'...'tests.test_generated::test_generated', 'outcome': 'passed'}], 'coverage': None, 'duration_s': 3.052, 'errors': 0, ...}
+E       assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+tests/test_execution_snapshot.py:78: AssertionError
+_______ test_unselected_dependency_is_captured_with_the_selected_source ________
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-252/test_unselected_dependency_is_0')
+
+    def test_unselected_dependency_is_captured_with_the_selected_source(tmp_path):
+        source = "from helper import FACTOR\n\ndef amount():\n    return FACTOR\n"
+        repo, events = project(tmp_path, source=source, dependency="FACTOR = 2\n")
+        diff = "--- a/values.py\n+++ b/values.py\n@@ -4 +4 @@\n-    return 1\n+    return FACTOR\n"
+        replies = iter(["Test the selected function.", generated(7)])
+        calls = 0
+    
+        def answer(model, messages):
+            nonlocal calls
+            calls += 1
+            if calls == 2:
+                (repo / "helper.py").write_text("FACTOR = 7\n", encoding="utf-8")
+            return next(replies)
+    
+        result = TestPilot(ScriptedModel(answer), max_repair_rounds=0, coverage=False).run(repo, diff)
+>       assert result.status == "failed", result.final
+E       AssertionError: {'cases': [{'generated_file': None, 'message': '', 'nodeid': 'tests.test_existing::test_existing', 'outcome': 'passed'...'tests.test_generated::test_generated', 'outcome': 'passed'}], 'coverage': None, 'duration_s': 3.493, 'errors': 0, ...}
+E       assert 'passed' == 'failed'
+E         
+E         - failed
+E         + passed
+
+tests/test_execution_snapshot.py:100: AssertionError
+____________ test_repair_uses_same_input_as_baseline_and_generation ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-252/test_repair_uses_same_input_as0')
+
+    def test_repair_uses_same_input_as_baseline_and_generation(tmp_path):
+        repo, events = project(tmp_path)
+        replies = iter(["Test the selected function.", generated(99), generated(2)])
+        calls = 0
+    
+        def answer(model, messages):
+            nonlocal calls
+            calls += 1
+            if calls == 3:
+                (repo / "values.py").write_text(LATER, encoding="utf-8")
+            return next(replies)
+    
+        result = TestPilot(ScriptedModel(answer), max_repair_rounds=1, coverage=False).run(repo, DIFF)
+>       assert result.status == "passed", result.final
+E       AssertionError: {'cases': [{'generated_file': None, 'message': '', 'nodeid': 'tests.test_existing::test_existing', 'outcome': 'passed'...'tests.test_generated::test_generated', 'outcome': 'failed'}], 'coverage': None, 'duration_s': 2.496, 'errors': 0, ...}
+E       assert 'failed' == 'passed'
+E         
+E         - passed
+E         + failed
+
+tests/test_execution_snapshot.py:118: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_execution_snapshot.py::test_generation_uses_initial_checkout_after_caller_edit[2-passed]
+FAILED tests/test_execution_snapshot.py::test_generation_uses_initial_checkout_after_caller_edit[7-failed]
+FAILED tests/test_execution_snapshot.py::test_unselected_dependency_is_captured_with_the_selected_source
+FAILED tests/test_execution_snapshot.py::test_repair_uses_same_input_as_baseline_and_generation
+4 failed, 4 passed in 54.97s

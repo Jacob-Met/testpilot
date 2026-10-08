@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "addopts=",
+    "tests/test_generated.py"
+  ],
+  "returncode": 1,
+  "stdout": "F                                                                        [100%]\n=================================== FAILURES ===================================\n________________________________ test_generated ________________________________\n\n    def test_generated():\n>       assert amount() == 7\nE       assert 2 == 7\nE        +  where 2 = amount()\n\ntests/test_generated.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_generated.py::test_generated - assert 2 == 7\n1 failed in 0.05s\n",
+  "stderr": ""
+}

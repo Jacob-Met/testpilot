@@ -30,6 +30,7 @@ diff ──► diff.py (unified diff → changed lines → ast functions)
 
 Design choices:
 
+* **One captured project per run.** TestPilot reads selected functions and runs baseline, generation, and repairs against the same captured project input. Every pytest phase still gets a fresh disposable copy, so its writes do not change later phases. New test paths and module names are reserved against both the captured input and the caller's current checkout. The initial copy is not atomic, and external runtime dependencies are not frozen. See [Captured project execution](docs/EXECUTION_SNAPSHOT.md) for the boundary and link behavior.
 * **Tests are not bent to fit buggy code.** The repair prompt lets the model say `VERDICT: CODE_BUG` instead of weakening an assertion. The loop then stops with status `suspected_code_bug` and keeps the failing tests in the patch, since those tests are the bug report.
 * **Planner/editor routing.** One planning call goes to the large model. Generation and repair go to the small, fast model. Routing is set in `RoutingConfig`.
 * **Generated files are confined** to `tests/**/test_*.py`. Any path containing `..`, an absolute path, or an unexpected name is rewritten. The sandbox also refuses writes outside its temp dir.

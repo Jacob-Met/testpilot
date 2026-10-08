@@ -26,12 +26,11 @@ from collections.abc import Sequence
 from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
 
-from .diff import ChangedFunction, changed_functions, is_test_path, parse_unified_diff
+from .diff import ChangedFunction, changed_functions
 from .html_report import render_html_report
 from .model import ChatClient, ModelError, RoutingConfig, Usage
 from .sandbox import IGNORE, SandboxResult, run_pytest
-from .targets import TargetSelectionError, resolve_targets, selection_record
-from .snapshot import capture_project
+from .targets import resolve_targets, selection_record
 
 SYSTEM_PLANNER = (
     "You are TestPilot's planner. Given changed Python functions from a pull request, "
@@ -218,38 +217,28 @@ def _repository_module_names(repo: Path) -> set[str]:
 
 
 def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, str],
-                     aliases: dict[str, str], *,
-                     reserve_repo: Path | None = None) -> tuple[dict[str, str], list[str]]:
+                     aliases: dict[str, str]) -> tuple[dict[str, str], list[str]]:
     """Apply a partial repair, reserving repository paths and pytest module names.
 
     Keep aliases for renamed suggestions so a repair using either the original
     suggestion or the displayed generated path updates the same generated file.
     """
-    roots = (repo,) if reserve_repo is None else (repo, reserve_repo)
-
-    def occupied(rel: str) -> bool:
-        return any(_path_occupied(root, rel) for root in roots)
-
-    def module_names(rel: str) -> set[str]:
-        return {_pytest_module_name(root, rel) for root in roots}
-
     merged, remapped = dict(current), dict(aliases)
     reserved = set(current) | set(incoming) | set(aliases.values())
-    reserved_modules = {name for rel in reserved for name in module_names(rel)}
-    occupied_modules = {name for root in roots for name in _repository_module_names(root)}
-    occupied_modules.update(name for rel in current for name in module_names(rel))
+    reserved_modules = {_pytest_module_name(repo, rel) for rel in reserved}
+    occupied_modules = _repository_module_names(repo)
+    occupied_modules.update(_pytest_module_name(repo, rel) for rel in current)
     updates: dict[str, str] = {}
     warnings: list[str] = []
     for rel, content in incoming.items():
         target = aliases.get(rel, rel)
-        path_conflict = target not in current and occupied(target)
+        path_conflict = target not in current and _path_occupied(repo, target)
         module_conflict = (target not in current
-                           and bool(module_names(target) & occupied_modules))
+                           and _pytest_module_name(repo, target) in occupied_modules)
         if path_conflict or module_conflict:
-            for root in roots:
-                test_root = root / "tests"
-                if test_root.is_symlink() or (test_root.exists() and not test_root.is_dir()):
-                    raise _GeneratedPathConflict("cannot add generated tests: repository 'tests' is not a regular directory")
+            test_root = repo / "tests"
+            if test_root.is_symlink() or (test_root.exists() and not test_root.is_dir()):
+                raise _GeneratedPathConflict("cannot add generated tests: repository 'tests' is not a regular directory")
             # Path conflicts retain the safe root fallback; import-name-only
             # conflicts keep local fixtures and relative imports in their scope.
             parent = PurePosixPath("tests") if path_conflict else PurePosixPath(target).parent
@@ -258,9 +247,9 @@ def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, s
             while True:
                 tag = "" if suffix == 1 else f"_{suffix}"
                 target = str(parent / f"{stem}_testpilot{tag}.py")
-                modules = module_names(target)
-                if (target not in reserved and not occupied(target)
-                        and not modules & occupied_modules and not modules & reserved_modules):
+                module = _pytest_module_name(repo, target)
+                if (target not in reserved and not _path_occupied(repo, target)
+                        and module not in occupied_modules and module not in reserved_modules):
                     break
                 suffix += 1
         if target != rel:
@@ -270,12 +259,11 @@ def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, s
         updates[target] = content
         remapped[rel] = target
         reserved.add(target)
-        modules = module_names(target)
-        reserved_modules.update(modules)
-        occupied_modules.update(modules)
+        module = _pytest_module_name(repo, target)
+        reserved_modules.add(module)
+        occupied_modules.add(module)
         merged[target] = content
-    for root in roots:
-        _require_additions(root, merged)
+    _require_additions(repo, merged)
     aliases.update(remapped)
     return merged, warnings
 
@@ -425,30 +413,10 @@ class TestPilot:
     def run(self, repo: str | Path, diff_text: str, *,
             targets: Sequence[str] | None = None) -> LoopResult:
         repo = Path(repo)
-        selection = selection_record(diff_text, targets) if targets is not None else None
-        if selection is None:
-            source_paths = [change.path for change in parse_unified_diff(diff_text)
-                            if not change.is_deleted and change.path.endswith(".py")
-                            and not is_test_path(change.path)]
-            if not source_paths or not repo.is_dir():
-                funcs = changed_functions(repo, diff_text)
-                return self._run_selected(repo, repo, funcs, diff_text, selection)
-        else:
-            if not repo.is_dir():
-                raise TargetSelectionError(f"repository is not a directory: {str(repo)!r}")
-            source_paths = [spec.rpartition("::")[0] for spec in selection["requested"]
-                            if "::" in spec]
-        with capture_project(repo, source_paths) as captured:
-            funcs = (changed_functions(captured.selection_root, diff_text) if selection is None
-                     else resolve_targets(captured.selection_root, diff_text, selection["requested"]))
-            execution = captured.materialize() if funcs else captured.selection_root
-            return self._run_selected(repo, execution, funcs, diff_text, selection,
-                                      reserve_repo=captured.selection_root)
-
-    def _run_selected(self, repo: Path, execution_repo: Path, funcs: list[ChangedFunction],
-                      diff_text: str, selection: dict | None, *,
-                      reserve_repo: Path | None = None) -> LoopResult:
         ledger = Ledger(self.routing, self.max_total_tokens)
+        selection = selection_record(diff_text, targets) if targets is not None else None
+        funcs = (changed_functions(repo, diff_text) if selection is None
+                 else resolve_targets(repo, diff_text, selection["requested"]))
         context = f"Changed functions:\n\n{_functions_block(funcs)}"
         planner_system, editor_system, repair_system = SYSTEM_PLANNER, SYSTEM_EDITOR, SYSTEM_REPAIR
         if selection is not None:
@@ -472,8 +440,6 @@ class TestPilot:
             patch = ""
             try:
                 _require_additions(repo, files)
-                if reserve_repo is not None:
-                    _require_additions(reserve_repo, files)
                 patch = make_patch(repo, files, additions_only=True)
             except _GeneratedPathConflict as e:
                 st, msg = "failed", str(e)
@@ -489,7 +455,7 @@ class TestPilot:
         if not funcs:
             return result("no_changes", "diff touches no Python functions outside tests")
 
-        baseline = self._run(execution_repo, None)
+        baseline = self._run(repo, None)
         try:
             plan = self._ask(ledger, "planner", planner_system,
                              f"{context}\n\nWrite the test plan.")
@@ -499,9 +465,9 @@ class TestPilot:
             if not proposed:
                 rounds.append(RoundRecord(0, "generate", [], None, warns + ["no python code block in reply"]))
                 return result("no_tests", "model produced no test files", baseline)
-            files, path_warnings = _merge_test_files(repo, files, proposed, aliases, reserve_repo=reserve_repo)
+            files, path_warnings = _merge_test_files(repo, files, proposed, aliases)
             warns.extend(path_warnings)
-            final = self._run(execution_repo, files)
+            final = self._run(repo, files)
             rounds.append(RoundRecord(0, "generate", sorted(files), final.to_dict(), warns, dict(files)))
 
             while not final.ok and repairs < self.max_repair_rounds:
@@ -518,9 +484,9 @@ class TestPilot:
                     warns.append("repair reply had no code block; keeping previous tests")
                     rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns))
                     continue
-                files, path_warnings = _merge_test_files(repo, files, new_files, aliases, reserve_repo=reserve_repo)
+                files, path_warnings = _merge_test_files(repo, files, new_files, aliases)
                 warns.extend(path_warnings)
-                final = self._run(execution_repo, files)
+                final = self._run(repo, files)
                 rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns, dict(files)))
             if final.ok:
                 status = "passed"
