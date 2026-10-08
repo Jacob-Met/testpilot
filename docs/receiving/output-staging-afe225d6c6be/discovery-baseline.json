@@ -1,0 +1,156 @@
+{
+  "status": "REPRODUCED_TWO_REAL_OS_WRITE_FAILURES_AND_ONE_NORMAL_CONTROL",
+  "repository": "Jacob-Met/testpilot",
+  "base": "e1d87442eeecc8cf1b44ee3547849d5c1d030876",
+  "tree": "1466e2d4a2a1f2ce4fe5293e55e0b7f7e0b3797a",
+  "writerBlob": "5d58f2dc991e3cdb98f476e08133048b02f91ca4",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "method": "Unmodified write_outputs with real LoopResult/make_patch; RLIMIT_FSIZE applies only inside a new owned child; no mocked writer, model, network or production file.",
+  "scopeLimit": "This proves ordinary output failures can truncate prior saved artifacts. It does not establish crash atomicity or prescribe a multi-file transaction design.",
+  "cases": [
+    {
+      "id": "ordinary_replacement",
+      "returncode": 0,
+      "stdout": "{\"status\": \"WRITTEN\", \"limit\": 0, \"patchBytesRequested\": 232}\n",
+      "stderr": "",
+      "before": {
+        "testpilot.patch": {
+          "bytes": 237,
+          "sha256": "a7c3a43962889bb1fd738773a087dc65a82cb0aad97f8a9f93e763e8151ce9af"
+        },
+        "report.json": {
+          "bytes": 879,
+          "sha256": "8e2cbff6b5cfb2fbc61cd1b9361b51603dfbf03db42d01fe67912175bfcf9226"
+        },
+        "report.md": {
+          "bytes": 524,
+          "sha256": "187ff07d3454aecff79a3d1dd2b92c4c42fcf1e520c240588ac69d50b1c9eef1"
+        },
+        "report.html": {
+          "bytes": 10875,
+          "sha256": "6960de49cc556484a9fe8ba720596bb3f31b60513ee5e9d11bf6bc66ae7f54c4"
+        }
+      },
+      "after": {
+        "testpilot.patch": {
+          "bytes": 232,
+          "sha256": "cf2e141ce1bccb62829823ce4f05998d192df8a79b858f9a79645fb24aaebadb"
+        },
+        "report.json": {
+          "bytes": 864,
+          "sha256": "4ccff81fe1ac3655c6240c5b2c11025611f762fffa1a4c43f12fa226bdff6783"
+        },
+        "report.md": {
+          "bytes": 519,
+          "sha256": "27cf7b863b55508bac1f4673cd8c94d57b3cd8e0cf5900c53e235c9dbb28d84a"
+        },
+        "report.html": {
+          "bytes": 10836,
+          "sha256": "58b1695cd4f0c317369fb53bdda0f20febb2428300d02cd3e879d08c145e3cb0"
+        }
+      },
+      "changedSavedArtifacts": [
+        "testpilot.patch",
+        "report.json",
+        "report.md",
+        "report.html"
+      ],
+      "interpretation": "Ordinary native replacement succeeds and publishes the new authored review."
+    },
+    {
+      "id": "early_patch_write_limit",
+      "returncode": 27,
+      "stdout": "{\"status\": \"OUTPUT_ERROR\", \"type\": \"OSError\", \"errno\": 27, \"error\": \"[Errno 27] File too large\", \"limit\": 4096, \"patchBytesRequested\": 13434}\n",
+      "stderr": "",
+      "before": {
+        "testpilot.patch": {
+          "bytes": 237,
+          "sha256": "a7c3a43962889bb1fd738773a087dc65a82cb0aad97f8a9f93e763e8151ce9af"
+        },
+        "report.json": {
+          "bytes": 879,
+          "sha256": "8e2cbff6b5cfb2fbc61cd1b9361b51603dfbf03db42d01fe67912175bfcf9226"
+        },
+        "report.md": {
+          "bytes": 524,
+          "sha256": "187ff07d3454aecff79a3d1dd2b92c4c42fcf1e520c240588ac69d50b1c9eef1"
+        },
+        "report.html": {
+          "bytes": 10875,
+          "sha256": "6960de49cc556484a9fe8ba720596bb3f31b60513ee5e9d11bf6bc66ae7f54c4"
+        }
+      },
+      "after": {
+        "testpilot.patch": {
+          "bytes": 4096,
+          "sha256": "7d175a575bdda7cafe9c17160160f8644ee7be07b3afde7560ce1e8e69e76d78"
+        },
+        "report.json": {
+          "bytes": 879,
+          "sha256": "8e2cbff6b5cfb2fbc61cd1b9361b51603dfbf03db42d01fe67912175bfcf9226"
+        },
+        "report.md": {
+          "bytes": 524,
+          "sha256": "187ff07d3454aecff79a3d1dd2b92c4c42fcf1e520c240588ac69d50b1c9eef1"
+        },
+        "report.html": {
+          "bytes": 10875,
+          "sha256": "6960de49cc556484a9fe8ba720596bb3f31b60513ee5e9d11bf6bc66ae7f54c4"
+        }
+      },
+      "changedSavedArtifacts": [
+        "testpilot.patch"
+      ],
+      "interpretation": "The actual writer failed after altering/truncating previously saved artifacts."
+    },
+    {
+      "id": "late_html_write_limit",
+      "returncode": 27,
+      "stdout": "{\"status\": \"OUTPUT_ERROR\", \"type\": \"OSError\", \"errno\": 27, \"error\": \"[Errno 27] File too large\", \"limit\": 4096, \"patchBytesRequested\": 232}\n",
+      "stderr": "",
+      "before": {
+        "testpilot.patch": {
+          "bytes": 237,
+          "sha256": "a7c3a43962889bb1fd738773a087dc65a82cb0aad97f8a9f93e763e8151ce9af"
+        },
+        "report.json": {
+          "bytes": 879,
+          "sha256": "8e2cbff6b5cfb2fbc61cd1b9361b51603dfbf03db42d01fe67912175bfcf9226"
+        },
+        "report.md": {
+          "bytes": 524,
+          "sha256": "187ff07d3454aecff79a3d1dd2b92c4c42fcf1e520c240588ac69d50b1c9eef1"
+        },
+        "report.html": {
+          "bytes": 10875,
+          "sha256": "6960de49cc556484a9fe8ba720596bb3f31b60513ee5e9d11bf6bc66ae7f54c4"
+        }
+      },
+      "after": {
+        "testpilot.patch": {
+          "bytes": 232,
+          "sha256": "cf2e141ce1bccb62829823ce4f05998d192df8a79b858f9a79645fb24aaebadb"
+        },
+        "report.json": {
+          "bytes": 864,
+          "sha256": "4ccff81fe1ac3655c6240c5b2c11025611f762fffa1a4c43f12fa226bdff6783"
+        },
+        "report.md": {
+          "bytes": 519,
+          "sha256": "27cf7b863b55508bac1f4673cd8c94d57b3cd8e0cf5900c53e235c9dbb28d84a"
+        },
+        "report.html": {
+          "bytes": 4096,
+          "sha256": "d76b01121eece90ab4933bc4ed6b95c25cf8a993e68d72e657e5bcb937950cbd"
+        }
+      },
+      "changedSavedArtifacts": [
+        "testpilot.patch",
+        "report.json",
+        "report.md",
+        "report.html"
+      ],
+      "interpretation": "The actual writer failed after altering/truncating previously saved artifacts."
+    }
+  ]
+}

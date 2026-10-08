@@ -16,8 +16,12 @@ Flow for one diff:
 from __future__ import annotations
 
 import difflib
+import errno
+import io
 import json
 import re
+import stat
+import tempfile
 from collections.abc import Sequence
 from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
@@ -537,12 +541,46 @@ def render_report(res: LoopResult) -> str:
 
 
 def write_outputs(res: LoopResult, out_dir: str | Path) -> dict[str, Path]:
+    """Prepare and stage a complete review before replacing its individual files."""
+    def text_bytes(text: str) -> bytes:
+        # Match Path.write_text's UTF-8 and native newline behavior.
+        with io.BytesIO() as raw:
+            with io.TextIOWrapper(raw, encoding="utf-8") as stream:
+                stream.write(text)
+                stream.flush()
+                return raw.getvalue()
+
+    contents = {
+        "patch": text_bytes(res.patch),
+        "json": text_bytes(json.dumps(res.to_dict(), indent=2)),
+        "md": text_bytes(render_report(res)),
+    }
+    contents["html"] = text_bytes(render_html_report(contents["json"], contents["patch"]))
+
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     paths = {"patch": out / "testpilot.patch", "json": out / "report.json", "md": out / "report.md",
              "html": out / "report.html"}
-    paths["patch"].write_text(res.patch, encoding="utf-8")
-    paths["json"].write_text(json.dumps(res.to_dict(), indent=2), encoding="utf-8")
-    paths["md"].write_text(render_report(res), encoding="utf-8")
-    paths["html"].write_text(render_html_report(paths["json"].read_bytes(), paths["patch"].read_bytes()), encoding="utf-8")
+    modes = {}
+    for key, path in paths.items():
+        try:
+            mode = path.lstat().st_mode
+        except FileNotFoundError:
+            continue
+        if not stat.S_ISREG(mode):
+            raise OSError(errno.EINVAL, "refusing to replace a non-regular output file", str(path))
+        modes[key] = stat.S_IMODE(mode)
+
+    # Staging is on the output filesystem. No final path changes until every
+    # content write and permission update has finished successfully.
+    with tempfile.TemporaryDirectory(prefix=".testpilot-", dir=out) as directory:
+        staged = {key: Path(directory) / path.name for key, path in paths.items()}
+        for key, path in staged.items():
+            path.write_bytes(contents[key])
+            if key in modes:
+                path.chmod(modes[key])
+        # Each replacement is individual: later errors propagate without a
+        # whole-set rollback or a claim of safety against concurrent writers.
+        for key, path in paths.items():
+            staged[key].replace(path)
     return paths

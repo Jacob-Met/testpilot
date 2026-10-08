@@ -1,0 +1,829 @@
+{
+  "base": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "tree": "22da6a890c2befaf72d3826103538491b07793df",
+  "selected_count": 82,
+  "received": [
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c28355a11a7165add54220eb1d692ecb2951e5e9",
+      "size": 11350,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/c28355a11a7165add54220eb1d692ecb2951e5e9",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/LICENSE",
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5"
+    },
+    {
+      "path": "NOTICE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c9730c29774e26d5453549e8afb14fa4f354c3ae",
+      "size": 124,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/c9730c29774e26d5453549e8afb14fa4f354c3ae",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/NOTICE",
+      "sha256": "4564e24959bca812ed0fa34d42786012dddbed523c02dd1bb5bdf424262be344"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "size": 11550,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "source": "connector",
+      "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00"
+    },
+    {
+      "path": "eval/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "eval/cases/calc_clamp/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ed811d8a2b40d8ed14f0f67630d698942249e73",
+      "size": 179,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/9ed811d8a2b40d8ed14f0f67630d698942249e73",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/case.json",
+      "sha256": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4"
+    },
+    {
+      "path": "eval/cases/calc_clamp/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+      "size": 410,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/change.diff",
+      "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f"
+    },
+    {
+      "path": "eval/cases/calc_clamp/fix/calc.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+      "size": 361,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/fix/calc.py",
+      "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/calc.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+      "size": 361,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/repo/calc.py",
+      "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1113fca65a126c34c76e140a36970eaacc9ae1a7",
+      "size": 122,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/1113fca65a126c34c76e140a36970eaacc9ae1a7",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/repo/tests/test_existing.py",
+      "sha256": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a",
+      "size": 204,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/script/01_plan.md",
+      "sha256": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70616f283909d2165c9fe12a9501966b9d32804a",
+      "size": 435,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/70616f283909d2165c9fe12a9501966b9d32804a",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/script/02_tests.md",
+      "sha256": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb417bdba41ede38cbfe1dec31f851db9707b9f0",
+      "size": 265,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/eb417bdba41ede38cbfe1dec31f851db9707b9f0",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/calc_clamp/script/03_repair.md",
+      "sha256": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809"
+    },
+    {
+      "path": "eval/cases/durations_parse/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8c77d7cd969f494a9f623ae054ec2bb27d004fe",
+      "size": 203,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/e8c77d7cd969f494a9f623ae054ec2bb27d004fe",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/case.json",
+      "sha256": "4d34acbfe0b394ebfd33f28ebd30ba3f379b2c224c052a0dc274ee9555cbf807"
+    },
+    {
+      "path": "eval/cases/durations_parse/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7b385435b8f9188f087cbab2fb3f68db70d04fd",
+      "size": 905,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/b7b385435b8f9188f087cbab2fb3f68db70d04fd",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/change.diff",
+      "sha256": "1b10ead315afa383d22017c9a5f3a145bcb4989ed71f72070e1558bda739e16c"
+    },
+    {
+      "path": "eval/cases/durations_parse/fix/durations.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8be380d0000636bd189d9d6b33fd2977e21db8eb",
+      "size": 747,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8be380d0000636bd189d9d6b33fd2977e21db8eb",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/fix/durations.py",
+      "sha256": "867fef8ade3dfc064b3941254c87e5695bb05a512d7d78db5223ffc89483a077"
+    },
+    {
+      "path": "eval/cases/durations_parse/repo/durations.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d689768bb4de14d0f71da2d3055d67d0ac50417d",
+      "size": 749,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d689768bb4de14d0f71da2d3055d67d0ac50417d",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/repo/durations.py",
+      "sha256": "8b6d8b5f19cf2e2f0adf91d2c91110de35679768c3221c219cb851ab8a07b070"
+    },
+    {
+      "path": "eval/cases/durations_parse/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8afd3bf834bb4ad59afaca6517020ca088d607e8",
+      "size": 110,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8afd3bf834bb4ad59afaca6517020ca088d607e8",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/repo/tests/test_existing.py",
+      "sha256": "a0edeffa6c3b5aadeb2ce5766a960c34c6f8106540d2b9111115b96ca81e4b7d"
+    },
+    {
+      "path": "eval/cases/durations_parse/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19529156b5174ad357da5a1a13dfd11b8530ac54",
+      "size": 167,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/19529156b5174ad357da5a1a13dfd11b8530ac54",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/script/01_plan.md",
+      "sha256": "2de3d72511c0f4b83011dfb6ab13c3ff3bdf469e840345c667e9ac0c6516d448"
+    },
+    {
+      "path": "eval/cases/durations_parse/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fded6e04f06ef068c489c07a7068d20f5a5c0228",
+      "size": 422,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/fded6e04f06ef068c489c07a7068d20f5a5c0228",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/script/02_tests.md",
+      "sha256": "17d880653660fc6dc17b85cd4c1c65fd81d770336ac06527c33c81dbdd6dc257"
+    },
+    {
+      "path": "eval/cases/durations_parse/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74aa293f1c876391838516959b2c0780c00b5988",
+      "size": 303,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/74aa293f1c876391838516959b2c0780c00b5988",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/durations_parse/script/03_repair.md",
+      "sha256": "6d189ab37218914d07d101f029e1a5a0425fa2c49b54b8bbd95029a178aabb94"
+    },
+    {
+      "path": "eval/cases/inventory_cart/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e6527da884ed98babc351e312f1a7a920ba03b4",
+      "size": 226,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/5e6527da884ed98babc351e312f1a7a920ba03b4",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/case.json",
+      "sha256": "6d92e960146b3fbf8e3fd9c029dc689b74c61bf07ac95e97e1146e903c05fc5d"
+    },
+    {
+      "path": "eval/cases/inventory_cart/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca82007905abfd7a5467b71b4419325311341615",
+      "size": 647,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/ca82007905abfd7a5467b71b4419325311341615",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/change.diff",
+      "sha256": "895a28e5c4cb13087049e782e8fbf6d44640aed12ef368c4e4a046417448794e"
+    },
+    {
+      "path": "eval/cases/inventory_cart/fix/inventory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32b2a795938e9ce002d9616edc3c960c6068fce9",
+      "size": 563,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/32b2a795938e9ce002d9616edc3c960c6068fce9",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/fix/inventory.py",
+      "sha256": "387ef2e2214678ab739166b9ca2a47987597061a9f5d1bb956d78b147e57758e"
+    },
+    {
+      "path": "eval/cases/inventory_cart/repo/inventory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f891e5344f612f27af5aa11a2acd3e86fd7b0ae8",
+      "size": 557,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f891e5344f612f27af5aa11a2acd3e86fd7b0ae8",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/repo/inventory.py",
+      "sha256": "bd4c3899f7f83fccd3f0e8130c3d1e68f9a8e1c1ee65c23c413ec1cb8ccac663"
+    },
+    {
+      "path": "eval/cases/inventory_cart/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1ddbe7ed9edc7a6d2feee81903266035ca48c82",
+      "size": 149,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f1ddbe7ed9edc7a6d2feee81903266035ca48c82",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/repo/tests/test_existing.py",
+      "sha256": "e251d2afa00746c1fbc2073a38d0e905b5ea34b268c9ac59fab208eca03f480d"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f307d1c22f05049f9ad3c93eaca2e4ce55f08845",
+      "size": 172,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f307d1c22f05049f9ad3c93eaca2e4ce55f08845",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/script/01_plan.md",
+      "sha256": "5383918712270c82809557a9b26dba4a7e2e7eee8d2c3d4fa48a18c9039863d1"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "039e763633cfc00325f6c401daaa0e4b810eebf2",
+      "size": 484,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/039e763633cfc00325f6c401daaa0e4b810eebf2",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/script/02_tests.md",
+      "sha256": "217944db48ade991abf4d7a07f69d340281921f4790a9515a6c5b535b9debc87"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f651855d7235af99a7c3d16367c58724078ae13e",
+      "size": 544,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f651855d7235af99a7c3d16367c58724078ae13e",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/script/03_repair.md",
+      "sha256": "8774c985df09ea7ea54f629a09b033fc193b43031517f4904f15877ad95699db"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/04_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5df159083badebb299ccbe8cc18121b673711ae",
+      "size": 561,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/e5df159083badebb299ccbe8cc18121b673711ae",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/script/04_repair.md",
+      "sha256": "4dcc890a29fbdc2aadb3346f8dd2ae558ac7f491e75147f08a9c010e84f7903b"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/05_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17e99173c3736a29234302d1fc89d9db2dd4b79e",
+      "size": 545,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/17e99173c3736a29234302d1fc89d9db2dd4b79e",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/inventory_cart/script/05_repair.md",
+      "sha256": "6716e4327c9d74e466671ba9d1f35278d1a218235cddd0ca9f1ef4ca6613017b"
+    },
+    {
+      "path": "eval/cases/stats_median/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "402ef8747a370510ce05216b73094be6b7de45f2",
+      "size": 292,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/402ef8747a370510ce05216b73094be6b7de45f2",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/stats_median/case.json",
+      "sha256": "78dcab4d61bdc621ae29a94a1b8d0e4427f7d4d1227f11b3b1153a02f988bdac"
+    },
+    {
+      "path": "eval/cases/stats_median/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+      "size": 404,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/stats_median/change.diff",
+      "sha256": "bdfe8d3e68d25aa16ce75e9d8c1ad0613f6a52a90ffa34832430cd536dada2c3"
+    },
+    {
+      "path": "eval/cases/stats_median/fix/stats.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+      "size": 375,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/stats_median/fix/stats.py",
+      "sha256": "ca479b01a87b61238c2724cdc781c6e4a4443998930bcf8dae78e6a7a3070212"
+    },
+    {
+      "path": "eval/cases/stats_median/repo/stats.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a851be68344da385d18845063dbec48dbcd03894",
+      "size": 315,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/a851be68344da385d18845063dbec48dbcd03894",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/stats_median/repo/stats.py",
+      "sha256": "c06007181d71cee213650703be0f7cc139007a8f9c8838ec507f8de4c446a1ff"
+    },
+    {
+      "path": "eval/cases/stats_median/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "936573d9a8b3acec05f24c75a2834521b5214246",
+      "size": 77,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/936573d9a8b3acec05f24c75a2834521b5214246",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/stats_median/repo/tests/test_existing.py",
+      "sha256": "c696c91ceab9ea29fb4c54281e79197f26cd66063bce1e2e935288d5dc7a0405"
+    },
+    {
+      "path": "eval/cases/stats_median/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25590e1b7f8558603fe686c6dfdc9511709217a0",
+      "size": 106,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/25590e1b7f8558603fe686c6dfdc9511709217a0",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/stats_median/script/01_plan.md",
+      "sha256": "1aa952f3bc37dc3814f7abd7fa6845c52e830eb67c9b134c4201988d53f7bef0"
+    },
+    {
+      "path": "eval/cases/stats_median/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc7f01d3d45089bc09b00db9d20047982b29e767",
+      "size": 272,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/cc7f01d3d45089bc09b00db9d20047982b29e767",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/stats_median/script/02_tests.md",
+      "sha256": "be1e9485c5cb6dfff50150cfc037591ae9bd853a327cbfc7e031c358920e181f"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6eea56bb91c3cb07423cb9d681dcaf2c139a86de",
+      "size": 250,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6eea56bb91c3cb07423cb9d681dcaf2c139a86de",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/case.json",
+      "sha256": "37f86972e562856119609440acdecb6062b7f890e37d3e4a1553ff3b9121efa2"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f6ef24d9a525335d00059dc643a93f2989ed86c",
+      "size": 450,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8f6ef24d9a525335d00059dc643a93f2989ed86c",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/change.diff",
+      "sha256": "6c0367990a81f6002d5cc2ef5c2938b46dc059ce9b24f8073313c22370486481"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/fix/textutil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c457263eeed78526eb0f62eeca9d1f43c37cac1",
+      "size": 316,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/3c457263eeed78526eb0f62eeca9d1f43c37cac1",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/fix/textutil.py",
+      "sha256": "2c5c913389ae0b0729f7a320fe8ccc12631b8fb4ca49a27afa397556ee1eb732"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7202ac0197b97167ebd053779994dcc1bffd0d62",
+      "size": 111,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/7202ac0197b97167ebd053779994dcc1bffd0d62",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/repo/tests/test_existing.py",
+      "sha256": "f34d964b2f698475dda89512e26b25e013c72aba8e72b33fa0014ea019d3d42b"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/repo/textutil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf09213aa12166b429fccc0c0b9001257ee7225a",
+      "size": 315,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/cf09213aa12166b429fccc0c0b9001257ee7225a",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/repo/textutil.py",
+      "sha256": "39e7cf784c675450a5f673782ea036e0b4c3a823879a3a53d144c27ebb159a56"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4439261f884699e415b500fbbc6a659001298c59",
+      "size": 223,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/4439261f884699e415b500fbbc6a659001298c59",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/script/01_plan.md",
+      "sha256": "901eb8d95759cf344da2c75af09fb764aab768c5763dcab638cf8ab50dae3d81"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2adedf063d95738e0a8f357b8a0d91bdddc19a1b",
+      "size": 402,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/2adedf063d95738e0a8f357b8a0d91bdddc19a1b",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/script/02_tests.md",
+      "sha256": "ae26405a271d5686b9fd6b60e49d6bbfb52ce965581e45e81c55f184b88e909c"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae1fa9057d919551a35f80a89d5f8289696206fb",
+      "size": 483,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/ae1fa9057d919551a35f80a89d5f8289696206fb",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/script/03_repair.md",
+      "sha256": "efa5058d50ef53864ced31740f080c773adeec45e3c5c729576149c316fa0753"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/04_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f505ed69902154964b0c8906f6e2837ecfb5525",
+      "size": 262,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8f505ed69902154964b0c8906f6e2837ecfb5525",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/cases/textutil_slugify/script/04_repair.md",
+      "sha256": "ce3267d72db20d50f77700e3206220b7288fae2dce71b463047e30c205ccb5f1"
+    },
+    {
+      "path": "eval/harness.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dbff7d2ccbd477313d881f0e8da3c43249e5330",
+      "size": 6601,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/9dbff7d2ccbd477313d881f0e8da3c43249e5330",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/eval/harness.py",
+      "sha256": "e9230375dc7e1a66b575632476aa6afe92eeb062f71f5c8a1f0a69b6244ef028"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "size": 676,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "size": 390,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "source": "connector",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "size": 2943,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "source": "connector",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "size": 9396,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "source": "connector",
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "size": 20656,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "source": "connector",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "size": 24064,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "source": "connector",
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93"
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "size": 10175,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "source": "connector",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "size": 11877,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "source": "connector",
+      "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    {
+      "path": "tests/conftest.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "size": 144,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/tests/conftest.py",
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52"
+    },
+    {
+      "path": "tests/test_cli_python.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aef9a0af0f5a115f647e1af0b4a218592eb274e",
+      "size": 7941,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/2aef9a0af0f5a115f647e1af0b4a218592eb274e",
+      "source": "/workspace/scratch/8a3bbc65d9cd/production/testpilot-current-receiving/tests/test_cli_python.py",
+      "sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718"
+    },
+    {
+      "path": "tests/test_diff.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0d44306a12ce017ebdfa4ab7a973b6f680117a1",
+      "size": 3523,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/c0d44306a12ce017ebdfa4ab7a973b6f680117a1",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/tests/test_diff.py",
+      "sha256": "2c6b142c2e5862805f67be2efa8978fd21c7c9072910730e1aadc69c2e452387"
+    },
+    {
+      "path": "tests/test_diff_source_boundary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74f9ca4d4a31b9ca447f362ac3cbf594333d560f",
+      "size": 5521,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/74f9ca4d4a31b9ca447f362ac3cbf594333d560f",
+      "source": "/workspace/scratch/de626312ee85/coordination/testpilot/tests/test_diff_source_boundary.py",
+      "sha256": "f8442bb2e26a4cbdfa7b6320627c780a83264675959ddc6339bc88b57a6faec2"
+    },
+    {
+      "path": "tests/test_generated_test_preservation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f27d8ec63e4926b37bdfa1ac642d5cb77ae31c5",
+      "size": 11369,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/9f27d8ec63e4926b37bdfa1ac642d5cb77ae31c5",
+      "source": "/workspace/scratch/40547606f1cc/agents/continuity/composition/tests/test_generated_test_preservation.py",
+      "sha256": "f6efd91dc4554a6cc0d1c162ae41aeec25dc94d81bad3cc5c7cd61ea674cdab7"
+    },
+    {
+      "path": "tests/test_git_quoted_paths.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7935d1a61be31f035a65b32a191bf6da56e79211",
+      "size": 5892,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/7935d1a61be31f035a65b32a191bf6da56e79211",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/tests/test_git_quoted_paths.py",
+      "sha256": "57aba89eb29209b80d78b4e0aedcbd3d0d4a90b1a6269110909f09ddb1be1205"
+    },
+    {
+      "path": "tests/test_loop.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8540b31caf7c258e9345e62d11cd4796c5e92ba5",
+      "size": 5465,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8540b31caf7c258e9345e62d11cd4796c5e92ba5",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/tests/test_loop.py",
+      "sha256": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc"
+    },
+    {
+      "path": "tests/test_model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "761c6de8806cc1a3577d0332c78b845c012a1617",
+      "size": 3829,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/761c6de8806cc1a3577d0332c78b845c012a1617",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/tests/test_model.py",
+      "sha256": "df53d320ace855046c448d098bda05bf489f81236087618f60a88cff56929451"
+    },
+    {
+      "path": "tests/test_sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "size": 2545,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "source": "/workspace/scratch/40547606f1cc/testpilot-receiving/replay-checkout/tests/test_sandbox.py",
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+    },
+    {
+      "path": "tests/test_sandbox_deadline.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8ebce5a81205aad005e45a280aec898e3e89820",
+      "size": 4248,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d8ebce5a81205aad005e45a280aec898e3e89820",
+      "source": "/workspace/scratch/bd1abdb2f886/source_review/testpilot-encoding/baseline/tests/test_sandbox_deadline.py",
+      "sha256": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f149f5484cf7369f4f9569170cd450279c40994",
+      "size": 5275,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6f149f5484cf7369f4f9569170cd450279c40994",
+      "source": "connector exact e2285d68 path",
+      "sha256": "83caf8df097902120a0cfbd6adb897d5b6be7ba2407b0217606e7038599b5a5f"
+    },
+    {
+      "path": "tests/test_cli_diff_transport.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25017791488cf8dd3c7f95b9460d73d691ce8a06",
+      "size": 11507,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/25017791488cf8dd3c7f95b9460d73d691ce8a06",
+      "source": "connector exact e2285d68 path",
+      "sha256": "5748cd3aafbd5aa032b98d531a9091d4a91becdce187a514dafffcc271173bab"
+    },
+    {
+      "path": "tests/test_cli_targets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "281550909a8cce1067983199c5122e1bc5c0b78e",
+      "size": 10853,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/281550909a8cce1067983199c5122e1bc5c0b78e",
+      "source": "connector exact e2285d68 path",
+      "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082"
+    },
+    {
+      "path": "tests/test_coverage_reporting.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "size": 6636,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "source": "connector exact e2285d68 path",
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede"
+    },
+    {
+      "path": "tests/test_eval.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d711df703498c7e7f4935ca6fe2409e6fe447d1d",
+      "size": 1312,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d711df703498c7e7f4935ca6fe2409e6fe447d1d",
+      "source": "connector exact e2285d68 path",
+      "sha256": "d695f29a4c6eb08d201acb79d46973eb8e997fee8c3ef22102574b3db243997a"
+    },
+    {
+      "path": "tests/test_fenced_code_boundaries.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54c798f49b690d6365ec4de9b0ae78f9d99cd960",
+      "size": 2990,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/54c798f49b690d6365ec4de9b0ae78f9d99cd960",
+      "source": "connector exact e2285d68 path",
+      "sha256": "edff7f6dec6c754cdbd03efee84b342103bb1c43a8b614333e1ca83e75bfd91c"
+    },
+    {
+      "path": "tests/test_generated_collection.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8dacdd9f6c402cbed66b716e8ec396fb633ded9",
+      "size": 10208,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/a8dacdd9f6c402cbed66b716e8ec396fb633ded9",
+      "source": "connector exact e2285d68 path",
+      "sha256": "19905510581afe3b0b56883ea2268761eda100ce6fe585a58d83ad3f5742914b"
+    },
+    {
+      "path": "tests/test_generated_collection_compatibility.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0e1bbbd3aac5848ff478ceabe0019543f9ef518",
+      "size": 10935,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f0e1bbbd3aac5848ff478ceabe0019543f9ef518",
+      "source": "connector exact e2285d68 path",
+      "sha256": "011d5c8746d5606d11817a294dd6d699610068982f84076f2824f2321a38f3a3"
+    },
+    {
+      "path": "tests/test_generated_collection_receiving.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1007ff47fc6c536fb5c315904d00c21d0b0cb5d",
+      "size": 9055,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/b1007ff47fc6c536fb5c315904d00c21d0b0cb5d",
+      "source": "connector exact e2285d68 path",
+      "sha256": "2af73df91390e3b44526c5ba1e4d325fb48d99fb668d6d3d565668b8347c9a83"
+    },
+    {
+      "path": "tests/test_generated_module_identity.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86b15042ff870e7a6625338f24519502ce0b5aef",
+      "size": 8145,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/86b15042ff870e7a6625338f24519502ce0b5aef",
+      "source": "connector exact e2285d68 path",
+      "sha256": "14074eaad278b5b9b30b9ff764fe2a65757865e3a8ef4d210c2839754177c6cb"
+    },
+    {
+      "path": "tests/test_html_report.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "655c4ce97b5ffbd2fe81f5b602a2ca12388c27b7",
+      "size": 9811,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/655c4ce97b5ffbd2fe81f5b602a2ca12388c27b7",
+      "source": "connector exact e2285d68 path",
+      "sha256": "bb2d6b66ecf929ee6340ae6f39875a07e64dd8c5af2053944b16ad93aa7d6f5c"
+    },
+    {
+      "path": "tests/test_match_targets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "713fe67e06d0534da5b685159e0a36ed75eb0b8e",
+      "size": 7619,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/713fe67e06d0534da5b685159e0a36ed75eb0b8e",
+      "source": "connector exact e2285d68 path",
+      "sha256": "95935deb9d9627f073d6e000675b40c6eb87a1837742e0cb627cda9bf16b40e5"
+    },
+    {
+      "path": "tests/test_model_timeouts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc4e91e557586ea63f99355ac1611e1679989ff5",
+      "size": 10911,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/dc4e91e557586ea63f99355ac1611e1679989ff5",
+      "source": "connector exact e2285d68 path",
+      "sha256": "9a5160e63970c39081770e0d35ea0a7dc85a45fb2fd03bdd66aef8e1aef95f9c"
+    },
+    {
+      "path": "tests/test_patch_physical_lines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5a9ff15106d39c953cda3f783f64362634f7ad1",
+      "size": 3085,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f5a9ff15106d39c953cda3f783f64362634f7ad1",
+      "source": "connector exact e2285d68 path",
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b"
+    },
+    {
+      "path": "tests/test_physical_lines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d25916fd9bc0cf98647e2678ce942fa6f2d2ba1c",
+      "size": 3238,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d25916fd9bc0cf98647e2678ce942fa6f2d2ba1c",
+      "source": "connector exact e2285d68 path",
+      "sha256": "e848a0176525073aae5bd02ccc9588a12f582307597212d85db9faf396cf7952"
+    },
+    {
+      "path": "tests/test_python_source_encoding.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "903abd6db569a80e3a5a61d734bf376c0ac4c8dd",
+      "size": 5598,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/903abd6db569a80e3a5a61d734bf376c0ac4c8dd",
+      "source": "connector exact e2285d68 path",
+      "sha256": "85196e144916098af0fe677f01382eeb48c6f175008c76446756c438ee741b89"
+    },
+    {
+      "path": "tests/test_report_text_encoding.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44e7622672361ffad936e462b0996816c55d2ddd",
+      "size": 9330,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/44e7622672361ffad936e462b0996816c55d2ddd",
+      "source": "connector exact e2285d68 path",
+      "sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e"
+    }
+  ],
+  "missing": [],
+  "materialized_scope": "All current production Python, maintained tests, eval fixtures and harness, README/license/package configuration. The separate canonical tree pins all955 leaves; archived receipts/web-demo not copied."
+}
