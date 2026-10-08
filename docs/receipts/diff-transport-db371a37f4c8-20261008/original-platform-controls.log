@@ -1,0 +1,79 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_________ test_octal_filename_bytes_round_trip_through_the_filesystem __________
+
+repo = PosixPath('/Users/me/hamon-product-db371a37f4c8/pytest-of-me/pytest-1/test_octal_filename_bytes_roun0')
+
+    @pytest.mark.skipif(os.name != "posix", reason="arbitrary non-UTF-8 filenames require a POSIX filesystem")
+    def test_octal_filename_bytes_round_trip_through_the_filesystem(repo):
+        path = os.fsdecode(b"raw_\xff.py")
+>       track(repo, path)
+
+tests/test_git_quoted_paths.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_git_quoted_paths.py:36: in track
+    write(repo, path, content)
+tests/test_git_quoted_paths.py:32: in write
+    target.write_text(content, encoding="utf-8")
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:555: in write_text
+    return PathBase.write_text(self, data, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py:651: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/me/hamon-product-db371a37f4c8/pytest-of-me/pytest-1/test_octal_filename_bytes_roun0/raw_\udcff.py')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 92] Illegal byte sequence: '/Users/me/hamon-product-db371a37f4c8/pytest-of-me/pytest-1/test_octal_filename_bytes_roun0/raw_\udcff.py'
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: OSError
+___ test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch ___
+
+tmp_path = PosixPath('/Users/me/hamon-product-db371a37f4c8/pytest-of-me/pytest-1/test_real_pytest_success_write0')
+
+    @pytest.mark.skipif(os.name != "posix", reason="raw filename byte workflow requires POSIX")
+    def test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch(tmp_path):
+>       repo, diff, responses, before = raw_filename_repo(tmp_path)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_report_text_encoding.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_report_text_encoding.py:98: in raw_filename_repo
+    path.write_bytes(b"def measure(value):\n    return value + 1\n")
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py:641: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/me/hamon-product-db371a37f4c8/pytest-of-me/pytest-1/test_real_pytest_success_write0/repo/module\udcff.py')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 92] Illegal byte sequence: '/Users/me/hamon-product-db371a37f4c8/pytest-of-me/pytest-1/test_real_pytest_success_write0/repo/module\udcff.py'
+
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py:537: OSError
+=========================== short test summary info ============================
+FAILED tests/test_git_quoted_paths.py::test_octal_filename_bytes_round_trip_through_the_filesystem
+FAILED tests/test_report_text_encoding.py::test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch
+2 failed in 0.44s

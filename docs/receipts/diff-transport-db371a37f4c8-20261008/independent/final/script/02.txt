@@ -1,0 +1,5 @@
+```python path=tests/test_generated_value.py
+import importlib
+def test_generated_value():
+    assert importlib.import_module('計測').value() == ('€', 2)
+```

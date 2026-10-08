@@ -1,0 +1,27 @@
+{
+  "name": "actual-recheck-fixed",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "testpilot",
+    "recheck",
+    "--repo",
+    "/dev/shm/testpilot-recheck-r4-68e476e98b77/fixtures/fixed",
+    "--report",
+    "/home/jacob/testpilot-recheck-68e476e98b77/evidence/original-generated-run/report.json",
+    "--out",
+    "/dev/shm/testpilot-recheck-r4-68e476e98b77/evidence/current-fixed",
+    "--timeout",
+    "10"
+  ],
+  "cwd": "/dev/shm/testpilot-recheck-r4-68e476e98b77/source",
+  "started_at": "2026-10-08T14:12:01.442892+00:00",
+  "finished_at": "2026-10-08T14:12:02.082152+00:00",
+  "duration_s": 0.6392621260602027,
+  "exit": 0,
+  "stdout_sha256": "0ef90e96bf4119ddbb815c59e8a0e71968f3f66700d9c0d2cec6dd834545c681",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "actual-recheck-fixed.stdout",
+  "stderr": "actual-recheck-fixed.stderr"
+}

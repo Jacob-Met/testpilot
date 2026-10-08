@@ -1,0 +1,12 @@
+test_binary_stdin_works_with_an_explicit_strict_text_decoder (test_cli_diff_transport.RawDiffTransportTests.test_binary_stdin_works_with_an_explicit_strict_text_decoder) ... ok
+test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) ... ok
+test_one_diff_can_contain_multiple_source_encodings_and_a_quoted_path (test_cli_diff_transport.RawDiffTransportTests.test_one_diff_can_contain_multiple_source_encodings_and_a_quoted_path) ... ok
+test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) ... ok
+test_saved_diff_universal_newlines_remain_supported (test_cli_diff_transport.RawDiffTransportTests.test_saved_diff_universal_newlines_remain_supported) ... ok
+test_text_only_stdin_callers_remain_supported_without_generation (test_cli_diff_transport.RawDiffTransportTests.test_text_only_stdin_callers_remain_supported_without_generation) ... ok
+test_utf8_and_ascii_inputs_retain_route_parity (test_cli_diff_transport.RawDiffTransportTests.test_utf8_and_ascii_inputs_retain_route_parity) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 8.662s
+
+OK

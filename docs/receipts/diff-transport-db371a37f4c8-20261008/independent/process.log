@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/me/hamon-testpilot-receiving-db371a37f4c8/receive-console-codec.py", line 66, in <module>
+    assert r.returncode==0, (r.returncode,r.stdout,r.stderr)
+           ^^^^^^^^^^^^^^^
+AssertionError: (1, b'', b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 117, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 111, in main\n    print(render_report(res).split("\\n## Patch")[0])\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/encodings/cp1252.py", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: \'charmap\' codec can\'t encode characters in position 85-86: character maps to <undefined>\n')

@@ -1,0 +1,90 @@
+{
+  "schema": "testpilot.recheck/1",
+  "status": "failed",
+  "ok": false,
+  "repo": "/dev/shm/testpilot-recheck-r4-68e476e98b77/fixtures/buggy",
+  "python": "/usr/bin/python3",
+  "started_at": "2026-10-08T14:12:00.862847+00:00",
+  "finished_at": "2026-10-08T14:12:01.417095+00:00",
+  "source_report": {
+    "path": "/home/jacob/testpilot-recheck-68e476e98b77/evidence/original-generated-run/report.json",
+    "sha256": "0761bedf94965d7e8a3bfac072b5f0c3f50b854494821712c23f11f1c0fa82d2",
+    "recorded_status": "suspected_code_bug"
+  },
+  "test_files": {
+    "tests/test_calc_clamp.py": "import pytest\n\nfrom calc import clamp\n\n\ndef test_inside_range_unchanged():\n    assert clamp(5, 0, 10) == 5\n\n\ndef test_below_and_above():\n    assert clamp(-3, 0, 10) == 0\n    assert clamp(42, 0, 10) == 10\n\n\ndef test_boundaries():\n    assert clamp(0, 0, 10) == 0\n    assert clamp(10, 0, 10) == 10\n\n\ndef test_inverted_bounds_raise():\n    with pytest.raises(ValueError):\n        clamp(1, 10, 0)\n"
+  },
+  "retained_tests": [
+    {
+      "path": "tests/test_calc_clamp.py",
+      "bytes": 391,
+      "sha256": "3d2e55ce2b44a8b9b6c8849e60ba1caeaa9abedef8b70f00e1526db6e7f58073",
+      "placement": "temporary"
+    }
+  ],
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "duration_s": 0.551,
+    "timeout_s": 10.0,
+    "output": "FFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5\nFAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0\nFAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0\n3 failed, 3 passed in 0.06s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+        "outcome": "failed",
+        "message": "assert 10 == 5\n +  where 10 = clamp(5, 0, 10)\ndef test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_below_and_above",
+        "outcome": "failed",
+        "message": "assert 10 == 0\n +  where 10 = clamp(-3, 0, 10)\ndef test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_boundaries",
+        "outcome": "failed",
+        "message": "assert 10 == 0\n +  where 10 = clamp(0, 0, 10)\ndef test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_existing::test_add",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests.test_existing::test_mean",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "tests/test_calc_clamp.py"
+    ],
+    "junit_available": true,
+    "passed": 3,
+    "failed": 3,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 4 collected",
+    "generated": {
+      "collected": 4,
+      "passed": 1,
+      "failed": 3,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "model_calls": 0,
+  "scope": "Current selected-suite execution of exact retained tests; no new model calls or historical coverage comparison."
+}

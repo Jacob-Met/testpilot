@@ -25,18 +25,29 @@ def _python_executable(value: str) -> str:
     return str(path.parent.resolve() / path.name)
 
 
+def _read_diff(args) -> str:
+    """Receive raw diff bytes without imposing a source-file encoding on a hunk."""
+    if args.diff == "-":
+        raw = getattr(sys.stdin, "buffer", sys.stdin).read()
+    elif args.diff:
+        raw = Path(args.diff).read_bytes()
+    else:
+        raw = subprocess.run(
+            ["git", "-C", args.repo, "diff", args.git_base, "--", "*.py"],
+            check=True, capture_output=True,
+        ).stdout
+    if isinstance(raw, str):  # Direct callers may provide a text-only stream.
+        return raw
+    # Keep the former universal-newline behavior and preserve undecodable bytes.
+    # Selected Python source still uses its own encoding through tokenize.open.
+    text = raw.decode("utf-8", errors="surrogateescape")
+    return text.replace("\r\n", "\n").replace("\r", "\n")
+
+
 def _preview_targets(args) -> int:
     """Print the native selector's result without starting generation or tests."""
     try:
-        if args.diff == "-":
-            diff_text = sys.stdin.read()
-        elif args.diff:
-            diff_text = Path(args.diff).read_text(encoding="utf-8")
-        else:
-            diff_text = subprocess.run(
-                ["git", "-C", args.repo, "diff", args.git_base, "--", "*.py"],
-                check=True, capture_output=True, text=True,
-            ).stdout
+        diff_text = _read_diff(args)
         functions = changed_functions(args.repo, diff_text)
     except (OSError, ValueError, SyntaxError, subprocess.CalledProcessError) as exc:
         print(f"testpilot: cannot inspect targets: {exc}", file=sys.stderr)
@@ -94,13 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     if a.cmd == "targets":
         return _preview_targets(a)
 
-    if a.diff == "-":
-        diff_text = sys.stdin.read()
-    elif a.diff:
-        diff_text = Path(a.diff).read_text(encoding="utf-8")
-    else:
-        diff_text = subprocess.run(["git", "-C", a.repo, "diff", a.git_base, "--", "*.py"],
-                                   check=True, capture_output=True, text=True).stdout
+    diff_text = _read_diff(a)
     try:
         client = make_client(a.backend, script=a.script, base_url=a.base_url)
     except ModelError as e:

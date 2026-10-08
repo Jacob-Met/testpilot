@@ -1,0 +1,77 @@
+{
+  "status": "no_tests",
+  "changed_functions": [
+    {
+      "path": "\u8a08\u6e2c.py",
+      "module": "\u8a08\u6e2c",
+      "qualname": "value",
+      "lineno": 2,
+      "end_lineno": 3,
+      "changed_lines": [
+        3
+      ],
+      "source": "def value():\n    return '\u20ac', 2",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 0,
+  "test_files": {},
+  "tests_written": 0,
+  "final": null,
+  "patch": "",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 288,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 90,
+        "completion_tokens": 9,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 1,
+        "prompt_tokens": 150,
+        "completion_tokens": 39,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 90,
+        "completion_tokens": 9,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 150,
+        "completion_tokens": 39,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [],
+      "result": null,
+      "warnings": [
+        "no python code block in reply"
+      ],
+      "contents": {}
+    }
+  ],
+  "plan": "Check the changed tuple contract.\n",
+  "message": "model produced no test files",
+  "ok": false
+}

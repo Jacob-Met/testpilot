@@ -1,7 +1,7 @@
 # Saved-test recheck qualification
 
-The final source-only composition on accepted current main is recorded in [R3](r3/README.md). All five owned product files remain exact to accepted R2.
+The latest current-main CLI composition and bounded native checks are recorded in [R4](r4/README.md). It preserves the accepted raw-diff input owner and the exact reviewed recheck additions.
 
-[R2](r2/README.md) records the portable test-fixture repair and bounded current-collector controls. [R1](README-R1.md) preserves the original full focused qualification, negative controls and retained generated report. The previous [R2 index](README-R2.md) is retained verbatim.
+[R3](r3/README.md) retains the prior generation-only source composition and independent R2 acceptance. [R2](r2/README.md) retains the portable test-fixture repair and bounded collector checks. [R1](README-R1.md) preserves the original full focused qualification, negative controls and real generated report. Prior indexes are retained verbatim.
 
-The independent root source review and two actual forged-history CLI controls are retained under R3 with their original candidate-r2 source pins. R3 adds no native product execution or hosted-CI claim. Both native qualification archives remain immutable.
+Each native and hosted result keeps its actual source/checkout identity. Current R4 native work used explicitly volatile memory-backed storage because the home-volume guard stopped; the original durable R1/R2/R3 archives remain unchanged.

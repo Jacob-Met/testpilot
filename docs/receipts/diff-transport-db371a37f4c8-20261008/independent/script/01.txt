@@ -1,0 +1,1 @@
+Check the changed tuple contract.

@@ -1,0 +1,27 @@
+{
+  "name": "actual-recheck-buggy",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "testpilot",
+    "recheck",
+    "--repo",
+    "/dev/shm/testpilot-recheck-r4-68e476e98b77/fixtures/buggy",
+    "--report",
+    "/home/jacob/testpilot-recheck-68e476e98b77/evidence/original-generated-run/report.json",
+    "--out",
+    "/dev/shm/testpilot-recheck-r4-68e476e98b77/evidence/current-buggy",
+    "--timeout",
+    "10"
+  ],
+  "cwd": "/dev/shm/testpilot-recheck-r4-68e476e98b77/source",
+  "started_at": "2026-10-08T14:12:00.729514+00:00",
+  "finished_at": "2026-10-08T14:12:01.441511+00:00",
+  "duration_s": 0.7119947959436104,
+  "exit": 1,
+  "stdout_sha256": "669157ba98e5ab7aa20bb59a13e598e525dcb3627e00ef0a65e5a3a46f857bea",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "actual-recheck-buggy.stdout",
+  "stderr": "actual-recheck-buggy.stderr"
+}

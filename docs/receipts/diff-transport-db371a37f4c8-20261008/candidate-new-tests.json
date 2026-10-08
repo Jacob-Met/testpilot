@@ -1,0 +1,30 @@
+{
+  "stage": "candidate CLI, frozen receiving module",
+  "argv": [
+    "/usr/local/bin/python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_cli_diff_transport.py",
+    "-v"
+  ],
+  "returncode": 0,
+  "duration_s": 8.80492799996864,
+  "source_sha256": {
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "83caf8df097902120a0cfbd6adb897d5b6be7ba2407b0217606e7038599b5a5f",
+    "testpilot/_pytest_generated.py": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+    "testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "testpilot/loop.py": "df13bbcbad7efb2232ece001b68ce32c6582b70a4a999d5510b190419f128491",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+  },
+  "test_sha256": "5748cd3aafbd5aa032b98d531a9091d4a91becdce187a514dafffcc271173bab",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "29c082db2cf809a97053a3e8bf70e20946b7ffbce5bf914a17651cc6c7e576a4",
+  "source_unchanged": true
+}
