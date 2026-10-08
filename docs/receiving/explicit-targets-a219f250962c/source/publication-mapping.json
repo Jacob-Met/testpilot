@@ -1,0 +1,79 @@
+{
+  "schema": "testpilot.publication.mapping.v1",
+  "repository": "Jacob-Met/testpilot",
+  "canonical_parent": "f3b2135cad31852b599350564fe76dd160a6a522",
+  "canonical_parent_tree": "d0107a6f8b3b8cc00dadebc5f794060f275f3f5b",
+  "canonical_parent_leaves": 1041,
+  "native_source_commit": "00b63c8e03cc515160da1202331224167d12d253",
+  "native_source_tree": "d1ba76e3872a0e843821b799f8accb69aa32416d",
+  "native_receiving_parent": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "native_receiving_parent_tree": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+  "source_preimages": [
+    {
+      "path": "testpilot/targets.py",
+      "actualParentBlob": null,
+      "received631Blob": null,
+      "match": true
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "actualParentBlob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "received631Blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "match": true
+    },
+    {
+      "path": "testpilot/loop.py",
+      "actualParentBlob": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "received631Blob": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "match": true
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "actualParentBlob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "received631Blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "match": true
+    },
+    {
+      "path": "README.md",
+      "actualParentBlob": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "received631Blob": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "match": true
+    },
+    {
+      "path": "docs/EXPLICIT_TARGETS.md",
+      "actualParentBlob": null,
+      "received631Blob": null,
+      "match": true
+    },
+    {
+      "path": "tests/test_explicit_targets.py",
+      "actualParentBlob": null,
+      "received631Blob": null,
+      "match": true
+    },
+    {
+      "path": "tests/test_explicit_target_cli.py",
+      "actualParentBlob": null,
+      "received631Blob": null,
+      "match": true
+    }
+  ],
+  "preserve_all_other_current_parent_leaves": true,
+  "unchanged_parent_leaf_count": 1037,
+  "inherited_parent_change": {
+    "path": "testpilot/diff.py",
+    "previous_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+    "current_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+    "source": "https://github.com/Jacob-Met/testpilot/pull/32",
+    "previous_condition": "if parts and parts[0] in (\"src\", \"lib\"):",
+    "current_condition": "if parts and parts[0] == \"src\":",
+    "whole_file_equal_after_that_single_condition_replacement": true,
+    "qualification": "Owner source preserved as current parent; explicit resolver continues to reuse native functions_touching/module_name. Native target receiving remains pinned to631; complete published-tree CI is separate."
+  },
+  "independent": {
+    "packet_manifest_sha256": "17d33526a6b44439e691f9b5cc503d172c15be86a7d83e90867a1b209c8ff6b2",
+    "review_sha256": "7ce638499b5ede479e7b4aa59abffaaa94ae2c1bcc9b1405a06476c6d2a16ef8",
+    "result_sha256": "b47fab55bcc44de2179cfd10c91238b5d1557180d608e21ec6fb3768e4febdd7",
+    "disposition": "ACCEPT exact native00b source and receiving;6groups/23realcommands/3model calls incl repair; no live-model quality claim"
+  }
+}

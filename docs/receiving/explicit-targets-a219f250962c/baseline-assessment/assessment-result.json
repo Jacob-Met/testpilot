@@ -1,0 +1,198 @@
+{
+  "source_commit": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "qualification": "Exact-source read-only product assessment; disposable synthetic Git fixtures only",
+  "cases": [
+    {
+      "name": "module_constant",
+      "before_source": "LIMIT = 100\n\n\ndef accepts(amount):\n    return amount <= LIMIT\n",
+      "after_source": "LIMIT = 50\n\n\ndef accepts(amount):\n    return amount <= LIMIT\n",
+      "git_diff": "diff --git a/settings.py b/settings.py\nindex 5ce271c..1cce5bd 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 100\n+LIMIT = 50\n \n \n def accepts(amount):\n",
+      "function": "accepts",
+      "argument": 75,
+      "before_result": true,
+      "after_result": false,
+      "target_count": 0,
+      "targets": [],
+      "run": {
+        "exit": 1,
+        "status": "no_changes",
+        "message": "diff touches no Python functions outside tests",
+        "model_calls": 0,
+        "tokens": 0,
+        "generated_files": 0,
+        "report_sha256": "e5d1bb92c30c3ba4e074a064ae3f968d80e350be9386ddde3ce50df2d80592f7"
+      },
+      "fixture_bytes_unchanged": true
+    },
+    {
+      "name": "default_binding",
+      "before_source": "LIMIT: int = 100\n\n\ndef cap(amount, limit=LIMIT):\n    return min(amount, limit)\n",
+      "after_source": "LIMIT: int = 50\n\n\ndef cap(amount, limit=LIMIT):\n    return min(amount, limit)\n",
+      "git_diff": "diff --git a/settings.py b/settings.py\nindex 58bc7f8..5c1b648 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT: int = 100\n+LIMIT: int = 50\n \n \n def cap(amount, limit=LIMIT):\n",
+      "function": "cap",
+      "argument": 150,
+      "before_result": 100,
+      "after_result": 50,
+      "target_count": 0,
+      "targets": [],
+      "run": {
+        "exit": 1,
+        "status": "no_changes",
+        "message": "diff touches no Python functions outside tests",
+        "model_calls": 0,
+        "tokens": 0,
+        "generated_files": 0,
+        "report_sha256": "e5d1bb92c30c3ba4e074a064ae3f968d80e350be9386ddde3ce50df2d80592f7"
+      },
+      "fixture_bytes_unchanged": true
+    },
+    {
+      "name": "ordinary_function_edit",
+      "before_source": "LIMIT = 100\n\n\ndef accepts(amount):\n    return amount <= LIMIT\n",
+      "after_source": "LIMIT = 100\n\n\ndef accepts(amount):\n    return amount < LIMIT\n",
+      "git_diff": "diff --git a/settings.py b/settings.py\nindex 5ce271c..1e0bfab 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -2,4 +2,4 @@ LIMIT = 100\n \n \n def accepts(amount):\n-    return amount <= LIMIT\n+    return amount < LIMIT\n",
+      "function": "accepts",
+      "argument": 100,
+      "before_result": true,
+      "after_result": false,
+      "target_count": 1,
+      "targets": [
+        {
+          "path": "settings.py",
+          "module": "settings",
+          "qualname": "accepts",
+          "lineno": 4,
+          "end_lineno": 5,
+          "changed_lines": [
+            5
+          ],
+          "source": "def accepts(amount):\n    return amount < LIMIT",
+          "is_method": false
+        }
+      ],
+      "fixture_bytes_unchanged": true
+    }
+  ],
+  "commands": [
+    {
+      "label": "module_constant:targets",
+      "arguments": [
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/repo",
+        "--diff",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/change.diff",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"changed_functions\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "module_constant:run",
+      "arguments": [
+        "run",
+        "--repo",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/repo",
+        "--diff",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/script",
+        "--out",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/module_constant-run"
+      ],
+      "returncode": 1,
+      "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/module_constant-run/testpilot.patch, /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/module_constant-run/report.json, /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/module_constant-run/report.md, /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/module_constant-run/report.html\n",
+      "stderr": ""
+    },
+    {
+      "label": "module_constant:missing-explicit-targets",
+      "arguments": [
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/repo",
+        "--diff",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/change.diff",
+        "--target",
+        "settings.py::accepts"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run,targets} ...\ntestpilot: error: unrecognized arguments: --target settings.py::accepts\n"
+    },
+    {
+      "label": "module_constant:missing-explicit-run",
+      "arguments": [
+        "run",
+        "--repo",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/repo",
+        "--diff",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/change.diff",
+        "--target",
+        "settings.py::accepts",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/script",
+        "--out",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-module_constant-cv9pqad3/refused-explicit-output"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run,targets} ...\ntestpilot: error: unrecognized arguments: --target settings.py::accepts\n"
+    },
+    {
+      "label": "default_binding:targets",
+      "arguments": [
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-default_binding-p_zi87qq/repo",
+        "--diff",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-default_binding-p_zi87qq/change.diff",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"changed_functions\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "default_binding:run",
+      "arguments": [
+        "run",
+        "--repo",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-default_binding-p_zi87qq/repo",
+        "--diff",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-default_binding-p_zi87qq/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-default_binding-p_zi87qq/script",
+        "--out",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/default_binding-run"
+      ],
+      "returncode": 1,
+      "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/default_binding-run/testpilot.patch, /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/default_binding-run/report.json, /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/default_binding-run/report.md, /Users/me/hamon-testpilot-target-assessment-a219f250962c/current/default_binding-run/report.html\n",
+      "stderr": ""
+    },
+    {
+      "label": "ordinary_function_edit:targets",
+      "arguments": [
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-ordinary_function_edit-8kc1vvey/repo",
+        "--diff",
+        "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/fixture-ordinary_function_edit-8kc1vvey/change.diff",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"settings.py\",\n      \"module\": \"settings\",\n      \"qualname\": \"accepts\",\n      \"lineno\": 4,\n      \"end_lineno\": 5,\n      \"changed_lines\": [\n        5\n      ],\n      \"source\": \"def accepts(amount):\\n    return amount < LIMIT\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "source_files_unchanged": 8,
+  "actual_cli_calls": 7,
+  "all_private_git_fixtures_removed": true
+}

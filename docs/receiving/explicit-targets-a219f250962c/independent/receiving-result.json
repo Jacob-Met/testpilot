@@ -1,0 +1,1017 @@
+{
+  "schema": "testpilot.independent_explicit_targets.v1",
+  "started_at": 1791472093.252716,
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "source": "/Users/me/hamon-testpilot-explicit-targets-a219f250962c",
+  "baseline_source": "/Users/me/hamon-testpilot-target-assessment-a219f250962c/current/snapshot",
+  "free_bytes_before": 2145505280,
+  "commands": [
+    {
+      "label": "git-init",
+      "argv": [
+        "git",
+        "init",
+        "-q",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo"
+      ],
+      "returncode": 0,
+      "seconds": 0.03770787501707673,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "git-add",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "add",
+        "."
+      ],
+      "returncode": 0,
+      "seconds": 0.029113124939613044,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "git-commit",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "-c",
+        "user.name=HAMON receiving",
+        "-c",
+        "user.email=hamon-receiving@invalid.example",
+        "commit",
+        "-qm",
+        "Synthetic receiving baseline"
+      ],
+      "returncode": 0,
+      "seconds": 0.043260916019789875,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "actual-git-diff",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "diff",
+        "HEAD",
+        "--",
+        "*.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.019571332959458232,
+      "stdout": "diff --git a/settings.py b/settings.py\nindex 6a8ed7c..572bbe2 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 10\n+LIMIT = 7\n \n \n def accepts(amount):\n@@ -6,7 +6,7 @@ def accepts(amount):\n \n \n def ignored(amount):\n-    return amount + 5\n+    return amount + 6\n \n \n class Policy:\n",
+      "stderr": ""
+    },
+    {
+      "label": "default-baseline",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--git-base",
+        "HEAD",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 0.19371374999172986,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"settings.py\",\n      \"module\": \"settings\",\n      \"qualname\": \"ignored\",\n      \"lineno\": 8,\n      \"end_lineno\": 9,\n      \"changed_lines\": [\n        9\n      ],\n      \"source\": \"def ignored(amount):\\n    return amount + 6\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "default-candidate",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--git-base",
+        "HEAD",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 0.17557308299001306,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"settings.py\",\n      \"module\": \"settings\",\n      \"qualname\": \"ignored\",\n      \"lineno\": 8,\n      \"end_lineno\": 9,\n      \"changed_lines\": [\n        9\n      ],\n      \"source\": \"def ignored(amount):\\n    return amount + 6\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "explicit-preview",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--git-base",
+        "HEAD",
+        "--target",
+        "settings.py::Policy.cap",
+        "--target",
+        "settings.py::accepts",
+        "--target",
+        "settings.py::Policy.cap",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 0.17145483393687755,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"settings.py\",\n      \"module\": \"settings\",\n      \"qualname\": \"Policy.cap\",\n      \"lineno\": 13,\n      \"end_lineno\": 15,\n      \"changed_lines\": [],\n      \"source\": \"    @staticmethod\\n    def cap(amount, limit=LIMIT):\\n        return min(amount, limit)\",\n      \"is_method\": true\n    },\n    {\n      \"path\": \"settings.py\",\n      \"module\": \"settings\",\n      \"qualname\": \"accepts\",\n      \"lineno\": 4,\n      \"end_lineno\": 5,\n      \"changed_lines\": [],\n      \"source\": \"def accepts(amount):\\n    return amount <= LIMIT\",\n      \"is_method\": false\n    }\n  ],\n  \"selection\": {\n    \"mode\": \"explicit\",\n    \"requested\": [\n      \"settings.py::Policy.cap\",\n      \"settings.py::accepts\",\n      \"settings.py::Policy.cap\"\n    ],\n    \"reason\": \"Caller selected these targets; no dependency inference was performed.\",\n    \"diff_text\": \"diff --git a/settings.py b/settings.py\\nindex 6a8ed7c..572bbe2 100644\\n--- a/settings.py\\n+++ b/settings.py\\n@@ -1,4 +1,4 @@\\n-LIMIT = 10\\n+LIMIT = 7\\n \\n \\n def accepts(amount):\\n@@ -6,7 +6,7 @@ def accepts(amount):\\n \\n \\n def ignored(amount):\\n-    return amount + 5\\n+    return amount + 6\\n \\n \\n class Policy:\\n\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "label": "explicit-run",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--git-base",
+        "HEAD",
+        "--target",
+        "settings.py::Policy.cap",
+        "--target",
+        "settings.py::accepts",
+        "--target",
+        "settings.py::Policy.cap",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--rounds",
+        "1",
+        "--timeout",
+        "15",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/native-run"
+      ],
+      "returncode": 0,
+      "seconds": 3.177388541982509,
+      "stdout": "# TestPilot report: **passed**\n\n- Caller-selected functions: settings.py::Policy.cap, settings.py::accepts\n- Selection: Caller selected these targets; no dependency inference was performed.\n- Tests written: 2 in tests/test_selected.py\n- Repair rounds used: 1/1\n- Final run: 3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected in 0.736s\n- Coverage (total): 77.8% -> 100.0% (+22.2 pts)\n- Coverage (changed lines, n=0): None% -> None%\n- Tokens: 1199 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 265 in / 15 out\n  - `nvidia/Nemotron-3_5-Lightning`: 2 calls, 811 in / 108 out\n\nwrote /Users/me/testpilot-explicit-target-review-a219f250962c/run-01/native-run/testpilot.patch, /Users/me/testpilot-explicit-target-review-a219f250962c/run-01/native-run/report.json, /Users/me/testpilot-explicit-target-review-a219f250962c/run-01/native-run/report.md, /Users/me/testpilot-explicit-target-review-a219f250962c/run-01/native-run/report.html\n",
+      "stderr": ""
+    },
+    {
+      "label": "delivery-clone",
+      "argv": [
+        "git",
+        "clone",
+        "-q",
+        "--no-hardlinks",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/delivery"
+      ],
+      "returncode": 0,
+      "seconds": 0.06227783299982548,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "patch-check",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/delivery",
+        "apply",
+        "--check",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/native-run/testpilot.patch"
+      ],
+      "returncode": 0,
+      "seconds": 0.02265800000168383,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "patch-apply",
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/delivery",
+        "apply",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/native-run/testpilot.patch"
+      ],
+      "returncode": 0,
+      "seconds": 0.03403249999973923,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "installed-patch-pytest",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider"
+      ],
+      "returncode": 0,
+      "seconds": 0.20384329196531326,
+      "stdout": "...                                                                      [100%]\n3 passed in 0.00s\n",
+      "stderr": ""
+    },
+    {
+      "label": "refusal-0",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "settings.py::missing",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-0"
+      ],
+      "returncode": 2,
+      "seconds": 0.1339709999738261,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: no selectable function matches 'settings.py::missing'\n"
+    },
+    {
+      "label": "refusal-1",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "ambiguous.py::same",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-1"
+      ],
+      "returncode": 2,
+      "seconds": 0.12878104101400822,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: ambiguous target matches 2 definitions: 'ambiguous.py::same'\n"
+    },
+    {
+      "label": "refusal-2",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "tests/test_existing.py::test_existing_stays_in_run",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-2"
+      ],
+      "returncode": 2,
+      "seconds": 0.13953220890834928,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: target must be a Python source file outside tests: 'tests/test_existing.py::test_existing_stays_in_run'\n"
+    },
+    {
+      "label": "refusal-3",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "../outside.py::hidden",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-3"
+      ],
+      "returncode": 2,
+      "seconds": 0.14612337504513562,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: cannot inspect target '../outside.py::hidden': diff source must be repository-relative: '../outside.py'\n"
+    },
+    {
+      "label": "refusal-4",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/outside.py::hidden",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-4"
+      ],
+      "returncode": 2,
+      "seconds": 0.14638550009112805,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: cannot inspect target '/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/outside.py::hidden': diff source must be repository-relative: '/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/outside.py'\n"
+    },
+    {
+      "label": "refusal-5",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "outside_link.py::hidden",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-5"
+      ],
+      "returncode": 2,
+      "seconds": 0.14991300005931407,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: cannot inspect target 'outside_link.py::hidden': diff source resolves outside repository: 'outside_link.py'\n"
+    },
+    {
+      "label": "refusal-6",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "plain.txt::hidden",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-6"
+      ],
+      "returncode": 2,
+      "seconds": 0.1349534159526229,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: target must be a Python source file outside tests: 'plain.txt::hidden'\n"
+    },
+    {
+      "label": "refusal-7",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "badsyntax.py::broken",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-7"
+      ],
+      "returncode": 2,
+      "seconds": 0.13287641596980393,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: cannot inspect target 'badsyntax.py::broken': invalid syntax (badsyntax.py, line 1)\n"
+    },
+    {
+      "label": "refusal-8",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "settings.py",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-8"
+      ],
+      "returncode": 2,
+      "seconds": 0.1424293330637738,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: expected path.py::qualname: 'settings.py'\n"
+    },
+    {
+      "label": "refusal-9",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-c",
+        "\nimport json, os, pathlib, sys\nfrom testpilot import __main__ as cli\nfrom testpilot.model import ScriptedModel\nactual = cli.make_client\nseen = []\ndef record_client(*args, **kwargs):\n    client = actual(*args, **kwargs)\n    if not isinstance(client, ScriptedModel):\n        raise RuntimeError(\"Receiver admits only the actual ScriptedModel\")\n    seen.append(client)\n    return client\ncli.make_client = record_client\ntry:\n    code = cli.main(sys.argv[1:])\nfinally:\n    pathlib.Path(os.environ[\"TARGET_RECEIVER_CALLS\"]).write_text(\n        json.dumps([{\"type\": type(c).__name__, \"calls\": c.calls} for c in seen], ensure_ascii=True, indent=2) + \"\\n\",\n        encoding=\"utf-8\",\n    )\nraise SystemExit(code)\n",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/change.diff",
+        "--target",
+        "settings.py::",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/script",
+        "--out",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/refused-output-9"
+      ],
+      "returncode": 2,
+      "seconds": 0.14394554099999368,
+      "stdout": "",
+      "stderr": "testpilot: invalid target selection: expected path.py::qualname: 'settings.py::'\n"
+    },
+    {
+      "label": "literal-preview",
+      "argv": [
+        "/Users/me/testpilot-html-066deeadcc8b/venv/bin/python",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/repo",
+        "--diff",
+        "-",
+        "--target",
+        "latin1.py::caf\u00e9",
+        "--target",
+        "never_import.py::picked",
+        "--json"
+      ],
+      "returncode": 0,
+      "seconds": 0.1541122089838609,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"latin1.py\",\n      \"module\": \"latin1\",\n      \"qualname\": \"caf\\u00e9\",\n      \"lineno\": 4,\n      \"end_lineno\": 5,\n      \"changed_lines\": [],\n      \"source\": \"def caf\\u00e9(value):\\n    return value + 1\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"never_import.py\",\n      \"module\": \"never_import\",\n      \"qualname\": \"picked\",\n      \"lineno\": 3,\n      \"end_lineno\": 4,\n      \"changed_lines\": [],\n      \"source\": \"def picked(value):\\n    return value\",\n      \"is_method\": false\n    }\n  ],\n  \"selection\": {\n    \"mode\": \"explicit\",\n    \"requested\": [\n      \"latin1.py::caf\\u00e9\",\n      \"never_import.py::picked\"\n    ],\n    \"reason\": \"Caller selected these targets; no dependency inference was performed.\",\n    \"diff_text\": \"diff --git a/settings.py b/settings.py\\nindex 6a8ed7c..572bbe2 100644\\n--- a/settings.py\\n+++ b/settings.py\\n@@ -1,4 +1,4 @@\\n-LIMIT = 10\\n+LIMIT = 7\\n \\n \\n def accepts(amount):\\n@@ -6,7 +6,7 @@ def accepts(amount):\\n \\n \\n def ignored(amount):\\n-    return amount + 5\\n+    return amount + 6\\n \\n \\n class Policy:\\n\"\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "groups": [
+    {
+      "name": "default_selector_output_parity",
+      "pass": true,
+      "seconds": 0.36961191706359386,
+      "details": {
+        "exact_json_equal": true,
+        "default_targets": [
+          "ignored"
+        ]
+      }
+    },
+    {
+      "name": "explicit_preview_custody_and_order",
+      "pass": true,
+      "seconds": 0.1731045839842409,
+      "details": {
+        "caller_order": true,
+        "duplicates_once": true,
+        "unchanged_lines_empty": true,
+        "input_unchanged": true
+      }
+    },
+    {
+      "name": "actual_cli_generation_repair_and_prompt_context",
+      "pass": true,
+      "seconds": 3.1796726669417694,
+      "details": {
+        "actual_cli_main": true,
+        "observation_only_wrapper": true,
+        "native_model_calls": 3,
+        "all_prompts_contain_exact_diff_and_selected_source": true,
+        "existing_and_generated_suite_passed": true,
+        "source_unchanged": true
+      }
+    },
+    {
+      "name": "actual_patch_install_and_native_execution",
+      "pass": true,
+      "seconds": 0.3237298340536654,
+      "details": {
+        "patch_sha256": "9e53e5ac4daa21d8ee93a51c94a60aec14fbee520d48ef683517fc250a456800",
+        "actual_git_apply": true,
+        "installed_tests": 3,
+        "original_inputs_preserved": true
+      }
+    },
+    {
+      "name": "refusals_before_execution_or_generation",
+      "pass": true,
+      "seconds": 1.407257082988508,
+      "details": {
+        "cases": [
+          {
+            "target": "settings.py::missing",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "ambiguous.py::same",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "tests/test_existing.py::test_existing_stays_in_run",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "../outside.py::hidden",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "/Users/me/testpilot-explicit-target-review-a219f250962c/run-01/fixture-eg35j0kr/outside.py::hidden",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "outside_link.py::hidden",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "plain.txt::hidden",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "badsyntax.py::broken",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "settings.py",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          },
+          {
+            "target": "settings.py::",
+            "exit": 2,
+            "model_calls": 0,
+            "output_absent": true
+          }
+        ],
+        "source_and_outside_bytes_unchanged": true
+      }
+    },
+    {
+      "name": "encoded_source_and_read_only_stdin_preview",
+      "pass": true,
+      "seconds": 0.15451562509406358,
+      "details": {
+        "unicode_name_and_encoding_cookie": true,
+        "stdin_context_exact": true,
+        "selected_module_not_imported": true
+      }
+    }
+  ],
+  "qualification": "Native synthetic fixtures and actual ScriptedModel only; no live model quality claim",
+  "preview": {
+    "changed_functions": [
+      {
+        "path": "settings.py",
+        "module": "settings",
+        "qualname": "Policy.cap",
+        "lineno": 13,
+        "end_lineno": 15,
+        "changed_lines": [],
+        "source": "    @staticmethod\n    def cap(amount, limit=LIMIT):\n        return min(amount, limit)",
+        "is_method": true
+      },
+      {
+        "path": "settings.py",
+        "module": "settings",
+        "qualname": "accepts",
+        "lineno": 4,
+        "end_lineno": 5,
+        "changed_lines": [],
+        "source": "def accepts(amount):\n    return amount <= LIMIT",
+        "is_method": false
+      }
+    ],
+    "selection": {
+      "mode": "explicit",
+      "requested": [
+        "settings.py::Policy.cap",
+        "settings.py::accepts",
+        "settings.py::Policy.cap"
+      ],
+      "reason": "Caller selected these targets; no dependency inference was performed.",
+      "diff_text": "diff --git a/settings.py b/settings.py\nindex 6a8ed7c..572bbe2 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 10\n+LIMIT = 7\n \n \n def accepts(amount):\n@@ -6,7 +6,7 @@ def accepts(amount):\n \n \n def ignored(amount):\n-    return amount + 5\n+    return amount + 6\n \n \n class Policy:\n"
+    }
+  },
+  "native_result": {
+    "status": "passed",
+    "changed_functions": [
+      {
+        "path": "settings.py",
+        "module": "settings",
+        "qualname": "Policy.cap",
+        "lineno": 13,
+        "end_lineno": 15,
+        "changed_lines": [],
+        "source": "    @staticmethod\n    def cap(amount, limit=LIMIT):\n        return min(amount, limit)",
+        "is_method": true
+      },
+      {
+        "path": "settings.py",
+        "module": "settings",
+        "qualname": "accepts",
+        "lineno": 4,
+        "end_lineno": 5,
+        "changed_lines": [],
+        "source": "def accepts(amount):\n    return amount <= LIMIT",
+        "is_method": false
+      }
+    ],
+    "repair_rounds_used": 1,
+    "max_repair_rounds": 1,
+    "test_files": {
+      "tests/test_selected.py": "from settings import accepts, Policy\n\ndef test_selected_limit():\n    assert accepts(7) is True\n    assert accepts(8) is False\n\ndef test_selected_default():\n    assert Policy.cap(20) == 7\n"
+    },
+    "tests_written": 2,
+    "final": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.736,
+      "timeout_s": 15.0,
+      "output": "...                                                                      [100%]\n3 passed in 0.29s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing::test_existing_stays_in_run",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": null
+        },
+        {
+          "nodeid": "test_selected_limit",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_selected.py"
+        },
+        {
+          "nodeid": "test_selected_default",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_selected.py"
+        }
+      ],
+      "coverage": {
+        "percent_total": 100.0,
+        "files": {
+          "settings.py": {
+            "executed": [
+              1,
+              4,
+              5,
+              8,
+              9,
+              12,
+              13,
+              14,
+              15
+            ],
+            "missing": []
+          }
+        }
+      },
+      "generated_files": [
+        "tests/test_selected.py"
+      ],
+      "junit_available": true,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected",
+      "generated": {
+        "collected": 2,
+        "passed": 2,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "patch": "diff --git a/tests/test_selected.py b/tests/test_selected.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_selected.py\n@@ -0,0 +1,8 @@\n+from settings import accepts, Policy\n+\n+def test_selected_limit():\n+    assert accepts(7) is True\n+    assert accepts(8) is False\n+\n+def test_selected_default():\n+    assert Policy.cap(20) == 7\n",
+    "coverage": {
+      "total_before": 77.8,
+      "total_after": 100.0,
+      "total_delta": 22.2,
+      "changed_lines_executable": 0,
+      "changed_lines_before": null,
+      "changed_lines_after": null
+    },
+    "ledger": {
+      "total_tokens": 1199,
+      "total_cost_usd": 0.0,
+      "cost_is_complete": false,
+      "tokens_estimated": true,
+      "by_model": {
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "calls": 1,
+          "prompt_tokens": 265,
+          "completion_tokens": 15,
+          "cost_usd": 0.0
+        },
+        "nvidia/Nemotron-3_5-Lightning": {
+          "calls": 2,
+          "prompt_tokens": 811,
+          "completion_tokens": 108,
+          "cost_usd": 0.0
+        }
+      },
+      "entries": [
+        {
+          "role": "planner",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "prompt_tokens": 265,
+          "completion_tokens": 15,
+          "estimated": true,
+          "cost_usd": 0.0
+        },
+        {
+          "role": "editor",
+          "model": "nvidia/Nemotron-3_5-Lightning",
+          "prompt_tokens": 332,
+          "completion_tokens": 50,
+          "estimated": true,
+          "cost_usd": 0.0
+        },
+        {
+          "role": "repair",
+          "model": "nvidia/Nemotron-3_5-Lightning",
+          "prompt_tokens": 479,
+          "completion_tokens": 58,
+          "estimated": true,
+          "cost_usd": 0.0
+        }
+      ]
+    },
+    "rounds": [
+      {
+        "round": 0,
+        "kind": "generate",
+        "files": [
+          "tests/test_selected.py"
+        ],
+        "result": {
+          "returncode": 1,
+          "timed_out": false,
+          "duration_s": 0.619,
+          "timeout_s": 15.0,
+          "output": ".F.                                                                      [100%]\n=================================== FAILURES ===================================\n_____________________________ test_selected_limit ______________________________\n\n    def test_selected_limit():\n>       assert accepts(8) is True\nE       assert False is True\nE        +  where False = accepts(8)\n\ntests/test_selected.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED ../../../../tmp/testpilot-_07ufgwy/repo::test_selected_limit - assert ...\n1 failed, 2 passed in 0.29s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_existing_stays_in_run",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": null
+            },
+            {
+              "nodeid": "test_selected_limit",
+              "outcome": "failed",
+              "message": "assert False is True\n +  where False = accepts(8)\ndef test_selected_limit():\n>       assert accepts(8) is True\nE       assert False is True\nE        +  where False = accepts(8)\n\ntests/test_selected.py:4: AssertionError",
+              "generated_file": "tests/test_selected.py"
+            },
+            {
+              "nodeid": "test_selected_default",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": "tests/test_selected.py"
+            }
+          ],
+          "coverage": {
+            "percent_total": 100.0,
+            "files": {
+              "settings.py": {
+                "executed": [
+                  1,
+                  4,
+                  5,
+                  8,
+                  9,
+                  12,
+                  13,
+                  14,
+                  15
+                ],
+                "missing": []
+              }
+            }
+          },
+          "generated_files": [
+            "tests/test_selected.py"
+          ],
+          "junit_available": true,
+          "passed": 2,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0,
+          "ok": false,
+          "summary": "2 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 2 collected",
+          "generated": {
+            "collected": 2,
+            "passed": 1,
+            "failed": 1,
+            "error": 0,
+            "skipped": 0
+          }
+        },
+        "warnings": [],
+        "contents": {
+          "tests/test_selected.py": "from settings import accepts, Policy\n\ndef test_selected_limit():\n    assert accepts(8) is True\n\ndef test_selected_default():\n    assert Policy.cap(20) == 7\n"
+        }
+      },
+      {
+        "round": 1,
+        "kind": "repair",
+        "files": [
+          "tests/test_selected.py"
+        ],
+        "result": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.736,
+          "timeout_s": 15.0,
+          "output": "...                                                                      [100%]\n3 passed in 0.29s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_existing_stays_in_run",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": null
+            },
+            {
+              "nodeid": "test_selected_limit",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": "tests/test_selected.py"
+            },
+            {
+              "nodeid": "test_selected_default",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": "tests/test_selected.py"
+            }
+          ],
+          "coverage": {
+            "percent_total": 100.0,
+            "files": {
+              "settings.py": {
+                "executed": [
+                  1,
+                  4,
+                  5,
+                  8,
+                  9,
+                  12,
+                  13,
+                  14,
+                  15
+                ],
+                "missing": []
+              }
+            }
+          },
+          "generated_files": [
+            "tests/test_selected.py"
+          ],
+          "junit_available": true,
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected",
+          "generated": {
+            "collected": 2,
+            "passed": 2,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          }
+        },
+        "warnings": [],
+        "contents": {
+          "tests/test_selected.py": "from settings import accepts, Policy\n\ndef test_selected_limit():\n    assert accepts(7) is True\n    assert accepts(8) is False\n\ndef test_selected_default():\n    assert Policy.cap(20) == 7\n"
+        }
+      }
+    ],
+    "plan": "Pin only the caller-selected boundary and captured default.",
+    "message": "",
+    "selection": {
+      "mode": "explicit",
+      "requested": [
+        "settings.py::Policy.cap",
+        "settings.py::accepts",
+        "settings.py::Policy.cap"
+      ],
+      "reason": "Caller selected these targets; no dependency inference was performed.",
+      "diff_text": "diff --git a/settings.py b/settings.py\nindex 6a8ed7c..572bbe2 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 10\n+LIMIT = 7\n \n \n def accepts(amount):\n@@ -6,7 +6,7 @@ def accepts(amount):\n \n \n def ignored(amount):\n-    return amount + 5\n+    return amount + 6\n \n \n class Policy:\n"
+    },
+    "ok": true
+  },
+  "package_source_unchanged": true,
+  "baseline_source_unchanged": true,
+  "source_fingerprints": {
+    "__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    "__main__.py": {
+      "bytes": 7479,
+      "sha256": "319bc6e8b06615d657530eb35fa2f7f3e6a883a36c98ea1540fdf4c2815eac55"
+    },
+    "_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    "diff.py": {
+      "bytes": 9396,
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c"
+    },
+    "html_report.py": {
+      "bytes": 20982,
+      "sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6"
+    },
+    "loop.py": {
+      "bytes": 25406,
+      "sha256": "3ea786ae5466ebdd6087b03d829580c333882e6fd429aaf54099320b4aa0bb08"
+    },
+    "model.py": {
+      "bytes": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    "recheck.py": {
+      "bytes": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e"
+    },
+    "sandbox.py": {
+      "bytes": 12721,
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a"
+    },
+    "targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    }
+  },
+  "finished_at": 1791472099.009901,
+  "accepted": true
+}

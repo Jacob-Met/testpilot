@@ -1,0 +1,95 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "canonical_base": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "canonical_base_tree": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+  "source_commit": "00b63c8e03cc515160da1202331224167d12d253",
+  "source_tree": "d1ba76e3872a0e843821b799f8accb69aa32416d",
+  "scoped_base": "33a10cd5b756b8ade8768bd6f8da75f55da369c3",
+  "scope": "Exactly eight source/test/doc paths; source-history bundle is scoped custody, not canonical merge ancestry",
+  "files": [
+    {
+      "path": "README.md",
+      "before": {
+        "git_blob": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+        "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00"
+      },
+      "after": {
+        "git_blob": "3848e40614d7328eb5544a28f52cd6a75de38aa1",
+        "sha256": "9c646cbd14a07a5af79afd9a306202d402e2037db7e6557525d9e18387e27f5a",
+        "bytes": 12053
+      }
+    },
+    {
+      "path": "docs/EXPLICIT_TARGETS.md",
+      "before": null,
+      "after": {
+        "git_blob": "3cfe7a0370d48a1e86c6f7c49bb7508fbdfb8abd",
+        "sha256": "dabf34adc34d931749f04debe601fb8f2c6a0ab668278c8539926fb05c88cca8",
+        "bytes": 5497
+      }
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "before": {
+        "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+        "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84"
+      },
+      "after": {
+        "git_blob": "5686cb41d555890b906d2ea322149f0673e8049d",
+        "sha256": "319bc6e8b06615d657530eb35fa2f7f3e6a883a36c98ea1540fdf4c2815eac55",
+        "bytes": 7479
+      }
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "before": {
+        "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+        "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4"
+      },
+      "after": {
+        "git_blob": "2fcc6441473684c2f8bdd16d314e8b258de51edf",
+        "sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+        "bytes": 20982
+      }
+    },
+    {
+      "path": "testpilot/loop.py",
+      "before": {
+        "git_blob": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+        "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93"
+      },
+      "after": {
+        "git_blob": "8a567fb35f29dc242413df3678f5f63fe08caa4f",
+        "sha256": "3ea786ae5466ebdd6087b03d829580c333882e6fd429aaf54099320b4aa0bb08",
+        "bytes": 25406
+      }
+    },
+    {
+      "path": "testpilot/targets.py",
+      "before": null,
+      "after": {
+        "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+        "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+        "bytes": 5410
+      }
+    },
+    {
+      "path": "tests/test_explicit_target_cli.py",
+      "before": null,
+      "after": {
+        "git_blob": "d01e0dad0cb73fe1f54b6c88d8287792dd587869",
+        "sha256": "01eb0a6782448a59bbf876fa1d8cbf8398bb05b461f5875b4d125b0147ab3365",
+        "bytes": 1930
+      }
+    },
+    {
+      "path": "tests/test_explicit_targets.py",
+      "before": null,
+      "after": {
+        "git_blob": "438d1c23335d79d4151a198f7e3606595cd68785",
+        "sha256": "bd40f190a52195eed73145cbd0a721b0c555307dfd358ec1d795df3799026b1d",
+        "bytes": 5268
+      }
+    }
+  ]
+}

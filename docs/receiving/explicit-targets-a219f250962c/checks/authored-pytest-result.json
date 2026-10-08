@@ -1,0 +1,37 @@
+{
+  "command": [
+    "/Users/me/testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/authored-pytest-tmp",
+    "tests"
+  ],
+  "cwd": "/Users/me/hamon-testpilot-explicit-targets-a219f250962c",
+  "python": "/Users/me/testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+  "returncode": 1,
+  "duration_s": 25.187,
+  "source_unchanged": true,
+  "source_sha256": {
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/__main__.py": "95f80ec643e30659b6fb1623c303d17246a36e3f3c5cc59cc8723fd71cce3ee1",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/loop.py": "3ea786ae5466ebdd6087b03d829580c333882e6fd429aaf54099320b4aa0bb08",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c/testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "log_sha256": "8331450b67791e32c2c73cce33990b5445fc0213d9c471ac7eb3294abd3883ab",
+  "scope": "Selected existing regression modules plus authored explicit-target tests, not the entire canonical repository suite",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONPATH": "/Users/me/hamon-testpilot-explicit-targets-a219f250962c"
+  }
+}
