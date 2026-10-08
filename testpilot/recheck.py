@@ -7,6 +7,7 @@ original generation report.
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import math
 import os
@@ -18,6 +19,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path, PurePosixPath
 
+from .recheck_html import render_recheck_html
 from .sandbox import run_pytest
 
 SCHEMA = "testpilot.recheck/1"
@@ -225,10 +227,19 @@ def _output_destination(repo: str | Path, out_dir: str | Path) -> Path:
 def write_recheck_outputs(result: dict, out_dir: str | Path) -> dict[str, Path]:
     """Create separate results, leaving original reports and patches untouched."""
     out = _output_destination(result["repo"], out_dir)
+    # Match the existing UTF-8 text writer's native newline bytes, and embed
+    # those exact JSON artifact bytes in the separate passive reading page.
+    with io.BytesIO() as raw:
+        with io.TextIOWrapper(raw, encoding="utf-8") as stream:
+            stream.write(json.dumps(result, indent=2, ensure_ascii=True) + "\n")
+            stream.flush()
+            json_bytes = raw.getvalue()
+    page = render_recheck_html(json_bytes)
     out.mkdir(parents=True, exist_ok=False)
-    paths = {"md": out / "recheck.md", "json": out / "recheck.json"}
+    paths = {"md": out / "recheck.md", "json": out / "recheck.json", "html": out / "recheck.html"}
     paths["md"].write_text(render_recheck(result), encoding="utf-8")
-    paths["json"].write_text(json.dumps(result, indent=2, ensure_ascii=True) + "\n", encoding="utf-8")
+    paths["json"].write_bytes(json_bytes)
+    paths["html"].write_text(page, encoding="utf-8")
     return paths
 
 

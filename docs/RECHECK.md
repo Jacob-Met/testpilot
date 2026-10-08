@@ -80,6 +80,24 @@ the source generation report is overwritten. Recheck writes:
   `test_files`, and `model_calls: 0`.
 - `recheck.md`: a concise current-result summary with source and retained-file
   identity. It does not repeat the old model's diagnosis as a new conclusion.
+- `recheck.html`: a self-contained reading page with the current result, every
+  recorded test case and diagnostic, retained source and placement, timing,
+  selected Python and source-report identity. It needs no server or JavaScript.
+
+Open `recheck.html` directly and expand the case or source panels with a mouse,
+keyboard or touch. **Download exact recheck JSON** retains the sibling JSON
+artifact's exact bytes even when the HTML moves elsewhere. The page shows the
+old source status separately from the actual current result. Missing JUnit
+keeps case counts unavailable; an empty case list is not evidence of success.
+The recorded pytest output remains labelled as its last 3,000-character tail.
+Opening the page executes no tests, model calls, patch application or requests.
+
+Paths, test source and diagnostics are literal reading text. HTML-incompatible
+controls and isolated surrogates have visible Unicode escapes in that reading
+view; the JSON download retains the originals. Expand panels before printing
+the source or diagnostics you want. This page adds no historical coverage
+comparison, repository commit identity or guarantee against concurrent edits.
+The existing JSON and Markdown output bytes and names remain unchanged.
 
 | Exit | Meaning |
 | --- | --- |
