@@ -1,0 +1,29 @@
+"""Retain actual external-diff/textconv effects on the original CLI."""
+from pathlib import Path
+import hashlib,json,os,shlex,subprocess,sys,tempfile
+SOURCE=Path("/home/jacob/hamon-e46e74cdc4f4-testpilot")
+OUT=Path("/home/jacob/hamon-e46e74cdc4f4-testpilot-proof")
+env=dict(os.environ,GIT_CONFIG_NOSYSTEM="1",GIT_CONFIG_GLOBAL=os.devnull,PYTHONPATH=str(SOURCE),PYTHONDONTWRITEBYTECODE="1")
+def run(args):
+ p=subprocess.run([str(x) for x in args],env=env,capture_output=True,text=True,timeout=20)
+ return {"argv":[str(x) for x in args],"rc":p.returncode,"stdout":p.stdout,"stderr":p.stderr}
+cases=[]
+for mode in ("textconv","external"):
+ with tempfile.TemporaryDirectory(prefix="testpilot-diff-helper-") as td:
+  root=Path(td);repo=root/"project";repo.mkdir()
+  subject=repo/"subject.py";subject.write_text("def answer():\n    return 1\n")
+  if mode=="textconv":(repo/".gitattributes").write_text("*.py diff=testpilot-fixture\n")
+  for args in [("init","-q"),("add","."),("-c","user.name=TestPilot Fixture","-c","user.email=fixture@invalid.local","-c","commit.gpgsign=false","commit","-qm","before")]:
+   assert run(["git","-C",repo,*args])["rc"]==0
+  subject.write_text("def answer():\n    return 2\n")
+  marker=root/"called";helper=root/"helper.py"
+  helper.write_text("from pathlib import Path\nPath("+repr(str(marker))+").write_text('called')\nprint('unified diff is hidden by this harmless fixture')\n")
+  command=shlex.join([sys.executable,str(helper)])
+  key="diff.testpilot-fixture.textconv" if mode=="textconv" else "diff.external"
+  assert run(["git","-C",repo,"config",key,command])["rc"]==0
+  before=hashlib.sha256(subject.read_bytes()).hexdigest()
+  result=run([sys.executable,"-B","-m","testpilot","targets","--repo",repo,"--git-base","HEAD","--json"])
+  cases.append({"case":mode,"targets":result,"helper_executed":marker.exists(),"subject_preserved":hashlib.sha256(subject.read_bytes()).hexdigest()==before})
+receipt={"source_commit":"191cca4e416286a9e1fa4b5d5daf5fc30b936db6","cases":cases}
+(OUT/"original-git-helpers.json").write_text(json.dumps(receipt,indent=2)+"\n")
+print(json.dumps(receipt,indent=2))

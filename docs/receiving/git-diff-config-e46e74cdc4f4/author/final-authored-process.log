@@ -1,0 +1,281 @@
+/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py: OK
+/home/jacob/hamon-e46e74cdc4f4-testpilot/testpilot/__main__.py: OK
+Python 3.14.4
+b9c8268797fc34bed1dc9a6a89b1fd0cb44a885ee63595cf531bfa601b33990a  /home/jacob/hamon-e46e74cdc4f4-testpilot-baseline-final/testpilot/__main__.py
+01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975  /home/jacob/hamon-e46e74cdc4f4-testpilot/testpilot/__main__.py
+f31e4b275c06b1064ac6da89e7463e4647197ab9232d6df71a46fd8de162dd45  /home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py
+baseline_exit=1
+candidate_exit=0
+test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) ... 
+  test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'diff.noprefix': 'true'}) ... FAIL
+  test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'diff.mnemonicprefix': 'true'}) ... FAIL
+  test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'color.ui': 'always'}) ... FAIL
+  test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'diff.noprefix': 'true', 'diff.mnemonicprefix': 'true', 'color.ui': 'always'}) ... FAIL
+test_external_diff_config_and_environment_are_not_executed (__main__.GitDiffConfigurationTests.test_external_diff_config_and_environment_are_not_executed) ... 
+  test_external_diff_config_and_environment_are_not_executed (__main__.GitDiffConfigurationTests.test_external_diff_config_and_environment_are_not_executed) (route='config') ... FAIL
+  test_external_diff_config_and_environment_are_not_executed (__main__.GitDiffConfigurationTests.test_external_diff_config_and_environment_are_not_executed) (route='environment') ... FAIL
+test_generation_uses_the_same_raw_git_selection (__main__.GitDiffConfigurationTests.test_generation_uses_the_same_raw_git_selection) ... FAIL
+test_repository_textconv_is_not_executed (__main__.GitDiffConfigurationTests.test_repository_textconv_is_not_executed) ... FAIL
+test_unchanged_project_retains_the_empty_result (__main__.GitDiffConfigurationTests.test_unchanged_project_retains_the_empty_result) ... ok
+
+======================================================================
+FAIL: test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'diff.noprefix': 'true'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 100, in test_display_preferences_preserve_the_same_real_target
+    self.assert_target()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 82, in assert_target
+    self.assertEqual(self.preview(), [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+        "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "source": "def answer():\n    return 2", "is_method": False,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [] != [{'path': 'a/subject.py', 'module': 'a.sub[137 chars]lse}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'path': 'a/subject.py', 'module': 'a.subject', 'qualname': 'answer', 'lineno': 1, 'end_lineno': 2, 'changed_lines': [2], 'source': 'def answer():\n    return 2', 'is_method': False}
+
+- []
++ [{'changed_lines': [2],
++   'end_lineno': 2,
++   'is_method': False,
++   'lineno': 1,
++   'module': 'a.subject',
++   'path': 'a/subject.py',
++   'qualname': 'answer',
++   'source': 'def answer():\n    return 2'}]
+
+======================================================================
+FAIL: test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'diff.mnemonicprefix': 'true'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 100, in test_display_preferences_preserve_the_same_real_target
+    self.assert_target()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 82, in assert_target
+    self.assertEqual(self.preview(), [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+        "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "source": "def answer():\n    return 2", "is_method": False,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [] != [{'path': 'a/subject.py', 'module': 'a.sub[137 chars]lse}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'path': 'a/subject.py', 'module': 'a.subject', 'qualname': 'answer', 'lineno': 1, 'end_lineno': 2, 'changed_lines': [2], 'source': 'def answer():\n    return 2', 'is_method': False}
+
+- []
++ [{'changed_lines': [2],
++   'end_lineno': 2,
++   'is_method': False,
++   'lineno': 1,
++   'module': 'a.subject',
++   'path': 'a/subject.py',
++   'qualname': 'answer',
++   'source': 'def answer():\n    return 2'}]
+
+======================================================================
+FAIL: test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'color.ui': 'always'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 100, in test_display_preferences_preserve_the_same_real_target
+    self.assert_target()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 82, in assert_target
+    self.assertEqual(self.preview(), [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+        "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "source": "def answer():\n    return 2", "is_method": False,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [] != [{'path': 'a/subject.py', 'module': 'a.sub[137 chars]lse}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'path': 'a/subject.py', 'module': 'a.subject', 'qualname': 'answer', 'lineno': 1, 'end_lineno': 2, 'changed_lines': [2], 'source': 'def answer():\n    return 2', 'is_method': False}
+
+- []
++ [{'changed_lines': [2],
++   'end_lineno': 2,
++   'is_method': False,
++   'lineno': 1,
++   'module': 'a.subject',
++   'path': 'a/subject.py',
++   'qualname': 'answer',
++   'source': 'def answer():\n    return 2'}]
+
+======================================================================
+FAIL: test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) (settings={'diff.noprefix': 'true', 'diff.mnemonicprefix': 'true', 'color.ui': 'always'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 100, in test_display_preferences_preserve_the_same_real_target
+    self.assert_target()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 82, in assert_target
+    self.assertEqual(self.preview(), [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+        "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "source": "def answer():\n    return 2", "is_method": False,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [] != [{'path': 'a/subject.py', 'module': 'a.sub[137 chars]lse}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'path': 'a/subject.py', 'module': 'a.subject', 'qualname': 'answer', 'lineno': 1, 'end_lineno': 2, 'changed_lines': [2], 'source': 'def answer():\n    return 2', 'is_method': False}
+
+- []
++ [{'changed_lines': [2],
++   'end_lineno': 2,
++   'is_method': False,
++   'lineno': 1,
++   'module': 'a.subject',
++   'path': 'a/subject.py',
++   'qualname': 'answer',
++   'source': 'def answer():\n    return 2'}]
+
+======================================================================
+FAIL: test_external_diff_config_and_environment_are_not_executed (__main__.GitDiffConfigurationTests.test_external_diff_config_and_environment_are_not_executed) (route='config')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 138, in test_external_diff_config_and_environment_are_not_executed
+    self.assert_target()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 82, in assert_target
+    self.assertEqual(self.preview(), [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+        "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "source": "def answer():\n    return 2", "is_method": False,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [] != [{'path': 'a/subject.py', 'module': 'a.sub[137 chars]lse}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'path': 'a/subject.py', 'module': 'a.subject', 'qualname': 'answer', 'lineno': 1, 'end_lineno': 2, 'changed_lines': [2], 'source': 'def answer():\n    return 2', 'is_method': False}
+
+- []
++ [{'changed_lines': [2],
++   'end_lineno': 2,
++   'is_method': False,
++   'lineno': 1,
++   'module': 'a.subject',
++   'path': 'a/subject.py',
++   'qualname': 'answer',
++   'source': 'def answer():\n    return 2'}]
+
+======================================================================
+FAIL: test_external_diff_config_and_environment_are_not_executed (__main__.GitDiffConfigurationTests.test_external_diff_config_and_environment_are_not_executed) (route='environment')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 138, in test_external_diff_config_and_environment_are_not_executed
+    self.assert_target()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 82, in assert_target
+    self.assertEqual(self.preview(), [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+        "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "source": "def answer():\n    return 2", "is_method": False,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [] != [{'path': 'a/subject.py', 'module': 'a.sub[137 chars]lse}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'path': 'a/subject.py', 'module': 'a.subject', 'qualname': 'answer', 'lineno': 1, 'end_lineno': 2, 'changed_lines': [2], 'source': 'def answer():\n    return 2', 'is_method': False}
+
+- []
++ [{'changed_lines': [2],
++   'end_lineno': 2,
++   'is_method': False,
++   'lineno': 1,
++   'module': 'a.subject',
++   'path': 'a/subject.py',
++   'qualname': 'answer',
++   'source': 'def answer():\n    return 2'}]
+
+======================================================================
+FAIL: test_generation_uses_the_same_raw_git_selection (__main__.GitDiffConfigurationTests.test_generation_uses_the_same_raw_git_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 171, in test_generation_uses_the_same_raw_git_selection
+    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/0\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/testpilot-git-config-w_tttb0a/output/testpilot.patch, /tmp/testpilot-git-config-w_tttb0a/output/report.json, /tmp/testpilot-git-config-w_tttb0a/output/report.md, /tmp/testpilot-git-config-w_tttb0a/output/report.html\n'
+
+======================================================================
+FAIL: test_repository_textconv_is_not_executed (__main__.GitDiffConfigurationTests.test_repository_textconv_is_not_executed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 124, in test_repository_textconv_is_not_executed
+    self.assert_target()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 82, in assert_target
+    self.assertEqual(self.preview(), [{
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+        "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "source": "def answer():\n    return 2", "is_method": False,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    }])
+    ^^^
+AssertionError: Lists differ: [] != [{'path': 'a/subject.py', 'module': 'a.sub[137 chars]lse}]
+
+Second list contains 1 additional elements.
+First extra element 0:
+{'path': 'a/subject.py', 'module': 'a.subject', 'qualname': 'answer', 'lineno': 1, 'end_lineno': 2, 'changed_lines': [2], 'source': 'def answer():\n    return 2', 'is_method': False}
+
+- []
++ [{'changed_lines': [2],
++   'end_lineno': 2,
++   'is_method': False,
++   'lineno': 1,
++   'module': 'a.subject',
++   'path': 'a/subject.py',
++   'qualname': 'answer',
++   'source': 'def answer():\n    return 2'}]
+
+----------------------------------------------------------------------
+Ran 5 tests in 16.309s
+
+FAILED (failures=8)
+test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) ... ok
+test_external_diff_config_and_environment_are_not_executed (__main__.GitDiffConfigurationTests.test_external_diff_config_and_environment_are_not_executed) ... ok
+test_generation_uses_the_same_raw_git_selection (__main__.GitDiffConfigurationTests.test_generation_uses_the_same_raw_git_selection) ... ok
+test_repository_textconv_is_not_executed (__main__.GitDiffConfigurationTests.test_repository_textconv_is_not_executed) ... ok
+test_unchanged_project_retains_the_empty_result (__main__.GitDiffConfigurationTests.test_unchanged_project_retains_the_empty_result) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 8.391s
+
+OK

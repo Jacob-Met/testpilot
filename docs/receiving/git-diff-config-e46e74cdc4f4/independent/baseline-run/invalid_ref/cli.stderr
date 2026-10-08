@@ -1,0 +1,1 @@
+testpilot: cannot inspect targets: Command '['git', '-C', '/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/baseline-run/invalid_ref/repo', 'diff', 'missing-independent-receiver-ref', '--', '*.py']' returned non-zero exit status 128.

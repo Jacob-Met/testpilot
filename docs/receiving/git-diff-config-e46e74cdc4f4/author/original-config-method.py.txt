@@ -1,0 +1,33 @@
+"""Native real-Git witness for TestPilot's config-sensitive target discovery."""
+from pathlib import Path
+import hashlib,json,os,subprocess,sys,tempfile
+SOURCE=Path("/home/jacob/hamon-e46e74cdc4f4-testpilot")
+OUT=Path("/home/jacob/hamon-e46e74cdc4f4-testpilot-proof")
+OUT.mkdir(exist_ok=True)
+env=dict(os.environ, GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull,
+         PYTHONPATH=str(SOURCE),PYTHONDONTWRITEBYTECODE="1")
+def run(argv,cwd=None):
+    p=subprocess.run([str(x) for x in argv],cwd=cwd,env=env,capture_output=True,text=True,timeout=20)
+    return {"argv":[str(x) for x in argv],"rc":p.returncode,"stdout":p.stdout,"stderr":p.stderr}
+with tempfile.TemporaryDirectory(prefix="testpilot-git-config-") as td:
+    repo=Path(td)/"project";(repo/"a").mkdir(parents=True)
+    file=repo/"a/subject.py";file.write_text("def answer():\n    return 1\n")
+    for args in [("init","-q"),("add","."),("-c","user.name=TestPilot Fixture","-c","user.email=fixture@invalid.local","-c","commit.gpgsign=false","commit","-qm","baseline")]:
+        r=run(["git","-C",repo,*args]);assert r["rc"]==0,r
+    file.write_text("def answer():\n    return 2\n")
+    cases=[]
+    settings=[("default",None,None),("noprefix","diff.noprefix","true"),("mnemonic","diff.mnemonicprefix","true"),("color","color.ui","always"),("indicator","diff.outputIndicatorNew",">")]
+    source_before=hashlib.sha256(file.read_bytes()).hexdigest()
+    for label,key,value in settings:
+        if key:assert run(["git","-C",repo,"config",key,value])["rc"]==0
+        diff=run(["git","-C",repo,"diff","HEAD","--","*.py"])
+        result=run([sys.executable,"-B","-m","testpilot","targets","--repo",repo,"--git-base","HEAD","--json"])
+        cases.append({"case":label,"config":{key:value} if key else {},"diff":diff,"targets":result})
+        if key:assert run(["git","-C",repo,"config","--unset",key])["rc"]==0
+    result={"source_commit":run(["git","-C",SOURCE,"rev-parse","HEAD"])["stdout"].strip(),
+            "source_file_sha256":hashlib.sha256((SOURCE/"testpilot/__main__.py").read_bytes()).hexdigest(),
+            "python":sys.version,"git":run(["git","--version"])["stdout"].strip(),
+            "expected_path":"a/subject.py","expected_function":"answer","cases":cases,
+            "subject_preserved":hashlib.sha256(file.read_bytes()).hexdigest()==source_before}
+    (OUT/"original-git-config.json").write_text(json.dumps(result,indent=2)+"\n")
+    print(json.dumps({"source_commit":result["source_commit"],"cases":[{"case":c["case"],"rc":c["targets"]["rc"],"stdout":c["targets"]["stdout"]} for c in cases],"subject_preserved":result["subject_preserved"]},indent=2))

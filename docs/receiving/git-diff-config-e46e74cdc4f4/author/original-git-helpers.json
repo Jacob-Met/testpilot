@@ -1,0 +1,49 @@
+{
+  "source_commit": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "cases": [
+    {
+      "case": "textconv",
+      "targets": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/testpilot-diff-helper-a0_5s8na/project",
+          "--git-base",
+          "HEAD",
+          "--json"
+        ],
+        "rc": 0,
+        "stdout": "{\n  \"changed_functions\": []\n}\n",
+        "stderr": ""
+      },
+      "helper_executed": true,
+      "subject_preserved": true
+    },
+    {
+      "case": "external",
+      "targets": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/testpilot-diff-helper-ujg9yul7/project",
+          "--git-base",
+          "HEAD",
+          "--json"
+        ],
+        "rc": 0,
+        "stdout": "{\n  \"changed_functions\": []\n}\n",
+        "stderr": ""
+      },
+      "helper_executed": true,
+      "subject_preserved": true
+    }
+  ]
+}

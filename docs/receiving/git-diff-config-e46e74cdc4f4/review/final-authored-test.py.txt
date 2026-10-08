@@ -1,0 +1,184 @@
+"""Real-Git CLI regression checks for a stable source diff under user settings."""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from pathlib import Path
+import shlex
+import subprocess
+import sys
+import tempfile
+import unittest
+
+import testpilot
+
+PACKAGE_ROOT = Path(testpilot.__file__).resolve().parent.parent
+
+
+class GitDiffConfigurationTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix="testpilot-git-config-")
+        self.root = Path(self.temp.name)
+        self.repo = self.root / "project"
+        (self.repo / "a").mkdir(parents=True)
+        (self.repo / "tests").mkdir()
+        (self.repo / "a/__init__.py").write_text("", encoding="utf-8")
+        self.subject = self.repo / "a/subject.py"
+        self.subject.write_text("def answer():\n    return 1\n", encoding="utf-8")
+        (self.repo / "tests/test_existing.py").write_text(
+            "from a.subject import answer\n\ndef test_existing():\n    assert answer() == 2\n",
+            encoding="utf-8",
+        )
+        self.env = {key: value for key, value in os.environ.items()
+                    if not key.startswith("GIT_")}
+        self.env.update(
+            GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull,
+            PYTHONPATH=str(PACKAGE_ROOT), PYTHONDONTWRITEBYTECODE="1",
+        )
+        self.git("init", "-q")
+        self.git("add", ".")
+        self.git("-c", "user.name=TestPilot Fixture",
+                 "-c", "user.email=fixture@invalid.local",
+                 "-c", "commit.gpgsign=false", "commit", "-qm", "before")
+        self.subject.write_text("def answer():\n    return 2\n", encoding="utf-8")
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    def process(self, args, *, data=None):
+        return subprocess.run(
+            [str(arg) for arg in args], cwd=PACKAGE_ROOT, env=self.env,
+            input=data, capture_output=True, timeout=30,
+        )
+
+    def git(self, *args):
+        result = self.process(["git", "-C", self.repo, *args])
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        return result.stdout
+
+    def state(self):
+        return {
+            path.relative_to(self.repo).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in self.repo.rglob("*")
+            if path.is_file() and (
+                ".git" not in path.relative_to(self.repo).parts
+                or path.relative_to(self.repo).as_posix() in {".git/config", ".git/index"}
+            )
+        }
+
+    def preview(self):
+        before = self.state()
+        result = self.process([
+            sys.executable, "-B", "-m", "testpilot", "targets", "--repo", self.repo,
+            "--git-base", "HEAD", "--json",
+        ])
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, b"")
+        self.assertEqual(self.state(), before)
+        return json.loads(result.stdout)["changed_functions"]
+
+    def assert_target(self):
+        self.assertEqual(self.preview(), [{
+            "path": "a/subject.py", "module": "a.subject", "qualname": "answer",
+            "lineno": 1, "end_lineno": 2, "changed_lines": [2],
+            "source": "def answer():\n    return 2", "is_method": False,
+        }])
+
+    def test_display_preferences_preserve_the_same_real_target(self):
+        cases = [
+            {},
+            {"diff.noprefix": "true"},
+            {"diff.mnemonicprefix": "true"},
+            {"color.ui": "always"},
+            {"diff.noprefix": "true", "diff.mnemonicprefix": "true", "color.ui": "always"},
+        ]
+        for settings in cases:
+            with self.subTest(settings=settings):
+                for key, value in settings.items():
+                    self.git("config", key, value)
+                self.assert_target()
+                for key in settings:
+                    self.git("config", "--unset", key)
+
+    def helper(self):
+        marker = self.root / "helper-called"
+        script = self.root / "custom_diff.py"
+        script.write_text(
+            "from pathlib import Path\n"
+            f"Path({str(marker)!r}).write_text('called', encoding='utf-8')\n"
+            "print('custom display hides the raw Python diff')\n",
+            encoding="utf-8",
+        )
+        # Git evaluates helper commands through its shell on both supported platforms.
+        command = shlex.join([Path(sys.executable).as_posix(), script.as_posix()])
+        return marker, command
+
+    def test_repository_textconv_is_not_executed(self):
+        marker, command = self.helper()
+        (self.repo / ".gitattributes").write_text("*.py diff=testpilot-fixture\n", encoding="utf-8")
+        self.git("config", "diff.testpilot-fixture.textconv", command)
+        self.git("diff", "HEAD", "--", "*.py")
+        self.assertTrue(marker.is_file(), "positive control did not execute textconv")
+        marker.unlink()
+        self.assert_target()
+        self.assertFalse(marker.exists())
+
+    def test_external_diff_config_and_environment_are_not_executed(self):
+        for route in ("config", "environment"):
+            with self.subTest(route=route):
+                marker, command = self.helper()
+                if route == "config":
+                    self.git("config", "diff.external", command)
+                else:
+                    self.env["GIT_EXTERNAL_DIFF"] = command
+                self.git("diff", "HEAD", "--", "*.py")
+                self.assertTrue(marker.is_file(), "positive control did not execute external diff")
+                marker.unlink()
+                self.assert_target()
+                self.assertFalse(marker.exists())
+                if route == "config":
+                    self.git("config", "--unset", "diff.external")
+                else:
+                    self.env.pop("GIT_EXTERNAL_DIFF")
+
+    def test_unchanged_project_retains_the_empty_result(self):
+        self.subject.write_text("def answer():\n    return 1\n", encoding="utf-8")
+        self.git("config", "color.ui", "always")
+        self.git("config", "diff.noprefix", "true")
+        self.assertEqual(self.preview(), [])
+
+    def test_generation_uses_the_same_raw_git_selection(self):
+        self.git("config", "color.ui", "always")
+        self.git("config", "diff.noprefix", "true")
+        script = self.root / "responses"
+        script.mkdir()
+        (script / "01.txt").write_text("Check the current answer.", encoding="utf-8")
+        fence = chr(96) * 3
+        generated = "from a.subject import answer\n\ndef test_generated():\n    assert answer() == 2\n"
+        (script / "02.txt").write_text(
+            fence + "python path=tests/test_generated.py\n" + generated + fence + "\n",
+            encoding="utf-8",
+        )
+        out = self.root / "output"
+        before = self.state()
+        result = self.process([
+            sys.executable, "-B", "-m", "testpilot", "run", "--repo", self.repo,
+            "--git-base", "HEAD", "--backend", "scripted", "--script", script,
+            "--rounds", "0", "--python", sys.executable, "--timeout", "15",
+            "--no-coverage", "--out", out,
+        ])
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        report = json.loads((out / "report.json").read_text(encoding="utf-8"))
+        self.assertEqual(report["status"], "passed")
+        self.assertEqual([item["path"] for item in report["changed_functions"]], ["a/subject.py"])
+        self.assertEqual(report["test_files"], {"tests/test_generated.py": generated})
+        self.assertEqual(report["final"]["passed"], 2)
+        self.assertEqual(report["final"]["generated"]["passed"], 1)
+        self.assertEqual([entry["role"] for entry in report["ledger"]["entries"]], ["planner", "editor"])
+        self.assertEqual(self.state(), before)
+        self.git("apply", "--check", str(out / "testpilot.patch"))
+
+
+if __name__ == "__main__":
+    unittest.main()

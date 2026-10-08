@@ -1,0 +1,10 @@
+{
+  "parent": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "unchanged_files": 11,
+  "replacement": {
+    "path": "testpilot/__main__.py",
+    "bytes": 7983,
+    "sha256": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+    "blob": "44f485af279e66f75c6e4ef881b5a75e5d0cdef2"
+  }
+}

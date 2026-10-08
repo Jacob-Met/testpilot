@@ -1,0 +1,16 @@
+{
+  "changed_functions": [
+    {
+      "path": "subject.py",
+      "module": "subject",
+      "qualname": "decoy",
+      "lineno": 5,
+      "end_lineno": 6,
+      "changed_lines": [
+        6
+      ],
+      "source": "def decoy():\n    return -999",
+      "is_method": false
+    }
+  ]
+}

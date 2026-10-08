@@ -1,0 +1,36 @@
+diff --git a/README.md b/README.md
+index c40ce6f..9eaab06 100644
+--- a/README.md
++++ b/README.md
+@@ -82,6 +82,13 @@ python -m testpilot run \
+ 
+ On a real repo, use `--git-base main` instead of `--diff FILE`. Exit codes: 0 means the generated tests pass, 1 means any other outcome, 2 means a config error.
+ 
++The `--git-base` path requests a raw, uncolored Git patch with standard file
++prefixes. Git display preferences such as `diff.noprefix`, `diff.mnemonicprefix`
++and forced color therefore keep the same source targets. External diff and
++text-conversion helpers are disabled for this read; the repository's Git
++configuration stays unchanged. Saved-file and stdin `--diff` inputs retain their
++existing decoding and selection behavior.
++
+ Add `--no-coverage` to `run` to execute pytest without optional coverage measurement. The choice applies to the baseline, generated tests and every repair round, including when you select a project interpreter with `--python`. Reports then show coverage as unavailable; actual test failures and exit codes still determine the run's result. Omit the flag to keep automatic coverage when the selected interpreter has it installed.
+ 
+ ## Choose functions explicitly
+diff --git a/testpilot/__main__.py b/testpilot/__main__.py
+index 91e0d6d..44f485a 100644
+--- a/testpilot/__main__.py
++++ b/testpilot/__main__.py
+@@ -33,8 +33,12 @@ def _read_diff(args) -> str:
+     elif args.diff:
+         raw = Path(args.diff).read_bytes()
+     else:
++        # Target parsing consumes a raw source patch with fixed path prefixes.
++        # User display settings and diff helpers must not replace that input.
+         raw = subprocess.run(
+-            ["git", "-C", args.repo, "diff", args.git_base, "--", "*.py"],
++            ["git", "-C", args.repo, "diff", "--no-ext-diff", "--no-textconv",
++             "--no-color", "--src-prefix=a/", "--dst-prefix=b/",
++             args.git_base, "--", "*.py"],
+             check=True, capture_output=True,
+         ).stdout
+     if isinstance(raw, str):  # Direct callers may provide a text-only stream.

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "receiver": "chatgpt-e46e74cdc4f4/production",
+  "frozen_at": "2026-10-08T17:25:04.141518+00:00",
+  "scope": "Independent actual native TestPilot CLI receiving; no product edits",
+  "source_commit": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "oracle": {
+    "intended_path": "a/subject.py",
+    "intended_function": "answer",
+    "decoy_path": "subject.py",
+    "decoy_function": "decoy",
+    "layout": "Both function definitions and return values occupy identical physical lines; only intended tracked file changes. Both modules raise and create a marker if executed.",
+    "expected_record": {
+      "path": "a/subject.py",
+      "module": "a.subject",
+      "qualname": "answer",
+      "lineno": 5,
+      "end_lineno": 6,
+      "changed_lines": [
+        6
+      ],
+      "source": "def answer():\n    return 42",
+      "is_method": false
+    }
+  },
+  "cases": [
+    "default git",
+    "diff.noprefix=true with decoy",
+    "diff.mnemonicprefix=true",
+    "color.ui=always",
+    "combined prefix/color settings",
+    "diff.external helper",
+    "GIT_EXTERNAL_DIFF helper",
+    "diff.<driver>.textconv helper",
+    "combined all local config and helpers",
+    "raw diff file",
+    "raw diff stdin",
+    "missing git ref"
+  ],
+  "assertions": [
+    "Git-base cases select exactly intended full record",
+    "CLI never imports or executes either project module",
+    "Candidate Git-base cases never execute external diff or textconv helper",
+    "Unmodified direct Git commands execute configured helpers as positive controls",
+    "Every CLI case preserves exact source and repository-local Git config",
+    "File/stdin --diff inputs produce exact parity before/after candidate under adversarial Git helper config",
+    "Invalid ref fails rather than returning successful empty targets"
+  ],
+  "exclusions": [
+    "No native service/goal/lease/config mutation",
+    "No provider/model calls",
+    "No parser changes or author-test reuse"
+  ]
+}
