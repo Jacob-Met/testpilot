@@ -1,0 +1,26 @@
+[
+  {
+    "label": "pytest8",
+    "module": "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/candidate-b/testpilot/sandbox.py",
+    "sandbox_sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+    "helper_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "python": "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+    "pytest": "8.0.0"
+  },
+  {
+    "label": "pytest9",
+    "module": "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/candidate-b/testpilot/sandbox.py",
+    "sandbox_sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+    "helper_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "python": "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "pytest": "9.1.1"
+  },
+  {
+    "label": "pytest8-current-main",
+    "module": "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/candidate-current/testpilot/sandbox.py",
+    "sandbox_sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+    "helper_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "python": "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+    "pytest": "8.0.0"
+  }
+]

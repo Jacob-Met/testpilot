@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "main": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "helper": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+  "current_main": {
+    "repairs": 1,
+    "final_passed": 2,
+    "omitted_existing_contract": true
+  },
+  "candidate": {
+    "repairs": 2,
+    "final_passed": 3,
+    "generated_written_and_passed": 2,
+    "existing_contract_retained": true
+  },
+  "receipt": "/dev/shm/86776bb3cdb8-product-collector-cli/run/receipt.json"
+}

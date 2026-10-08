@@ -6,13 +6,11 @@ roots, conftest files, fixtures, selection hooks and assertion rewriting.
 """
 from __future__ import annotations
 
-import inspect
 import json
 import sys
 from pathlib import Path
 
 import pytest
-from _pytest.main import search_pypath
 
 if __name__ == "__main__":
     # Match ``python -m pytest`` without adding the temporary runner directory
@@ -27,15 +25,7 @@ class GeneratedFiles:
 
     @pytest.hookimpl(trylast=True)
     def pytest_configure(self, config):
-        selected = set()
-        path_options = {}
-        if config.option.pyargs and "consider_namespace_packages" in inspect.signature(search_pypath).parameters:
-            path_options["consider_namespace_packages"] = config.getini("consider_namespace_packages")
-        for arg in config.args:
-            path = arg.split("::", 1)[0]
-            if config.option.pyargs:
-                path = search_pypath(path, **path_options) or path
-            selected.add(str(Path(path).resolve()))
+        selected = {str(Path(arg.split("::", 1)[0]).resolve()) for arg in config.args}
         roots = [Path(path) for path in selected if Path(path).is_dir()]
         for path in self.files:
             if path in selected:
@@ -49,10 +39,10 @@ class GeneratedFiles:
     @pytest.hookimpl(tryfirst=True)
     def pytest_collectstart(self, collector):
         if isinstance(collector, pytest.Session) and self.covered_paths:
-            # pytest 8.0 skips a directory cached while resolving an explicit
-            # child; newer versions normalize that child out of initial paths.
-            # Traverse the normal root once, but retain the generated child's
-            # explicit treatment for python_files and ignored parent paths.
+            # pytest 8.0 skips a directory whose report was cached while
+            # resolving an explicit child argument. Traverse its normal root
+            # once, but retain the generated child's explicit-path treatment
+            # for python_files, ignore hooks and ignored parent directories.
             collector._initialpaths |= self.covered_paths
             collector._initialpaths_with_parents |= {
                 parent for path in self.covered_paths for parent in (path, *path.parents)

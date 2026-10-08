@@ -1,0 +1,4 @@
+import m
+
+def test_existing_contract(native_argument):
+    assert m.double(native_argument) == 6

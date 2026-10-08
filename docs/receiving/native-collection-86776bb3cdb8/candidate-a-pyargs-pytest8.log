@@ -1,0 +1,69 @@
+RECEIVING_RESULT={"args": ["--pyargs", "pkg.tests"], "generated": {"pkg/tests/test_generated.py": "def test_generated():\n    assert True\n"}, "inputs": {"pkg/__init__.py": "", "pkg/tests/__init__.py": "", "pkg/tests/test_existing.py": "def test_existing():\n    assert False, 'EXISTING_PACKAGE_MUST_FAIL'\n", "pytest.ini": "[pytest]\ntestpaths = pkg/tests\n"}, "native_output": ".                                                                        [100%]\n- generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-t3br8_q7/junit.xml -\n1 passed in 0.01s\n", "pytest": "8.0.0", "python": "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python", "result": {"cases": [{"generated_file": "pkg/tests/test_generated.py", "message": "", "nodeid": "pkg.tests.test_generated::test_generated", "outcome": "passed"}], "coverage": null, "duration_s": 0.24, "errors": 0, "failed": 0, "generated": {"collected": 1, "error": 0, "failed": 0, "passed": 1, "skipped": 0}, "generated_files": ["pkg/tests/test_generated.py"], "junit_available": true, "ok": true, "output": ".                                                                        [100%]\n- generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-t3br8_q7/junit.xml -\n1 passed in 0.01s\n", "passed": 1, "returncode": 0, "skipped": 0, "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected", "timed_out": false, "timeout_s": 15}}
+FRECEIVING_RESULT={"args": ["--pyargs", "pkg.tests.test_generated::test_keep"], "generated": {"pkg/tests/test_generated.py": "def test_keep():\n    assert True\n\ndef test_unselected():\n    assert False, 'UNSELECTED_NAMED_GENERATED'\n"}, "inputs": {"pkg/__init__.py": "", "pkg/tests/__init__.py": "", "pkg/tests/test_existing.py": "def test_existing():\n    assert True\n", "pytest.ini": "[pytest]\ntestpaths = pkg/tests\n"}, "native_output": "..F\n=================================== FAILURES ===================================\n_______________________________ test_unselected ________________________________\n\n    def test_unselected():\n>       assert False, 'UNSELECTED_NAMED_GENERATED'\nE       AssertionError: UNSELECTED_NAMED_GENERATED\nE       assert False\n\npkg/tests/test_generated.py:5: AssertionError\n- generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-1atsd76p/junit.xml -\n=========================== short test summary info ============================\nFAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...\n1 failed, 2 passed in 0.03s\n", "pytest": "8.0.0", "python": "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python", "result": {"cases": [{"generated_file": "pkg/tests/test_generated.py", "message": "", "nodeid": "pkg.tests.test_generated::test_keep", "outcome": "passed"}, {"generated_file": "pkg/tests/test_generated.py", "message": "", "nodeid": "pkg.tests.test_generated::test_keep", "outcome": "passed"}, {"generated_file": "pkg/tests/test_generated.py", "message": "AssertionError: UNSELECTED_NAMED_GENERATED\nassert False\ndef test_unselected():\n>       assert False, 'UNSELECTED_NAMED_GENERATED'\nE       AssertionError: UNSELECTED_NAMED_GENERATED\nE       assert False\n\npkg/tests/test_generated.py:5: AssertionError", "nodeid": "pkg.tests.test_generated::test_unselected", "outcome": "failed"}], "coverage": null, "duration_s": 0.233, "errors": 0, "failed": 1, "generated": {"collected": 3, "error": 0, "failed": 1, "passed": 2, "skipped": 0}, "generated_files": ["pkg/tests/test_generated.py"], "junit_available": true, "ok": false, "output": "..F\n=================================== FAILURES ===================================\n_______________________________ test_unselected ________________________________\n\n    def test_unselected():\n>       assert False, 'UNSELECTED_NAMED_GENERATED'\nE       AssertionError: UNSELECTED_NAMED_GENERATED\nE       assert False\n\npkg/tests/test_generated.py:5: AssertionError\n- generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-1atsd76p/junit.xml -\n=========================== short test summary info ============================\nFAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...\n1 failed, 2 passed in 0.03s\n", "passed": 2, "returncode": 1, "skipped": 0, "summary": "2 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 2 passed of 3 collected", "timed_out": false, "timeout_s": 15}}
+F
+=================================== FAILURES ===================================
+_______________ test_pyargs_package_root_keeps_failing_baseline ________________
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/candidate-a-pyargs-pytest8/test_pyargs_package_root_keeps0')
+
+    def test_pyargs_package_root_keeps_failing_baseline(tmp_path):
+        repo = project(tmp_path, root="pkg/tests", files={
+            "pkg/__init__.py": "",
+            "pkg/tests/__init__.py": "",
+            "pkg/tests/test_existing.py": (
+                "def test_existing():\n    assert False, 'EXISTING_PACKAGE_MUST_FAIL'\n"
+            ),
+        })
+        result = run(repo, {"pkg/tests/test_generated.py": "def test_generated():\n    assert True\n"},
+                     args=("--pyargs", "pkg.tests"))
+>       assert (result.passed, result.failed, result.errors) == (1, 1, 0), result.output
+E       AssertionError: .                                                                        [100%]
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-t3br8_q7/junit.xml -
+E         1 passed in 0.01s
+E         
+E       assert (1, 0, 0) == (1, 1, 0)
+E         
+E         At index 1 diff: 0 != 1
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:226: AssertionError
+_______________ test_pyargs_generated_selector_is_not_broadened ________________
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/candidate-a-pyargs-pytest8/test_pyargs_generated_selector0')
+
+    def test_pyargs_generated_selector_is_not_broadened(tmp_path):
+        repo = project(tmp_path, root="pkg/tests", files={
+            "pkg/__init__.py": "", "pkg/tests/__init__.py": "",
+        })
+        generated = {"pkg/tests/test_generated.py": (
+            "def test_keep():\n    assert True\n\n"
+            "def test_unselected():\n    assert False, 'UNSELECTED_NAMED_GENERATED'\n"
+        )}
+        result = run(repo, generated, args=("--pyargs", "pkg.tests.test_generated::test_keep"))
+>       assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+E       AssertionError: ..F
+E         =================================== FAILURES ===================================
+E         _______________________________ test_unselected ________________________________
+E         
+E             def test_unselected():
+E         >       assert False, 'UNSELECTED_NAMED_GENERATED'
+E         E       AssertionError: UNSELECTED_NAMED_GENERATED
+E         E       assert False
+E         
+E         pkg/tests/test_generated.py:5: AssertionError
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-1atsd76p/junit.xml -
+E         =========================== short test summary info ============================
+E         FAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...
+E         1 failed, 2 passed in 0.03s
+E         
+E       assert (2, 1, 0) == (1, 0, 0)
+E         
+E         At index 0 diff: 2 != 1
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:240: AssertionError
+- generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/candidate-a-pyargs-pytest8.xml -
+=========================== short test summary info ============================
+FAILED tests/test_generated_collection_compatibility.py::test_pyargs_package_root_keeps_failing_baseline
+FAILED tests/test_generated_collection_compatibility.py::test_pyargs_generated_selector_is_not_broadened
+2 failed, 15 deselected in 0.57s

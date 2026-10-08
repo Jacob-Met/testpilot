@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="native_cli_collection_receiving" errors="0" failures="1" skipped="0" tests="2" time="0.045" timestamp="2026-10-08T21:37:00.375080" hostname="05aaedaf3e50"><testcase classname="tests.test_generated" name="test_generated[2-5]" time="0.002"><properties><property name="testpilot.generated_file" value="tests/test_generated.py" /><property name="receiver.native_fixture" value="active" /></properties><failure message="assert 4 == 5&#10; +  where 4 = &lt;function double at 0x7fd82f190720&gt;(2)&#10; +    where &lt;function double at 0x7fd82f190720&gt; = m.double">value = 2, expected = 5, native_argument = 3
+
+    @pytest.mark.parametrize("value, expected", [(2, 5), (3, 6)])
+    def test_generated(value, expected, native_argument):
+&gt;       assert m.double(value) == expected
+E       assert 4 == 5
+E        +  where 4 = &lt;function double at 0x7fd82f190720&gt;(2)
+E        +    where &lt;function double at 0x7fd82f190720&gt; = m.double
+
+tests/test_generated.py:6: AssertionError</failure></testcase><testcase classname="tests.test_generated" name="test_generated[3-6]" time="0.001"><properties><property name="testpilot.generated_file" value="tests/test_generated.py" /><property name="receiver.native_fixture" value="active" /></properties></testcase></testsuite></testsuites>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="native_cli_collection_receiving" errors="0" failures="1" skipped="0" tests="3" time="0.049" timestamp="2026-10-08T21:37:02.722057" hostname="05aaedaf3e50"><testcase classname="tests.test_existing" name="test_existing_contract" time="0.001"><properties><property name="receiver.native_fixture" value="active" /></properties><failure message="assert 9 == 6&#10; +  where 9 = &lt;function double at 0x7f7ed5244220&gt;(3)&#10; +    where &lt;function double at 0x7f7ed5244220&gt; = m.double">native_argument = 3
+
+    def test_existing_contract(native_argument):
+&gt;       assert m.double(native_argument) == 6
+E       assert 9 == 6
+E        +  where 9 = &lt;function double at 0x7f7ed5244220&gt;(3)
+E        +    where &lt;function double at 0x7f7ed5244220&gt; = m.double
+
+tests/test_existing.py:4: AssertionError</failure></testcase><testcase classname="tests.test_generated" name="test_generated[2-6]" time="0.001"><properties><property name="testpilot.generated_file" value="tests/test_generated.py" /><property name="receiver.native_fixture" value="active" /></properties></testcase><testcase classname="tests.test_generated" name="test_generated[3-9]" time="0.001"><properties><property name="testpilot.generated_file" value="tests/test_generated.py" /><property name="receiver.native_fixture" value="active" /></properties></testcase></testsuite></testsuites>

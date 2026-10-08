@@ -1,0 +1,22 @@
+[
+  {
+    "path": "testpilot/_pytest_generated.py",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+    "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+    "bytes": 1446,
+    "donor_path": "/dev/shm/86776bb3cdb8-product-next/testpilot/testpilot/_pytest_generated.py",
+    "receiving_path": "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/current/testpilot/_pytest_generated.py"
+  },
+  {
+    "path": "testpilot/sandbox.py",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "ca0360375bdcaace0e6014b4767acad546380242",
+    "sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+    "bytes": 11537,
+    "donor_path": "/dev/shm/86776bb3cdb8-product-next/testpilot/testpilot/sandbox.py",
+    "receiving_path": "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/current/testpilot/sandbox.py"
+  }
+]

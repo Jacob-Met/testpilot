@@ -1,0 +1,66 @@
+{
+  "main": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "tree": "2045a73704f752d374704657fccf90fd5e774258",
+  "files": [
+    {
+      "path": "current-main/testpilot/__main__.py",
+      "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+      "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4"
+    },
+    {
+      "path": "current-main/testpilot/diff.py",
+      "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c"
+    },
+    {
+      "path": "current-main/testpilot/loop.py",
+      "git_blob": "779149b82d779cb6f21ef26f58ef9b816f3a42f6",
+      "sha256": "54a203ace8816159202e3f2df5bc8ae15b0e08e424fc1447112c9eb0a23fe082"
+    },
+    {
+      "path": "current-main/pyproject.toml",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "path": "current-main/tests/conftest.py",
+      "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52"
+    },
+    {
+      "path": "current-main/.github/workflows/ci.yml",
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+    },
+    {
+      "path": "candidate-current/testpilot/__main__.py",
+      "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+      "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4"
+    },
+    {
+      "path": "candidate-current/testpilot/diff.py",
+      "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c"
+    },
+    {
+      "path": "candidate-current/testpilot/loop.py",
+      "git_blob": "779149b82d779cb6f21ef26f58ef9b816f3a42f6",
+      "sha256": "54a203ace8816159202e3f2df5bc8ae15b0e08e424fc1447112c9eb0a23fe082"
+    },
+    {
+      "path": "candidate-current/pyproject.toml",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "path": "candidate-current/tests/conftest.py",
+      "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52"
+    },
+    {
+      "path": "candidate-current/.github/workflows/ci.yml",
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+    }
+  ]
+}

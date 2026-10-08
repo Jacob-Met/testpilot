@@ -1,0 +1,11 @@
+{"mode": "adopted_collector", "runtime": "pytest8", "configured": "tests", "ok": true, "passed": 1, "failed": 0, "baseline_failure_observed": false}
+{"mode": "adopted_collector", "runtime": "pytest9", "configured": "tests", "ok": false, "passed": 1, "failed": 1, "baseline_failure_observed": true}
+{"mode": "native_pytest8_default", "configured": "tests", "returncode": 1, "baseline_failure_observed": true}
+{"mode": "native_pytest8_relative_directory_absolute_file", "configured": "tests", "returncode": 0, "baseline_failure_observed": false}
+{"mode": "native_pytest8_absolute_directory_absolute_file", "configured": "tests", "returncode": 0, "baseline_failure_observed": false}
+{"mode": "native_pytest8_absolute_directory_only", "configured": "tests", "returncode": 1, "baseline_failure_observed": true}
+{"mode": "adopted_collector", "runtime": "pytest8", "configured": "checks", "ok": false, "passed": 1, "failed": 1, "baseline_failure_observed": true}
+{"mode": "adopted_collector", "runtime": "pytest9", "configured": "checks", "ok": false, "passed": 1, "failed": 1, "baseline_failure_observed": true}
+{"mode": "native_pytest8_default", "configured": "checks", "returncode": 1, "baseline_failure_observed": true}
+{"mode": "native_pytest8_relative_directory_absolute_file", "configured": "checks", "returncode": 1, "baseline_failure_observed": true}
+{"mode": "native_pytest8_absolute_directory_absolute_file", "configured": "checks", "returncode": 1, "baseline_failure_observed": true}
