@@ -1,0 +1,13 @@
+diff --git a/alpha.py b/alpha.py
+index c146194..d9f6196 100644
+--- a/alpha.py
++++ b/alpha.py
+@@ -2 +2 @@ def first():
+-    return 1
++    return 2
+@@ -20 +20 @@ def second():
+-    return 3
++    return 4
+@@ -900,2 +900,2 @@
+-ghost
++ghost

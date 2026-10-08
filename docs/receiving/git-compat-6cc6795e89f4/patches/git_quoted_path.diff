@@ -1,0 +1,8 @@
+diff --git "a/odd\t\303\244.py" "b/odd\t\303\244.py"
+index bccf2fb..1c8d696 100644
+--- "a/odd\t\303\244.py"
++++ "b/odd\t\303\244.py"
+@@ -1,2 +1,2 @@
+ def odd_fn():
+-    return 40
++    return 41

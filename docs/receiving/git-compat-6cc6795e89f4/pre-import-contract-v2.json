@@ -1,0 +1,11 @@
+{
+  "builder_sha256": "91827cbec8cd2b82f47b6e4d427f647d3e89035d58168686fbcac8fcf590c297",
+  "candidate_pins": {
+    "testpilot/__main__.py": "f5e644cb4f6bb9278657939bd6dc51390a974f7f8834efb8459e11fbce4a95cd",
+    "testpilot/diff.py": "3995b19d6d68867efa1ef73f9f20db93f95d34f05cdc9b760e9f71d7e2caa69a"
+  },
+  "expectations_sha256": "2b57e4d9767a2af3159417c29f34725daf23ebf2ca3ffd3b3ed23c8f7c496b6b",
+  "fixture_provenance_sha256": "f65a99c33d8102f50ae076553da1efb7b291f4b89d75802a5c5cb41474c298b7",
+  "frozen_at": "2026-10-08T17:36:01.177681+00:00",
+  "receiver_sha256": "efa90326a0b52e9d3b0cd89bf2d278e857063b91fe494e63f3ae088364adb91d"
+}

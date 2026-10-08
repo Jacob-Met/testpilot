@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from .diff import DiffSourceError, changed_functions
+from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_unified_diff
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
 from .recheck import run_recheck_command
@@ -131,6 +131,12 @@ def main(argv: list[str] | None = None) -> int:
         except TargetSelectionError as e:
             print(f"testpilot: invalid target selection: {e}", file=sys.stderr)
             return 2
+    else:
+        try:
+            parse_unified_diff(diff_text)
+        except DiffFormatError as e:
+            print(f"testpilot: invalid diff format: {e}", file=sys.stderr)
+            return 2
     try:
         client = make_client(a.backend, script=a.script, base_url=a.base_url)
     except ModelError as e:
@@ -146,6 +152,9 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     except DiffSourceError as e:
         print(f"testpilot: invalid diff source: {e}", file=sys.stderr)
+        return 2
+    except DiffFormatError as e:
+        print(f"testpilot: invalid diff format: {e}", file=sys.stderr)
         return 2
     paths = write_outputs(res, a.out)
     print(render_report(res).split("\n## Patch")[0])

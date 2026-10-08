@@ -1,0 +1,77 @@
+[
+  {
+    "name": "source-archive",
+    "command": [
+      "git",
+      "-C",
+      "/home/jacob/testpilot-hunks-integration-6cc6795e89f4",
+      "archive",
+      "--format=tar",
+      "--output",
+      "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/source-40860534a8fd.tar",
+      "40860534a8fdc760b105ac9bc7d14ac9087172dd"
+    ],
+    "exit": 0,
+    "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/source-archive.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "venv-bootstrap",
+    "command": [
+      "/usr/bin/python3",
+      "-m",
+      "venv",
+      "--system-site-packages",
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd"
+    ],
+    "exit": 0,
+    "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/venv-bootstrap.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "build-wheel",
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/python",
+      "-m",
+      "pip",
+      "wheel",
+      "--no-index",
+      "--no-deps",
+      "--no-build-isolation",
+      "--no-cache-dir",
+      "--wheel-dir",
+      "/home/jacob/testpilot-native-6cc6795e89f4/artifacts",
+      "/home/jacob/testpilot-native-6cc6795e89f4/build-source"
+    ],
+    "exit": 0,
+    "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/build-wheel.log",
+    "sha256": "9d97755a682ffb49bf53653e6ad5d9932f7db350ee3a954fc4e45a62ee5ff039"
+  },
+  {
+    "name": "install-wheel",
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "--no-index",
+      "--no-deps",
+      "--no-cache-dir",
+      "--no-compile",
+      "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/testpilot-0.1.0-py3-none-any.whl"
+    ],
+    "exit": 0,
+    "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/install-wheel.log",
+    "sha256": "d6e8e349e8f167d1515d7f4689e9f0eb530f574b9bffe0a0aa757127e14d88fe"
+  },
+  {
+    "name": "installed-help",
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+      "--help"
+    ],
+    "exit": 0,
+    "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/installed-help.log",
+    "sha256": "b47b803f077188d47e7ed173248144474dbf4d256b5d3c7d8b17b945eeaec015"
+  }
+]

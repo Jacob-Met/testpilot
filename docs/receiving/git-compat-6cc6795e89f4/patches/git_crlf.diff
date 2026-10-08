@@ -1,0 +1,8 @@
+diff --git a/crlf.py b/crlf.py
+index 80ebf23..be8ff5d 100644
+--- a/crlf.py
++++ b/crlf.py
+@@ -1,2 +1,2 @@
+ def crlf_fn():
+-    return 20
++    return 21

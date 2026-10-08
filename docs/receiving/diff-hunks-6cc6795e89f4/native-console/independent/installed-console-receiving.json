@@ -1,0 +1,98 @@
+{
+  "schema": "hamon.independent_installed_console_receiving.v1",
+  "at": "2026-10-08T18:03:28.847380+00:00",
+  "reviewer": "hamon-6cc6795e89f4/coordination_evidence",
+  "source_head": "40860534a8fdc760b105ac9bc7d14ac9087172dd",
+  "source_tree": "ba7272658e66a5ff2e02674352eb5046b33c26f4",
+  "contract_path": "/home/jacob/testpilot-publication-6cc6795e89f4/installed-console-contract.json",
+  "contract_sha256": "401e6a2210e29e4b4f3833aa54e78d7602825f65663f89c1ab9c08bd29dd2745",
+  "console": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+  "console_sha256": "6ae5527b2002612e544456d5df3ee22f0a2aacb72301bc3e27faf7c911094cb2",
+  "positive": {
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+      "targets",
+      "--repo",
+      "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "--diff",
+      "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_default.diff",
+      "--json"
+    ],
+    "returncode": 0,
+    "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"alpha.py\",\n      \"module\": \"alpha\",\n      \"qualname\": \"first\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def first():\\n    return 2\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"alpha.py\",\n      \"module\": \"alpha\",\n      \"qualname\": \"second\",\n      \"lineno\": 19,\n      \"end_lineno\": 20,\n      \"changed_lines\": [\n        20\n      ],\n      \"source\": \"def second():\\n    return 4\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"beta.py\",\n      \"module\": \"beta\",\n      \"qualname\": \"beta\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def beta():\\n    return 11\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"crlf.py\",\n      \"module\": \"crlf\",\n      \"qualname\": \"crlf_fn\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def crlf_fn():\\n    return 21\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"drop.py\",\n      \"module\": \"drop\",\n      \"qualname\": \"removedline\",\n      \"lineno\": 1,\n      \"end_lineno\": 3,\n      \"changed_lines\": [],\n      \"source\": \"def removedline():\\n    keep = 1\\n    return keep\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"insert.py\",\n      \"module\": \"insert\",\n      \"qualname\": \"insertedline\",\n      \"lineno\": 1,\n      \"end_lineno\": 3,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def insertedline():\\n    inserted = 50\\n    return 51\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"new.py\",\n      \"module\": \"new\",\n      \"qualname\": \"gamma_unique\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        1,\n        2\n      ],\n      \"source\": \"def gamma_unique():\\n    return 'new-post-change-constant'\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"odd\\t\\u00e4.py\",\n      \"module\": \"odd\\t\\u00e4\",\n      \"qualname\": \"odd_fn\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def odd_fn():\\n    return 41\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"payload.py\",\n      \"module\": \"payload\",\n      \"qualname\": \"payload\",\n      \"lineno\": 1,\n      \"end_lineno\": 5,\n      \"changed_lines\": [\n        2,\n        3,\n        4\n      ],\n      \"source\": \"def payload():\\n    return \\\"\\\"\\\"new\\n--- new literal\\n+++ new literal\\n\\\"\\\"\\\"\",\n      \"is_method\": false\n    },\n    {\n      \"path\": \"unicode.py\",\n      \"module\": \"unicode\",\n      \"qualname\": \"unicode_fn\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def unicode_fn():\\n    return \\\"new\\u2028tail\\u2029end\\\"\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+    "stderr": "",
+    "observed_targets": [
+      [
+        "alpha.py",
+        "first"
+      ],
+      [
+        "alpha.py",
+        "second"
+      ],
+      [
+        "beta.py",
+        "beta"
+      ],
+      [
+        "crlf.py",
+        "crlf_fn"
+      ],
+      [
+        "drop.py",
+        "removedline"
+      ],
+      [
+        "insert.py",
+        "insertedline"
+      ],
+      [
+        "new.py",
+        "gamma_unique"
+      ],
+      [
+        "odd\t\u00e4.py",
+        "odd_fn"
+      ],
+      [
+        "payload.py",
+        "payload"
+      ],
+      [
+        "unicode.py",
+        "unicode_fn"
+      ]
+    ],
+    "pass": true
+  },
+  "negative": {
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "--diff",
+      "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/malformed_unfinished_tail.diff",
+      "--script",
+      "/home/jacob/testpilot-publication-6cc6795e89f4/deliberately-missing-model-replies",
+      "--out",
+      "/home/jacob/testpilot-publication-6cc6795e89f4/installed-malformed-result"
+    ],
+    "returncode": 2,
+    "stdout": "",
+    "stderr": "testpilot: invalid diff format: invalid unified diff at record 13: incomplete hunk (1 old and 1 new records missing)\n",
+    "output_absent": true,
+    "pytest_tripwire_absent": true,
+    "missing_model_script_absent": true,
+    "pass": true
+  },
+  "source_unchanged": true,
+  "summary": {
+    "cases": 2,
+    "passed": 2,
+    "selected_functions": 10,
+    "installed_source_files": 11,
+    "source_unchanged": true
+  },
+  "limitations": "Two installed-console cases only: real native Git multi-file target selection and early malformed-input refusal; no model call, no full suite, no product-source mutation."
+}

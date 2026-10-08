@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-08T17:23:44.136758+00:00",
+  "candidate": "628f9e3eb0a597d79e8fa9ad58fff62c9681d121",
+  "diff_sha256": "e2a58cefcb14e376724555cc17abf2adc9cd74e7c6fe4f05a1546291391d8f7c",
+  "input_description": "One5000-digit old hunk start, one-line old/new range and complete replacement body",
+  "parser": {
+    "accepted": false,
+    "error_type": "ValueError",
+    "is_diff_format_error": false,
+    "message": "Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit"
+  },
+  "run": {
+    "exit": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/jacob/testpilot-hunks-6cc6795e89f4/testpilot/__main__.py\", line 154, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File \"/home/jacob/testpilot-hunks-6cc6795e89f4/testpilot/__main__.py\", line 136, in main\n    res = (pilot.run(a.repo, diff_text) if a.target is None\n           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^\n  File \"/home/jacob/testpilot-hunks-6cc6795e89f4/testpilot/loop.py\", line 418, in run\n    funcs = (changed_functions(repo, diff_text) if selection is None\n             ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/home/jacob/testpilot-hunks-6cc6795e89f4/testpilot/diff.py\", line 303, in changed_functions\n    for fc in parse_unified_diff(diff_text):\n              ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^\n  File \"/home/jacob/testpilot-hunks-6cc6795e89f4/testpilot/diff.py\", line 183, in parse_unified_diff\n    old_start, new_start = int(m.group(1)), int(m.group(3))\n                           ~~~^^^^^^^^^^^^\nValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit\n",
+    "output_exists": false
+  }
+}

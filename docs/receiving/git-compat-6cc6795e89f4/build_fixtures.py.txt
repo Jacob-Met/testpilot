@@ -1,0 +1,131 @@
+from pathlib import Path
+from datetime import datetime, timezone
+import hashlib, json, os, shutil, subprocess, sys
+HERE = Path(__file__).resolve().parent
+DATA = Path("/home/jacob/testpilot-git-compat-6cc6795e89f4-data")
+DATA.mkdir(exist_ok=False)
+REPO = DATA / "fixture"
+REPO.mkdir()
+commands = []
+def run(argv, cwd, ok=(0,)):
+    p = subprocess.run(argv, cwd=cwd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    commands.append({"argv":list(map(str, argv)), "cwd":str(cwd), "returncode":p.returncode,
+                     "stdout":p.stdout.decode("utf-8", "backslashreplace"),
+                     "stderr":p.stderr.decode("utf-8", "backslashreplace")})
+    if p.returncode not in ok:
+        raise RuntimeError(commands[-1])
+    return p.stdout
+def git(*args):
+    return run(["git", "-c", "core.autocrlf=false", "-c", "core.fileMode=true", *args], REPO)
+odd = "odd\t\u00e4.py"
+old = {
+    "alpha.py": ("def first():\n    return 1\n\n" + "".join("# gap %02d\n" % n for n in range(14))
+                 + "\ndef second():\n    return 3\n\ndef unchanged():\n    return 99\n").encode(),
+    "beta.py": b"def beta():\n    return 10",
+    "crlf.py": b"def crlf_fn():\r\n    return 20\r\n",
+    "payload.py": b'def payload():\n    return """old\n--- old literal\n+++ old literal\n"""\n',
+    "unicode.py": 'def unicode_fn():\n    return "old\u2028tail\u2029end"\n'.encode(),
+    odd: b"def odd_fn():\n    return 40\n",
+    "drop.py": b"def removedline():\n    keep = 1\n    drop = 2\n    return keep\n",
+    "insert.py": b"def insertedline():\n    return 51\n",
+    "deleted.py": b"def obsolete_unique():\n    return 'deleted-old-constant'\n",
+    "mode.py": b"def mode_untouched():\n    return 624\n",
+    "rename_before.py": b"def renamed_untouched():\n    return 725\n",
+    "copy_from.py": b"def copied_untouched():\n    return 826\n",
+    "blob.bin": bytes(range(256)) * 4,
+}
+for rel, data in old.items():
+    (REPO / rel).write_bytes(data)
+git("init", "--quiet")
+git("add", "-A")
+git("-c", "user.name=HAMON Receiving Fixture", "-c", "user.email=fixture@localhost", "commit", "--quiet", "-m", "fixture before")
+old_commit = git("rev-parse", "HEAD").decode().strip()
+new = dict(old)
+new["alpha.py"] = old["alpha.py"].replace(b"return 1\n", b"return 2\n").replace(b"return 3\n", b"return 4\n")
+new["beta.py"] = old["beta.py"].replace(b"10", b"11")
+new["crlf.py"] = old["crlf.py"].replace(b"20", b"21")
+new["payload.py"] = old["payload.py"].replace(b"old", b"new")
+new["unicode.py"] = old["unicode.py"].replace(b"old", b"new")
+new[odd] = old[odd].replace(b"40", b"41")
+new["drop.py"] = old["drop.py"].replace(b"    drop = 2\n", b"")
+new["insert.py"] = old["insert.py"].replace(b"    return", b"    inserted = 50\n    return")
+new["new.py"] = b"def gamma_unique():\n    return 'new-post-change-constant'\n"
+del new["deleted.py"]
+new["rename_after.py"] = new.pop("rename_before.py")
+new["copy_to.py"] = new["copy_from.py"]
+new["blob.bin"] = bytes(reversed(range(256))) * 4
+for rel in old.keys() - new.keys():
+    (REPO / rel).unlink()
+for rel, data in new.items():
+    (REPO / rel).write_bytes(data)
+(REPO / "mode.py").chmod(0o755)
+git("add", "-A")
+git("-c", "user.name=HAMON Receiving Fixture", "-c", "user.email=fixture@localhost", "commit", "--quiet", "-m", "fixture after")
+new_commit = git("rev-parse", "HEAD").decode().strip()
+ORACLE = DATA / "oracle-before"
+git("worktree", "add", "--quiet", "--detach", str(ORACLE), old_commit)
+(PATCHES := HERE / "patches").mkdir()
+cases = []
+full_targets = sorted([["alpha.py", "first"], ["alpha.py", "second"], ["beta.py", "beta"],
+                       ["crlf.py", "crlf_fn"], ["payload.py", "payload"], ["unicode.py", "unicode_fn"],
+                       [odd, "odd_fn"], ["drop.py", "removedline"], ["insert.py", "insertedline"],
+                       ["new.py", "gamma_unique"]])
+def add_case(name, patch, expected, zero=False, optional=False, require=()):
+    for marker in require:
+        assert marker in patch, (name, marker)
+    path = PATCHES / (name + ".diff")
+    path.write_bytes(patch)
+    argv = ["git", "-c", "core.autocrlf=false", "apply", "--check"]
+    if zero:
+        argv.append("--unidiff-zero")
+    argv.append(str(path))
+    run(argv, ORACLE)
+    cases.append({"name":name, "patch":str(path), "sha256":hashlib.sha256(patch).hexdigest(),
+                  "expected_targets":sorted(expected), "git_valid":True, "optional_envelope":optional})
+def diff(extra=(), paths=()):
+    args = ["diff", "--no-ext-diff", "--binary", "-M", "-C", "--find-copies-harder", *extra, old_commit, new_commit]
+    if paths: args += ["--", *paths]
+    return git(*args)
+for name, extra, zero in [("git_default", (), False), ("git_zero", ("-U0",), True),
+                         ("git_one", ("-U1",), False), ("git_function", ("-W",), False)]:
+    add_case(name, diff(extra), full_targets, zero=zero,
+             require=(b"GIT binary patch", b"rename from ", b"copy from ", b"old mode "))
+add_case("git_binary_python", diff(paths=("alpha.py", "blob.bin")), [["alpha.py","first"],["alpha.py","second"]],
+         require=(b"GIT binary patch",))
+add_case("git_metadata_only", diff(paths=("mode.py","rename_before.py","rename_after.py","copy_from.py","copy_to.py")), [],
+         require=(b"rename from ",b"copy from ",b"old mode "))
+for name, path, qual in [("git_no_newline", "beta.py", "beta"), ("git_crlf","crlf.py","crlf_fn"),
+                        ("git_quoted_path", odd, "odd_fn")]:
+    add_case(name, diff(paths=(path,)), [[path,qual]],
+             require=((b"\\ No newline at end of file",) if name=="git_no_newline" else ()))
+mail = git("format-patch", "--stdout", "--binary", "-M", "-C", "--find-copies-harder", "--subject-prefix=PATCH", "--signature=HAMON Receiving Fixture", "-1", new_commit)
+add_case("git_mail_envelope", mail, full_targets, optional=True, require=(b"Subject: [PATCH]", b"\n-- \n"))
+GNU = DATA / "gnu"
+(GNU / "a").mkdir(parents=True)
+(GNU / "b").mkdir()
+(GNU / "a/alpha.py").write_bytes(old["alpha.py"])
+(GNU / "b/alpha.py").write_bytes(new["alpha.py"])
+gnu = run(["diff", "-u", "a/alpha.py", "b/alpha.py"], GNU, ok=(1,))
+assert b"--- a/alpha.py\t" in gnu and b"+++ b/alpha.py\t" in gnu
+add_case("gnu_diff_u_timestamps", gnu, [["alpha.py","first"],["alpha.py","second"]])
+malformed = diff(("-U0",), ("alpha.py",)) + b"@@ -900,2 +900,2 @@\n-ghost\n+ghost\n"
+bad = PATCHES / "malformed_unfinished_tail.diff"
+bad.write_bytes(malformed)
+rejected = subprocess.run(["git","apply","--check","--unidiff-zero",str(bad)],cwd=ORACLE,capture_output=True)
+commands.append({"argv":["git","apply","--check","--unidiff-zero",str(bad)], "cwd":str(ORACLE),
+                 "returncode":rejected.returncode,"stdout":rejected.stdout.decode(),"stderr":rejected.stderr.decode()})
+assert rejected.returncode != 0, "negative must be refused by actual Git"
+baseline = git("--git-dir=/home/jacob/testpilot-hunks-6cc6795e89f4.git", "show",
+               "eacb9907f51aeb9360da654c60cbbd7cf99ad877:testpilot/diff.py")
+(HERE / "baseline_diff.py.txt").write_bytes(baseline)
+tripwire = DATA / "pytest-tripwire"
+(REPO / "conftest.py").write_text("from pathlib import Path\nPath(" + repr(str(tripwire)) + ").write_text('pytest started')\n", encoding="utf-8")
+record = {"frozen_at":datetime.now(timezone.utc).isoformat(), "candidate_source_commit":"9265ae42bde5b6bd559584a11cbb7c30b7849743",
+          "candidate_evidence_head":"628f9e3eb0a597d79e8fa9ad58fff62c9681d121",
+          "old_fixture_commit":old_commit,"new_fixture_commit":new_commit, "repo":str(REPO),
+          "oracle":str(ORACLE), "tripwire":str(tripwire), "malformed":str(bad), "cases":cases,
+          "baseline_sha256":hashlib.sha256(baseline).hexdigest(), "commands":commands}
+(HERE / "fixture-provenance.json").write_text(json.dumps(record,indent=2,sort_keys=True,ensure_ascii=True)+"\n",encoding="utf-8")
+print(json.dumps({"case_count":len(cases), "git_version":git("--version").decode().strip(),
+                  "all_positive_git_apply_checks_passed":True, "negative_git_returncode":rejected.returncode,
+                  "fixture_provenance":str(HERE / "fixture-provenance.json")}))

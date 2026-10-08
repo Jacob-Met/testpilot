@@ -1,0 +1,39 @@
+diff --git a/alpha.py b/alpha.py
+index c146194..d9f6196 100644
+--- a/alpha.py
++++ b/alpha.py
+@@ -1,5 +1,5 @@
+ def first():
+-    return 1
++    return 2
+ 
+ # gap 00
+ # gap 01
+@@ -17,7 +17,7 @@ def first():
+ # gap 13
+ 
+ def second():
+-    return 3
++    return 4
+ 
+ def unchanged():
+     return 99
+diff --git a/blob.bin b/blob.bin
+index c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644
+GIT binary patch
+literal 1024
+zcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&
+z%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo
+z>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85
+zDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa
+zu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz
+a;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp
+
+literal 1024
+zcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH
+zG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k
+zO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz
+zF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n
+z9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo
+aU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k
+

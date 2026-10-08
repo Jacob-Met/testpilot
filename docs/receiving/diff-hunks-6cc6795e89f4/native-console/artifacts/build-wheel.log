@@ -1,0 +1,9 @@
+Processing ./build-source
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: testpilot
+  Building wheel for testpilot (pyproject.toml): started
+  Building wheel for testpilot (pyproject.toml): finished with status 'done'
+  Created wheel for testpilot: filename=testpilot-0.1.0-py3-none-any.whl size=55316 sha256=83c756b33833e004c6421c203888c54862a4eb4995dba1e08bfea3128dec9c4b
+  Stored in directory: /tmp/pip-ephem-wheel-cache-fc5pqs_a/wheels/46/5c/9c/415c6dfeef6ad89c660f547b2510b702e1057c6d86ff553dfa
+Successfully built testpilot

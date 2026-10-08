@@ -1,0 +1,44 @@
+.FF...FFF                                                                [100%]
+=================================== FAILURES ===================================
+_______ test_actual_git_mail_footer_preserves_complete_target_selection ________
+tests/test_diff_hunk_validation.py:240: in test_actual_git_mail_footer_preserves_complete_target_selection
+    selected = changed_functions(repo, patch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:306: in changed_functions
+    for fc in parse_unified_diff(diff_text):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:203: in parse_unified_diff
+    raise invalid("body record exceeds the declared hunk ranges")
+E   testpilot.diff.DiffFormatError: invalid unified diff at record 15: body record exceeds the declared hunk ranges
+_______ test_git_mail_footer_never_completes_a_missing_body_record[old] ________
+tests/test_diff_hunk_validation.py:256: in test_git_mail_footer_never_completes_a_missing_body_record
+    with pytest.raises(DiffFormatError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'testpilot.diff.DiffFormatError'>
+_____ test_mail_can_delete_source_text_shaped_like_the_signature_delimiter _____
+tests/test_diff_hunk_validation.py:269: in test_mail_can_delete_source_text_shaped_like_the_signature_delimiter
+    selected = changed_functions(repo, patch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:306: in changed_functions
+    for fc in parse_unified_diff(diff_text):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:203: in parse_unified_diff
+    raise invalid("body record exceeds the declared hunk ranges")
+E   testpilot.diff.DiffFormatError: invalid unified diff at record 17: body record exceeds the declared hunk ranges
+___ test_native_diff_error_precedes_model_config_and_preserves_output[False] ___
+tests/test_diff_hunk_validation.py:290: in test_native_diff_error_precedes_model_config_and_preserves_output
+    assert run.returncode == 2
+E   AssertionError: assert 1 == 2
+E    +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-209/...No such file or directory: \'/tmp/pytest-of-jacob/pytest-209/test_native_diff_error_precede0/missing-model-config\'\n').returncode
+___ test_native_diff_error_precedes_model_config_and_preserves_output[True] ____
+tests/test_diff_hunk_validation.py:290: in test_native_diff_error_precedes_model_config_and_preserves_output
+    assert run.returncode == 2
+E   AssertionError: assert 1 == 2
+E    +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-209/...No such file or directory: \'/tmp/pytest-of-jacob/pytest-209/test_native_diff_error_precede1/missing-model-config\'\n').returncode
+=========================== short test summary info ============================
+FAILED tests/test_diff_hunk_validation.py::test_actual_git_mail_footer_preserves_complete_target_selection
+FAILED tests/test_diff_hunk_validation.py::test_git_mail_footer_never_completes_a_missing_body_record[old]
+FAILED tests/test_diff_hunk_validation.py::test_mail_can_delete_source_text_shaped_like_the_signature_delimiter
+FAILED tests/test_diff_hunk_validation.py::test_native_diff_error_precedes_model_config_and_preserves_output[False]
+FAILED tests/test_diff_hunk_validation.py::test_native_diff_error_precedes_model_config_and_preserves_output[True]
+5 failed, 4 passed, 28 deselected in 2.31s

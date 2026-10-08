@@ -1,0 +1,36 @@
+FFFF                                                                     [100%]
+=================================== FAILURES ===================================
+___ test_unsupported_hunk_integer_has_clean_parser_and_run_errors[old-start] ___
+tests/test_diff_hunk_validation.py:204: in test_unsupported_hunk_integer_has_clean_parser_and_run_errors
+    parse_unified_diff(damaged)
+testpilot/diff.py:183: in parse_unified_diff
+    old_start, new_start = int(m.group(1)), int(m.group(3))
+                           ^^^^^^^^^^^^^^^
+E   ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 4301 digits; use sys.set_int_max_str_digits() to increase the limit
+___ test_unsupported_hunk_integer_has_clean_parser_and_run_errors[old-count] ___
+tests/test_diff_hunk_validation.py:204: in test_unsupported_hunk_integer_has_clean_parser_and_run_errors
+    parse_unified_diff(damaged)
+testpilot/diff.py:184: in parse_unified_diff
+    old_left = int(m.group(2)) if m.group(2) is not None else 1
+               ^^^^^^^^^^^^^^^
+E   ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 4301 digits; use sys.set_int_max_str_digits() to increase the limit
+___ test_unsupported_hunk_integer_has_clean_parser_and_run_errors[new-start] ___
+tests/test_diff_hunk_validation.py:204: in test_unsupported_hunk_integer_has_clean_parser_and_run_errors
+    parse_unified_diff(damaged)
+testpilot/diff.py:183: in parse_unified_diff
+    old_start, new_start = int(m.group(1)), int(m.group(3))
+                                            ^^^^^^^^^^^^^^^
+E   ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 4301 digits; use sys.set_int_max_str_digits() to increase the limit
+___ test_unsupported_hunk_integer_has_clean_parser_and_run_errors[new-count] ___
+tests/test_diff_hunk_validation.py:204: in test_unsupported_hunk_integer_has_clean_parser_and_run_errors
+    parse_unified_diff(damaged)
+testpilot/diff.py:185: in parse_unified_diff
+    new_left = int(m.group(4)) if m.group(4) is not None else 1
+               ^^^^^^^^^^^^^^^
+E   ValueError: Exceeds the limit (4300 digits) for integer string conversion: value has 4301 digits; use sys.set_int_max_str_digits() to increase the limit
+=========================== short test summary info ============================
+FAILED tests/test_diff_hunk_validation.py::test_unsupported_hunk_integer_has_clean_parser_and_run_errors[old-start]
+FAILED tests/test_diff_hunk_validation.py::test_unsupported_hunk_integer_has_clean_parser_and_run_errors[old-count]
+FAILED tests/test_diff_hunk_validation.py::test_unsupported_hunk_integer_has_clean_parser_and_run_errors[new-start]
+FAILED tests/test_diff_hunk_validation.py::test_unsupported_hunk_integer_has_clean_parser_and_run_errors[new-count]
+4 failed, 24 deselected in 1.21s

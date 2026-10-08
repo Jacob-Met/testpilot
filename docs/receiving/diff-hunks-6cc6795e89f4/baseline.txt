@@ -1,0 +1,129 @@
+FFFFFFFFFFFFFFFFFFFF....                                                 [100%]
+=================================== FAILURES ===================================
+_____ test_inconsistent_hunks_are_not_partial_success[truncated-addition] ______
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+___ test_inconsistent_hunks_are_not_partial_success[missing-context-at-eof] ____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+_______ test_inconsistent_hunks_are_not_partial_success[extra-addition] ________
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+_______ test_inconsistent_hunks_are_not_partial_success[extra-deletion] ________
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+________ test_inconsistent_hunks_are_not_partial_success[extra-context] ________
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+_____ test_inconsistent_hunks_are_not_partial_success[old-range-underflow] _____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+_____ test_inconsistent_hunks_are_not_partial_success[new-range-underflow] _____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+__ test_inconsistent_hunks_are_not_partial_success[context-with-no-old-lines] __
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+_____ test_inconsistent_hunks_are_not_partial_success[invalid-body-prefix] _____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+_______ test_inconsistent_hunks_are_not_partial_success[malformed-range] _______
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+____ test_inconsistent_hunks_are_not_partial_success[missing-file-headers] _____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+_____ test_inconsistent_hunks_are_not_partial_success[missing-old-header] ______
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+____ test_inconsistent_hunks_are_not_partial_success[headers-without-hunk] _____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+____ test_inconsistent_hunks_are_not_partial_success[next-file-before-end] _____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+____ test_inconsistent_hunks_are_not_partial_success[next-hunk-before-end] _____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+___ test_inconsistent_hunks_are_not_partial_success[nonempty-range-at-zero] ____
+tests/test_diff_hunk_validation.py:44: in test_inconsistent_hunks_are_not_partial_success
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+______ test_actual_git_patch_and_corrupted_counter_have_distinct_outcomes ______
+tests/test_diff_hunk_validation.py:88: in test_actual_git_patch_and_corrupted_counter_have_distinct_outcomes
+    with pytest.raises(ValueError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'ValueError'>
+______ test_invalid_later_file_rejects_before_source_reads_and_execution _______
+tests/test_diff_hunk_validation.py:105: in test_invalid_later_file_rejects_before_source_reads_and_execution
+    TestPilot(client).run(repo, damaged)
+testpilot/loop.py:418: in run
+    ???
+testpilot/diff.py:255: in changed_functions
+    ???
+tests/test_diff_hunk_validation.py:99: in forbidden
+    raise AssertionError("damaged diff reached source or test execution")
+E   AssertionError: damaged diff reached source or test execution
+______ test_native_targets_cli_refuses_damaged_stdin_without_success_json ______
+tests/test_diff_hunk_validation.py:125: in test_native_targets_cli_refuses_damaged_stdin_without_success_json
+    assert invalid.returncode == 2
+E   assert 0 == 2
+E    +  where 0 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'targets', '--repo', '/tmp/pytest-of-jacob/pytest-... 2\n      ],\n      "source": "def selected():\\n    return 2",\n      "is_method": false\n    }\n  ]\n}\n', stderr='').returncode
+____ test_native_run_cli_refuses_damaged_file_before_model_tests_or_output _____
+tests/test_diff_hunk_validation.py:146: in test_native_run_cli_refuses_damaged_file_before_model_tests_or_output
+    assert run.returncode == 2
+E   AssertionError: assert 0 == 2
+E    +  where 0 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-194/...da0/result/report.md, /tmp/pytest-of-jacob/pytest-194/test_native_run_cli_refuses_da0/result/report.html\n', stderr='').returncode
+=========================== short test summary info ============================
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[truncated-addition]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[missing-context-at-eof]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[extra-addition]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[extra-deletion]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[extra-context]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[old-range-underflow]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[new-range-underflow]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[context-with-no-old-lines]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[invalid-body-prefix]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[malformed-range]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[missing-file-headers]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[missing-old-header]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[headers-without-hunk]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[next-file-before-end]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[next-hunk-before-end]
+FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[nonempty-range-at-zero]
+FAILED tests/test_diff_hunk_validation.py::test_actual_git_patch_and_corrupted_counter_have_distinct_outcomes
+FAILED tests/test_diff_hunk_validation.py::test_invalid_later_file_rejects_before_source_reads_and_execution
+FAILED tests/test_diff_hunk_validation.py::test_native_targets_cli_refuses_damaged_stdin_without_success_json
+FAILED tests/test_diff_hunk_validation.py::test_native_run_cli_refuses_damaged_file_before_model_tests_or_output
+20 failed, 4 passed in 1.75s

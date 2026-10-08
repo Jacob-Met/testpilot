@@ -1,0 +1,8 @@
+diff --git a/sample.py b/sample.py
+index 419cbd0..578716e 100644
+--- a/sample.py
++++ b/sample.py
+@@ -1,3 +1,3 @@
+ def selected():
+-    return 1
++    return 2

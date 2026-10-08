@@ -1,0 +1,11 @@
+diff --git a/copy_from.py b/copy_to.py
+similarity index 100%
+copy from copy_from.py
+copy to copy_to.py
+diff --git a/mode.py b/mode.py
+old mode 100644
+new mode 100755
+diff --git a/rename_before.py b/rename_after.py
+similarity index 100%
+rename from rename_before.py
+rename to rename_after.py

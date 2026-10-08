@@ -1,0 +1,18 @@
+--- a/alpha.py	2026-10-08 17:22:18.769718272 +0000
++++ b/alpha.py	2026-10-08 17:22:18.769798328 +0000
+@@ -1,5 +1,5 @@
+ def first():
+-    return 1
++    return 2
+ 
+ # gap 00
+ # gap 01
+@@ -17,7 +17,7 @@
+ # gap 13
+ 
+ def second():
+-    return 3
++    return 4
+ 
+ def unchanged():
+     return 99

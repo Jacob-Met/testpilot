@@ -1,0 +1,168 @@
+{
+  "at": "2026-10-08T18:03:23.142875+00:00",
+  "policy": "Byte-identical copies of actual native installation and console receiving, without replay. Live example project is retained at the original path; source bytes are also retained as inert sample.py.txt. Wheel and source archive remain at original versioned artifact paths named by installation.json.",
+  "files": [
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/README.md",
+      "retained": "README.md",
+      "bytes": 2106,
+      "sha256": "8ccb7067a4eedbe7d02e1f1d82480232451e5ce2bb72a4db23c5c2dced024657"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/installation.json",
+      "retained": "artifacts/installation.json",
+      "bytes": 5516,
+      "sha256": "86d74c235a0d451fb42712015fb60f3a18c52b98407d67104a0b3ae4f974c0f0"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/steps.json",
+      "retained": "artifacts/steps.json",
+      "bytes": 2381,
+      "sha256": "9cdf8e42b6a1fba90f52176bc9e178401b42b03e95fc214b37192619e09b8ab4"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/build-wheel.log",
+      "retained": "artifacts/build-wheel.log",
+      "bytes": 635,
+      "sha256": "9d97755a682ffb49bf53653e6ad5d9932f7db350ee3a954fc4e45a62ee5ff039"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/install-wheel.log",
+      "retained": "artifacts/install-wheel.log",
+      "bytes": 136,
+      "sha256": "d6e8e349e8f167d1515d7f4689e9f0eb530f574b9bffe0a0aa757127e14d88fe"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/installed-help.log",
+      "retained": "artifacts/installed-help.log",
+      "bytes": 443,
+      "sha256": "b47b803f077188d47e7ed173248144474dbf4d256b5d3c7d8b17b945eeaec015"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/source-archive.log",
+      "retained": "artifacts/source-archive.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/venv-bootstrap.log",
+      "retained": "artifacts/venv-bootstrap.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/commands.json",
+      "retained": "receiving/commands.json",
+      "bytes": 4786,
+      "sha256": "5c2aeeff1f22d8ddefc3400ae3fc8a52949a6fb0532d3d4d400d7c56fe9dd554"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/damaged.diff",
+      "retained": "receiving/damaged.diff",
+      "bytes": 158,
+      "sha256": "93e6854a4ae3f14e2b800fa8f93bcf92b11fd3afaf2d70026b7daac6ddc654e0"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-invalid-existing.stderr.txt",
+      "retained": "receiving/installed-invalid-existing.stderr.txt",
+      "bytes": 116,
+      "sha256": "e0dcf9b14862a303da4290fbcb41cac786fcc39780d05580a1631f1cef77c66e"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-invalid-existing.stdout.txt",
+      "retained": "receiving/installed-invalid-existing.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-invalid-new.stderr.txt",
+      "retained": "receiving/installed-invalid-new.stderr.txt",
+      "bytes": 116,
+      "sha256": "e0dcf9b14862a303da4290fbcb41cac786fcc39780d05580a1631f1cef77c66e"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-invalid-new.stdout.txt",
+      "retained": "receiving/installed-invalid-new.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-targets.stderr.txt",
+      "retained": "receiving/installed-targets.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-targets.stdout.txt",
+      "retained": "receiving/installed-targets.stdout.txt",
+      "bytes": 288,
+      "sha256": "cb010fe951762bf18eba8c7889933fec8cf199113bc1ce53ec5516656d42e900"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-valid-run.stderr.txt",
+      "retained": "receiving/installed-valid-run.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/installed-valid-run.stdout.txt",
+      "retained": "receiving/installed-valid-run.stdout.txt",
+      "bytes": 796,
+      "sha256": "ec492bd514346d55ad9d5d2948e384a5b2aed56897d0f476e7bd30870a799378"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/receiving.json",
+      "retained": "receiving/receiving.json",
+      "bytes": 3653,
+      "sha256": "5b7ccec59416d704a155b082d33147cc12c342a08236acb0a8eee2cba6ba3890"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/sample.py.txt",
+      "retained": "receiving/sample.py.txt",
+      "bytes": 29,
+      "sha256": "0a39e6db6d5e99a973953cc715febd5036bc8da95a19d78b1f91a26c3361a1ca"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid.diff",
+      "retained": "receiving/valid.diff",
+      "bytes": 158,
+      "sha256": "234259bdac29b208cd5c517cd37ac2cda56d6b2cb264f6d266f0d3ed0e73956d"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/script/01_plan.md",
+      "retained": "receiving/script/01_plan.md",
+      "bytes": 28,
+      "sha256": "3047ef940de7a0e92dad4a76d76bc5abfcc02619aece28518dff33bac6d735ba"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/script/02_tests.md",
+      "retained": "receiving/script/02_tests.md",
+      "bytes": 113,
+      "sha256": "b47b02e00d70fe8a81da2aae2e86543d28c4286b3b97c38295d566f1bc7e8c2b"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid-result/report.html",
+      "retained": "receiving/valid-result/report.html",
+      "bytes": 19968,
+      "sha256": "a759d64aecc36e213297aec71e96b80a35261ef4276ee107763ce214fa212ed2"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid-result/report.json",
+      "retained": "receiving/valid-result/report.json",
+      "bytes": 4028,
+      "sha256": "2743e3e27891263b29fced6533cf57075faf3a5f800faf1e386f29be2be23f87"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid-result/report.md",
+      "retained": "receiving/valid-result/report.md",
+      "bytes": 752,
+      "sha256": "08652aa33d5d7c6c04fc97c05ffd3f4990a7b926f4c62f5917a6bffce910086e"
+    },
+    {
+      "original": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid-result/testpilot.patch",
+      "retained": "receiving/valid-result/testpilot.patch",
+      "bytes": 253,
+      "sha256": "02912f066519b84d64a9966b216ceef68ecc479720784f53011e8b8b48ecc903"
+    }
+  ]
+}

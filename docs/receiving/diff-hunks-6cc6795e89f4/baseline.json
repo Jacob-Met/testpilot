@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-08T17:09:22.297675+00:00",
+  "base": "eacb9907f51aeb9360da654c60cbbd7cf99ad877",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_diff_hunk_validation.py",
+    "--tb=short"
+  ],
+  "exit": 1,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "source_sha256": {
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/__main__.py": "319bc6e8b06615d657530eb35fa2f7f3e6a883a36c98ea1540fdf4c2815eac55",
+    "tests/test_diff_hunk_validation.py": "1c07374aea3ccdb1245cc24ac322f87fc06ad8f1b4ac87c3ba8e5930b8802085"
+  },
+  "result_tail": [
+    "tests/test_diff_hunk_validation.py:146: in test_native_run_cli_refuses_damaged_file_before_model_tests_or_output",
+    "    assert run.returncode == 2",
+    "E   AssertionError: assert 0 == 2",
+    "E    +  where 0 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-194/...da0/result/report.md, /tmp/pytest-of-jacob/pytest-194/test_native_run_cli_refuses_da0/result/report.html\\n', stderr='').returncode",
+    "=========================== short test summary info ============================",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[truncated-addition]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[missing-context-at-eof]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[extra-addition]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[extra-deletion]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[extra-context]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[old-range-underflow]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[new-range-underflow]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[context-with-no-old-lines]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[invalid-body-prefix]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[malformed-range]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[missing-file-headers]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[missing-old-header]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[headers-without-hunk]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[next-file-before-end]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[next-hunk-before-end]",
+    "FAILED tests/test_diff_hunk_validation.py::test_inconsistent_hunks_are_not_partial_success[nonempty-range-at-zero]",
+    "FAILED tests/test_diff_hunk_validation.py::test_actual_git_patch_and_corrupted_counter_have_distinct_outcomes",
+    "FAILED tests/test_diff_hunk_validation.py::test_invalid_later_file_rejects_before_source_reads_and_execution",
+    "FAILED tests/test_diff_hunk_validation.py::test_native_targets_cli_refuses_damaged_stdin_without_success_json",
+    "FAILED tests/test_diff_hunk_validation.py::test_native_run_cli_refuses_damaged_file_before_model_tests_or_output",
+    "20 failed, 4 passed in 1.75s"
+  ]
+}

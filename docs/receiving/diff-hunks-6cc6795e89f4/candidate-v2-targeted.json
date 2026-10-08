@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/test_diff_hunk_validation.py"
+  ],
+  "cwd": "/home/jacob/testpilot-hunks-6cc6795e89f4",
+  "started": "2026-10-08T17:33:16.635916+00:00",
+  "finished": "2026-10-08T17:33:27.318761+00:00",
+  "exit": 0,
+  "files_sha256": {
+    "testpilot/diff.py": "3995b19d6d68867efa1ef73f9f20db93f95d34f05cdc9b760e9f71d7e2caa69a",
+    "testpilot/__main__.py": "f5e644cb4f6bb9278657939bd6dc51390a974f7f8834efb8459e11fbce4a95cd",
+    "tests/test_diff_hunk_validation.py": "1ac50251037a2a4d355fdb1993c9c8ee4d2a0f892b29e947e4068969800ccf0a"
+  },
+  "output_sha256": "5bb920c804fd5b240b8d2d66a73a811beeb1d3d08111f0ae2c1efcdf5bfc8991"
+}

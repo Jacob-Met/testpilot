@@ -14,7 +14,6 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
 
 _HUNK = re.compile(r"^@@ -(\d+)(?:,(\d+))? \+(\d+)(?:,(\d+))? @@")
-_MAIL_FROM = re.compile(r"From (?:[0-9a-f]{40}|[0-9a-f]{64}) Mon Sep 17 00:00:00 2001")
 
 
 @dataclass
@@ -92,93 +91,45 @@ def _strip_path(raw: str) -> str | None:
     return p
 
 
-class DiffFormatError(ValueError):
-    """A unified diff has incomplete headers, ranges, or hunk records."""
-
-
 def parse_unified_diff(text: str) -> list[FileChange]:
-    """Parse complete git diff / diff -u hunks into changed line sets.
+    """Parse ``git diff`` / ``diff -u`` output into per-file changed line sets.
 
-    Declared old/new counts must match the complete body. A damaged later hunk
-    rejects the whole diff, so callers never act on a partial target selection.
-    Header-looking source lines remain body records while counts are pending.
+    Hunk line counters are tracked so that removed lines whose content starts
+    with ``-- `` are not mistaken for file headers.
     """
     files: list[FileChange] = []
     cur: FileChange | None = None
     pending_old: str | None = None
-    pending_header = False
-    saw_hunk = False
     old_left = new_left = 0
     new_ln = 0
-
-    def invalid(reason: str) -> DiffFormatError:
-        return DiffFormatError(f"invalid unified diff at record {record_number}: {reason}")
-
-    # Git records use LF, not Unicode separators. The token after a terminal LF
-    # is not a blank context record and must not satisfy a missing hunk line.
-    records = text.split("\n")
-    if records[-1] == "":
-        records.pop()
-    mail_envelope = bool(records and _MAIL_FROM.fullmatch(records[0].removesuffix("\r")))
-    record_number = 0
-    for record_number, line in enumerate(records, 1):
-        line = line.removesuffix("\r")  # A saved diff may use CRLF records.
-        # A Git mail's terminal plain-text signature is metadata. A deleted
-        # source line can be "-- "; the footer cannot fill a missing old line.
-        if mail_envelope and saw_hunk and line == "-- " and record_number < len(records):
-            signature = records[record_number].removesuffix("\r")
-            if signature and all(
-                not records[index].removesuffix("\r").startswith(("+", "-", " ", "@@", "diff --git "))
-                for index in range(record_number, len(records))
-            ):
-                if old_left or new_left:
-                    raise invalid("signature footer before a complete hunk")
-                continue
+    # Git hunk counts use LF-delimited records, not Unicode separators.
+    for line in text.split("\n"):
         if cur is not None and (old_left > 0 or new_left > 0):
-            if line == "\\ No newline at end of file":
+            if line.startswith("\\"):  # "\ No newline at end of file"
                 continue
             if line.startswith("+"):
-                if new_left == 0:
-                    raise invalid("addition exceeds the new range")
                 cur.added_lines.add(new_ln)
                 cur.touched_lines.add(new_ln)
                 new_ln += 1
                 new_left -= 1
             elif line.startswith("-"):
-                if old_left == 0:
-                    raise invalid("deletion exceeds the old range")
-                # Anchor a pure deletion to the surrounding new-file lines.
+                # anchor a pure deletion to the surrounding new-file lines
                 for anchor in (new_ln - 1, new_ln):
                     if anchor >= 1:
                         cur.touched_lines.add(anchor)
                 old_left -= 1
-            elif line.startswith(" ") or line == "":
-                # Retain support for a blank context line with its space stripped.
-                if old_left == 0 or new_left == 0:
-                    raise invalid("context exceeds a declared range")
+            else:  # context line (" " prefix, or blank if whitespace was stripped)
                 new_ln += 1
                 new_left -= 1
                 old_left -= 1
-            else:
-                raise invalid("incomplete hunk or invalid body prefix")
             continue
         if line.startswith("diff --git "):
-            if pending_header or (cur is not None and not saw_hunk):
-                raise invalid("file headers have no complete hunk")
             cur, pending_old = None, None
-            saw_hunk = False
             continue
         if line.startswith("--- "):
-            if pending_header or (cur is not None and not saw_hunk):
-                raise invalid("file headers have no complete hunk")
-            cur = None
             pending_old = _strip_path(line[4:])
-            pending_header = True
-            saw_hunk = False
             continue
         if line.startswith("+++ "):
-            if not pending_header:
-                raise invalid("new file header has no old file header")
             new_path = _strip_path(line[4:])
             cur = FileChange(
                 path=new_path or pending_old or "",
@@ -187,37 +138,14 @@ def parse_unified_diff(text: str) -> list[FileChange]:
                 is_deleted=new_path is None,
             )
             files.append(cur)
-            pending_header = False
             continue
-        if line.startswith("@@"):
-            m = _HUNK.match(line)
-            if m is None or cur is None:
-                raise invalid("malformed hunk range or missing file headers")
-            try:
-                old_start, new_start = int(m.group(1)), int(m.group(3))
-                old_left = int(m.group(2)) if m.group(2) is not None else 1
-                new_left = int(m.group(4)) if m.group(4) is not None else 1
-            except ValueError as exc:
-                raise invalid("hunk range is not a supported integer") from exc
-            if (old_left and old_start == 0) or (new_left and new_start == 0):
-                raise invalid("nonempty hunk ranges must start at line one or later")
-            if old_left == 0 and new_left == 0:
-                raise invalid("hunk has no source records")
-            saw_hunk = True
-            new_ln = new_start
-            if new_left == 0:  # "+N,0" means "after line N".
+        m = _HUNK.match(line)
+        if m and cur is not None:
+            old_left = int(m.group(2)) if m.group(2) is not None else 1
+            new_left = int(m.group(4)) if m.group(4) is not None else 1
+            new_ln = int(m.group(3))
+            if new_left == 0:  # pure deletion hunk: "+N,0" means "after line N"
                 new_ln += 1
-            continue
-        if line == "\\ No newline at end of file":
-            if not saw_hunk:
-                raise invalid("newline marker has no hunk")
-            continue
-        if saw_hunk and line.startswith(("+", "-", " ")):
-            raise invalid("body record exceeds the declared hunk ranges")
-    if old_left or new_left:
-        raise invalid(f"incomplete hunk ({old_left} old and {new_left} new records missing)")
-    if pending_header or (cur is not None and not saw_hunk):
-        raise invalid("file headers have no complete hunk")
     return files
 
 

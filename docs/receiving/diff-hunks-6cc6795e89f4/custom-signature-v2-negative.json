@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/test_diff_hunk_validation.py",
+    "-k",
+    "custom"
+  ],
+  "cwd": "/home/jacob/testpilot-hunks-integration-6cc6795e89f4",
+  "started": "2026-10-08T17:40:47.753945+00:00",
+  "finished": "2026-10-08T17:40:53.490840+00:00",
+  "exit": 1,
+  "checkpoint": "V2 parser; current accepted coverage CLI composed separately; new actual Git custom-signature fixture cases",
+  "files_sha256": {
+    "testpilot/diff.py": "3995b19d6d68867efa1ef73f9f20db93f95d34f05cdc9b760e9f71d7e2caa69a",
+    "testpilot/__main__.py": "32bb84da429e297e82aa9121e54764e615eadfd9ea8400b7f0ce804560d7cf16",
+    "tests/test_diff_hunk_validation.py": "b3ef8b04a1b195ea67cc502e187d39996e1a2ecad286c47a9a90e3a6555e52bd"
+  },
+  "output_sha256": "f98b30b2ad09188be2b48e3ea25cf6c30cf57257ea71ee73326e95a4ea797ba5"
+}
