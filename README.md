@@ -186,6 +186,14 @@ python -m eval.harness --backend tokenfactory
 
 The default model IDs come from the Token Factory docs' August 2026 deprecation notice (<https://docs.tokenfactory.nebius.com/august-2026-deprecation-notice>). That page names `nvidia/nemotron-3-super-120b-a12b` and `nvidia/Nemotron-3_5-Lightning` as current replacement models. **Check both against the live model catalog before relying on them.** To use a self-hosted or other OpenAI-compatible endpoint, set `TESTPILOT_BASE_URL`.
 
+### Retained work after an unusable model reply
+
+An incomplete or undecodable model response now returns `model_error` through
+the normal run result. The four outputs retain any earlier plan, generated test
+files, pytest results, repair history and admitted usage. The failed response is
+not added to the ledger or automatically replayed. See [model response handling](docs/MODEL_RESPONSES.md)
+for the supported reply shapes, existing retry rules and saved-work boundaries.
+
 ## Eval (scripted stub)
 
 To apply the failed-before/passed-after check to your own committed project,

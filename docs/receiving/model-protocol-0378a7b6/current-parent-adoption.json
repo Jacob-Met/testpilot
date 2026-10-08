@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-08T22:45:44.674298+00:00",
+  "authored_head": "f037259a0b6abed28f9b50c5cc0c89c6329bee5f",
+  "current_parent": "906ce149fba770a62c9f5f2fbc1b7238b949d423",
+  "current_parent_tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
+  "qualified_source_tree": "937c241ef63ebfc78f8a0deecbbf39144c0eecb2",
+  "focused": "67 passed",
+  "full_native": "478 passed, 36 failed, 35 skipped, 17 subtests passed",
+  "baseline_receiving": "All 36 FAILED/SUBFAILED summaries reproduced on unchanged current parent, selecting their 30 containing test nodes; native baseline result 36 failed, 2 passed, 5 subtests passed. Full baseline suite was not repeated.",
+  "unowned_current_parent_leaves_exact": 1497,
+  "source_leaves_unchanged_by_tests": 1509,
+  "archive": {
+    "path": "current-parent.zip",
+    "entries": 46,
+    "sha256": "9a746f8b2c43498504322a9b362c025471d7dacce25280a7558d2c219e57a654",
+    "bytes": 221296
+  },
+  "publication": "Native source accepted with reproduced baseline failures; only non-triggering source branch and issue checkpoint permitted. Required hosted gate unrun; no PR/main/Actions."
+}

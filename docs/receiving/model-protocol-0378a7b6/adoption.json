@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-10-08T21:42:17.498573+00:00",
+  "identity": "chatgpt-0378a7b6b7c2/root",
+  "baseline_commit": "513f17454af378ee042ccd29dc930ef332a48734",
+  "final_source_sha256": {
+    "testpilot/model.py": "4cd8367f511d32ada95b5d37bdd7faf06f38aa8f15c046cee3dd3eefe2f3cb6c",
+    "tests/test_model_protocol.py": "1e875743a2b6a6217fd9c6ca6557cc79dc1e414837ec19796c8273eb93a916d1",
+    "README.md": "3933f0a845e88018021f6b8f73a2f2db5241373ea690218de3807a916eec031a",
+    "docs/MODEL_RESPONSES.md": "00f62324c90c3d8630a9b3a82d734f6284c64cc729bff31cdcbbc3e445f7088e"
+  },
+  "archives": [
+    {
+      "file": "independent-admission.zip",
+      "entries": 255,
+      "sha256": "d0875b4dd976b2b238882e9b5fe1284e134a8509cdf6aba711ae3b8f90763f1c",
+      "bytes": 333815,
+      "producer_manifest": "independent-manifest.json",
+      "producer_manifest_sha256": "52ecf2c5790f8ca08a2e7549478290f94e325f6ecfd3d2d5a7d3c43f86b0b8b7",
+      "verified_artifacts": 254
+    },
+    {
+      "file": "independent-decoding.zip",
+      "entries": 94,
+      "sha256": "da33cb88c8fbc28e670ef5c5b16bfa82de1c701bae365d559a7e450837339ae1",
+      "bytes": 93416,
+      "producer_manifest": "manifest.json",
+      "producer_manifest_sha256": "bc497a8c81c3a2f2e84649de0fa1fc3806e972ab09c643a6b2935b9e4ff8aa5e",
+      "verified_artifacts": 93
+    },
+    {
+      "file": "author-receiving.zip",
+      "entries": 65,
+      "sha256": "7cf2aa7a4c2eaa8515774b50bb7adce0da91a84149f3779de9bc75ecd5e3dea2",
+      "bytes": 138373
+    }
+  ],
+  "state": "Native authored and independently received; current-parent qualification pending. No TestPilot source publication or Actions trigger. Governed by recovered no-Actions instruction."
+}

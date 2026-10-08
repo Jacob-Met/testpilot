@@ -20,6 +20,7 @@ override via TESTPILOT_PLANNER_MODEL / TESTPILOT_EDITOR_MODEL.
 """
 from __future__ import annotations
 
+import http.client
 import json
 import os
 import time
@@ -116,7 +117,16 @@ Transport = Callable[[str, dict, bytes, float], dict]
 def _urllib_transport(url: str, headers: dict, body: bytes, timeout: float) -> dict:
     req = urllib.request.Request(url, data=body, headers=headers, method="POST")
     with urllib.request.urlopen(req, timeout=timeout) as resp:  # noqa: S310 (https URL from config)
-        return json.loads(resp.read().decode("utf-8"))
+        try:
+            response_bytes = resp.read()
+        except http.client.IncompleteRead as exc:
+            raise ModelError("response body incomplete") from exc
+        try:
+            return json.loads(response_bytes.decode("utf-8"))
+        except (ValueError, RecursionError) as exc:
+            # This catches only decoding failures, including decoder limits.
+            # Errors from a caller-supplied transport keep their own meaning.
+            raise ModelError("response could not be decoded as UTF-8 JSON") from exc
 
 
 class OpenAICompatClient:
@@ -160,6 +170,8 @@ class OpenAICompatClient:
                 except TimeoutError:
                     # Preserve a terminal status even if its diagnostic body stalls.
                     detail = "response body timed out"
+                except http.client.IncompleteRead:
+                    detail = "response body incomplete"
                 finally:
                     e.close()
                 raise ModelError(f"HTTP {e.code} from {url}: {detail}") from e
@@ -172,15 +184,32 @@ class OpenAICompatClient:
                 reason = e.reason if isinstance(e, urllib.error.URLError) else str(e)
                 raise ModelError(f"connection error to {url}: {reason}") from e
         try:
-            content = data["choices"][0]["message"]["content"] or ""
+            content = data["choices"][0]["message"]["content"]
         except (KeyError, IndexError, TypeError) as e:
-            raise ModelError(f"unexpected response shape: {str(data)[:300]}") from e
-        u = data.get("usage") or {}
+            raise ModelError("unexpected response shape: expected choices[0].message.content") from e
+        if content is None:
+            content = ""
+        response_model = data.get("model", model)
+        for name, value in (("message content", content), ("model", response_model)):
+            if not isinstance(value, str):
+                raise ModelError(f"unexpected response shape: {name} must be text")
+            try:
+                value.encode("utf-8")
+            except UnicodeEncodeError as e:
+                raise ModelError(f"unexpected response shape: {name} is not valid Unicode") from e
+        u = data.get("usage")
+        if u is None:
+            u = {}
+        if not isinstance(u, dict):
+            raise ModelError("unexpected response usage: expected an object or null")
         if "prompt_tokens" in u:
-            usage = Usage(int(u.get("prompt_tokens", 0)), int(u.get("completion_tokens", 0)))
+            try:
+                usage = Usage(int(u.get("prompt_tokens", 0)), int(u.get("completion_tokens", 0)))
+            except (TypeError, ValueError, OverflowError) as e:
+                raise ModelError("unexpected response usage: invalid token counts") from e
         else:
             usage = Usage(estimate_tokens(_messages_text(messages)), estimate_tokens(content), estimated=True)
-        return ChatResponse(content=content, model=data.get("model", model), usage=usage, raw=data)
+        return ChatResponse(content=content, model=response_model, usage=usage, raw=data)
 
 
 # ------------------------------------------------------------------------ routing
