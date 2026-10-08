@@ -1,0 +1,59 @@
+{
+  "schema": "hamon.testpilot.encoding_composition_receiving.v1",
+  "source_commit": "2137ee30291af6ad0d5df581e0e7a03c8e62f952",
+  "source_sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+  "driver_sha256": "25f4730002353385442d9261cf313445657eb1d409984c54cfabc998c7f39640",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "tests": 2,
+  "passed": 2,
+  "failed": 0,
+  "results": [
+    {
+      "case": "utf8-bom",
+      "encoding": "utf-8-sig",
+      "input_source_sha256": "6645c69b63dc8cba8dcda07d56b79a7e0d974291a8f0758461d85929e7933c1c",
+      "git_patch_sha256": "ad9d3988ebdcefc911f2590b77af95d21d1f834322276be4d51a45aa598c2501",
+      "physical_span": [
+        3,
+        4
+      ],
+      "passed": true,
+      "selected": {
+        "path": "sample.py",
+        "module": "sample",
+        "qualname": "answer",
+        "lineno": 3,
+        "end_lineno": 4,
+        "changed_lines": [
+          4
+        ],
+        "source": "def answer():\n    return \"left\u2028right\", 2",
+        "is_method": false
+      }
+    },
+    {
+      "case": "latin1-cookie",
+      "encoding": "latin-1",
+      "input_source_sha256": "6709c5431968b12ab7089ec27dba7f451cf27b82c7c14d5a6b037860cc0c48e4",
+      "git_patch_sha256": "c43a5b4d69132fb48df56c9f3bc41d9726094e83946dc006d7de14a99821847f",
+      "physical_span": [
+        4,
+        5
+      ],
+      "passed": true,
+      "selected": {
+        "path": "sample.py",
+        "module": "sample",
+        "qualname": "answer",
+        "lineno": 4,
+        "end_lineno": 5,
+        "changed_lines": [
+          5
+        ],
+        "source": "def answer():\n    return \"left\u0085right\", 2",
+        "is_method": false
+      }
+    }
+  ],
+  "scope": "Actual Git text-diff API with explicitly decoded authored fixtures; no provider, install or byte-decoding claim"
+}

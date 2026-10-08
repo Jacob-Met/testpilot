@@ -1,0 +1,23 @@
+{
+  "schema": "hamon.testpilot.native_publication_mapping.v1",
+  "repository": "Jacob-Met/testpilot",
+  "claim": "https://github.com/Jacob-Met/testpilot/issues/16",
+  "base": "d7c28b0ad261e78d681f40e355447dffa4d435ed",
+  "native_original_source": "caab0c4d2f76f0a410edd9ac5f793b716a938212",
+  "native_original_receiving": "feccd2d37bfbed45dcda2a97942ad7ff25c9b56a",
+  "native_current_source": "a9e8394bfeb8f70bcef61be8db27d249d0701c0b",
+  "public_source": "1f7db29b43a05f375bba3ec0c35788273f641e87",
+  "identical_source_tree": "c96f9ccbb2c5db2aa74f64a2d7fef07b9dbd86a8",
+  "native_full_receiving_before_publication_metadata": "bb30b710659d7ca73fb7423ccfbd47a950e2931d",
+  "native_full_receiving_tree_before_publication_metadata": "bca835485f8018978b82a3cd72147b803266fce7",
+  "source_sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+  "original_independent_receipt_sha256": "2d2641b9e534007926d74f4dc83735e9c16821d8b86fd58408253c2c7f9721e8",
+  "current_composition_independent_addendum_sha256": "f631a2c94428343ce66092550d201ade4eefdf76a0fb9f6260aa4e023b66b528",
+  "qualification": "Author native unit/CLI receiving and independent original/source-composition receiving accepted; source artifacts are unchanged.",
+  "metadata_note": "The supported GitHub commit API chooses public commit metadata. Native and public source commits have identical complete trees. This map and the independent current-composition addendum are evidence additions only. Final public head and fetch verification are retained in a separate native publication/integration receipt; this file does not invent a self-referential commit pin.",
+  "boundaries": [
+    "No other owner's source scope replaced",
+    "No provider calls, model efficacy, installed runtime or personal-state qualification",
+    "No separate-account GitHub approval claimed"
+  ]
+}

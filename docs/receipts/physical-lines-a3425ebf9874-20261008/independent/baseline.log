@@ -1,0 +1,38 @@
+test_multifile_context_lookalikes_and_decorated_async_span (__main__.IndependentPhysicalLineConsumers.test_multifile_context_lookalikes_and_decorated_async_span) ... FAIL
+test_pure_deletion_anchors_keep_complete_literal_bearing_function (__main__.IndependentPhysicalLineConsumers.test_pure_deletion_anchors_keep_complete_literal_bearing_function) ... FAIL
+
+======================================================================
+FAIL: test_multifile_context_lookalikes_and_decorated_async_span (__main__.IndependentPhysicalLineConsumers.test_multifile_context_lookalikes_and_decorated_async_span)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/independent-remote-review/review_consumers.py", line 64, in test_multifile_context_lookalikes_and_decorated_async_span
+    self.assertEqual([c.added_lines for c in changes], [{8}, {2}])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [{2}, {2}] != [{8}, {2}]
+
+First differing element 0:
+{2}
+{8}
+
+- [{2}, {2}]
+?   ^
+
++ [{8}, {2}]
+?   ^
+
+
+======================================================================
+FAIL: test_pure_deletion_anchors_keep_complete_literal_bearing_function (__main__.IndependentPhysicalLineConsumers.test_pure_deletion_anchors_keep_complete_literal_bearing_function)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-physical-lines/independent-remote-review/review_consumers.py", line 89, in test_pure_deletion_anchors_keep_complete_literal_bearing_function
+    self.assertEqual(change.touched_lines, {4, 5})
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Items in the second set but not the first:
+4
+5
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.065s
+
+FAILED (failures=2)
