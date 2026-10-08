@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-10-08 11:01:02 UTC",
+  "repository": "Jacob-Met/testpilot",
+  "base": "9f01fcb6de085850eca00db746380795eb548d62",
+  "owner": "estate-e04ee971c817/development_acceleration",
+  "authorization": "Parent /root approved this exact isolated scope; public informational notice is held during GitHub content-creation backoff.",
+  "scope": [
+    "testpilot/__main__.py",
+    "tests/test_cli_targets.py",
+    "docs/targets-preview.md"
+  ],
+  "beneficiary": "Developers inspect actual diff-selected functions and source before opting into test generation.",
+  "preserved": [
+    "testpilot/diff.py native selector and pending source-encoding owner",
+    "testpilot/loop.py",
+    "testpilot/model.py",
+    "testpilot/sandbox.py",
+    "all existing run behavior and interpreter selection",
+    "all current tests and web-demo"
+  ],
+  "ownership_reads": {
+    "hamon142": 40,
+    "hamon140": 218,
+    "hamon143": 87,
+    "hamon147": 33,
+    "hamon172": 3,
+    "hamon139": 15,
+    "testpilot2": 13,
+    "testpilot2_latest_comment": "6057727966",
+    "testpilot_open_issues": 0,
+    "open_pr_source_read": "Current PR descriptions 1,3\u20136,8\u201312 read; no target-preview claim found."
+  },
+  "baseline_evidence": "evidence/baseline-targets.json",
+  "limits": "Selected exact source slice, no dependency installation, model/provider/account action or live state. This is a missing capability, not a repaired false-success claim."
+}

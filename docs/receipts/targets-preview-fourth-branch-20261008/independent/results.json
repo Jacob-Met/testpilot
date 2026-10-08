@@ -1,0 +1,447 @@
+{
+  "source_preservation": {
+    "pins": {
+      "baseline": {
+        "testpilot/__main__.py": {
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "bytes": 3316
+        },
+        "testpilot/__init__.py": {
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "bytes": 390
+        },
+        "testpilot/diff.py": {
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "bytes": 9059
+        },
+        "testpilot/loop.py": {
+          "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+          "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+          "bytes": 21164
+        },
+        "testpilot/model.py": {
+          "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+          "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+          "bytes": 9730
+        },
+        "testpilot/sandbox.py": {
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "bytes": 9286
+        },
+        "pyproject.toml": {
+          "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+          "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+          "bytes": 676
+        }
+      },
+      "candidate": {
+        "testpilot/__main__.py": {
+          "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+          "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+          "bytes": 5094
+        },
+        "testpilot/__init__.py": {
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "bytes": 390
+        },
+        "testpilot/diff.py": {
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "bytes": 9059
+        },
+        "testpilot/loop.py": {
+          "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+          "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+          "bytes": 21164
+        },
+        "testpilot/model.py": {
+          "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+          "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+          "bytes": 9730
+        },
+        "testpilot/sandbox.py": {
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "bytes": 9286
+        },
+        "pyproject.toml": {
+          "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+          "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+          "bytes": 676
+        },
+        "tests/test_cli_targets.py": {
+          "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e",
+          "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+          "bytes": 10853
+        },
+        "docs/targets-preview.md": {
+          "git_blob": "e8c89fa731ae13922057c5be5b03f0b35ce1b243",
+          "sha256": "a8cd6a14ba16e0abbc40588e1568760f6f12ffa3dfa4f4a855cde88bd6303a27",
+          "bytes": 4308
+        }
+      }
+    },
+    "run_tail_byte_identical": true,
+    "run_parser_AST_identical": true,
+    "interpreter_helper_byte_identical": true,
+    "all_six_support_files_exact": true
+  },
+  "native_expected": [
+    {
+      "path": "lib/conditional.py",
+      "module": "conditional",
+      "qualname": "Adapter.format_value",
+      "lineno": 3,
+      "end_lineno": 5,
+      "changed_lines": [
+        5
+      ],
+      "source": "        @staticmethod\n        async def format_value(value):\n            return f\"<{value}>\"",
+      "is_method": true
+    },
+    {
+      "path": "src/odd\n\u540d\u5b57.py",
+      "module": "odd\n\u540d\u5b57",
+      "qualname": "outer",
+      "lineno": 5,
+      "end_lineno": 8,
+      "changed_lines": [],
+      "source": "def outer(value):\n    def normalize(v):\n        return v + 10\n    return normalize(value)",
+      "is_method": false
+    }
+  ],
+  "exact_human_expected": "2 changed Python functions outside tests\n\"lib/conditional.py\":3-5  \"Adapter.format_value\"\n\"src/odd\\n\\u540d\\u5b57.py\":5-8  \"outer\"\n",
+  "records": [
+    {
+      "variant": "baseline",
+      "case": "native-git-json",
+      "child_exit": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n",
+      "trace": {
+        "ready": true,
+        "operations": [],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": false,
+        "empty_stderr": false,
+        "native_records_or_exact_human": false,
+        "trace_ready": true,
+        "no_model_runner_writer_or_network": true,
+        "only_expected_git_diff": false,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "candidate",
+      "case": "native-git-json",
+      "child_exit": 0,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"lib/conditional.py\",\n      \"module\": \"conditional\",\n      \"qualname\": \"Adapter.format_value\",\n      \"lineno\": 3,\n      \"end_lineno\": 5,\n      \"changed_lines\": [\n        5\n      ],\n      \"source\": \"        @staticmethod\\n        async def format_value(value):\\n            return f\\\"<{value}>\\\"\",\n      \"is_method\": true\n    },\n    {\n      \"path\": \"src/odd\\n\\u540d\\u5b57.py\",\n      \"module\": \"odd\\n\\u540d\\u5b57\",\n      \"qualname\": \"outer\",\n      \"lineno\": 5,\n      \"end_lineno\": 8,\n      \"changed_lines\": [],\n      \"source\": \"def outer(value):\\n    def normalize(v):\\n        return v + 10\\n    return normalize(value)\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+      "stderr": "",
+      "trace": {
+        "ready": true,
+        "operations": [
+          {
+            "name": "subprocess.run",
+            "argv": [
+              "git",
+              "-C",
+              "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/project",
+              "diff",
+              "HEAD",
+              "--",
+              "*.py"
+            ],
+            "check": true,
+            "capture_output": true,
+            "text": true
+          }
+        ],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": true,
+        "empty_stderr": true,
+        "native_records_or_exact_human": true,
+        "trace_ready": true,
+        "no_model_runner_writer_or_network": true,
+        "only_expected_git_diff": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "baseline",
+      "case": "saved-human",
+      "child_exit": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n",
+      "trace": {
+        "ready": true,
+        "operations": [],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": false,
+        "empty_stderr": false,
+        "native_records_or_exact_human": false,
+        "trace_ready": true,
+        "no_model_runner_writer_or_network": true,
+        "only_expected_git_diff": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "candidate",
+      "case": "saved-human",
+      "child_exit": 0,
+      "stdout": "2 changed Python functions outside tests\n\"lib/conditional.py\":3-5  \"Adapter.format_value\"\n\"src/odd\\n\\u540d\\u5b57.py\":5-8  \"outer\"\n",
+      "stderr": "",
+      "trace": {
+        "ready": true,
+        "operations": [],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": true,
+        "empty_stderr": true,
+        "native_records_or_exact_human": true,
+        "trace_ready": true,
+        "no_model_runner_writer_or_network": true,
+        "only_expected_git_diff": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "baseline",
+      "case": "stdin-json",
+      "child_exit": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n",
+      "trace": {
+        "ready": true,
+        "operations": [],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": false,
+        "empty_stderr": false,
+        "native_records_or_exact_human": false,
+        "trace_ready": true,
+        "no_model_runner_writer_or_network": true,
+        "only_expected_git_diff": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "candidate",
+      "case": "stdin-json",
+      "child_exit": 0,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"lib/conditional.py\",\n      \"module\": \"conditional\",\n      \"qualname\": \"Adapter.format_value\",\n      \"lineno\": 3,\n      \"end_lineno\": 5,\n      \"changed_lines\": [\n        5\n      ],\n      \"source\": \"        @staticmethod\\n        async def format_value(value):\\n            return f\\\"<{value}>\\\"\",\n      \"is_method\": true\n    },\n    {\n      \"path\": \"src/odd\\n\\u540d\\u5b57.py\",\n      \"module\": \"odd\\n\\u540d\\u5b57\",\n      \"qualname\": \"outer\",\n      \"lineno\": 5,\n      \"end_lineno\": 8,\n      \"changed_lines\": [],\n      \"source\": \"def outer(value):\\n    def normalize(v):\\n        return v + 10\\n    return normalize(value)\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+      "stderr": "",
+      "trace": {
+        "ready": true,
+        "operations": [],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": true,
+        "empty_stderr": true,
+        "native_records_or_exact_human": true,
+        "trace_ready": true,
+        "no_model_runner_writer_or_network": true,
+        "only_expected_git_diff": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "baseline",
+      "case": "no-partial-preview",
+      "child_exit": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n",
+      "trace": {
+        "ready": true,
+        "operations": [],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_two": true,
+        "stdout_empty": true,
+        "native_error_reported": false,
+        "trace_ready": true,
+        "no_effects": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "candidate",
+      "case": "no-partial-preview",
+      "child_exit": 2,
+      "stdout": "",
+      "stderr": "testpilot: cannot inspect targets: invalid syntax (zz_invalid.py, line 1)\n",
+      "trace": {
+        "ready": true,
+        "operations": [],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_two": true,
+        "stdout_empty": true,
+        "native_error_reported": true,
+        "trace_ready": true,
+        "no_effects": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "baseline",
+      "case": "preserved-run-dispatch",
+      "child_exit": 0,
+      "stdout": "dispatch accepted\nwrote /dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/never-written/report.md, /dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/never-written/testpilot.patch\n",
+      "stderr": "",
+      "trace": {
+        "ready": true,
+        "operations": [
+          {
+            "name": "make_client",
+            "backend": "scripted",
+            "kwargs": {
+              "script": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/scripted-input",
+              "base_url": "https://receiver.invalid/v1"
+            }
+          },
+          {
+            "name": "RoutingConfig.from_env"
+          },
+          {
+            "name": "TestPilot",
+            "client_matches": true,
+            "routing_matches": true,
+            "kwargs": {
+              "max_repair_rounds": 7,
+              "timeout_s": 1.25,
+              "max_total_tokens": 314,
+              "python": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/venv-bin/python"
+            }
+          },
+          {
+            "name": "run",
+            "repo": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/project",
+            "diff": "diff --git a/deleted.py b/deleted.py\ndeleted file mode 100644\nindex 08f8269..0000000\n--- a/deleted.py\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-def deleted():\n-    return 8\ndiff --git a/lib/conditional.py b/lib/conditional.py\nindex c940779..6277f88 100644\n--- a/lib/conditional.py\n+++ b/lib/conditional.py\n@@ -2,7 +2,7 @@ if True:\n     class Adapter:\n         @staticmethod\n         async def format_value(value):\n-            return str(value)\n+            return f\"<{value}>\"\n \n def untouched():\n     return 3\ndiff --git a/src/config.py b/src/config.py\nindex b15b1b0..c8fcecd 100644\n--- a/src/config.py\n+++ b/src/config.py\n@@ -1 +1 @@\n-VALUE = 1\n+VALUE = 2\ndiff --git \"a/src/odd\\n\\345\\220\\215\\345\\255\\227.py\" \"b/src/odd\\n\\345\\220\\215\\345\\255\\227.py\"\nindex 989f3f1..423ae6f 100644\n--- \"a/src/odd\\n\\345\\220\\215\\345\\255\\227.py\"\n+++ \"b/src/odd\\n\\345\\220\\215\\345\\255\\227.py\"\n@@ -5,5 +5,4 @@ raise RuntimeError(\"do not import selected source\")\n def outer(value):\n     def normalize(v):\n         return v + 10\n-    dropped = 9\n     return normalize(value)\ndiff --git a/tests/test_noise.py b/tests/test_noise.py\nindex b5414d5..948451d 100644\n--- a/tests/test_noise.py\n+++ b/tests/test_noise.py\n@@ -1,2 +1,2 @@\n def test_noise():\n-    assert 1\n+    assert 2\n"
+          },
+          {
+            "name": "write_outputs",
+            "ok": true,
+            "out": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/never-written"
+          },
+          {
+            "name": "render_report",
+            "ok": true
+          }
+        ],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": true,
+        "empty_stderr": true,
+        "ordered_run_dispatch": true,
+        "all_run_options_preserved": true,
+        "original_diff_and_repo": true,
+        "trace_ready_no_real_effects": true,
+        "project_bytes_unchanged": true
+      }
+    },
+    {
+      "variant": "candidate",
+      "case": "preserved-run-dispatch",
+      "child_exit": 0,
+      "stdout": "dispatch accepted\nwrote /dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/never-written/report.md, /dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/never-written/testpilot.patch\n",
+      "stderr": "",
+      "trace": {
+        "ready": true,
+        "operations": [
+          {
+            "name": "make_client",
+            "backend": "scripted",
+            "kwargs": {
+              "script": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/scripted-input",
+              "base_url": "https://receiver.invalid/v1"
+            }
+          },
+          {
+            "name": "RoutingConfig.from_env"
+          },
+          {
+            "name": "TestPilot",
+            "client_matches": true,
+            "routing_matches": true,
+            "kwargs": {
+              "max_repair_rounds": 7,
+              "timeout_s": 1.25,
+              "max_total_tokens": 314,
+              "python": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/venv-bin/python"
+            }
+          },
+          {
+            "name": "run",
+            "repo": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/project",
+            "diff": "diff --git a/deleted.py b/deleted.py\ndeleted file mode 100644\nindex 08f8269..0000000\n--- a/deleted.py\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-def deleted():\n-    return 8\ndiff --git a/lib/conditional.py b/lib/conditional.py\nindex c940779..6277f88 100644\n--- a/lib/conditional.py\n+++ b/lib/conditional.py\n@@ -2,7 +2,7 @@ if True:\n     class Adapter:\n         @staticmethod\n         async def format_value(value):\n-            return str(value)\n+            return f\"<{value}>\"\n \n def untouched():\n     return 3\ndiff --git a/src/config.py b/src/config.py\nindex b15b1b0..c8fcecd 100644\n--- a/src/config.py\n+++ b/src/config.py\n@@ -1 +1 @@\n-VALUE = 1\n+VALUE = 2\ndiff --git \"a/src/odd\\n\\345\\220\\215\\345\\255\\227.py\" \"b/src/odd\\n\\345\\220\\215\\345\\255\\227.py\"\nindex 989f3f1..423ae6f 100644\n--- \"a/src/odd\\n\\345\\220\\215\\345\\255\\227.py\"\n+++ \"b/src/odd\\n\\345\\220\\215\\345\\255\\227.py\"\n@@ -5,5 +5,4 @@ raise RuntimeError(\"do not import selected source\")\n def outer(value):\n     def normalize(v):\n         return v + 10\n-    dropped = 9\n     return normalize(value)\ndiff --git a/tests/test_noise.py b/tests/test_noise.py\nindex b5414d5..948451d 100644\n--- a/tests/test_noise.py\n+++ b/tests/test_noise.py\n@@ -1,2 +1,2 @@\n def test_noise():\n-    assert 1\n+    assert 2\n"
+          },
+          {
+            "name": "write_outputs",
+            "ok": true,
+            "out": "/dev/shm/runtime-testpilot-targets-review-e04ee971c817/tp-native-receiver-a_uni8tc/never-written"
+          },
+          {
+            "name": "render_report",
+            "ok": true
+          }
+        ],
+        "forbidden": []
+      },
+      "project_bytes_unchanged": true,
+      "checks": {
+        "exit_zero": true,
+        "empty_stderr": true,
+        "ordered_run_dispatch": true,
+        "all_run_options_preserved": true,
+        "original_diff_and_repo": true,
+        "trace_ready_no_real_effects": true,
+        "project_bytes_unchanged": true
+      }
+    }
+  ],
+  "run_dispatch_exact_pair": true,
+  "actual_Python_CLI_children": 10,
+  "native_Git_diff_inside_CLI_children": 1,
+  "candidate_conditions": 34,
+  "candidate_failed_conditions": 0,
+  "baseline_failed_conditions": 11,
+  "receiver": {
+    "git_blob": "66bb04a79d119a1ad363064c31688ac6f01e213c",
+    "sha256": "375de263831f1ba51948c5347bd3cac88c8b261fdd50b04f1f3ddce7395df0b6",
+    "bytes": 17867
+  },
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "limits": [
+    "Actual local module CLI and Git; no project import, model/provider, pytest, report output, live account or service.",
+    "Existing run dispatch is controlled at factory/runner/writer boundaries; author native run control is separate.",
+    "Preview retains native Git configuration policy; fixture Git configuration is explicit and disposable.",
+    "No native Windows qualification or full repository test suite."
+  ]
+}
