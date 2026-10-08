@@ -107,6 +107,20 @@ quality claim. Source, messages and model text are rendered literally, with
 visible escapes for HTML-incompatible controls or surrogate characters. The
 embedded original downloads remain unchanged.
 
+## Compare two saved runs
+
+Use saved reports from two runs to review their recorded results, selected source,
+generated-file changes, diagnostics, coverage, usage, and rounds in one offline page:
+
+```bash
+python -m testpilot compare --before out/before/report.json --after out/after/report.json --out comparison.html
+```
+
+The output path must be new. The page includes exact original JSON downloads and
+works without JavaScript. It preserves unavailable measurements and each run's
+own source context; the comparison adds no execution or measured-improvement claim.
+See [the comparison guide](docs/COMPARE.md) for supported inputs, limits, and keyboard use.
+
 ## Running on Nebius Token Factory
 
 Token Factory has an OpenAI-compatible API. Its quickstart (<https://docs.tokenfactory.nebius.com/quickstart>, read 2026-10-04) uses:

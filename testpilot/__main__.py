@@ -97,10 +97,24 @@ def main(argv: list[str] | None = None) -> int:
     recheck.add_argument("--timeout", type=float, default=60.0, help="pytest timeout, seconds (default 60)")
     recheck.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
                          help="project Python; path or PATH command (default: this interpreter)")
+    comparison = sub.add_parser("compare", help="compare two saved reports without running tests or a model")
+    comparison.add_argument("--before", required=True, help="saved report JSON labeled Before")
+    comparison.add_argument("--after", required=True, help="saved report JSON labeled After")
+    comparison.add_argument("--out", required=True, help="new self-contained HTML file; existing files are preserved")
     a = ap.parse_args(argv)
 
     if a.cmd == "recheck":
         return run_recheck_command(a)
+
+    if a.cmd == "compare":
+        from .compare import ComparisonError, write_comparison
+        try:
+            output = write_comparison(a.before, a.after, a.out)
+        except (ComparisonError, OSError) as exc:
+            print(f"testpilot: cannot compare saved reports: {exc}", file=sys.stderr)
+            return 2
+        print(f"wrote {output}")
+        return 0
 
     if a.cmd == "targets":
         return _preview_targets(a)
