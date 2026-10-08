@@ -1,0 +1,240 @@
+{
+  "schema": "testpilot-module-identity-independent-candidate-receiving.v1",
+  "verdict": "ACCEPT",
+  "base": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "base_tree": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+  "candidate_diff_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+  "candidate_diff_sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+  "current_sandbox_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+  "frozen_oracle_sha256": "ec283532fc7fab6d928ce3ae15d1bd4240386563284fcd0523f6c008525cbaa0",
+  "oracle_use": "Imported the original unchanged five-method oracle; supplied the exact candidate diff and current sandbox module objects and a separate owned fixture directory. No method, assertion, fixture content or runner code changed.",
+  "only_changed_top_level_ast_node": "module_name",
+  "other_eight_current_production_modules_byte_identical": true,
+  "methods": 5,
+  "passed": 5,
+  "errors": 0,
+  "failures": 0,
+  "skips": 0,
+  "actual_native_processes": 5,
+  "cases": [
+    {
+      "case": "frozen_module_identity_oracle.ModuleIdentity.test_lib_package_does_not_bind_root_namesake",
+      "fixture_files": {
+        "_estate_module_binding_probe.py": "def selected_value():\n    return 99\n",
+        "lib/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "lib/__init__.py": ""
+      },
+      "diff": "--- a/lib/_estate_module_binding_probe.py\n+++ b/lib/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "lib/_estate_module_binding_probe.py",
+        "module": "lib._estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-_igcxsbm/lib/_estate_module_binding_probe.py",
+      "native_pythonpath": "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-_igcxsbm",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-_igcxsbm/lib/_estate_module_binding_probe.py\", \"value\": 2}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-_igcxsbm/lib/_estate_module_binding_probe.py",
+        "value": 2
+      },
+      "fixture_hashes_before": {
+        "_estate_module_binding_probe.py": "b4f5672bfaa9674f1aa933c7f474ef8d07b75e1916f0b3fb4886664c1c13a04e",
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "_estate_module_binding_probe.py": "b4f5672bfaa9674f1aa933c7f474ef8d07b75e1916f0b3fb4886664c1c13a04e",
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "frozen_module_identity_oracle.ModuleIdentity.test_lib_package_initializer_is_importable",
+      "fixture_files": {
+        "lib/__init__.py": "def selected_value():\n    return 2\n"
+      },
+      "diff": "--- a/lib/__init__.py\n+++ b/lib/__init__.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "lib/__init__.py",
+        "module": "lib",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-u742et2n/lib/__init__.py",
+      "native_pythonpath": "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-u742et2n",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-u742et2n/lib/__init__.py\", \"value\": 2}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-u742et2n/lib/__init__.py",
+        "value": 2
+      },
+      "fixture_hashes_before": {
+        "lib/__init__.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0"
+      },
+      "fixture_hashes_after": {
+        "lib/__init__.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0"
+      }
+    },
+    {
+      "case": "frozen_module_identity_oracle.ModuleIdentity.test_regular_lib_package_has_qualified_import_identity",
+      "fixture_files": {
+        "lib/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "lib/__init__.py": ""
+      },
+      "diff": "--- a/lib/_estate_module_binding_probe.py\n+++ b/lib/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "lib/_estate_module_binding_probe.py",
+        "module": "lib._estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-c7n4xk8w/lib/_estate_module_binding_probe.py",
+      "native_pythonpath": "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-c7n4xk8w",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-c7n4xk8w/lib/_estate_module_binding_probe.py\", \"value\": 2}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-c7n4xk8w/lib/_estate_module_binding_probe.py",
+        "value": 2
+      },
+      "fixture_hashes_before": {
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "frozen_module_identity_oracle.ModuleIdentity.test_regular_root_package_control",
+      "fixture_files": {
+        "pkg/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "pkg/__init__.py": ""
+      },
+      "diff": "--- a/pkg/_estate_module_binding_probe.py\n+++ b/pkg/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "pkg/_estate_module_binding_probe.py",
+        "module": "pkg._estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "pkg._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-20_lrfa3/pkg/_estate_module_binding_probe.py",
+      "native_pythonpath": "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-20_lrfa3",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-20_lrfa3/pkg/_estate_module_binding_probe.py\", \"value\": 2}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-20_lrfa3/pkg/_estate_module_binding_probe.py",
+        "value": 2
+      },
+      "fixture_hashes_before": {
+        "pkg/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "pkg/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "frozen_module_identity_oracle.ModuleIdentity.test_src_lib_package_control",
+      "fixture_files": {
+        "src/lib/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "src/lib/__init__.py": ""
+      },
+      "diff": "--- a/src/lib/_estate_module_binding_probe.py\n+++ b/src/lib/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "src/lib/_estate_module_binding_probe.py",
+        "module": "lib._estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-d94k92q7/src/lib/_estate_module_binding_probe.py",
+      "native_pythonpath": "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-d94k92q7/src:/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-d94k92q7",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-d94k92q7/src/lib/_estate_module_binding_probe.py\", \"value\": 2}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/candidate-receiving-29dd325a/module-identity-d94k92q7/src/lib/_estate_module_binding_probe.py",
+        "value": 2
+      },
+      "fixture_hashes_before": {
+        "src/lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "src/lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "src/lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "src/lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "source_hashes_before": {
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/loop.py": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+  },
+  "source_hashes_after": {
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/loop.py": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631/testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+  },
+  "source_and_frozen_oracle_unchanged": true,
+  "raw_log_sha256": "57077ec6d2fa822180c23b87667bd7b15827473368daab9782a5803acd5aa8d4",
+  "limits": [
+    "Selected actual native imports under sandbox.clean_env/_run; not a full CLI/model/pytest generation run.",
+    "No dependency install, model/provider call or external user-data operation.",
+    "Full current suite and published commit/tree are separate receiving gates."
+  ]
+}

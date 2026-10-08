@@ -1,0 +1,13 @@
+{
+  "frozen_before_production_edit": true,
+  "time_utc": "2026-10-08T14:46:13.278615+00:00",
+  "current_base_commit": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "base_tree": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+  "selector_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+  "current_sandbox_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+  "path": "tests/test_module_identity.py",
+  "bytes": 4314,
+  "sha256": "d46df603a736e5f2f76a139373d2ea4195a485a1317976609190ecbf8791bb1d",
+  "git_blob": "c43f1284d381493f28f308acfb0b5cabf9025d7f",
+  "gates": "Seven genuine selector/native import cases, two actual generated pytest cases; all check source/input bytes and modes. No model or provider calls."
+}

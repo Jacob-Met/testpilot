@@ -162,7 +162,7 @@ def is_test_path(path: str) -> bool:
 
 def module_name(path: str) -> str:
     parts = list(PurePosixPath(path).with_suffix("").parts)
-    if parts and parts[0] in ("src", "lib"):
+    if parts and parts[0] == "src":
         parts = parts[1:]
     if parts and parts[-1] == "__init__":
         parts = parts[:-1]
