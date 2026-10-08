@@ -277,10 +277,6 @@ def render_html_report(report_json: bytes, patch: bytes) -> str:
                  'A model response without a new run does not add an execution.</p>'
                  + _rounds(report['rounds']) + '</section>')
     parts.append('<section id="scope" aria-labelledby="scope-heading"><h2 id="scope-heading">Plan and selected source</h2>')
-    selection = report.get("selection")
-    if isinstance(selection, dict) and selection.get("mode") == "explicit":
-        parts.append('<p class="notice">' + _text(selection.get("reason", "Caller-selected targets.")) + '</p>')
-        parts.append(_disclosure("Supplied diff context", _pre(selection.get("diff_text", ""))))
     if report.get('plan'):
         parts.append('<h3>Model test plan</h3>' + _pre(report['plan']))
     else:

@@ -84,6 +84,15 @@ On a real repo, use `--git-base main` instead of `--diff FILE`. Exit codes: 0 me
 
 Add `--no-coverage` to `run` to execute pytest without optional coverage measurement. The choice applies to the baseline, generated tests and every repair round, including when you select a project interpreter with `--python`. Reports then show coverage as unavailable; actual test failures and exit codes still determine the run's result. Omit the flag to keep automatic coverage when the selected interpreter has it installed.
 
+## Choose functions explicitly
+
+Use repeated `--target path.py::qualname` flags on `targets` or `run` to select
+specific current functions, including unchanged functions affected by a change
+you have identified. The supplied diff stays available as context to planning,
+generation and repair. Without this option, automatic diff selection is unchanged.
+See [explicit targets](docs/EXPLICIT_TARGETS.md) for preview, ordering, refusals,
+saved selection context and unchanged-function coverage semantics.
+
 ## Review your own run in a browser
 
 Every run also writes **`report.html`** in its output directory. Open that file
@@ -126,6 +135,15 @@ Publication then replaces each file individually. This is not a transaction acro
 all four files: a later replacement error or a process/system failure can leave a
 mixture of old and new files. Concurrent writers are not coordinated. Use a separate
 output directory when separate runs need independent saved results.
+
+## Inspect a saved-test recheck
+
+The model-free `testpilot recheck` command also writes **`recheck.html`** beside
+its existing JSON and Markdown. Open it directly to inspect the actual current
+cases, diagnostics, retained test source, timing and source identity. Its exact
+JSON download travels with the file. Missing JUnit stays unavailable, and the
+original report's status stays historical. See the [recheck guide](docs/RECHECK.md)
+for the command, execution boundaries and output-delivery limits.
 
 ## Running on Nebius Token Factory
 

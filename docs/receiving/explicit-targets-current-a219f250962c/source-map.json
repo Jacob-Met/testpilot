@@ -1,0 +1,110 @@
+{
+  "schema": "testpilot.current-composition.v1",
+  "repository": "Jacob-Met/testpilot",
+  "current_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "current_parent_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "preserved_first_parent": "e971f4490e9a6c8c23d9e645e47232632cd015e3",
+  "preserved_first_parent_tree": "a4354af9a5392de0f34a9154a1362b7a2ed6253b",
+  "commit_parent_order": [
+    "e971f4490e9a6c8c23d9e645e47232632cd015e3",
+    "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e"
+  ],
+  "native_received_source": "00b63c8e03cc515160da1202331224167d12d253",
+  "native_received_tree": "d1ba76e3872a0e843821b799f8accb69aa32416d",
+  "native_receiving_parent": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "original_packet": {
+    "path": "docs/receiving/explicit-targets-a219f250962c",
+    "files": 63,
+    "bytes": 437821,
+    "manifest_sha256": "6dece6ae88d4822d7b3a47a4709ab224dcf7eca70b78d945660b4283dea65937",
+    "all_bytes_preserved": true
+  },
+  "source_files": [
+    {
+      "path": "README.md",
+      "git_blob": "757f04ea0b3553ac0015f3bdb40a2b0eff39e55c",
+      "sha256": "bd55243bc5677010e29d8517b5acd301d1bc0aff25d71083c15f96f9085ef7ed",
+      "bytes": 13172,
+      "native_exact": false
+    },
+    {
+      "path": "docs/EXPLICIT_TARGETS.md",
+      "git_blob": "3cfe7a0370d48a1e86c6f7c49bb7508fbdfb8abd",
+      "sha256": "dabf34adc34d931749f04debe601fb8f2c6a0ab668278c8539926fb05c88cca8",
+      "bytes": 5497,
+      "native_exact": true
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "git_blob": "5686cb41d555890b906d2ea322149f0673e8049d",
+      "sha256": "319bc6e8b06615d657530eb35fa2f7f3e6a883a36c98ea1540fdf4c2815eac55",
+      "bytes": 7479,
+      "native_exact": true
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "git_blob": "2fcc6441473684c2f8bdd16d314e8b258de51edf",
+      "sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+      "bytes": 20982,
+      "native_exact": true
+    },
+    {
+      "path": "testpilot/loop.py",
+      "git_blob": "a9de8356f3454334578bdfd1af19d6382b8a64a0",
+      "sha256": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+      "bytes": 26822,
+      "native_exact": false
+    },
+    {
+      "path": "testpilot/targets.py",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "bytes": 5410,
+      "native_exact": true
+    },
+    {
+      "path": "tests/test_explicit_target_cli.py",
+      "git_blob": "d01e0dad0cb73fe1f54b6c88d8287792dd587869",
+      "sha256": "01eb0a6782448a59bbf876fa1d8cbf8398bb05b461f5875b4d125b0147ab3365",
+      "bytes": 1930,
+      "native_exact": true
+    },
+    {
+      "path": "tests/test_explicit_targets.py",
+      "git_blob": "438d1c23335d79d4151a198f7e3606595cd68785",
+      "sha256": "bd40f190a52195eed73145cbd0a721b0c555307dfd358ec1d795df3799026b1d",
+      "bytes": 5268,
+      "native_exact": true
+    }
+  ],
+  "composition": {
+    "owner": "https://github.com/Jacob-Met/testpilot/pull/34",
+    "loop": {
+      "current_parent_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "native_accepted_blob": "8a567fb35f29dc242413df3678f5f63fe08caa4f",
+      "imports_added_verbatim": [
+        "errno",
+        "io",
+        "stat",
+        "tempfile"
+      ],
+      "write_outputs_bytes": 2001,
+      "write_outputs_sha256": "99077af99799e311684a9228825f58c5f15e2fc97b5cabbc03f5cfc27525eaad",
+      "entire_current_write_outputs_suffix_preserved": true,
+      "reversing_only_owner_imports_and_writer_recovers_native_accepted_bytes": true,
+      "reversing_only_owner_imports_and_writer_in_current_parent_recovers_received_631_loop": true
+    },
+    "readme": {
+      "both_exact_additive_sections_preserved": true
+    },
+    "other_six_source_files_native_exact": true,
+    "all_1059_unrelated_current_parent_leaves_preserved": true,
+    "expected_full_tree_leaves": 1132
+  },
+  "qualification": {
+    "author_source_composition": "Exact reversible source comparisons and Python AST parsing passed.",
+    "native_runtime": "Existing accepted native 00b/631 results remain unchanged; this 7f44 composition has not been rerun natively.",
+    "combined_runtime": "Hosted full-tree CI and root independent public receiving are separate gates.",
+    "custody": "This composition and its mapping were assembled in memory. Original native source and separate native packets are preserved; no new native unified packet or archive is claimed."
+  }
+}

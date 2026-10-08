@@ -12,8 +12,6 @@ from pathlib import Path
 from .diff import DiffSourceError, changed_functions
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
-from .recheck import run_recheck_command
-from .targets import TargetSelectionError, resolve_targets, selection_record
 
 
 def _python_executable(value: str) -> str:
@@ -49,24 +47,16 @@ def _preview_targets(args) -> int:
     """Print the native selector's result without starting generation or tests."""
     try:
         diff_text = _read_diff(args)
-        target_specs = getattr(args, "target", None)
-        functions = (changed_functions(args.repo, diff_text) if target_specs is None
-                     else resolve_targets(args.repo, diff_text, target_specs))
+        functions = changed_functions(args.repo, diff_text)
     except (OSError, ValueError, SyntaxError, subprocess.CalledProcessError) as exc:
         print(f"testpilot: cannot inspect targets: {exc}", file=sys.stderr)
         return 2
 
     if args.json:
-        payload = {"changed_functions": [f.to_dict() for f in functions]}
-        if target_specs is not None:
-            payload["selection"] = selection_record(diff_text, target_specs)
-        print(json.dumps(payload, indent=2))
+        print(json.dumps({"changed_functions": [f.to_dict() for f in functions]}, indent=2))
     else:
         noun = "function" if len(functions) == 1 else "functions"
-        qualifier = "changed" if target_specs is None else "caller-selected"
-        print(f"{len(functions)} {qualifier} Python {noun} outside tests")
-        if target_specs is not None:
-            print(selection_record(diff_text, target_specs)["reason"])
+        print(f"{len(functions)} changed Python {noun} outside tests")
         for function in functions:
             path = json.dumps(function.path)
             name = json.dumps(function.qualname)
@@ -88,14 +78,10 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--base-url", help="override OpenAI-compatible base URL")
     r.add_argument("--rounds", type=int, default=3, help="max repair rounds (default 3)")
     r.add_argument("--timeout", type=float, default=60.0, help="pytest timeout per run, seconds")
-    r.add_argument("--no-coverage", dest="coverage", action="store_const", const=False, default=None,
-                   help="run pytest without optional coverage measurement (default: automatic when installed)")
     r.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
                    help="project Python for all test runs; path or PATH command (default: this interpreter)")
     r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
     r.add_argument("--out", default="testpilot-out")
-    r.add_argument("--target", action="append", metavar="PATH.py::QUALNAME",
-                   help="select this function explicitly; repeat for caller order, instead of automatic diff selection")
 
     preview = sub.add_parser("targets", help="inspect changed functions without generating or running tests")
     preview.add_argument("--repo", required=True)
@@ -103,43 +89,21 @@ def main(argv: list[str] | None = None) -> int:
     source.add_argument("--diff", help="unified diff file ('-' for stdin)")
     source.add_argument("--git-base", help="diff the working tree against this git ref")
     preview.add_argument("--json", action="store_true", help="include full native target records and source")
-    preview.add_argument("--target", action="append", metavar="PATH.py::QUALNAME",
-                         help="inspect this explicit function; repeat instead of automatic diff selection")
-    recheck = sub.add_parser("recheck", help="rerun exact tests from a saved report without model calls")
-    recheck.add_argument("--repo", required=True, help="current project checkout")
-    recheck.add_argument("--report", required=True, help="saved report.json or recheck.json")
-    recheck.add_argument("--out", required=True, help="new result directory outside the checked repository")
-    recheck.add_argument("--timeout", type=float, default=60.0, help="pytest timeout, seconds (default 60)")
-    recheck.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
-                         help="project Python; path or PATH command (default: this interpreter)")
     a = ap.parse_args(argv)
-
-    if a.cmd == "recheck":
-        return run_recheck_command(a)
 
     if a.cmd == "targets":
         return _preview_targets(a)
 
     diff_text = _read_diff(a)
-    if a.target is not None:
-        try:
-            resolve_targets(a.repo, diff_text, a.target)
-        except TargetSelectionError as e:
-            print(f"testpilot: invalid target selection: {e}", file=sys.stderr)
-            return 2
     try:
         client = make_client(a.backend, script=a.script, base_url=a.base_url)
     except ModelError as e:
         print(f"testpilot: {e}", file=sys.stderr)
         return 2
     pilot = TestPilot(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
-                      max_total_tokens=a.max_tokens, coverage=a.coverage, python=a.python)
+                      max_total_tokens=a.max_tokens, python=a.python)
     try:
-        res = (pilot.run(a.repo, diff_text) if a.target is None
-               else pilot.run(a.repo, diff_text, targets=a.target))
-    except TargetSelectionError as e:
-        print(f"testpilot: invalid target selection: {e}", file=sys.stderr)
-        return 2
+        res = pilot.run(a.repo, diff_text)
     except DiffSourceError as e:
         print(f"testpilot: invalid diff source: {e}", file=sys.stderr)
         return 2

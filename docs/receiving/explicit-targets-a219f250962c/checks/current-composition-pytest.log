@@ -1,0 +1,28 @@
+...................................................F.. [ 90%]
+.....s                                                                   [100%]
+=================================== FAILURES ===================================
+___________ test_configured_suite_and_fixtures_remain_part_of_result ___________
+
+project = PosixPath('/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/current-composition-pytest-tmp/test_configured_suite_and_fixt0/project')
+tmp_path = PosixPath('/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/current-composition-pytest-tmp/test_configured_suite_and_fixt0')
+
+    def test_configured_suite_and_fixtures_remain_part_of_result(project, tmp_path):
+        (project / "pytest.ini").write_text("[pytest]\ntestpaths = spec\n")
+        (project / "spec").mkdir()
+        (project / "spec/test_current.py").write_text("def test_current():\n    assert False\n")
+        (project / "conftest.py").write_text(
+            "import pytest\n@pytest.fixture\ndef current_value():\n    return 17\n")
+        report = save_report(tmp_path / "report.json",
+                             "def test_retained(current_value):\n    assert current_value == 17\n")
+        result = recheck.recheck_report(project, report, timeout_s=10)
+        assert result["status"] == "failed"
+        assert result["final"]["generated"]["passed"] == 1
+        assert result["final"]["failed"] == 1
+>       assert result["final"]["passed"] == 1  # ignored tests/ existing case stays ignored
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 2 == 1
+
+tests/test_recheck.py:189: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_recheck.py::test_configured_suite_and_fixtures_remain_part_of_result
+1 failed, 58 passed, 1 skipped, 18 subtests passed in 20.47s

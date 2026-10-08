@@ -1,0 +1,77 @@
+...................................................... [ 42%]
+........................................................................ [ 98%]
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+___ test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch ___
+
+tmp_path = PosixPath('/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/authored-pytest-tmp/test_real_pytest_success_write0')
+
+    @pytest.mark.skipif(os.name != "posix", reason="raw filename byte workflow requires POSIX")
+    def test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch(tmp_path):
+>       repo, diff, responses, before = raw_filename_repo(tmp_path)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_report_text_encoding.py:124: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_report_text_encoding.py:98: in raw_filename_repo
+    path.write_bytes(b"def measure(value):\n    return value + 1\n")
+/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/authored-pytest-tmp/test_real_pytest_success_write0/repo/module\udcff.py')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 92] Illegal byte sequence: '/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/authored-pytest-tmp/test_real_pytest_success_write0/repo/module\udcff.py'
+
+/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py:1013: OSError
+___ test_real_cli_preserves_runner_failure_and_still_writes_readable_report ____
+
+tmp_path = PosixPath('/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/authored-pytest-tmp/test_real_cli_preserves_runner0')
+
+    @pytest.mark.skipif(os.name != "posix" or not coverage_available(sys.executable),
+        reason="raw filename CLI coverage workflow requires POSIX and coverage")
+    def test_real_cli_preserves_runner_failure_and_still_writes_readable_report(tmp_path):
+>       repo, diff, responses, before = raw_filename_repo(tmp_path)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_report_text_encoding.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_report_text_encoding.py:98: in raw_filename_repo
+    path.write_bytes(b"def measure(value):\n    return value + 1\n")
+/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py:1036: in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/authored-pytest-tmp/test_real_cli_preserves_runner0/repo/module\udcff.py')
+mode = 'wb', buffering = -1, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: [Errno 92] Illegal byte sequence: '/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/authored-pytest-tmp/test_real_cli_preserves_runner0/repo/module\udcff.py'
+
+/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/pathlib.py:1013: OSError
+=========================== short test summary info ============================
+FAILED tests/test_report_text_encoding.py::test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch
+FAILED tests/test_report_text_encoding.py::test_real_cli_preserves_runner_failure_and_still_writes_readable_report
+2 failed, 126 passed, 18 subtests passed in 25.00s

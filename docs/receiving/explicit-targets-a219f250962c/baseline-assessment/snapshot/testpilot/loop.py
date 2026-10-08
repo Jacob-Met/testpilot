@@ -16,13 +16,8 @@ Flow for one diff:
 from __future__ import annotations
 
 import difflib
-import errno
-import io
 import json
 import re
-import stat
-import tempfile
-from collections.abc import Sequence
 from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
 
@@ -30,7 +25,6 @@ from .diff import ChangedFunction, changed_functions
 from .html_report import render_html_report
 from .model import ChatClient, ModelError, RoutingConfig, Usage
 from .sandbox import IGNORE, SandboxResult, run_pytest
-from .targets import resolve_targets, selection_record
 
 SYSTEM_PLANNER = (
     "You are TestPilot's planner. Given changed Python functions from a pull request, "
@@ -363,7 +357,6 @@ class LoopResult:
     rounds: list[RoundRecord]
     plan: str = ""
     message: str = ""
-    selection: dict | None = None
 
     @property
     def ok(self) -> bool:
@@ -371,8 +364,6 @@ class LoopResult:
 
     def to_dict(self) -> dict:
         d = asdict(self)
-        if self.selection is None:
-            d.pop("selection")
         d["ok"] = self.ok
         return d
 
@@ -410,23 +401,10 @@ class TestPilot:
     def _run(self, repo: Path, files: dict[str, str] | None) -> SandboxResult:
         return run_pytest(repo, files, timeout=self.timeout_s, coverage=self.coverage, python=self.python)
 
-    def run(self, repo: str | Path, diff_text: str, *,
-            targets: Sequence[str] | None = None) -> LoopResult:
+    def run(self, repo: str | Path, diff_text: str) -> LoopResult:
         repo = Path(repo)
         ledger = Ledger(self.routing, self.max_total_tokens)
-        selection = selection_record(diff_text, targets) if targets is not None else None
-        funcs = (changed_functions(repo, diff_text) if selection is None
-                 else resolve_targets(repo, diff_text, selection["requested"]))
-        context = f"Changed functions:\n\n{_functions_block(funcs)}"
-        planner_system, editor_system, repair_system = SYSTEM_PLANNER, SYSTEM_EDITOR, SYSTEM_REPAIR
-        if selection is not None:
-            context = (f"{selection['reason']}\n\nCaller-selected functions:\n\n{_functions_block(funcs)}"
-                       f"\n\nSupplied diff context:\n```diff\n{diff_text}\n```")
-            note = " These functions were explicitly chosen and may be unchanged."
-            planner_system = SYSTEM_PLANNER.replace("changed Python functions from a pull request",
-                                                    "caller-selected Python functions and a supplied diff") + note
-            editor_system = SYSTEM_EDITOR.replace("the changed functions", "the caller-selected functions") + note
-            repair_system = SYSTEM_REPAIR + note
+        funcs = changed_functions(repo, diff_text)
         rounds: list[RoundRecord] = []
         files: dict[str, str] = {}
         aliases: dict[str, str] = {}
@@ -450,17 +428,18 @@ class TestPilot:
                 final=final.to_dict() if final else None,
                 patch=patch,
                 coverage=coverage_delta(baseline, final, funcs), ledger=ledger.to_dict(), rounds=rounds,
-                plan=plan, message=msg, selection=selection)
+                plan=plan, message=msg)
 
         if not funcs:
             return result("no_changes", "diff touches no Python functions outside tests")
 
         baseline = self._run(repo, None)
         try:
-            plan = self._ask(ledger, "planner", planner_system,
-                             f"{context}\n\nWrite the test plan.")
-            reply = self._ask(ledger, "editor", editor_system,
-                              f"Test plan:\n{plan}\n\n{context}\n\nWrite the pytest file(s).")
+            plan = self._ask(ledger, "planner", SYSTEM_PLANNER,
+                             f"Changed functions:\n\n{_functions_block(funcs)}\n\nWrite the test plan.")
+            reply = self._ask(ledger, "editor", SYSTEM_EDITOR,
+                              f"Test plan:\n{plan}\n\nChanged functions:\n\n{_functions_block(funcs)}\n\n"
+                              "Write the pytest file(s).")
             proposed, warns = parse_test_files(reply)
             if not proposed:
                 rounds.append(RoundRecord(0, "generate", [], None, warns + ["no python code block in reply"]))
@@ -472,8 +451,8 @@ class TestPilot:
 
             while not final.ok and repairs < self.max_repair_rounds:
                 repairs += 1
-                reply = self._ask(ledger, "repair", repair_system,
-                                  f"{context}\n\nCurrent tests:\n\n"
+                reply = self._ask(ledger, "repair", SYSTEM_REPAIR,
+                                  f"Changed functions:\n\n{_functions_block(funcs)}\n\nCurrent tests:\n\n"
                                   f"{_files_block(files)}\n\nFailure report:\n{final.failure_report()}")
                 verdict = parse_verdict(reply)
                 if verdict:
@@ -514,10 +493,7 @@ def render_report(res: LoopResult) -> str:
     lines = [f"# TestPilot report: **{res.status}**", ""]
     if res.message:
         lines += [res.message, ""]
-    label = "Changed functions" if res.selection is None else "Caller-selected functions"
-    lines.append(f"- {label}: {', '.join(f['path'] + '::' + f['qualname'] for f in res.changed_functions) or 'none'}")
-    if res.selection is not None:
-        lines.append(f"- Selection: {res.selection['reason']}")
+    lines.append(f"- Changed functions: {', '.join(f['path'] + '::' + f['qualname'] for f in res.changed_functions) or 'none'}")
     lines.append(f"- Tests written: {res.tests_written} in {', '.join(sorted(res.test_files)) or '-'}")
     lines.append(f"- Repair rounds used: {res.repair_rounds_used}/{res.max_repair_rounds}")
     if res.final:
@@ -541,46 +517,12 @@ def render_report(res: LoopResult) -> str:
 
 
 def write_outputs(res: LoopResult, out_dir: str | Path) -> dict[str, Path]:
-    """Prepare and stage a complete review before replacing its individual files."""
-    def text_bytes(text: str) -> bytes:
-        # Match Path.write_text's UTF-8 and native newline behavior.
-        with io.BytesIO() as raw:
-            with io.TextIOWrapper(raw, encoding="utf-8") as stream:
-                stream.write(text)
-                stream.flush()
-                return raw.getvalue()
-
-    contents = {
-        "patch": text_bytes(res.patch),
-        "json": text_bytes(json.dumps(res.to_dict(), indent=2)),
-        "md": text_bytes(render_report(res)),
-    }
-    contents["html"] = text_bytes(render_html_report(contents["json"], contents["patch"]))
-
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
     paths = {"patch": out / "testpilot.patch", "json": out / "report.json", "md": out / "report.md",
              "html": out / "report.html"}
-    modes = {}
-    for key, path in paths.items():
-        try:
-            mode = path.lstat().st_mode
-        except FileNotFoundError:
-            continue
-        if not stat.S_ISREG(mode):
-            raise OSError(errno.EINVAL, "refusing to replace a non-regular output file", str(path))
-        modes[key] = stat.S_IMODE(mode)
-
-    # Staging is on the output filesystem. No final path changes until every
-    # content write and permission update has finished successfully.
-    with tempfile.TemporaryDirectory(prefix=".testpilot-", dir=out) as directory:
-        staged = {key: Path(directory) / path.name for key, path in paths.items()}
-        for key, path in staged.items():
-            path.write_bytes(contents[key])
-            if key in modes:
-                path.chmod(modes[key])
-        # Each replacement is individual: later errors propagate without a
-        # whole-set rollback or a claim of safety against concurrent writers.
-        for key, path in paths.items():
-            staged[key].replace(path)
+    paths["patch"].write_text(res.patch, encoding="utf-8")
+    paths["json"].write_text(json.dumps(res.to_dict(), indent=2), encoding="utf-8")
+    paths["md"].write_text(render_report(res), encoding="utf-8")
+    paths["html"].write_text(render_html_report(paths["json"].read_bytes(), paths["patch"].read_bytes()), encoding="utf-8")
     return paths

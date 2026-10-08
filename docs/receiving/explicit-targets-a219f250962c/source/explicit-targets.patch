@@ -1,0 +1,650 @@
+From 00b63c8e03cc515160da1202331224167d12d253 Mon Sep 17 00:00:00 2001
+From: estate-a219f250962c <estate-a219f250962c@local.invalid>
+Date: Thu, 8 Oct 2026 08:06:12 -0700
+Subject: [PATCH] Compose explicit targets with canonical saved-test recheck
+
+---
+ README.md                         |   9 +++
+ docs/EXPLICIT_TARGETS.md          | 111 +++++++++++++++++++++++++++
+ testpilot/__main__.py             |  31 +++++++-
+ testpilot/html_report.py          |   4 +
+ testpilot/loop.py                 |  42 ++++++++---
+ testpilot/targets.py              | 120 ++++++++++++++++++++++++++++++
+ tests/test_explicit_target_cli.py |  41 ++++++++++
+ tests/test_explicit_targets.py    | 102 +++++++++++++++++++++++++
+ 8 files changed, 445 insertions(+), 15 deletions(-)
+ create mode 100644 docs/EXPLICIT_TARGETS.md
+ create mode 100644 testpilot/targets.py
+ create mode 100644 tests/test_explicit_target_cli.py
+ create mode 100644 tests/test_explicit_targets.py
+
+diff --git a/README.md b/README.md
+index eaf87ec..3848e40 100644
+--- a/README.md
++++ b/README.md
+@@ -82,6 +82,15 @@ python -m testpilot run \
+ 
+ On a real repo, use `--git-base main` instead of `--diff FILE`. Exit codes: 0 means the generated tests pass, 1 means any other outcome, 2 means a config error.
+ 
++## Choose functions explicitly
++
++Use repeated `--target path.py::qualname` flags on `targets` or `run` to select
++specific current functions, including unchanged functions affected by a change
++you have identified. The supplied diff stays available as context to planning,
++generation and repair. Without this option, automatic diff selection is unchanged.
++See [explicit targets](docs/EXPLICIT_TARGETS.md) for preview, ordering, refusals,
++saved selection context and unchanged-function coverage semantics.
++
+ ## Review your own run in a browser
+ 
+ Every run also writes **`report.html`** in its output directory. Open that file
+diff --git a/docs/EXPLICIT_TARGETS.md b/docs/EXPLICIT_TARGETS.md
+new file mode 100644
+index 0000000..3cfe7a0
+--- /dev/null
++++ b/docs/EXPLICIT_TARGETS.md
+@@ -0,0 +1,111 @@
++# Explicit function targets
++
++Use this workflow when you know which function needs tests, including a function
++whose body did not change. For example, changing a module-level limit can change
++a function's behavior while the normal diff selector finds no changed function.
++
++Preview the current source before generating:
++
++~~~bash
++python -m testpilot targets --repo . --diff change.diff \
++  --target settings.py::accepts --json
++
++python -m testpilot run --repo . --diff change.diff \
++  --target settings.py::accepts \
++  --target service.py::Service.apply \
++  --script responses --out out/selected
++~~~
++
++Use the same repeatable option with `--git-base REF`, or `--diff -` for stdin.
++A diff input remains required; an empty diff is permitted when you deliberately
++want tests for current functions without a recorded code change.
++
++## Selection and preview
++
++With `--target`, TestPilot selects exactly the requested current functions in
++the order supplied. It does not add automatically changed functions. Repeating
++the same resolved source/function identity selects it once, at its first
++position. The `selection.requested` record preserves every original argument,
++including repetitions and spelling, while function records use normalized
++repository-relative paths.
++
++Use a repository-relative Python file followed by `::` and its exact qualified
++name. A method is `file.py::Class.method`; nested classes can add more components.
++The existing AST discovery also supports async functions and definitions inside
++module/class `if`, `try`, `with` and `match` blocks. Nested functions belong to
++their enclosing function and cannot be selected separately. The final `::`
++separates the path from the name; quote the complete argument in your shell when
++the path needs it.
++
++A name must identify one source definition. Multiple definitions with the same
++qualified name are refused, including definitions in mutually exclusive branches
++or property getter/setter definitions. TestPilot does not guess which definition
++will exist at runtime.
++
++Missing files/names, malformed specs, non-Python and test sources, absolute or
++parent-traversing paths, and symlinks resolving outside the repository are
++refused before baseline tests or model calls. A normal-looking alias to a test
++source is also refused. Inside-repository source symlinks follow the existing
++containment rule. Python source is decoded with Python's encoding-cookie/BOM
++rules; selecting source never imports or executes it.
++
++The existing `targets` preview remains read-only: no tests, generated files,
++model calls or output directories. Text output says "caller-selected"; `--json`
++includes the exact selected source records plus the selection context. A preview
++does not reserve files: `run` reads the current source again.
++
++## Context and saved results
++
++Explicit mode sends the exact current selected function source and the exact
++diff string received by `TestPilot.run` to the planner, editor and every repair
++call. It identifies the functions as caller-selected and potentially unchanged.
++The CLI retains its existing raw-byte diff loader, including universal-newline
++normalization and surrogate escaping; recorded `diff_text` is that loaded
++string, not a reconstruction or a byte-for-byte copy of the original diff file.
++
++The existing `changed_functions` JSON field remains the selected native source
++record list for compatibility. Explicit previews and run reports additionally
++include:
++
++~~~json
++{
++  "selection": {
++    "mode": "explicit",
++    "requested": ["settings.py::accepts"],
++    "reason": "Caller selected these targets; no dependency inference was performed.",
++    "diff_text": "<exact loaded diff string>"
++  }
++}
++~~~
++
++Markdown labels caller-selected functions and the reason. The offline HTML view
++also shows the reason and an expandable literal diff context. Its original JSON
++download retains the complete selection record.
++
++Without `--target` (or with the Python API's default `targets=None`), the existing
++automatic selector, prompts, report/preview schema and output remain unchanged.
++The optional `selection` object is absent. Python callers can use
++`TestPilot.run(repo, diff_text, targets=["path.py::qualname"])`; an empty explicit
++sequence is an error. `testpilot.targets.resolve_targets(repo, diff_text, targets)`
++provides the same resolver, raising `TargetSelectionError` on a refused request.
++
++## Coverage and limits
++
++`changed_lines` still contains only actual added diff lines inside each selected
++function's current span. An unchanged function therefore has an empty list.
++Selecting it does not turn all of its lines into changed lines. Total coverage
++can improve, while the changed-line population is zero and its percentages stay
++unavailable. Unrelated or refused diff source paths are context only in explicit
++mode and are never opened or added as targets.
++
++This is a deliberate selection workflow. It does not infer dependencies, prove
++that all affected functions were selected, or supply surrounding module values
++that are absent from both the selected source and the supplied diff. A developer
++must provide useful context and review the resulting tests. The existing
++sandbox, generated-file preservation, model routing, token budget, execution and
++patch contracts apply unchanged.
++
++Receiving uses deterministic `ScriptedModel` responses with actual outgoing
++message checks, subprocess tests and patch application. Those controls qualify
++the workflow and context delivery; they do not establish live-model generation
++quality.
+diff --git a/testpilot/__main__.py b/testpilot/__main__.py
+index 2d98e2a..5686cb4 100644
+--- a/testpilot/__main__.py
++++ b/testpilot/__main__.py
+@@ -13,6 +13,7 @@ from .diff import DiffSourceError, changed_functions
+ from .loop import TestPilot, render_report, write_outputs
+ from .model import ModelError, RoutingConfig, make_client
+ from .recheck import run_recheck_command
++from .targets import TargetSelectionError, resolve_targets, selection_record
+ 
+ 
+ def _python_executable(value: str) -> str:
+@@ -48,16 +49,24 @@ def _preview_targets(args) -> int:
+     """Print the native selector's result without starting generation or tests."""
+     try:
+         diff_text = _read_diff(args)
+-        functions = changed_functions(args.repo, diff_text)
++        target_specs = getattr(args, "target", None)
++        functions = (changed_functions(args.repo, diff_text) if target_specs is None
++                     else resolve_targets(args.repo, diff_text, target_specs))
+     except (OSError, ValueError, SyntaxError, subprocess.CalledProcessError) as exc:
+         print(f"testpilot: cannot inspect targets: {exc}", file=sys.stderr)
+         return 2
+ 
+     if args.json:
+-        print(json.dumps({"changed_functions": [f.to_dict() for f in functions]}, indent=2))
++        payload = {"changed_functions": [f.to_dict() for f in functions]}
++        if target_specs is not None:
++            payload["selection"] = selection_record(diff_text, target_specs)
++        print(json.dumps(payload, indent=2))
+     else:
+         noun = "function" if len(functions) == 1 else "functions"
+-        print(f"{len(functions)} changed Python {noun} outside tests")
++        qualifier = "changed" if target_specs is None else "caller-selected"
++        print(f"{len(functions)} {qualifier} Python {noun} outside tests")
++        if target_specs is not None:
++            print(selection_record(diff_text, target_specs)["reason"])
+         for function in functions:
+             path = json.dumps(function.path)
+             name = json.dumps(function.qualname)
+@@ -83,6 +92,8 @@ def main(argv: list[str] | None = None) -> int:
+                    help="project Python for all test runs; path or PATH command (default: this interpreter)")
+     r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
+     r.add_argument("--out", default="testpilot-out")
++    r.add_argument("--target", action="append", metavar="PATH.py::QUALNAME",
++                   help="select this function explicitly; repeat for caller order, instead of automatic diff selection")
+ 
+     preview = sub.add_parser("targets", help="inspect changed functions without generating or running tests")
+     preview.add_argument("--repo", required=True)
+@@ -90,6 +101,8 @@ def main(argv: list[str] | None = None) -> int:
+     source.add_argument("--diff", help="unified diff file ('-' for stdin)")
+     source.add_argument("--git-base", help="diff the working tree against this git ref")
+     preview.add_argument("--json", action="store_true", help="include full native target records and source")
++    preview.add_argument("--target", action="append", metavar="PATH.py::QUALNAME",
++                         help="inspect this explicit function; repeat instead of automatic diff selection")
+     recheck = sub.add_parser("recheck", help="rerun exact tests from a saved report without model calls")
+     recheck.add_argument("--repo", required=True, help="current project checkout")
+     recheck.add_argument("--report", required=True, help="saved report.json or recheck.json")
+@@ -106,6 +119,12 @@ def main(argv: list[str] | None = None) -> int:
+         return _preview_targets(a)
+ 
+     diff_text = _read_diff(a)
++    if a.target is not None:
++        try:
++            resolve_targets(a.repo, diff_text, a.target)
++        except TargetSelectionError as e:
++            print(f"testpilot: invalid target selection: {e}", file=sys.stderr)
++            return 2
+     try:
+         client = make_client(a.backend, script=a.script, base_url=a.base_url)
+     except ModelError as e:
+@@ -114,7 +133,11 @@ def main(argv: list[str] | None = None) -> int:
+     pilot = TestPilot(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
+                       max_total_tokens=a.max_tokens, python=a.python)
+     try:
+-        res = pilot.run(a.repo, diff_text)
++        res = (pilot.run(a.repo, diff_text) if a.target is None
++               else pilot.run(a.repo, diff_text, targets=a.target))
++    except TargetSelectionError as e:
++        print(f"testpilot: invalid target selection: {e}", file=sys.stderr)
++        return 2
+     except DiffSourceError as e:
+         print(f"testpilot: invalid diff source: {e}", file=sys.stderr)
+         return 2
+diff --git a/testpilot/html_report.py b/testpilot/html_report.py
+index bb30d90..2fcc644 100644
+--- a/testpilot/html_report.py
++++ b/testpilot/html_report.py
+@@ -277,6 +277,10 @@ def render_html_report(report_json: bytes, patch: bytes) -> str:
+                  'A model response without a new run does not add an execution.</p>'
+                  + _rounds(report['rounds']) + '</section>')
+     parts.append('<section id="scope" aria-labelledby="scope-heading"><h2 id="scope-heading">Plan and selected source</h2>')
++    selection = report.get("selection")
++    if isinstance(selection, dict) and selection.get("mode") == "explicit":
++        parts.append('<p class="notice">' + _text(selection.get("reason", "Caller-selected targets.")) + '</p>')
++        parts.append(_disclosure("Supplied diff context", _pre(selection.get("diff_text", ""))))
+     if report.get('plan'):
+         parts.append('<h3>Model test plan</h3>' + _pre(report['plan']))
+     else:
+diff --git a/testpilot/loop.py b/testpilot/loop.py
+index 3057a9c..8a567fb 100644
+--- a/testpilot/loop.py
++++ b/testpilot/loop.py
+@@ -18,6 +18,7 @@ from __future__ import annotations
+ import difflib
+ import json
+ import re
++from collections.abc import Sequence
+ from dataclasses import asdict, dataclass, field
+ from pathlib import Path, PurePosixPath
+ 
+@@ -25,6 +26,7 @@ from .diff import ChangedFunction, changed_functions
+ from .html_report import render_html_report
+ from .model import ChatClient, ModelError, RoutingConfig, Usage
+ from .sandbox import IGNORE, SandboxResult, run_pytest
++from .targets import resolve_targets, selection_record
+ 
+ SYSTEM_PLANNER = (
+     "You are TestPilot's planner. Given changed Python functions from a pull request, "
+@@ -357,6 +359,7 @@ class LoopResult:
+     rounds: list[RoundRecord]
+     plan: str = ""
+     message: str = ""
++    selection: dict | None = None
+ 
+     @property
+     def ok(self) -> bool:
+@@ -364,6 +367,8 @@ class LoopResult:
+ 
+     def to_dict(self) -> dict:
+         d = asdict(self)
++        if self.selection is None:
++            d.pop("selection")
+         d["ok"] = self.ok
+         return d
+ 
+@@ -401,10 +406,23 @@ class TestPilot:
+     def _run(self, repo: Path, files: dict[str, str] | None) -> SandboxResult:
+         return run_pytest(repo, files, timeout=self.timeout_s, coverage=self.coverage, python=self.python)
+ 
+-    def run(self, repo: str | Path, diff_text: str) -> LoopResult:
++    def run(self, repo: str | Path, diff_text: str, *,
++            targets: Sequence[str] | None = None) -> LoopResult:
+         repo = Path(repo)
+         ledger = Ledger(self.routing, self.max_total_tokens)
+-        funcs = changed_functions(repo, diff_text)
++        selection = selection_record(diff_text, targets) if targets is not None else None
++        funcs = (changed_functions(repo, diff_text) if selection is None
++                 else resolve_targets(repo, diff_text, selection["requested"]))
++        context = f"Changed functions:\n\n{_functions_block(funcs)}"
++        planner_system, editor_system, repair_system = SYSTEM_PLANNER, SYSTEM_EDITOR, SYSTEM_REPAIR
++        if selection is not None:
++            context = (f"{selection['reason']}\n\nCaller-selected functions:\n\n{_functions_block(funcs)}"
++                       f"\n\nSupplied diff context:\n```diff\n{diff_text}\n```")
++            note = " These functions were explicitly chosen and may be unchanged."
++            planner_system = SYSTEM_PLANNER.replace("changed Python functions from a pull request",
++                                                    "caller-selected Python functions and a supplied diff") + note
++            editor_system = SYSTEM_EDITOR.replace("the changed functions", "the caller-selected functions") + note
++            repair_system = SYSTEM_REPAIR + note
+         rounds: list[RoundRecord] = []
+         files: dict[str, str] = {}
+         aliases: dict[str, str] = {}
+@@ -428,18 +446,17 @@ class TestPilot:
+                 final=final.to_dict() if final else None,
+                 patch=patch,
+                 coverage=coverage_delta(baseline, final, funcs), ledger=ledger.to_dict(), rounds=rounds,
+-                plan=plan, message=msg)
++                plan=plan, message=msg, selection=selection)
+ 
+         if not funcs:
+             return result("no_changes", "diff touches no Python functions outside tests")
+ 
+         baseline = self._run(repo, None)
+         try:
+-            plan = self._ask(ledger, "planner", SYSTEM_PLANNER,
+-                             f"Changed functions:\n\n{_functions_block(funcs)}\n\nWrite the test plan.")
+-            reply = self._ask(ledger, "editor", SYSTEM_EDITOR,
+-                              f"Test plan:\n{plan}\n\nChanged functions:\n\n{_functions_block(funcs)}\n\n"
+-                              "Write the pytest file(s).")
++            plan = self._ask(ledger, "planner", planner_system,
++                             f"{context}\n\nWrite the test plan.")
++            reply = self._ask(ledger, "editor", editor_system,
++                              f"Test plan:\n{plan}\n\n{context}\n\nWrite the pytest file(s).")
+             proposed, warns = parse_test_files(reply)
+             if not proposed:
+                 rounds.append(RoundRecord(0, "generate", [], None, warns + ["no python code block in reply"]))
+@@ -451,8 +468,8 @@ class TestPilot:
+ 
+             while not final.ok and repairs < self.max_repair_rounds:
+                 repairs += 1
+-                reply = self._ask(ledger, "repair", SYSTEM_REPAIR,
+-                                  f"Changed functions:\n\n{_functions_block(funcs)}\n\nCurrent tests:\n\n"
++                reply = self._ask(ledger, "repair", repair_system,
++                                  f"{context}\n\nCurrent tests:\n\n"
+                                   f"{_files_block(files)}\n\nFailure report:\n{final.failure_report()}")
+                 verdict = parse_verdict(reply)
+                 if verdict:
+@@ -493,7 +510,10 @@ def render_report(res: LoopResult) -> str:
+     lines = [f"# TestPilot report: **{res.status}**", ""]
+     if res.message:
+         lines += [res.message, ""]
+-    lines.append(f"- Changed functions: {', '.join(f['path'] + '::' + f['qualname'] for f in res.changed_functions) or 'none'}")
++    label = "Changed functions" if res.selection is None else "Caller-selected functions"
++    lines.append(f"- {label}: {', '.join(f['path'] + '::' + f['qualname'] for f in res.changed_functions) or 'none'}")
++    if res.selection is not None:
++        lines.append(f"- Selection: {res.selection['reason']}")
+     lines.append(f"- Tests written: {res.tests_written} in {', '.join(sorted(res.test_files)) or '-'}")
+     lines.append(f"- Repair rounds used: {res.repair_rounds_used}/{res.max_repair_rounds}")
+     if res.final:
+diff --git a/testpilot/targets.py b/testpilot/targets.py
+new file mode 100644
+index 0000000..2da1600
+--- /dev/null
++++ b/testpilot/targets.py
+@@ -0,0 +1,120 @@
++"""Resolve caller-chosen Python functions without inferring dependency impact."""
++from __future__ import annotations
++
++import ast
++import tokenize
++from collections.abc import Sequence
++from pathlib import Path
++
++from .diff import (
++    ChangedFunction,
++    DiffSourceError,
++    _iter_functions,
++    _source_path,
++    functions_touching,
++    is_test_path,
++    parse_unified_diff,
++)
++
++SELECTION_REASON = "Caller selected these targets; no dependency inference was performed."
++
++
++class TargetSelectionError(ValueError):
++    """An explicit target cannot identify one permitted current function."""
++
++
++def _requested_specs(targets: Sequence[str]) -> list[str]:
++    if isinstance(targets, (str, bytes)) or not isinstance(targets, Sequence):
++        raise TargetSelectionError("targets must be a nonempty sequence of path.py::qualname strings")
++    requested = list(targets)
++    if not requested or any(not isinstance(spec, str) for spec in requested):
++        raise TargetSelectionError("targets must be a nonempty sequence of path.py::qualname strings")
++    return requested
++
++
++def selection_record(diff_text: str, targets: Sequence[str]) -> dict:
++    """Snapshot caller intent; automatic runs omit this record entirely."""
++    if not isinstance(diff_text, str):
++        raise TargetSelectionError("the supplied diff must be text")
++    return {
++        "mode": "explicit",
++        "requested": _requested_specs(targets),
++        "reason": SELECTION_REASON,
++        "diff_text": diff_text,
++    }
++
++
++def resolve_targets(repo: str | Path, diff_text: str,
++                    targets: Sequence[str]) -> list[ChangedFunction]:
++    """Select exactly named current functions, deduplicated in caller order.
++
++    The existing AST discovery excludes nested functions and includes methods
++    and module/class control-flow definitions. A repeated qualified name in one
++    source file is ambiguous, even when only one branch executes at runtime.
++    No source module is imported or executed during selection.
++    """
++    requested = _requested_specs(targets)
++    root = Path(repo).resolve()
++    if not root.is_dir():
++        raise TargetSelectionError(f"repository is not a directory: {str(repo)!r}")
++    try:
++        changes = parse_unified_diff(diff_text)
++    except (TypeError, ValueError) as exc:
++        raise TargetSelectionError(f"cannot parse supplied diff: {exc}") from exc
++
++    # Resolve identities only: unrelated diff sources are never opened. A diff
++    # remains context in explicit mode, and cannot add targets to the request.
++    added_by_source: dict[Path, set[int]] = {}
++    for change in changes:
++        if change.is_deleted or not change.path.endswith(".py") or is_test_path(change.path):
++            continue
++        try:
++            source_path = _source_path(root, change.path)
++        except DiffSourceError:
++            continue
++        added_by_source.setdefault(source_path, set()).update(change.added_lines)
++
++    sources: dict[Path, str] = {}
++    functions_by_path: dict[str, list[ChangedFunction]] = {}
++    selected: list[ChangedFunction] = []
++    seen: set[tuple[Path, str, int, int]] = set()
++    for spec in requested:
++        raw_path, separator, qualname = spec.rpartition("::")
++        if (not separator or not raw_path or not qualname
++                or any(not part.isidentifier() for part in qualname.split("."))):
++            raise TargetSelectionError(f"expected path.py::qualname: {spec!r}")
++        path = Path(raw_path).as_posix()
++        if not path.endswith(".py") or is_test_path(path):
++            raise TargetSelectionError(f"target must be a Python source file outside tests: {spec!r}")
++        try:
++            source_path = _source_path(root, raw_path)
++            resolved_path = source_path.relative_to(root).as_posix()
++            if not resolved_path.endswith(".py") or is_test_path(resolved_path):
++                raise TargetSelectionError(f"target resolves to a non-Python or test source: {spec!r}")
++            if not source_path.is_file():
++                raise TargetSelectionError(f"target source does not exist: {spec!r}")
++            if source_path not in sources:
++                with tokenize.open(source_path) as source_file:
++                    sources[source_path] = source_file.read()
++            if path not in functions_by_path:
++                source = sources[source_path]
++                tree = ast.parse(source, filename=path)
++                starts = {node.lineno for _, node, _ in _iter_functions(tree.body)}
++                functions_by_path[path] = functions_touching(
++                    source, path, starts, added_by_source.get(source_path, set()))
++        except TargetSelectionError:
++            raise
++        except (OSError, ValueError, SyntaxError, LookupError) as exc:
++            raise TargetSelectionError(f"cannot inspect target {spec!r}: {exc}") from exc
++
++        matches = [function for function in functions_by_path[path] if function.qualname == qualname]
++        if not matches:
++            raise TargetSelectionError(f"no selectable function matches {spec!r}")
++        if len(matches) != 1:
++            raise TargetSelectionError(f"ambiguous target matches {len(matches)} definitions: {spec!r}")
++        function = matches[0]
++        identity = (source_path, function.qualname, function.lineno, function.end_lineno)
++        if identity not in seen:
++            selected.append(function)
++            seen.add(identity)
++    return selected
+diff --git a/tests/test_explicit_target_cli.py b/tests/test_explicit_target_cli.py
+new file mode 100644
+index 0000000..d01e0da
+--- /dev/null
++++ b/tests/test_explicit_target_cli.py
+@@ -0,0 +1,41 @@
++import json
++import os
++import subprocess
++import sys
++from pathlib import Path
++
++from testpilot.__main__ import main
++
++ROOT = Path(__file__).resolve().parents[1]
++SOURCE = "LIMIT = 50\n\n\ndef accepts(amount):\n    return amount <= LIMIT\n"
++DIFF = "--- a/settings.py\n+++ b/settings.py\n@@ -1 +1 @@\n-LIMIT = 100\n+LIMIT = 50\n"
++
++
++def test_real_preview_default_and_explicit_stdin(tmp_path):
++    (tmp_path / "settings.py").write_text(SOURCE)
++    env = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1"}
++    command = [sys.executable, "-B", "-m", "testpilot", "targets",
++               "--repo", str(tmp_path), "--diff", "-", "--json"]
++    automatic = subprocess.run(command, input=DIFF, cwd=ROOT, env=env,
++                               text=True, capture_output=True, check=True)
++    assert json.loads(automatic.stdout) == {"changed_functions": []}
++    explicit = subprocess.run(command + ["--target", "settings.py::accepts"],
++                              input=DIFF, cwd=ROOT, env=env, text=True,
++                              capture_output=True, check=True)
++    payload = json.loads(explicit.stdout)
++    assert payload["selection"]["diff_text"] == DIFF
++    assert payload["changed_functions"][0]["source"] == "def accepts(amount):\n    return amount <= LIMIT"
++    assert list(tmp_path.iterdir()) == [tmp_path / "settings.py"]
++
++
++def test_run_refuses_target_before_constructing_model(tmp_path, monkeypatch, capsys):
++    diff = tmp_path / "change.diff"
++    diff.write_text(DIFF)
++    def fail_client(*args, **kwargs):
++        raise AssertionError("invalid target constructed a model client")
++    monkeypatch.setattr("testpilot.__main__.make_client", fail_client)
++    output = tmp_path / "out"
++    assert main(["run", "--repo", str(tmp_path), "--diff", str(diff),
++                 "--target", "settings.py::missing", "--out", str(output)]) == 2
++    assert "invalid target selection" in capsys.readouterr().err
++    assert not output.exists()
+diff --git a/tests/test_explicit_targets.py b/tests/test_explicit_targets.py
+new file mode 100644
+index 0000000..438d1c2
+--- /dev/null
++++ b/tests/test_explicit_targets.py
+@@ -0,0 +1,102 @@
++import json
++
++import pytest
++
++from testpilot.diff import changed_functions
++from testpilot.html_report import render_html_report
++from testpilot.loop import TestPilot, render_report
++from testpilot.model import ScriptedModel
++from testpilot.targets import SELECTION_REASON, TargetSelectionError, resolve_targets
++
++SOURCE = "LIMIT = 50\n\n\ndef accepts(amount):\n    return amount <= LIMIT\n\n\ndef other():\n    return 2\n"
++DIFF = "--- a/settings.py\n+++ b/settings.py\n@@ -1 +1 @@\n-LIMIT = 100\n+LIMIT = 50\n"
++FENCE = chr(96) * 3
++GOOD = (FENCE + "python path=tests/test_selected.py\nfrom settings import accepts\n\n\n"
++        "def test_accepts():\n    assert accepts(50)\n    assert not accepts(75)\n" + FENCE)
++BAD = GOOD.replace("assert not accepts(75)", "assert accepts(75)")
++
++
++def test_current_selection_order_and_real_added_lines(tmp_path):
++    (tmp_path / "settings.py").write_text(SOURCE)
++    assert changed_functions(tmp_path, DIFF) == []
++    chosen = resolve_targets(tmp_path, DIFF, [
++        "settings.py::other", "./settings.py::accepts", "settings.py::other"])
++    assert [f.qualname for f in chosen] == ["other", "accepts"]
++    assert [f.changed_lines for f in chosen] == [[], []]
++    assert chosen[1].path == "settings.py"
++    assert chosen[1].source == "def accepts(amount):\n    return amount <= LIMIT"
++    changed = DIFF + "@@ -9 +9 @@\n-    return 1\n+    return 2\n"
++    assert resolve_targets(tmp_path, changed, ["settings.py::other"])[0].changed_lines == [9]
++
++
++def test_native_discovery_encoding_and_ambiguity(tmp_path):
++    source = ("# coding: latin-1\nclass Café:\n    @staticmethod\n"
++              "    def réponse():\n        return 'déjà'\n")
++    (tmp_path / "encoded.py").write_bytes(source.encode("latin-1"))
++    function = resolve_targets(tmp_path, "", ["encoded.py::Café.réponse"])[0]
++    assert function.is_method and function.lineno == 3 and function.end_lineno == 5
++    assert function.source == "    @staticmethod\n    def réponse():\n        return 'déjà'"
++    (tmp_path / "branches.py").write_text(
++        "if True:\n    def selected(): return 1\nelse:\n    def selected(): return 2\n")
++    with pytest.raises(TargetSelectionError, match="ambiguous"):
++        resolve_targets(tmp_path, "", ["branches.py::selected"])
++
++
++@pytest.mark.parametrize("spec", ["settings.py", "settings.py::missing", "settings.py::accepts.inner",
++                                  "../outside.py::f", "tests/test_sample.py::f"])
++def test_invalid_requests_refuse_without_execution(tmp_path, spec):
++    (tmp_path / "settings.py").write_text(SOURCE)
++    (tmp_path / "tests").mkdir()
++    (tmp_path / "tests" / "test_sample.py").write_text("raise RuntimeError('never import')\ndef f(): pass\n")
++    client = ScriptedModel([])
++    pilot = TestPilot(client, coverage=False)
++    pilot._run = lambda *args: pytest.fail("invalid target reached test execution")
++    with pytest.raises(TargetSelectionError):
++        pilot.run(tmp_path, DIFF, targets=[spec])
++    assert client.calls == []
++
++
++def test_aliases_cannot_select_test_sources(tmp_path):
++    (tmp_path / "tests").mkdir()
++    target = tmp_path / "tests" / "helper.py"
++    target.write_text("def f(): pass\n")
++    (tmp_path / "alias.py").symlink_to(target)
++    with pytest.raises(TargetSelectionError, match="test source"):
++        resolve_targets(tmp_path, "", ["alias.py::f"])
++
++
++def test_actual_context_repair_and_saved_selection(tmp_path):
++    repo = tmp_path / "repo"
++    repo.mkdir()
++    (repo / "settings.py").write_text(SOURCE)
++    client = ScriptedModel(["Test the supplied new limit of 50.", BAD, GOOD])
++    specs = ["settings.py::accepts"]
++    result = TestPilot(client, max_repair_rounds=1, timeout_s=30, coverage=False).run(
++        repo, DIFF, targets=specs)
++    assert result.status == "passed" and result.tests_written == 1 and result.repair_rounds_used == 1
++    assert result.changed_functions[0]["changed_lines"] == []
++    assert len(client.calls) == 3
++    for _, messages in client.calls:
++        assert "explicitly chosen" in messages[0]["content"]
++        assert SELECTION_REASON in messages[1]["content"]
++        assert DIFF in messages[1]["content"]
++        assert result.changed_functions[0]["source"] in messages[1]["content"]
++        assert "def other" not in messages[1]["content"]
++    assert "assert False" in client.calls[2][1][1]["content"]
++    specs.append("settings.py::other")
++    assert result.to_dict()["selection"]["requested"] == ["settings.py::accepts"]
++    assert result.to_dict()["selection"]["diff_text"] == DIFF
++    assert "Caller-selected functions: settings.py::accepts" in render_report(result)
++    html = render_html_report(json.dumps(result.to_dict()).encode(), result.patch.encode())
++    assert SELECTION_REASON in html and "Supplied diff context" in html
++    assert not (repo / "tests").exists()
++    assert (repo / "settings.py").read_text() == SOURCE
++
++
++def test_automatic_no_change_keeps_original_schema(tmp_path):
++    (tmp_path / "settings.py").write_text(SOURCE)
++    client = ScriptedModel([])
++    result = TestPilot(client).run(tmp_path, DIFF)
++    assert result.status == "no_changes" and result.changed_functions == []
++    assert "selection" not in result.to_dict() and client.calls == []
++    assert "- Changed functions: none" in render_report(result)
+-- 
+2.50.1 (Apple Git-155)
+

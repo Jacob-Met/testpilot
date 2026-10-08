@@ -1,0 +1,13 @@
+diff --git a/tests/test_selected.py b/tests/test_selected.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_selected.py
+@@ -0,0 +1,8 @@
++from settings import accepts, Policy
++
++def test_selected_limit():
++    assert accepts(7) is True
++    assert accepts(8) is False
++
++def test_selected_default():
++    assert Policy.cap(20) == 7

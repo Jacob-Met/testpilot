@@ -1,0 +1,312 @@
+{
+  "status": "passed",
+  "changed_functions": [
+    {
+      "path": "settings.py",
+      "module": "settings",
+      "qualname": "Policy.cap",
+      "lineno": 13,
+      "end_lineno": 15,
+      "changed_lines": [],
+      "source": "    @staticmethod\n    def cap(amount, limit=LIMIT):\n        return min(amount, limit)",
+      "is_method": true
+    },
+    {
+      "path": "settings.py",
+      "module": "settings",
+      "qualname": "accepts",
+      "lineno": 4,
+      "end_lineno": 5,
+      "changed_lines": [],
+      "source": "def accepts(amount):\n    return amount <= LIMIT",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 1,
+  "max_repair_rounds": 1,
+  "test_files": {
+    "tests/test_selected.py": "from settings import accepts, Policy\n\ndef test_selected_limit():\n    assert accepts(7) is True\n    assert accepts(8) is False\n\ndef test_selected_default():\n    assert Policy.cap(20) == 7\n"
+  },
+  "tests_written": 2,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.736,
+    "timeout_s": 15.0,
+    "output": "...                                                                      [100%]\n3 passed in 0.29s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing_stays_in_run",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      },
+      {
+        "nodeid": "test_selected_limit",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_selected.py"
+      },
+      {
+        "nodeid": "test_selected_default",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_selected.py"
+      }
+    ],
+    "coverage": {
+      "percent_total": 100.0,
+      "files": {
+        "settings.py": {
+          "executed": [
+            1,
+            4,
+            5,
+            8,
+            9,
+            12,
+            13,
+            14,
+            15
+          ],
+          "missing": []
+        }
+      }
+    },
+    "generated_files": [
+      "tests/test_selected.py"
+    ],
+    "junit_available": true,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected",
+    "generated": {
+      "collected": 2,
+      "passed": 2,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "patch": "diff --git a/tests/test_selected.py b/tests/test_selected.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_selected.py\n@@ -0,0 +1,8 @@\n+from settings import accepts, Policy\n+\n+def test_selected_limit():\n+    assert accepts(7) is True\n+    assert accepts(8) is False\n+\n+def test_selected_default():\n+    assert Policy.cap(20) == 7\n",
+  "coverage": {
+    "total_before": 77.8,
+    "total_after": 100.0,
+    "total_delta": 22.2,
+    "changed_lines_executable": 0,
+    "changed_lines_before": null,
+    "changed_lines_after": null
+  },
+  "ledger": {
+    "total_tokens": 1199,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 265,
+        "completion_tokens": 15,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 2,
+        "prompt_tokens": 811,
+        "completion_tokens": 108,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 265,
+        "completion_tokens": 15,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 332,
+        "completion_tokens": 50,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "repair",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 479,
+        "completion_tokens": 58,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_selected.py"
+      ],
+      "result": {
+        "returncode": 1,
+        "timed_out": false,
+        "duration_s": 0.619,
+        "timeout_s": 15.0,
+        "output": ".F.                                                                      [100%]\n=================================== FAILURES ===================================\n_____________________________ test_selected_limit ______________________________\n\n    def test_selected_limit():\n>       assert accepts(8) is True\nE       assert False is True\nE        +  where False = accepts(8)\n\ntests/test_selected.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED ../../../../tmp/testpilot-_07ufgwy/repo::test_selected_limit - assert ...\n1 failed, 2 passed in 0.29s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing_stays_in_run",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "test_selected_limit",
+            "outcome": "failed",
+            "message": "assert False is True\n +  where False = accepts(8)\ndef test_selected_limit():\n>       assert accepts(8) is True\nE       assert False is True\nE        +  where False = accepts(8)\n\ntests/test_selected.py:4: AssertionError",
+            "generated_file": "tests/test_selected.py"
+          },
+          {
+            "nodeid": "test_selected_default",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_selected.py"
+          }
+        ],
+        "coverage": {
+          "percent_total": 100.0,
+          "files": {
+            "settings.py": {
+              "executed": [
+                1,
+                4,
+                5,
+                8,
+                9,
+                12,
+                13,
+                14,
+                15
+              ],
+              "missing": []
+            }
+          }
+        },
+        "generated_files": [
+          "tests/test_selected.py"
+        ],
+        "junit_available": true,
+        "passed": 2,
+        "failed": 1,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "2 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 2 collected",
+        "generated": {
+          "collected": 2,
+          "passed": 1,
+          "failed": 1,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_selected.py": "from settings import accepts, Policy\n\ndef test_selected_limit():\n    assert accepts(8) is True\n\ndef test_selected_default():\n    assert Policy.cap(20) == 7\n"
+      }
+    },
+    {
+      "round": 1,
+      "kind": "repair",
+      "files": [
+        "tests/test_selected.py"
+      ],
+      "result": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.736,
+        "timeout_s": 15.0,
+        "output": "...                                                                      [100%]\n3 passed in 0.29s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing_stays_in_run",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "test_selected_limit",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_selected.py"
+          },
+          {
+            "nodeid": "test_selected_default",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_selected.py"
+          }
+        ],
+        "coverage": {
+          "percent_total": 100.0,
+          "files": {
+            "settings.py": {
+              "executed": [
+                1,
+                4,
+                5,
+                8,
+                9,
+                12,
+                13,
+                14,
+                15
+              ],
+              "missing": []
+            }
+          }
+        },
+        "generated_files": [
+          "tests/test_selected.py"
+        ],
+        "junit_available": true,
+        "passed": 3,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected",
+        "generated": {
+          "collected": 2,
+          "passed": 2,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_selected.py": "from settings import accepts, Policy\n\ndef test_selected_limit():\n    assert accepts(7) is True\n    assert accepts(8) is False\n\ndef test_selected_default():\n    assert Policy.cap(20) == 7\n"
+      }
+    }
+  ],
+  "plan": "Pin only the caller-selected boundary and captured default.",
+  "message": "",
+  "selection": {
+    "mode": "explicit",
+    "requested": [
+      "settings.py::Policy.cap",
+      "settings.py::accepts",
+      "settings.py::Policy.cap"
+    ],
+    "reason": "Caller selected these targets; no dependency inference was performed.",
+    "diff_text": "diff --git a/settings.py b/settings.py\nindex 6a8ed7c..572bbe2 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 10\n+LIMIT = 7\n \n \n def accepts(amount):\n@@ -6,7 +6,7 @@ def accepts(amount):\n \n \n def ignored(amount):\n-    return amount + 5\n+    return amount + 6\n \n \n class Policy:\n"
+  },
+  "ok": true
+}

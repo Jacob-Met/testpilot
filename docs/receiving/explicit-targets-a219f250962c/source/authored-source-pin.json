@@ -1,0 +1,59 @@
+{
+  "code_commit": "fc24a55d2c5e2d94478072e8e6736bf44bab81a6",
+  "tree": "6b2582c2041bfa9a7cb3600bcead12574f6230c9",
+  "canonical_base": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "scoped_base": "a67abc30301dbcb357e866de749502045e5e40fd",
+  "files": [
+    {
+      "path": "testpilot/targets.py",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "sha256": "95f80ec643e30659b6fb1623c303d17246a36e3f3c5cc59cc8723fd71cce3ee1"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "sha256": "3ea786ae5466ebdd6087b03d829580c333882e6fd429aaf54099320b4aa0bb08"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6"
+    },
+    {
+      "path": "README.md",
+      "sha256": "9c646cbd14a07a5af79afd9a306202d402e2037db7e6557525d9e18387e27f5a"
+    },
+    {
+      "path": "docs/EXPLICIT_TARGETS.md",
+      "sha256": "dabf34adc34d931749f04debe601fb8f2c6a0ab668278c8539926fb05c88cca8"
+    },
+    {
+      "path": "tests/test_explicit_targets.py",
+      "sha256": "bd40f190a52195eed73145cbd0a721b0c555307dfd358ec1d795df3799026b1d"
+    },
+    {
+      "path": "tests/test_explicit_target_cli.py",
+      "sha256": "01eb0a6782448a59bbf876fa1d8cbf8398bb05b461f5875b4d125b0147ab3365"
+    }
+  ],
+  "preserved_loop_functions": [
+    "sanitize_test_path",
+    "parse_test_files",
+    "parse_verdict",
+    "_path_occupied",
+    "_require_additions",
+    "_pytest_module_name",
+    "_repository_module_names",
+    "_merge_test_files",
+    "make_patch",
+    "_changed_line_coverage",
+    "coverage_delta",
+    "_functions_block",
+    "_files_block",
+    "count_tests",
+    "write_outputs"
+  ],
+  "read_diff_exact": true,
+  "clean": true
+}

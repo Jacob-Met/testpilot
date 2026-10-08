@@ -1,0 +1,23 @@
+{
+  "canonical_baseline": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "scoped_baseline": "a67abc30301dbcb357e866de749502045e5e40fd",
+  "command": [
+    "/Users/me/testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/baseline-platform-tmp",
+    "tests/test_report_text_encoding.py::test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch",
+    "tests/test_report_text_encoding.py::test_real_cli_preserves_runner_failure_and_still_writes_readable_report"
+  ],
+  "cwd": "/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/scoped-baseline",
+  "returncode": 1,
+  "expected_fixture_failure": true,
+  "reason": "Both unchanged POSIX-only test fixtures attempt a non-UTF-8 filename that macOS refuses at Path.write_bytes before TestPilot is invoked. Baseline reproduces the same two failures.",
+  "test_source_sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e",
+  "log_sha256": "6a6f94c23215b7af7ecdd2faba8a318557ea3105048d2dd627fd68205b301257"
+}
