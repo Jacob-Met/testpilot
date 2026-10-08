@@ -1,0 +1,306 @@
+{
+  "status": "pass",
+  "purpose": "Real raw CP1252 hunks plus an unquoted UTF-8 path must be independent of CP1252 console text decoding.",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "candidateCliSha256": "83caf8df097902120a0cfbd6adb897d5b6be7ba2407b0217606e7038599b5a5f",
+  "sourceBeforeAfter": {
+    "original": {
+      "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "testpilot/__main__.py": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+      "testpilot/_pytest_generated.py": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+      "testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+      "testpilot/loop.py": "df13bbcbad7efb2232ece001b68ce32c6582b70a4a999d5510b190419f128491",
+      "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    "candidate": {
+      "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "testpilot/__main__.py": "83caf8df097902120a0cfbd6adb897d5b6be7ba2407b0217606e7038599b5a5f",
+      "testpilot/_pytest_generated.py": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+      "testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+      "testpilot/loop.py": "df13bbcbad7efb2232ece001b68ce32c6582b70a4a999d5510b190419f128491",
+      "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    }
+  },
+  "fixtureHashes": {
+    "\u8a08\u6e2c.py": "4e29e8a0f7e52e4e2d23c4bd9e25aa304bbeb9e6a8a86411d802c2960855e4b4",
+    "tests/test_existing.py": "3a6900cd13ceca0e0ab59bdb14cd837ee340977a57fb4c3c5c1d2aec0b1429cc"
+  },
+  "rawDiffSha256": "5303d6564ee47f25219f5e00f0a14db204f098ca19909253d903f96a36c979da",
+  "previewCases": [
+    {
+      "source": "original",
+      "route": "file",
+      "code": 2,
+      "targets": null,
+      "stderr": "testpilot: cannot inspect targets: 'utf-8' codec can't decode byte 0x80 in position 158: invalid start byte\n"
+    },
+    {
+      "source": "original",
+      "route": "stdin",
+      "code": 0,
+      "targets": {
+        "changed_functions": []
+      },
+      "stderr": ""
+    },
+    {
+      "source": "candidate",
+      "route": "file",
+      "code": 0,
+      "targets": {
+        "changed_functions": [
+          {
+            "path": "\u8a08\u6e2c.py",
+            "module": "\u8a08\u6e2c",
+            "qualname": "value",
+            "lineno": 2,
+            "end_lineno": 3,
+            "changed_lines": [
+              3
+            ],
+            "source": "def value():\n    return '\u20ac', 2",
+            "is_method": false
+          }
+        ]
+      },
+      "stderr": ""
+    },
+    {
+      "source": "candidate",
+      "route": "stdin",
+      "code": 0,
+      "targets": {
+        "changed_functions": [
+          {
+            "path": "\u8a08\u6e2c.py",
+            "module": "\u8a08\u6e2c",
+            "qualname": "value",
+            "lineno": 2,
+            "end_lineno": 3,
+            "changed_lines": [
+              3
+            ],
+            "source": "def value():\n    return '\u20ac', 2",
+            "is_method": false
+          }
+        ]
+      },
+      "stderr": ""
+    }
+  ],
+  "actualRun": {
+    "status": "passed",
+    "final": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.312,
+      "timeout_s": 15.0,
+      "output": "..                                                                       [100%]\n2 passed in 0.02s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing::test_existing",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": null
+        },
+        {
+          "nodeid": "tests.test_generated_value::test_generated_value",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_generated_value.py"
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_generated_value.py"
+      ],
+      "junit_available": true,
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+      "generated": {
+        "collected": 1,
+        "passed": 1,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "tests_written": 1
+  },
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "init",
+        "-q"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "config",
+        "core.quotePath",
+        "false"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "add",
+        "."
+      ],
+      "returncode": 0,
+      "stdoutBase64": "",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "-c",
+        "user.name=Root Receiving",
+        "-c",
+        "user.email=receiving@invalid.local",
+        "-c",
+        "commit.gpgsign=false",
+        "commit",
+        "-qm",
+        "fixture baseline"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "diff",
+        "HEAD",
+        "--",
+        "*.py"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "ZGlmZiAtLWdpdCBhL+ioiOa4rC5weSBiL+ioiOa4rC5weQppbmRleCBmMTNkZmZmLi44MWEyYTE5IDEwMDY0NAotLS0gYS/oqIjmuKwucHkKKysrIGIv6KiI5risLnB5CkBAIC0xLDMgKzEsMyBAQAogIyBjb2Rpbmc6IGNwMTI1MgogZGVmIHZhbHVlKCk6Ci0gICAgcmV0dXJuICeAJywgMQorICAgIHJldHVybiAngCcsIDIK",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "/usr/local/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "--diff",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/raw-change.diff",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdoutBase64": "",
+      "stderrBase64": "dGVzdHBpbG90OiBjYW5ub3QgaW5zcGVjdCB0YXJnZXRzOiAndXRmLTgnIGNvZGVjIGNhbid0IGRlY29kZSBieXRlIDB4ODAgaW4gcG9zaXRpb24gMTU4OiBpbnZhbGlkIHN0YXJ0IGJ5dGUK"
+    },
+    {
+      "argv": [
+        "/usr/local/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "ewogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFtdCn0K",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "/usr/local/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "--diff",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/raw-change.diff",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "ewogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiXHU4YTA4XHU2ZTJjLnB5IiwKICAgICAgIm1vZHVsZSI6ICJcdThhMDhcdTZlMmMiLAogICAgICAicXVhbG5hbWUiOiAidmFsdWUiLAogICAgICAibGluZW5vIjogMiwKICAgICAgImVuZF9saW5lbm8iOiAzLAogICAgICAiY2hhbmdlZF9saW5lcyI6IFsKICAgICAgICAzCiAgICAgIF0sCiAgICAgICJzb3VyY2UiOiAiZGVmIHZhbHVlKCk6XG4gICAgcmV0dXJuICdcdTIwYWMnLCAyIiwKICAgICAgImlzX21ldGhvZCI6IGZhbHNlCiAgICB9CiAgXQp9Cg==",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "/usr/local/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "ewogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiXHU4YTA4XHU2ZTJjLnB5IiwKICAgICAgIm1vZHVsZSI6ICJcdThhMDhcdTZlMmMiLAogICAgICAicXVhbG5hbWUiOiAidmFsdWUiLAogICAgICAibGluZW5vIjogMiwKICAgICAgImVuZF9saW5lbm8iOiAzLAogICAgICAiY2hhbmdlZF9saW5lcyI6IFsKICAgICAgICAzCiAgICAgIF0sCiAgICAgICJzb3VyY2UiOiAiZGVmIHZhbHVlKCk6XG4gICAgcmV0dXJuICdcdTIwYWMnLCAyIiwKICAgICAgImlzX21ldGhvZCI6IGZhbHNlCiAgICB9CiAgXQp9Cg==",
+      "stderrBase64": ""
+    },
+    {
+      "argv": [
+        "/usr/local/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/project",
+        "--diff",
+        "-",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/script",
+        "--rounds",
+        "0",
+        "--python",
+        "/usr/local/bin/python3",
+        "--timeout",
+        "15",
+        "--out",
+        "/Users/me/hamon-testpilot-receiving-db371a37f4c8/final/run-output"
+      ],
+      "returncode": 0,
+      "stdoutBase64": "IyBUZXN0UGlsb3QgcmVwb3J0OiAqKnBhc3NlZCoqCgotIENoYW5nZWQgZnVuY3Rpb25zOiDoqIjmuKwucHk6OnZhbHVlCi0gVGVzdHMgd3JpdHRlbjogMSBpbiB0ZXN0cy90ZXN0X2dlbmVyYXRlZF92YWx1ZS5weQotIFJlcGFpciByb3VuZHMgdXNlZDogMC8wCi0gRmluYWwgcnVuOiAyIHBhc3NlZCwgMCBmYWlsZWQsIDAgZXJyb3JzLCAwIHNraXBwZWQgKHJjPTApOyBnZW5lcmF0ZWQ6IDEgcGFzc2VkIG9mIDEgY29sbGVjdGVkIGluIDAuMzEycwotIENvdmVyYWdlOiB1bmF2YWlsYWJsZQotIFRva2VuczogMjg4IChlc3RpbWF0ZWQpOyBjb3N0OiB1bnByaWNlZCAoc2V0IFRFU1RQSUxPVF9QUklDRVMpCiAgLSBgbnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiYDogMSBjYWxscywgOTAgaW4gLyA5IG91dAogIC0gYG52aWRpYS9OZW1vdHJvbi0zXzUtTGlnaHRuaW5nYDogMSBjYWxscywgMTUwIGluIC8gMzkgb3V0Cgp3cm90ZSAvVXNlcnMvbWUvaGFtb24tdGVzdHBpbG90LXJlY2VpdmluZy1kYjM3MWEzN2Y0YzgvZmluYWwvcnVuLW91dHB1dC90ZXN0cGlsb3QucGF0Y2gsIC9Vc2Vycy9tZS9oYW1vbi10ZXN0cGlsb3QtcmVjZWl2aW5nLWRiMzcxYTM3ZjRjOC9maW5hbC9ydW4tb3V0cHV0L3JlcG9ydC5qc29uLCAvVXNlcnMvbWUvaGFtb24tdGVzdHBpbG90LXJlY2VpdmluZy1kYjM3MWEzN2Y0YzgvZmluYWwvcnVuLW91dHB1dC9yZXBvcnQubWQK",
+      "stderrBase64": ""
+    }
+  ],
+  "sourceAndFixtureUnchanged": true,
+  "finished": "2026-10-08T13:39:50Z"
+}

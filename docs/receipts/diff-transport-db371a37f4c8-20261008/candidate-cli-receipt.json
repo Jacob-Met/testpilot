@@ -1,0 +1,497 @@
+{
+  "source": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "python": "/usr/local/bin/python3",
+  "runtime": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "source_files": {
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "83caf8df097902120a0cfbd6adb897d5b6be7ba2407b0217606e7038599b5a5f",
+    "testpilot/_pytest_generated.py": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+    "testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "testpilot/loop.py": "df13bbcbad7efb2232ece001b68ce32c6582b70a4a999d5510b190419f128491",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+  },
+  "source_unchanged": true,
+  "cases": [
+    {
+      "case": "utf8",
+      "source_codec": "utf-8",
+      "source_sha256": "ec3be907c1675fa54a0ea2aa23985a47345935e44c794c4272430777371580cc",
+      "diff_sha256": "f5cdd6537e57ed1bdd0e477c5d176d8a55c836a5df1774266378dee475b6dff9",
+      "raw_diff_has_non_utf8": false,
+      "observations": [
+        {
+          "operation": "targets",
+          "route": "git",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "targets",
+          "route": "file",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "targets",
+          "route": "stdin",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "run",
+          "route": "git",
+          "returncode": 0,
+          "stdout_sha256": "47f6b5a2a2c72586e68ac2d7dab33d8bd4ecaf44c9d5431486d2c0fab45081d6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        },
+        {
+          "operation": "run",
+          "route": "file",
+          "returncode": 0,
+          "stdout_sha256": "ba997a6a0a288ffe80678cfb2e32ace850b1a11bf04d31b4c499c23e83b6142a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        },
+        {
+          "operation": "run",
+          "route": "stdin",
+          "returncode": 0,
+          "stdout_sha256": "956e7610645539f7b1cfdfe0a471467da126172125b60373493d75b037b044de",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        }
+      ],
+      "inputs_unchanged": true
+    },
+    {
+      "case": "latin1",
+      "source_codec": "latin-1",
+      "source_sha256": "97fdab32cd03dd10b983e5b81294d5378158bbe1385c936b94a557b4dc8bd1a6",
+      "diff_sha256": "3fcc6ae9b34cf1a0981bc2b2028043289322cef4cedcb31b941040507a7eda79",
+      "raw_diff_has_non_utf8": true,
+      "observations": [
+        {
+          "operation": "targets",
+          "route": "git",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "targets",
+          "route": "file",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "targets",
+          "route": "stdin",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "run",
+          "route": "git",
+          "returncode": 0,
+          "stdout_sha256": "ef480fc8e52bf07c01f60fb6eec98fb5e39ef7e88479be0d416750b6f35aa964",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        },
+        {
+          "operation": "run",
+          "route": "file",
+          "returncode": 0,
+          "stdout_sha256": "4d1e2ea74589c9b8e4bc397df90ea98c6cd36cc8827331d16a53a44bc1889d60",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        },
+        {
+          "operation": "run",
+          "route": "stdin",
+          "returncode": 0,
+          "stdout_sha256": "eafe31bdc922f0d1823fcf03e6c2a787b827fad135b0eb50b9a9aa26bc159dcc",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        }
+      ],
+      "inputs_unchanged": true
+    },
+    {
+      "case": "cp1252",
+      "source_codec": "cp1252",
+      "source_sha256": "89629bfa26b0bed76465e2f0543c986fc562ed6c41c47c00029294308806c02b",
+      "diff_sha256": "66527f5df93e0abab7115c07d65a323b9cbda1b996a8df3056e66c75f65b8569",
+      "raw_diff_has_non_utf8": true,
+      "observations": [
+        {
+          "operation": "targets",
+          "route": "git",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "targets",
+          "route": "file",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "targets",
+          "route": "stdin",
+          "returncode": 0,
+          "stdout_sha256": "712b4ffa8045932fdff04f44e6f9a559ed3bc018226a04b6ee7cd3ef6c3c1925",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ]
+        },
+        {
+          "operation": "run",
+          "route": "git",
+          "returncode": 0,
+          "stdout_sha256": "8d13ba796a7b10c435be103922e76bb9271865bdcecfc3bbd2ba44756eb04821",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        },
+        {
+          "operation": "run",
+          "route": "file",
+          "returncode": 0,
+          "stdout_sha256": "a9412b113af3e3bc4445180e7ce4c43709747eda35ee92e84fcc1566934d0d9f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        },
+        {
+          "operation": "run",
+          "route": "stdin",
+          "returncode": 0,
+          "stdout_sha256": "83cb4f1ff999bda2b5747b7532ba8d3fee5b4a5e55bd5f767e5cc05f0a4cacd3",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "unicode_decode_error": false,
+          "traceback": false,
+          "status": "passed",
+          "tests_written": 1,
+          "final_summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "selected": [
+            {
+              "path": "subject.py",
+              "module": "subject",
+              "qualname": "value",
+              "lineno": 4,
+              "end_lineno": 5,
+              "changed_lines": [
+                5
+              ],
+              "source": "def value():\n    return 2",
+              "is_method": false
+            }
+          ],
+          "ledger_calls": 2
+        }
+      ],
+      "inputs_unchanged": true
+    }
+  ]
+}

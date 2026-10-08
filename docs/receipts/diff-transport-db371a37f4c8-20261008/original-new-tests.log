@@ -1,0 +1,148 @@
+test_binary_stdin_works_with_an_explicit_strict_text_decoder (test_cli_diff_transport.RawDiffTransportTests.test_binary_stdin_works_with_an_explicit_strict_text_decoder) ... FAIL
+test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) ... 
+  test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='latin-1', route='git') ... FAIL
+  test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='latin-1', route='file') ... FAIL
+  test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='cp1252', route='git') ... FAIL
+  test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='cp1252', route='file') ... FAIL
+test_one_diff_can_contain_multiple_source_encodings_and_a_quoted_path (test_cli_diff_transport.RawDiffTransportTests.test_one_diff_can_contain_multiple_source_encodings_and_a_quoted_path) ... FAIL
+test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) ... 
+  test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='latin-1', route='git') ... FAIL
+  test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='latin-1', route='file') ... FAIL
+  test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='latin-1', route='stdin') ... FAIL
+  test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='cp1252', route='git') ... FAIL
+  test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='cp1252', route='file') ... FAIL
+  test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='cp1252', route='stdin') ... FAIL
+test_saved_diff_universal_newlines_remain_supported (test_cli_diff_transport.RawDiffTransportTests.test_saved_diff_universal_newlines_remain_supported) ... ok
+test_text_only_stdin_callers_remain_supported_without_generation (test_cli_diff_transport.RawDiffTransportTests.test_text_only_stdin_callers_remain_supported_without_generation) ... ok
+test_utf8_and_ascii_inputs_retain_route_parity (test_cli_diff_transport.RawDiffTransportTests.test_utf8_and_ascii_inputs_retain_route_parity) ... ok
+
+======================================================================
+FAIL: test_binary_stdin_works_with_an_explicit_strict_text_decoder (test_cli_diff_transport.RawDiffTransportTests.test_binary_stdin_works_with_an_explicit_strict_text_decoder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 153, in test_binary_stdin_works_with_an_explicit_strict_text_decoder
+    self.assert_preview(fixture, "stdin")
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 127, in assert_preview
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b"testpilot: cannot inspect targets: 'utf-8' codec can't decode byte 0xe9 in position 167: invalid continuation byte\n"
+
+======================================================================
+FAIL: test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='latin-1', route='git')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 149, in test_legacy_git_and_saved_file_previews_keep_native_source_text
+    self.assert_preview(fixture, route)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 127, in assert_preview
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b"testpilot: cannot inspect targets: 'utf-8' codec can't decode byte 0xe9 in position 167: invalid continuation byte\n"
+
+======================================================================
+FAIL: test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='latin-1', route='file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 149, in test_legacy_git_and_saved_file_previews_keep_native_source_text
+    self.assert_preview(fixture, route)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 127, in assert_preview
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b"testpilot: cannot inspect targets: 'utf-8' codec can't decode byte 0xe9 in position 167: invalid continuation byte\n"
+
+======================================================================
+FAIL: test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='cp1252', route='git')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 149, in test_legacy_git_and_saved_file_previews_keep_native_source_text
+    self.assert_preview(fixture, route)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 127, in assert_preview
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b"testpilot: cannot inspect targets: 'utf-8' codec can't decode byte 0x80 in position 163: invalid start byte\n"
+
+======================================================================
+FAIL: test_legacy_git_and_saved_file_previews_keep_native_source_text (test_cli_diff_transport.RawDiffTransportTests.test_legacy_git_and_saved_file_previews_keep_native_source_text) (codec='cp1252', route='file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 149, in test_legacy_git_and_saved_file_previews_keep_native_source_text
+    self.assert_preview(fixture, route)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 127, in assert_preview
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b"testpilot: cannot inspect targets: 'utf-8' codec can't decode byte 0x80 in position 163: invalid start byte\n"
+
+======================================================================
+FAIL: test_one_diff_can_contain_multiple_source_encodings_and_a_quoted_path (test_cli_diff_transport.RawDiffTransportTests.test_one_diff_can_contain_multiple_source_encodings_and_a_quoted_path)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 167, in test_one_diff_can_contain_multiple_source_encodings_and_a_quoted_path
+    records = [self.assert_preview(fixture, route) for route in ("git", "file", "stdin")]
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 127, in assert_preview
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : b"testpilot: cannot inspect targets: 'utf-8' codec can't decode byte 0xe9 in position 395: invalid continuation byte\n"
+
+======================================================================
+FAIL: test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='latin-1', route='git')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 177, in test_raw_diffs_generate_executed_tests_and_exact_applicable_patches
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 112, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 91, in main\n    diff_text = subprocess.run(["git", "-C", a.repo, "diff", a.git_base, "--", "*.py"],\n                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                               check=True, capture_output=True, text=True).stdout\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 556, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1222, in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 2169, in _communicate\n    stdout = self._translate_newlines(stdout,\n                                      self.stdout.encoding,\n                                      self.stdout.errors)\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1099, in _translate_newlines\n    data = data.decode(encoding, errors)\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0xe9 in position 167: invalid continuation byte\n'
+
+======================================================================
+FAIL: test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='latin-1', route='file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 177, in test_raw_diffs_generate_executed_tests_and_exact_applicable_patches
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 112, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 89, in main\n    diff_text = Path(a.diff).read_text(encoding="utf-8")\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 633, in read_text\n    return f.read()\n           ~~~~~~^^\n  File "<frozen codecs>", line 325, in decode\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0xe9 in position 167: invalid continuation byte\n'
+
+======================================================================
+FAIL: test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='latin-1', route='stdin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 177, in test_raw_diffs_generate_executed_tests_and_exact_applicable_patches
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 112, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 87, in main\n    diff_text = sys.stdin.read()\n  File "<frozen codecs>", line 325, in decode\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0xe9 in position 167: invalid continuation byte\n'
+
+======================================================================
+FAIL: test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='cp1252', route='git')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 177, in test_raw_diffs_generate_executed_tests_and_exact_applicable_patches
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 112, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 91, in main\n    diff_text = subprocess.run(["git", "-C", a.repo, "diff", a.git_base, "--", "*.py"],\n                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                               check=True, capture_output=True, text=True).stdout\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 556, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1222, in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 2169, in _communicate\n    stdout = self._translate_newlines(stdout,\n                                      self.stdout.encoding,\n                                      self.stdout.errors)\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py", line 1099, in _translate_newlines\n    data = data.decode(encoding, errors)\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0x80 in position 163: invalid start byte\n'
+
+======================================================================
+FAIL: test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='cp1252', route='file')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 177, in test_raw_diffs_generate_executed_tests_and_exact_applicable_patches
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 112, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 89, in main\n    diff_text = Path(a.diff).read_text(encoding="utf-8")\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_local.py", line 546, in read_text\n    return PathBase.read_text(self, encoding, errors, newline)\n           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/pathlib/_abc.py", line 633, in read_text\n    return f.read()\n           ~~~~~~^^\n  File "<frozen codecs>", line 325, in decode\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0x80 in position 163: invalid start byte\n'
+
+======================================================================
+FAIL: test_raw_diffs_generate_executed_tests_and_exact_applicable_patches (test_cli_diff_transport.RawDiffTransportTests.test_raw_diffs_generate_executed_tests_and_exact_applicable_patches) (codec='cp1252', route='stdin')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/tests/test_cli_diff_transport.py", line 177, in test_raw_diffs_generate_executed_tests_and_exact_applicable_patches
+    self.assertEqual(result.returncode, 0, result.stderr)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 1 != 0 : b'Traceback (most recent call last):\n  File "<frozen runpy>", line 198, in _run_module_as_main\n  File "<frozen runpy>", line 88, in _run_code\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 112, in <module>\n    raise SystemExit(main())\n                     ~~~~^^\n  File "/Users/me/hamon-product-db371a37f4c8/testpilot-diff-transport/testpilot/__main__.py", line 87, in main\n    diff_text = sys.stdin.read()\n  File "<frozen codecs>", line 325, in decode\nUnicodeDecodeError: \'utf-8\' codec can\'t decode byte 0x80 in position 163: invalid start byte\n'
+
+----------------------------------------------------------------------
+Ran 7 tests in 6.515s
+
+FAILED (failures=12)
