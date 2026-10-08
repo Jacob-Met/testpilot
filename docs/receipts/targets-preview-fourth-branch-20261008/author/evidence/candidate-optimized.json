@@ -1,0 +1,365 @@
+{
+  "source": "/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate",
+  "test": "/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "optimized": 1,
+  "methods": 8,
+  "successful": true,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "native_cli_invocations": 15,
+  "cli_receipts": [
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_default_human_preview_names_the_exact_location",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-5xdh56nx/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-5xdh56nx/change.diff"
+      ],
+      "returncode": 0,
+      "stdout": "1 changed Python function outside tests\n\"src/caf\\u00e9.py\":9-11  \"Arithmetic.scale\"\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-38pcyt78/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"changed_functions\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-38pcyt78/project",
+        "--diff",
+        "-"
+      ],
+      "returncode": 0,
+      "stdout": "0 changed Python functions outside tests\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_existing_run_retains_native_no_changes_reports",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-juruujz_/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-juruujz_/empty.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/dev/shm/testpilot-target-preview-juruujz_/script",
+        "--python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "--rounds",
+        "2",
+        "--out",
+        "/dev/shm/testpilot-target-preview-juruujz_/run-output"
+      ],
+      "returncode": 1,
+      "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/2\n- Coverage: unavailable (install `coverage`)\n- Tokens: 0; cost: $0.000000\n\nwrote /dev/shm/testpilot-target-preview-juruujz_/run-output/testpilot.patch, /dev/shm/testpilot-target-preview-juruujz_/run-output/report.json, /dev/shm/testpilot-target-preview-juruujz_/run-output/report.md\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-hi7nc3vj/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-hi7nc3vj/change.diff",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"src/caf\\u00e9.py\",\n      \"module\": \"caf\\u00e9\",\n      \"qualname\": \"Arithmetic.scale\",\n      \"lineno\": 9,\n      \"end_lineno\": 11,\n      \"changed_lines\": [\n        11\n      ],\n      \"source\": \"    @staticmethod\\n    def scale(value):\\n        return value * 3\",\n      \"is_method\": true\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-hi7nc3vj/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"src/caf\\u00e9.py\",\n      \"module\": \"caf\\u00e9\",\n      \"qualname\": \"Arithmetic.scale\",\n      \"lineno\": 9,\n      \"end_lineno\": 11,\n      \"changed_lines\": [\n        11\n      ],\n      \"source\": \"    @staticmethod\\n    def scale(value):\\n        return value * 3\",\n      \"is_method\": true\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_git_preview_selects_native_target_without_executing_project",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-ze7y22yv/project",
+        "--git-base",
+        "HEAD",
+        "--json"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"src/caf\\u00e9.py\",\n      \"module\": \"caf\\u00e9\",\n      \"qualname\": \"Arithmetic.scale\",\n      \"lineno\": 9,\n      \"end_lineno\": 11,\n      \"changed_lines\": [\n        11\n      ],\n      \"source\": \"    @staticmethod\\n    def scale(value):\\n        return value * 3\",\n      \"is_method\": true\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--help"
+      ],
+      "returncode": 0,
+      "stdout": "usage: testpilot targets [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                         [--json]\n\noptions:\n  -h, --help           show this help message and exit\n  --repo REPO\n  --diff DIFF          unified diff file ('-' for stdin)\n  --git-base GIT_BASE  diff the working tree against this git ref\n  --json               include full native target records and source\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-bgkfx630/project"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot targets [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                         [--json]\ntestpilot targets: error: one of the arguments --diff --git-base is required\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-bgkfx630/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-bgkfx630/change.diff",
+        "--git-base",
+        "HEAD"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot targets [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                         [--json]\ntestpilot targets: error: argument --git-base: not allowed with argument --diff\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-bgkfx630/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-bgkfx630/change.diff",
+        "--script",
+        "/dev/shm/testpilot-target-preview-bgkfx630"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run,targets} ...\ntestpilot: error: unrecognized arguments: --script /dev/shm/testpilot-target-preview-bgkfx630\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-w2dck2bz/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-w2dck2bz/missing.diff",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "testpilot: cannot inspect targets: [Errno 2] No such file or directory: '/dev/shm/testpilot-target-preview-w2dck2bz/missing.diff'\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-w2dck2bz/project",
+        "--git-base",
+        "missing-ref",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "testpilot: cannot inspect targets: Command '['git', '-C', '/dev/shm/testpilot-target-preview-w2dck2bz/project', 'diff', 'missing-ref', '--', '*.py']' returned non-zero exit status 128.\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-w2dck2bz/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "testpilot: cannot inspect targets: diff source must be repository-relative: '../outside.py'\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-w2dck2bz/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-w2dck2bz/change.diff",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "testpilot: cannot inspect targets: invalid syntax (caf\u00e9.py, line 1)\n"
+    }
+  ],
+  "direct_main_tripwire_case": "test_saved_diff_preview_never_constructs_model_or_test_runner",
+  "source_before": {
+    "testpilot/__init__.py": {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+      "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+      "bytes": 5094
+    },
+    "testpilot/diff.py": {
+      "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+      "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "bytes": 9059
+    },
+    "testpilot/loop.py": {
+      "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "bytes": 21164
+    },
+    "testpilot/model.py": {
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "bytes": 9730
+    },
+    "testpilot/sandbox.py": {
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "bytes": 9286
+    }
+  },
+  "source_after": {
+    "testpilot/__init__.py": {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+      "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+      "bytes": 5094
+    },
+    "testpilot/diff.py": {
+      "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+      "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "bytes": 9059
+    },
+    "testpilot/loop.py": {
+      "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "bytes": 21164
+    },
+    "testpilot/model.py": {
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "bytes": 9730
+    },
+    "testpilot/sandbox.py": {
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "bytes": 9286
+    }
+  },
+  "test_before": {
+    "git_blob": "734cdec7fef8d200cf9f97f1142416b96c703652",
+    "sha256": "5aa2477ed28906ae96447510efffd5f16aa7e5e907ee7d93db1c3c77bf903995",
+    "bytes": 10760
+  },
+  "test_after": {
+    "git_blob": "734cdec7fef8d200cf9f97f1142416b96c703652",
+    "sha256": "5aa2477ed28906ae96447510efffd5f16aa7e5e907ee7d93db1c3c77bf903995",
+    "bytes": 10760
+  },
+  "source_unchanged": true,
+  "log": "test_default_human_preview_names_the_exact_location (test_cli_targets.TargetPreviewTests.test_default_human_preview_names_the_exact_location) ... ok\ntest_empty_diff_is_a_successful_empty_preview (test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview) ... ok\ntest_existing_run_retains_native_no_changes_reports (test_cli_targets.TargetPreviewTests.test_existing_run_retains_native_no_changes_reports) ... ok\ntest_file_and_stdin_preview_have_identical_target_records (test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records) ... ok\ntest_git_preview_selects_native_target_without_executing_project (test_cli_targets.TargetPreviewTests.test_git_preview_selects_native_target_without_executing_project) ... ok\ntest_help_and_source_options_do_not_accept_generation_options (test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options) ... ok\ntest_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) ... ok\ntest_saved_diff_preview_never_constructs_model_or_test_runner (test_cli_targets.TargetPreviewTests.test_saved_diff_preview_never_constructs_model_or_test_runner) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 1.594s\n\nOK\n",
+  "boundary": "Actual CLI/Git and one injected no-effects main seam; no pytest framework, inference, account or live project."
+}

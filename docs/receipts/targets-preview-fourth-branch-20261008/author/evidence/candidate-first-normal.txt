@@ -1,0 +1,13 @@
+test_default_human_preview_names_the_exact_location (test_cli_targets.TargetPreviewTests.test_default_human_preview_names_the_exact_location) ... ok
+test_empty_diff_is_a_successful_empty_preview (test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview) ... ok
+test_existing_run_retains_native_no_changes_reports (test_cli_targets.TargetPreviewTests.test_existing_run_retains_native_no_changes_reports) ... ok
+test_file_and_stdin_preview_have_identical_target_records (test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records) ... ok
+test_git_preview_selects_native_target_without_executing_project (test_cli_targets.TargetPreviewTests.test_git_preview_selects_native_target_without_executing_project) ... ok
+test_help_and_source_options_do_not_accept_generation_options (test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options) ... ok
+test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) ... ok
+test_saved_diff_preview_never_constructs_model_or_test_runner (test_cli_targets.TargetPreviewTests.test_saved_diff_preview_never_constructs_model_or_test_runner) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.442s
+
+OK
