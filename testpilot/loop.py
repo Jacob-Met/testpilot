@@ -364,6 +364,7 @@ class LoopResult:
     plan: str = ""
     message: str = ""
     selection: dict | None = None
+    pytest_selection: dict | None = None
 
     @property
     def ok(self) -> bool:
@@ -373,6 +374,8 @@ class LoopResult:
         d = asdict(self)
         if self.selection is None:
             d.pop("selection")
+        if self.pytest_selection is None:
+            d.pop("pytest_selection")
         d["ok"] = self.ok
         return d
 
@@ -391,7 +394,11 @@ class TestPilot:
 
     def __init__(self, client: ChatClient, routing: RoutingConfig | None = None, *, max_repair_rounds: int = 3,
                  timeout_s: float = 60.0, max_total_tokens: int | None = None, coverage: bool | None = None,
-                 python: str | None = None):
+                 python: str | None = None, pytest_k: str | None = None,
+                 pytest_m: str | None = None):
+        for name, value in (("pytest_k", pytest_k), ("pytest_m", pytest_m)):
+            if value is not None and (not isinstance(value, str) or "\x00" in value):
+                raise ValueError(f"{name} must be a string without NUL or None")
         self.client = client
         self.routing = routing or RoutingConfig()
         self.max_repair_rounds = max_repair_rounds
@@ -399,6 +406,10 @@ class TestPilot:
         self.max_total_tokens = max_total_tokens
         self.coverage = coverage
         self.python = python
+        self._pytest_selection = (pytest_k, pytest_m)
+        # Keep each expression in one argument, even if it starts with '-'.
+        self._pytest_args = tuple(flag + value for flag, value in
+                                  (("-k=", pytest_k), ("-m=", pytest_m)) if value is not None)
 
     def _ask(self, ledger: Ledger, role: str, system: str, user: str) -> str:
         ledger.check_budget()
@@ -408,7 +419,8 @@ class TestPilot:
         return resp.content
 
     def _run(self, repo: Path, files: dict[str, str] | None) -> SandboxResult:
-        return run_pytest(repo, files, timeout=self.timeout_s, coverage=self.coverage, python=self.python)
+        return run_pytest(repo, files, timeout=self.timeout_s, coverage=self.coverage,
+                          python=self.python, pytest_args=self._pytest_args)
 
     def run(self, repo: str | Path, diff_text: str, *,
             targets: Sequence[str] | None = None) -> LoopResult:
@@ -418,6 +430,8 @@ class TestPilot:
         funcs = (changed_functions(repo, diff_text) if selection is None
                  else resolve_targets(repo, diff_text, selection["requested"]))
         context = f"Changed functions:\n\n{_functions_block(funcs)}"
+        pytest_selection = (dict(zip(("keyword", "marker"), self._pytest_selection))
+                            if self._pytest_args else None)
         planner_system, editor_system, repair_system = SYSTEM_PLANNER, SYSTEM_EDITOR, SYSTEM_REPAIR
         if selection is not None:
             context = (f"{selection['reason']}\n\nCaller-selected functions:\n\n{_functions_block(funcs)}"
@@ -427,6 +441,12 @@ class TestPilot:
                                                     "caller-selected Python functions and a supplied diff") + note
             editor_system = SYSTEM_EDITOR.replace("the changed functions", "the caller-selected functions") + note
             repair_system = SYSTEM_REPAIR + note
+        if pytest_selection is not None:
+            context += ("\n\nPytest execution selection (literal native expressions):\n"
+                        + json.dumps(pytest_selection, ensure_ascii=True)
+                        + "\nThe same selection applies to baseline, generation and every repair. "
+                        "Generated tests must be collected and pass within this selection; "
+                        "unselected tests are not verified.")
         rounds: list[RoundRecord] = []
         files: dict[str, str] = {}
         aliases: dict[str, str] = {}
@@ -450,12 +470,15 @@ class TestPilot:
                 final=final.to_dict() if final else None,
                 patch=patch,
                 coverage=coverage_delta(baseline, final, funcs), ledger=ledger.to_dict(), rounds=rounds,
-                plan=plan, message=msg, selection=selection)
+                plan=plan, message=msg, selection=selection, pytest_selection=pytest_selection)
 
         if not funcs:
             return result("no_changes", "diff touches no Python functions outside tests")
 
         baseline = self._run(repo, None)
+        if pytest_selection is not None and baseline.returncode == 4:
+            final = baseline
+            return result("failed", "pytest refused the selected baseline run; inspect its diagnostics", baseline)
         try:
             plan = self._ask(ledger, "planner", planner_system,
                              f"{context}\n\nWrite the test plan.")
@@ -534,6 +557,11 @@ def render_report(res: LoopResult) -> str:
     lines.append(f"- Tokens: {lg['total_tokens']}{' (estimated)' if lg['tokens_estimated'] else ''}; cost: {cost}")
     for m, s in lg["by_model"].items():
         lines.append(f"  - `{m}`: {s['calls']} calls, {s['prompt_tokens']} in / {s['completion_tokens']} out")
+    if res.pytest_selection is not None:
+        lines += ["", "## Pytest execution selection", "",
+                  "These native filters are configured for baseline, generation and every repair. "
+                  "Unselected tests were not verified. Saved-test recheck does not inherit these filters.",
+                  "", "```json", json.dumps(res.pytest_selection, ensure_ascii=True, indent=2), "```"]
     if res.patch:
         lines += ["", "## Patch", "", "```diff", res.patch.rstrip("\n"), "```"]
     text = "\n".join(lines) + "\n"

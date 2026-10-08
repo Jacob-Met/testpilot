@@ -93,6 +93,15 @@ Add `--no-coverage` to `run` to execute pytest without optional coverage measure
 
 ## Choose functions explicitly
 
+To select which **pytest cases execute**, add `--pytest-k 'parser and not slow'`
+and/or `--pytest-m 'unit'` to `run`. Native pytest applies the same expressions
+to baseline, generated verification and every repair; both filters must match
+when supplied together. Reports retain the literal selection and state that
+unselected tests were not verified. An actual selected generated pass remains
+required. This is separate from selecting source functions below; saved-test
+`recheck` retains its existing unfiltered behavior. See
+[pytest selection](docs/PYTEST_SELECTION.md) for API, reporting and recheck details.
+
 Use repeated `--target path.py::qualname` flags on `targets` or `run` to select
 specific current functions, including unchanged functions affected by a change
 you have identified. The supplied diff stays available as context to planning,
