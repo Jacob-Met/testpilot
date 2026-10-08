@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "baseline_commit": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "source_patch_sha256": "884fa5b08f5272b5be774243dc5236ea8875b7cc1a85af482300689839e00877",
+  "check": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "apply": {
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  "matched_native_paths": 83,
+  "scope": "git apply on a separate copy of the exact82 native baseline files reconstructs all83 candidate files; no synthetic Git commit or complete955-leaf checkout claim."
+}

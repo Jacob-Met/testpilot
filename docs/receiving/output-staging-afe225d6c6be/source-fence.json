@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "unchanged_top_level_ast_except": "write_outputs and imports errno/io/stat/tempfile",
+  "remaining_ast_sha256": "9b16e9a6454b8976dfd2cae4bf631b7f9b9fc3d9af054d017f5626dd64fa2be0",
+  "signature_unchanged": true,
+  "unowned_native_paths_unchanged": 80
+}

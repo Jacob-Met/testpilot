@@ -1,0 +1,61 @@
+{
+  "kind": "Independent output staging accepted with retained permission-boundary evidence",
+  "utc": "2026-10-08T15:03:52.756290+00:00",
+  "baseline_commit": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "baseline_tree": "22da6a890c2befaf72d3826103538491b07793df",
+  "original_observations": 24,
+  "additional_successful_write_observations": 8,
+  "accepted_case_groups": 14,
+  "all_checks_passed": true,
+  "failures": [],
+  "source_unchanged": true,
+  "candidate_native_leaves": 83,
+  "baseline_native_leaves": 82,
+  "original_receiver_sha256": "30db5497e5897e0e8b9aa5d335717b25188de7c04cc7abf1c3f9fb74ca50794e",
+  "revised_receiver_sha256": "796a848367c0e42932f9a7e22b8ec6d75a4146d2f35f5863b5cac065e654b501",
+  "original_receiving_sha256": "e1d16685d266fcc1b205a49c279f16d9c8b41ef087f0f7ff6676969ca3f00a48",
+  "correction": "The original byte-success oracle combined successful-write expectations with mode 0444. Actual baseline EACCES and candidate successful directory-authorized replacement are preserved as a distinct permission boundary. Only four successful-write cases per variant were repeated with mode 0644; all other qualified cases were reused unchanged.",
+  "permission_boundary": "Replacement authorization follows output-directory permissions. Existing mode bits are copied to the new inode; an existing read-only regular file can be replaced when its directory permits replacement.",
+  "processes": [
+    {
+      "variant": "baseline",
+      "scenario": "bytes_0",
+      "returncode": 0
+    },
+    {
+      "variant": "baseline",
+      "scenario": "bytes_1",
+      "returncode": 0
+    },
+    {
+      "variant": "baseline",
+      "scenario": "bytes_2",
+      "returncode": 0
+    },
+    {
+      "variant": "baseline",
+      "scenario": "bytes_3",
+      "returncode": 0
+    },
+    {
+      "variant": "candidate",
+      "scenario": "bytes_0",
+      "returncode": 0
+    },
+    {
+      "variant": "candidate",
+      "scenario": "bytes_1",
+      "returncode": 0
+    },
+    {
+      "variant": "candidate",
+      "scenario": "bytes_2",
+      "returncode": 0
+    },
+    {
+      "variant": "candidate",
+      "scenario": "bytes_3",
+      "returncode": 0
+    }
+  ]
+}
