@@ -1,0 +1,12 @@
+diff --git a/tests/test_physical_line_consumer.py b/tests/test_physical_line_consumer.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_physical_line_consumer.py
+@@ -0,0 +1,7 @@
++from sample import answer, note
++
++def test_changed_answer():
++    assert answer() == 2
++
++def test_literal_note():
++    assert note == "left\u2028right"
