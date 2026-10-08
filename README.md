@@ -107,6 +107,24 @@ quality claim. Source, messages and model text are rendered literally, with
 visible escapes for HTML-incompatible controls or surrogate characters. The
 embedded original downloads remain unchanged.
 
+## Saving a complete report
+
+Before replacing a saved review, TestPilot prepares all four outputs, checks the
+existing final paths, and writes complete staged files on the output filesystem.
+If preparation, path checks, or staging fails, the previous final files remain
+unchanged and the error propagates. Existing final paths must be regular files:
+symlinks (including dangling links), directories and other file types are refused.
+Successful output keeps the same filenames, bytes and native text-newline behavior;
+existing regular files retain their permission bits. Replacement follows the
+output directory's permissions, so a read-only regular file can still be replaced
+when its directory permits it. The HTML downloads still
+contain the exact JSON and patch bytes that accompany that review.
+
+Publication then replaces each file individually. This is not a transaction across
+all four files: a later replacement error or a process/system failure can leave a
+mixture of old and new files. Concurrent writers are not coordinated. Use a separate
+output directory when separate runs need independent saved results.
+
 ## Running on Nebius Token Factory
 
 Token Factory has an OpenAI-compatible API. Its quickstart (<https://docs.tokenfactory.nebius.com/quickstart>, read 2026-10-04) uses:

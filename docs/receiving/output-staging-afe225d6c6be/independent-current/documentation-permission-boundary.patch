@@ -1,0 +1,13 @@
+--- a/README.md
++++ b/README.md
+@@ -115,7 +115,9 @@
+ unchanged and the error propagates. Existing final paths must be regular files:
+ symlinks (including dangling links), directories and other file types are refused.
+ Successful output keeps the same filenames, bytes and native text-newline behavior;
+-existing regular files retain their permission bits. The HTML downloads still
++existing regular files retain their permission bits. Replacement follows the
++output directory's permissions, so a read-only regular file can still be replaced
++when its directory permits it. The HTML downloads still
+ contain the exact JSON and patch bytes that accompany that review.
+ 
+ Publication then replaces each file individually. This is not a transaction across
