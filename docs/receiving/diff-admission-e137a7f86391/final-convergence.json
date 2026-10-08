@@ -1,0 +1,168 @@
+{
+  "schema": "hamon.testpilot.incumbent-convergence-acceptance.v1",
+  "recordedAt": "2026-10-08T19:38:06.450192+00:00",
+  "producer": "/root/coordination",
+  "status": "QUALIFIED_ACCEPTED_INCUMBENT_NO_ALTERNATE_RUNTIME",
+  "repository": "Jacob-Met/testpilot",
+  "issue": 45,
+  "currentSource": {
+    "commit": "513f17454af378ee042ccd29dc930ef332a48734",
+    "tree": "ffded624f1e44bed9e10872dfb795dae2dda1a46",
+    "capture": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/source-capture.json",
+      "bytes": 2679,
+      "sha256": "4d8972f24fe8c0e39511a74adcebb58a1f60416bb086379684ada08ce18f679e"
+    },
+    "files": [
+      {
+        "path": "testpilot/__init__.py",
+        "bytes": 390,
+        "gitBlob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+      },
+      {
+        "path": "testpilot/__main__.py",
+        "bytes": 8882,
+        "gitBlob": "53b9436ca572c0cb9e9a10e32252197bdd9ffd98",
+        "sha256": "6b9d5a175ff99e3d2d0b509a40e61a93659f3b3dc9f1a54f8a0e8d46e4490ff9"
+      },
+      {
+        "path": "testpilot/_pytest_generated.py",
+        "bytes": 2943,
+        "gitBlob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+        "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+      },
+      {
+        "path": "testpilot/diff.py",
+        "bytes": 13074,
+        "gitBlob": "ab4d562bdad9e5e2ecd977df8245562d16f1cbd9",
+        "sha256": "586f5b981d2c8d66e47cd8c5566ace994b152cde87f43db9b6e1c02ac5337490"
+      },
+      {
+        "path": "testpilot/html_report.py",
+        "bytes": 20982,
+        "gitBlob": "2fcc6441473684c2f8bdd16d314e8b258de51edf",
+        "sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "bytes": 26822,
+        "gitBlob": "a9de8356f3454334578bdfd1af19d6382b8a64a0",
+        "sha256": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8"
+      },
+      {
+        "path": "testpilot/model.py",
+        "bytes": 10175,
+        "gitBlob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+        "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+      },
+      {
+        "path": "testpilot/recheck.py",
+        "bytes": 12115,
+        "gitBlob": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+        "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6"
+      },
+      {
+        "path": "testpilot/recheck_html.py",
+        "bytes": 10184,
+        "gitBlob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+        "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+      },
+      {
+        "path": "testpilot/sandbox.py",
+        "bytes": 12721,
+        "gitBlob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+        "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a"
+      },
+      {
+        "path": "testpilot/targets.py",
+        "bytes": 5410,
+        "gitBlob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+        "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+      }
+    ]
+  },
+  "incumbentCredit": {
+    "pullRequest": 48,
+    "merge": "e5b7ac4a00704c0fad0c5d70da0aaafa40a722df",
+    "mergedAt": "2026-10-08T19:01:15Z",
+    "sourceHead": "c7b593ea652dd6b572d0f1076c839d155e0f4599",
+    "sourceEvidenceNamespace": "6cc6795e89f4",
+    "sourceContribution": "Complete hunk validation and automatic preflight were authored and merged by the incumbent. This receiving contribution does not claim its implementation."
+  },
+  "preservedLaterContribution": {
+    "pullRequest": 49,
+    "merge": "513f17454af378ee042ccd29dc930ef332a48734",
+    "meaning": "Current positive-finite timeout admission remains byte-exact in CLI 53b9436c. Its settled tests were not repeated."
+  },
+  "independentFrozenCorpus": {
+    "plan": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/independent-inputs/pre-candidate-plan.json",
+      "bytes": 6049,
+      "sha256": "075854d760e3cb68b1119f140613973e9ffc4ce8e29835ca19a21aa31ffaccbc"
+    },
+    "corpus": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/independent-inputs/corpus.json",
+      "bytes": 38888,
+      "sha256": "0bcf507ecc9665c45360a2feb4addb8274b9cd8a23fbd34004a3a10f7f587b71"
+    },
+    "addendum": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/independent-inputs/addendum.json",
+      "bytes": 702,
+      "sha256": "14a8f003db30c02605ee6b84c3d5f918e94d7a61ba37ec7a117da14f4805ff5f"
+    },
+    "expectedValues": "Authored before any candidate implementation/test access. Literal complete FileChange/function records from independently authored before/after files, genuine Git patches and Git apply --check controls. No author test expectations consumed."
+  },
+  "currentExecution": {
+    "receipt": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/incumbent-v1/receipt.json",
+      "bytes": 91165,
+      "sha256": "b2c5b17797fedb19ba5c5c503bc4b7dc1b40a5c3d61978bc3bc2628bd2f082dd"
+    },
+    "validCases": 14,
+    "invalidCases": 12,
+    "cliInvocations": 33,
+    "result": "Every valid public record matched unchanged frozen expectations; every malformed parse/selector refused with DiffFormatError, explicit targets retained wrapping, and actual automatic CLI refused before effects. No receiver modification or valid-behavior exception.",
+    "positiveGuardControl": "One valid automatic input reaches make_client and is stopped before construction, confirming the receiver effect guard."
+  },
+  "longPathControl": {
+    "receipt": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/long-path-v1/receipt.json",
+      "bytes": 2539,
+      "sha256": "67a99542251d485f2d6c7e843787ef96b8e8ccb3a7eda94c9b472bb19e109155"
+    },
+    "validPathCharacters": 8192,
+    "validPathPreservedExactly": true,
+    "typedMalformedMessageCharacters": 83,
+    "cliInvocations": 2,
+    "result": "Incumbent diagnostic is 83 characters, preserves record context and omits the caller path. Actual targets and guarded run exit 2 without output, traceback or forbidden effects."
+  },
+  "effectsBoundary": "35 actual CLI invocations total on accepted current source; automatic run is guarded before client/model/provider/baseline/sandbox/output functions. No such underlying function ran. This is admission receiving, not a test-generation or model run.",
+  "sourceFence": "All eleven runtime module Git blobs match complete current-tree metadata; nine unaffected modules equal original cec. Receiver writes only isolated evidence/fixture paths. No installed service, owner source or runtime was changed.",
+  "historicalDisposition": {
+    "status": "Alternate cec-based runtime withdrawn for integration by root after incumbent merge detected. Historical count/CLI, root counterexample, v2 correction and ENOSPC receipts remain unchanged.",
+    "sidecar": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/prior-packet/SUPERSEDED-BY-PR48.json",
+      "bytes": 1426,
+      "sha256": "39e9104ce67029a05006e37efe80b24816906524ad1c72d4fbc8d7009306db69"
+    },
+    "completePriorArchive": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/prior-packet/receiving-evidence.tar.gz",
+      "bytes": 217068,
+      "sha256": "f11ec1677380b1cc9ae59aa01b48628e29a1834f9f65cd201eec40416dc8e27e"
+    },
+    "priorReadback": {
+      "path": "/tmp/testpilot-hunk-incumbent-receiving-e137a7f86391/prior-packet/receiving-readback.json",
+      "bytes": 1098,
+      "sha256": "b5222051b008d74da886b1b7bb6af2953cfd9178adafb0640c7e18f3ae48701a"
+    }
+  },
+  "limits": [
+    "Recognized two-way hunk structure and selection behavior, not complete patch applicability.",
+    "No heuristic rejects legitimate header-looking +/- body text.",
+    "No combined/binary/rename applicability claim.",
+    "No alternate source patch or competing pull request is proposed.",
+    "Current source and ownership API responses are retained in source-inputs.json. Hosted CI/public closure remain root responsibilities.",
+    "Packet is in isolated native /tmp after native home ENOSPC; readback proves present bytes, not indefinite persistence."
+  ]
+}

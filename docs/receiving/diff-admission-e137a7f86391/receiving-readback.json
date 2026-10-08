@@ -1,0 +1,16 @@
+{
+  "schema": "hamon.testpilot.incumbent-readback.v1",
+  "recordedAt": "2026-10-08T19:39:16.984583+00:00",
+  "status": "VERIFIED",
+  "files": 121,
+  "payloadBytes": 673076,
+  "manifestSha256": "a83b156cb639d4f387689203560608e302ce7249c5557ddc573f73ccf685a151",
+  "acceptanceSha256": "998cc7d5b588cbbb2ed2ba969a087b9dbf14dd9618e3719e1214ecce13faa282",
+  "archive": {
+    "bytes": 307460,
+    "sha256": "cf63ac361e98d61a7bc3b5c043510b73fc120c01dd648338763fa1da0d0223da",
+    "members": 122
+  },
+  "method": "Independent native process reopened every source/evidence member and checked bytes, SHA256 and mode; separately decoded the complete archive, exact member allowlist and all member bytes without extraction. Prior complete alternate packet remains a byte-bound nested archive with its original readback and supersession sidecar.",
+  "location": "Isolated native /tmp; present-byte custody only, not indefinite persistence."
+}

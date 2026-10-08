@@ -1,0 +1,72 @@
+{
+  "status": "historical alternate; withdrawn before publication after incumbent PR48 merged",
+  "baseCommit": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "baseTree": "c0c6f5fe6bf5c4e94e196882a7f28246b42c05bb",
+  "historicalProposedTree": "41b37cba96dea9e6f778ff909860c36a7a845b47",
+  "canonicalBaseLeaves": 1297,
+  "historicalCandidateLeaves": 1298,
+  "unchangedCanonicalLeaves": 1294,
+  "scope": [
+    "testpilot/diff.py",
+    "testpilot/__main__.py",
+    "tests/test_diff_hunk_admission.py",
+    "README.md"
+  ],
+  "files": [
+    {
+      "path": "testpilot/diff.py",
+      "gitBlob": "0c781c01a6191c733778aa69df8a10b06e7bce36",
+      "bytes": 12227,
+      "sha256": "6230ad6ea7986f7f9c3f5441bad8c41acccd3d9f43270c16f364ddcf8f070afe"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "gitBlob": "3b5f9cbcea062445b931d80cf58d0c9c776924a9",
+      "bytes": 8367,
+      "sha256": "ba8e94396cf4df8d60232cf56b0d23cfbeb0c95ee8b3bd31b902c3760bbb9d65"
+    },
+    {
+      "path": "tests/test_diff_hunk_admission.py",
+      "gitBlob": "40d7876091031018fad1d055c9e152f8d0b688d6",
+      "bytes": 10013,
+      "sha256": "8a9e8045b52744244ce60f8e035a35d3c59981bdfe9ae27fa44336463f50dbe7"
+    },
+    {
+      "path": "README.md",
+      "gitBlob": "f6a614c8866f2b7398fa8f09783f60a14dcd4b8f",
+      "bytes": 14992,
+      "sha256": "69e379909c7ba925320a233445c2c91873a57322e0ca1b7a54169887d0594404"
+    }
+  ],
+  "runtimeV2Receipt": {
+    "path": "/tmp/testpilot-hunk-admission-e137a7f86391-candidate-v2/candidate-v2-pins.json",
+    "bytes": 703,
+    "sha256": "eb35b1e819e6317aae42f5e27bf5bf411b048cb0ef20aa1c3afbf3118d12a4e8"
+  },
+  "authorReceipt": {
+    "path": "/tmp/testpilot-hunk-admission-e137a7f86391-candidate-v2/author-v2/receipt.json",
+    "bytes": 3830,
+    "sha256": "529e64a0a8eeb01fe2fc2991fe6ee1fc9df9685d80102c1c7fc01c48c7121033"
+  },
+  "authorResult": "12 focused stdlib tests passed; source bytes unchanged; no new model/provider/sandbox calls",
+  "currentMainAtWithdrawal": "513f17454af378ee042ccd29dc930ef332a48734",
+  "incumbentMerge": "e5b7ac4a",
+  "notPublished": true,
+  "notRebased": true,
+  "temporaryNamespace": "/tmp/testpilot-hunk-admission-e137a7f86391-candidate-v2",
+  "originalDiscovery": {
+    "path": "/home/jacob/testpilot-hunk-admission-e137a7f86391/discovery-original.json",
+    "bytes": 32356,
+    "sha256": "aab2ee3c7a5195dc738ba733549d3112167ce8246e548665083066e281dcdf14"
+  },
+  "originalCanonicalCapture": {
+    "path": "/home/jacob/testpilot-hunk-admission-e137a7f86391/baseline/capture-receipt.json",
+    "bytes": 3743,
+    "sha256": "80adfe88298acecc146fee2a6f5ebb026c0167569da26783d4b3dcbd59d2a700"
+  },
+  "independentHistoricalAcceptance": {
+    "path": "/tmp/testpilot-hunk-receiving-e137a7f86391-diagnostic-v2/final-acceptance.json",
+    "bytes": 9055,
+    "sha256": "6a1f832bf2ee263e53f65360231688c680eb0c0fb3b56f7dfe67354013ebe1ff"
+  }
+}

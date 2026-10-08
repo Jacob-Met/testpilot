@@ -1,0 +1,144 @@
+{
+  "schema": "hamon.testpilot.diff-admission-root-review.v1",
+  "recordedAt": "2026-10-08 20:10:18 UTC",
+  "reviewer": "/root",
+  "worker": "e137a7f86391",
+  "repository": "Jacob-Met/testpilot",
+  "issue": 45,
+  "status": "ACCEPTED_BY_CONVERGENCE_WITH_INCUMBENT_PR48",
+  "receivedSource": {
+    "commit": "513f17454af378ee042ccd29dc930ef332a48734",
+    "tree": "ffded624f1e44bed9e10872dfb795dae2dda1a46",
+    "runtimeModules": 11,
+    "allRuntimeBlobsMatchCanonicalTree": true,
+    "parserBlob": "ab4d562bdad9e5e2ecd977df8245562d16f1cbd9",
+    "cliBlob": "53b9436ca572c0cb9e9a10e32252197bdd9ffd98"
+  },
+  "implementationCredit": {
+    "pullRequest": 48,
+    "url": "https://github.com/Jacob-Met/testpilot/pull/48",
+    "ownerNamespace": "6cc6795e89f4",
+    "head": "c7b593ea652dd6b572d0f1076c839d155e0f4599",
+    "merge": "e5b7ac4a00704c0fad0c5d70da0aaafa40a722df",
+    "mergedAt": "2026-10-08T19:01:15Z",
+    "contribution": "Incumbent authored and merged the accepted hunk structure validation and automatic CLI preflight."
+  },
+  "preservedContribution": {
+    "pullRequest": 49,
+    "url": "https://github.com/Jacob-Met/testpilot/pull/49",
+    "merge": "513f17454af378ee042ccd29dc930ef332a48734",
+    "contribution": "Positive finite timeout admission in the current CLI remains byte-exact."
+  },
+  "independentReceiving": {
+    "planSha256": "075854d760e3cb68b1119f140613973e9ffc4ce8e29835ca19a21aa31ffaccbc",
+    "validCases": 14,
+    "malformedCases": 12,
+    "coreActualCliInvocations": 33,
+    "longPathActualCliInvocations": 2,
+    "totalActualCliInvocations": 35,
+    "validPathCharacters": 8192,
+    "malformedDiagnosticCharacters": 83,
+    "expectedRecords": "Complete independently authored FileChange and selected-function records, with genuine Git-generated patches and apply --check controls.",
+    "effects": "Automatic calls intercepted before client construction, model/provider work, baseline tests, sandbox execution and report writing; no underlying operation ran.",
+    "result": "Unchanged frozen corpus and long-path controls accepted the incumbent snapshot. This is two-way hunk/admission receiving, not complete patch applicability."
+  },
+  "rootReview": {
+    "source": "Directly inspected accepted parser and CLI, independent frozen corpus/results, source pins, original failure and diagnostic counterexample.",
+    "concurrency": "Main advanced with PR48 and PR49 before alternate publication. The alternate runtime was withdrawn rather than rebased over incumbent contributions.",
+    "extraTesting": "No settled receiving or CI test was rerun for custody publication."
+  },
+  "hostedCi": {
+    "run": 37829253368,
+    "url": "https://github.com/Jacob-Met/testpilot/actions/runs/37829253368",
+    "job": 113490010847,
+    "jobUrl": "https://github.com/Jacob-Met/testpilot/actions/runs/37829253368/job/113490010847",
+    "event": "push",
+    "name": "ci / tests",
+    "checkout": "513f17454af378ee042ccd29dc930ef332a48734",
+    "python": "3.12",
+    "conclusion": "success",
+    "result": "453 passed, 25 subtests passed in 96.33s (0:01:36)",
+    "log": "hosted-ci-job-113490010847.log",
+    "review": "Root directly read the complete decoded job log and actual checkout before accepting the maintained regression gate."
+  },
+  "publication": {
+    "kind": "Evidence-only immutable branch based on the received source snapshot",
+    "prefix": "docs/receiving/diff-admission-e137a7f86391/",
+    "baseLeaves": 1426,
+    "expectedAddedLeaves": 8,
+    "expectedFinalLeaves": 1434,
+    "allBaseLeavesMustRemainExact": true,
+    "runtimeChanges": 0,
+    "testChanges": 0,
+    "configChanges": 0,
+    "serviceChanges": 0,
+    "competingRuntimePullRequest": false
+  },
+  "custody": {
+    "binaryArchivesPublishedWithoutRegeneration": true,
+    "base64TransportNotPublished": true,
+    "nativeCurrentArchiveFiles": 121,
+    "nativeCurrentArchiveMembers": 122,
+    "nativeCurrentManifestedBytes": 673076,
+    "nativeSeparateReadback": true,
+    "textFiles": [
+      {
+        "path": "docs/receiving/diff-admission-e137a7f86391/README.md",
+        "bytes": 3578,
+        "sha256": "b12b98053d4fd09d27042d52d793217f86006235dbc5cd4c3e0e83beed16ada6",
+        "gitBlob": "1cbd8f9443e1cccd129f25a28f182be2c4e009f1"
+      },
+      {
+        "path": "docs/receiving/diff-admission-e137a7f86391/final-convergence.json",
+        "bytes": 8283,
+        "sha256": "998cc7d5b588cbbb2ed2ba969a087b9dbf14dd9618e3719e1214ecce13faa282",
+        "gitBlob": "4b6c731d9e9f589258bf4f5f214e99f658c46232"
+      },
+      {
+        "path": "docs/receiving/diff-admission-e137a7f86391/receiving-readback.json",
+        "bytes": 930,
+        "sha256": "0840551743500067377336ad21baac86390987893b411d3fcc7e5063bf3d3229",
+        "gitBlob": "b05ac4c78749580b9b5335617058792dc96f0714"
+      },
+      {
+        "path": "docs/receiving/diff-admission-e137a7f86391/historical-source-receipt.json",
+        "bytes": 2883,
+        "sha256": "c61b39d18094ab3084ef8c731e7c80363fa97f77766b08ef712a377cf0be9177",
+        "gitBlob": "0548be74eec8830e1cb033f9fada5c27250256d0"
+      },
+      {
+        "path": "docs/receiving/diff-admission-e137a7f86391/hosted-ci-job-113490010847.log",
+        "bytes": 15797,
+        "sha256": "a2fc3681cbf51e288405028cb08067c6b9997d195827ad6a6ce0eaf9d168fca8",
+        "gitBlob": "e9915f92e8b4535023c625ac593d22bfe319f582"
+      }
+    ],
+    "archives": [
+      {
+        "path": "docs/receiving/diff-admission-e137a7f86391/receiving-evidence.tar.gz",
+        "bytes": 307460,
+        "sha256": "cf63ac361e98d61a7bc3b5c043510b73fc120c01dd648338763fa1da0d0223da",
+        "gitBlob": "c95d479e8213fff39e1811d96299178eb888fe9e"
+      },
+      {
+        "path": "docs/receiving/diff-admission-e137a7f86391/historical-candidate-v2.tar.gz",
+        "bytes": 78330,
+        "sha256": "8a0c0b4897a4ef76f910a00112d46c0e26bfaaa0b4f3776a0374637e7c5235d6",
+        "gitBlob": "b6bcf58d5fcab807d271089f00ce5053a27fdf19"
+      }
+    ]
+  },
+  "historicalDisposition": {
+    "originalBase": "cec50d8df4499ba509615e179d82ef3861379bd2",
+    "archive": "historical-candidate-v2.tar.gz",
+    "sourceReceipt": "historical-source-receipt.json",
+    "meaning": "Completed four-path alternate, author validation and original source discovery are retained as withdrawn history only. They are not the integrated runtime.",
+    "rootCounterexampleSha256": "bed4cb852f4bc9ea978fb84291965c7dde4f854a39578a1673fe65d42adbb4b9",
+    "retainedNegativeEvidence": "Original malformed-hunk baseline, alternate v1 diagnostic overflow, bounded v2 correction, genuine real-Git corpus, source drift/supersession and ENOSPC observations."
+  },
+  "limits": [
+    "Accepted source is pinned to the immutable received snapshot; future heads are not implied.",
+    "No live provider, model generation, working-tree patch applicability, installed service or public deployment claim.",
+    "Native receipts retain their original paths and storage observations; this Git publication supplies durable exact-byte custody."
+  ]
+}
