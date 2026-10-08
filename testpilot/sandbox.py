@@ -223,8 +223,13 @@ def _safe_join(root: Path, rel: str) -> Path:
 
 def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, timeout: float = 60.0,
                python: str | None = None, coverage: bool | None = None,
-               pytest_args: tuple[str, ...] = ()) -> SandboxResult:
-    """Copy ``repo`` to a temp dir, add ``extra_files``, run pytest, collect results."""
+               pytest_args: tuple[str, ...] = (), exact_files: bool = False) -> SandboxResult:
+    """Copy repo, add tests, run pytest and collect native results.
+
+    exact_files admits retained UTF-8 bytes: matching copied files are reused,
+    different copied files refuse, and new files use binary output. The default
+    generation path retains its existing text-write behavior.
+    """
     python = python or sys.executable
     use_cov = coverage_available(python) if coverage is None else coverage
     with tempfile.TemporaryDirectory(prefix="testpilot-") as td:
@@ -234,7 +239,19 @@ def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, t
         for rel, content in (extra_files or {}).items():
             dest = _safe_join(work, rel)
             dest.parent.mkdir(parents=True, exist_ok=True)
-            dest.write_text(content, encoding="utf-8")
+            if exact_files:
+                data = content.encode("utf-8")
+                if dest.exists():
+                    if not dest.is_file() or dest.stat().st_size != len(data):
+                        raise ValueError(f"copied retained test differs: {rel}")
+                    with dest.open("rb") as stream:
+                        if stream.read(len(data) + 1) != data:
+                            raise ValueError(f"copied retained test differs: {rel}")
+                else:
+                    with dest.open("xb") as stream:
+                        stream.write(data)
+            else:
+                dest.write_text(content, encoding="utf-8")
         junit = tdp / "junit.xml"
         options = ["-q", "-p", "no:cacheprovider", "--rootdir", str(work), "-o", "addopts=",
               "-o", "junit_family=xunit2", f"--junitxml={junit}", *pytest_args]

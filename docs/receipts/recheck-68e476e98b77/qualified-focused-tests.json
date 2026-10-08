@@ -1,0 +1,98 @@
+{
+  "started": "2026-10-08T13:07:22.361Z",
+  "finished": "2026-10-08T13:07:57.838Z",
+  "binary": "/usr/bin/python3",
+  "args": [
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_recheck.py",
+    "tests/test_cli_python.py",
+    "tests/test_cli_targets.py",
+    "tests/test_sandbox.py"
+  ],
+  "cwd": "/home/jacob/testpilot-recheck-68e476e98b77/candidate",
+  "uid": 1000,
+  "parent": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "parent_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
+  "exit": 0,
+  "signal": null,
+  "before": [
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 5884,
+      "sha256": "981ca055676d10b4f7ad5b07e9fa2d5f5846a73a556d8183f09188116e614231"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 12721,
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a"
+    },
+    {
+      "path": "testpilot/model.py",
+      "bytes": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "bytes": 1446,
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13251,
+      "sha256": "35a834482965c1d462e0150341963640b648b476ddc27e973f0ff71c9316684d"
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "bytes": 5885,
+      "sha256": "7855d34a1e84a4fb4b4ef113aa4bc488ccf28933883623e099ae427cc0fdbfc3"
+    }
+  ],
+  "after": [
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 5884,
+      "sha256": "981ca055676d10b4f7ad5b07e9fa2d5f5846a73a556d8183f09188116e614231"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 12721,
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a"
+    },
+    {
+      "path": "testpilot/model.py",
+      "bytes": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "bytes": 1446,
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13251,
+      "sha256": "35a834482965c1d462e0150341963640b648b476ddc27e973f0ff71c9316684d"
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "bytes": 5885,
+      "sha256": "7855d34a1e84a4fb4b4ef113aa4bc488ccf28933883623e099ae427cc0fdbfc3"
+    }
+  ],
+  "stdout_sha256": "fb76bd51c4651181d6f0700db2f405a8ac964c60dce3616bddedfe2adcf3f649",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-08T13:19:56Z",
+  "source": "Parent's paired path/device read, independently distinguished from the receiver's own preflight.",
+  "receiver_preflight": {
+    "at": "2026-10-08T13:16:11.582Z",
+    "path": "/home/jacob/testpilot-recheck-68e476e98b77",
+    "realpath": "/home/jacob/testpilot-recheck-68e476e98b77",
+    "uid": 1000,
+    "device": 66306,
+    "fs_type": 61267,
+    "block_size": 4096,
+    "available_blocks": 84302,
+    "free_bytes": 345300992,
+    "required_bytes": 134217728
+  },
+  "parent_later_home_volume_read": {
+    "at": "2026-10-08T13:19:56Z",
+    "free_bytes": 559763456,
+    "device": 66306,
+    "fs_type": 61267
+  },
+  "distinct_capturesuite_evidence_filesystem": {
+    "device": 47,
+    "fs_type": 16914836,
+    "scope": "Parent's earlier972MB/1053MB values and45 completed owned compiler-cache removals described this separate filesystem."
+  },
+  "conclusion": "The completed cache retirement remains valid, but does not establish or explain TestPilot's home-volume recovery. The unchanged successful receiver stands on its own measured guard. No historical test result is rewritten."
+}

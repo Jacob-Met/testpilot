@@ -1,0 +1,4 @@
+TestPilot recheck: passed
+6 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 4 passed of 4 collected
+New model calls: 0
+wrote /dev/shm/testpilot-recheck-r4-68e476e98b77/evidence/current-fixed/recheck.md, /dev/shm/testpilot-recheck-r4-68e476e98b77/evidence/current-fixed/recheck.json

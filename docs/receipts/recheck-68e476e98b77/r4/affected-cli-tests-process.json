@@ -1,0 +1,23 @@
+{
+  "name": "affected-cli-tests",
+  "argv": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_cli_diff_transport.py",
+    "tests/test_recheck.py::test_cli_skips_generation_and_recheck_output_is_reusable"
+  ],
+  "cwd": "/dev/shm/testpilot-recheck-r4-68e476e98b77/source",
+  "started_at": "2026-10-08T14:11:44.427726+00:00",
+  "finished_at": "2026-10-08T14:12:00.726935+00:00",
+  "duration_s": 16.2992184079485,
+  "exit": 0,
+  "stdout_sha256": "47282cd8c9d0d6a3b40a1f747a6a2ba67bf6f08535223ce056376bf2c3b5a741",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout": "affected-cli-tests.stdout",
+  "stderr": "affected-cli-tests.stderr"
+}

@@ -1,0 +1,211 @@
+{
+  "schema": "testpilot-recheck-root-source-acceptance-r2",
+  "created_at": "2026-10-08T13:53:03.847Z",
+  "disposition": "Accepted native R2 source and independent actual consumer boundary for public integration",
+  "reviewer": "estate-68e476e98b77/root",
+  "repository": "Jacob-Met/testpilot",
+  "native_source_root": "/home/jacob/testpilot-recheck-68e476e98b77/candidate-r2",
+  "native_parent": "e1d87442eeecc8cf1b44ee3547849d5c1d030876",
+  "native_parent_tree": "1466e2d4a2a1f2ce4fe5293e55e0b7f7e0b3797a",
+  "native_product_tree": "bdb31997919b1004238b9629fb11b35534819e5a",
+  "source_binding_sha256": "6c45fb6b7db2a0efebcccbfe0d9c762795457ebb86e03d48dd106c23ca3002c1",
+  "independent_receipt_sha256": "5996cf5b5fde7ed39fdddad9fe7e7ffc1d67d402e46622f0e009f5c209e06cd9",
+  "findings": [
+    "Read all five owned product/test/guide paths, including the full retained-report admission, path placement, native execution, result writer, console boundary, CLI dispatch and opt-in sandbox seam.",
+    "Saved success, diagnosis and model history remain historical metadata. The current sandbox result determines status; at least one retained case must pass and the selected existing suite must also satisfy the unchanged runner contract.",
+    "Report admission bounds bytes, file count and UTF-8 payload size; rejects duplicate JSON keys, nonfinite numbers, invalid Unicode/schema/path values; checks the descriptor after a nonblocking regular-file open.",
+    "Current retained test conflicts and symlink path components refuse before pytest. Exact matching regular files are reused in the private copy; missing saved files are written as exact UTF-8 bytes. The default generation path keeps its original write behavior.",
+    "Output paths are new and outside the checked repository. Input/setup/output errors remain exit 2, failed/no-retained-success execution is exit 1, and current success is exit 0. Partial result directories and console delivery failure are documented.",
+    "The final test-fixture-only revision imports the caller's pytest tooling through a .pth in a no-pip venv, matching the existing fixture contract without assuming a global pytest installation. All four other owned product blobs remain unchanged.",
+    "Two independent actual CLI calls supplied a disposable copy of the original saved report with forged passed/ok/final-success metadata and unchanged retained test bytes. The buggy checkout still returned exit 1 with 1 retained pass and 3 failures; the fixed checkout returned exit 0 with all 4 retained cases passed.",
+    "Both independent calls recorded historical status passed, zero model calls, exact original/forged report preservation, unchanged author and review fixtures, unchanged six runtime input pins, and empty stderr.",
+    "Reviewed authored R1 qualification and its actual read-only-file failure/repair; R2 preserves accepted timeout, generated-case collector and HTML-report owner inputs. No broad authored suite was repeated by root."
+  ],
+  "qualification_scope": {
+    "reviewed_authored_r1": "57 tests plus 6 subtests, one explicit existing missing-coverage skip; 10 real consumer controls.",
+    "reviewed_authored_r2": "One affected venv fixture case plus three bounded real-report controls with accepted PR23/24 inputs.",
+    "independent": "Two real CLI executions on candidate-r2, plus complete static review and source custody.",
+    "future_publication": "A later composition with generation-only PR22 changes remains separate source/public/hosted verification; this receipt does not claim those unobserved gates."
+  },
+  "limits": [
+    "Native Linux Python 3.14.4 / pytest 9.0.2 receiving; no native Windows qualification is claimed.",
+    "The inherited sandbox is a process-level testing copy, not a security boundary against hostile code.",
+    "Stable input/checkout paths are required; no atomic snapshot of concurrent edits or power-loss durability claim.",
+    "Admission limits do not bound arbitrary project copying or the output of arbitrary project code."
+  ],
+  "verified_inputs": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 586,
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11350,
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5",
+      "git_blob": "c28355a11a7165add54220eb1d692ecb2951e5e9"
+    },
+    {
+      "path": "eval/cases/calc_clamp/case.json",
+      "bytes": 179,
+      "sha256": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+      "git_blob": "9ed811d8a2b40d8ed14f0f67630d698942249e73"
+    },
+    {
+      "path": "eval/cases/calc_clamp/change.diff",
+      "bytes": 410,
+      "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+      "git_blob": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4"
+    },
+    {
+      "path": "eval/cases/calc_clamp/fix/calc.py",
+      "bytes": 361,
+      "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+      "git_blob": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/calc.py",
+      "bytes": 361,
+      "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+      "git_blob": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/tests/test_existing.py",
+      "bytes": 122,
+      "sha256": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d",
+      "git_blob": "1113fca65a126c34c76e140a36970eaacc9ae1a7"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/01_plan.md",
+      "bytes": 204,
+      "sha256": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+      "git_blob": "78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/02_tests.md",
+      "bytes": 435,
+      "sha256": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+      "git_blob": "70616f283909d2165c9fe12a9501966b9d32804a"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/03_repair.md",
+      "bytes": 265,
+      "sha256": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+      "git_blob": "eb417bdba41ede38cbfe1dec31f851db9707b9f0"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 5884,
+      "sha256": "981ca055676d10b4f7ad5b07e9fa2d5f5846a73a556d8183f09188116e614231",
+      "git_blob": "9bb8962dba529ece72758d61c75b2658496d8796"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "bytes": 9396,
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+      "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "bytes": 23828,
+      "sha256": "41506f3c29febd3b10c4dce43f7f8e0695c32885ddc08e56e1c96d5bb2f212a4",
+      "git_blob": "5d58f2dc991e3cdb98f476e08133048b02f91ca4"
+    },
+    {
+      "path": "testpilot/model.py",
+      "bytes": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 12721,
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "git_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 144,
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+      "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c"
+    },
+    {
+      "path": "tests/test_cli_python.py",
+      "bytes": 7941,
+      "sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+      "git_blob": "2aef9a0af0f5a115f647e1af0b4a218592eb274e"
+    },
+    {
+      "path": "tests/test_cli_targets.py",
+      "bytes": 10853,
+      "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+      "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e"
+    },
+    {
+      "path": "tests/test_loop.py",
+      "bytes": 5465,
+      "sha256": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc",
+      "git_blob": "8540b31caf7c258e9345e62d11cd4796c5e92ba5"
+    },
+    {
+      "path": "tests/test_sandbox.py",
+      "bytes": 2545,
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+      "git_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "bytes": 20656,
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11550,
+      "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+      "git_blob": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13652,
+      "sha256": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760",
+      "git_blob": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4"
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "bytes": 5885,
+      "sha256": "7855d34a1e84a4fb4b4ef113aa4bc488ccf28933883623e099ae427cc0fdbfc3",
+      "git_blob": "b7eff4e6089c2974b8c277370f474935d4bf4806"
+    }
+  ],
+  "independent_receipt": {
+    "path": "/home/jacob/testpilot-recheck-review-68e476e98b77/receipt.json",
+    "bytes": 4630,
+    "sha256": "5996cf5b5fde7ed39fdddad9fe7e7ffc1d67d402e46622f0e009f5c209e06cd9"
+  }
+}

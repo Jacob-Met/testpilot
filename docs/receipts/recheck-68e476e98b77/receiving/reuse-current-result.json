@@ -1,0 +1,90 @@
+{
+  "schema": "testpilot.recheck/1",
+  "status": "passed",
+  "ok": true,
+  "repo": "/home/jacob/testpilot-recheck-68e476e98b77/receiving-fixtures-r1/fixed",
+  "python": "/usr/bin/python3",
+  "started_at": "2026-10-08T13:16:14.952554+00:00",
+  "finished_at": "2026-10-08T13:16:15.615226+00:00",
+  "source_report": {
+    "path": "/home/jacob/testpilot-recheck-68e476e98b77/evidence/consumer-r1/fixed-report/recheck.json",
+    "sha256": "0c6bc645c56859e78ff49415fb7aaf32a8683222acf26a99f7218b1789980f5a",
+    "recorded_status": "passed"
+  },
+  "test_files": {
+    "tests/test_calc_clamp.py": "import pytest\n\nfrom calc import clamp\n\n\ndef test_inside_range_unchanged():\n    assert clamp(5, 0, 10) == 5\n\n\ndef test_below_and_above():\n    assert clamp(-3, 0, 10) == 0\n    assert clamp(42, 0, 10) == 10\n\n\ndef test_boundaries():\n    assert clamp(0, 0, 10) == 0\n    assert clamp(10, 0, 10) == 10\n\n\ndef test_inverted_bounds_raise():\n    with pytest.raises(ValueError):\n        clamp(1, 10, 0)\n"
+  },
+  "retained_tests": [
+    {
+      "path": "tests/test_calc_clamp.py",
+      "bytes": 391,
+      "sha256": "3d2e55ce2b44a8b9b6c8849e60ba1caeaa9abedef8b70f00e1526db6e7f58073",
+      "placement": "temporary"
+    }
+  ],
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.657,
+    "timeout_s": 10.0,
+    "output": "......                                                                   [100%]\n6 passed in 0.03s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_below_and_above",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_boundaries",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_existing::test_add",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests.test_existing::test_mean",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "tests/test_calc_clamp.py"
+    ],
+    "junit_available": true,
+    "passed": 6,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "6 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 4 passed of 4 collected",
+    "generated": {
+      "collected": 4,
+      "passed": 4,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "model_calls": 0,
+  "scope": "Current selected-suite execution of exact retained tests; no new model calls or historical coverage comparison."
+}

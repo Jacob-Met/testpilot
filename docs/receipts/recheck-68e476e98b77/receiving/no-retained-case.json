@@ -1,0 +1,66 @@
+{
+  "schema": "testpilot.recheck/1",
+  "status": "no_tests",
+  "ok": false,
+  "repo": "/home/jacob/testpilot-recheck-68e476e98b77/receiving-fixtures-r1/fixed",
+  "python": "/usr/bin/python3",
+  "started_at": "2026-10-08T13:16:17.011485+00:00",
+  "finished_at": "2026-10-08T13:16:17.699784+00:00",
+  "source_report": {
+    "path": "/home/jacob/testpilot-recheck-68e476e98b77/evidence/consumer-r1/helper-only-report.json",
+    "sha256": "1955496e7e133f47d2d17e66ae35d5de284cd4f01d5f4665f96c4f943e49e31e",
+    "recorded_status": "passed"
+  },
+  "test_files": {
+    "tests/test_retained_helper.py": "def helper_only():\n    return 1\n"
+  },
+  "retained_tests": [
+    {
+      "path": "tests/test_retained_helper.py",
+      "bytes": 32,
+      "sha256": "8f286f18e9cc334967fee67f3cf460af6c595de06ec4a4abbfef7db1387ccf47",
+      "placement": "temporary"
+    }
+  ],
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.683,
+    "timeout_s": 10.0,
+    "output": "..                                                                       [100%]\n2 passed in 0.02s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_add",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests.test_existing::test_mean",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "tests/test_retained_helper.py"
+    ],
+    "junit_available": true,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 0 passed of 0 collected",
+    "generated": {
+      "collected": 0,
+      "passed": 0,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "model_calls": 0,
+  "scope": "Current selected-suite execution of exact retained tests; no new model calls or historical coverage comparison."
+}

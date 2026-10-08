@@ -1,0 +1,180 @@
+{
+  "schema": "testpilot-cli-composition-native/4",
+  "created_at": "2026-10-08T14:12:02.083994+00:00",
+  "passed": true,
+  "uid": 1000,
+  "python": "/usr/bin/python3",
+  "python_version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "source_root": "/dev/shm/testpilot-recheck-r4-68e476e98b77/source",
+  "base_commit": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "base_tree": "22da6a890c2befaf72d3826103538491b07793df",
+  "product_tree": "8a7c00ce2654152327067a077dbe5939673f3f61",
+  "composition_sha256": "28d808ad3cc46cbff0ddbf68bf62ab59c3991ebd71b499ccfa9d673f330fc73a",
+  "source_pins": {
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+    "LICENSE": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5",
+    "README.md": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+    "docs/RECHECK.md": "7855d34a1e84a4fb4b4ef113aa4bc488ccf28933883623e099ae427cc0fdbfc3",
+    "docs/diff-inputs.md": "1f2b707d8f72c7e9e3a21556b757afe5cbea5d6161667939896a04f81a711edd",
+    "eval/cases/calc_clamp/case.json": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+    "eval/cases/calc_clamp/change.diff": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+    "eval/cases/calc_clamp/fix/calc.py": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+    "eval/cases/calc_clamp/repo/calc.py": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+    "eval/cases/calc_clamp/repo/tests/test_existing.py": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d",
+    "eval/cases/calc_clamp/script/01_plan.md": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+    "eval/cases/calc_clamp/script/02_tests.md": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+    "eval/cases/calc_clamp/script/03_repair.md": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/loop.py": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "tests/conftest.py": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+    "tests/test_cli_diff_transport.py": "5748cd3aafbd5aa032b98d531a9091d4a91becdce187a514dafffcc271173bab",
+    "tests/test_cli_python.py": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+    "tests/test_cli_targets.py": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+    "tests/test_loop.py": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc",
+    "tests/test_recheck.py": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760",
+    "tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+  },
+  "source_pins_unchanged": true,
+  "preflight": {
+    "at": "2026-10-08T14:11:44.425656+00:00",
+    "root": "/dev/shm/testpilot-recheck-r4-68e476e98b77",
+    "uid": 1000,
+    "dev": 27,
+    "free_bytes": 482779136,
+    "required_bytes": 134217728
+  },
+  "affected_test_summary": "8 passed, 12 subtests passed in 15.83s",
+  "commands": [
+    {
+      "name": "affected-cli-tests",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_cli_diff_transport.py",
+        "tests/test_recheck.py::test_cli_skips_generation_and_recheck_output_is_reusable"
+      ],
+      "cwd": "/dev/shm/testpilot-recheck-r4-68e476e98b77/source",
+      "started_at": "2026-10-08T14:11:44.427726+00:00",
+      "finished_at": "2026-10-08T14:12:00.726935+00:00",
+      "duration_s": 16.2992184079485,
+      "exit": 0,
+      "stdout_sha256": "47282cd8c9d0d6a3b40a1f747a6a2ba67bf6f08535223ce056376bf2c3b5a741",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "affected-cli-tests.stdout",
+      "stderr": "affected-cli-tests.stderr"
+    },
+    {
+      "name": "actual-recheck-buggy",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "recheck",
+        "--repo",
+        "/dev/shm/testpilot-recheck-r4-68e476e98b77/fixtures/buggy",
+        "--report",
+        "/home/jacob/testpilot-recheck-68e476e98b77/evidence/original-generated-run/report.json",
+        "--out",
+        "/dev/shm/testpilot-recheck-r4-68e476e98b77/evidence/current-buggy",
+        "--timeout",
+        "10"
+      ],
+      "cwd": "/dev/shm/testpilot-recheck-r4-68e476e98b77/source",
+      "started_at": "2026-10-08T14:12:00.729514+00:00",
+      "finished_at": "2026-10-08T14:12:01.441511+00:00",
+      "duration_s": 0.7119947959436104,
+      "exit": 1,
+      "stdout_sha256": "669157ba98e5ab7aa20bb59a13e598e525dcb3627e00ef0a65e5a3a46f857bea",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "actual-recheck-buggy.stdout",
+      "stderr": "actual-recheck-buggy.stderr"
+    },
+    {
+      "name": "actual-recheck-fixed",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "recheck",
+        "--repo",
+        "/dev/shm/testpilot-recheck-r4-68e476e98b77/fixtures/fixed",
+        "--report",
+        "/home/jacob/testpilot-recheck-68e476e98b77/evidence/original-generated-run/report.json",
+        "--out",
+        "/dev/shm/testpilot-recheck-r4-68e476e98b77/evidence/current-fixed",
+        "--timeout",
+        "10"
+      ],
+      "cwd": "/dev/shm/testpilot-recheck-r4-68e476e98b77/source",
+      "started_at": "2026-10-08T14:12:01.442892+00:00",
+      "finished_at": "2026-10-08T14:12:02.082152+00:00",
+      "duration_s": 0.6392621260602027,
+      "exit": 0,
+      "stdout_sha256": "0ef90e96bf4119ddbb815c59e8a0e71968f3f66700d9c0d2cec6dd834545c681",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "actual-recheck-fixed.stdout",
+      "stderr": "actual-recheck-fixed.stderr"
+    }
+  ],
+  "actual_recheck_cases": [
+    {
+      "name": "buggy",
+      "exit": 1,
+      "status": "failed",
+      "generated": {
+        "collected": 4,
+        "passed": 1,
+        "failed": 3,
+        "error": 0,
+        "skipped": 0
+      },
+      "model_calls": 0,
+      "retained_tests_exact": true,
+      "checkout_unchanged": true,
+      "checkout_files": {
+        "calc.py": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+        "tests/test_existing.py": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d"
+      },
+      "result_sha256": "c4b44f5016bcb586de37cf3bb485ea2e57fba53a53df028a4a16e3ba70505e92"
+    },
+    {
+      "name": "fixed",
+      "exit": 0,
+      "status": "passed",
+      "generated": {
+        "collected": 4,
+        "passed": 4,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      },
+      "model_calls": 0,
+      "retained_tests_exact": true,
+      "checkout_unchanged": true,
+      "checkout_files": {
+        "calc.py": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+        "tests/test_existing.py": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d"
+      },
+      "result_sha256": "49ce46c208720cfd523a4b8f6933d1aa861481c9ac0b51e00c034e4e50fab58e"
+    }
+  ],
+  "original_report_sha256": "0761bedf94965d7e8a3bfac072b5f0c3f50b854494821712c23f11f1c0fa82d2",
+  "original_report_unchanged": true,
+  "original_fixture_unchanged": true,
+  "limits": "Seven incoming raw-transport methods and one existing recheck CLI case plus two actual saved-report controls. Incoming run tests intentionally use the unchanged ScriptedModel; both rechecks record zero model calls. No provider/network, broad repository suite, hosted CI, source patch application outside disposable owner fixtures or durable tmpfs claim."
+}

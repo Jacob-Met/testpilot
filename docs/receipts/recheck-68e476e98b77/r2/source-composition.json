@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-08T13:34:59.213Z",
+  "source": "/home/jacob/testpilot-recheck-68e476e98b77/candidate-r2",
+  "parent": "e1d87442eeecc8cf1b44ee3547849d5c1d030876",
+  "parent_tree": "1466e2d4a2a1f2ce4fe5293e55e0b7f7e0b3797a",
+  "preserved_r1_source": "/home/jacob/testpilot-recheck-68e476e98b77/candidate",
+  "preserved_r1_archive_sha256": "865580d20682a3eb4ee155adccbbd38d1b8532e63d6560233e7c63a084734acf",
+  "upstream_exact": [
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "bytes": 2943
+    },
+    {
+      "path": "testpilot/loop.py",
+      "sha": "5d58f2dc991e3cdb98f476e08133048b02f91ca4",
+      "sha256": "41506f3c29febd3b10c4dce43f7f8e0695c32885ddc08e56e1c96d5bb2f212a4",
+      "bytes": 23828
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "sha": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "bytes": 20656
+    },
+    {
+      "path": "README.md",
+      "sha": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+      "bytes": 11550
+    }
+  ],
+  "new_test": {
+    "path": "tests/test_recheck.py",
+    "sha": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4",
+    "sha256": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760",
+    "bytes": 13652
+  },
+  "scope": "Separate R2 source copy. Only owned test fixture changes to established .pth tooling reuse; all four other product files stay byte-exact. Exact accepted PR23 collector and PR24 HTML/loop/README current inputs received. No source execution or new public commit claimed."
+}

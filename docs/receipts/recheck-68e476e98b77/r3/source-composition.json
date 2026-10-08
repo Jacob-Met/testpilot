@@ -1,0 +1,451 @@
+{
+  "schema": "testpilot-current-main-composition/3",
+  "created_at": "2026-10-08T13:53:01.107Z",
+  "uid": 1000,
+  "repository": "Jacob-Met/testpilot",
+  "base_commit": "aded01e114080c0bbc9d273f240c6bc2c5119694",
+  "base_tree": "72d8060994dc1a01be240121cecd146c2bf622b3",
+  "source_root": "/home/jacob/testpilot-recheck-68e476e98b77/candidate-r3",
+  "prior_source_root": "/home/jacob/testpilot-recheck-68e476e98b77/candidate-r2",
+  "prior_base": "e1d87442eeecc8cf1b44ee3547849d5c1d030876",
+  "product_tree": "5875fb0fcc2d20aa578eeae237fd9b4ad8c46709",
+  "product": [
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9bb8962dba529ece72758d61c75b2658496d8796",
+      "sha256": "981ca055676d10b4f7ad5b07e9fa2d5f5846a73a556d8183f09188116e614231",
+      "bytes": 5884
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "bytes": 12721
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "bytes": 11599
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4",
+      "sha256": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760",
+      "bytes": 13652
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7eff4e6089c2974b8c277370f474935d4bf4806",
+      "sha256": "7855d34a1e84a4fb4b4ef113aa4bc488ccf28933883623e099ae427cc0fdbfc3",
+      "bytes": 5885
+    }
+  ],
+  "product_unchanged_from_r2": true,
+  "incoming_exact_materialized": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sha": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+      "bytes": 11550
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "sha": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "bytes": 676
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "mode": "100644",
+      "sha": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "100644",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "bytes": 2943
+    },
+    {
+      "path": "testpilot/diff.py",
+      "mode": "100644",
+      "sha": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+      "bytes": 9396
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "mode": "100644",
+      "sha": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "bytes": 20656
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "sha": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+      "bytes": 24064
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "100644",
+      "sha": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "bytes": 10175
+    }
+  ],
+  "incoming_delta": [
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b23f1cdd90f7fb65d8fc17b547276a46a81a3690",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/REVIEW.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c1218d9f904dfa8bdc819d6f14ac11e7f225d9d4",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/combined-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6053495eb8d6f8565bcb7fd14c890886535bfee",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/harness-metadata.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf5b6c583e12e378d6985596cbcb0f7bab3b5ac5",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/source-manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7891cf50d17a34eac55ce5c8693cba0449fef6b",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/REVIEW.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88631fee8c379e19913703e92d4393184467eb18",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/combined-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba933be48948a1f78bdace098fa34296dfb87e55",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/composition-review.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9474a5a10e2c022d922f5fb08b8d199be6035464",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/receive_combined.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c902649fbb01516d1837a0f78e7b0dca5503041",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/source-manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eccbfa9d008e21b2cc58a3913e7bf764397d98e7",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/fence/author-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0497fd77a20dc8477e939902a7b4ce034d279a34",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/fence/independent-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c68cd5292319192e4ea2c234ddc061f0c9e70bd",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/fence/independent_review.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "53de0fd4baa448266e3c1f978ea6ee8cae69988e",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/patch/author-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b916f500d3baab0e48622dc15ef151ad3fa0843f",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/patch/independent-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "984ea1571b947c63dd57e210d46fc9fb6dc8359f",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/patch/independent_review.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0434c6f993332ca8426577aa645627d5090f159",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/selector/author-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b14ff8138f5f5e74005e6665713b11341b615dd7",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/selector/independent-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a26f4371ea1ce515b28d891b88405af8b4ae749",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/selector/independent_review.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db9b54c1f9ae8d0f9d964691eb8d51debe3de4cd",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/composition.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5051f59008adc68c7f5702811280281100e7c428",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/current-composition.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa08794b311f41f18fa6d78336acdc35a7fad4b1",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/hosted-failure.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7b808465bdf87f5c18cc3cd850bbfd0d9c54abc",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/independent/REVIEW.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76d0cc825f9e8a88fca29a115c6a5eec1bf7d027",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/independent/independent-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2e50809fe11e48cac60886b3ee5c2caa2043ce0a",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/independent/receive_adjacent_fences.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d7bf333338e10ca69c938e89a615cff3725d176",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/native-results.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "994e90ee1ad331a0a2a87791f3bf13c73ec7a40a",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/receiving-scope.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "205cd6b80069f960883430ba959f7dbc89dafb9d",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/run_controls.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00e3a569138be410c858b81c7abfd44460e59620",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/source-receiving-pins.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ce956ab3fd22a7fc7b90d36ba37748d745f4746",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/files-manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e2f45730137f0b349cdfdbcf5300dfceef593e8",
+      "before": null
+    },
+    {
+      "path": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/receiving-scope.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "081b55af42c2d94183b53fa1fff215ca2e11de4d",
+      "before": null
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "before": "5d58f2dc991e3cdb98f476e08133048b02f91ca4"
+    },
+    {
+      "path": "tests/test_fenced_code_boundaries.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54c798f49b690d6365ec4de9b0ae78f9d99cd960",
+      "before": null
+    },
+    {
+      "path": "tests/test_patch_physical_lines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5a9ff15106d39c953cda3f783f64362634f7ad1",
+      "before": null
+    }
+  ],
+  "incoming_leaf_count": 908,
+  "unowned_parent_leaves_preserved": 906,
+  "open_prs_at_read": [],
+  "static_analysis": {
+    "changed_top_level_ast_nodes": [
+      "Assign:_FENCE",
+      "FunctionDef:make_patch"
+    ],
+    "recheck_relative_imports": [
+      {
+        "module": "__future__",
+        "names": [
+          "annotations"
+        ]
+      },
+      {
+        "module": "dataclasses",
+        "names": [
+          "dataclass"
+        ]
+      },
+      {
+        "module": "datetime",
+        "names": [
+          "datetime",
+          "timezone"
+        ]
+      },
+      {
+        "module": "pathlib",
+        "names": [
+          "Path",
+          "PurePosixPath"
+        ]
+      },
+      {
+        "module": "sandbox",
+        "names": [
+          "run_pytest"
+        ]
+      }
+    ],
+    "cli_recheck_dispatch_precedes_generation_call": true,
+    "new_product_execution": false
+  },
+  "root_independent_receipt": {
+    "source": "/home/jacob/testpilot-recheck-review-68e476e98b77/receipt.json",
+    "sha256": "5996cf5b5fde7ed39fdddad9fe7e7ffc1d67d402e46622f0e009f5c209e06cd9",
+    "original_source_root": "/home/jacob/testpilot-recheck-68e476e98b77/candidate-r2",
+    "passed": true,
+    "cases": [
+      {
+        "name": "buggy",
+        "exit": 1,
+        "status": "failed",
+        "generated": {
+          "collected": 4,
+          "error": 0,
+          "failed": 3,
+          "passed": 1,
+          "skipped": 0
+        },
+        "model_calls": 0
+      },
+      {
+        "name": "fixed",
+        "exit": 0,
+        "status": "passed",
+        "generated": {
+          "collected": 4,
+          "error": 0,
+          "failed": 0,
+          "passed": 4,
+          "skipped": 0
+        },
+        "model_calls": 0
+      }
+    ],
+    "boundary": "Two actual CLI calls remain R2 qualification; final R3 changes only accepted unused generation helper definitions. No new execution is claimed."
+  },
+  "archive_preservation": [
+    {
+      "path": "/home/jacob/testpilot-recheck-68e476e98b77/qualification-r1.tar.gz",
+      "sha256": "865580d20682a3eb4ee155adccbbd38d1b8532e63d6560233e7c63a084734acf",
+      "bytes": 294912
+    },
+    {
+      "path": "/home/jacob/testpilot-recheck-68e476e98b77/qualification-r2.tar.gz",
+      "sha256": "4217e2ec755f4d5c88a71809d771347cfcf08d78ae2243c16712733635a6123c",
+      "bytes": 499966
+    }
+  ],
+  "prior_static_harness_failure": {
+    "path": "/home/jacob/testpilot-recheck-68e476e98b77/evidence/r3/static-composition.stderr",
+    "exit": 1,
+    "reason": "Reviewer harness referred to nonexistent CLI local args and run_loop symbol; corrected to actual a.cmd and make_client. Source copy was already prepared, no product ran, and the original harness/stderr remain unchanged."
+  },
+  "limits": "Static current-main receiving only; no new product execution, provider call, original source/evidence replacement or hosted qualification. Exact incoming PR22 fence/patch bytes, regressions and records retained; earlier R1/R2 qualifications keep original source bindings."
+}

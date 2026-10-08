@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-08T13:07:12.326Z",
+  "scope": "First qualified harness launch stopped before invoking pytest because new docs directory had not been created. Initial RDC doc write returned ENOENT; no product run or qualified stdout/stderr files occurred. Created owned docs directory and verified exact documentation before retry.",
+  "rdc_result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 23 new lines (total: 23 lines)]\n\nnode:fs:560\n  return binding.open(\n                 ^\n\nError: ENOENT: no such file or directory, open '/home/jacob/testpilot-recheck-68e476e98b77/candidate/docs/RECHECK.md'\n    at Object.openSync (node:fs:560:18)\n    at Object.readFileSync (node:fs:444:35)\n    at /home/jacob/testpilot-recheck-68e476e98b77/evidence/run-qualified-focused.cjs:5:44\n    at Array.map (<anonymous>)\n    at pins (/home/jacob/testpilot-recheck-68e476e98b77/evidence/run-qualified-focused.cjs:5:22)\n    at Object.<anonymous> (/home/jacob/testpilot-recheck-68e476e98b77/evidence/run-qualified-focused.cjs:6:14)\n    at Module._compile (node:internal/modules/cjs/loader:1705:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1838:10)\n    at Module.load (node:internal/modules/cjs/loader:1441:32)\n    at Module._load (node:internal/modules/cjs/loader:1263:12) {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'open',\n  path: '/home/jacob/testpilot-recheck-68e476e98b77/candidate/docs/RECHECK.md'\n}\n\nNode.js v22.22.1\n\n✅ Process completed with exit code 1 (runtime: 0.31s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      }
+    ],
+    "isError": false
+  }
+}

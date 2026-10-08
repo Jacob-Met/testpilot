@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-08T13:16:11.586Z",
+  "phase": "before fixture creation or product execution",
+  "exit": 1,
+  "condition": "free bytes below 128 MiB",
+  "exact_followup_free_bytes": 115310592,
+  "consumer_output_existed": false,
+  "retained_harness": "evidence/receive_retained_report_v1.py",
+  "scope": "Infrastructure preflight, not a product-test result; unchanged harness resumed only after capacity cleared."
+}

@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<string>", line 25, in <module>
+    assert cli.index('if args.cmd == "recheck":') < cli.index('run_loop(')
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: substring not found

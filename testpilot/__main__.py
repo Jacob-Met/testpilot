@@ -12,6 +12,7 @@ from pathlib import Path
 from .diff import DiffSourceError, changed_functions
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
+from .recheck import run_recheck_command
 
 
 def _python_executable(value: str) -> str:
@@ -89,7 +90,17 @@ def main(argv: list[str] | None = None) -> int:
     source.add_argument("--diff", help="unified diff file ('-' for stdin)")
     source.add_argument("--git-base", help="diff the working tree against this git ref")
     preview.add_argument("--json", action="store_true", help="include full native target records and source")
+    recheck = sub.add_parser("recheck", help="rerun exact tests from a saved report without model calls")
+    recheck.add_argument("--repo", required=True, help="current project checkout")
+    recheck.add_argument("--report", required=True, help="saved report.json or recheck.json")
+    recheck.add_argument("--out", required=True, help="new result directory outside the checked repository")
+    recheck.add_argument("--timeout", type=float, default=60.0, help="pytest timeout, seconds (default 60)")
+    recheck.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
+                         help="project Python; path or PATH command (default: this interpreter)")
     a = ap.parse_args(argv)
+
+    if a.cmd == "recheck":
+        return run_recheck_command(a)
 
     if a.cmd == "targets":
         return _preview_targets(a)
