@@ -9,6 +9,7 @@ from __future__ import annotations
 import ast
 import os
 import re
+import tokenize
 from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
 
@@ -237,6 +238,7 @@ def changed_functions(repo: str | Path, diff_text: str, include_tests: bool = Fa
 
     Paths must be relative without parent traversal. Symlinks are supported
     when their resolved destination remains inside the resolved repository.
+    Source encoding follows Python's BOM and encoding-cookie rules.
     """
     repo = Path(repo).resolve()
     result: list[ChangedFunction] = []
@@ -248,5 +250,7 @@ def changed_functions(repo: str | Path, diff_text: str, include_tests: bool = Fa
         f = _source_path(repo, fc.path)
         if not f.is_file():
             continue
-        result.extend(functions_touching(f.read_text(encoding="utf-8"), fc.path, fc.touched_lines, fc.added_lines))
+        with tokenize.open(f) as source_file:
+            source = source_file.read()
+        result.extend(functions_touching(source, fc.path, fc.touched_lines, fc.added_lines))
     return result
