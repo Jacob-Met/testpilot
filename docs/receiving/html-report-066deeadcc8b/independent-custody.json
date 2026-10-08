@@ -1,0 +1,124 @@
+{
+  "schema": "testpilot.html_report.product_peer_custody.v1",
+  "operation": "The source author verifies the peer packet; this is custody and saved-evidence replay, not a new independent product run.",
+  "archive_root": "review/",
+  "initial_layout_inspection": "First flat-root lookup raised KeyError before running any verification. The ordinary review/ archive root was then observed and retained in this mapping.",
+  "archive_sha256": "688305d923f8621ef315039d596b90c33b82987f6feb02e02dd971678679a1bb",
+  "ordinary_members": 487,
+  "receipt_files_verified": 486,
+  "unchanged_verifier_sha256": "0e66baf6cfa6f25daf6c89bf6d5a7b4caed2c1f5d614553531dc64b58d01780d",
+  "portable_verifier_exit": 0,
+  "portable_stdout_sha256": "68937970c91062876839db0b74c0d39e4fe774864cc06b1e3d11856a98b79085",
+  "portable_stdout_identical_to_frozen_verification": true,
+  "temporary_expansion_removed_after_verification": true,
+  "candidate_projection": "fe791af1a0908b2379dd7cbb87a9fb8f3cad87de",
+  "verified_summary": {
+    "schema": "testpilot-html-independent-recomputed-v1",
+    "baseline_commit": "d7c28b0ad261e78d681f40e355447dffa4d435ed",
+    "candidate_projection": "fe791af1a0908b2379dd7cbb87a9fb8f3cad87de",
+    "canonical_leaves": 362,
+    "baseline_source_files": 73,
+    "candidate_source_files": 77,
+    "inherited_source_files_exact": 71,
+    "changed_paths": [
+      "README.md",
+      "testpilot/loop.py"
+    ],
+    "added_paths": [
+      "docs/receiving/html-report-066deeadcc8b/capture_runs.py",
+      "docs/receiving/html-report-066deeadcc8b/check_browser.mjs",
+      "testpilot/html_report.py",
+      "tests/test_html_report.py"
+    ],
+    "unchanged_loop_top_level_definitions": 20,
+    "corrected_baseline_cases_missing_html": 7,
+    "original_fixture_failure_retained": "timeout output remained captured because sandbox resets addopts",
+    "actual_cli_cases_passed": 7,
+    "actual_cli_checks": 68,
+    "original_writer_artifacts_byte_equal": 21,
+    "actual_browser_cases_passed": 7,
+    "actual_browser_checks": 219,
+    "actual_browser_downloads_byte_equal": 21,
+    "actual_dom_tables_equal": 32,
+    "actual_dom_data_cells_equal": 214,
+    "recorded_case_identities_and_diagnostics_present": 25,
+    "negative_controls_rejected_exactly": {
+      "passed_unicode": [
+        "exact_download_report.json",
+        "javascript_disabled_exact_download"
+      ],
+      "timeout_tail": [
+        "output_tail_qualified"
+      ]
+    },
+    "fresh_375px_document_cases": 3,
+    "native_table_keyboard_scroll": true,
+    "print_pdf": {
+      "bytes": 389203,
+      "sha256": "046cb444e0d94cd80a193452c59131bac118f6ae18d1eb7b2dc5d9f9350bd3a5"
+    },
+    "browser": "154.0.8037.98",
+    "node": "v26.3.0",
+    "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "pytest": "9.1.1",
+    "coverage": "7.16.2",
+    "cases": [
+      {
+        "name": "passed_unicode",
+        "status": "passed",
+        "exit_code": 0,
+        "html_sha256": "9edb145e583cf0045c2b7e280fd5af646f3c14de4c61f872224fd174310258f4",
+        "tables": 6,
+        "browser_checks": 32
+      },
+      {
+        "name": "repaired_partial",
+        "status": "passed",
+        "exit_code": 0,
+        "html_sha256": "aa146433cf0d6e3b418372203f3a901f27ecb8ac1d1515fd775fc79f93769e12",
+        "tables": 8,
+        "browser_checks": 33
+      },
+      {
+        "name": "suspected_bug",
+        "status": "suspected_code_bug",
+        "exit_code": 1,
+        "html_sha256": "f8d1362a3c082a40ea87cf508503999c2bde7926bf75a29a7cbc5c609ae8f48b",
+        "tables": 6,
+        "browser_checks": 32
+      },
+      {
+        "name": "timeout_tail",
+        "status": "failed",
+        "exit_code": 1,
+        "html_sha256": "d5254d7c084294e72ca4533620934944fca6d801da5f5a1238c18ed26fb19258",
+        "tables": 5,
+        "browser_checks": 34
+      },
+      {
+        "name": "no_generated_pass",
+        "status": "no_tests",
+        "exit_code": 1,
+        "html_sha256": "0e7895612e3fac87b730bc2ac7440fe7eb57185280051d7556de8b374cf1c63a",
+        "tables": 6,
+        "browser_checks": 32
+      },
+      {
+        "name": "no_changes",
+        "status": "no_changes",
+        "exit_code": 1,
+        "html_sha256": "d9526b191955d1aa048fd8e74190a56e50e323f46a5ca2891557e1dc91162ec2",
+        "tables": 0,
+        "browser_checks": 26
+      },
+      {
+        "name": "model_error",
+        "status": "model_error",
+        "exit_code": 1,
+        "html_sha256": "307d74410ffad9b1a206215f47d42e897e09cabaa0bcab60c0c06a3dc404e3ee",
+        "tables": 1,
+        "browser_checks": 30
+      }
+    ]
+  }
+}

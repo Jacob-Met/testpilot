@@ -1,0 +1,27 @@
+{
+  "schema": "testpilot.html_report.pr20_verification.v1",
+  "base": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "tree": "2045a73704f752d374704657fccf90fd5e774258",
+  "archive_sha256": "8f480e0b9edb7bfa29c4e75bbcf8f5298e9d735fdc3ca0a65205dd6b3bb0670a",
+  "ordinary_members": 134,
+  "artifacts_verified": 133,
+  "source_files_verified": 80,
+  "unowned_current_blobs_verified": 74,
+  "unchanged_frozen_files": 4,
+  "composed_files_reconstruct_current_parent": [
+    "README.md",
+    "testpilot/loop.py"
+  ],
+  "native_focused_tests": 19,
+  "native_cli_cases": 2,
+  "browser_checks": 39,
+  "actual_browser_downloads": 4,
+  "resolved_filenames": [
+    "tests/unit/test_calc_testpilot.py",
+    "tests/integration/test_calc_testpilot_2.py"
+  ],
+  "each_case_total_passed": 3,
+  "each_case_generated_passed": 2,
+  "partial_repair_history_and_warnings_preserved": true,
+  "verification_execution": "Reads saved artifacts only; no product or browser replay."
+}

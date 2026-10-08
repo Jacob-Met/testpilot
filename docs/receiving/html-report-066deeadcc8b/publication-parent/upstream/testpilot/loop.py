@@ -22,7 +22,6 @@ from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
 
 from .diff import ChangedFunction, changed_functions
-from .html_report import render_html_report
 from .model import ChatClient, ModelError, RoutingConfig, Usage
 from .sandbox import IGNORE, SandboxResult, run_pytest
 
@@ -514,10 +513,8 @@ def render_report(res: LoopResult) -> str:
 def write_outputs(res: LoopResult, out_dir: str | Path) -> dict[str, Path]:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    paths = {"patch": out / "testpilot.patch", "json": out / "report.json", "md": out / "report.md",
-             "html": out / "report.html"}
+    paths = {"patch": out / "testpilot.patch", "json": out / "report.json", "md": out / "report.md"}
     paths["patch"].write_text(res.patch, encoding="utf-8")
     paths["json"].write_text(json.dumps(res.to_dict(), indent=2), encoding="utf-8")
     paths["md"].write_text(render_report(res), encoding="utf-8")
-    paths["html"].write_text(render_html_report(paths["json"].read_bytes(), paths["patch"].read_bytes()), encoding="utf-8")
     return paths

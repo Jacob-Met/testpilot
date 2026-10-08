@@ -1,0 +1,32 @@
+{
+  "schema": "independent-testpilot-final-parent-receipt-v1",
+  "reviewer": "/root/research_execution",
+  "decision": "accepted for normal exact-head integration gates",
+  "artifacts": [
+    {
+      "path": "README.md",
+      "bytes": 2452,
+      "sha256": "b3ea44f9ea14fa33740684355233f23ba8ec25397c63c87bfcc615c6ca50cdd7"
+    },
+    {
+      "path": "direct-primary.json",
+      "bytes": 349387,
+      "sha256": "ea59a5f7cbc21e19d077fb420bdea6ba359e91ed53a744aca8d168bba0858cdf"
+    },
+    {
+      "path": "invocation.json",
+      "bytes": 495,
+      "sha256": "71986be74795775338bd640d838bd623a326be1951ff4d5d66180ca2a5abb89e"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1202,
+      "sha256": "71bb8a4a4ae78cf46b996fdd1a3304b3aca35374ed85bc21c6ee82aa1ab595fe"
+    },
+    {
+      "path": "verify_final_parent.py",
+      "bytes": 5826,
+      "sha256": "4bf69b8121996b8c980b332d858bd0b01d4f17e0a003e2ffdafc8afcda6ed1a6"
+    }
+  ]
+}

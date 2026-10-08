@@ -499,7 +499,7 @@ def render_report(res: LoopResult) -> str:
         lines.append(f"- Coverage (changed lines, n={c['changed_lines_executable']}): "
                      f"{c['changed_lines_before']}% -> {c['changed_lines_after']}%")
     else:
-        lines.append("- Coverage: unavailable")
+        lines.append("- Coverage: unavailable (install `coverage`)")
     lg = res.ledger
     cost = f"${lg['total_cost_usd']:.6f}" if lg["cost_is_complete"] else "unpriced (set TESTPILOT_PRICES)"
     lines.append(f"- Tokens: {lg['total_tokens']}{' (estimated)' if lg['tokens_estimated'] else ''}; cost: {cost}")

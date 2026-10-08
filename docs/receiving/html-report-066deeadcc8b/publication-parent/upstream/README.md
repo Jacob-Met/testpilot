@@ -82,31 +82,6 @@ python -m testpilot run \
 
 On a real repo, use `--git-base main` instead of `--diff FILE`. Exit codes: 0 means the generated tests pass, 1 means any other outcome, 2 means a config error.
 
-## Review your own run in a browser
-
-Every run also writes **`report.html`** in its output directory. Open that file
-directly to review the actual recorded result: selected functions and their
-source, the model's plan, final generated files, individual test diagnostics,
-each repair round's source snapshot and result, coverage, and the ordered token
-and model ledger. Native expandable panels and section links work with keyboard
-or touch. Use the browser's Print command for a paper or PDF review.
-
-The file is self-contained. Its **Download exact patch** and **Download report
-JSON** links retain the exact sibling artifact bytes even if you move the HTML
-elsewhere. It includes the source and diagnostics already recorded in the JSON.
-Opening the file needs no server or internet and does not run tests, apply the
-patch, contact a model, or use browser storage.
-
-Missing JUnit results keep generated execution counts unavailable; an authored
-definition count does not become a verified test count. Missing coverage and
-unpriced cost remain explicit. The recorded pytest output is the runner's last
-3,000 characters, so it is labeled as a tail. A model-only repair response does
-not become another test execution. Passing tests and a suspected-code-bug
-message retain their original meanings; the HTML adds no verification or model
-quality claim. Source, messages and model text are rendered literally, with
-visible escapes for HTML-incompatible controls or surrogate characters. The
-embedded original downloads remain unchanged.
-
 ## Running on Nebius Token Factory
 
 Token Factory has an OpenAI-compatible API. Its quickstart (<https://docs.tokenfactory.nebius.com/quickstart>, read 2026-10-04) uses:

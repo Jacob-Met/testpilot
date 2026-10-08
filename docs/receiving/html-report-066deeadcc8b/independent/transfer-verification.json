@@ -1,0 +1,69 @@
+{
+  "schema": "independent-packet-transfer-v1",
+  "verified_at": "2026-10-08T12:36:46.983869+00:00",
+  "native": {
+    "archive": "/Users/me/testpilot-html-review-066deeadcc8b-transfer/independent-testpilot-review.tar.xz",
+    "bytes": 1523592,
+    "sha256": "688305d923f8621ef315039d596b90c33b82987f6feb02e02dd971678679a1bb",
+    "ordinary_members": 487,
+    "listed_files": 486,
+    "uncompressed_bytes": 4250686,
+    "receipt": {
+      "bytes": 91327,
+      "sha256": "4bc6dafb2249ba3377cf9e96176dc4f47da454d01b02928a3fdd525d832e4226"
+    },
+    "verifier": {
+      "bytes": 18124,
+      "sha256": "0e66baf6cfa6f25daf6c89bf6d5a7b4caed2c1f5d614553531dc64b58d01780d"
+    },
+    "verification": {
+      "bytes": 3393,
+      "sha256": "68937970c91062876839db0b74c0d39e4fe774864cc06b1e3d11856a98b79085"
+    },
+    "readme": {
+      "bytes": 9933,
+      "sha256": "168d97d4b8c8d783da1d8ce76eddde7b5758f85cda1e3b1f42c365e4eaef4d74"
+    },
+    "portable_verification": {
+      "argv": [
+        "/usr/local/bin/python3",
+        "-B",
+        "/Users/me/testpilot-html-review-066deeadcc8b/verify_review.py"
+      ],
+      "pid": 25857,
+      "exit_code": 0,
+      "started_utc_epoch": 1791462789.0366368,
+      "elapsed_s": 0.13799405097961426,
+      "byte_identical": true,
+      "log": {
+        "bytes": 3393,
+        "sha256": "68937970c91062876839db0b74c0d39e4fe774864cc06b1e3d11856a98b79085"
+      }
+    },
+    "base64_chunks": 64,
+    "base64_chunk_size": 32000,
+    "base64_final_length": 15456,
+    "seal_wrapper_note": {
+      "original_outer_pid": 20123,
+      "original_outer_exit": 1,
+      "stage": "Archive and base64 payload were already fully written and verified; only optional transport metadata formatting failed.",
+      "exception": "AttributeError: PosixPath object has no attribute pid, after a loop reused the subprocess variable name.",
+      "recovery": "Frozen source, receipt, archive and encoded payload remain unchanged. This separate read-only verifier checks all members and repeats portable verification with an explicitly recorded child."
+    }
+  },
+  "local": {
+    "archive": "/dev/shm/hamon-066deeadcc8b-testpilot-html/independent/independent-testpilot-review.tar.xz",
+    "ordinary_members": 487,
+    "receipt_listed_files_verified": 486,
+    "no_expanded_native_copy": true,
+    "temporary_base64_chunks_removed": 64,
+    "same_frozen_table_helper_recomputed": {
+      "tables": 32,
+      "data_cells": 214
+    },
+    "original_writer_artifacts_equal": 21,
+    "actual_browser_downloads_equal": 21,
+    "native_full_portable_replay_bound_by_exact_archive": true
+  },
+  "note": "The full portable verifier ran after receipt freeze on Mac. Local receiving verifies every compressed member and reuses its frozen table helper against archived JSON/DOM without an expanded duplicate; all original/download bytes also compare again. The native metadata retains the post-archive metadata-formatting failure and separate successful verification."
+}

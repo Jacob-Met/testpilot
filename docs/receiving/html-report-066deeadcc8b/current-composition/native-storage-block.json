@@ -1,0 +1,7 @@
+{
+  "observed_device": "Mac.lan 0e3d582f-e25b-44b2-8418-9639fc4e4e33",
+  "operation": "write own new pr20-composition-run.py wrapper",
+  "observed_error": "ENOSPC: no space left on device",
+  "followup_process": "Attempted wrapper command returned ENOENT because the preceding write failed. No PR20 product qualification ran.",
+  "disposition": "Preserve failed setup separately, reclaim only own already-integrated reproducible dependencies while retaining Playwright runtime/source/evidence, then retry the same normal writer and command."
+}

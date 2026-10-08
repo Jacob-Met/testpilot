@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "/dev/shm/hamon-066deeadcc8b-research-testpilot-pr20-review/verify_pr20.py",
+    "/dev/shm/hamon-066deeadcc8b-testpilot-html/composition-pr20/pr20-native.tar.xz"
+  ],
+  "started_at": "2026-10-08T13:01:12.128750+00:00",
+  "completed_at": "2026-10-08T13:01:12.910220+00:00",
+  "exit_code": 0,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "boundary": "Only the archived source/evidence verifier ran here. No TestPilot CLI, browser, model, provider, or native product run was repeated."
+}

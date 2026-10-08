@@ -1,0 +1,35 @@
+{
+  "canonical_base": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "canonical_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
+  "complete_tree_leaf_count": 728,
+  "canonical_files": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "sha": "647f4c5609d14fc20abdb82c76b8cab6948b6407",
+      "size": 10016,
+      "type": "blob"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "sha": "328221e1556b986b75c6e61f30eef8dc0f3d8961",
+      "size": 23618,
+      "type": "blob"
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "100644",
+      "sha": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "size": 10175,
+      "type": "blob"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "sha": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "size": 11877,
+      "type": "blob"
+    }
+  ]
+}
