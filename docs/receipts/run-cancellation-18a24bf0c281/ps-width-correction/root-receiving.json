@@ -1,0 +1,608 @@
+{
+  "schema": "testpilot-root-ps-width-receiving/1",
+  "worker": "estate-18a24bf0c281",
+  "prepared_at": "2026-10-08T19:37:45.374Z",
+  "repository": "Jacob-Met/testpilot",
+  "pull_request": 43,
+  "source_parent": {
+    "commit": "95a3116c175debdf97fd9dc1c984a587a90a5d3b",
+    "tree": "83adbdd85b2733367ec04e0218b825cafcfd1bd7"
+  },
+  "correction": {
+    "native_commit": "7e58c46ff7222608703929568bf453576f418b6c",
+    "path": "tests/test_sandbox_interrupt.py",
+    "bytes": 7024,
+    "sha256": "e43719dc30472dd3e9ff8b829b61a7d743de20974ca4991aa131c12014ab4818",
+    "git_blob": "35a8152aa41be8aafffcc1f5713bedbf2abd7533",
+    "production_delta": [],
+    "exact_text_inverse": true,
+    "ast_inverse_exact": true,
+    "only_ast_change": "One -ww string inserted in the ps argv list",
+    "comment_only_other_change": true
+  },
+  "qualification": {
+    "unchanged_native_tests": {
+      "passed": 2,
+      "failed": 2,
+      "seconds": 4.89
+    },
+    "corrected_native_tests": {
+      "passed": 4,
+      "failed": 0,
+      "seconds": 15.78
+    },
+    "runtime": {
+      "python": "3.14.4",
+      "pytest": "9.0.2",
+      "procps": "4.0.4",
+      "platform": "Linux"
+    },
+    "raw_logs_read_from_verified_archive": true,
+    "packet": {
+      "bytes": 108402,
+      "sha256": "6b16564a0aeedc133e11f2b94fb4af9c10eb80c3e7bd9913a72115fd9d22fd9c",
+      "git_blob": "4f82a319b4b605fcf10da9a692d8d3466a29ef55"
+    },
+    "archive": [
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/evidence.tar.xz",
+        "regular_files": 147,
+        "member_count": 147,
+        "manifest_checks": [
+          {
+            "path": "MEMBER-MANIFEST.json",
+            "rows": 146,
+            "covered": 146,
+            "covers_all_regular_members": false,
+            "mismatches": []
+          }
+        ]
+      }
+    ]
+  },
+  "first_hosted_failure": {
+    "run": 37820525113,
+    "job": 113460074077,
+    "tests_passed": 397,
+    "tests_failed": 2,
+    "subtests_passed": 25,
+    "checkout": "c49cd45f805d9c8e998bb0f3a3bf06593296eee7",
+    "python": "3.12.15",
+    "complete_decoded_log": {
+      "key": "firstCiLog",
+      "bytes": 20002,
+      "sha256": "7563982662d40069caadd14a04d382836d25d70cab0cf1cc7050c5474f321068",
+      "git_blob": "c6df655e9e988811a7ae3c23ca464b451ab4dc19"
+    },
+    "log_identity_independently_matches_native_packet": true
+  },
+  "first_tested_merge_complete_tree_proof": {
+    "checked_at": "2026-10-08T18:49:59.578Z",
+    "source_parent": "362981dd84626fd55eda93584c2984cd9d0e5276",
+    "source_head": "95a3116c175debdf97fd9dc1c984a587a90a5d3b",
+    "current_parent": "cec50d8df4499ba509615e179d82ef3861379bd2",
+    "tested_merge": "c49cd45f805d9c8e998bb0f3a3bf06593296eee7",
+    "trees": {
+      "base": "1a75241e7e215b3586159fce945df70a6e139d78",
+      "source": "83adbdd85b2733367ec04e0218b825cafcfd1bd7",
+      "current": "c0c6f5fe6bf5c4e94e196882a7f28246b42c05bb",
+      "tested_merge": "90122828c9c577c4fde436807c933b9899d8abe0"
+    },
+    "counts": {
+      "source_parent": 1072,
+      "source": 1118,
+      "current": 1297,
+      "merge": 1343,
+      "owned": 47,
+      "unrelated": 1296,
+      "expected": 1343
+    },
+    "conflicts": [],
+    "mismatches": [],
+    "owned": [
+      {
+        "path": "testpilot/sandbox.py",
+        "before": {
+          "path": "testpilot/sandbox.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8ca4a4102c7890e89eae99548e28ba8325974f1e"
+        },
+        "after": {
+          "path": "testpilot/sandbox.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/README.md",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/README.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "deb55abd1c1d2798b37624bc27f1a22db91f0157"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-composition.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-composition.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9b6cd7d66aaff692356009971a2019bb5523feea"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-receipt.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-receipt.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2085a157eba487e28bac8b345da3f07c2e9c2772"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli.stdout",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli.stdout",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "bb886d4c487d7e139ec806bca8ca36ab849982d8"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-pytest-receipt.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-pytest-receipt.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "374e295581f16b6fb8cd40020788fe3175331e55"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-sandbox.stdout",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-sandbox.stdout",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "73864201930de820b6a537c4f1b53898acf340a8"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-source-freeze.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-source-freeze.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ccc0de3d637d2e5c14f4f7e8b4f0e5b665f275b3"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-baseline.stdout",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-baseline.stdout",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "36165fb6307abc4fe41c24ef57ef5deae24c0b61"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-focused-receipt.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-focused-receipt.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "002d058626f4a378d5b603f7318dee7a8b97a6c3"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/REVIEW.md",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/REVIEW.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e6d0f13c603532a4e9ff0ef307a2f6f322e7b004"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current-parent-review.tar.xz",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current-parent-review.tar.xz",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "774b319d45efb5e5a0c07fe6b4b4d9ec6be25e3b"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-REVIEW.md",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-REVIEW.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b930c5d44f2186c9cd747a73e11b1eb2b0b85851"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-qualification.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-qualification.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a5d72d87c9650c807ad902c3d97cfc66122d4e84"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/qualification.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/qualification.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cb1ed2a27bb0583c186cd03d4763f1f69fa967e1"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-source.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-source.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "bf6c3f7cfd933e627d93d3962d6e3fa05ac88f70"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/focused-test-baseline-freeze.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/focused-test-baseline-freeze.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "80dab7fa1b72df0fbada5d957fb518062f5a3db8"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/README.md",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/README.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b432de0b3f6d3c351f748ff04a4e4dd7deaf138a"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/baseline-report.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/baseline-report.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "48e15856a490363d1c2b04f9dcd4d6ac482915f9"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-intake.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-intake.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8798030fda8e7d28a19b54ba74b35521d262ee74"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-report.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-report.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4170dc6e1ba9f4624f47576db5056dac65fc9901"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/driver-freeze.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/driver-freeze.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e82afa952f097bc4815648af347e7e7ebf08c8db"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/candidate_intake.py",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/candidate_intake.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d3f77326a35fc7f8fef5942d143bb6281b11c63b"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/prepare.py",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/prepare.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "edfa81b25d9069f3d1960bd1c4b11056e5cd228e"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/receive.py",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/receive.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a2276af9c1a319a50dfdf357ebf6ca759c7f7c5e"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/environment.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/environment.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "17cb6934bbbdef03ac80bdcc8b1ed60e3c16295f"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/native-receiving.tar.gz",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/native-receiving.tar.gz",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "eba0a7fcfe8f1444a01f7ad5695c228966695fb2"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/qualification.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/qualification.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6fbb6e982de262663f9af1094ae0da58655c3c49"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/raw-manifest.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/raw-manifest.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b6daadb1ad9f99ab537fb511078ac59fb72275f2"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/source-intake.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/source-intake.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4ce2379a481bb5fe8ff8a5efbc0d2b32906bd0e2"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/static-candidate-review.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/static-candidate-review.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e2e98bf644ab06c8439c36c58e905b847cd2da14"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/original-cli-receipt.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/original-cli-receipt.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9b458fd364c04678dd13a69020b8ddaf2465d59d"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v1.stderr",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v1.stderr",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7ec158428b4ad110208410cb5ae7a28632ddece3"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v2.stdout",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v2.stdout",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dfa1082fd8f66a9d62303d5983516a5b6f6c442a"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/production.patch",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/production.patch",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e93681c0ed313d773dcc79a985de05a42cca8dd2"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/proposed-scope.md",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/proposed-scope.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d2d0be2f421e188121654173045daf20fea1b70a"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/qualification.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/qualification.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "388c8842cfbdf8ffd4259bd06510acf07e5ee161"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-manifest.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-manifest.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f66f1686b0b7ca0d8d01fb1b1dfa9f9c11f183d5"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-native.tar.gz",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-native.tar.gz",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d32a27c42f2f2ceef4a730138ad0100703ddda13"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/receive-cancellation.py",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/receive-cancellation.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "57c18d72bce9277ca01c6ee58baf23f3c0dcbee3"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/receiver-correction.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/receiver-correction.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "46e3aabd682c9afe97800cd1c1e4d8a1b31b3753"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/root-integration.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/root-integration.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "76b5eb59b1746fd76adad99d73be41e7327e9266"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/run-cli-gate.py",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/run-cli-gate.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "984c7b62368eff029792a12f7facda4bf6550833"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/run-pytest-gate.py",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/run-pytest-gate.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "58f613b11474c28401fd505bf180e57c7996a907"
+        }
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/source-intake.json",
+        "before": null,
+        "after": {
+          "path": "docs/receipts/run-cancellation-18a24bf0c281/source-intake.json",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4f1c9b0e7293ac63c29a39fdcb32f36c6663f74a"
+        }
+      },
+      {
+        "path": "docs/run-cancellation.md",
+        "before": null,
+        "after": {
+          "path": "docs/run-cancellation.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d8956abb39915e235531c3e217050ccc2089173d"
+        }
+      },
+      {
+        "path": "tests/test_sandbox_interrupt.py",
+        "before": null,
+        "after": {
+          "path": "tests/test_sandbox_interrupt.py",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6"
+        }
+      }
+    ],
+    "unrelated_mismatches": []
+  },
+  "later_main_intake": {
+    "commit": "513f17454af378ee042ccd29dc930ef332a48734",
+    "tree": "ffded624f1e44bed9e10872dfb795dae2dda1a46",
+    "leaves": 1426,
+    "modified_production_paths": [
+      "testpilot/__main__.py",
+      "testpilot/diff.py"
+    ],
+    "sandbox_original_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+    "status": "Exact later-source/CLI-input composition review is separate; no later-main native run is claimed."
+  },
+  "custody": {
+    "native_root": "/var/tmp/tp-18a24bf0c281-ps",
+    "evidence_commit": null,
+    "packet_disk_enospc_retained": true,
+    "completed_stdout_pagination_failure": "Only the packet header was read; later reads returned No session found. No source/test was replayed.",
+    "recovered_packet_path": "/dev/shm/tp-18a24bf0c281-ps-publication-packet.json",
+    "recovery_exact_packet_hash_verified": true,
+    "root_hashing_command_failure": {
+      "at": "2026-10-08T19:03:24.143Z",
+      "operation": "One in-memory Python hashing command containing two effects bodies and first CI log",
+      "error": "exec-server rejected request: Argument list too long; process was not created",
+      "correction": "Separate bounded in-memory commands, one artifact per process; no filesystem writes"
+    },
+    "root_packet_verification": "In-memory Python decoded every file, matched byte count/SHA-256/Git blob, read all147 regular archive members, and matched all146 payload rows in MEMBER-MANIFEST.json. The147th member is that manifest."
+  },
+  "integration_gate": "This record prepares the exact source correction and preserves the failed run. A new exact-head hosted result and current-parent review are required before merge."
+}

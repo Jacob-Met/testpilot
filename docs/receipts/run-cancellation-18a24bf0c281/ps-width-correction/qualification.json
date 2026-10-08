@@ -1,0 +1,282 @@
+{
+  "schema": "testpilot-ps-width-correction/v1",
+  "repository": "Jacob-Met/testpilot",
+  "pull_request": 43,
+  "public_source_head": "95a3116c175debdf97fd9dc1c984a587a90a5d3b",
+  "public_source_tree": "83adbdd85b2733367ec04e0218b825cafcfd1bd7",
+  "failed_hosted_run": 37820525113,
+  "failed_hosted_job": 113460074077,
+  "failed_checkout": "c49cd45f805d9c8e998bb0f3a3bf06593296eee7",
+  "failed_checkout_tree": "90122828c9c577c4fde436807c933b9899d8abe0",
+  "failed_checkout_parents": [
+    "cec50d8df4499ba509615e179d82ef3861379bd2",
+    "95a3116c175debdf97fd9dc1c984a587a90a5d3b"
+  ],
+  "hosted_original_result": "2 failed,397 passed,25 subtests passed",
+  "hosted_log": {
+    "bytes": 20002,
+    "sha256": "7563982662d40069caadd14a04d382836d25d70cab0cf1cc7050c5474f321068",
+    "git_blob": "c6df655e9e988811a7ae3c23ca464b451ab4dc19"
+  },
+  "hosted_log_matches_root_independent_identity": true,
+  "native_device": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+  "native_root": "/var/tmp/tp-18a24bf0c281-ps",
+  "environment": {
+    "root": "/var/tmp/tp-18a24bf0c281-ps",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "executable": "/usr/bin/python3",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+    "pytest": {
+      "version": "9.0.2",
+      "path": "/usr/lib/python3/dist-packages/pytest/__init__.py"
+    },
+    "ps_version": "ps from procps-ng 4.0.4\n",
+    "ps_rc": 0,
+    "display_env": {
+      "COLUMNS": null,
+      "LINES": null,
+      "TERM": "xterm-256color"
+    },
+    "free_bytes": 7830405120
+  },
+  "source_commits": {
+    "before_original_probe": "c70b5550db873e46555713c7a4fd6df3876b3cb2",
+    "focused_source_closure": "d10ef9cec6a91aa01246a18333cbc936ec1ba883",
+    "unchanged_red_and_observer_freeze": "fa0aa08cc65a60aa3d0e19a5630c3ea7c88b4b79",
+    "observation_before_edit": "f8719a1f13334698884d7a8bbbc5e89ed49a4541",
+    "candidate_source": "7e58c46ff7222608703929568bf453576f418b6c",
+    "final_evidence_commit": null
+  },
+  "test_delta": {
+    "parent_test_blob": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6",
+    "path": "tests/test_sandbox_interrupt.py",
+    "bytes": 7024,
+    "sha256": "e43719dc30472dd3e9ff8b829b61a7d743de20974ca4991aa131c12014ab4818",
+    "git_blob": "35a8152aa41be8aafffcc1f5713bedbf2abd7533",
+    "exact_reversal": true,
+    "ast_only_change": "one -ww string in ps argument list",
+    "original12_inputs_unchanged": true,
+    "production_sandbox_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+    "shared_runtime_source": "/var/tmp/tp-18a24bf0c281-ps/original"
+  },
+  "native_results": {
+    "standalone_original_predicate": "Both short and long workers correctly identified; retain this passing control.",
+    "unchanged_actual_pytest": "2 same-group pass;2 escaped-group fail only child_running.",
+    "observation_only_pytest": "Original results returned unchanged;16 traces include8 live-child observations,each81-byte truncated original output versus246-byte wide output with unchanged /proc identity.",
+    "candidate_without_observer": "4 original process cases pass; same-group children stop,escaped children remain alive at observation and owned cleanup then ends them.",
+    "original_cases": [
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.06474532897118479,
+        "leader_running": false,
+        "child_running": false,
+        "mode": "escape-exit",
+        "processes": [
+          {
+            "pid": 442991,
+            "pgid": 442991,
+            "role": "leader"
+          },
+          {
+            "pid": 442993,
+            "pgid": 442993,
+            "role": "child"
+          }
+        ]
+      },
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.3660693340934813,
+        "leader_running": false,
+        "child_running": false,
+        "mode": "escape-wait",
+        "processes": [
+          {
+            "pid": 442874,
+            "pgid": 442874,
+            "role": "leader"
+          },
+          {
+            "pid": 442887,
+            "pgid": 442887,
+            "role": "child"
+          }
+        ]
+      },
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.06635360198561102,
+        "leader_running": false,
+        "child_running": false,
+        "mode": "group-exit",
+        "processes": [
+          {
+            "pid": 442614,
+            "pgid": 442614,
+            "role": "leader"
+          },
+          {
+            "pid": 442623,
+            "pgid": 442614,
+            "role": "child"
+          }
+        ]
+      },
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.36753181798849255,
+        "leader_running": false,
+        "child_running": false,
+        "mode": "group-wait",
+        "processes": [
+          {
+            "pid": 442497,
+            "pgid": 442497,
+            "role": "leader"
+          },
+          {
+            "pid": 442524,
+            "pgid": 442497,
+            "role": "child"
+          }
+        ]
+      }
+    ],
+    "candidate_cases": [
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.47476375405676663,
+        "leader_running": false,
+        "child_running": true,
+        "mode": "escape-exit",
+        "processes": [
+          {
+            "pid": 552544,
+            "pgid": 552544,
+            "role": "leader"
+          },
+          {
+            "pid": 552678,
+            "pgid": 552678,
+            "role": "child"
+          }
+        ]
+      },
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.621536431950517,
+        "leader_running": false,
+        "child_running": true,
+        "mode": "escape-wait",
+        "processes": [
+          {
+            "pid": 551856,
+            "pgid": 551856,
+            "role": "leader"
+          },
+          {
+            "pid": 551911,
+            "pgid": 551911,
+            "role": "child"
+          }
+        ]
+      },
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.535160643979907,
+        "leader_running": false,
+        "child_running": false,
+        "mode": "group-exit",
+        "processes": [
+          {
+            "pid": 551172,
+            "pgid": 551172,
+            "role": "leader"
+          },
+          {
+            "pid": 551219,
+            "pgid": 551172,
+            "role": "child"
+          }
+        ]
+      },
+      {
+        "receipt": {
+          "kind": "KeyboardInterrupt",
+          "leader_reaped_before_return": true,
+          "waitpid_probe": null
+        },
+        "elapsed_s": 0.5895865929778665,
+        "leader_running": false,
+        "child_running": false,
+        "mode": "group-wait",
+        "processes": [
+          {
+            "pid": 550520,
+            "pgid": 550520,
+            "role": "leader"
+          },
+          {
+            "pid": 550533,
+            "pgid": 550520,
+            "role": "child"
+          }
+        ]
+      }
+    ]
+  },
+  "observation_summary": {
+    "trace_count": 16,
+    "live_observations": 8,
+    "all_live_identity_stable": true,
+    "all_original_paths_truncated": true,
+    "all_wide_paths_complete": true
+  },
+  "archive": {
+    "path": "docs/receipts/run-cancellation-18a24bf0c281/ps-width-correction/evidence.tar.xz",
+    "members": 147,
+    "bytes": 63472,
+    "sha256": "d2a5defcc0fbcfc53c3e3053f8629a99c8f04e793f8050c7c92a429984fdcebe",
+    "git_blob": "c53ae4c83f0b7f9827b1114e9c20533d24981130"
+  },
+  "packaging": {
+    "native_file_write_failed": "ENOSPC; attempted recipe file was zero bytes and not executed.",
+    "recovery": "Archive and packet assembled in BytesIO,verified by exact member/entry bytes,then relayed in bounded base64 chunks. No disk write,cleanup or rerun.",
+    "native_final_evidence_commit_claimed": false
+  },
+  "limits": [
+    "Native Python3.14.4/pytest9.0.2/Linux procps-ng4.0.4 receiving does not replace the next hosted checkout gate.",
+    "The original hosted log has no raw ps trace. Native reproduced assertions and diagnostic establish this observation defect; hosted correction acceptance remains pending.",
+    "Only test-helper ps width changes; no production,ownership predicate,zombie filter,process-group guard,deadline or assertion is relaxed.",
+    "No unrelated suite,provider endpoint,app installation or shared process was used.",
+    "Native fixture Git commits describe isolated selected-source custody,not canonical upstream ancestry."
+  ]
+}

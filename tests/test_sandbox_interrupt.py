@@ -60,8 +60,9 @@ else:
 
 
 def command_if_running(pid):
+    # Keep the full fixture path when ps is captured without a terminal.
     result = subprocess.run(
-        ["ps", "-p", str(pid), "-o", "stat=", "-o", "command="],
+        ["ps", "-ww", "-p", str(pid), "-o", "stat=", "-o", "command="],
         capture_output=True, text=True, timeout=1,
     )
     fields = result.stdout.strip().split(None, 1)
