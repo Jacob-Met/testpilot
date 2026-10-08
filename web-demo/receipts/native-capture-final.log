@@ -1,0 +1,37 @@
+{
+  "source": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+  "execution": {
+    "backend": "ScriptedModel",
+    "responses": "authored repository fixtures",
+    "live_model_calls": 0,
+    "python": "3.12.3",
+    "pytest": "8.4.2",
+    "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "coverage": "disabled for this receiving capture",
+    "source_unchanged": true
+  },
+  "cases": [
+    {
+      "id": "calc_clamp",
+      "status": "suspected_code_bug",
+      "runs": {
+        "baseline": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)",
+        "generated": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1)",
+        "fixed": "6 passed, 0 failed, 0 errors, 0 skipped (rc=0)",
+        "witness_buggy": "2 passed, 1 failed, 0 errors, 0 skipped (rc=1)",
+        "witness_fixed": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+      }
+    },
+    {
+      "id": "stats_median",
+      "status": "passed",
+      "runs": {
+        "baseline": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)",
+        "generated": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)",
+        "fixed": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)",
+        "witness_buggy": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1)",
+        "witness_fixed": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+      }
+    }
+  ]
+}

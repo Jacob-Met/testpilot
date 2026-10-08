@@ -1,0 +1,169 @@
+{
+  "status": "passed",
+  "changed_functions": [
+    {
+      "path": "sample.py",
+      "module": "sample",
+      "qualname": "answer",
+      "lineno": 3,
+      "end_lineno": 4,
+      "changed_lines": [
+        4
+      ],
+      "source": "def answer():\n    return 2",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 0,
+  "test_files": {
+    "tests/test_physical_line_consumer.py": "from sample import answer, note\n\ndef test_changed_answer():\n    assert answer() == 2\n\ndef test_literal_note():\n    assert note == \"left\\u2028right\"\n"
+  },
+  "tests_written": 2,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.561,
+    "timeout_s": 20.0,
+    "output": "...                                                                      [100%]\n3 passed in 0.02s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing_note",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests.test_physical_line_consumer::test_changed_answer",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_physical_line_consumer.py"
+      },
+      {
+        "nodeid": "tests.test_physical_line_consumer::test_literal_note",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_physical_line_consumer.py"
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "tests/test_physical_line_consumer.py"
+    ],
+    "junit_available": true,
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected",
+    "generated": {
+      "collected": 2,
+      "passed": 2,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "patch": "diff --git a/tests/test_physical_line_consumer.py b/tests/test_physical_line_consumer.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_physical_line_consumer.py\n@@ -0,0 +1,7 @@\n+from sample import answer, note\n+\n+def test_changed_answer():\n+    assert answer() == 2\n+\n+def test_literal_note():\n+    assert note == \"left\\u2028right\"\n",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 320,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "fixture-planner": {
+        "calls": 1,
+        "prompt_tokens": 91,
+        "completion_tokens": 18,
+        "cost_usd": 0.0
+      },
+      "fixture-editor": {
+        "calls": 1,
+        "prompt_tokens": 160,
+        "completion_tokens": 51,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "fixture-planner",
+        "prompt_tokens": 91,
+        "completion_tokens": 18,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "fixture-editor",
+        "prompt_tokens": 160,
+        "completion_tokens": 51,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_physical_line_consumer.py"
+      ],
+      "result": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.561,
+        "timeout_s": 20.0,
+        "output": "...                                                                      [100%]\n3 passed in 0.02s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing_note",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "tests.test_physical_line_consumer::test_changed_answer",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_physical_line_consumer.py"
+          },
+          {
+            "nodeid": "tests.test_physical_line_consumer::test_literal_note",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_physical_line_consumer.py"
+          }
+        ],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_physical_line_consumer.py"
+        ],
+        "junit_available": true,
+        "passed": 3,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected",
+        "generated": {
+          "collected": 2,
+          "passed": 2,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_physical_line_consumer.py": "from sample import answer, note\n\ndef test_changed_answer():\n    assert answer() == 2\n\ndef test_literal_note():\n    assert note == \"left\\u2028right\"\n"
+      }
+    }
+  ],
+  "plan": "Check the changed return value and preserve the literal Unicode note.\n",
+  "message": "",
+  "ok": true
+}

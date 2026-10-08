@@ -1,0 +1,20 @@
+# CI: run the pytest suite (36 unit/integration tests, incl. the scripted eval)
+# on every push to main and every pull request. Actions are SHA-pinned to the
+# live upstream tag tips.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: "3.12"
+      - run: pip install "pytest>=8" "coverage>=7"
+      - run: python -m pytest -q

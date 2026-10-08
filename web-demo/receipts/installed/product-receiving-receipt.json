@@ -1,0 +1,153 @@
+{
+  "source_commit": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+  "runs": [
+    {
+      "name": "static-receiving",
+      "argv": [
+        "/var/lib/hamon-worker/gl63-wsl2/tasks/wa_2ce07d1b92814e9eaa8b4f47/HERMES_HOME/cache/scratch/test-gap-venv/bin/python",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/product/web-demo/tools/receive_static.py",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/product/web-demo",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/installed",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/static-receipt"
+      ],
+      "cwd": "/tmp",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "8c0e4bc9d59a6c9cf8ffe3da012ea05ce3dcd9beea6b626aaf3abf82e2fd871b"
+    },
+    {
+      "name": "calc_clamp-git-init",
+      "argv": [
+        "git",
+        "init",
+        "-q"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/calc_clamp",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "calc_clamp-apply-check",
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/product/web-demo/data/cases/calc_clamp/testpilot.patch"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/calc_clamp",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "calc_clamp-apply",
+      "argv": [
+        "git",
+        "apply",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/product/web-demo/data/cases/calc_clamp/testpilot.patch"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/calc_clamp",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "calc_clamp-patch-buggy",
+      "argv": [
+        "/var/lib/hamon-worker/gl63-wsl2/tasks/wa_2ce07d1b92814e9eaa8b4f47/HERMES_HOME/cache/scratch/test-gap-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/calc_clamp",
+      "exit_code": 1,
+      "expected_exit": 1,
+      "log_sha256": "713f58e3b205f15b98b79e0c376135f7f6a97daee21159b2327e68731959a9ca"
+    },
+    {
+      "name": "calc_clamp-patch-fixed",
+      "argv": [
+        "/var/lib/hamon-worker/gl63-wsl2/tasks/wa_2ce07d1b92814e9eaa8b4f47/HERMES_HOME/cache/scratch/test-gap-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/calc_clamp",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "3ab69c44c0781c70d7a226d92c2a74efdd9fbb158b6a5cd1669d62cace44568c"
+    },
+    {
+      "name": "stats_median-git-init",
+      "argv": [
+        "git",
+        "init",
+        "-q"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/stats_median",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "stats_median-apply-check",
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/product/web-demo/data/cases/stats_median/testpilot.patch"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/stats_median",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "stats_median-apply",
+      "argv": [
+        "git",
+        "apply",
+        "/var/tmp/testpilot-replay-81ba1ed0179c/product/web-demo/data/cases/stats_median/testpilot.patch"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/stats_median",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "stats_median-patch-buggy",
+      "argv": [
+        "/var/lib/hamon-worker/gl63-wsl2/tasks/wa_2ce07d1b92814e9eaa8b4f47/HERMES_HOME/cache/scratch/test-gap-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/stats_median",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "4250d1f2029068ddc50a143f438d48c0e151e05c734fe713ffea94436ecf9381"
+    },
+    {
+      "name": "stats_median-patch-fixed",
+      "argv": [
+        "/var/lib/hamon-worker/gl63-wsl2/tasks/wa_2ce07d1b92814e9eaa8b4f47/HERMES_HOME/cache/scratch/test-gap-venv/bin/python",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "cwd": "/var/tmp/testpilot-replay-81ba1ed0179c/patch-consumption/stats_median",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "log_sha256": "4250d1f2029068ddc50a143f438d48c0e151e05c734fe713ffea94436ecf9381"
+    }
+  ],
+  "static": {
+    "target": "/var/tmp/testpilot-replay-81ba1ed0179c/installed",
+    "files": 32,
+    "http_readbacks": 64,
+    "rollback_status": 404,
+    "completed": true
+  },
+  "completed": true
+}

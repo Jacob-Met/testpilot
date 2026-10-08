@@ -1,0 +1,79 @@
+{
+  "observed_at": "2026-10-08T11:00:26.460600+00:00",
+  "source_head": "2e32efee7fec4b97f3756083c66f4b860359957b",
+  "source_tree": "ab525baab678cf9d64a3c55c4650ca5a6bfca9f0",
+  "native_command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-c",
+    "<pytest driver recorded in functions store>",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/candidate",
+    "--junitxml=/dev/shm/86776bb3cdb8-receiving-testpilot/candidate-junit.xml",
+    "/dev/shm/86776bb3cdb8-receiving-testpilot/test_independent_collection_receiving.py"
+  ],
+  "pythonpath": "/dev/shm/86776bb3cdb8-receiving-testpilot/repo",
+  "cwd": "/dev/shm/86776bb3cdb8-receiving-testpilot",
+  "exit_code": 0,
+  "elapsed_ms": 4806,
+  "test_sha256": "a5038694ac385d5fcf05655d5373db74ed08f13efd62b2180441ff34e99b50f5",
+  "log_sha256": "bc9571bdf90b9030e6ad79363af598e4381d375743a1aa293ea54a45d792e246",
+  "junit_sha256": "1c7f83800b966a5c9a6493ffba12cbf58d565f43af2bf95a170ec5c29f407484",
+  "runtime_sha256": "59c51e55fd3553bc7d141b50bc47ac03cc25c828ac84a0b523c30956a245b8ae",
+  "cases": [
+    {
+      "name": "test_configured_suite_and_only_requested_generated_file_are_kept",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_selected_directory_and_generated_file_overlap_executes_once",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_helper_beside_generated_case_keeps_conftest_fixture_and_hook",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_unexecuted_generated_output_cannot_certify_success[helper-only]",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_unexecuted_generated_output_cannot_certify_success[module-skip]",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_unexecuted_generated_output_cannot_certify_success[all-cases-skipped]",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_collection_hook_deselection_remains_effective",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_explicit_keyword_selector_cannot_masquerade_as_generated_success",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_generated_count_uses_provenance_when_existing_parameters_change",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_baseline_without_generated_files_keeps_native_success",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_real_scripted_cli_repairs_a_failure_outside_testpaths",
+      "outcome": "passed"
+    }
+  ],
+  "counts": {
+    "passed": 11,
+    "failed": 0,
+    "error": 0,
+    "skipped": 0
+  },
+  "scope": "Independent native pytest collection controls and one real scripted CLI repair path; no model network."
+}

@@ -1,0 +1,15 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________________________ test_generated_must_run ____________________________
+
+    def test_generated_must_run():
+>       assert normalize(" X ") == "INTENTIONAL_FAILURE"
+E       AssertionError: assert 'x' == 'INTENTIONAL_FAILURE'
+E         
+E         - INTENTIONAL_FAILURE
+E         + x
+
+tests/test_generated.py:4: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_generated.py::test_generated_must_run - AssertionError: ass...
+1 failed in 0.02s

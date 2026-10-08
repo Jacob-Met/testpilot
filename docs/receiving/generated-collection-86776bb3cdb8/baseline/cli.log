@@ -1,0 +1,12 @@
+# TestPilot report: **passed**
+
+- Changed functions: normalizer.py::normalize
+- Tests written: 0 in tests/test_generated.py
+- Repair rounds used: 0/0
+- Final run: 1 passed, 0 failed, 0 errors, 0 skipped (rc=0) in 0.26s
+- Coverage: unavailable (install `coverage`)
+- Tokens: 319 (estimated); cost: unpriced (set TESTPILOT_PRICES)
+  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 101 in / 12 out
+  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 165 in / 41 out
+
+wrote /dev/shm/86776bb3cdb8-product-next/testpilot-opportunity/reported-output/testpilot.patch, /dev/shm/86776bb3cdb8-product-next/testpilot-opportunity/reported-output/report.json, /dev/shm/86776bb3cdb8-product-next/testpilot-opportunity/reported-output/report.md

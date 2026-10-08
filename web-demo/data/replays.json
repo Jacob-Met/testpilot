@@ -1,0 +1,551 @@
+{
+  "schema": "testpilot.offline-replay.v1",
+  "source": {
+    "repository": "Jacob-Met/testpilot",
+    "commit": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+    "files": {
+      "LICENSE": "c28355a11a7165add54220eb1d692ecb2951e5e9",
+      "NOTICE": "c9730c29774e26d5453549e8afb14fa4f354c3ae",
+      "README.md": "339735ca3e3517c50b639f4e49cd61add14513fa",
+      "eval/__init__.py": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "eval/cases/calc_clamp/case.json": "9ed811d8a2b40d8ed14f0f67630d698942249e73",
+      "eval/cases/calc_clamp/change.diff": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+      "eval/cases/calc_clamp/fix/calc.py": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+      "eval/cases/calc_clamp/repo/calc.py": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+      "eval/cases/calc_clamp/repo/tests/test_existing.py": "1113fca65a126c34c76e140a36970eaacc9ae1a7",
+      "eval/cases/calc_clamp/script/01_plan.md": "78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a",
+      "eval/cases/calc_clamp/script/02_tests.md": "70616f283909d2165c9fe12a9501966b9d32804a",
+      "eval/cases/calc_clamp/script/03_repair.md": "eb417bdba41ede38cbfe1dec31f851db9707b9f0",
+      "eval/cases/stats_median/case.json": "402ef8747a370510ce05216b73094be6b7de45f2",
+      "eval/cases/stats_median/change.diff": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+      "eval/cases/stats_median/fix/stats.py": "bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+      "eval/cases/stats_median/repo/stats.py": "a851be68344da385d18845063dbec48dbcd03894",
+      "eval/cases/stats_median/repo/tests/test_existing.py": "936573d9a8b3acec05f24c75a2834521b5214246",
+      "eval/cases/stats_median/script/01_plan.md": "25590e1b7f8558603fe686c6dfdc9511709217a0",
+      "eval/cases/stats_median/script/02_tests.md": "cc7f01d3d45089bc09b00db9d20047982b29e767",
+      "eval/harness.py": "9dbff7d2ccbd477313d881f0e8da3c43249e5330",
+      "pyproject.toml": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "testpilot/__init__.py": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "testpilot/__main__.py": "7e71f9a08227075f5b5a1e02b9bc3bd64afcd8e3",
+      "testpilot/diff.py": "d176701aebb56ce7507ee5f0111245247393f35f",
+      "testpilot/loop.py": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+      "testpilot/model.py": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "testpilot/sandbox.py": "68e14602058608ca86a218e39053249f1891f95e"
+    }
+  },
+  "capture_tool_sha256": "92d9a5ad497172cda3e0b719aba4d22e05bd09772604968cd9a646536eacbfbe",
+  "recorded_at": "2026-10-08T09:31:28.471796+00:00",
+  "execution": {
+    "backend": "ScriptedModel",
+    "responses": "authored repository fixtures",
+    "live_model_calls": 0,
+    "python": "3.12.3",
+    "pytest": "8.4.2",
+    "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "coverage": "disabled for this receiving capture",
+    "source_unchanged": true
+  },
+  "cases": [
+    {
+      "id": "calc_clamp",
+      "title": "Clamp boundaries",
+      "subtitle": "A regression caught",
+      "module": "calc.py",
+      "function": "clamp",
+      "kind": "caught",
+      "witness": "from calc import clamp\n\ndef test_recorded_boundary():\n    assert clamp(5, 0, 10) == 5\n",
+      "explanation": "The generated boundary tests fail on the changed implementation. The authored repair reply identifies a code bug and keeps the failing assertions. The same tests pass with the fixture's ground-truth fix.",
+      "fixture": "eval/cases/calc_clamp",
+      "bug": "clamp() swaps lo/hi in max/min, so every in-range value returns hi",
+      "diff": "diff --git a/calc.py b/calc.py\nindex 9f221a6..cfe4453 100644\n--- a/calc.py\n+++ b/calc.py\n@@ -5,6 +5,13 @@ def add(a, b):\n     return a + b\n \n \n+def clamp(x, lo, hi):\n+    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n+    if lo > hi:\n+        raise ValueError(\"lo must be <= hi\")\n+    return max(hi, min(lo, x))\n+\n+\n def mean(values):\n     if not values:\n         raise ValueError(\"mean of empty sequence\")\n",
+      "source": "\"\"\"Tiny arithmetic helpers.\"\"\"\n\n\ndef add(a, b):\n    return a + b\n\n\ndef clamp(x, lo, hi):\n    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n    if lo > hi:\n        raise ValueError(\"lo must be <= hi\")\n    return max(hi, min(lo, x))\n\n\ndef mean(values):\n    if not values:\n        raise ValueError(\"mean of empty sequence\")\n    return sum(values) / len(values)\n",
+      "oracle": "\"\"\"Tiny arithmetic helpers.\"\"\"\n\n\ndef add(a, b):\n    return a + b\n\n\ndef clamp(x, lo, hi):\n    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n    if lo > hi:\n        raise ValueError(\"lo must be <= hi\")\n    return max(lo, min(hi, x))\n\n\ndef mean(values):\n    if not values:\n        raise ValueError(\"mean of empty sequence\")\n    return sum(values) / len(values)\n",
+      "plan": "Plan for calc.clamp:\n1. Value inside [lo, hi] is returned unchanged.\n2. Value below lo returns lo; value above hi returns hi.\n3. Boundaries lo and hi are returned unchanged.\n4. lo > hi raises ValueError.\n",
+      "status": "suspected_code_bug",
+      "message": "clamp(5, 0, 10) returns 10 and clamp(-3, 0, 10) returns 10: the expression `max(hi, min(lo, x))` has lo and hi swapped, so it always returns hi. The tests encode the documented contract (\"clamp x into [lo, hi]\"); the fix is `max(lo, min(hi, x))`.",
+      "tests_written": 4,
+      "repair_rounds": 1,
+      "scripted_calls": 3,
+      "generated_tests": {
+        "tests/test_calc_clamp.py": "import pytest\n\nfrom calc import clamp\n\n\ndef test_inside_range_unchanged():\n    assert clamp(5, 0, 10) == 5\n\n\ndef test_below_and_above():\n    assert clamp(-3, 0, 10) == 0\n    assert clamp(42, 0, 10) == 10\n\n\ndef test_boundaries():\n    assert clamp(0, 0, 10) == 0\n    assert clamp(10, 0, 10) == 10\n\n\ndef test_inverted_bounds_raise():\n    with pytest.raises(ValueError):\n        clamp(1, 10, 0)\n"
+      },
+      "runs": {
+        "baseline": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 1.037,
+          "timeout_s": 10,
+          "output": "..                                                                       [100%]\n------------ generated xml file: /tmp/testpilot-d0bujatv/junit.xml -------------\n2 passed in 0.02s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_add",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_mean",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 2,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        },
+        "generated": {
+          "returncode": 1,
+          "timed_out": false,
+          "duration_s": 0.225,
+          "timeout_s": 10,
+          "output": "FFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n------------ generated xml file: /tmp/testpilot-kk6oq088/junit.xml -------------\n=========================== short test summary info ============================\nFAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5\nFAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0\nFAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0\n3 failed, 3 passed in 0.03s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+              "outcome": "failed",
+              "message": "assert 10 == 5\n +  where 10 = clamp(5, 0, 10)\ndef test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError"
+            },
+            {
+              "nodeid": "tests.test_calc_clamp::test_below_and_above",
+              "outcome": "failed",
+              "message": "assert 10 == 0\n +  where 10 = clamp(-3, 0, 10)\ndef test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError"
+            },
+            {
+              "nodeid": "tests.test_calc_clamp::test_boundaries",
+              "outcome": "failed",
+              "message": "assert 10 == 0\n +  where 10 = clamp(0, 0, 10)\ndef test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError"
+            },
+            {
+              "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_add",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_mean",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 3,
+          "failed": 3,
+          "errors": 0,
+          "skipped": 0,
+          "ok": false,
+          "summary": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1)"
+        },
+        "fixed": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.2,
+          "timeout_s": 10,
+          "output": "......                                                                   [100%]\n------------ generated xml file: /tmp/testpilot-iyl6ocza/junit.xml -------------\n6 passed in 0.02s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_calc_clamp::test_below_and_above",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_calc_clamp::test_boundaries",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_add",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_mean",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 6,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "6 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        },
+        "witness_buggy": {
+          "returncode": 1,
+          "timed_out": false,
+          "duration_s": 0.214,
+          "timeout_s": 10,
+          "output": "F..                                                                      [100%]\n=================================== FAILURES ===================================\n____________________________ test_recorded_boundary ____________________________\n\n    def test_recorded_boundary():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_browser_replay_witness.py:4: AssertionError\n------------ generated xml file: /tmp/testpilot-1o11rkk6/junit.xml -------------\n=========================== short test summary info ============================\nFAILED tests/test_browser_replay_witness.py::test_recorded_boundary - assert ...\n1 failed, 2 passed in 0.03s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_browser_replay_witness::test_recorded_boundary",
+              "outcome": "failed",
+              "message": "assert 10 == 5\n +  where 10 = clamp(5, 0, 10)\ndef test_recorded_boundary():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_browser_replay_witness.py:4: AssertionError"
+            },
+            {
+              "nodeid": "tests.test_existing::test_add",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_mean",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 2,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0,
+          "ok": false,
+          "summary": "2 passed, 1 failed, 0 errors, 0 skipped (rc=1)"
+        },
+        "witness_fixed": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.195,
+          "timeout_s": 10,
+          "output": "...                                                                      [100%]\n------------ generated xml file: /tmp/testpilot-_8a6vrkb/junit.xml -------------\n3 passed in 0.01s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_browser_replay_witness::test_recorded_boundary",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_add",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_mean",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        }
+      },
+      "files": {
+        "change.diff": {
+          "url": "data/cases/calc_clamp/change.diff",
+          "bytes": 410,
+          "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f"
+        },
+        "testpilot.patch": {
+          "url": "data/cases/calc_clamp/testpilot.patch",
+          "bytes": 561,
+          "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+        },
+        "pipeline.json": {
+          "url": "data/cases/calc_clamp/pipeline.json",
+          "bytes": 10601,
+          "sha256": "2a1783e032538ccaef4ae080800f381168688bd4794ed14d4c015a310bb8fe28"
+        },
+        "source.py": {
+          "url": "data/cases/calc_clamp/source.py",
+          "bytes": 361,
+          "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3"
+        },
+        "oracle.py": {
+          "url": "data/cases/calc_clamp/oracle.py",
+          "bytes": 361,
+          "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004"
+        },
+        "witness.py": {
+          "url": "data/cases/calc_clamp/witness.py",
+          "bytes": 86,
+          "sha256": "94a9ba7b275f086fbac137ed53fa39c1776920ceb7af43fa52bac9e8e1e35c8f"
+        },
+        "baseline.log": {
+          "url": "data/cases/calc_clamp/baseline.log",
+          "bytes": 179,
+          "sha256": "5dbd60f07032d4cd6459f707d01be1c6a03ba0044548c3e03adde0967bfc9e99"
+        },
+        "generated.log": {
+          "url": "data/cases/calc_clamp/generated.log",
+          "bytes": 1340,
+          "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae"
+        },
+        "fixed.log": {
+          "url": "data/cases/calc_clamp/fixed.log",
+          "bytes": 179,
+          "sha256": "1563f81563209f398dc09570c7dea95a533afc41ab170f5985eef050fc7e5d30"
+        },
+        "witness_buggy.log": {
+          "url": "data/cases/calc_clamp/witness_buggy.log",
+          "bytes": 702,
+          "sha256": "43413615418d53d78d31491b838dcd72fffb486b6804a8de39adc8d6f5c6445a"
+        },
+        "witness_fixed.log": {
+          "url": "data/cases/calc_clamp/witness_fixed.log",
+          "bytes": 179,
+          "sha256": "1ba2d4249aa49bb1992b01e64cede66af236206ceff3c810c7408cae8762230a"
+        },
+        "record.json": {
+          "url": "data/cases/calc_clamp/record.json",
+          "bytes": 13090,
+          "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3"
+        }
+      }
+    },
+    {
+      "id": "stats_median",
+      "title": "Even-length median",
+      "subtitle": "A regression missed",
+      "module": "stats.py",
+      "function": "median",
+      "kind": "missed",
+      "witness": "from stats import median\n\ndef test_recorded_boundary():\n    assert median([1, 2, 9, 10]) == 5.5\n",
+      "explanation": "The generated tests cover odd-length inputs and pass while the even-length bug remains. An independent authored boundary witness fails on that implementation and passes with the fixture's ground-truth fix.",
+      "fixture": "eval/cases/stats_median",
+      "bug": "median() returns the upper middle element for even-length input instead of the mean of the two middles",
+      "diff": "diff --git a/stats.py b/stats.py\nindex 1031c7b..a851be6 100644\n--- a/stats.py\n+++ b/stats.py\n@@ -3,3 +3,12 @@\n \n def total(values):\n     return sum(values)\n+\n+\n+def median(values):\n+    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n+    if not values:\n+        raise ValueError(\"median of empty sequence\")\n+    s = sorted(values)\n+    mid = len(s) // 2\n+    return s[mid]\n",
+      "source": "\"\"\"Small statistics helpers.\"\"\"\n\n\ndef total(values):\n    return sum(values)\n\n\ndef median(values):\n    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n    if not values:\n        raise ValueError(\"median of empty sequence\")\n    s = sorted(values)\n    mid = len(s) // 2\n    return s[mid]\n",
+      "oracle": "\"\"\"Small statistics helpers.\"\"\"\n\n\ndef total(values):\n    return sum(values)\n\n\ndef median(values):\n    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n    if not values:\n        raise ValueError(\"median of empty sequence\")\n    s = sorted(values)\n    mid = len(s) // 2\n    if len(s) % 2:\n        return s[mid]\n    return (s[mid - 1] + s[mid]) / 2\n",
+      "plan": "Plan for stats.median:\n1. Odd-length unsorted input.\n2. Single element.\n3. Empty input raises ValueError.\n",
+      "status": "passed",
+      "message": "",
+      "tests_written": 3,
+      "repair_rounds": 0,
+      "scripted_calls": 2,
+      "generated_tests": {
+        "tests/test_median.py": "import pytest\n\nfrom stats import median\n\n\ndef test_odd_unsorted():\n    assert median([3, 1, 2]) == 2\n\n\ndef test_single():\n    assert median([7]) == 7\n\n\ndef test_empty_raises():\n    with pytest.raises(ValueError):\n        median([])\n"
+      },
+      "runs": {
+        "baseline": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.192,
+          "timeout_s": 10,
+          "output": ".                                                                        [100%]\n------------ generated xml file: /tmp/testpilot-4g_7v8tt/junit.xml -------------\n1 passed in 0.01s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_total",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 1,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        },
+        "generated": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.194,
+          "timeout_s": 10,
+          "output": "....                                                                     [100%]\n------------ generated xml file: /tmp/testpilot-hclxy2k3/junit.xml -------------\n4 passed in 0.01s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_total",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_median::test_odd_unsorted",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_median::test_single",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_median::test_empty_raises",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 4,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        },
+        "fixed": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.206,
+          "timeout_s": 10,
+          "output": "....                                                                     [100%]\n------------ generated xml file: /tmp/testpilot-e9rdscgc/junit.xml -------------\n4 passed in 0.01s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_total",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_median::test_odd_unsorted",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_median::test_single",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_median::test_empty_raises",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 4,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        },
+        "witness_buggy": {
+          "returncode": 1,
+          "timed_out": false,
+          "duration_s": 0.207,
+          "timeout_s": 10,
+          "output": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n____________________________ test_recorded_boundary ____________________________\n\n    def test_recorded_boundary():\n>       assert median([1, 2, 9, 10]) == 5.5\nE       assert 9 == 5.5\nE        +  where 9 = median([1, 2, 9, 10])\n\ntests/test_browser_replay_witness.py:4: AssertionError\n------------ generated xml file: /tmp/testpilot-ll446ked/junit.xml -------------\n=========================== short test summary info ============================\nFAILED tests/test_browser_replay_witness.py::test_recorded_boundary - assert ...\n1 failed, 1 passed in 0.02s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_browser_replay_witness::test_recorded_boundary",
+              "outcome": "failed",
+              "message": "assert 9 == 5.5\n +  where 9 = median([1, 2, 9, 10])\ndef test_recorded_boundary():\n>       assert median([1, 2, 9, 10]) == 5.5\nE       assert 9 == 5.5\nE        +  where 9 = median([1, 2, 9, 10])\n\ntests/test_browser_replay_witness.py:4: AssertionError"
+            },
+            {
+              "nodeid": "tests.test_existing::test_total",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 1,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0,
+          "ok": false,
+          "summary": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1)"
+        },
+        "witness_fixed": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.207,
+          "timeout_s": 10,
+          "output": "..                                                                       [100%]\n------------ generated xml file: /tmp/testpilot-301wq5ro/junit.xml -------------\n2 passed in 0.01s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_browser_replay_witness::test_recorded_boundary",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_total",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": null,
+          "passed": 2,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        }
+      },
+      "files": {
+        "change.diff": {
+          "url": "data/cases/stats_median/change.diff",
+          "bytes": 404,
+          "sha256": "bdfe8d3e68d25aa16ce75e9d8c1ad0613f6a52a90ffa34832430cd536dada2c3"
+        },
+        "testpilot.patch": {
+          "url": "data/cases/stats_median/testpilot.patch",
+          "bytes": 384,
+          "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+        },
+        "pipeline.json": {
+          "url": "data/cases/stats_median/pipeline.json",
+          "bytes": 5084,
+          "sha256": "ef86468a9ac51cefab5e200eed5ff6d38c9bb873440444dde1f1d9801ba5ef86"
+        },
+        "source.py": {
+          "url": "data/cases/stats_median/source.py",
+          "bytes": 315,
+          "sha256": "c06007181d71cee213650703be0f7cc139007a8f9c8838ec507f8de4c446a1ff"
+        },
+        "oracle.py": {
+          "url": "data/cases/stats_median/oracle.py",
+          "bytes": 375,
+          "sha256": "ca479b01a87b61238c2724cdc781c6e4a4443998930bcf8dae78e6a7a3070212"
+        },
+        "witness.py": {
+          "url": "data/cases/stats_median/witness.py",
+          "bytes": 96,
+          "sha256": "b0ca3c50db158ad2342c0dd611edccb683514072ea462c482307672dd71db98f"
+        },
+        "baseline.log": {
+          "url": "data/cases/stats_median/baseline.log",
+          "bytes": 179,
+          "sha256": "03a905d23d573e0af682bff95fb2fc594c2028194c2340b2f91b7e77783bf980"
+        },
+        "generated.log": {
+          "url": "data/cases/stats_median/generated.log",
+          "bytes": 179,
+          "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b"
+        },
+        "fixed.log": {
+          "url": "data/cases/stats_median/fixed.log",
+          "bytes": 179,
+          "sha256": "00ff26c8d983e871337c72d4cf7644f31387852dbf6ba2eb54656e243720253f"
+        },
+        "witness_buggy.log": {
+          "url": "data/cases/stats_median/witness_buggy.log",
+          "bytes": 716,
+          "sha256": "48bba5eb381472553cf0682c363aae149c8a040c5d4f5e6ebc235ac197a5a5d5"
+        },
+        "witness_fixed.log": {
+          "url": "data/cases/stats_median/witness_fixed.log",
+          "bytes": 179,
+          "sha256": "9b024b17e97477bfe82b38110cd34d28fa79635d1f7381a8dc7650f507489b2d"
+        },
+        "record.json": {
+          "url": "data/cases/stats_median/record.json",
+          "bytes": 9763,
+          "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d"
+        }
+      }
+    }
+  ]
+}

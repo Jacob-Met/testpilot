@@ -1,0 +1,431 @@
+{
+  "driver_sha256": "397ad93a5fb9a388b5ddbaf0d162d7be413418d5c090bce307dd5ea931c94771",
+  "runtime_sha256": "d5fce39356d8fba48557907184b18d55796aa22dce71072cb4b3ec89423d037c",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "git": "git version 2.51.1",
+  "cases": [
+    {
+      "case": "utf8_bom",
+      "command": [
+        "/workspace/scratch/bd1abdb2f886/source_review/testpilot-quoted/venv/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-utf8_bom-qgish6kg/project",
+        "--diff",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-utf8_bom-qgish6kg/change.diff",
+        "--script",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-utf8_bom-qgish6kg/script",
+        "--backend",
+        "scripted",
+        "--python",
+        "/workspace/scratch/bd1abdb2f886/source_review/testpilot-quoted/venv/bin/python",
+        "--rounds",
+        "0",
+        "--timeout",
+        "10",
+        "--out",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-utf8_bom-qgish6kg/output"
+      ],
+      "exit_code": 0,
+      "stdout": "# TestPilot report: **passed**\n\n- Changed functions: price.py::price\n- Tests written: 1 in tests/test_encoded_price.py\n- Repair rounds used: 0/0\n- Final run: 2 passed, 0 failed, 0 errors, 0 skipped (rc=0) in 0.451s\n- Coverage (total): 12.5% -> 100.0% (+87.5 pts)\n- Coverage (changed lines, n=1): 0.0% -> 100.0%\n- Tokens: 358 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 122 in / 12 out\n  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 186 in / 38 out\n\nwrote /dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-utf8_bom-qgish6kg/output/testpilot.patch, /dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-utf8_bom-qgish6kg/output/report.json, /dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-utf8_bom-qgish6kg/output/report.md\n",
+      "stderr": "",
+      "actual_python_import": 17,
+      "diff_valid_utf8": true,
+      "source_sha256": "fa84df3c258544c5922b76801553566e23f8c03899f6182aa743aca77f553f22",
+      "existing_test_sha256": "279601787f954d2593cf34427574ec0e5693d9c0b64936a198281a9ecf011760",
+      "git_diff_sha256": "e6eebcbd09fde8c1cbf432fc3d86248f83c4af9cc1da72df7bd1e8285844d0ef",
+      "git_diff": "diff --git a/price.py b/price.py\nindex 20be025..d4eb0f1 100644\n--- a/price.py\n+++ b/price.py\n@@ -6,4 +6,4 @@\n     total += 3\n     total += 4\n     total += 5\n-    return total + 1\n+    return total + 2\n",
+      "original_files_unchanged": true,
+      "generated_file_absent_from_input": true,
+      "report": {
+        "status": "passed",
+        "changed_functions": [
+          {
+            "path": "price.py",
+            "module": "price",
+            "qualname": "price",
+            "lineno": 1,
+            "end_lineno": 9,
+            "changed_lines": [
+              9
+            ],
+            "source": "def price():\n    \"\"\"Return the caf\u00e9 price.\"\"\"\n    total = 0\n    total += 1\n    total += 2\n    total += 3\n    total += 4\n    total += 5\n    return total + 2",
+            "is_method": false
+          }
+        ],
+        "repair_rounds_used": 0,
+        "max_repair_rounds": 0,
+        "test_files": {
+          "tests/test_encoded_price.py": "from price import price\n\ndef test_price():\n    assert price() == 17\n    assert 'caf\u00e9' in price.__doc__\n"
+        },
+        "tests_written": 1,
+        "final": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.451,
+          "timeout_s": 10.0,
+          "output": "..                                                                       [100%]\n2 passed in 0.04s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_encoded_price::test_price",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_existing",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": {
+            "percent_total": 100.0,
+            "files": {
+              "price.py": {
+                "executed": [
+                  1,
+                  3,
+                  4,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9
+                ],
+                "missing": []
+              }
+            }
+          },
+          "passed": 2,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        },
+        "patch": "diff --git a/tests/test_encoded_price.py b/tests/test_encoded_price.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_encoded_price.py\n@@ -0,0 +1,5 @@\n+from price import price\n+\n+def test_price():\n+    assert price() == 17\n+    assert 'caf\u00e9' in price.__doc__\n",
+        "coverage": {
+          "total_before": 12.5,
+          "total_after": 100.0,
+          "total_delta": 87.5,
+          "changed_lines_executable": 1,
+          "changed_lines_before": 0.0,
+          "changed_lines_after": 100.0
+        },
+        "ledger": {
+          "total_tokens": 358,
+          "total_cost_usd": 0.0,
+          "cost_is_complete": false,
+          "tokens_estimated": true,
+          "by_model": {
+            "nvidia/nemotron-3-super-120b-a12b": {
+              "calls": 1,
+              "prompt_tokens": 122,
+              "completion_tokens": 12,
+              "cost_usd": 0.0
+            },
+            "nvidia/Nemotron-3_5-Lightning": {
+              "calls": 1,
+              "prompt_tokens": 186,
+              "completion_tokens": 38,
+              "cost_usd": 0.0
+            }
+          },
+          "entries": [
+            {
+              "role": "planner",
+              "model": "nvidia/nemotron-3-super-120b-a12b",
+              "prompt_tokens": 122,
+              "completion_tokens": 12,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "editor",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 186,
+              "completion_tokens": 38,
+              "estimated": true,
+              "cost_usd": 0.0
+            }
+          ]
+        },
+        "rounds": [
+          {
+            "round": 0,
+            "kind": "generate",
+            "files": [
+              "tests/test_encoded_price.py"
+            ],
+            "result": {
+              "returncode": 0,
+              "timed_out": false,
+              "duration_s": 0.451,
+              "timeout_s": 10.0,
+              "output": "..                                                                       [100%]\n2 passed in 0.04s\n",
+              "cases": [
+                {
+                  "nodeid": "tests.test_encoded_price::test_price",
+                  "outcome": "passed",
+                  "message": ""
+                },
+                {
+                  "nodeid": "tests.test_existing::test_existing",
+                  "outcome": "passed",
+                  "message": ""
+                }
+              ],
+              "coverage": {
+                "percent_total": 100.0,
+                "files": {
+                  "price.py": {
+                    "executed": [
+                      1,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9
+                    ],
+                    "missing": []
+                  }
+                }
+              },
+              "passed": 2,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "ok": true,
+              "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+            },
+            "warnings": [],
+            "contents": {
+              "tests/test_encoded_price.py": "from price import price\n\ndef test_price():\n    assert price() == 17\n    assert 'caf\u00e9' in price.__doc__\n"
+            }
+          }
+        ],
+        "plan": "Check the updated caf\u00e9 price and its docstring.\n",
+        "message": "",
+        "ok": true
+      },
+      "git_apply_check": true,
+      "patch": "diff --git a/tests/test_encoded_price.py b/tests/test_encoded_price.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_encoded_price.py\n@@ -0,0 +1,5 @@\n+from price import price\n+\n+def test_price():\n+    assert price() == 17\n+    assert 'caf\u00e9' in price.__doc__\n",
+      "markdown_written": true
+    },
+    {
+      "case": "latin1_cookie",
+      "command": [
+        "/workspace/scratch/bd1abdb2f886/source_review/testpilot-quoted/venv/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-latin1_cookie-3powv9po/project",
+        "--diff",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-latin1_cookie-3powv9po/change.diff",
+        "--script",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-latin1_cookie-3powv9po/script",
+        "--backend",
+        "scripted",
+        "--python",
+        "/workspace/scratch/bd1abdb2f886/source_review/testpilot-quoted/venv/bin/python",
+        "--rounds",
+        "0",
+        "--timeout",
+        "10",
+        "--out",
+        "/dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-latin1_cookie-3powv9po/output"
+      ],
+      "exit_code": 0,
+      "stdout": "# TestPilot report: **passed**\n\n- Changed functions: price.py::price\n- Tests written: 1 in tests/test_encoded_price.py\n- Repair rounds used: 0/0\n- Final run: 2 passed, 0 failed, 0 errors, 0 skipped (rc=0) in 0.445s\n- Coverage (total): 12.5% -> 100.0% (+87.5 pts)\n- Coverage (changed lines, n=1): 0.0% -> 100.0%\n- Tokens: 359 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 123 in / 12 out\n  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 186 in / 38 out\n\nwrote /dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-latin1_cookie-3powv9po/output/testpilot.patch, /dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-latin1_cookie-3powv9po/output/report.json, /dev/shm/bd1abdb2f886-testpilot-encoding/tmp/encoded-latin1_cookie-3powv9po/output/report.md\n",
+      "stderr": "",
+      "actual_python_import": 17,
+      "diff_valid_utf8": true,
+      "source_sha256": "c16ce216d82c88e79b5afba855156dba3c3f4951b0a449e97229938c0abd7889",
+      "existing_test_sha256": "279601787f954d2593cf34427574ec0e5693d9c0b64936a198281a9ecf011760",
+      "git_diff_sha256": "11e9d69834984bfd347452b5ff98e71cd3bbc6ec5e478dca3a925f6d3ec339d9",
+      "git_diff": "diff --git a/price.py b/price.py\nindex dd5e40b..32bac98 100644\n--- a/price.py\n+++ b/price.py\n@@ -8,4 +8,4 @@ def price():\n     total += 3\n     total += 4\n     total += 5\n-    return total + 1\n+    return total + 2\n",
+      "original_files_unchanged": true,
+      "generated_file_absent_from_input": true,
+      "report": {
+        "status": "passed",
+        "changed_functions": [
+          {
+            "path": "price.py",
+            "module": "price",
+            "qualname": "price",
+            "lineno": 3,
+            "end_lineno": 11,
+            "changed_lines": [
+              11
+            ],
+            "source": "def price():\n    \"\"\"Return the caf\u00e9 price.\"\"\"\n    total = 0\n    total += 1\n    total += 2\n    total += 3\n    total += 4\n    total += 5\n    return total + 2",
+            "is_method": false
+          }
+        ],
+        "repair_rounds_used": 0,
+        "max_repair_rounds": 0,
+        "test_files": {
+          "tests/test_encoded_price.py": "from price import price\n\ndef test_price():\n    assert price() == 17\n    assert 'caf\u00e9' in price.__doc__\n"
+        },
+        "tests_written": 1,
+        "final": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.445,
+          "timeout_s": 10.0,
+          "output": "..                                                                       [100%]\n2 passed in 0.04s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_encoded_price::test_price",
+              "outcome": "passed",
+              "message": ""
+            },
+            {
+              "nodeid": "tests.test_existing::test_existing",
+              "outcome": "passed",
+              "message": ""
+            }
+          ],
+          "coverage": {
+            "percent_total": 100.0,
+            "files": {
+              "price.py": {
+                "executed": [
+                  3,
+                  5,
+                  6,
+                  7,
+                  8,
+                  9,
+                  10,
+                  11
+                ],
+                "missing": []
+              }
+            }
+          },
+          "passed": 2,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+        },
+        "patch": "diff --git a/tests/test_encoded_price.py b/tests/test_encoded_price.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_encoded_price.py\n@@ -0,0 +1,5 @@\n+from price import price\n+\n+def test_price():\n+    assert price() == 17\n+    assert 'caf\u00e9' in price.__doc__\n",
+        "coverage": {
+          "total_before": 12.5,
+          "total_after": 100.0,
+          "total_delta": 87.5,
+          "changed_lines_executable": 1,
+          "changed_lines_before": 0.0,
+          "changed_lines_after": 100.0
+        },
+        "ledger": {
+          "total_tokens": 359,
+          "total_cost_usd": 0.0,
+          "cost_is_complete": false,
+          "tokens_estimated": true,
+          "by_model": {
+            "nvidia/nemotron-3-super-120b-a12b": {
+              "calls": 1,
+              "prompt_tokens": 123,
+              "completion_tokens": 12,
+              "cost_usd": 0.0
+            },
+            "nvidia/Nemotron-3_5-Lightning": {
+              "calls": 1,
+              "prompt_tokens": 186,
+              "completion_tokens": 38,
+              "cost_usd": 0.0
+            }
+          },
+          "entries": [
+            {
+              "role": "planner",
+              "model": "nvidia/nemotron-3-super-120b-a12b",
+              "prompt_tokens": 123,
+              "completion_tokens": 12,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "editor",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 186,
+              "completion_tokens": 38,
+              "estimated": true,
+              "cost_usd": 0.0
+            }
+          ]
+        },
+        "rounds": [
+          {
+            "round": 0,
+            "kind": "generate",
+            "files": [
+              "tests/test_encoded_price.py"
+            ],
+            "result": {
+              "returncode": 0,
+              "timed_out": false,
+              "duration_s": 0.445,
+              "timeout_s": 10.0,
+              "output": "..                                                                       [100%]\n2 passed in 0.04s\n",
+              "cases": [
+                {
+                  "nodeid": "tests.test_encoded_price::test_price",
+                  "outcome": "passed",
+                  "message": ""
+                },
+                {
+                  "nodeid": "tests.test_existing::test_existing",
+                  "outcome": "passed",
+                  "message": ""
+                }
+              ],
+              "coverage": {
+                "percent_total": 100.0,
+                "files": {
+                  "price.py": {
+                    "executed": [
+                      3,
+                      5,
+                      6,
+                      7,
+                      8,
+                      9,
+                      10,
+                      11
+                    ],
+                    "missing": []
+                  }
+                }
+              },
+              "passed": 2,
+              "failed": 0,
+              "errors": 0,
+              "skipped": 0,
+              "ok": true,
+              "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+            },
+            "warnings": [],
+            "contents": {
+              "tests/test_encoded_price.py": "from price import price\n\ndef test_price():\n    assert price() == 17\n    assert 'caf\u00e9' in price.__doc__\n"
+            }
+          }
+        ],
+        "plan": "Check the updated caf\u00e9 price and its docstring.\n",
+        "message": "",
+        "ok": true
+      },
+      "git_apply_check": true,
+      "patch": "diff --git a/tests/test_encoded_price.py b/tests/test_encoded_price.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_encoded_price.py\n@@ -0,0 +1,5 @@\n+from price import price\n+\n+def test_price():\n+    assert price() == 17\n+    assert 'caf\u00e9' in price.__doc__\n",
+      "markdown_written": true
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "hamon.testpilot.composition_receiving_manifest.v1",
+  "source_commit": "a9e8394bfeb8f70bcef61be8db27d249d0701c0b",
+  "files": [
+    {
+      "path": "composition-pin.json",
+      "bytes": 2150,
+      "sha256": "9833fc75e73172e0f3444f10dae3cf912584b62f3c96596d414625f572800462"
+    },
+    {
+      "path": "receive_encoding_composition.py",
+      "bytes": 4053,
+      "sha256": "25f4730002353385442d9261cf313445657eb1d409984c54cfabc998c7f39640"
+    },
+    {
+      "path": "parent-consumers.json",
+      "bytes": 1440,
+      "sha256": "16c1e5bcdbf683bd552bea35bc4667665f9898eb2b2531655a1ecb70bbacad12"
+    },
+    {
+      "path": "candidate-consumers.json",
+      "bytes": 1854,
+      "sha256": "1e4244f0723872b63879c007893a0d50c3e8abee638e328e5cae6afc73459a49"
+    },
+    {
+      "path": "focused-encoding.stdout.txt",
+      "bytes": 99,
+      "sha256": "b0a0b4f867393aaef69a2f8b2ad67577b6fa70cfe26e7ec34992c24df71903b1"
+    },
+    {
+      "path": "focused-encoding.xml",
+      "bytes": 4098,
+      "sha256": "02cbeb2d386fc2d72c5eab05dfbd2f343e6f9293cf0fee4a8698a1b4498e12f9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2933,
+      "sha256": "695a966c245a7c1c76595969c6cd3154d3b74dd6507b6adb16b2cac11a4e0b34"
+    }
+  ]
+}

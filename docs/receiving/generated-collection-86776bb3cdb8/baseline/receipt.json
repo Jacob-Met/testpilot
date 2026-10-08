@@ -1,0 +1,59 @@
+{
+  "source_head": "9f01fcb6de085850eca00db746380795eb548d62",
+  "source_tree": "34191a66ec22f8630aea83559cfb16f1e464ab3e",
+  "cli_command": [
+    "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+    "-B",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/dev/shm/86776bb3cdb8-product-next/testpilot-opportunity/authored-project",
+    "--diff",
+    "/dev/shm/86776bb3cdb8-product-next/testpilot-opportunity/change.diff",
+    "--backend",
+    "scripted",
+    "--script",
+    "/dev/shm/86776bb3cdb8-product-next/testpilot-opportunity/responses",
+    "--rounds",
+    "0",
+    "--timeout",
+    "10",
+    "--out",
+    "/dev/shm/86776bb3cdb8-product-next/testpilot-opportunity/reported-output"
+  ],
+  "cli_exit": 0,
+  "report_status": "passed",
+  "reported_tests_written": 0,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.26,
+    "timeout_s": 10.0,
+    "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+    "cases": [
+      {
+        "nodeid": "checks.test_existing::test_existing",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": null,
+    "passed": 1,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "model_calls": 2,
+  "direct_emitted_test_exit": 1,
+  "direct_control_tail": [
+    "FAILED tests/test_generated.py::test_generated_must_run - AssertionError: ass...",
+    "1 failed in 0.02s"
+  ],
+  "cli_log_sha256": "e3b05cd21c68282b762c97ab3d0ff1bb5b9aee53ecfc975e739d5356b23ab4e4",
+  "direct_control_sha256": "5048f4943f5c743a1ace373c4df73aa59361cef0d02f4a7ae9106425d7faa799",
+  "synthetic_fixture": true,
+  "no_external_model_call": true
+}
