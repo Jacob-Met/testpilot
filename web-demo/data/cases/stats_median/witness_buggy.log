@@ -1,0 +1,14 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+____________________________ test_recorded_boundary ____________________________
+
+    def test_recorded_boundary():
+>       assert median([1, 2, 9, 10]) == 5.5
+E       assert 9 == 5.5
+E        +  where 9 = median([1, 2, 9, 10])
+
+tests/test_browser_replay_witness.py:4: AssertionError
+------------ generated xml file: /tmp/testpilot-ll446ked/junit.xml -------------
+=========================== short test summary info ============================
+FAILED tests/test_browser_replay_witness.py::test_recorded_boundary - assert ...
+1 failed, 1 passed in 0.02s

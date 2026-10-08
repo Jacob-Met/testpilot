@@ -1,0 +1,405 @@
+{
+  "node": "v26.3.0",
+  "browser": "154.0.8037.98",
+  "source_commit": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+  "root": "/tmp/testpilot-replay-81ba1ed0179c/web-demo",
+  "checks": [
+    {
+      "label": "desktop: explicit recorded ScriptedModel label",
+      "passed": true
+    },
+    {
+      "label": "desktop: skip link concealed before focus",
+      "passed": true
+    },
+    {
+      "label": "desktop: keyboard skip link visible",
+      "passed": true
+    },
+    {
+      "label": "desktop: skip link reaches replay",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: fixture switch resets stage and retains focus",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 1 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 1 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 2 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 2 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 3 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 3 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: actual generated run outcome",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 4 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: stage 4 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: oracle and independent witness visible",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: exact testpilot.patch download",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: exact record.json download",
+      "passed": true
+    },
+    {
+      "label": "desktop/calc_clamp: exact generated.log download",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: fixture switch resets stage and retains focus",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 1 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 1 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 2 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 2 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 3 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 3 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: actual generated run outcome",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 4 selected",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: stage 4 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: oracle and independent witness visible",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: exact testpilot.patch download",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: exact record.json download",
+      "passed": true
+    },
+    {
+      "label": "desktop/stats_median: exact generated.log download",
+      "passed": true
+    },
+    {
+      "label": "desktop: keyboard stage navigation",
+      "passed": true
+    },
+    {
+      "label": "desktop: keyboard End",
+      "passed": true
+    },
+    {
+      "label": "desktop: keyboard Home",
+      "passed": true
+    },
+    {
+      "label": "desktop: exact fixture/stage deep link",
+      "passed": true
+    },
+    {
+      "label": "desktop: unknown deep link has deterministic fallback",
+      "passed": true
+    },
+    {
+      "label": "phone: explicit recorded ScriptedModel label",
+      "passed": true
+    },
+    {
+      "label": "phone: skip link concealed before focus",
+      "passed": true
+    },
+    {
+      "label": "phone: keyboard skip link visible",
+      "passed": true
+    },
+    {
+      "label": "phone: skip link reaches replay",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: fixture switch resets stage and retains focus",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 1 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 1 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 2 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 2 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 3 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 3 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: actual generated run outcome",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 4 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: stage 4 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: oracle and independent witness visible",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: exact testpilot.patch download",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: exact record.json download",
+      "passed": true
+    },
+    {
+      "label": "phone/calc_clamp: exact generated.log download",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: fixture switch resets stage and retains focus",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 1 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 1 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 2 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 2 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 3 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 3 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: actual generated run outcome",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 4 selected",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: stage 4 fits viewport",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: oracle and independent witness visible",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: exact testpilot.patch download",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: exact record.json download",
+      "passed": true
+    },
+    {
+      "label": "phone/stats_median: exact generated.log download",
+      "passed": true
+    },
+    {
+      "label": "phone: keyboard stage navigation",
+      "passed": true
+    },
+    {
+      "label": "phone: keyboard End",
+      "passed": true
+    },
+    {
+      "label": "phone: keyboard Home",
+      "passed": true
+    },
+    {
+      "label": "phone: exact fixture/stage deep link",
+      "passed": true
+    },
+    {
+      "label": "phone: unknown deep link has deterministic fallback",
+      "passed": true
+    },
+    {
+      "label": "invalid evidence fails closed",
+      "passed": true
+    },
+    {
+      "label": "no external browser requests",
+      "passed": true
+    },
+    {
+      "label": "no browser page errors",
+      "passed": true
+    }
+  ],
+  "downloads": [
+    {
+      "viewport": "desktop",
+      "case": "calc_clamp",
+      "filename": "testpilot.patch",
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "viewport": "desktop",
+      "case": "calc_clamp",
+      "filename": "record.json",
+      "bytes": 13090,
+      "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3"
+    },
+    {
+      "viewport": "desktop",
+      "case": "calc_clamp",
+      "filename": "generated.log",
+      "bytes": 1340,
+      "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae"
+    },
+    {
+      "viewport": "desktop",
+      "case": "stats_median",
+      "filename": "testpilot.patch",
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "viewport": "desktop",
+      "case": "stats_median",
+      "filename": "record.json",
+      "bytes": 9763,
+      "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d"
+    },
+    {
+      "viewport": "desktop",
+      "case": "stats_median",
+      "filename": "generated.log",
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b"
+    },
+    {
+      "viewport": "phone",
+      "case": "calc_clamp",
+      "filename": "testpilot.patch",
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "viewport": "phone",
+      "case": "calc_clamp",
+      "filename": "record.json",
+      "bytes": 13090,
+      "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3"
+    },
+    {
+      "viewport": "phone",
+      "case": "calc_clamp",
+      "filename": "generated.log",
+      "bytes": 1340,
+      "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae"
+    },
+    {
+      "viewport": "phone",
+      "case": "stats_median",
+      "filename": "testpilot.patch",
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "viewport": "phone",
+      "case": "stats_median",
+      "filename": "record.json",
+      "bytes": 9763,
+      "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d"
+    },
+    {
+      "viewport": "phone",
+      "case": "stats_median",
+      "filename": "generated.log",
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b"
+    }
+  ],
+  "externalRequests": [],
+  "pageErrors": [],
+  "error": null
+}

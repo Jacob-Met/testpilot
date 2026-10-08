@@ -1,0 +1,33 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "commit": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+  "files": {
+    "LICENSE": "c28355a11a7165add54220eb1d692ecb2951e5e9",
+    "NOTICE": "c9730c29774e26d5453549e8afb14fa4f354c3ae",
+    "README.md": "339735ca3e3517c50b639f4e49cd61add14513fa",
+    "eval/__init__.py": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "eval/cases/calc_clamp/case.json": "9ed811d8a2b40d8ed14f0f67630d698942249e73",
+    "eval/cases/calc_clamp/change.diff": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+    "eval/cases/calc_clamp/fix/calc.py": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+    "eval/cases/calc_clamp/repo/calc.py": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+    "eval/cases/calc_clamp/repo/tests/test_existing.py": "1113fca65a126c34c76e140a36970eaacc9ae1a7",
+    "eval/cases/calc_clamp/script/01_plan.md": "78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a",
+    "eval/cases/calc_clamp/script/02_tests.md": "70616f283909d2165c9fe12a9501966b9d32804a",
+    "eval/cases/calc_clamp/script/03_repair.md": "eb417bdba41ede38cbfe1dec31f851db9707b9f0",
+    "eval/cases/stats_median/case.json": "402ef8747a370510ce05216b73094be6b7de45f2",
+    "eval/cases/stats_median/change.diff": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+    "eval/cases/stats_median/fix/stats.py": "bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+    "eval/cases/stats_median/repo/stats.py": "a851be68344da385d18845063dbec48dbcd03894",
+    "eval/cases/stats_median/repo/tests/test_existing.py": "936573d9a8b3acec05f24c75a2834521b5214246",
+    "eval/cases/stats_median/script/01_plan.md": "25590e1b7f8558603fe686c6dfdc9511709217a0",
+    "eval/cases/stats_median/script/02_tests.md": "cc7f01d3d45089bc09b00db9d20047982b29e767",
+    "eval/harness.py": "9dbff7d2ccbd477313d881f0e8da3c43249e5330",
+    "pyproject.toml": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+    "testpilot/__init__.py": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+    "testpilot/__main__.py": "7e71f9a08227075f5b5a1e02b9bc3bd64afcd8e3",
+    "testpilot/diff.py": "d176701aebb56ce7507ee5f0111245247393f35f",
+    "testpilot/loop.py": "e94ae5a0ae3f74fdaa7a63dea73f22e50afbe676",
+    "testpilot/model.py": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+    "testpilot/sandbox.py": "68e14602058608ca86a218e39053249f1891f95e"
+  }
+}

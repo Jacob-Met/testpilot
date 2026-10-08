@@ -1,0 +1,228 @@
+{
+  "id": "stats_median",
+  "title": "Even-length median",
+  "subtitle": "A regression missed",
+  "module": "stats.py",
+  "function": "median",
+  "kind": "missed",
+  "witness": "from stats import median\n\ndef test_recorded_boundary():\n    assert median([1, 2, 9, 10]) == 5.5\n",
+  "explanation": "The generated tests cover odd-length inputs and pass while the even-length bug remains. An independent authored boundary witness fails on that implementation and passes with the fixture's ground-truth fix.",
+  "fixture": "eval/cases/stats_median",
+  "bug": "median() returns the upper middle element for even-length input instead of the mean of the two middles",
+  "diff": "diff --git a/stats.py b/stats.py\nindex 1031c7b..a851be6 100644\n--- a/stats.py\n+++ b/stats.py\n@@ -3,3 +3,12 @@\n \n def total(values):\n     return sum(values)\n+\n+\n+def median(values):\n+    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n+    if not values:\n+        raise ValueError(\"median of empty sequence\")\n+    s = sorted(values)\n+    mid = len(s) // 2\n+    return s[mid]\n",
+  "source": "\"\"\"Small statistics helpers.\"\"\"\n\n\ndef total(values):\n    return sum(values)\n\n\ndef median(values):\n    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n    if not values:\n        raise ValueError(\"median of empty sequence\")\n    s = sorted(values)\n    mid = len(s) // 2\n    return s[mid]\n",
+  "oracle": "\"\"\"Small statistics helpers.\"\"\"\n\n\ndef total(values):\n    return sum(values)\n\n\ndef median(values):\n    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n    if not values:\n        raise ValueError(\"median of empty sequence\")\n    s = sorted(values)\n    mid = len(s) // 2\n    if len(s) % 2:\n        return s[mid]\n    return (s[mid - 1] + s[mid]) / 2\n",
+  "plan": "Plan for stats.median:\n1. Odd-length unsorted input.\n2. Single element.\n3. Empty input raises ValueError.\n",
+  "status": "passed",
+  "message": "",
+  "tests_written": 3,
+  "repair_rounds": 0,
+  "scripted_calls": 2,
+  "generated_tests": {
+    "tests/test_median.py": "import pytest\n\nfrom stats import median\n\n\ndef test_odd_unsorted():\n    assert median([3, 1, 2]) == 2\n\n\ndef test_single():\n    assert median([7]) == 7\n\n\ndef test_empty_raises():\n    with pytest.raises(ValueError):\n        median([])\n"
+  },
+  "runs": {
+    "baseline": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.192,
+      "timeout_s": 10,
+      "output": ".                                                                        [100%]\n------------ generated xml file: /tmp/testpilot-4g_7v8tt/junit.xml -------------\n1 passed in 0.01s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing::test_total",
+          "outcome": "passed",
+          "message": ""
+        }
+      ],
+      "coverage": null,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+    },
+    "generated": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.194,
+      "timeout_s": 10,
+      "output": "....                                                                     [100%]\n------------ generated xml file: /tmp/testpilot-hclxy2k3/junit.xml -------------\n4 passed in 0.01s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing::test_total",
+          "outcome": "passed",
+          "message": ""
+        },
+        {
+          "nodeid": "tests.test_median::test_odd_unsorted",
+          "outcome": "passed",
+          "message": ""
+        },
+        {
+          "nodeid": "tests.test_median::test_single",
+          "outcome": "passed",
+          "message": ""
+        },
+        {
+          "nodeid": "tests.test_median::test_empty_raises",
+          "outcome": "passed",
+          "message": ""
+        }
+      ],
+      "coverage": null,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+    },
+    "fixed": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.206,
+      "timeout_s": 10,
+      "output": "....                                                                     [100%]\n------------ generated xml file: /tmp/testpilot-e9rdscgc/junit.xml -------------\n4 passed in 0.01s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing::test_total",
+          "outcome": "passed",
+          "message": ""
+        },
+        {
+          "nodeid": "tests.test_median::test_odd_unsorted",
+          "outcome": "passed",
+          "message": ""
+        },
+        {
+          "nodeid": "tests.test_median::test_single",
+          "outcome": "passed",
+          "message": ""
+        },
+        {
+          "nodeid": "tests.test_median::test_empty_raises",
+          "outcome": "passed",
+          "message": ""
+        }
+      ],
+      "coverage": null,
+      "passed": 4,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+    },
+    "witness_buggy": {
+      "returncode": 1,
+      "timed_out": false,
+      "duration_s": 0.207,
+      "timeout_s": 10,
+      "output": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n____________________________ test_recorded_boundary ____________________________\n\n    def test_recorded_boundary():\n>       assert median([1, 2, 9, 10]) == 5.5\nE       assert 9 == 5.5\nE        +  where 9 = median([1, 2, 9, 10])\n\ntests/test_browser_replay_witness.py:4: AssertionError\n------------ generated xml file: /tmp/testpilot-ll446ked/junit.xml -------------\n=========================== short test summary info ============================\nFAILED tests/test_browser_replay_witness.py::test_recorded_boundary - assert ...\n1 failed, 1 passed in 0.02s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_browser_replay_witness::test_recorded_boundary",
+          "outcome": "failed",
+          "message": "assert 9 == 5.5\n +  where 9 = median([1, 2, 9, 10])\ndef test_recorded_boundary():\n>       assert median([1, 2, 9, 10]) == 5.5\nE       assert 9 == 5.5\nE        +  where 9 = median([1, 2, 9, 10])\n\ntests/test_browser_replay_witness.py:4: AssertionError"
+        },
+        {
+          "nodeid": "tests.test_existing::test_total",
+          "outcome": "passed",
+          "message": ""
+        }
+      ],
+      "coverage": null,
+      "passed": 1,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "ok": false,
+      "summary": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1)"
+    },
+    "witness_fixed": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.207,
+      "timeout_s": 10,
+      "output": "..                                                                       [100%]\n------------ generated xml file: /tmp/testpilot-301wq5ro/junit.xml -------------\n2 passed in 0.01s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_browser_replay_witness::test_recorded_boundary",
+          "outcome": "passed",
+          "message": ""
+        },
+        {
+          "nodeid": "tests.test_existing::test_total",
+          "outcome": "passed",
+          "message": ""
+        }
+      ],
+      "coverage": null,
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+    }
+  },
+  "files": {
+    "change.diff": {
+      "url": "data/cases/stats_median/change.diff",
+      "bytes": 404,
+      "sha256": "bdfe8d3e68d25aa16ce75e9d8c1ad0613f6a52a90ffa34832430cd536dada2c3"
+    },
+    "testpilot.patch": {
+      "url": "data/cases/stats_median/testpilot.patch",
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    "pipeline.json": {
+      "url": "data/cases/stats_median/pipeline.json",
+      "bytes": 5084,
+      "sha256": "ef86468a9ac51cefab5e200eed5ff6d38c9bb873440444dde1f1d9801ba5ef86"
+    },
+    "source.py": {
+      "url": "data/cases/stats_median/source.py",
+      "bytes": 315,
+      "sha256": "c06007181d71cee213650703be0f7cc139007a8f9c8838ec507f8de4c446a1ff"
+    },
+    "oracle.py": {
+      "url": "data/cases/stats_median/oracle.py",
+      "bytes": 375,
+      "sha256": "ca479b01a87b61238c2724cdc781c6e4a4443998930bcf8dae78e6a7a3070212"
+    },
+    "witness.py": {
+      "url": "data/cases/stats_median/witness.py",
+      "bytes": 96,
+      "sha256": "b0ca3c50db158ad2342c0dd611edccb683514072ea462c482307672dd71db98f"
+    },
+    "baseline.log": {
+      "url": "data/cases/stats_median/baseline.log",
+      "bytes": 179,
+      "sha256": "03a905d23d573e0af682bff95fb2fc594c2028194c2340b2f91b7e77783bf980"
+    },
+    "generated.log": {
+      "url": "data/cases/stats_median/generated.log",
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b"
+    },
+    "fixed.log": {
+      "url": "data/cases/stats_median/fixed.log",
+      "bytes": 179,
+      "sha256": "00ff26c8d983e871337c72d4cf7644f31387852dbf6ba2eb54656e243720253f"
+    },
+    "witness_buggy.log": {
+      "url": "data/cases/stats_median/witness_buggy.log",
+      "bytes": 716,
+      "sha256": "48bba5eb381472553cf0682c363aae149c8a040c5d4f5e6ebc235ac197a5a5d5"
+    },
+    "witness_fixed.log": {
+      "url": "data/cases/stats_median/witness_fixed.log",
+      "bytes": 179,
+      "sha256": "9b024b17e97477bfe82b38110cd34d28fa79635d1f7381a8dc7650f507489b2d"
+    }
+  }
+}

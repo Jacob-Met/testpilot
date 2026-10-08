@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Explore actual recorded TestPilot fixture runs: a regression caught, a regression missed, and the evidence behind each result.">
+  <title>TestPilot — Regression replay</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#stage-content">Skip to replay</a>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="TestPilot replay home"><span class="brand-mark" aria-hidden="true">↗</span>TestPilot<span class="brand-divider">/</span><span class="brand-section">Regression lab</span></a>
+      <span class="mode"><span aria-hidden="true"></span>Recorded offline replay</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">THE DIFF IS THE STARTING POINT</p><h1 id="page-title">Proof, one test<br>at a time.</h1></div>
+      <div class="intro-copy"><p>Follow a real fixture through TestPilot’s regression workflow. Inspect the changed code, the generated tests, and what actually passed.</p><p class="disclosure">Authored <strong>ScriptedModel</strong> replies. Recorded Python execution. No live model calls.</p></div>
+    </section>
+
+    <div id="load-error" class="load-error" role="alert" hidden></div>
+    <div id="replay" class="workspace" aria-busy="true">
+      <aside class="sidebar" aria-label="Replay selection and downloads">
+        <div class="section-label"><span>01 / Choose a fixture</span><span>2 cases</span></div>
+        <div id="case-list" class="case-list"></div>
+        <section class="evidence-card" aria-labelledby="evidence-title">
+          <div class="evidence-icon" aria-hidden="true">↳</div>
+          <h2 id="evidence-title">Take the evidence.</h2>
+          <p>Download the exact generated patch or inspect the recorded case. The patch adds tests; the oracle fix stays separate.</p>
+          <a id="download-patch" class="download primary" aria-disabled="true">Download test patch <span aria-hidden="true">↓</span></a>
+          <a id="download-record" class="download secondary" aria-disabled="true">Download case record <span aria-hidden="true">↓</span></a>
+          <a id="download-log" class="text-link" aria-disabled="true">Full generated-test output ↗</a>
+        </section>
+        <details class="source-card">
+          <summary>Source &amp; recording</summary>
+          <dl><dt>TestPilot source</dt><dd><a id="source-link" target="_blank" rel="noreferrer">Loading source…</a></dd><dt>Recorded runtime</dt><dd id="runtime">Loading…</dd><dt>Recorded at</dt><dd id="recorded-at">Loading…</dd></dl>
+          <p>Fixture inputs and pipeline source are hash checked before and after capture. These two examples demonstrate behavior, not model quality.</p>
+        </details>
+      </aside>
+
+      <main class="replay-panel">
+        <div class="replay-top"><span class="section-label">02 / Follow the evidence</span><span id="step-count" class="step-count">Step 1 of 4</span></div>
+        <div id="stages" class="stages" role="tablist" aria-label="Replay stages">
+          <button role="tab" id="stage-tab-0" aria-controls="stage-content" aria-selected="true" data-stage="0"><span>01</span>Diff</button>
+          <button role="tab" id="stage-tab-1" aria-controls="stage-content" aria-selected="false" tabindex="-1" data-stage="1"><span>02</span>Tests</button>
+          <button role="tab" id="stage-tab-2" aria-controls="stage-content" aria-selected="false" tabindex="-1" data-stage="2"><span>03</span>Run</button>
+          <button role="tab" id="stage-tab-3" aria-controls="stage-content" aria-selected="false" tabindex="-1" data-stage="3"><span>04</span>Oracle</button>
+        </div>
+        <section id="stage-content" class="stage-content" role="tabpanel" aria-labelledby="stage-tab-0" tabindex="0"><p class="loading">Loading recorded evidence…</p></section>
+        <nav class="step-actions" aria-label="Replay navigation"><button id="previous" class="button quiet" disabled>← Previous</button><span id="case-position">Recorded fixture</span><button id="next" class="button solid" disabled>Inspect tests →</button></nav>
+      </main>
+    </div>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    <footer><span>TestPilot / An open source regression workflow</span><span>Same tests. Inspectable outputs.</span></footer>
+  </div>
+</body>
+</html>

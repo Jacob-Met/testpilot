@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/var/tmp/testpilot-replay-81ba1ed0179c/final-capture/tools/capture_replay.py", line 132, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/var/tmp/testpilot-replay-81ba1ed0179c/final-capture/tools/capture_replay.py", line 123, in main
+    dataset = capture(args.source_root.resolve(), args.output.resolve())
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/tmp/testpilot-replay-81ba1ed0179c/final-capture/tools/capture_replay.py", line 28, in capture
+    verify_source(root, pin)
+  File "/var/tmp/testpilot-replay-81ba1ed0179c/final-capture/tools/capture_replay.py", line 23, in verify_source
+    raise ValueError(f"source differs from the declared pin: {name}")
+ValueError: source differs from the declared pin: eval/cases/calc_clamp/repo/calc.py
