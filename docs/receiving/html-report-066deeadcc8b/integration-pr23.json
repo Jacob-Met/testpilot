@@ -1,0 +1,447 @@
+{
+  "schema": "testpilot.html_report.pr23_integration_composition.v1",
+  "repository": "Jacob-Met/testpilot",
+  "original_pr_head": "1d2977a4faf2f02adca51f0526377eedc0cc8f29",
+  "original_pr_tree": "2aa4505331e4cd9e202392f537f7fd13231b0d93",
+  "original_publication_parent": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "receiving_parent": "ca3d4a83c552ed9c8ea1f1c4e81510111d2c9b1e",
+  "receiving_parent_tree": "92a8b55034840ba1c84eb97705cb9447c22c3ca8",
+  "receiving_parent_leaves": 798,
+  "source_overlay_paths_unchanged": 78,
+  "original_overlay_manifest": "publication-overlay.json",
+  "canonical_loop_blob": "328221e1556b986b75c6e61f30eef8dc0f3d8961",
+  "canonical_model_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+  "canonical_sandbox_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+  "canonical_generated_collector_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+  "scope": "Normal two-parent receiving composition after PR23 landed during the initial hosted run. The complete original78-path overlay, including every frozen source/evidence artifact, is unchanged. All new current-parent source, test and receiving paths are preserved exactly.",
+  "changed_upstream_paths": [
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/REVIEW.md",
+      "mode": "100644",
+      "sha": "6b76ba49d6c20920c220f9018dcc9e5377e235df",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/argument-order-controls.json",
+      "mode": "100644",
+      "sha": "5febc5eba24a97008df73dda661ea92650b04779",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/before/_pytest_generated.py.txt",
+      "mode": "100644",
+      "sha": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-compat-pytest8.log",
+      "mode": "100644",
+      "sha": "d02c66db5e2249fac0bf42b02605d73f2ea7a41c",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-compat-pytest8.xml",
+      "mode": "100644",
+      "sha": "ec6b4f9e29de9790fb265e5292df52fe48cf2390",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-compat-pytest9.log",
+      "mode": "100644",
+      "sha": "3efbc222b74f193c6630d3ca0732f089331f3313",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-compat-pytest9.xml",
+      "mode": "100644",
+      "sha": "715d09a6a9e52552d13976ad649be6b4b3f8b2fc",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-pyargs-pytest8.log",
+      "mode": "100644",
+      "sha": "7c675bab02f2c4c64ea018148206cb37ebdcae8d",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-pyargs-pytest8.xml",
+      "mode": "100644",
+      "sha": "0c94178ee7fd9a1aa8c60772c29c9a8607f4f885",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-pyargs-pytest9.log",
+      "mode": "100644",
+      "sha": "4414943eff72845909a6fc0b8eb0978d32f5bd70",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-a-pyargs-pytest9.xml",
+      "mode": "100644",
+      "sha": "e47e32bc6482110031a4a4dbeb95bd6aa2c69647",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-b-compat-pytest8.log",
+      "mode": "100644",
+      "sha": "d087ab4584345def85fb5306ac843513b429c007",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-b-compat-pytest8.xml",
+      "mode": "100644",
+      "sha": "85211938e0fb514df37c18f66214f8dcfb78bf81",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-b-compat-pytest9.log",
+      "mode": "100644",
+      "sha": "08d09d3b9cb77660c2ed2d838c6b131bd273bac4",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/candidate-b-compat-pytest9.xml",
+      "mode": "100644",
+      "sha": "29b9c15375b09bf918cbea6cb34a85ba6a80ddb8",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/controls-first15.py.txt",
+      "mode": "100644",
+      "sha": "6bd9e358d39ab730d41420b7b1df7b7474bc5a1a",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/coverage-main-delta.patch",
+      "mode": "100644",
+      "sha": "395f3407f8661a0f51c64391d329b641b45955cd",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-additional-native-inputs.json",
+      "mode": "100644",
+      "sha": "acd4efd93c84650d565a1b62ca132837d13d7c2f",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-compat-pytest8.log",
+      "mode": "100644",
+      "sha": "23279668cb22be57f4af1a18bf23a1efd1976673",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-compat-pytest8.xml",
+      "mode": "100644",
+      "sha": "0bae180f31759bbc5337c045bd7892d6547f8405",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-compat-pytest9.log",
+      "mode": "100644",
+      "sha": "d6d6bf82b3e73c2bd56eb952a4dc00773af237e6",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-compat-pytest9.xml",
+      "mode": "100644",
+      "sha": "061b4f223d4f88c9664243c8656484a398868568",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-main-refresh.json",
+      "mode": "100644",
+      "sha": "d213b85a1c50d2ca72ab9bf875f75614639c424c",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-native-inputs.json",
+      "mode": "100644",
+      "sha": "5f8e3aab5bd8b25bf6934ce9e24830e0d7763ebd",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-parent-disposition.json",
+      "mode": "100644",
+      "sha": "43126cdd801ce63d541af9261557bf17d1a3b7a0",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-pyargs-pytest8.log",
+      "mode": "100644",
+      "sha": "786bdba3506510e34b1431a15f8cf2409d37e8ff",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-pyargs-pytest8.xml",
+      "mode": "100644",
+      "sha": "d4199c28610f4136c8bebc9a4d75429b2b7fad47",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-pyargs-pytest9.log",
+      "mode": "100644",
+      "sha": "440ddf7843b39ae32ef57bf3d8f23359e581e9ff",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/current-pyargs-pytest9.xml",
+      "mode": "100644",
+      "sha": "642d6f61d98b869431534a3345fe8b8166525dd0",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/diagnose_pytest8_selection.py.txt",
+      "mode": "100644",
+      "sha": "f0aa2672d8a4822cad6d6496cb213ed250233c7d",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/failed-candidate-a/_pytest_generated.py.txt",
+      "mode": "100644",
+      "sha": "95bf2ffb3df66092b131101058c4da96eb498ea2",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/helper-correction.patch",
+      "mode": "100644",
+      "sha": "368c0b9bf0ba9202c515af07d40fd8b9fdf0fc49",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/native-compatibility-receipt.json",
+      "mode": "100644",
+      "sha": "7a7d9866411e7c9feac57316c40836a9c62ab865",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/package_receiving.py.txt",
+      "mode": "100644",
+      "sha": "86c08081045ed9fe83ccf6ff8d818ffac2341f97",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/REVIEW.md",
+      "mode": "100644",
+      "sha": "59e7881575acc74aef199632080a73b5a0432073",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/file-hashes.json",
+      "mode": "100644",
+      "sha": "354c615eeca84aad704b6fe5104f71d7344d8aa7",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/primary-source.json",
+      "mode": "100644",
+      "sha": "1fa0f8e8e6f1082c3e6fac77c7dd18e43cf01090",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/receive-cli.py.txt",
+      "mode": "100644",
+      "sha": "206220525e721af03833ddae74673431aef76124",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/receiving.log",
+      "mode": "100644",
+      "sha": "99f6c1ee3e967cfcdb28f8aa522f7824e48e9bea",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/candidate/junit/00-baseline.xml",
+      "mode": "100644",
+      "sha": "5a661f5b3559b2dbda1093f8fb8cf47e78bddddd",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/candidate/junit/01-generated-failure.xml",
+      "mode": "100644",
+      "sha": "d847d724932e1d9f2b9094d6f176479636edae39",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/candidate/junit/02-generated-only-repair.xml",
+      "mode": "100644",
+      "sha": "05e16a22030b14d125fc93f1ff1121b6db8d1508",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/candidate/junit/03-correct-repair.xml",
+      "mode": "100644",
+      "sha": "8b2d7f3b284c440173823b835dfc8cf237abab20",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/candidate/reported/report.json",
+      "mode": "100644",
+      "sha": "757684959f9f0b7b81e82978a31fb7334f9d1bde",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/candidate/stderr.log",
+      "mode": "100644",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/candidate/stdout.log",
+      "mode": "100644",
+      "sha": "6dbac41d8b6823966f2754fd6a4134347e623edc",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/change.diff",
+      "mode": "100644",
+      "sha": "2f6b3c28984b80d46dfd04fd55facea1939c5632",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/current-main/junit/00-baseline.xml",
+      "mode": "100644",
+      "sha": "ce67ce06f0df97c2d693c9ba9caecf7366b0c155",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/current-main/junit/01-generated-failure.xml",
+      "mode": "100644",
+      "sha": "b1c05da6032cae10497d3edb288c0914b95e0715",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/current-main/junit/02-generated-only-repair.xml",
+      "mode": "100644",
+      "sha": "d020e249f2b83a8c45e24e20362bfe64540b48b2",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/current-main/reported/report.json",
+      "mode": "100644",
+      "sha": "aa5c2be144a20199201e2e89d14db2fabd3edfec",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/current-main/stderr.log",
+      "mode": "100644",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/current-main/stdout.log",
+      "mode": "100644",
+      "sha": "fb3b5686929f2f15eaccd76f3344446aba2ff432",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/project/conftest.py.txt",
+      "mode": "100644",
+      "sha": "8ceb359814e805660a8ed5f4ed908246968e14e0",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/project/m.py.txt",
+      "mode": "100644",
+      "sha": "e4448d73af2377693fb807deeb343f750304bd76",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/project/pytest.ini",
+      "mode": "100644",
+      "sha": "d694e0f07bd27db733e001ba1fb6d3a579794455",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/project/tests/test_existing.py.txt",
+      "mode": "100644",
+      "sha": "3b6544194d20f48bfbabe94f2d1109a08010f9b4",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/receipt.json",
+      "mode": "100644",
+      "sha": "38fc55031c8d11aadae6b19d1c5d4de512149c48",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/script/01-plan.md",
+      "mode": "100644",
+      "sha": "4a920ff9f7561893b527436bb77083e9a08c8adf",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/script/02-generated.md",
+      "mode": "100644",
+      "sha": "94d8e9232daf42c1632354cb53f3d0b66b7d9e54",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/script/03-incomplete-repair.md",
+      "mode": "100644",
+      "sha": "bad687901137a93924d04e657eca05cbbc208fe9",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/peer-cli/run/script/04-correct-repair.md",
+      "mode": "100644",
+      "sha": "51e6dd7380e1cdbaaccc73fb61dd0b6e1176d42c",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/primary-source.json",
+      "mode": "100644",
+      "sha": "416ee78e347ea47cb52fb1b7c52e8cbaec6aa146",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/selection-diagnostic.log",
+      "mode": "100644",
+      "sha": "d23ccb2f49ca6467404a6413620faae786a68a16",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/selection-diagnostic/receipt.json",
+      "mode": "100644",
+      "sha": "1ec7af689ac7cf1a2a1ac9c60c6de1b18a87fbbe",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/source-import-readback.json",
+      "mode": "100644",
+      "sha": "0681a553d79f3fda8e31610921efe1211d462be9",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/source-preservation.json",
+      "mode": "100644",
+      "sha": "907704bf069a5385fdacd8b1b24c944739723726",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/static-gates-current-main.log",
+      "mode": "100644",
+      "sha": "1f5f344d054fae10f39140fb7199c99321d9190a",
+      "previous_sha": null
+    },
+    {
+      "path": "docs/receiving/native-collection-86776bb3cdb8/static-gates.log",
+      "mode": "100644",
+      "sha": "d198b22eeaed13b70429e840dde49e640c9a0043",
+      "previous_sha": null
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "100644",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "previous_sha": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa"
+    },
+    {
+      "path": "tests/test_generated_collection_compatibility.py",
+      "mode": "100644",
+      "sha": "f0e1bbbd3aac5848ff478ceabe0019543f9ef518",
+      "previous_sha": null
+    }
+  ],
+  "verification_boundary": "Source/tree composition only; no new native execution is attributed here. Original77-file and PR20-native qualifications remain pinned to their recorded sources. The successor PR head must complete hosted pytest before expected-head merge.",
+  "production_delta": "PR23 changes only _pytest_generated.py: preserve selected native roots and generated explicit treatment, resolve pyargs roots across supported pytest versions, and retain covered initial paths without duplicating ordinary traversal. The HTML renderer/writer, report schemas, sandbox and model are unchanged from the accepted publication source."
+}

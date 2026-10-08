@@ -1,0 +1,177 @@
+{
+  "base_commit": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "base_tree": "2045a73704f752d374704657fccf90fd5e774258",
+  "complete_main_leaf_count": 432,
+  "complete_tree": true,
+  "production_changed": [
+    "testpilot/_pytest_generated.py"
+  ],
+  "new_test_path": "tests/test_generated_collection_compatibility.py",
+  "new_test": {
+    "sha256": "011d5c8746d5606d11817a294dd6d699610068982f84076f2824f2321a38f3a3",
+    "git_blob": "f0e1bbbd3aac5848ff478ceabe0019543f9ef518",
+    "bytes": 10935
+  },
+  "selected_current_main_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "base": {
+        "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+        "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+        "bytes": 586
+      },
+      "candidate": {
+        "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+        "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+        "bytes": 586
+      },
+      "unchanged": true
+    },
+    {
+      "path": "pyproject.toml",
+      "base": {
+        "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+        "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+        "bytes": 676
+      },
+      "candidate": {
+        "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+        "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+        "bytes": 676
+      },
+      "unchanged": true
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "base": {
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+        "bytes": 390
+      },
+      "candidate": {
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+        "bytes": 390
+      },
+      "unchanged": true
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "base": {
+        "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+        "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+        "bytes": 5094
+      },
+      "candidate": {
+        "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+        "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+        "bytes": 5094
+      },
+      "unchanged": true
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "base": {
+        "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+        "git_blob": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+        "bytes": 1446
+      },
+      "candidate": {
+        "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+        "bytes": 2943
+      },
+      "unchanged": false
+    },
+    {
+      "path": "testpilot/diff.py",
+      "base": {
+        "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+        "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+        "bytes": 9396
+      },
+      "candidate": {
+        "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+        "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+        "bytes": 9396
+      },
+      "unchanged": true
+    },
+    {
+      "path": "testpilot/loop.py",
+      "base": {
+        "sha256": "54a203ace8816159202e3f2df5bc8ae15b0e08e424fc1447112c9eb0a23fe082",
+        "git_blob": "779149b82d779cb6f21ef26f58ef9b816f3a42f6",
+        "bytes": 23639
+      },
+      "candidate": {
+        "sha256": "54a203ace8816159202e3f2df5bc8ae15b0e08e424fc1447112c9eb0a23fe082",
+        "git_blob": "779149b82d779cb6f21ef26f58ef9b816f3a42f6",
+        "bytes": 23639
+      },
+      "unchanged": true
+    },
+    {
+      "path": "testpilot/model.py",
+      "base": {
+        "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+        "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+        "bytes": 9730
+      },
+      "candidate": {
+        "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+        "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+        "bytes": 9730
+      },
+      "unchanged": true
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "base": {
+        "sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+        "git_blob": "ca0360375bdcaace0e6014b4767acad546380242",
+        "bytes": 11537
+      },
+      "candidate": {
+        "sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+        "git_blob": "ca0360375bdcaace0e6014b4767acad546380242",
+        "bytes": 11537
+      },
+      "unchanged": true
+    },
+    {
+      "path": "tests/conftest.py",
+      "base": {
+        "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+        "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+        "bytes": 144
+      },
+      "candidate": {
+        "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+        "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+        "bytes": 144
+      },
+      "unchanged": true
+    }
+  ],
+  "unchanged_helper_definitions": [
+    "main",
+    "pytest_collection_modifyitems"
+  ],
+  "no_schema_change": "sandbox.py, generated JUnit properties, absent-versus-empty report behavior and loop/caller/report files remain exact current-main blobs.",
+  "helper_patch": {
+    "sha256": "86af7e8d88afe73fb986975f8d5ea4e9be64f6e6cddc24af096af55d9cc21692",
+    "git_blob": "368c0b9bf0ba9202c515af07d40fd8b9fdf0fc49",
+    "bytes": 2468
+  },
+  "preserved_unrelated_main_leaves": 431,
+  "readiness": "Accepted: both native pytest-version controls and independent actual current-main CLI repair/count/JUnit receiving passed. Full hosted CI remains the publication gate.",
+  "peer_cli": {
+    "main": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+    "receipt_sha256": "879068102debf4b8c82d48fa055bd51911670aaeccde1bca137b3a3701f4908d",
+    "manifest_sha256": "4a9669808593e514841f07be280fb769d6d9d2bd51f80c6a122be8819e28810e",
+    "byte_preserved_files": 28,
+    "actual_current_main_baseline": "Stops after repair1, omits failing existing contract, accepts m.FACTOR=3 patch.",
+    "candidate": "Rejects incomplete repair1, requests repair2, final existing1+generated2 pass with tests_written2 and exact native JUnit source provenance."
+  }
+}

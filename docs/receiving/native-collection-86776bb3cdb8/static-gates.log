@@ -1,0 +1,24 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_generated_collection_compatibility.py:6:1
+   |
+ 4 |   portable controls described by worker e3a41d2b3368 in issue 2 comment 6058800140.
+ 5 |   """
+ 6 | / from __future__ import annotations
+ 7 | |
+ 8 | | import json
+ 9 | | import sys
+10 | | from pathlib import Path
+11 | |
+12 | | import pytest
+13 | |
+14 | | from testpilot.sandbox import run_pytest
+   | |________________________________________^
+help: Organize imports
+   |
+12 | import pytest
+   -
+13 | from testpilot.sandbox import run_pytest
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

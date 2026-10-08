@@ -1,0 +1,27 @@
+[
+  {
+    "path": "testpilot/__init__.py",
+    "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+    "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+  },
+  {
+    "path": "testpilot/__main__.py",
+    "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+    "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5"
+  },
+  {
+    "path": "testpilot/diff.py",
+    "git_blob": "d7d4c194c3730e4c7a8093b485491a7873afe814",
+    "sha256": "d5fce39356d8fba48557907184b18d55796aa22dce71072cb4b3ec89423d037c"
+  },
+  {
+    "path": "testpilot/loop.py",
+    "git_blob": "f4e9671b32cabda7e66ef79eb4a3a94c58d2f824",
+    "sha256": "99225601277132368efc52ba6cdc9df3329f144d50f3d322c372ca77258195c7"
+  },
+  {
+    "path": "testpilot/model.py",
+    "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+    "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc"
+  }
+]

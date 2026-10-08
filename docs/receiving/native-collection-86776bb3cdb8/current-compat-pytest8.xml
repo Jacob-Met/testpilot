@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="15" time="3.160" timestamp="2026-10-08T21:24:17.036323" hostname="05aaedaf3e50"><testcase classname="tests.test_generated_collection_compatibility" name="test_generated_addition_keeps_failing_baseline[tests]" time="0.203"><failure message="AssertionError: .                                                                        [100%]&#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-hzuy69at/junit.xml -&#10;  1 passed in 0.01s&#10;  &#10;assert (1, 0, 0) == (1, 1, 0)&#10;  &#10;  At index 1 diff: 0 != 1&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_generated_addition_keeps_0')
+root = 'tests'
+
+    @pytest.mark.parametrize("root", ["tests", "checks"])
+    def test_generated_addition_keeps_failing_baseline(tmp_path, root):
+        repo = project(tmp_path, root=root, files={
+            f"{root}/test_existing.py": (
+                "def test_existing():\n"
+                "    assert False, 'EXISTING_BASELINE_MUST_FAIL'\n"
+            ),
+        })
+        result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"})
+&gt;       assert (result.passed, result.failed, result.errors) == (1, 1, 0), result.output
+E       AssertionError: .                                                                        [100%]
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-hzuy69at/junit.xml -
+E         1 passed in 0.01s
+E         
+E       assert (1, 0, 0) == (1, 1, 0)
+E         
+E         At index 1 diff: 0 != 1
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:58: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_generated_addition_keeps_failing_baseline[checks]" time="0.169" /><testcase classname="tests.test_generated_collection_compatibility" name="test_function_and_class_hooks_run_once_per_identity[tests-False]" time="0.162"><failure message="AssertionError: ........&#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-6zlqzn1g/junit.xml -&#10;  8 passed in 0.01s&#10;  &#10;assert (8, 0, 0) == (9, 0, 0)&#10;  &#10;  At index 0 diff: 8 != 9&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_function_and_class_hooks_0')
+root = 'tests', package = False
+
+    @pytest.mark.parametrize("root,package", [("tests", False), ("tests", True), ("checks", False)])
+    def test_function_and_class_hooks_run_once_per_identity(tmp_path, root, package):
+        observer = '''from collections import Counter
+    calls = Counter()
+    
+    def pytest_generate_tests(metafunc):
+        if 'value' not in metafunc.fixturenames:
+            return
+        identity = metafunc.definition.nodeid
+        calls[identity] += 1
+        assert calls[identity] == 1, ('REPEATED_FUNCTION_HOOK', identity, calls)
+        if metafunc.cls is None:
+            metafunc.parametrize('value', [7, 11])
+    
+    def pytest_collection_modifyitems(items):
+        assert len(calls) == 4 and set(calls.values()) == {1}, calls
+        assert {key.rsplit('::', 1)[-1] for key in calls} == {
+            'test_first', 'test_second', 'test_method_first', 'test_method_second'
+        }, calls
+    '''
+        functions = '''def test_first(value):
+        assert value in (7, 11)
+    
+    def test_second(value):
+        assert value in (7, 11)
+    '''
+        methods = '''from collections import Counter
+    class_calls = Counter()
+    
+    class TestGenerated:
+        @staticmethod
+        def pytest_generate_tests(metafunc):
+            identity = metafunc.definition.nodeid
+            class_calls[identity] += 1
+            assert class_calls[identity] == 1, ('REPEATED_CLASS_HOOK', identity, class_calls)
+            metafunc.parametrize('value', [7, 11])
+    
+        def test_method_first(self, value):
+            assert value in (7, 11)
+    
+        def test_method_second(self, value):
+            assert value in (7, 11)
+    '''
+        repo = project(tmp_path, root=root, files={"conftest.py": observer})
+        if package:
+            (repo / "tests/__init__.py").write_text("", encoding="utf-8")
+        generated = {"tests/test_generated_functions.py": functions,
+                     "tests/test_generated_methods.py": methods}
+        result = run(repo, generated, args=("-s",))
+&gt;       assert (result.passed, result.failed, result.errors) == (9, 0, 0), result.output
+E       AssertionError: ........
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-6zlqzn1g/junit.xml -
+E         8 passed in 0.01s
+E         
+E       assert (8, 0, 0) == (9, 0, 0)
+E         
+E         At index 0 diff: 8 != 9
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:115: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_function_and_class_hooks_run_once_per_identity[tests-True]" time="0.177"><failure message="AssertionError: ........&#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-2419jikl/junit.xml -&#10;  8 passed in 0.01s&#10;  &#10;assert (8, 0, 0) == (9, 0, 0)&#10;  &#10;  At index 0 diff: 8 != 9&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_function_and_class_hooks_1')
+root = 'tests', package = True
+
+    @pytest.mark.parametrize("root,package", [("tests", False), ("tests", True), ("checks", False)])
+    def test_function_and_class_hooks_run_once_per_identity(tmp_path, root, package):
+        observer = '''from collections import Counter
+    calls = Counter()
+    
+    def pytest_generate_tests(metafunc):
+        if 'value' not in metafunc.fixturenames:
+            return
+        identity = metafunc.definition.nodeid
+        calls[identity] += 1
+        assert calls[identity] == 1, ('REPEATED_FUNCTION_HOOK', identity, calls)
+        if metafunc.cls is None:
+            metafunc.parametrize('value', [7, 11])
+    
+    def pytest_collection_modifyitems(items):
+        assert len(calls) == 4 and set(calls.values()) == {1}, calls
+        assert {key.rsplit('::', 1)[-1] for key in calls} == {
+            'test_first', 'test_second', 'test_method_first', 'test_method_second'
+        }, calls
+    '''
+        functions = '''def test_first(value):
+        assert value in (7, 11)
+    
+    def test_second(value):
+        assert value in (7, 11)
+    '''
+        methods = '''from collections import Counter
+    class_calls = Counter()
+    
+    class TestGenerated:
+        @staticmethod
+        def pytest_generate_tests(metafunc):
+            identity = metafunc.definition.nodeid
+            class_calls[identity] += 1
+            assert class_calls[identity] == 1, ('REPEATED_CLASS_HOOK', identity, class_calls)
+            metafunc.parametrize('value', [7, 11])
+    
+        def test_method_first(self, value):
+            assert value in (7, 11)
+    
+        def test_method_second(self, value):
+            assert value in (7, 11)
+    '''
+        repo = project(tmp_path, root=root, files={"conftest.py": observer})
+        if package:
+            (repo / "tests/__init__.py").write_text("", encoding="utf-8")
+        generated = {"tests/test_generated_functions.py": functions,
+                     "tests/test_generated_methods.py": methods}
+        result = run(repo, generated, args=("-s",))
+&gt;       assert (result.passed, result.failed, result.errors) == (9, 0, 0), result.output
+E       AssertionError: ........
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-2419jikl/junit.xml -
+E         8 passed in 0.01s
+E         
+E       assert (8, 0, 0) == (9, 0, 0)
+E         
+E         At index 0 diff: 8 != 9
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:115: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_function_and_class_hooks_run_once_per_identity[checks-False]" time="0.214" /><testcase classname="tests.test_generated_collection_compatibility" name="test_custom_generated_names_keep_native_exclusions" time="0.196"><failure message="AssertionError: .                                                                        [100%]&#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-c2mstd9e/junit.xml -&#10;  1 passed in 0.01s&#10;  &#10;assert (1, 0, 0) == (2, 0, 0)&#10;  &#10;  At index 0 diff: 1 != 2&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_custom_generated_names_ke0')
+
+    def test_custom_generated_names_keep_native_exclusions(tmp_path):
+        repo = project(tmp_path, config="python_files = verify_*.py\nnorecursedirs = discarded generated_zone\n", files={
+            "tests/verify_existing.py": "def test_existing():\n    assert True\n",
+            "tests/test_existing.py": "raise AssertionError('NONMATCHING_BASELINE')\n",
+            "tests/verify_ignored.py": "raise AssertionError('IGNORED_BASELINE')\n",
+            "tests/discarded/verify_hidden.py": "raise AssertionError('IGNORED_DIRECTORY')\n",
+            "tests/generated_zone/verify_unwanted.py": "raise AssertionError('IGNORED_SIBLING')\n",
+            "conftest.py": (
+                "collect_ignore = ['tests/verify_ignored.py', 'tests/generated_zone/verify_unwanted.py']\n"
+            ),
+        })
+        generated = {"tests/generated_zone/emitted_cases.py": "def test_generated():\n    assert True\n"}
+        result = run(repo, generated)
+&gt;       assert (result.passed, result.failed, result.errors) == (2, 0, 0), result.output
+E       AssertionError: .                                                                        [100%]
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-c2mstd9e/junit.xml -
+E         1 passed in 0.01s
+E         
+E       assert (1, 0, 0) == (2, 0, 0)
+E         
+E         At index 0 diff: 1 != 2
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:134: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_explicit_existing_selector_is_not_broadened" time="0.227" /><testcase classname="tests.test_generated_collection_compatibility" name="test_explicit_generated_selector_is_not_broadened" time="0.204" /><testcase classname="tests.test_generated_collection_compatibility" name="test_native_selection_cannot_certify_unexecuted_generation[keyword]" time="0.184"><failure message="AssertionError: &#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-_vps7v0z/junit.xml -&#10;  1 deselected in 0.00s&#10;  &#10;assert (0, 0, 0) == (1, 0, 0)&#10;  &#10;  At index 0 diff: 0 != 1&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_native_selection_cannot_c0')
+selection = 'keyword'
+
+    @pytest.mark.parametrize("selection", ["keyword", "deselect", "hook"])
+    def test_native_selection_cannot_certify_unexecuted_generation(tmp_path, selection):
+        files = {}
+        args = {"keyword": ("-k", "existing"),
+                "deselect": ("--deselect=tests/test_generated.py",), "hook": ()}[selection]
+        if selection == "hook":
+            files["conftest.py"] = '''def pytest_collection_modifyitems(config, items):
+        excluded = [item for item in items if item.path.name == 'test_generated.py']
+        items[:] = [item for item in items if item not in excluded]
+        config.hook.pytest_deselected(items=excluded)
+    '''
+        repo = project(tmp_path, files=files)
+        result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"}, args=args)
+&gt;       assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+E       AssertionError: 
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-_vps7v0z/junit.xml -
+E         1 deselected in 0.00s
+E         
+E       assert (0, 0, 0) == (1, 0, 0)
+E         
+E         At index 0 diff: 0 != 1
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:177: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_native_selection_cannot_certify_unexecuted_generation[deselect]" time="0.196"><failure message="AssertionError: &#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-ll8eb1do/junit.xml -&#10;  1 deselected in 0.00s&#10;  &#10;assert (0, 0, 0) == (1, 0, 0)&#10;  &#10;  At index 0 diff: 0 != 1&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_native_selection_cannot_c1')
+selection = 'deselect'
+
+    @pytest.mark.parametrize("selection", ["keyword", "deselect", "hook"])
+    def test_native_selection_cannot_certify_unexecuted_generation(tmp_path, selection):
+        files = {}
+        args = {"keyword": ("-k", "existing"),
+                "deselect": ("--deselect=tests/test_generated.py",), "hook": ()}[selection]
+        if selection == "hook":
+            files["conftest.py"] = '''def pytest_collection_modifyitems(config, items):
+        excluded = [item for item in items if item.path.name == 'test_generated.py']
+        items[:] = [item for item in items if item not in excluded]
+        config.hook.pytest_deselected(items=excluded)
+    '''
+        repo = project(tmp_path, files=files)
+        result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"}, args=args)
+&gt;       assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+E       AssertionError: 
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-ll8eb1do/junit.xml -
+E         1 deselected in 0.00s
+E         
+E       assert (0, 0, 0) == (1, 0, 0)
+E         
+E         At index 0 diff: 0 != 1
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:177: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_native_selection_cannot_certify_unexecuted_generation[hook]" time="0.196"><failure message="AssertionError: &#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-ffw21k61/junit.xml -&#10;  1 deselected in 0.00s&#10;  &#10;assert (0, 0, 0) == (1, 0, 0)&#10;  &#10;  At index 0 diff: 0 != 1&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_native_selection_cannot_c2')
+selection = 'hook'
+
+    @pytest.mark.parametrize("selection", ["keyword", "deselect", "hook"])
+    def test_native_selection_cannot_certify_unexecuted_generation(tmp_path, selection):
+        files = {}
+        args = {"keyword": ("-k", "existing"),
+                "deselect": ("--deselect=tests/test_generated.py",), "hook": ()}[selection]
+        if selection == "hook":
+            files["conftest.py"] = '''def pytest_collection_modifyitems(config, items):
+        excluded = [item for item in items if item.path.name == 'test_generated.py']
+        items[:] = [item for item in items if item not in excluded]
+        config.hook.pytest_deselected(items=excluded)
+    '''
+        repo = project(tmp_path, files=files)
+        result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"}, args=args)
+&gt;       assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+E       AssertionError: 
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-ffw21k61/junit.xml -
+E         1 deselected in 0.00s
+E         
+E       assert (0, 0, 0) == (1, 0, 0)
+E         
+E         At index 0 diff: 0 != 1
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:177: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_same_nodeid_doctest_and_python_keep_both_directions[42-0-tests]" time="0.219"><failure message="AssertionError: F.&#10;  =================================== FAILURES ===================================&#10;  ________________________________ test_generated ________________________________&#10;  &#10;      def test_generated():&#10;  &gt;       assert 6 * 7 == 0&#10;  E       assert (6 * 7) == 0&#10;  &#10;  tests/test_generated.py:7: AssertionError&#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-13m1_nsq/junit.xml -&#10;  =========================== short test summary info ============================&#10;  FAILED tests/test_generated.py::test_generated - assert (6 * 7) == 0&#10;  1 failed, 1 passed in 0.03s&#10;  &#10;assert (1, 1, 0) == (2, 1, 0)&#10;  &#10;  At index 0 diff: 1 != 2&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_same_nodeid_doctest_and_p0')
+doctest_expected = 42, python_expected = 0, root = 'tests'
+
+    @pytest.mark.parametrize("doctest_expected,python_expected,root", [(42, 0, "tests"), (0, 42, "tests"), (42, 42, "checks")])
+    def test_same_nodeid_doctest_and_python_keep_both_directions(tmp_path, doctest_expected, python_expected, root):
+        observer = '''def pytest_collection_modifyitems(items):
+        generated = [item for item in items if item.path.name == 'test_generated.py']
+        assert len(generated) == 2
+        assert len({item.nodeid for item in generated}) == 1
+        assert {type(item).__name__ for item in generated} == {'DoctestItem', 'Function'}
+    '''
+        repo = project(tmp_path, root=root, files={"conftest.py": observer})
+        generated = {"tests/test_generated.py": (
+            f'"""\n&gt;&gt;&gt; 6 * 7\n{doctest_expected}\n"""\n\n'
+            f"def test_generated():\n    assert 6 * 7 == {python_expected}\n"
+        )}
+        result = run(repo, generated, args=("--doctest-modules",))
+        failed = int(doctest_expected != 42) + int(python_expected != 42)
+&gt;       assert (result.passed, result.failed, result.errors) == (3 - failed, failed, 0), result.output
+E       AssertionError: F.
+E         =================================== FAILURES ===================================
+E         ________________________________ test_generated ________________________________
+E         
+E             def test_generated():
+E         &gt;       assert 6 * 7 == 0
+E         E       assert (6 * 7) == 0
+E         
+E         tests/test_generated.py:7: AssertionError
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-13m1_nsq/junit.xml -
+E         =========================== short test summary info ============================
+E         FAILED tests/test_generated.py::test_generated - assert (6 * 7) == 0
+E         1 failed, 1 passed in 0.03s
+E         
+E       assert (1, 1, 0) == (2, 1, 0)
+E         
+E         At index 0 diff: 1 != 2
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:197: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_same_nodeid_doctest_and_python_keep_both_directions[0-42-tests]" time="0.234"><failure message="AssertionError: .F&#10;  =================================== FAILURES ===================================&#10;  ___________________________ [doctest] test_generated ___________________________&#10;  001 &#10;  002 &gt;&gt;&gt; 6 * 7&#10;  Expected:&#10;      0&#10;  Got:&#10;      42&#10;  &#10;  /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-1l89c9ve/repo/tests/test_generated.py:2: DocTestFailure&#10;  - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-1l89c9ve/junit.xml -&#10;  =========================== short test summary info ============================&#10;  FAILED tests/test_generated.py::test_generated&#10;  1 failed, 1 passed in 0.03s&#10;  &#10;assert (1, 1, 0) == (2, 1, 0)&#10;  &#10;  At index 0 diff: 1 != 2&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest8/test_same_nodeid_doctest_and_p1')
+doctest_expected = 0, python_expected = 42, root = 'tests'
+
+    @pytest.mark.parametrize("doctest_expected,python_expected,root", [(42, 0, "tests"), (0, 42, "tests"), (42, 42, "checks")])
+    def test_same_nodeid_doctest_and_python_keep_both_directions(tmp_path, doctest_expected, python_expected, root):
+        observer = '''def pytest_collection_modifyitems(items):
+        generated = [item for item in items if item.path.name == 'test_generated.py']
+        assert len(generated) == 2
+        assert len({item.nodeid for item in generated}) == 1
+        assert {type(item).__name__ for item in generated} == {'DoctestItem', 'Function'}
+    '''
+        repo = project(tmp_path, root=root, files={"conftest.py": observer})
+        generated = {"tests/test_generated.py": (
+            f'"""\n&gt;&gt;&gt; 6 * 7\n{doctest_expected}\n"""\n\n'
+            f"def test_generated():\n    assert 6 * 7 == {python_expected}\n"
+        )}
+        result = run(repo, generated, args=("--doctest-modules",))
+        failed = int(doctest_expected != 42) + int(python_expected != 42)
+&gt;       assert (result.passed, result.failed, result.errors) == (3 - failed, failed, 0), result.output
+E       AssertionError: .F
+E         =================================== FAILURES ===================================
+E         ___________________________ [doctest] test_generated ___________________________
+E         001 
+E         002 &gt;&gt;&gt; 6 * 7
+E         Expected:
+E             0
+E         Got:
+E             42
+E         
+E         /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-1l89c9ve/repo/tests/test_generated.py:2: DocTestFailure
+E         - generated xml file: /dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/testpilot-1l89c9ve/junit.xml -
+E         =========================== short test summary info ============================
+E         FAILED tests/test_generated.py::test_generated
+E         1 failed, 1 passed in 0.03s
+E         
+E       assert (1, 1, 0) == (2, 1, 0)
+E         
+E         At index 0 diff: 1 != 2
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:197: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_same_nodeid_doctest_and_python_keep_both_directions[42-42-checks]" time="0.248" /><testcase classname="tests.test_generated_collection_compatibility" name="test_valid_empty_junit_stays_distinct_from_absent_report" time="0.223" /></testsuite></testsuites>

@@ -1,0 +1,227 @@
+"""Independent real CLI repair/count/JUnit boundary on the supported pytest floor.
+
+The native scripted backend produces one wrong generated assertion, then a
+repair that passes its own tests while breaking an existing suite contract.
+Only a collector that retains the configured sibling can request the second,
+correct repair. The project observer merely archives pytest's completed XML.
+"""
+
+from __future__ import annotations
+
+import argparse
+import ast
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import time
+import xml.etree.ElementTree as ET
+
+
+def sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def blob(data: bytes) -> str:
+    return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
+
+
+def methods(path: Path) -> dict[str, str]:
+    source = path.read_text()
+    module = ast.parse(source)
+    return {node.name: ast.get_source_segment(source, node)
+            for node in ast.walk(module) if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))}
+
+
+def source_manifest(root: Path) -> list[dict]:
+    return [{'path': str(path.relative_to(root)), 'sha256': sha(path.read_bytes()), 'git_blob': blob(path.read_bytes())}
+            for path in sorted((root / 'testpilot').glob('*.py'))]
+
+
+def xml_cases(path: Path) -> list[dict]:
+    parsed = ET.parse(path)
+    cases = []
+    for case in parsed.getroot().iter('testcase'):
+        properties = {p.get('name'): p.get('value') for p in case.findall('./properties/property')}
+        outcome = 'passed'
+        for child, label in [('failure', 'failed'), ('error', 'error'), ('skipped', 'skipped')]:
+            if case.find(child) is not None:
+                outcome = label
+                break
+        cases.append({'classname': case.get('classname'), 'name': case.get('name'), 'outcome': outcome, 'properties': properties})
+    return cases
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--main', type=Path, required=True)
+    parser.add_argument('--candidate', type=Path, required=True)
+    parser.add_argument('--python', type=Path, required=True)
+    parser.add_argument('--output', type=Path, required=True)
+    args = parser.parse_args()
+    root = args.output.resolve()
+    root.mkdir(parents=True)
+    primary_path = Path(__file__).with_name('primary-source.json')
+    primary = json.loads(primary_path.read_text())
+    main_source, candidate = args.main.resolve(), args.candidate.resolve()
+    helper = 'testpilot/_pytest_generated.py'
+    before = {'main': source_manifest(main_source), 'candidate': source_manifest(candidate)}
+    runtime_paths = sorted(p['path'] for p in primary['runtime_and_config'] if p['path'].startswith('testpilot/'))
+    assert len(runtime_paths) == 7
+    assert [p['path'] for p in before['main']] == runtime_paths
+    for item in primary['runtime_and_config']:
+        rel = item['path']
+        assert blob((main_source / rel).read_bytes()) == item['sha'], rel
+        if rel == helper:
+            assert sha((candidate / rel).read_bytes()) == primary['candidate_helper_sha256']
+        else:
+            assert (candidate / rel).read_bytes() == (main_source / rel).read_bytes(), rel
+    original_methods, fixed_methods = methods(main_source / helper), methods(candidate / helper)
+    for name in ['pytest_collection_modifyitems', 'main']:
+        assert original_methods[name] == fixed_methods[name], name
+    assert methods(main_source / 'testpilot/sandbox.py')['run_pytest'] == methods(candidate / 'testpilot/sandbox.py')['run_pytest']
+
+    project = root / 'project'
+    tests = project / 'tests'
+    tests.mkdir(parents=True)
+    (project / 'm.py').write_text('FACTOR = 2\n\ndef double(value):\n    return value * FACTOR\n')
+    (project / 'pytest.ini').write_text('[pytest]\ntestpaths = tests\njunit_suite_name = native_cli_collection_receiving\n')
+    (tests / 'test_existing.py').write_text(
+        'import m\n\ndef test_existing_contract(native_argument):\n    assert m.double(native_argument) == 6\n')
+    (project / 'conftest.py').write_text('''import os
+from pathlib import Path
+import pytest
+
+@pytest.fixture
+def native_argument(request):
+    request.node.user_properties.append(("receiver.native_fixture", "active"))
+    return 3
+
+def pytest_unconfigure(config):
+    # Read the completed native XML. Do not alter collection or any result.
+    xml = Path(config.option.xmlpath)
+    if not xml.is_file():
+        return
+    generated = Path(config.rootpath) / "tests/test_generated.py"
+    if not generated.exists():
+        stage = "00-baseline"
+    else:
+        body = generated.read_text()
+        if "m.FACTOR = 3" in body:
+            stage = "02-generated-only-repair"
+        elif "(2, 5)" in body:
+            stage = "01-generated-failure"
+        else:
+            stage = "03-correct-repair"
+    destination = Path(os.environ["RECEIVING_JUNIT_DIR"]) / (stage + ".xml")
+    assert not destination.exists(), destination
+    destination.write_bytes(xml.read_bytes())
+''')
+    diff = root / 'change.diff'
+    diff.write_text('--- /dev/null\n+++ b/m.py\n@@ -0,0 +1,4 @@\n+FACTOR = 2\n+\n+def double(value):\n+    return value * FACTOR\n')
+    scripts = root / 'script'
+    scripts.mkdir()
+    (scripts / '01-plan.md').write_text('Check two ordinary double inputs while preserving the existing suite contract.\n')
+    fence = chr(96) * 3
+
+    def response(values: str, mutation: str = '') -> str:
+        return (f'{fence}python path=tests/test_generated.py\n'
+                f'import pytest\nimport m\n{mutation}\n'
+                f'@pytest.mark.parametrize("value, expected", {values})\n'
+                'def test_generated(value, expected, native_argument):\n'
+                '    assert m.double(value) == expected\n'
+                f'{fence}\n')
+
+    (scripts / '02-generated.md').write_text(response('[(2, 5), (3, 6)]'))
+    (scripts / '03-incomplete-repair.md').write_text(response('[(2, 6), (3, 9)]', 'm.FACTOR = 3\n'))
+    (scripts / '04-correct-repair.md').write_text(response('[(2, 4), (3, 6)]'))
+    input_hashes = {str(p.relative_to(project)): sha(p.read_bytes()) for p in sorted(project.rglob('*')) if p.is_file()}
+    observations = []
+    for label, code in [('current-main', main_source), ('candidate', candidate)]:
+        output = root / label
+        output.mkdir()
+        junit = output / 'junit'
+        junit.mkdir()
+        temp = output / 'tmp'
+        temp.mkdir()
+        env = dict(os.environ, PYTHONPATH=str(code), PYTHONDONTWRITEBYTECODE='1',
+                   TMPDIR=str(temp), RECEIVING_JUNIT_DIR=str(junit))
+        runtime = subprocess.run(
+            [str(args.python), '-B', '-c',
+             'import sys,pytest,coverage,testpilot.sandbox,json; print(json.dumps({"python":sys.version,"executable":sys.executable,"pytest":pytest.__version__,"coverage":coverage.__version__,"sandbox":testpilot.sandbox.__file__}))'],
+            cwd=output, env=env, check=True, capture_output=True, text=True)
+        loaded = json.loads(runtime.stdout)
+        assert loaded['pytest'] == '8.0.0'
+        assert Path(loaded['sandbox']).resolve() == code / 'testpilot/sandbox.py'
+        command = [str(args.python), '-B', '-m', 'testpilot', 'run', '--repo', str(project),
+                   '--diff', str(diff), '--backend', 'scripted', '--script', str(scripts),
+                   '--rounds', '2', '--timeout', '15', '--python', str(args.python), '--out', str(output / 'reported')]
+        start = time.monotonic()
+        process = subprocess.run(command, cwd=output, env=env, capture_output=True, text=True, timeout=90)
+        elapsed = time.monotonic() - start
+        (output / 'stdout.log').write_text(process.stdout)
+        (output / 'stderr.log').write_text(process.stderr)
+        assert process.returncode == 0, (label, process.stdout, process.stderr)
+        report = json.loads((output / 'reported/report.json').read_text())
+        assert report['status'] == 'passed'
+        assert report['tests_written'] == 2
+        assert report['final']['junit_available']
+        assert report['final']['generated'] == {'collected': 2, 'passed': 2, 'failed': 0, 'error': 0, 'skipped': 0}
+        assert report['changed_functions'][0]['module'] == 'm'
+        assert report['rounds'][0]['result']['generated']['failed'] == 1
+        assert not (tests / 'test_generated.py').exists()
+        archived = {p.stem: xml_cases(p) for p in sorted(junit.glob('*.xml'))}
+        assert len(archived['00-baseline']) == 1
+        for stage, cases in archived.items():
+            for case in cases:
+                assert case['properties']['receiver.native_fixture'] == 'active'
+            generated = [c for c in cases if c['properties'].get('testpilot.generated_file') == 'tests/test_generated.py']
+            assert len(generated) == (0 if stage == '00-baseline' else 2)
+        if label == 'current-main':
+            assert report['repair_rounds_used'] == 1 and len(report['rounds']) == 2
+            assert report['final']['passed'] == 2
+            assert 'm.FACTOR = 3' in report['patch']
+            assert len(archived) == 3
+            assert all(len(cases) == 2 for stage, cases in archived.items() if stage != '00-baseline')
+        else:
+            assert report['repair_rounds_used'] == 2 and len(report['rounds']) == 3
+            assert report['final']['passed'] == 3
+            assert 'm.FACTOR = 3' not in report['patch']
+            assert len(archived) == 4
+            incomplete = report['rounds'][1]['result']
+            assert incomplete['failed'] == 1 and incomplete['generated']['passed'] == 2
+            assert not incomplete['ok']
+            assert any(c['outcome'] == 'failed' and c['generated_file'] is None for c in incomplete['cases'])
+            assert all(len(cases) == 3 for stage, cases in archived.items() if stage != '00-baseline')
+            assert next(c for c in archived['02-generated-only-repair'] if 'testpilot.generated_file' not in c['properties'])['outcome'] == 'failed'
+            assert all(c['outcome'] == 'passed' for c in archived['03-correct-repair'])
+        observations.append({'label': label, 'runtime': loaded, 'command': command, 'returncode': process.returncode,
+                             'duration_s': round(elapsed, 3), 'status': report['status'], 'repair_rounds': report['repair_rounds_used'],
+                             'tests_written': report['tests_written'], 'final_passed': report['final']['passed'],
+                             'generated_counts': report['final']['generated'], 'junit_cases': archived,
+                             'report_sha256': sha((output / 'reported/report.json').read_bytes()),
+                             'stdout_sha256': sha(process.stdout.encode()), 'stderr_sha256': sha(process.stderr.encode())})
+
+    after = {'main': source_manifest(main_source), 'candidate': source_manifest(candidate)}
+    assert before == after
+    assert input_hashes == {str(p.relative_to(project)): sha(p.read_bytes()) for p in sorted(project.rglob('*')) if p.is_file()}
+    result = {'passed': True, 'actual_main': primary['main'], 'actual_main_tree': primary['tree'],
+              'candidate_helper_sha256': primary['candidate_helper_sha256'],
+              'primary_runtime_and_config_files_verified': 10, 'run_pytest_and_provenance_parser_unchanged': True,
+              'generated_provenance_hook_and_runner_main_byte_exact': True,
+              'sources_before': before, 'sources_after_unchanged': True, 'original_project_unchanged': True,
+              'native_scripted_backend': True, 'collection_hooks_or_sandbox_results_mocked': False,
+              'junit_observer': 'Project pytest_unconfigure copies completed native XML; no collection/result mutation.',
+              'collection_matrix_repeated': False, 'observations': observations,
+              'source_edits': False, 'remote_writes': False}
+    (root / 'receipt.json').write_text(json.dumps(result, indent=2) + '\n')
+    print(json.dumps({'passed': True, 'main': primary['main'], 'helper': primary['candidate_helper_sha256'],
+                      'current_main': {'repairs': observations[0]['repair_rounds'], 'final_passed': observations[0]['final_passed'], 'omitted_existing_contract': True},
+                      'candidate': {'repairs': observations[1]['repair_rounds'], 'final_passed': observations[1]['final_passed'], 'generated_written_and_passed': 2, 'existing_contract_retained': True},
+                      'receipt': str(root / 'receipt.json')}, indent=2))
+
+
+if __name__ == '__main__':
+    main()

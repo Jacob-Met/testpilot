@@ -1,0 +1,69 @@
+"""Isolate configured-baseline omission on the exact adopted collector."""
+from __future__ import annotations
+
+import hashlib
+import importlib.util
+import json
+import os
+import subprocess
+import sys
+import tempfile
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+PYTHONS = {
+    'pytest8': '/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python',
+    'pytest9': '/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python',
+}
+SOURCE = ROOT / 'current/testpilot/sandbox.py'
+spec = importlib.util.spec_from_file_location('diagnostic_current_sandbox', SOURCE)
+sandbox = importlib.util.module_from_spec(spec)
+sys.modules[spec.name] = sandbox
+spec.loader.exec_module(sandbox)
+assert hashlib.sha256(SOURCE.read_bytes()).hexdigest() == '8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434'
+OUT = ROOT / 'selection-diagnostic'
+OUT.mkdir(exist_ok=True)
+tempfile.tempdir = str(OUT)
+os.environ['TMPDIR'] = str(OUT)
+os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
+generated = {'tests/test_generated.py': 'def test_generated():\n    assert True\n'}
+results = []
+for configured in ('tests', 'checks'):
+    project = OUT / ('project-' + configured)
+    (project / configured).mkdir(parents=True, exist_ok=True)
+    (project / 'pytest.ini').write_text('[pytest]\ntestpaths = ' + configured + '\n')
+    (project / configured / 'test_existing.py').write_text("def test_existing():\n    assert False, 'RECEIVING_EXISTING_FAILURE'\n")
+    for label, python in PYTHONS.items():
+        result = sandbox.run_pytest(project, generated, timeout=10, coverage=False, python=python)
+        results.append({'mode': 'adopted_collector', 'runtime': label, 'configured': configured,
+                        'result': result.to_dict(), 'full_output': result.output})
+        print(json.dumps({'mode': 'adopted_collector', 'runtime': label, 'configured': configured,
+                          'ok': result.ok, 'passed': result.passed, 'failed': result.failed,
+                          'baseline_failure_observed': 'RECEIVING_EXISTING_FAILURE' in result.output}), flush=True)
+    # Standard pytest receives the same on-disk tests, without TestPilot's
+    # configure hook. Each native command retains its complete raw output.
+    target = project / 'tests/test_generated.py'
+    target.parent.mkdir(exist_ok=True)
+    target.write_text(generated['tests/test_generated.py'])
+    choices = [('default', ()), ('relative_directory_absolute_file', (configured, str(target))),
+               ('absolute_directory_absolute_file', (str(project / configured), str(target)))]
+    if configured == 'tests':
+        choices.append(('absolute_directory_only', (str(project / configured),)))
+    for label, arguments in choices:
+        cmd = [PYTHONS['pytest8'], '-B', '-m', 'pytest', '-q', '-p', 'no:cacheprovider',
+               '--rootdir', str(project), '-o', 'addopts=', *arguments]
+        run = subprocess.run(cmd, cwd=project, env=sandbox.clean_env(project), text=True,
+                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=15)
+        results.append({'mode': 'native_pytest8_' + label, 'configured': configured,
+                        'command': cmd, 'returncode': run.returncode, 'output': run.stdout})
+        print(json.dumps({'mode': 'native_pytest8_' + label, 'configured': configured,
+                          'returncode': run.returncode,
+                          'baseline_failure_observed': 'RECEIVING_EXISTING_FAILURE' in run.stdout}), flush=True)
+receipt = {'observed_at': datetime.now(timezone.utc).isoformat(),
+           'primary': json.loads((ROOT / 'primary-source.json').read_text()),
+           'source_sha256': hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+           'driver_sha256': hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+           'generated': generated, 'results': results,
+           'scope': 'Exact current-source run_pytest plus direct native pytest selection controls on authored failing-baseline inputs; no product edit.'}
+(OUT / 'receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')
