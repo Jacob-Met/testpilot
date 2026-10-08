@@ -44,6 +44,8 @@ def generate(repo, replies, *, repairs=0):
 
 
 def assert_passed(result, *, generated, total):
+    if result.status != "passed":
+        print(result.final["output"] if result.final else result.message)
     assert result.status == "passed", (result.message, result.final)
     assert result.final["returncode"] == 0
     assert result.final["errors"] == result.final["failed"] == result.final["skipped"] == 0
