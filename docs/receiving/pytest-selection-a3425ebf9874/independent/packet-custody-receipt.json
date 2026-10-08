@@ -1,0 +1,42 @@
+{
+  "schema": "hamon.testpilot-root-packet-custody.v1",
+  "sealed_at": "2026-10-08T19:34:17.473954+00:00",
+  "root": "/srv/hamon-estate/receivers/estate-a3425ebf9874-testpilot-pytest-selection-root-review",
+  "original_files": 261,
+  "original_bytes": 629604,
+  "original_bytes_unchanged": true,
+  "members_including_manifest": 266,
+  "member_bytes": 774761,
+  "all_archive_members_read_back_exact": true,
+  "archive": {
+    "path": "independent-native-packet.tar.gz",
+    "bytes": 208524,
+    "sha256": "0bfefc00e5fd79389f6f639aa11623dbab99e4deb55200fc04aa599c6f285e00",
+    "git_blob": "0c7c7f98007721d8bdff7488442fbb788e864450"
+  },
+  "manifest": {
+    "path": "packet-manifest.json",
+    "bytes": 65006,
+    "sha256": "d358d3898854209517ff3cb4f19179543628effa50e39a0cd3c96cd3cc3d5140",
+    "git_blob": "6790efc0917a7cbbdbdc5a7899b9ebabbc7386b9"
+  },
+  "review": {
+    "path": "REVIEW.md",
+    "bytes": 7678,
+    "sha256": "1dc2d76e82d20d981d2c2e1562bc585fdb23fb6a468c62b2a955d5a6b2a28d46",
+    "git_blob": "31e351803c625a26018d589cbebaf9139fe50896"
+  },
+  "verified_original_receipt_pins": {
+    "independent-consumer-controls.py": "0486ef9b38ab4fc04fcfc2edb62b23d6630688baa777f88bd974185b75d275f5",
+    "independent-refused-baseline-coverage.py": "35ebd267f981b2e3872f843caf54b3d71b9cf27983f8c011bfa412388ff87bdc",
+    "before-native-v1/receipt.json": "bee00b2410a4608707aff1c8bca116423cbe416f75ef5d8aa8e42b76584894e9",
+    "candidate-native-v1/receipt.json": "313a8cc7f9259aacbe219d1ebd1b9417b5fb1f5f6cf321fb9d3f1fc62456e44e",
+    "usage-coverage-original-native-v1/receipt.json": "c33396a1f68821e3e4e559d28c32d92c167eb44cd25745d6f2c550d63e5dd35d",
+    "usage-coverage-current-native-v1/receipt.json": "7a6bb89b437e2e0602c78aed04e54f673dc55897ef3f21e2f69d54712aa0c0ee",
+    "usage-coverage-current-command.json": "4a31b9c3bddeb798bab7b292d9e922426877d18c48b958432eeeb4bd7ac7a9b2"
+  },
+  "original_native_groups": 13,
+  "original_native_pytest_sessions": 26,
+  "current_addendum": "PASS; original unchanged control; native c97c0be34521083966b5aafe5560af32c8d80534",
+  "public_integration": "pending separate exact published-head binding and ordinary hosted CI"
+}
