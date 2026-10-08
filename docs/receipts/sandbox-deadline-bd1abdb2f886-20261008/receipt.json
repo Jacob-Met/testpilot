@@ -1,0 +1,97 @@
+{
+  "cohort": "chatgpt-astra-bd1abdb2f886-20261008 / estate_source",
+  "prepared_utc": "2026-10-08T08:53:46.496746+00:00",
+  "base_commit": "feea1889358b570d652f456ce5b63e853ba47d47",
+  "base_tree": "435b9278205d9535883ed0e49c533ed3fdeeb05e",
+  "base_leaves_verified": 90,
+  "runtime_scope": [
+    "testpilot/sandbox.py::_run"
+  ],
+  "python": "3.12.14",
+  "pytest": "9.1.1",
+  "coverage": "7.16.2",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "baseline_new_cases": {
+    "passed": 2,
+    "failed": 4,
+    "skipped": 0
+  },
+  "candidate_complete_suite": {
+    "passed": 91,
+    "failed": 0,
+    "skipped": 0
+  },
+  "independent_reviewer": "chatgpt-astra-bd1abdb2f886-20261008 / root",
+  "independent_result": "continuous-output-receipt.json",
+  "limitations": [
+    "The one-second budget applies to POSIX post-kill output draining, not all wall-clock work.",
+    "Detached helpers are not contained; receivers explicitly clean up their own helpers.",
+    "Windows keeps its prior reader-thread drain path; no Windows execution claim.",
+    "Authored scripted model responses and local native subprocesses; no provider or installed-runtime adoption."
+  ],
+  "files": [
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 9286,
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+    },
+    {
+      "path": "tests/test_sandbox_deadline.py",
+      "bytes": 4248,
+      "sha256": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1",
+      "git_blob": "d8ebce5a81205aad005e45a280aec898e3e89820"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/README.md",
+      "bytes": 5774,
+      "sha256": "1abf68dc3a80af4fbc2a46b2384662e143da540d2bba4da46fba3391e245827d",
+      "git_blob": "188a8be6d6494a2dc1805a57393f8e716706c3dd"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/baseline-focused.log",
+      "bytes": 4457,
+      "sha256": "d11cf5d8f82901dbc74fbfdbdea2e21bc217757fbec865e52f1557aab1117b63",
+      "git_blob": "6a502c641afd12625dad423b7842444ac83edbbd"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/baseline-workflow.json",
+      "bytes": 1639,
+      "sha256": "ed736b272e46e2c37ae2c724d578fa72f253636911a2e92583aeaebbe355c4d9",
+      "git_blob": "d2a1721dd1e3ae89778dc090b9a4ab9886fccde5"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/candidate-full.log",
+      "bytes": 180,
+      "sha256": "c28a3b1cdd2cfc2abfba4a33217508367f9affdc55f34ac2669ff4e88fba2ece",
+      "git_blob": "55c3e59bbc5f0394a4a2207f6482ceeb41ef1fc8"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/candidate-workflow.json",
+      "bytes": 1640,
+      "sha256": "4b6776a277144c6b4f9a6aa77601882d72a6280130827b6650962b765fccd129",
+      "git_blob": "32ca24d695fa8e3a28c6b507da03319dde3ddbe6"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/check_repair_workflow.py",
+      "bytes": 4650,
+      "sha256": "f6429124b5f0feb6aeb42d73496e6edb633862b3a08ba5699fcd171d488c6640",
+      "git_blob": "e5ea49a2051932878a877550256a7a0446e7135e"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/continuous-output-receipt.json",
+      "bytes": 460,
+      "sha256": "714f317f8d0b05a9bb2d69e0188d1082229752ae052419f8005d5dcd86ebdcbd",
+      "git_blob": "518487847dc780cc84c0212d2e37de383d8bab28"
+    },
+    {
+      "path": "docs/receipts/sandbox-deadline-bd1abdb2f886-20261008/continuous_output.py",
+      "bytes": 2734,
+      "sha256": "585873a48f3dcf7b8ef2866f053fc33f1b9b5eb54d5361a8023f269c1f5feac1",
+      "git_blob": "9a3c3ee7e83be745727476891e092bfb643ecbee"
+    }
+  ],
+  "integration_base_commit": "bc095b47f65805079ee4e9ef97971347fcdfbaa5",
+  "integration_base_tree": "b3d6bfa31fb02e774e15027e9a62fcdf84763ef0",
+  "integration_base_leaves_verified": 92
+}

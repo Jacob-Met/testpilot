@@ -1,0 +1,14 @@
+{
+  "source_sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "timeout_s": 0.4,
+  "elapsed_s": 1.4021831899990502,
+  "returned_timeout": true,
+  "parent_diagnostic_retained": true,
+  "streamed_lines": 135,
+  "stream_is_contiguous_without_duplicates": true,
+  "helper_survived_until_owned_fixture_cleanup": true,
+  "output_bytes": 1638,
+  "passed": true
+}
