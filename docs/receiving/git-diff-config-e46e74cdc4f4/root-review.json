@@ -1,0 +1,56 @@
+{
+  "schema": "testpilot.git-diff-config.root-review.v1",
+  "reviewer": "estate-e46e74cdc4f4/root",
+  "decision": "accept for source publication and hosted integration gates",
+  "parent": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "candidate_runtime_sha256": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+  "final_authored_test_sha256": "f31e4b275c06b1064ac6da89e7463e4647197ab9232d6df71a46fd8de162dd45",
+  "reviewed": [
+    "Actual original Git-config and helper discovery receipts",
+    "Complete final authored real-Git CLI test source and original/candidate logs",
+    "Complete independent contract and receiver method, including semantic decoy and direct-Git helper controls",
+    "All independent original and candidate case outcomes and source/config preservation checks",
+    "Complete independent source-review and private fixture-isolation method with its original/corrected outcomes",
+    "Exact product diff and existing transport/target test results"
+  ],
+  "findings": [
+    "The original noprefix case selects the unchanged top-level decoy; it is a demonstrated wrong-source error rather than merely an empty preview.",
+    "The candidate uses fixed raw-source Git arguments while preserving the existing file/stdin and parser code.",
+    "Independent helper-positive controls prove that lack of helper execution is caused by the candidate CLI path, not an inert fixture.",
+    "The real scripted generation run consumes the intended changed function and emits an applicable passing test patch.",
+    "The new authored fixture's inherited Git routing was a genuine test-source issue; the accepted correction is confined to that fixture and independently received.",
+    "No further product edits are needed for the demonstrated acquisition defect."
+  ],
+  "acceptance": {
+    "author_final_original": {
+      "methods": 5,
+      "failures": 8
+    },
+    "author_final_candidate": {
+      "methods": 5,
+      "failures": 0
+    },
+    "independent_original": {
+      "passed": 4,
+      "failed": 8
+    },
+    "independent_candidate": {
+      "passed": 12,
+      "failed": 0
+    },
+    "existing": {
+      "passed": 25,
+      "subtests_passed": 18
+    },
+    "fixture_sentinels": {
+      "original_inverse_cases": 2,
+      "corrected_cases_passed": 2
+    },
+    "static_unowned_parent_leaves_preserved": 1177
+  },
+  "limits": [
+    "Native receiving here uses Python3.14.4/Git2.53.0; hosted workflow execution is recorded separately after publication.",
+    "No parser, loop, sandbox, deployment or installed-service change is part of this source patch.",
+    "Original negative runs and the failed import-only launch remain preserved rather than overwritten."
+  ]
+}

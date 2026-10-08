@@ -1,0 +1,742 @@
+{
+  "schema": 1,
+  "receiver": "chatgpt-e46e74cdc4f4/production",
+  "at": "2026-10-08T17:27:03.173571+00:00",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "git": "git version 2.53.0",
+  "source": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate",
+  "contract_sha256": "b05b09ba301192c11427ecc1a60bde1b1a0f6d5a29bc67b47d72bb7b543f43a7",
+  "receiver_sha256": "70fd681a167f33ed78b90f072eefe1d7608996e2fadd532c4ceeaf4e881812ee",
+  "source_inputs_unchanged": true,
+  "source_inputs": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "testpilot/loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "passed": 12,
+  "failed": 0,
+  "cases": [
+    {
+      "case": "default",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": null,
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/default/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {},
+      "source_config_hashes": {
+        "a/subject.py": "2b77dfb2dbc9d5fe5f91d03fd9803102ce77606a0bd8477ddada291b5296ce0d",
+        "subject.py": "0d861657910f9c8794944aebc86567b5f12a4994f24c0b141725504ce6cf04db",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "1b2a3fc57f1ee9c3f3de8fc7f572f195fc522d65515c63f41095aeb38f282dfc"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "noprefix_decoy",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": null,
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/noprefix_decoy/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {
+        "diff.noprefix": "true"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "522aa2099af3b34cd6c7ca5c629630686373b6d090580130f0965db1813e132d",
+        "subject.py": "41f3466b7ae5479ad54e8651df7e2efdb8768182037e515212b7851f921ece62",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "73e846426ba39ea225312a0c4fcd8551c3dea05adf07f8637ae736505119c9e2"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "mnemonicprefix",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": null,
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/mnemonicprefix/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {
+        "diff.mnemonicprefix": "true"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "05e4fdefe0039df78daa96d1a4ca688e77794a4db0364fce8fa6240841530ed0",
+        "subject.py": "a9441ec028a42050813a258e316318684b7ea24bd6c749f21b77319d90a9039d",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "b15874a101972f92347fab57bc5d4b862856d16c2b5bea13b904699d1af502c5"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "color_always",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": null,
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/color_always/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {
+        "color.ui": "always"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "9d08f229c80f4431687ec812ad0fdd5af817f66848010f50a829ecb87105e3f1",
+        "subject.py": "606dedc265a3a3d910dec4e34abcd1b1bc1506fd097f966483319f45b1a2df55",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "6cd330358e0f2219a7ce4010b3fedcdd8b42ae7802d2aa489c6f8601b396015d"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "prefix_color_combined",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": null,
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/prefix_color_combined/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {
+        "diff.noprefix": "true",
+        "diff.mnemonicprefix": "true",
+        "color.ui": "always"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "10a30a96b74bcf9a603bee70a23b0083046bd28ef72e361d592c5e6093f4f9b0",
+        "subject.py": "a214596e3c1f35ab884e6adc1da08e20c17ff6ff45b9213351a6ed25f4dbb25a",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "7a3b90bb2a79512dd9625d7dae76f56e2a2c87708fd7a22701268cca37f19352"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "external_config",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true,
+        "direct_git_positive_helper_control": true,
+        "direct_git_preserves_source_and_config": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": {
+        "exit": 0,
+        "helper_delta": {
+          "external": 1,
+          "textconv": 0
+        }
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/external_config/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {
+        "diff.external": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/external_config/external.sh"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "3c995c922851c140e32f449b8b7f327340dc75b5e8b8ebf87ce1191ba8615e40",
+        "subject.py": "5c584a9556f94ca1b24b8002357f93bead8909fc45c5141fc15f2b4a0e068b8c",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "f246a99fcda4ae7626489830e608a18e998161f9431d56244cefd9dcb2f0ac8e"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "external_environment",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true,
+        "direct_git_positive_helper_control": true,
+        "direct_git_preserves_source_and_config": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": {
+        "exit": 0,
+        "helper_delta": {
+          "external": 1,
+          "textconv": 0
+        }
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/external_environment/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {},
+      "source_config_hashes": {
+        "a/subject.py": "83218fa97d8e64d9ff9991bcc66913cb3477284c21462a650570d6b70877f997",
+        "subject.py": "5bbd0a95eba193fd423e1fa2ea46091a337a52d17502aee312e6b379fcd3226d",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "1b2a3fc57f1ee9c3f3de8fc7f572f195fc522d65515c63f41095aeb38f282dfc"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "textconv",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true,
+        "direct_git_positive_helper_control": true,
+        "direct_git_preserves_source_and_config": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": {
+        "exit": 0,
+        "helper_delta": {
+          "external": 0,
+          "textconv": 2
+        }
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/textconv/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {
+        "diff.display.textconv": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/textconv/textconv.sh"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "6cc4e31f1730f0f6a62f7d59ffd6bb781229c674b6bf4e662c5a7f21632ec7ec",
+        "subject.py": "d37d9b2e910317b8528d54b89970f2e81742d9ef3dcdd3f680e25d16ecdf4565",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "99f67ee8ad6b599c4bec3744a8d606e76cbf58542237606c1bb3aff58a7a9070"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "all_helpers_and_styling",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true,
+        "direct_git_positive_helper_control": true,
+        "direct_git_preserves_source_and_config": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": {
+        "exit": 0,
+        "helper_delta": {
+          "external": 1,
+          "textconv": 0
+        }
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/all_helpers_and_styling/repo",
+        "--json",
+        "--git-base",
+        "HEAD"
+      ],
+      "local_settings": {
+        "diff.noprefix": "true",
+        "diff.mnemonicprefix": "true",
+        "color.ui": "always",
+        "diff.external": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/all_helpers_and_styling/external.sh",
+        "diff.display.textconv": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/all_helpers_and_styling/textconv.sh"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "72c70df4df2eb1a18753facddd0c8ddab9311ad4345bc1a5f6dc558e4e214359",
+        "subject.py": "ace8bf15c5ea7e2862caa8e5133447ec9595ae6764e7e22b693245177c1abee9",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "dc24041fcf87ddd6e7c0d9a3400110aa39afc19ff17fa66156509399658bed6e"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "raw_file",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true,
+        "direct_git_positive_helper_control": true,
+        "direct_git_preserves_source_and_config": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": {
+        "exit": 0,
+        "helper_delta": {
+          "external": 1,
+          "textconv": 0
+        }
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/raw_file/repo",
+        "--json",
+        "--diff",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/raw_file/raw.patch"
+      ],
+      "local_settings": {
+        "diff.noprefix": "true",
+        "diff.mnemonicprefix": "true",
+        "color.ui": "always",
+        "diff.external": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/raw_file/external.sh",
+        "diff.display.textconv": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/raw_file/textconv.sh"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "54fedd8141ceb582e36614769fa397c808cf0be0e7a57d8088dbbe1ca9c0945e",
+        "subject.py": "342852ce9d66995fdbb47b71a56a215d299a5e7c37684d3153cbea19220cda7a",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "4be9aaccde643f2ea791e0e1c33feee54666ce42cfc4310c5845fb8989a8e3c2"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "raw_stdin",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true,
+        "direct_git_positive_helper_control": true,
+        "direct_git_preserves_source_and_config": true
+      },
+      "pass": true,
+      "exit": 0,
+      "payload": {
+        "changed_functions": [
+          {
+            "path": "a/subject.py",
+            "module": "a.subject",
+            "qualname": "answer",
+            "lineno": 5,
+            "end_lineno": 6,
+            "changed_lines": [
+              6
+            ],
+            "source": "def answer():\n    return 42",
+            "is_method": false
+          }
+        ]
+      },
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": {
+        "exit": 0,
+        "helper_delta": {
+          "external": 1,
+          "textconv": 0
+        }
+      },
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/raw_stdin/repo",
+        "--json",
+        "--diff",
+        "-"
+      ],
+      "local_settings": {
+        "diff.noprefix": "true",
+        "diff.mnemonicprefix": "true",
+        "color.ui": "always",
+        "diff.external": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/raw_stdin/external.sh",
+        "diff.display.textconv": "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/raw_stdin/textconv.sh"
+      },
+      "source_config_hashes": {
+        "a/subject.py": "36412b92325c102db1f304c6f952e5559aede1fbe14a0fb0b3f0fd573b44e1fb",
+        "subject.py": "d8c5c35abb333ebdf07b01a6010caf67d7c4e2cc88c38e38f7f1a3634111c9fd",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "edeef0243e40b2a808be4aa5189def913d35f3eaec6883d0b0c641b6a8282add"
+      },
+      "stdout_sha256": "4258f5d18681e45ca68c220adb0c74b1e55823313a7f75dac67beccaa87bc1f1",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "case": "invalid_ref",
+      "checks": {
+        "exact_expected_target_or_ref_refusal": true,
+        "no_project_execution": true,
+        "no_cli_diff_helper_execution": true,
+        "source_and_git_config_unchanged": true,
+        "raw_input_unchanged": true
+      },
+      "pass": true,
+      "exit": 2,
+      "payload": null,
+      "cli_helpers": {
+        "external": 0,
+        "textconv": 0
+      },
+      "direct_git_control": null,
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/home/jacob/hamon-e46e74cdc4f4-testpilot-independent/candidate-run/invalid_ref/repo",
+        "--json",
+        "--git-base",
+        "missing-independent-receiver-ref"
+      ],
+      "local_settings": {},
+      "source_config_hashes": {
+        "a/subject.py": "66451578d9d492e3a5574e84fbd59c470ad7f730eda730b34719dbdd7375dc5d",
+        "subject.py": "935228dcfecd4ba959bb4e85d3b129aa564c58f3fc13f6a2b6801be69565b014",
+        ".gitattributes": "a190af991e46ff675eb89e46ccc68755cdb68013a89e56257316956e8755611d",
+        ".git/config": "1b2a3fc57f1ee9c3f3de8fc7f572f195fc522d65515c63f41095aeb38f282dfc"
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "62b563e99d422188a22ff92583a7f7673763f6108f5ac3b305dcd916be854568"
+    }
+  ]
+}

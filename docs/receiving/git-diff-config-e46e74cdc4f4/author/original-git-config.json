@@ -1,0 +1,194 @@
+{
+  "source_commit": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "source_file_sha256": "b9c8268797fc34bed1dc9a6a89b1fd0cb44a885ee63595cf531bfa601b33990a",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "git": "git version 2.53.0",
+  "expected_path": "a/subject.py",
+  "expected_function": "answer",
+  "cases": [
+    {
+      "case": "default",
+      "config": {},
+      "diff": {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "diff",
+          "HEAD",
+          "--",
+          "*.py"
+        ],
+        "rc": 0,
+        "stdout": "diff --git a/a/subject.py b/a/subject.py\nindex 25b9220..42eaa62 100644\n--- a/a/subject.py\n+++ b/a/subject.py\n@@ -1,2 +1,2 @@\n def answer():\n-    return 1\n+    return 2\n",
+        "stderr": ""
+      },
+      "targets": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "--git-base",
+          "HEAD",
+          "--json"
+        ],
+        "rc": 0,
+        "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"a/subject.py\",\n      \"module\": \"a.subject\",\n      \"qualname\": \"answer\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def answer():\\n    return 2\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "case": "noprefix",
+      "config": {
+        "diff.noprefix": "true"
+      },
+      "diff": {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "diff",
+          "HEAD",
+          "--",
+          "*.py"
+        ],
+        "rc": 0,
+        "stdout": "diff --git a/subject.py a/subject.py\nindex 25b9220..42eaa62 100644\n--- a/subject.py\n+++ a/subject.py\n@@ -1,2 +1,2 @@\n def answer():\n-    return 1\n+    return 2\n",
+        "stderr": ""
+      },
+      "targets": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "--git-base",
+          "HEAD",
+          "--json"
+        ],
+        "rc": 0,
+        "stdout": "{\n  \"changed_functions\": []\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "case": "mnemonic",
+      "config": {
+        "diff.mnemonicprefix": "true"
+      },
+      "diff": {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "diff",
+          "HEAD",
+          "--",
+          "*.py"
+        ],
+        "rc": 0,
+        "stdout": "diff --git c/a/subject.py w/a/subject.py\nindex 25b9220..42eaa62 100644\n--- c/a/subject.py\n+++ w/a/subject.py\n@@ -1,2 +1,2 @@\n def answer():\n-    return 1\n+    return 2\n",
+        "stderr": ""
+      },
+      "targets": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "--git-base",
+          "HEAD",
+          "--json"
+        ],
+        "rc": 0,
+        "stdout": "{\n  \"changed_functions\": []\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "case": "color",
+      "config": {
+        "color.ui": "always"
+      },
+      "diff": {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "diff",
+          "HEAD",
+          "--",
+          "*.py"
+        ],
+        "rc": 0,
+        "stdout": "\u001b[1mdiff --git a/a/subject.py b/a/subject.py\u001b[m\n\u001b[1mindex 25b9220..42eaa62 100644\u001b[m\n\u001b[1m--- a/a/subject.py\u001b[m\n\u001b[1m+++ b/a/subject.py\u001b[m\n\u001b[36m@@ -1,2 +1,2 @@\u001b[m\n def answer():\u001b[m\n\u001b[31m-    return 1\u001b[m\n\u001b[32m+\u001b[m\u001b[32m    return 2\u001b[m\n",
+        "stderr": ""
+      },
+      "targets": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "--git-base",
+          "HEAD",
+          "--json"
+        ],
+        "rc": 0,
+        "stdout": "{\n  \"changed_functions\": []\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "case": "indicator",
+      "config": {
+        "diff.outputIndicatorNew": ">"
+      },
+      "diff": {
+        "argv": [
+          "git",
+          "-C",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "diff",
+          "HEAD",
+          "--",
+          "*.py"
+        ],
+        "rc": 0,
+        "stdout": "diff --git a/a/subject.py b/a/subject.py\nindex 25b9220..42eaa62 100644\n--- a/a/subject.py\n+++ b/a/subject.py\n@@ -1,2 +1,2 @@\n def answer():\n-    return 1\n+    return 2\n",
+        "stderr": ""
+      },
+      "targets": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/testpilot-git-config-h7t9gtrr/project",
+          "--git-base",
+          "HEAD",
+          "--json"
+        ],
+        "rc": 0,
+        "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"a/subject.py\",\n      \"module\": \"a.subject\",\n      \"qualname\": \"answer\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def answer():\\n    return 2\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "subject_preserved": true
+}

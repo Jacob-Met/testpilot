@@ -1,0 +1,52 @@
+{
+  "schema": "testpilot.git-diff-source-review.v1",
+  "parent": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "candidate_runtime_sha256": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+  "source": {
+    "original.__main__.py": {
+      "bytes": 7714,
+      "sha256": "b9c8268797fc34bed1dc9a6a89b1fd0cb44a885ee63595cf531bfa601b33990a",
+      "git_blob": "91e0d6d0d81b576352d5dbdfa3cbb50ea47ea54d"
+    },
+    "candidate.__main__.py": {
+      "bytes": 7983,
+      "sha256": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+      "git_blob": "44f485af279e66f75c6e4ef881b5a75e5d0cdef2"
+    },
+    "candidate.README.md": {
+      "bytes": 14534,
+      "sha256": "9b87f414f792ef371b09d2e512ab3432191bf85c54853d220f236fa020c18181",
+      "git_blob": "9eaab06ffbfd831cfdd2916fff4dd15198cb8f3e"
+    },
+    "candidate.test_cli_git_diff_config.py": {
+      "bytes": 7964,
+      "sha256": "e541ee6edc58faa6d1bb90acd9cb0675c898e26b0920f425e0b0e151fae730c9",
+      "git_blob": "6e2486f302fe799d8157ccd9c1a1da2772781baf"
+    }
+  },
+  "reviewed_runtime_semantics": "accepted: exactly five literal Git arguments added; full CLI AST equals parent after removing them",
+  "argv_additions": [
+    "--no-ext-diff",
+    "--no-textconv",
+    "--no-color",
+    "--src-prefix=a/",
+    "--dst-prefix=b/"
+  ],
+  "readme_scope": "exactly one seven-line bounded behavior note; removing it restores original bytes",
+  "original_tracked_leaf_count": 1179,
+  "changed_tracked_paths": [
+    "README.md",
+    "testpilot/__main__.py"
+  ],
+  "unchanged_tracked_leaf_count": 1177,
+  "product_execution_performed": false,
+  "reviewer": "chatgpt:/root/source_frontier",
+  "finding": {
+    "severity": "test-fixture isolation correction requested",
+    "path": "tests/test_cli_git_diff_config.py",
+    "detail": "The new test fixture inherits Git repository-routing environment variables. GIT_DIR, GIT_WORK_TREE and GIT_INDEX_FILE can redirect git -C init/add/commit/config beyond the authored temporary repository. Clear these and the related common/object directory routing variables in the fixture environment before its first git invocation.",
+    "runtime_change_required": false
+  },
+  "status": "runtime accepted; new-test environment correction awaiting author disposition",
+  "time_utc": "2026-10-08T17:26:03Z"
+}

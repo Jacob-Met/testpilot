@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/jacob/hamon-e46e74cdc4f4-testpilot/tests/test_cli_git_diff_config.py", line 14, in <module>
+    import testpilot
+ModuleNotFoundError: No module named 'testpilot'

@@ -1,0 +1,142 @@
+{
+  "schema": "testpilot.git-diff-source-review.final.v1",
+  "reviewer": "chatgpt:/root/source_frontier",
+  "status": "accepted: bounded runtime change and corrected new-test fixture",
+  "parent": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "source_checkout": "/home/jacob/hamon-e46e74cdc4f4-testpilot",
+  "observed_head": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "source": {
+    "testpilot/__main__.py": {
+      "bytes": 7983,
+      "sha256": "01dc85e0d4d1b0616f8c9616a6515e9e8236922c4a12ea20d47e13c5d5b85975",
+      "git_blob": "44f485af279e66f75c6e4ef881b5a75e5d0cdef2"
+    },
+    "README.md": {
+      "bytes": 14534,
+      "sha256": "9b87f414f792ef371b09d2e512ab3432191bf85c54853d220f236fa020c18181",
+      "git_blob": "9eaab06ffbfd831cfdd2916fff4dd15198cb8f3e"
+    },
+    "tests/test_cli_git_diff_config.py": {
+      "bytes": 7932,
+      "sha256": "f31e4b275c06b1064ac6da89e7463e4647197ab9232d6df71a46fd8de162dd45",
+      "git_blob": "f5622dff4cf999be41a3e2fd2779dcda19a9e768"
+    },
+    "initial_authored_test": {
+      "bytes": 7964,
+      "sha256": "e541ee6edc58faa6d1bb90acd9cb0675c898e26b0920f425e0b0e151fae730c9",
+      "git_blob": "6e2486f302fe799d8157ccd9c1a1da2772781baf"
+    }
+  },
+  "checks": {
+    "full_runtime_ast_restored_by_removing_only_five_literal_git_arguments": true,
+    "argv_additions": [
+      "--no-ext-diff",
+      "--no-textconv",
+      "--no-color",
+      "--src-prefix=a/",
+      "--dst-prefix=b/"
+    ],
+    "readme_restored_by_removing_only_bounded_behavior_note": true,
+    "new_test_restored_from_initial_author_version_with_only_environment_filter_replacement": true,
+    "tracked_parent_leaf_count": 1179,
+    "tracked_original_leaves_and_modes_preserved": 1177,
+    "tracked_changed_paths": [
+      {
+        "path": "README.md",
+        "parent_mode": "100644",
+        "current_mode": "100644",
+        "parent_blob": "c40ce6fb7e33af321d517399a3d166a778c8d097",
+        "current_blob": "9eaab06ffbfd831cfdd2916fff4dd15198cb8f3e"
+      },
+      {
+        "path": "testpilot/__main__.py",
+        "parent_mode": "100644",
+        "current_mode": "100644",
+        "parent_blob": "91e0d6d0d81b576352d5dbdfa3cbb50ea47ea54d",
+        "current_blob": "44f485af279e66f75c6e4ef881b5a75e5d0cdef2"
+      }
+    ],
+    "tracked_modes_all_preserved": true
+  },
+  "review_conclusions": [
+    "The five arguments are inserted only into the Git-source diff command before the unchanged base revision, separator and Python pathspec.",
+    "Saved diff files, stdin decoding, target parser, errors and unrelated CLI behavior retain the same full-module AST.",
+    "The README note describes only the Git-source read and is the sole README change.",
+    "Clearing inherited GIT_* belongs only to the newly authored test fixture and occurs before its first Git invocation.",
+    "The new fixture retains its explicit process-local Git system/global isolation, project PYTHONPATH, no-bytecode setting and every original behavioral assertion.",
+    "Private sentinel receiving demonstrates the fixture-routing defect on the initial test and verifies that the corrected fixture creates and commits its own repository while preserving all sentinel file bytes."
+  ],
+  "fixture_receiving": {
+    "original": {
+      "path": "/home/jacob/hamon-e46e74cdc4f4-testpilot-source-review/sentinel-original/receipt.json",
+      "bytes": 15320,
+      "sha256": "b3c29b9caff4a7e7f2e3a5eaf3e8e2657864f8521b18c3650871340f6ccd9928",
+      "git_blob": "e0e42918f03d33f8d2430995e5999012fd649ecf",
+      "time_utc": "2026-10-08T17:27:45Z",
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "cases": [
+        {
+          "route": "all-repository-routing",
+          "isolated": false,
+          "setup_succeeded": false,
+          "sentinel_changed_paths": [
+            ".git/COMMIT_EDITMSG"
+          ],
+          "before_file_count": 27,
+          "after_file_count": 27
+        },
+        {
+          "route": "index-only",
+          "isolated": false,
+          "setup_succeeded": true,
+          "sentinel_changed_paths": [
+            ".git/index"
+          ],
+          "before_file_count": 27,
+          "after_file_count": 27
+        }
+      ]
+    },
+    "corrected": {
+      "path": "/home/jacob/hamon-e46e74cdc4f4-testpilot-source-review/sentinel-corrected/receipt.json",
+      "bytes": 14131,
+      "sha256": "939a7fe2185b58a68eb64a84611128d354ee52827bb640bf77e84ac5f706654f",
+      "git_blob": "4f3a610173ce2f53eac4bf08ed2257ce60ffede1",
+      "time_utc": "2026-10-08T17:28:34Z",
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "cases": [
+        {
+          "route": "all-repository-routing",
+          "isolated": true,
+          "setup_succeeded": true,
+          "sentinel_changed_paths": [],
+          "before_file_count": 27,
+          "after_file_count": 27
+        },
+        {
+          "route": "index-only",
+          "isolated": true,
+          "setup_succeeded": true,
+          "sentinel_changed_paths": [],
+          "before_file_count": 27,
+          "after_file_count": 27
+        }
+      ]
+    }
+  },
+  "receiver": {
+    "path": "/home/jacob/hamon-e46e74cdc4f4-testpilot-source-review/receive_fixture_isolation.py",
+    "bytes": 6228,
+    "sha256": "c162224ef72c1df95e966598d33e09e0020fb46122011576eba563bd8b779768",
+    "git_blob": "e285b430f37903450d2b5e7aaa74fc34aea67569"
+  },
+  "boundaries": [
+    "This reviewer ran only private Git fixture setup/teardown receiving, plus static source and byte/mode review.",
+    "No product CLI, model/provider, production repository mutation, remote write, service restart or hosted CI run was performed by this receiver.",
+    "Runtime behavioral acceptance is recorded independently by the production receiver and author's tests; this receipt does not replace those gates.",
+    "Sentinel byte-preservation measures every retained file including .git; it does not claim filesystem metadata or atime preservation."
+  ],
+  "source_runtime_unchanged_after_review": true,
+  "source_test_unchanged_after_review": true,
+  "time_utc": "2026-10-08T17:31:57Z"
+}

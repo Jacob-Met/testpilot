@@ -1,0 +1,10 @@
+test_display_preferences_preserve_the_same_real_target (__main__.GitDiffConfigurationTests.test_display_preferences_preserve_the_same_real_target) ... ok
+test_external_diff_config_and_environment_are_not_executed (__main__.GitDiffConfigurationTests.test_external_diff_config_and_environment_are_not_executed) ... ok
+test_generation_uses_the_same_raw_git_selection (__main__.GitDiffConfigurationTests.test_generation_uses_the_same_raw_git_selection) ... ok
+test_repository_textconv_is_not_executed (__main__.GitDiffConfigurationTests.test_repository_textconv_is_not_executed) ... ok
+test_unchanged_project_retains_the_empty_result (__main__.GitDiffConfigurationTests.test_unchanged_project_retains_the_empty_result) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 8.391s
+
+OK

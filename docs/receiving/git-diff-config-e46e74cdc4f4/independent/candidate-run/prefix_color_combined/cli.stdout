@@ -1,0 +1,16 @@
+{
+  "changed_functions": [
+    {
+      "path": "a/subject.py",
+      "module": "a.subject",
+      "qualname": "answer",
+      "lineno": 5,
+      "end_lineno": 6,
+      "changed_lines": [
+        6
+      ],
+      "source": "def answer():\n    return 42",
+      "is_method": false
+    }
+  ]
+}
