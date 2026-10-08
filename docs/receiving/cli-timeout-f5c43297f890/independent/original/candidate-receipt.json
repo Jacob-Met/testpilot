@@ -1,0 +1,732 @@
+{
+  "base_commit": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "checks": [
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/invalid-0",
+          "--timeout=NaN"
+        ],
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_preserves_previous_output:NaN",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/invalid-1",
+          "--timeout=+INFINITY"
+        ],
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_preserves_previous_output:+INFINITY",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/invalid-2",
+          "--timeout=-inf"
+        ],
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_preserves_previous_output:-inf",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/invalid-3",
+          "--timeout=1e309"
+        ],
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_preserves_previous_output:1e309",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/invalid-4",
+          "--timeout=-0.0"
+        ],
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_preserves_previous_output:-0.0",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/invalid-5",
+          "--timeout=-3.25"
+        ],
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_preserves_previous_output:-3.25",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/invalid-6",
+          "--timeout=1e-9999"
+        ],
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_preserves_previous_output:1e-9999",
+      "passed": true
+    },
+    {
+      "actual": {
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n"
+      },
+      "name": "existing_lexical_refusal",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-0"
+        ],
+        "result": {
+          "changed_functions": [],
+          "coverage": null,
+          "final": null,
+          "ledger": {
+            "by_model": {},
+            "cost_is_complete": true,
+            "entries": [],
+            "tokens_estimated": false,
+            "total_cost_usd": 0,
+            "total_tokens": 0
+          },
+          "max_repair_rounds": 3,
+          "message": "diff touches no Python functions outside tests",
+          "ok": false,
+          "patch": "",
+          "plan": "",
+          "repair_rounds_used": 0,
+          "rounds": [],
+          "status": "no_changes",
+          "test_files": {},
+          "tests_written": 0
+        },
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-0/testpilot.patch, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-0/report.json, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-0/report.md, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-0/report.html\n"
+      },
+      "name": "finite_or_default_admitted:None",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-1",
+          "--timeout=5e-324"
+        ],
+        "result": {
+          "changed_functions": [],
+          "coverage": null,
+          "final": null,
+          "ledger": {
+            "by_model": {},
+            "cost_is_complete": true,
+            "entries": [],
+            "tokens_estimated": false,
+            "total_cost_usd": 0,
+            "total_tokens": 0
+          },
+          "max_repair_rounds": 3,
+          "message": "diff touches no Python functions outside tests",
+          "ok": false,
+          "patch": "",
+          "plan": "",
+          "repair_rounds_used": 0,
+          "rounds": [],
+          "status": "no_changes",
+          "test_files": {},
+          "tests_written": 0
+        },
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-1/testpilot.patch, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-1/report.json, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-1/report.md, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-1/report.html\n"
+      },
+      "name": "finite_or_default_admitted:5e-324",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-2",
+          "--timeout=1e-300"
+        ],
+        "result": {
+          "changed_functions": [],
+          "coverage": null,
+          "final": null,
+          "ledger": {
+            "by_model": {},
+            "cost_is_complete": true,
+            "entries": [],
+            "tokens_estimated": false,
+            "total_cost_usd": 0,
+            "total_tokens": 0
+          },
+          "max_repair_rounds": 3,
+          "message": "diff touches no Python functions outside tests",
+          "ok": false,
+          "patch": "",
+          "plan": "",
+          "repair_rounds_used": 0,
+          "rounds": [],
+          "status": "no_changes",
+          "test_files": {},
+          "tests_written": 0
+        },
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-2/testpilot.patch, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-2/report.json, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-2/report.md, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-2/report.html\n"
+      },
+      "name": "finite_or_default_admitted:1e-300",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-3",
+          "--timeout= 0.125 "
+        ],
+        "result": {
+          "changed_functions": [],
+          "coverage": null,
+          "final": null,
+          "ledger": {
+            "by_model": {},
+            "cost_is_complete": true,
+            "entries": [],
+            "tokens_estimated": false,
+            "total_cost_usd": 0,
+            "total_tokens": 0
+          },
+          "max_repair_rounds": 3,
+          "message": "diff touches no Python functions outside tests",
+          "ok": false,
+          "patch": "",
+          "plan": "",
+          "repair_rounds_used": 0,
+          "rounds": [],
+          "status": "no_changes",
+          "test_files": {},
+          "tests_written": 0
+        },
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-3/testpilot.patch, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-3/report.json, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-3/report.md, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-3/report.html\n"
+      },
+      "name": "finite_or_default_admitted: 0.125 ",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-4",
+          "--timeout=+1e2"
+        ],
+        "result": {
+          "changed_functions": [],
+          "coverage": null,
+          "final": null,
+          "ledger": {
+            "by_model": {},
+            "cost_is_complete": true,
+            "entries": [],
+            "tokens_estimated": false,
+            "total_cost_usd": 0,
+            "total_tokens": 0
+          },
+          "max_repair_rounds": 3,
+          "message": "diff touches no Python functions outside tests",
+          "ok": false,
+          "patch": "",
+          "plan": "",
+          "repair_rounds_used": 0,
+          "rounds": [],
+          "status": "no_changes",
+          "test_files": {},
+          "tests_written": 0
+        },
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-4/testpilot.patch, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-4/report.json, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-4/report.md, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-4/report.html\n"
+      },
+      "name": "finite_or_default_admitted:+1e2",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-5",
+          "--timeout=1.7976931348623157e308"
+        ],
+        "result": {
+          "changed_functions": [],
+          "coverage": null,
+          "final": null,
+          "ledger": {
+            "by_model": {},
+            "cost_is_complete": true,
+            "entries": [],
+            "tokens_estimated": false,
+            "total_cost_usd": 0,
+            "total_tokens": 0
+          },
+          "max_repair_rounds": 3,
+          "message": "diff touches no Python functions outside tests",
+          "ok": false,
+          "patch": "",
+          "plan": "",
+          "repair_rounds_used": 0,
+          "rounds": [],
+          "status": "no_changes",
+          "test_files": {},
+          "tests_written": 0
+        },
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-5/testpilot.patch, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-5/report.json, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-5/report.md, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-5/report.html\n"
+      },
+      "name": "finite_or_default_admitted:1.7976931348623157e308",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-6",
+          "--timeout=1_000"
+        ],
+        "result": {
+          "changed_functions": [],
+          "coverage": null,
+          "final": null,
+          "ledger": {
+            "by_model": {},
+            "cost_is_complete": true,
+            "entries": [],
+            "tokens_estimated": false,
+            "total_cost_usd": 0,
+            "total_tokens": 0
+          },
+          "max_repair_rounds": 3,
+          "message": "diff touches no Python functions outside tests",
+          "ok": false,
+          "patch": "",
+          "plan": "",
+          "repair_rounds_used": 0,
+          "rounds": [],
+          "status": "no_changes",
+          "test_files": {},
+          "tests_written": 0
+        },
+        "returncode": 1,
+        "stderr": "",
+        "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/3\n- Coverage: unavailable\n- Tokens: 0; cost: $0.000000\n\nwrote /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-6/testpilot.patch, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-6/report.json, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-6/report.md, /tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-6/report.html\n"
+      },
+      "name": "finite_or_default_admitted:1_000",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "-",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/open-stdin-0",
+          "--timeout=nan"
+        ],
+        "completed_without_eof": true,
+        "elapsed": 0.3162446520291269,
+        "own_waiting_child_killed": false,
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_refuses_without_stdin_eof:nan",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "-",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/script",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/open-stdin-1",
+          "--timeout=0"
+        ],
+        "completed_without_eof": true,
+        "elapsed": 0.3161341050872579,
+        "own_waiting_child_killed": false,
+        "previous_output_unchanged": true,
+        "returncode": 2,
+        "stderr": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--out OUT]\n                     [--target PATH.py::QUALNAME]\ntestpilot run: error: argument --timeout: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "invalid_refuses_without_stdin_eof:0",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--json"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"changed_functions\": []\n}\n"
+      },
+      "name": "existing_targets:False",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "targets",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--diff",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/empty.diff",
+          "--json",
+          "--target",
+          "api.py::answer"
+        ],
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"api.py\",\n      \"module\": \"api\",\n      \"qualname\": \"answer\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [],\n      \"source\": \"def answer():\\n    return 42\",\n      \"is_method\": false\n    }\n  ],\n  \"selection\": {\n    \"mode\": \"explicit\",\n    \"requested\": [\n      \"api.py::answer\"\n    ],\n    \"reason\": \"Caller selected these targets; no dependency inference was performed.\",\n    \"diff_text\": \"\"\n  }\n}\n"
+      },
+      "name": "existing_targets:True",
+      "passed": true
+    },
+    {
+      "actual": {
+        "argv": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "recheck",
+          "--repo",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/repo",
+          "--report",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/valid-0/report.json",
+          "--out",
+          "/tmp/hamon-f5c43297-independent-testpilot-qze282l9/candidate-fixtures-_nf7o56l/recheck-invalid",
+          "--timeout=nan"
+        ],
+        "output_absent": true,
+        "returncode": 2,
+        "stderr": "testpilot: cannot recheck saved tests: timeout must be a positive finite number of seconds\n",
+        "stdout": ""
+      },
+      "name": "existing_recheck_refusal",
+      "passed": true
+    }
+  ],
+  "failed": 0,
+  "finished_at": "2026-10-08T17:44:47.926961+00:00",
+  "inputs_unchanged": true,
+  "passed": 20,
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+  "private_fixtures_removed": true,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "schema": "hamon.independent_testpilot_timeout_admission.v1",
+  "scope": "Actual module CLI subprocesses, authored empty diff/input/output only. No pytest/model execution needed; no provider or live developer repository. Stdin controls kill only own child known to be waiting before backend construction.",
+  "source_after": {
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "1c17229d370ab2f8a958effbc7c4acc18b1ef03175138a82da67dbf2afc272a3",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "testpilot/loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "source_before": {
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "1c17229d370ab2f8a958effbc7c4acc18b1ef03175138a82da67dbf2afc272a3",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "testpilot/loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "source_unchanged": true,
+  "started_at": "2026-10-08T17:44:42.793448+00:00",
+  "variant": "candidate",
+  "worker": "estate-f5c43297f890/estate_coordination"
+}

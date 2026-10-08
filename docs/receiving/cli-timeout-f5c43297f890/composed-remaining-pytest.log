@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux -- Python 3.14.4, pytest-9.0.2, pluggy-1.6.0 -- /usr/bin/python3
+cachedir: .pytest_cache
+rootdir: /home/jacob/testpilot-timeout-f5c43297f890/composed
+configfile: pyproject.toml
+plugins: typeguard-4.4.4
+collecting ... collected 16 items
+
+tests/test_cli_targets.py::TargetPreviewTests::test_help_and_source_options_do_not_accept_generation_options 
+tests/test_cli_targets.py::TargetPreviewTests::test_help_and_source_options_do_not_accept_generation_options PASSED [  6%]
+tests/test_cli_targets.py::TargetPreviewTests::test_input_and_native_selector_failures_have_no_success_output 
+tests/test_cli_targets.py::TargetPreviewTests::test_input_and_native_selector_failures_have_no_success_output PASSED [ 12%]
+tests/test_cli_targets.py::TargetPreviewTests::test_saved_diff_preview_never_constructs_model_or_test_runner PASSED [ 18%]
+tests/test_explicit_target_cli.py::test_real_preview_default_and_explicit_stdin PASSED [ 25%]
+tests/test_explicit_target_cli.py::test_run_refuses_target_before_constructing_model PASSED [ 31%]
+tests/test_cli_coverage.py::test_default_and_explicit_choice_keep_successful_tests[False] PASSED [ 37%]
+tests/test_cli_coverage.py::test_default_and_explicit_choice_keep_successful_tests[True] PASSED [ 43%]
+tests/test_cli_coverage.py::test_disable_bypasses_only_the_broken_optional_instrumentation SKIPPED [ 50%]
+tests/test_cli_coverage.py::test_disable_preserves_a_real_generated_test_failure PASSED [ 56%]
+tests/test_cli_coverage.py::test_disable_reaches_baseline_generation_and_repair PASSED [ 62%]
+tests/test_cli_coverage.py::test_disable_composes_with_the_selected_project_python PASSED [ 68%]
+tests/test_cli_git_diff_config.py::GitDiffConfigurationTests::test_display_preferences_preserve_the_same_real_target 
+tests/test_cli_git_diff_config.py::GitDiffConfigurationTests::test_display_preferences_preserve_the_same_real_target PASSED [ 75%]
+tests/test_cli_git_diff_config.py::GitDiffConfigurationTests::test_external_diff_config_and_environment_are_not_executed 
+tests/test_cli_git_diff_config.py::GitDiffConfigurationTests::test_external_diff_config_and_environment_are_not_executed PASSED [ 81%]
+tests/test_cli_git_diff_config.py::GitDiffConfigurationTests::test_generation_uses_the_same_raw_git_selection PASSED [ 87%]
+tests/test_cli_git_diff_config.py::GitDiffConfigurationTests::test_repository_textconv_is_not_executed PASSED [ 93%]
+tests/test_cli_git_diff_config.py::GitDiffConfigurationTests::test_unchanged_project_retains_the_empty_result PASSED [100%]
+
+============== 15 passed, 1 skipped, 13 subtests passed in 9.44s ===============

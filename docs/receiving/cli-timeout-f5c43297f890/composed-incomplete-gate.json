@@ -1,0 +1,22 @@
+{
+  "returncode": null,
+  "outer_runner_returncode": 1,
+  "timeout_seconds": 160,
+  "completed": false,
+  "log_sha256": "c5a75fa1a4bb27a365319555e92dbae4683403443b01452195b8bbe007b6b5ad",
+  "observed_progress": "...................................",
+  "command": [
+    "python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_cli_timeout.py",
+    "tests/test_cli_diff_transport.py",
+    "tests/test_cli_python.py",
+    "tests/test_cli_targets.py",
+    "tests/test_explicit_target_cli.py",
+    "tests/test_cli_coverage.py",
+    "tests/test_cli_git_diff_config.py"
+  ]
+}

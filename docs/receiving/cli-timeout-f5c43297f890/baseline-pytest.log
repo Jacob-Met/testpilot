@@ -1,0 +1,400 @@
+FFFFFFFFF.....                                                           [100%]
+=================================== FAILURES ===================================
+___ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[nan] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo0')
+value = 'nan'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo0/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo0/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+___ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[NaN] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo1')
+value = 'NaN'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo1/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo1/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+___ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[inf] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo2')
+value = 'inf'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo2/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo2/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+___ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[+inf] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo3')
+value = '+inf'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo3/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo3/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+___ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-inf] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo4')
+value = '-inf'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo4/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo4/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+__ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[1e309] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo5')
+value = '1e309'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo5/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo5/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+____ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[0] _____
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo6')
+value = '0'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo6/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo6/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+___ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-0.0] ___
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo7')
+value = '-0.0'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo7/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo7/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+____ test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-1] ____
+
+tmp_path = PosixPath('/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo8')
+value = '-1'
+
+    @pytest.mark.parametrize("value", INVALID_TIMEOUTS)
+    def test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs(tmp_path, value):
+        # None of these inputs exists. Timeout admission must precede their readers,
+        # model construction, sandbox launch and publication.
+        out = tmp_path / "out"
+        out.mkdir()
+        old = {}
+        for name in ("report.json", "report.md", "report.html", "testpilot.patch"):
+            raw = ("previous completed review: " + name).encode()
+            (out / name).write_bytes(raw)
+            old[name] = raw
+        result = _command(["run", "--repo", str(tmp_path / "missing-repo"),
+                           "--diff", str(tmp_path / "missing.diff"),
+                           "--script", str(tmp_path / "missing-script"),
+                           "--out", str(out), "--timeout=" + value])
+>       assert result.returncode == 2, result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "<frozen runpy>", line 198, in _run_module_as_main
+E           File "<frozen runpy>", line 88, in _run_code
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 153, in <module>
+E             raise SystemExit(main())
+E                              ~~~~^^
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 123, in main
+E             diff_text = _read_diff(a)
+E           File "/home/jacob/testpilot-timeout-f5c43297f890/source/testpilot/__main__.py", line 34, in _read_diff
+E             raw = Path(args.diff).read_bytes()
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 778, in read_bytes
+E             with self.open(mode='rb', buffering=0) as f:
+E                  ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/usr/lib/python3.14/pathlib/__init__.py", line 772, in open
+E             return io.open(self, mode, buffering, encoding, errors, newline)
+E                    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E         FileNotFoundError: [Errno 2] No such file or directory: '/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo8/missing.diff'
+E         
+E       assert 1 == 2
+E        +  where 1 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', 'run', '--repo', '/tmp/pytest-of-jacob/pytest-212/...rrno 2] No such file or directory: \'/tmp/pytest-of-jacob/pytest-212/test_run_refuses_invalid_timeo8/missing.diff\'\n').returncode
+
+tests/test_cli_timeout.py:36: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[nan]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[NaN]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[inf]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[+inf]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-inf]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[1e309]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[0]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-0.0]
+FAILED tests/test_cli_timeout.py::test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-1]
+9 failed, 5 passed in 9.63s

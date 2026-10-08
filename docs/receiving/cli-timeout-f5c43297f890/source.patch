@@ -1,0 +1,56 @@
+diff --git a/README.md b/README.md
+index 9eaab06..df07258 100644
+--- a/README.md
++++ b/README.md
+@@ -91,6 +91,8 @@ existing decoding and selection behavior.
+ 
+ Add `--no-coverage` to `run` to execute pytest without optional coverage measurement. The choice applies to the baseline, generated tests and every repair round, including when you select a project interpreter with `--python`. Reports then show coverage as unavailable; actual test failures and exit codes still determine the run's result. Omit the flag to keep automatic coverage when the selected interpreter has it installed.
+ 
++For `run`, `--timeout` must be a positive finite number of seconds (default 60). Invalid limits are rejected as configuration errors before reading the diff, constructing a model client, starting tests or replacing saved reports. Fractional seconds and scientific notation are supported.
++
+ ## Choose functions explicitly
+ 
+ Use repeated `--target path.py::qualname` flags on `targets` or `run` to select
+diff --git a/testpilot/__main__.py b/testpilot/__main__.py
+index 44f485a..e81f31a 100644
+--- a/testpilot/__main__.py
++++ b/testpilot/__main__.py
+@@ -3,6 +3,7 @@ from __future__ import annotations
+ 
+ import argparse
+ import json
++import math
+ import os
+ import shutil
+ import subprocess
+@@ -16,6 +17,21 @@ from .recheck import run_recheck_command
+ from .targets import TargetSelectionError, resolve_targets, selection_record
+ 
+ 
++def _positive_timeout(value: str) -> float:
++    """Admit a run limit before reading inputs or starting any work."""
++    try:
++        seconds = float(value)
++    except ValueError as exc:
++        raise argparse.ArgumentTypeError(
++            "timeout must be a positive finite number of seconds"
++        ) from exc
++    if not math.isfinite(seconds) or seconds <= 0:
++        raise argparse.ArgumentTypeError(
++            "timeout must be a positive finite number of seconds"
++        )
++    return seconds
++
++
+ def _python_executable(value: str) -> str:
+     executable = shutil.which(os.path.expanduser(value))
+     if executable is None:
+@@ -91,7 +107,7 @@ def main(argv: list[str] | None = None) -> int:
+     r.add_argument("--script", help="dir of canned responses for the scripted backend")
+     r.add_argument("--base-url", help="override OpenAI-compatible base URL")
+     r.add_argument("--rounds", type=int, default=3, help="max repair rounds (default 3)")
+-    r.add_argument("--timeout", type=float, default=60.0, help="pytest timeout per run, seconds")
++    r.add_argument("--timeout", type=_positive_timeout, default=60.0, help="positive finite pytest timeout per run, seconds")
+     r.add_argument("--no-coverage", dest="coverage", action="store_const", const=False, default=None,
+                    help="run pytest without optional coverage measurement (default: automatic when installed)")
+     r.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
