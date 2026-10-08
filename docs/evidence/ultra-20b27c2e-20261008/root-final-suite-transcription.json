@@ -1,0 +1,14 @@
+{
+  "reviewer": "ultra-20b27c2e-20261008/root",
+  "source_loop_sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+  "command": "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python -m pytest -q",
+  "cwd": "/workspace/scratch/20b27c2ea29e/workers/estate-production/testpilot",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3]",
+  "pytest": "9.1.1",
+  "result": "54 passed in 24.75s",
+  "exit_code": 0,
+  "exec_session": 33648,
+  "receipt_kind": "root-reported transcription of completed tool result",
+  "raw_log_captured": false,
+  "limit": "The author did not rerun this invocation and no persistent raw stdout was captured by root. The earlier 52-case author raw log remains separately labeled."
+}

@@ -1,0 +1,31 @@
+{
+  "observed_at": "2026-10-08 07:35:26 UTC",
+  "source": "GitHub connector read-only fetch of branches/main, pulls/1, pulls/1/files",
+  "repository": "Jacob-Met/testpilot",
+  "main": {
+    "sha": "a565cc365fdf9cf346b6104a6abdd77d0b12d2fd",
+    "tree": "6e00a31af1785dae2aed3beeac76a477fbb17f00"
+  },
+  "pull_request": {
+    "url": "https://github.com/Jacob-Met/testpilot/pull/1",
+    "state": "open",
+    "merged": false,
+    "head": "8fb4b8e2412283628375ce658d9ed95b2e1116a6",
+    "base": "a565cc365fdf9cf346b6104a6abdd77d0b12d2fd",
+    "files": [
+      {
+        "path": ".github/workflows/ci.yml",
+        "blob_sha": "86a3236e38155506b5fe6077322d508f7f676649",
+        "status": "added",
+        "patch": "@@ -0,0 +1,20 @@\n+# CI: run the pytest suite (36 unit/integration tests, incl. the scripted eval)\n+# on every push to main and every pull request. Actions are SHA-pinned to the\n+# live upstream tag tips.\n+name: ci\n+\n+on:\n+  push:\n+    branches: [main]\n+  pull_request:\n+\n+jobs:\n+  tests:\n+    runs-on: ubuntu-latest\n+    steps:\n+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4\n+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5\n+        with:\n+          python-version: \"3.12\"\n+      - run: pip install \"pytest>=8\" \"coverage>=7\"\n+      - run: python -m pytest -q"
+      },
+      {
+        "path": "tests/test_eval.py",
+        "blob_sha": "d711df703498c7e7f4935ca6fe2409e6fe447d1d",
+        "status": "modified",
+        "patch": "@@ -6,7 +6,12 @@ def test_cases_present():\n \n \n def test_scripted_eval_outcomes():\n-    rows = [evaluate_case(c, coverage=False, timeout=5) for c in load_cases()]\n+    # timeout=10 matches the eval harness CLI default. The sandbox enforces a\n+    # hard wall clock, so a smaller timeout flakes on loaded machines: a\n+    # timed-out run consumes script replies (ScriptExhausted -> model_error) or\n+    # breaks the bug_revealing re-runs, contradicting the \"fixed by\n+    # construction\" determinism this test asserts.\n+    rows = [evaluate_case(c, coverage=False, timeout=10) for c in load_cases()]\n     by = {r[\"case\"]: r for r in rows}\n     assert by[\"calc_clamp\"][\"solved\"] and by[\"calc_clamp\"][\"rounds_used\"] == 1\n     assert by[\"textutil_slugify\"][\"solved\"] and by[\"textutil_slugify\"][\"rounds_used\"] == 2"
+      }
+    ]
+  },
+  "overlapping_candidate_paths": []
+}

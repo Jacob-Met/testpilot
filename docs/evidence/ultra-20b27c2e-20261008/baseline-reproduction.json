@@ -1,0 +1,321 @@
+[
+  {
+    "case": "preexisting_test_replaced",
+    "baseline": {
+      "returncode": 1,
+      "timed_out": false,
+      "duration_s": 0.214,
+      "timeout_s": 60.0,
+      "output": "F                                                                        [100%]\n=================================== FAILURES ===================================\n____________________________ test_existing_failure _____________________________\n\n    def test_existing_failure():\n>       assert False, \"existing regression must stay visible\"\nE       AssertionError: existing regression must stay visible\nE       assert False\n\ntests/test_double.py:2: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_double.py::test_existing_failure - AssertionError: existing...\n1 failed in 0.02s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_double::test_existing_failure",
+          "outcome": "failed",
+          "message": "AssertionError: existing regression must stay visible\nassert False\ndef test_existing_failure():\n>       assert False, \"existing regression must stay visible\"\nE       AssertionError: existing regression must stay visible\nE       assert False\n\ntests/test_double.py:2: AssertionError"
+        }
+      ],
+      "coverage": null,
+      "passed": 0,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "ok": false,
+      "summary": "0 passed, 1 failed, 0 errors, 0 skipped (rc=1)"
+    },
+    "result": {
+      "status": "passed",
+      "changed_functions": [
+        {
+          "path": "m.py",
+          "module": "m",
+          "qualname": "double",
+          "lineno": 1,
+          "end_lineno": 2,
+          "changed_lines": [
+            1,
+            2
+          ],
+          "source": "def double(x):\n    return x * 2",
+          "is_method": false
+        }
+      ],
+      "repair_rounds_used": 0,
+      "max_repair_rounds": 0,
+      "test_files": {
+        "tests/test_double.py": "from m import double\n\ndef test_generated():\n    assert double(2) == 4\n"
+      },
+      "tests_written": 1,
+      "final": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.16,
+        "timeout_s": 60.0,
+        "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_double::test_generated",
+            "outcome": "passed",
+            "message": ""
+          }
+        ],
+        "coverage": null,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+      },
+      "patch": "diff --git a/tests/test_double.py b/tests/test_double.py\n--- a/tests/test_double.py\n+++ b/tests/test_double.py\n@@ -1,2 +1,4 @@\n-def test_existing_failure():\n-    assert False, \"existing regression must stay visible\"\n+from m import double\n+\n+def test_generated():\n+    assert double(2) == 4\n",
+      "coverage": null,
+      "ledger": {
+        "total_tokens": 248,
+        "total_cost_usd": 0.0,
+        "cost_is_complete": false,
+        "tokens_estimated": true,
+        "by_model": {
+          "nvidia/nemotron-3-super-120b-a12b": {
+            "calls": 1,
+            "prompt_tokens": 90,
+            "completion_tokens": 3,
+            "cost_usd": 0.0
+          },
+          "nvidia/Nemotron-3_5-Lightning": {
+            "calls": 1,
+            "prompt_tokens": 127,
+            "completion_tokens": 28,
+            "cost_usd": 0.0
+          }
+        },
+        "entries": [
+          {
+            "role": "planner",
+            "model": "nvidia/nemotron-3-super-120b-a12b",
+            "prompt_tokens": 90,
+            "completion_tokens": 3,
+            "estimated": true,
+            "cost_usd": 0.0
+          },
+          {
+            "role": "editor",
+            "model": "nvidia/Nemotron-3_5-Lightning",
+            "prompt_tokens": 127,
+            "completion_tokens": 28,
+            "estimated": true,
+            "cost_usd": 0.0
+          }
+        ]
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "kind": "generate",
+          "files": [
+            "tests/test_double.py"
+          ],
+          "result": {
+            "returncode": 0,
+            "timed_out": false,
+            "duration_s": 0.16,
+            "timeout_s": 60.0,
+            "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+            "cases": [
+              {
+                "nodeid": "tests.test_double::test_generated",
+                "outcome": "passed",
+                "message": ""
+              }
+            ],
+            "coverage": null,
+            "passed": 1,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "ok": true,
+            "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+          },
+          "warnings": [],
+          "contents": {
+            "tests/test_double.py": "from m import double\n\ndef test_generated():\n    assert double(2) == 4\n"
+          }
+        }
+      ],
+      "plan": "test double",
+      "message": "",
+      "ok": true
+    },
+    "original_disk_unchanged": true
+  },
+  {
+    "case": "partial_repair_discards_unmentioned_regression",
+    "result": {
+      "status": "passed",
+      "changed_functions": [
+        {
+          "path": "m.py",
+          "module": "m",
+          "qualname": "double",
+          "lineno": 1,
+          "end_lineno": 2,
+          "changed_lines": [
+            1,
+            2
+          ],
+          "source": "def double(x):\n    return x * 2",
+          "is_method": false
+        }
+      ],
+      "repair_rounds_used": 1,
+      "max_repair_rounds": 1,
+      "test_files": {
+        "tests/test_a.py": "from m import double\n\ndef test_a():\n    assert double(2) == 4\n"
+      },
+      "tests_written": 1,
+      "final": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.171,
+        "timeout_s": 60.0,
+        "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_a::test_a",
+            "outcome": "passed",
+            "message": ""
+          }
+        ],
+        "coverage": null,
+        "passed": 1,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+      },
+      "patch": "diff --git a/tests/test_a.py b/tests/test_a.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_a.py\n@@ -0,0 +1,4 @@\n+from m import double\n+\n+def test_a():\n+    assert double(2) == 4\n",
+      "coverage": null,
+      "ledger": {
+        "total_tokens": 582,
+        "total_cost_usd": 0.0,
+        "cost_is_complete": false,
+        "tokens_estimated": true,
+        "by_model": {
+          "nvidia/nemotron-3-super-120b-a12b": {
+            "calls": 1,
+            "prompt_tokens": 90,
+            "completion_tokens": 3,
+            "cost_usd": 0.0
+          },
+          "nvidia/Nemotron-3_5-Lightning": {
+            "calls": 2,
+            "prompt_tokens": 416,
+            "completion_tokens": 73,
+            "cost_usd": 0.0
+          }
+        },
+        "entries": [
+          {
+            "role": "planner",
+            "model": "nvidia/nemotron-3-super-120b-a12b",
+            "prompt_tokens": 90,
+            "completion_tokens": 3,
+            "estimated": true,
+            "cost_usd": 0.0
+          },
+          {
+            "role": "editor",
+            "model": "nvidia/Nemotron-3_5-Lightning",
+            "prompt_tokens": 127,
+            "completion_tokens": 49,
+            "estimated": true,
+            "cost_usd": 0.0
+          },
+          {
+            "role": "repair",
+            "model": "nvidia/Nemotron-3_5-Lightning",
+            "prompt_tokens": 289,
+            "completion_tokens": 24,
+            "estimated": true,
+            "cost_usd": 0.0
+          }
+        ]
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "kind": "generate",
+          "files": [
+            "tests/test_a.py",
+            "tests/test_b.py"
+          ],
+          "result": {
+            "returncode": 1,
+            "timed_out": false,
+            "duration_s": 0.176,
+            "timeout_s": 60.0,
+            "output": "FF                                                                       [100%]\n=================================== FAILURES ===================================\n____________________________________ test_a ____________________________________\n\n    def test_a():\n>       assert double(2) == 5\nE       assert 4 == 5\nE        +  where 4 = double(2)\n\ntests/test_a.py:4: AssertionError\n____________________________________ test_b ____________________________________\n\n    def test_b():\n>       assert double(3) == 7\nE       assert 6 == 7\nE        +  where 6 = double(3)\n\ntests/test_b.py:4: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_a.py::test_a - assert 4 == 5\nFAILED tests/test_b.py::test_b - assert 6 == 7\n2 failed in 0.02s\n",
+            "cases": [
+              {
+                "nodeid": "tests.test_a::test_a",
+                "outcome": "failed",
+                "message": "assert 4 == 5\n +  where 4 = double(2)\ndef test_a():\n>       assert double(2) == 5\nE       assert 4 == 5\nE        +  where 4 = double(2)\n\ntests/test_a.py:4: AssertionError"
+              },
+              {
+                "nodeid": "tests.test_b::test_b",
+                "outcome": "failed",
+                "message": "assert 6 == 7\n +  where 6 = double(3)\ndef test_b():\n>       assert double(3) == 7\nE       assert 6 == 7\nE        +  where 6 = double(3)\n\ntests/test_b.py:4: AssertionError"
+              }
+            ],
+            "coverage": null,
+            "passed": 0,
+            "failed": 2,
+            "errors": 0,
+            "skipped": 0,
+            "ok": false,
+            "summary": "0 passed, 2 failed, 0 errors, 0 skipped (rc=1)"
+          },
+          "warnings": [],
+          "contents": {
+            "tests/test_a.py": "from m import double\n\ndef test_a():\n    assert double(2) == 5\n",
+            "tests/test_b.py": "from m import double\n\ndef test_b():\n    assert double(3) == 7\n"
+          }
+        },
+        {
+          "round": 1,
+          "kind": "repair",
+          "files": [
+            "tests/test_a.py"
+          ],
+          "result": {
+            "returncode": 0,
+            "timed_out": false,
+            "duration_s": 0.171,
+            "timeout_s": 60.0,
+            "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+            "cases": [
+              {
+                "nodeid": "tests.test_a::test_a",
+                "outcome": "passed",
+                "message": ""
+              }
+            ],
+            "coverage": null,
+            "passed": 1,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "ok": true,
+            "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+          },
+          "warnings": [],
+          "contents": {
+            "tests/test_a.py": "from m import double\n\ndef test_a():\n    assert double(2) == 4\n"
+          }
+        }
+      ],
+      "plan": "test double",
+      "message": "",
+      "ok": true
+    }
+  }
+]

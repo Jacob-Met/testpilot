@@ -1,0 +1,1 @@
+Keep the existing zero case and test double with two and three.

@@ -1,0 +1,42 @@
+{
+  "source_commit": "a565cc365fdf9cf346b6104a6abdd77d0b12d2fd",
+  "source_loop_sha256": "14b393435cd181efeca023306415d390438c675aac78c1e1e62320dc781f3b2e",
+  "cli_argv": [
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/evidence/cli-fixture/repo",
+    "--diff",
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/evidence/cli-fixture/change.diff",
+    "--script",
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/evidence/cli-fixture/script",
+    "--rounds",
+    "2",
+    "--timeout",
+    "30",
+    "--out",
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/evidence/cli-output"
+  ],
+  "cli_returncode": 0,
+  "status": "passed",
+  "repair_rounds_used": 2,
+  "tests_written": 2,
+  "final_passed": 3,
+  "generated_paths": [
+    "tests/test_double_testpilot.py",
+    "tests/test_tripled_input.py"
+  ],
+  "original_sha256": "91a33989098b3a71428c2eecf1242ed97b290445b02c925e0d4e8f742ca7bfaa",
+  "original_bytes_preserved": true,
+  "git_apply_check_returncode": 0,
+  "git_apply_returncode": 0,
+  "applied_pytest_returncode": 0,
+  "applied_pytest_summary": "3 passed in 0.01s",
+  "outputs": {
+    "testpilot.patch": "c9aaed3a5d29ff4f0ab154c38529f98c3ee9499800689163d36bdffe17d1f132",
+    "report.json": "5816316fefe6f668c90b5a691d0e5a21022ce35523d4a270dfd706b0da65b85b",
+    "report.md": "38adf7db43718c963204280845bb74a2a74b0b5f62c1b6e2cbc5abc0a37cd22e"
+  }
+}

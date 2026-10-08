@@ -1,0 +1,179 @@
+{
+  "observed_at": "2026-10-08 07:55:33 UTC",
+  "repository": "Jacob-Met/testpilot",
+  "original_tested_base": "a565cc365fdf9cf346b6104a6abdd77d0b12d2fd",
+  "receiving_base": "feea1889358b570d652f456ce5b63e853ba47d47",
+  "receiving_tree": "435b9278205d9535883ed0e49c533ed3fdeeb05e",
+  "receiving_blobs": {
+    ".gitignore": "60515f90e73e84b04fc82793e2c90aa46d9ea937",
+    "LICENSE": "c28355a11a7165add54220eb1d692ecb2951e5e9",
+    "NOTICE": "c9730c29774e26d5453549e8afb14fa4f354c3ae",
+    "README.md": "d4c15b3e10cf620afcb50149ba608d09a436b51a",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/README.md": "46f2d431eff731f876ec0bc02724ff3804a3c5d9",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/baseline-focused.log": "7cf0025221d2f1839b60a5c6264213383e038757",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/baseline-reproduction.json": "62c8faa4b31da203a4f6ac22ffcc9498420305aa",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/baseline-workflow.json": "c42556805cb678caf46b442228ef5030e5a74fd4",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/candidate-focused.log": "65300acd4e30c9ab7726c4aaad28004d97114f75",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/candidate-full.log": "8f9f05587cb282c720a4fcdace6e7cd1cbc0a660",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/candidate-workflow.json": "01540adb5086fd4eb8c3385331c810ba254f926f",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/check_workflow.py": "c458c2a3547f56569e3117c283b48b83f2cd6446",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/independent-byte-paths.json": "e3c1658f150a7bf95f1b816974d99597915e1b2b",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/independent_git_byte_paths.py": "fa7a8931c7eda2612ac80f8c287f54b6e025110b",
+    "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/receipt.json": "5b5c0d7570a0d038ef1de4198f0674eecb486b41",
+    "eval/__init__.py": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+    "eval/cases/calc_clamp/case.json": "9ed811d8a2b40d8ed14f0f67630d698942249e73",
+    "eval/cases/calc_clamp/change.diff": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+    "eval/cases/calc_clamp/fix/calc.py": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+    "eval/cases/calc_clamp/repo/calc.py": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+    "eval/cases/calc_clamp/repo/tests/test_existing.py": "1113fca65a126c34c76e140a36970eaacc9ae1a7",
+    "eval/cases/calc_clamp/script/01_plan.md": "78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a",
+    "eval/cases/calc_clamp/script/02_tests.md": "70616f283909d2165c9fe12a9501966b9d32804a",
+    "eval/cases/calc_clamp/script/03_repair.md": "eb417bdba41ede38cbfe1dec31f851db9707b9f0",
+    "eval/cases/durations_parse/case.json": "e8c77d7cd969f494a9f623ae054ec2bb27d004fe",
+    "eval/cases/durations_parse/change.diff": "b7b385435b8f9188f087cbab2fb3f68db70d04fd",
+    "eval/cases/durations_parse/fix/durations.py": "8be380d0000636bd189d9d6b33fd2977e21db8eb",
+    "eval/cases/durations_parse/repo/durations.py": "d689768bb4de14d0f71da2d3055d67d0ac50417d",
+    "eval/cases/durations_parse/repo/tests/test_existing.py": "8afd3bf834bb4ad59afaca6517020ca088d607e8",
+    "eval/cases/durations_parse/script/01_plan.md": "19529156b5174ad357da5a1a13dfd11b8530ac54",
+    "eval/cases/durations_parse/script/02_tests.md": "fded6e04f06ef068c489c07a7068d20f5a5c0228",
+    "eval/cases/durations_parse/script/03_repair.md": "74aa293f1c876391838516959b2c0780c00b5988",
+    "eval/cases/inventory_cart/case.json": "5e6527da884ed98babc351e312f1a7a920ba03b4",
+    "eval/cases/inventory_cart/change.diff": "ca82007905abfd7a5467b71b4419325311341615",
+    "eval/cases/inventory_cart/fix/inventory.py": "32b2a795938e9ce002d9616edc3c960c6068fce9",
+    "eval/cases/inventory_cart/repo/inventory.py": "f891e5344f612f27af5aa11a2acd3e86fd7b0ae8",
+    "eval/cases/inventory_cart/repo/tests/test_existing.py": "f1ddbe7ed9edc7a6d2feee81903266035ca48c82",
+    "eval/cases/inventory_cart/script/01_plan.md": "f307d1c22f05049f9ad3c93eaca2e4ce55f08845",
+    "eval/cases/inventory_cart/script/02_tests.md": "039e763633cfc00325f6c401daaa0e4b810eebf2",
+    "eval/cases/inventory_cart/script/03_repair.md": "f651855d7235af99a7c3d16367c58724078ae13e",
+    "eval/cases/inventory_cart/script/04_repair.md": "e5df159083badebb299ccbe8cc18121b673711ae",
+    "eval/cases/inventory_cart/script/05_repair.md": "17e99173c3736a29234302d1fc89d9db2dd4b79e",
+    "eval/cases/stats_median/case.json": "402ef8747a370510ce05216b73094be6b7de45f2",
+    "eval/cases/stats_median/change.diff": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+    "eval/cases/stats_median/fix/stats.py": "bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+    "eval/cases/stats_median/repo/stats.py": "a851be68344da385d18845063dbec48dbcd03894",
+    "eval/cases/stats_median/repo/tests/test_existing.py": "936573d9a8b3acec05f24c75a2834521b5214246",
+    "eval/cases/stats_median/script/01_plan.md": "25590e1b7f8558603fe686c6dfdc9511709217a0",
+    "eval/cases/stats_median/script/02_tests.md": "cc7f01d3d45089bc09b00db9d20047982b29e767",
+    "eval/cases/textutil_slugify/case.json": "6eea56bb91c3cb07423cb9d681dcaf2c139a86de",
+    "eval/cases/textutil_slugify/change.diff": "8f6ef24d9a525335d00059dc643a93f2989ed86c",
+    "eval/cases/textutil_slugify/fix/textutil.py": "3c457263eeed78526eb0f62eeca9d1f43c37cac1",
+    "eval/cases/textutil_slugify/repo/tests/test_existing.py": "7202ac0197b97167ebd053779994dcc1bffd0d62",
+    "eval/cases/textutil_slugify/repo/textutil.py": "cf09213aa12166b429fccc0c0b9001257ee7225a",
+    "eval/cases/textutil_slugify/script/01_plan.md": "4439261f884699e415b500fbbc6a659001298c59",
+    "eval/cases/textutil_slugify/script/02_tests.md": "2adedf063d95738e0a8f357b8a0d91bdddc19a1b",
+    "eval/cases/textutil_slugify/script/03_repair.md": "ae1fa9057d919551a35f80a89d5f8289696206fb",
+    "eval/cases/textutil_slugify/script/04_repair.md": "8f505ed69902154964b0c8906f6e2837ecfb5525",
+    "eval/harness.py": "9dbff7d2ccbd477313d881f0e8da3c43249e5330",
+    "eval/results/calc_clamp/report.json": "06c4a8f04d954cd059c1e6872d775bda500728a8",
+    "eval/results/calc_clamp/report.md": "dd92fef63f903cf4d95e773f1081bda0b673bef7",
+    "eval/results/calc_clamp/testpilot.patch": "13267ab82cd6ed27a2d08d69c8b5c9ce91e68dd0",
+    "eval/results/durations_parse/report.json": "cc255f0f623117085cbb5227c2801bbea1c18fc8",
+    "eval/results/durations_parse/report.md": "33054a81a985f7f43a6655e7d8645b79269093d0",
+    "eval/results/durations_parse/testpilot.patch": "e568e7b196bd01972ef09152743dcdf7750ed4db",
+    "eval/results/inventory_cart/report.json": "a457446647376307c62df6992860af824f72cc19",
+    "eval/results/inventory_cart/report.md": "1f053a0942aa3b47dce699b62f3e34ce6a34f064",
+    "eval/results/inventory_cart/testpilot.patch": "a8dedb6a846b0039b1702321002bffd9d27cfff3",
+    "eval/results/results.json": "4d454a31c96eaebd1af221ccfa59c405b7b7bdb3",
+    "eval/results/results.md": "30b176026d6c02ece9d82e531ee5acd77d75e9cf",
+    "eval/results/stats_median/report.json": "282a6a27a00ac58726a441d9a1b313a492336ced",
+    "eval/results/stats_median/report.md": "e8421f2f2c819564f4ddaa408bb5b6bc7557b928",
+    "eval/results/stats_median/testpilot.patch": "d1ba39803e1e25a51767b0e79bdb9f39ada6a645",
+    "eval/results/textutil_slugify/report.json": "9d7ec7d288fe958f472cf66fe1260310751f6cbb",
+    "eval/results/textutil_slugify/report.md": "a52bcc7909b2e750fe9ab01c23ed295c74b423f9",
+    "eval/results/textutil_slugify/testpilot.patch": "adf0db550b9d43b3bbf316581e0de5bdb1880df7",
+    "pyproject.toml": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+    "testpilot/__init__.py": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+    "testpilot/__main__.py": "2eaaa43a7c82ae415fe570af8dcb61415b994717",
+    "testpilot/diff.py": "e8458f9c0265276c72f96425da3e4ce094f61f84",
+    "testpilot/loop.py": "e1d2ae05a803881434008ec017d506bf287374ed",
+    "testpilot/model.py": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+    "testpilot/sandbox.py": "68e14602058608ca86a218e39053249f1891f95e",
+    "tests/conftest.py": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+    "tests/test_diff.py": "c0d44306a12ce017ebdfa4ab7a973b6f680117a1",
+    "tests/test_eval.py": "abc75f19724e0f6976b01dad741aacab91e6750f",
+    "tests/test_git_quoted_paths.py": "7935d1a61be31f035a65b32a191bf6da56e79211",
+    "tests/test_loop.py": "8540b31caf7c258e9345e62d11cd4796c5e92ba5",
+    "tests/test_model.py": "761c6de8806cc1a3577d0332c78b845c012a1617",
+    "tests/test_sandbox.py": "de2fde7cd5dd683c338810d4707987ea5a2e9055"
+  },
+  "changes_since_original": [
+    {
+      "path": "testpilot/diff.py",
+      "before": "2e77afd4c40d060037e706cdb0c33f1793b9cf1c",
+      "current": "e8458f9c0265276c72f96425da3e4ce094f61f84"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/README.md",
+      "before": null,
+      "current": "46f2d431eff731f876ec0bc02724ff3804a3c5d9"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/baseline-focused.log",
+      "before": null,
+      "current": "7cf0025221d2f1839b60a5c6264213383e038757"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/baseline-reproduction.json",
+      "before": null,
+      "current": "62c8faa4b31da203a4f6ac22ffcc9498420305aa"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/baseline-workflow.json",
+      "before": null,
+      "current": "c42556805cb678caf46b442228ef5030e5a74fd4"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/candidate-focused.log",
+      "before": null,
+      "current": "65300acd4e30c9ab7726c4aaad28004d97114f75"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/candidate-full.log",
+      "before": null,
+      "current": "8f9f05587cb282c720a4fcdace6e7cd1cbc0a660"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/candidate-workflow.json",
+      "before": null,
+      "current": "01540adb5086fd4eb8c3385331c810ba254f926f"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/check_workflow.py",
+      "before": null,
+      "current": "c458c2a3547f56569e3117c283b48b83f2cd6446"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/independent-byte-paths.json",
+      "before": null,
+      "current": "e3c1658f150a7bf95f1b816974d99597915e1b2b"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/independent_git_byte_paths.py",
+      "before": null,
+      "current": "fa7a8931c7eda2612ac80f8c287f54b6e025110b"
+    },
+    {
+      "path": "docs/receipts/git-quoted-paths-bd1abdb2f886-20261008/receipt.json",
+      "before": null,
+      "current": "5b5c0d7570a0d038ef1de4198f0674eecb486b41"
+    },
+    {
+      "path": "tests/test_git_quoted_paths.py",
+      "before": null,
+      "current": "7935d1a61be31f035a65b32a191bf6da56e79211"
+    }
+  ],
+  "candidate_production_paths_unchanged_in_new_base": true,
+  "note": "Git-quoted-path support landed during the final freshness check. Preserve the new diff.py, focused tests and11 peer evidence files. PR1 remains separate/open.",
+  "verification": {
+    "command": "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python -m pytest -q",
+    "cwd": "/workspace/scratch/20b27c2ea29e/workers/estate-production/testpilot-compat-current",
+    "python": "3.12.14",
+    "pytest": "9.1.1",
+    "result": "85 passed in 28.49s",
+    "exit_code": 0,
+    "log": "current-main-composed-suite.log",
+    "candidate_loop_sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+    "scope": "Current receiving main with frozen three-file TestPilot proposal copied into a separate detached worktree; includes all newly merged Git-quoted-path tests."
+  }
+}
