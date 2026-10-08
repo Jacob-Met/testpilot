@@ -1,0 +1,9 @@
+test_actual_git_pipeline_keeps_existing_test_and_generates_for_method (__main__.IndependentMatchReview.test_actual_git_pipeline_keeps_existing_test_and_generates_for_method) ... ok
+test_function_local_match_keeps_enclosing_target (__main__.IndependentMatchReview.test_function_local_match_keeps_enclosing_target) ... ok
+test_match_nested_class_method_keeps_decorator_identity_and_line (__main__.IndependentMatchReview.test_match_nested_class_method_keeps_decorator_identity_and_line) ... ok
+test_two_case_definitions_with_same_name_preserve_separate_source_spans (__main__.IndependentMatchReview.test_two_case_definitions_with_same_name_preserve_separate_source_spans) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.112s
+
+OK

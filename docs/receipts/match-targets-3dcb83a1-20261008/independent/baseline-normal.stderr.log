@@ -1,0 +1,57 @@
+test_actual_git_pipeline_keeps_existing_test_and_generates_for_method (__main__.IndependentMatchReview.test_actual_git_pipeline_keeps_existing_test_and_generates_for_method) ... FAIL
+test_function_local_match_keeps_enclosing_target (__main__.IndependentMatchReview.test_function_local_match_keeps_enclosing_target) ... ok
+test_match_nested_class_method_keeps_decorator_identity_and_line (__main__.IndependentMatchReview.test_match_nested_class_method_keeps_decorator_identity_and_line) ... FAIL
+test_two_case_definitions_with_same_name_preserve_separate_source_spans (__main__.IndependentMatchReview.test_two_case_definitions_with_same_name_preserve_separate_source_spans) ... FAIL
+
+======================================================================
+FAIL: test_actual_git_pipeline_keeps_existing_test_and_generates_for_method (__main__.IndependentMatchReview.test_actual_git_pipeline_keeps_existing_test_and_generates_for_method)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-testpilot-independent-3dcb83a1/independent_review.py", line 136, in test_actual_git_pipeline_keeps_existing_test_and_generates_for_method
+    self.assertEqual(report.status, "passed", METRICS["pipeline"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'no_changes' != 'passed'
+- no_changes
++ passed
+ : {'status': 'no_changes', 'tests_written': 0, 'final_passed': None, 'selected': [], 'model_calls': [], 'generated_files': [], 'git_apply_check_returncode': 128, 'original_source_and_existing_tests_unchanged': True, 'fixture_generated_test_absent': True}
+
+======================================================================
+FAIL: test_match_nested_class_method_keeps_decorator_identity_and_line (__main__.IndependentMatchReview.test_match_nested_class_method_keeps_decorator_identity_and_line)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-testpilot-independent-3dcb83a1/independent_review.py", line 50, in test_match_nested_class_method_keeps_decorator_identity_and_line
+    self.assertEqual([f.qualname for f in found], ["Scale.times"])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != ['Scale.times']
+
+Second list contains 1 additional elements.
+First extra element 0:
+'Scale.times'
+
+- []
++ ['Scale.times']
+
+======================================================================
+FAIL: test_two_case_definitions_with_same_name_preserve_separate_source_spans (__main__.IndependentMatchReview.test_two_case_definitions_with_same_name_preserve_separate_source_spans)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/jacob/hamon-testpilot-independent-3dcb83a1/independent_review.py", line 70, in test_two_case_definitions_with_same_name_preserve_separate_source_spans
+    self.assertEqual([(t.qualname, t.lineno, t.end_lineno, t.changed_lines)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      for t in targets],
+                      ^^^^^^^^^^^^^^^^^^
+                     [("selected", 3, 4, [4]), ("selected", 6, 7, [7])])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [] != [('selected', 3, 4, [4]), ('selected', 6, 7, [7])]
+
+Second list contains 2 additional elements.
+First extra element 0:
+('selected', 3, 4, [4])
+
+- []
++ [('selected', 3, 4, [4]), ('selected', 6, 7, [7])]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.031s
+
+FAILED (failures=3)

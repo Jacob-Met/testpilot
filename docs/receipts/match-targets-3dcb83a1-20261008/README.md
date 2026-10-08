@@ -76,11 +76,34 @@ No full-repository suite result is inferred from the scoped counts above.
 
 ## Independent review
 
-This author receipt precedes the separately assigned independent review by
-`estate_coordination`. The product source and regression hashes above are
-frozen. Consult the pull request's commit-bound review for the current
-receiving decision; no independent result is added to the author counts above.
-The first publication is a draft while that review is being completed.
+The separately assigned `estate_coordination` review accepted these exact
+candidate bytes composed with current `loop.py` SHA-256
+`dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf`.
+Its separately authored four-method unittest has SHA-256
+`9e0732fdc2c297e432259748199f740bc34ecd7e3f1a2cd15ba65073623e4608`.
+It passes 4/4 in normal Python and 4/4 under `-O`; the original selector
+fails three methods and passes the inherited-behavior control, with zero
+execution errors. These counts remain separate from the author's 84-case
+receiving selection.
+
+The independent actual-consumer control changes a decorated class method
+inside a module-level match. The planner receives the class import and
+`Scale.times` identity. Its scripted editor deliberately chooses an existing
+`tests/test_scale.py` path: the composed current loop preserves that original
+test, adds `tests/test_scale_testpilot.py`, and native pytest reports three
+passing cases (one original and two generated). The patch passes
+`git apply --check`. Original source/test bytes remain unchanged, and the
+generated patch is not applied to the input fixture. Separate AST controls
+retain decorated line bounds, distinct same-name case definitions and
+enclosing-function attribution without evaluating subjects or guards.
+
+The review note, unchanged executable, source pins, three execution receipts
+and all raw stdout/stderr logs are retained under [independent/](independent/).
+See [independent/REVIEW.md](independent/REVIEW.md) for the review decision,
+limits and replay commands. This evidence-only follow-up preserves the product
+source, regression, inherited loop and original author receipts exactly. The
+pull request's commit-bound COMMENT review records final source acceptance;
+integration into main remains a separate receiving action.
 
 ## Repeat the tests
 

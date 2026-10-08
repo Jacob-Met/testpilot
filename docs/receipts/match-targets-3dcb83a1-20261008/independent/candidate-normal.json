@@ -1,0 +1,93 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "metrics": {
+    "duplicate_names": [
+      {
+        "changed_lines": [
+          4
+        ],
+        "end_lineno": 4,
+        "is_method": false,
+        "lineno": 3,
+        "module": "chooser",
+        "path": "chooser.py",
+        "qualname": "selected",
+        "source": "        def selected():\n            return \"a\""
+      },
+      {
+        "changed_lines": [
+          7
+        ],
+        "end_lineno": 7,
+        "is_method": false,
+        "lineno": 6,
+        "module": "chooser",
+        "path": "chooser.py",
+        "qualname": "selected",
+        "source": "        def selected():\n            return \"b\""
+      }
+    ],
+    "enclosing": [
+      {
+        "changed_lines": [
+          6
+        ],
+        "end_lineno": 8,
+        "is_method": false,
+        "lineno": 1,
+        "module": "nest",
+        "path": "nest.py",
+        "qualname": "enclosing",
+        "source": "def enclosing(mode):\n    match mode:\n        case \"a\":\n            class Local:\n                def nested(self):\n                    return 4\n            return Local().nested()\n    return 0"
+      }
+    ],
+    "method": [
+      {
+        "changed_lines": [
+          11
+        ],
+        "end_lineno": 11,
+        "is_method": true,
+        "lineno": 5,
+        "module": "pkg.scale",
+        "path": "src/pkg/scale.py",
+        "qualname": "Scale.times",
+        "source": "            @staticmethod\n            def times(value):\n                match value:\n                    case 0:\n                        return 0\n                    case _:\n                        return value * 3"
+      }
+    ],
+    "pipeline": {
+      "final_passed": 3,
+      "fixture_generated_test_absent": true,
+      "generated_files": [
+        "tests/test_scale_testpilot.py"
+      ],
+      "git_apply_check_returncode": 0,
+      "model_calls": [
+        "fixture-plan",
+        "fixture-editor"
+      ],
+      "original_source_and_existing_tests_unchanged": true,
+      "selected": [
+        "Scale.times"
+      ],
+      "status": "passed",
+      "tests_written": 2
+    }
+  },
+  "optimized": false,
+  "package": "/home/jacob/hamon-testpilot-independent-3dcb83a1/candidate",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "source_hashes": {
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "c5896dd64beddb360a8c1864711800752ed6d19b1bf9ac028c88c501f7328786",
+    "testpilot/diff.py": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+    "testpilot/loop.py": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+    "testpilot/model.py": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+    "testpilot/sandbox.py": "d2c6b810180b1f1aa5aac1d2ae89c84a737fa009b33a3c19c8b392072047d881"
+  },
+  "sources_unchanged": true,
+  "status": "pass",
+  "test_sha256": "9e0732fdc2c297e432259748199f740bc34ecd7e3f1a2cd15ba65073623e4608",
+  "tests": 4
+}
