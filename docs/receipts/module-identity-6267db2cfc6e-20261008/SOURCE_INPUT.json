@@ -1,0 +1,844 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "issue": 31,
+  "claim": {
+    "url": "https://api.github.com/repos/Jacob-Met/testpilot/issues/31",
+    "repository_url": "https://api.github.com/repos/Jacob-Met/testpilot",
+    "labels_url": "https://api.github.com/repos/Jacob-Met/testpilot/issues/31/labels{/name}",
+    "comments_url": "https://api.github.com/repos/Jacob-Met/testpilot/issues/31/comments",
+    "events_url": "https://api.github.com/repos/Jacob-Met/testpilot/issues/31/events",
+    "html_url": "https://github.com/Jacob-Met/testpilot/issues/31",
+    "id": 5763651497,
+    "node_id": "I_kwDOU7nhDM8AAAABV4pXqQ",
+    "number": 31,
+    "title": "Preserve lib package identity in automatic function targets",
+    "user": {
+      "login": "Jacob-Met",
+      "id": 150724801,
+      "node_id": "U_kgDOCPvgwQ",
+      "avatar_url": "https://avatars.githubusercontent.com/u/150724801?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/Jacob-Met",
+      "html_url": "https://github.com/Jacob-Met",
+      "followers_url": "https://api.github.com/users/Jacob-Met/followers",
+      "following_url": "https://api.github.com/users/Jacob-Met/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Jacob-Met/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Jacob-Met/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Jacob-Met/subscriptions",
+      "organizations_url": "https://api.github.com/users/Jacob-Met/orgs",
+      "repos_url": "https://api.github.com/users/Jacob-Met/repos",
+      "events_url": "https://api.github.com/users/Jacob-Met/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Jacob-Met/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [],
+    "state": "open",
+    "locked": false,
+    "assignees": [],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2026-10-08T14:32:42Z",
+    "updated_at": "2026-10-08T14:32:42Z",
+    "closed_at": null,
+    "assignee": null,
+    "author_association": "OWNER",
+    "active_lock_reason": null,
+    "sub_issues_summary": {
+      "total": 0,
+      "completed": 0,
+      "percent_completed": 0
+    },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
+    "body": "## Reproduced source/import mismatch\n\nOwner: `estate-6267db2cfc6e/root`, under Jacob's continuing HAMON estate execution mandate, with independent receiving by `authority_recovery`.\n\nAt current main `e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5` (tree `22da6a890c2befaf72d3826103538491b07793df`), `testpilot/diff.py::module_name` strips a leading `lib/` as though it were an import root. The actual sandbox adds only the repository's `src/` directory, when present, and repository root to `PYTHONPATH`; the README documents those same roots.\n\nThe frozen independent witness uses the exact current `diff.py` and `sandbox.py`, actual function selection, and five fresh Python import processes through the unchanged sandbox runner. It reports **three assertion failures, two passing controls and zero errors**:\n\n- `lib/pricing.py` is selected with module `pricing`, which is unimportable when only the selected package exists.\n- With a root-level namesake, the suggested import resolves the wrong source/value (99 rather than the selected function's 2).\n- A changed `lib/__init__.py` receives an empty module name.\n- Ordinary root-package and `src/lib/` package controls pass.\n\nSource and fixture bytes remain unchanged. Baseline receiving SHA-256: `690a606509ecb737a01c18b0cefad41bf05e96b6a7e67b6139ed8c42001e6be0`. Loader source blob: `f92280a9ad3f9f79713dce7ba7ae28c55414783a`; sandbox source blob: `dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b`.\n\n## Narrow contribution boundary\n\nPreserve the leading `lib` package component while retaining the existing one-level `src/` handling. Scope is `testpilot/diff.py::module_name`, a new focused `tests/test_module_identity.py`, a small import-identity guide, and uniquely named source-bound qualification evidence.\n\nFresh ownership review found that #30 explicitly preserves `diff.py` and the automatic selector; #29 owns report staging, #28 saved-test recheck, and #26 saved-run comparison. This contribution leaves those implementations with their owners and requires no provider/model call.\n\nFreeze the regression before editing production, qualify the original failure and repaired import identity through the real consumer path, run the relevant existing tests and normal repository CI, obtain independent receiving, then integrate against freshly reviewed main.\n",
+    "closed_by": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/issues/31/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/Jacob-Met/testpilot/issues/31/timeline",
+    "performed_via_github_app": {
+      "id": 1144995,
+      "client_id": "Iv23liVemv8A9if9v0F2",
+      "slug": "chatgpt-codex-connector",
+      "node_id": "A_kwHOAOQ6Gs4AEXij",
+      "owner": {
+        "login": "openai",
+        "id": 14957082,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjE0OTU3MDgy",
+        "avatar_url": "https://avatars.githubusercontent.com/u/14957082?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/openai",
+        "html_url": "https://github.com/openai",
+        "followers_url": "https://api.github.com/users/openai/followers",
+        "following_url": "https://api.github.com/users/openai/following{/other_user}",
+        "gists_url": "https://api.github.com/users/openai/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/openai/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/openai/subscriptions",
+        "organizations_url": "https://api.github.com/users/openai/orgs",
+        "repos_url": "https://api.github.com/users/openai/repos",
+        "events_url": "https://api.github.com/users/openai/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/openai/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "name": "ChatGPT Codex Connector",
+      "description": "Bring ChatGPT and Codex to your GitHub repositories.",
+      "external_url": "https://www.chatgpt.com",
+      "html_url": "https://github.com/apps/chatgpt-codex-connector",
+      "created_at": "2025-02-14T01:37:05Z",
+      "updated_at": "2026-09-23T18:52:59Z",
+      "permissions": {
+        "actions": "write",
+        "checks": "read",
+        "contents": "write",
+        "emails": "read",
+        "issues": "write",
+        "metadata": "read",
+        "pull_requests": "write",
+        "statuses": "read",
+        "workflows": "write"
+      },
+      "events": [
+        "check_run",
+        "check_suite",
+        "commit_comment",
+        "issues",
+        "issue_comment",
+        "pull_request",
+        "pull_request_review",
+        "pull_request_review_comment",
+        "pull_request_review_thread",
+        "repository",
+        "status",
+        "sub_issues"
+      ]
+    },
+    "state_reason": null,
+    "pinned_comment": null
+  },
+  "current_base_commit": {
+    "sha": "63174afd8e63a0ea562cf188b7d971522f017a30",
+    "node_id": "C_kwDOU7nhDNoAKDYzMTc0YWZkOGU2M2EwZWE1NjJjZjE4OGI3ZDk3MTUyMmYwMTdhMzA",
+    "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/63174afd8e63a0ea562cf188b7d971522f017a30",
+    "html_url": "https://github.com/Jacob-Met/testpilot/commit/63174afd8e63a0ea562cf188b7d971522f017a30",
+    "author": {
+      "name": "Jacob Metoyer",
+      "email": "150724801+Jacob-Met@users.noreply.github.com",
+      "date": "2026-10-08T14:31:12Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-10-08T14:31:12Z"
+    },
+    "tree": {
+      "sha": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/trees/cea947d9aeb2253466593044889a1bb548f8b7c4"
+    },
+    "message": "Merge PR #28: recheck exact saved tests against current source\n\nIntegrate the independently received saved-test recheck command with the accepted raw-diff CLI seam. Preserve historical report and source custody, perform zero model calls, and report current retained tests plus the selected suite. Exact composed tree passes 328 hosted tests and 18 subtests; native and independent receiving remain source-pinned.",
+    "parents": [
+      {
+        "sha": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+        "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+        "html_url": "https://github.com/Jacob-Met/testpilot/commit/e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5"
+      },
+      {
+        "sha": "4e974f810a7ced574b18a85e945b85e5c22129a9",
+        "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/4e974f810a7ced574b18a85e945b85e5c22129a9",
+        "html_url": "https://github.com/Jacob-Met/testpilot/commit/4e974f810a7ced574b18a85e945b85e5c22129a9"
+      }
+    ],
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJqx6kwCRC1aQ7uu5UhlAAAkvEQAIvlEFIt43dXhrFgq1t4Yg4K\nTg6tDD+PPiY9fhWjyhc4X9u4Fck4oKBBYOlZeKVtiDu0VBI0g7GhW7SfnD+Es7/r\nobLEwuhc86057hXo9DbVgKgbgqpH/4YKglEyvdGip/hJSUjAQDLRb7Q9t7F2WbBr\niobjYJXP2KtSIq0dcZL4OqvIVVOaa+3upzjXSNNpMS1O3EzS7fyB89la336ERoVy\n8lfUxp7Mtz5BOR1CULGPk4vx2jbPrsCCRI7lFJiue5ZWsuvbF7TTKjU/32JLwSVd\nSmfMme9hq6pgjMa6EWTBAwCdNxy0K9H2UxE5bYxIzfO3XvHXADvoMcNuQLDKmHTH\n9cB/NMj0HYxhgKtInsMUa0Pb3nQqJHzIfcQtz0YjLU5rt88x4PVS0dAKoZ9pkPE3\nhf267dx3/pojSlLTeo6B0u2TQbQpTyOpgI4IAVUZn0NCFgLamLEmc/JOCAkC7qYR\nBhP5VznEhpcC1fCIOo5WB/QRzggbxcIIeq9cUn2MRV48AxplxfMXI+INDRgktKrS\nPnUVSyspQcsWBj59eEAmLTUmIXmS4bInhDPYKyqkhOnA0+EtaUOCT7uOKurGQw7G\nurbhNIVjtQIWKpt+5hqxzEleR58vVS6yFfmbrXJzdux/QwjXNjVdavpUJXzyrIko\nlnVNwTLmveMIKAUoST+Q\n=hdEX\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree cea947d9aeb2253466593044889a1bb548f8b7c4\nparent e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5\nparent 4e974f810a7ced574b18a85e945b85e5c22129a9\nauthor Jacob Metoyer <150724801+Jacob-Met@users.noreply.github.com> 1791469872 -0700\ncommitter GitHub <noreply@github.com> 1791469872 -0700\n\nMerge PR #28: recheck exact saved tests against current source\n\nIntegrate the independently received saved-test recheck command with the accepted raw-diff CLI seam. Preserve historical report and source custody, perform zero model calls, and report current retained tests plus the selected suite. Exact composed tree passes 328 hosted tests and 18 subtests; native and independent receiving remain source-pinned.",
+      "verified_at": "2026-10-08T14:31:13Z"
+    }
+  },
+  "baseline_witness_commit": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "current_base_tree": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+  "selected_leaves": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86a3236e38155506b5fe6077322d508f7f676649",
+      "size": 586,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/86a3236e38155506b5fe6077322d508f7f676649"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "size": 11550,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14"
+    },
+    {
+      "path": "eval/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "eval/cases/calc_clamp/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9ed811d8a2b40d8ed14f0f67630d698942249e73",
+      "size": 179,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/9ed811d8a2b40d8ed14f0f67630d698942249e73"
+    },
+    {
+      "path": "eval/cases/calc_clamp/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+      "size": 410,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/be9a973b68fb4e9c09769862af8ecaba17bbbdc4"
+    },
+    {
+      "path": "eval/cases/calc_clamp/fix/calc.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+      "size": 361,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/4f34612600cef89c4b12ddfcecf04f9950ad6c0c"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/calc.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+      "size": 361,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/cfe44537bf7f7807eeff511deda0fd1656d0a6d2"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1113fca65a126c34c76e140a36970eaacc9ae1a7",
+      "size": 122,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/1113fca65a126c34c76e140a36970eaacc9ae1a7"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a",
+      "size": 204,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70616f283909d2165c9fe12a9501966b9d32804a",
+      "size": 435,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/70616f283909d2165c9fe12a9501966b9d32804a"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "eb417bdba41ede38cbfe1dec31f851db9707b9f0",
+      "size": 265,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/eb417bdba41ede38cbfe1dec31f851db9707b9f0"
+    },
+    {
+      "path": "eval/cases/durations_parse/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8c77d7cd969f494a9f623ae054ec2bb27d004fe",
+      "size": 203,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/e8c77d7cd969f494a9f623ae054ec2bb27d004fe"
+    },
+    {
+      "path": "eval/cases/durations_parse/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b7b385435b8f9188f087cbab2fb3f68db70d04fd",
+      "size": 905,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/b7b385435b8f9188f087cbab2fb3f68db70d04fd"
+    },
+    {
+      "path": "eval/cases/durations_parse/fix/durations.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8be380d0000636bd189d9d6b33fd2977e21db8eb",
+      "size": 747,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8be380d0000636bd189d9d6b33fd2977e21db8eb"
+    },
+    {
+      "path": "eval/cases/durations_parse/repo/durations.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d689768bb4de14d0f71da2d3055d67d0ac50417d",
+      "size": 749,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d689768bb4de14d0f71da2d3055d67d0ac50417d"
+    },
+    {
+      "path": "eval/cases/durations_parse/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8afd3bf834bb4ad59afaca6517020ca088d607e8",
+      "size": 110,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8afd3bf834bb4ad59afaca6517020ca088d607e8"
+    },
+    {
+      "path": "eval/cases/durations_parse/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19529156b5174ad357da5a1a13dfd11b8530ac54",
+      "size": 167,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/19529156b5174ad357da5a1a13dfd11b8530ac54"
+    },
+    {
+      "path": "eval/cases/durations_parse/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fded6e04f06ef068c489c07a7068d20f5a5c0228",
+      "size": 422,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/fded6e04f06ef068c489c07a7068d20f5a5c0228"
+    },
+    {
+      "path": "eval/cases/durations_parse/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74aa293f1c876391838516959b2c0780c00b5988",
+      "size": 303,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/74aa293f1c876391838516959b2c0780c00b5988"
+    },
+    {
+      "path": "eval/cases/inventory_cart/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e6527da884ed98babc351e312f1a7a920ba03b4",
+      "size": 226,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/5e6527da884ed98babc351e312f1a7a920ba03b4"
+    },
+    {
+      "path": "eval/cases/inventory_cart/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca82007905abfd7a5467b71b4419325311341615",
+      "size": 647,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/ca82007905abfd7a5467b71b4419325311341615"
+    },
+    {
+      "path": "eval/cases/inventory_cart/fix/inventory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32b2a795938e9ce002d9616edc3c960c6068fce9",
+      "size": 563,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/32b2a795938e9ce002d9616edc3c960c6068fce9"
+    },
+    {
+      "path": "eval/cases/inventory_cart/repo/inventory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f891e5344f612f27af5aa11a2acd3e86fd7b0ae8",
+      "size": 557,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f891e5344f612f27af5aa11a2acd3e86fd7b0ae8"
+    },
+    {
+      "path": "eval/cases/inventory_cart/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1ddbe7ed9edc7a6d2feee81903266035ca48c82",
+      "size": 149,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f1ddbe7ed9edc7a6d2feee81903266035ca48c82"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f307d1c22f05049f9ad3c93eaca2e4ce55f08845",
+      "size": 172,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f307d1c22f05049f9ad3c93eaca2e4ce55f08845"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "039e763633cfc00325f6c401daaa0e4b810eebf2",
+      "size": 484,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/039e763633cfc00325f6c401daaa0e4b810eebf2"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f651855d7235af99a7c3d16367c58724078ae13e",
+      "size": 544,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f651855d7235af99a7c3d16367c58724078ae13e"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/04_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5df159083badebb299ccbe8cc18121b673711ae",
+      "size": 561,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/e5df159083badebb299ccbe8cc18121b673711ae"
+    },
+    {
+      "path": "eval/cases/inventory_cart/script/05_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17e99173c3736a29234302d1fc89d9db2dd4b79e",
+      "size": 545,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/17e99173c3736a29234302d1fc89d9db2dd4b79e"
+    },
+    {
+      "path": "eval/cases/stats_median/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "402ef8747a370510ce05216b73094be6b7de45f2",
+      "size": 292,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/402ef8747a370510ce05216b73094be6b7de45f2"
+    },
+    {
+      "path": "eval/cases/stats_median/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+      "size": 404,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/49bfe597d0a5ab537fbdcc458341d4aeb3ea657f"
+    },
+    {
+      "path": "eval/cases/stats_median/fix/stats.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+      "size": 375,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/bceee10026f020ec7901ff7bdd491fdb244ba1ab"
+    },
+    {
+      "path": "eval/cases/stats_median/repo/stats.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a851be68344da385d18845063dbec48dbcd03894",
+      "size": 315,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/a851be68344da385d18845063dbec48dbcd03894"
+    },
+    {
+      "path": "eval/cases/stats_median/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "936573d9a8b3acec05f24c75a2834521b5214246",
+      "size": 77,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/936573d9a8b3acec05f24c75a2834521b5214246"
+    },
+    {
+      "path": "eval/cases/stats_median/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25590e1b7f8558603fe686c6dfdc9511709217a0",
+      "size": 106,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/25590e1b7f8558603fe686c6dfdc9511709217a0"
+    },
+    {
+      "path": "eval/cases/stats_median/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cc7f01d3d45089bc09b00db9d20047982b29e767",
+      "size": 272,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/cc7f01d3d45089bc09b00db9d20047982b29e767"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/case.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6eea56bb91c3cb07423cb9d681dcaf2c139a86de",
+      "size": 250,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6eea56bb91c3cb07423cb9d681dcaf2c139a86de"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/change.diff",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f6ef24d9a525335d00059dc643a93f2989ed86c",
+      "size": 450,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8f6ef24d9a525335d00059dc643a93f2989ed86c"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/fix/textutil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c457263eeed78526eb0f62eeca9d1f43c37cac1",
+      "size": 316,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/3c457263eeed78526eb0f62eeca9d1f43c37cac1"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/repo/tests/test_existing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7202ac0197b97167ebd053779994dcc1bffd0d62",
+      "size": 111,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/7202ac0197b97167ebd053779994dcc1bffd0d62"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/repo/textutil.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf09213aa12166b429fccc0c0b9001257ee7225a",
+      "size": 315,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/cf09213aa12166b429fccc0c0b9001257ee7225a"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/01_plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4439261f884699e415b500fbbc6a659001298c59",
+      "size": 223,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/4439261f884699e415b500fbbc6a659001298c59"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/02_tests.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2adedf063d95738e0a8f357b8a0d91bdddc19a1b",
+      "size": 402,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/2adedf063d95738e0a8f357b8a0d91bdddc19a1b"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/03_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae1fa9057d919551a35f80a89d5f8289696206fb",
+      "size": 483,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/ae1fa9057d919551a35f80a89d5f8289696206fb"
+    },
+    {
+      "path": "eval/cases/textutil_slugify/script/04_repair.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f505ed69902154964b0c8906f6e2837ecfb5525",
+      "size": 262,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8f505ed69902154964b0c8906f6e2837ecfb5525"
+    },
+    {
+      "path": "eval/harness.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9dbff7d2ccbd477313d881f0e8da3c43249e5330",
+      "size": 6601,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/9dbff7d2ccbd477313d881f0e8da3c43249e5330"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "size": 676,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "size": 390,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "size": 6065,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/2d98e2a85320ac2827ea48fa9d58d30a60354b6a"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "size": 2943,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "size": 9396,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f92280a9ad3f9f79713dce7ba7ae28c55414783a"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "size": 20656,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/bb30d903542d836f5afe8e116ba894f93d9d3a0c"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "size": 24064,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/3057a9c7c9777a23e73f8b56979670001eb512fd"
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "size": 10175,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "size": 11599,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/4ab26cbb83beff563b9c3683c593b3efd2495b6b"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "size": 12721,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8ca4a4102c7890e89eae99548e28ba8325974f1e"
+    },
+    {
+      "path": "tests/conftest.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "size": 144,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/2a855d9fdb8debae0b082088580a4c41e499e33c"
+    },
+    {
+      "path": "tests/test_cli_diff_transport.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25017791488cf8dd3c7f95b9460d73d691ce8a06",
+      "size": 11507,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/25017791488cf8dd3c7f95b9460d73d691ce8a06"
+    },
+    {
+      "path": "tests/test_cli_python.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2aef9a0af0f5a115f647e1af0b4a218592eb274e",
+      "size": 7941,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/2aef9a0af0f5a115f647e1af0b4a218592eb274e"
+    },
+    {
+      "path": "tests/test_cli_targets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "281550909a8cce1067983199c5122e1bc5c0b78e",
+      "size": 10853,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/281550909a8cce1067983199c5122e1bc5c0b78e"
+    },
+    {
+      "path": "tests/test_coverage_reporting.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "size": 6636,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6c363a1262b2f9c11cd285b6e29cabd74c03eac9"
+    },
+    {
+      "path": "tests/test_diff.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0d44306a12ce017ebdfa4ab7a973b6f680117a1",
+      "size": 3523,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/c0d44306a12ce017ebdfa4ab7a973b6f680117a1"
+    },
+    {
+      "path": "tests/test_diff_source_boundary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "74f9ca4d4a31b9ca447f362ac3cbf594333d560f",
+      "size": 5521,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/74f9ca4d4a31b9ca447f362ac3cbf594333d560f"
+    },
+    {
+      "path": "tests/test_eval.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d711df703498c7e7f4935ca6fe2409e6fe447d1d",
+      "size": 1312,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d711df703498c7e7f4935ca6fe2409e6fe447d1d"
+    },
+    {
+      "path": "tests/test_fenced_code_boundaries.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54c798f49b690d6365ec4de9b0ae78f9d99cd960",
+      "size": 2990,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/54c798f49b690d6365ec4de9b0ae78f9d99cd960"
+    },
+    {
+      "path": "tests/test_generated_collection.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8dacdd9f6c402cbed66b716e8ec396fb633ded9",
+      "size": 10208,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/a8dacdd9f6c402cbed66b716e8ec396fb633ded9"
+    },
+    {
+      "path": "tests/test_generated_collection_compatibility.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0e1bbbd3aac5848ff478ceabe0019543f9ef518",
+      "size": 10935,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f0e1bbbd3aac5848ff478ceabe0019543f9ef518"
+    },
+    {
+      "path": "tests/test_generated_collection_receiving.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1007ff47fc6c536fb5c315904d00c21d0b0cb5d",
+      "size": 9055,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/b1007ff47fc6c536fb5c315904d00c21d0b0cb5d"
+    },
+    {
+      "path": "tests/test_generated_module_identity.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86b15042ff870e7a6625338f24519502ce0b5aef",
+      "size": 8145,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/86b15042ff870e7a6625338f24519502ce0b5aef"
+    },
+    {
+      "path": "tests/test_generated_test_preservation.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f27d8ec63e4926b37bdfa1ac642d5cb77ae31c5",
+      "size": 11369,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/9f27d8ec63e4926b37bdfa1ac642d5cb77ae31c5"
+    },
+    {
+      "path": "tests/test_git_quoted_paths.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7935d1a61be31f035a65b32a191bf6da56e79211",
+      "size": 5892,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/7935d1a61be31f035a65b32a191bf6da56e79211"
+    },
+    {
+      "path": "tests/test_html_report.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "655c4ce97b5ffbd2fe81f5b602a2ca12388c27b7",
+      "size": 9811,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/655c4ce97b5ffbd2fe81f5b602a2ca12388c27b7"
+    },
+    {
+      "path": "tests/test_loop.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8540b31caf7c258e9345e62d11cd4796c5e92ba5",
+      "size": 5465,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/8540b31caf7c258e9345e62d11cd4796c5e92ba5"
+    },
+    {
+      "path": "tests/test_match_targets.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "713fe67e06d0534da5b685159e0a36ed75eb0b8e",
+      "size": 7619,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/713fe67e06d0534da5b685159e0a36ed75eb0b8e"
+    },
+    {
+      "path": "tests/test_model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "761c6de8806cc1a3577d0332c78b845c012a1617",
+      "size": 3829,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/761c6de8806cc1a3577d0332c78b845c012a1617"
+    },
+    {
+      "path": "tests/test_model_timeouts.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dc4e91e557586ea63f99355ac1611e1679989ff5",
+      "size": 10911,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/dc4e91e557586ea63f99355ac1611e1679989ff5"
+    },
+    {
+      "path": "tests/test_patch_physical_lines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5a9ff15106d39c953cda3f783f64362634f7ad1",
+      "size": 3085,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/f5a9ff15106d39c953cda3f783f64362634f7ad1"
+    },
+    {
+      "path": "tests/test_physical_lines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d25916fd9bc0cf98647e2678ce942fa6f2d2ba1c",
+      "size": 3238,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d25916fd9bc0cf98647e2678ce942fa6f2d2ba1c"
+    },
+    {
+      "path": "tests/test_python_source_encoding.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "903abd6db569a80e3a5a61d734bf376c0ac4c8dd",
+      "size": 5598,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/903abd6db569a80e3a5a61d734bf376c0ac4c8dd"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4",
+      "size": 13652,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/6ec7e36cd054d320842b5cdcfd34b635d4dc64f4"
+    },
+    {
+      "path": "tests/test_report_text_encoding.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "44e7622672361ffad936e462b0996816c55d2ddd",
+      "size": 9330,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/44e7622672361ffad936e462b0996816c55d2ddd"
+    },
+    {
+      "path": "tests/test_sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "size": 2545,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/de2fde7cd5dd683c338810d4707987ea5a2e9055"
+    },
+    {
+      "path": "tests/test_sandbox_deadline.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8ebce5a81205aad005e45a280aec898e3e89820",
+      "size": 4248,
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/blobs/d8ebce5a81205aad005e45a280aec898e3e89820"
+    }
+  ],
+  "tree_complete": true
+}

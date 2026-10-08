@@ -1,0 +1,182 @@
+{
+  "base_commit": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "command": [
+    "/workspace/scratch/6267db2cfc6e/test-env/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-qualified/fixtures",
+    "--junitxml",
+    "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-qualified/junit.xml",
+    "tests/test_module_identity.py",
+    "tests/test_diff.py"
+  ],
+  "cwd": "/workspace/scratch/6267db2cfc6e/testpilot-module-identity/candidate-631",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "TMPDIR": "/workspace/scratch/6267db2cfc6e/runtime-tmp"
+  },
+  "returncode": 0,
+  "counts": {
+    "tests": 15,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "source_before": {
+    "docs/module-identity.md": {
+      "bytes": 1855,
+      "sha256": "a9c0cc5da97e6e479da5888da90db617a365fb347297aeedd8580851adc19834",
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "mode": "0o644"
+    },
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "mode": "0o644"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 6065,
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+      "mode": "0o644"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "mode": "0o644"
+    },
+    "testpilot/diff.py": {
+      "bytes": 9387,
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "mode": "0o644"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 20656,
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "mode": "0o644"
+    },
+    "testpilot/loop.py": {
+      "bytes": 24064,
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+      "mode": "0o644"
+    },
+    "testpilot/model.py": {
+      "bytes": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "mode": "0o644"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "mode": "0o644"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 12721,
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "mode": "0o644"
+    },
+    "tests/conftest.py": {
+      "bytes": 144,
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+      "mode": "0o644"
+    },
+    "tests/test_diff.py": {
+      "bytes": 3523,
+      "sha256": "2c6b142c2e5862805f67be2efa8978fd21c7c9072910730e1aadc69c2e452387",
+      "mode": "0o644"
+    },
+    "tests/test_module_identity.py": {
+      "bytes": 4314,
+      "sha256": "d46df603a736e5f2f76a139373d2ea4195a485a1317976609190ecbf8791bb1d",
+      "mode": "0o644"
+    }
+  },
+  "source_after": {
+    "docs/module-identity.md": {
+      "bytes": 1855,
+      "sha256": "a9c0cc5da97e6e479da5888da90db617a365fb347297aeedd8580851adc19834",
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "mode": "0o644"
+    },
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "mode": "0o644"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 6065,
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+      "mode": "0o644"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "mode": "0o644"
+    },
+    "testpilot/diff.py": {
+      "bytes": 9387,
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "mode": "0o644"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 20656,
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "mode": "0o644"
+    },
+    "testpilot/loop.py": {
+      "bytes": 24064,
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+      "mode": "0o644"
+    },
+    "testpilot/model.py": {
+      "bytes": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "mode": "0o644"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "mode": "0o644"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 12721,
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "mode": "0o644"
+    },
+    "tests/conftest.py": {
+      "bytes": 144,
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+      "mode": "0o644"
+    },
+    "tests/test_diff.py": {
+      "bytes": 3523,
+      "sha256": "2c6b142c2e5862805f67be2efa8978fd21c7c9072910730e1aadc69c2e452387",
+      "mode": "0o644"
+    },
+    "tests/test_module_identity.py": {
+      "bytes": 4314,
+      "sha256": "d46df603a736e5f2f76a139373d2ea4195a485a1317976609190ecbf8791bb1d",
+      "mode": "0o644"
+    }
+  },
+  "source_unchanged": true,
+  "log": {
+    "bytes": 99,
+    "sha256": "5f82776892325b8cf25f370a3eced4d9121852fd80cf3777df5b2d0cb1657373"
+  },
+  "time_utc": "2026-10-08T14:50:16.236296+00:00"
+}

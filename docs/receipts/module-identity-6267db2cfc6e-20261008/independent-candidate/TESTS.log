@@ -1,0 +1,10 @@
+test_lib_package_does_not_bind_root_namesake (frozen_module_identity_oracle.ModuleIdentity.test_lib_package_does_not_bind_root_namesake) ... ok
+test_lib_package_initializer_is_importable (frozen_module_identity_oracle.ModuleIdentity.test_lib_package_initializer_is_importable) ... ok
+test_regular_lib_package_has_qualified_import_identity (frozen_module_identity_oracle.ModuleIdentity.test_regular_lib_package_has_qualified_import_identity) ... ok
+test_regular_root_package_control (frozen_module_identity_oracle.ModuleIdentity.test_regular_root_package_control) ... ok
+test_src_lib_package_control (frozen_module_identity_oracle.ModuleIdentity.test_src_lib_package_control) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.183s
+
+OK

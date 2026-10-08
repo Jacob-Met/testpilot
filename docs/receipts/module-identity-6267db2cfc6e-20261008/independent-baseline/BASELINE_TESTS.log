@@ -1,0 +1,50 @@
+test_lib_package_does_not_bind_root_namesake (__main__.ModuleIdentity.test_lib_package_does_not_bind_root_namesake) ... FAIL
+test_lib_package_initializer_is_importable (__main__.ModuleIdentity.test_lib_package_initializer_is_importable) ... FAIL
+test_regular_lib_package_has_qualified_import_identity (__main__.ModuleIdentity.test_regular_lib_package_has_qualified_import_identity) ... FAIL
+test_regular_root_package_control (__main__.ModuleIdentity.test_regular_root_package_control) ... ok
+test_src_lib_package_control (__main__.ModuleIdentity.test_src_lib_package_control) ... ok
+
+======================================================================
+FAIL: test_lib_package_does_not_bind_root_namesake (__main__.ModuleIdentity.test_lib_package_does_not_bind_root_namesake)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/probe_module_identity.py", line 85, in test_lib_package_does_not_bind_root_namesake
+    self.exercise("lib/" + PROBE + ".py", "lib." + PROBE, shadow=True)
+  File "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/probe_module_identity.py", line 69, in exercise
+    self.assertEqual(selected.module, expected_module)
+AssertionError: '_estate_module_binding_probe' != 'lib._estate_module_binding_probe'
+- _estate_module_binding_probe
++ lib._estate_module_binding_probe
+? ++++
+
+
+======================================================================
+FAIL: test_lib_package_initializer_is_importable (__main__.ModuleIdentity.test_lib_package_initializer_is_importable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/probe_module_identity.py", line 88, in test_lib_package_initializer_is_importable
+    self.exercise("lib/__init__.py", "lib")
+  File "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/probe_module_identity.py", line 69, in exercise
+    self.assertEqual(selected.module, expected_module)
+AssertionError: '' != 'lib'
++ lib
+
+
+======================================================================
+FAIL: test_regular_lib_package_has_qualified_import_identity (__main__.ModuleIdentity.test_regular_lib_package_has_qualified_import_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/probe_module_identity.py", line 82, in test_regular_lib_package_has_qualified_import_identity
+    self.exercise("lib/" + PROBE + ".py", "lib." + PROBE)
+  File "/workspace/scratch/6267db2cfc6e/testpilot-module-identity-review/probe_module_identity.py", line 69, in exercise
+    self.assertEqual(selected.module, expected_module)
+AssertionError: '_estate_module_binding_probe' != 'lib._estate_module_binding_probe'
+- _estate_module_binding_probe
++ lib._estate_module_binding_probe
+? ++++
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.180s
+
+FAILED (failures=3)

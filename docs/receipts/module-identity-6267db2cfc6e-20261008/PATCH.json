@@ -1,0 +1,22 @@
+{
+  "production_edit_after_frozen_baseline": true,
+  "time_utc": "2026-10-08T14:50:04.132608+00:00",
+  "base_commit": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "production_path": "testpilot/diff.py",
+  "before": {
+    "bytes": 9396,
+    "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a"
+  },
+  "after": {
+    "bytes": 9387,
+    "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b"
+  },
+  "exact_single_replacement": {
+    "before": "if parts and parts[0] in (\"src\", \"lib\"):",
+    "after": "if parts and parts[0] == \"src\":",
+    "all_other_bytes_unchanged": true
+  },
+  "patch": "--- a/testpilot/diff.py\n+++ b/testpilot/diff.py\n@@ -162,7 +162,7 @@\n \n def module_name(path: str) -> str:\n     parts = list(PurePosixPath(path).with_suffix(\"\").parts)\n-    if parts and parts[0] in (\"src\", \"lib\"):\n+    if parts and parts[0] == \"src\":\n         parts = parts[1:]\n     if parts and parts[-1] == \"__init__\":\n         parts = parts[:-1]\n"
+}

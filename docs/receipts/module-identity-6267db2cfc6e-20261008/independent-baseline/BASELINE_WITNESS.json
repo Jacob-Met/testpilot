@@ -1,0 +1,202 @@
+{
+  "schema": "testpilot-module-identity-baseline.v1",
+  "source": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "frozen_test_sha256": "ec283532fc7fab6d928ce3ae15d1bd4240386563284fcd0523f6c008525cbaa0",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "methods": 5,
+  "failures": 3,
+  "errors": 0,
+  "source_hashes": {
+    "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+  },
+  "source_unchanged": true,
+  "actual_native_processes": 5,
+  "cases": [
+    {
+      "case": "__main__.ModuleIdentity.test_lib_package_does_not_bind_root_namesake",
+      "fixture_files": {
+        "_estate_module_binding_probe.py": "def selected_value():\n    return 99\n",
+        "lib/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "lib/__init__.py": ""
+      },
+      "diff": "--- a/lib/_estate_module_binding_probe.py\n+++ b/lib/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "lib/_estate_module_binding_probe.py",
+        "module": "_estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-q74vebhu/lib/_estate_module_binding_probe.py",
+      "native_pythonpath": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-q74vebhu",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-q74vebhu/_estate_module_binding_probe.py\", \"value\": 99}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-q74vebhu/_estate_module_binding_probe.py",
+        "value": 99
+      },
+      "fixture_hashes_before": {
+        "_estate_module_binding_probe.py": "b4f5672bfaa9674f1aa933c7f474ef8d07b75e1916f0b3fb4886664c1c13a04e",
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "_estate_module_binding_probe.py": "b4f5672bfaa9674f1aa933c7f474ef8d07b75e1916f0b3fb4886664c1c13a04e",
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "__main__.ModuleIdentity.test_lib_package_initializer_is_importable",
+      "fixture_files": {
+        "lib/__init__.py": "def selected_value():\n    return 2\n"
+      },
+      "diff": "--- a/lib/__init__.py\n+++ b/lib/__init__.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "lib/__init__.py",
+        "module": "",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-mtu172u9/lib/__init__.py",
+      "native_pythonpath": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-mtu172u9",
+      "native_returncode": 1,
+      "native_output": "Traceback (most recent call last):\n  File \"<string>\", line 3, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1384, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1298, in _sanity_check\nValueError: Empty module name\n",
+      "native_timed_out": false,
+      "native_result": null,
+      "fixture_hashes_before": {
+        "lib/__init__.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0"
+      },
+      "fixture_hashes_after": {
+        "lib/__init__.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0"
+      }
+    },
+    {
+      "case": "__main__.ModuleIdentity.test_regular_lib_package_has_qualified_import_identity",
+      "fixture_files": {
+        "lib/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "lib/__init__.py": ""
+      },
+      "diff": "--- a/lib/_estate_module_binding_probe.py\n+++ b/lib/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "lib/_estate_module_binding_probe.py",
+        "module": "_estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-n7u7iwnv/lib/_estate_module_binding_probe.py",
+      "native_pythonpath": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-n7u7iwnv",
+      "native_returncode": 1,
+      "native_output": "Traceback (most recent call last):\n  File \"<string>\", line 3, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py\", line 90, in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen importlib._bootstrap>\", line 1387, in _gcd_import\n  File \"<frozen importlib._bootstrap>\", line 1360, in _find_and_load\n  File \"<frozen importlib._bootstrap>\", line 1324, in _find_and_load_unlocked\nModuleNotFoundError: No module named '_estate_module_binding_probe'\n",
+      "native_timed_out": false,
+      "native_result": null,
+      "fixture_hashes_before": {
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "__main__.ModuleIdentity.test_regular_root_package_control",
+      "fixture_files": {
+        "pkg/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "pkg/__init__.py": ""
+      },
+      "diff": "--- a/pkg/_estate_module_binding_probe.py\n+++ b/pkg/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "pkg/_estate_module_binding_probe.py",
+        "module": "pkg._estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "pkg._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-743vqfj9/pkg/_estate_module_binding_probe.py",
+      "native_pythonpath": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-743vqfj9",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-743vqfj9/pkg/_estate_module_binding_probe.py\", \"value\": 2}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-743vqfj9/pkg/_estate_module_binding_probe.py",
+        "value": 2
+      },
+      "fixture_hashes_before": {
+        "pkg/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "pkg/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "pkg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "case": "__main__.ModuleIdentity.test_src_lib_package_control",
+      "fixture_files": {
+        "src/lib/_estate_module_binding_probe.py": "def selected_value():\n    return 2\n",
+        "src/lib/__init__.py": ""
+      },
+      "diff": "--- a/src/lib/_estate_module_binding_probe.py\n+++ b/src/lib/_estate_module_binding_probe.py\n@@ -1,2 +1,2 @@\n def selected_value():\n-    return 1\n+    return 2\n",
+      "selected": {
+        "path": "src/lib/_estate_module_binding_probe.py",
+        "module": "lib._estate_module_binding_probe",
+        "qualname": "selected_value",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def selected_value():\n    return 2",
+        "is_method": false
+      },
+      "expected_module": "lib._estate_module_binding_probe",
+      "expected_source": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-joz0rzie/src/lib/_estate_module_binding_probe.py",
+      "native_pythonpath": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-joz0rzie/src:/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-joz0rzie",
+      "native_returncode": 0,
+      "native_output": "{\"module_file\": \"/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-joz0rzie/src/lib/_estate_module_binding_probe.py\", \"value\": 2}\n",
+      "native_timed_out": false,
+      "native_result": {
+        "module_file": "/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity-review/module-identity-joz0rzie/src/lib/_estate_module_binding_probe.py",
+        "value": 2
+      },
+      "fixture_hashes_before": {
+        "src/lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "src/lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "fixture_hashes_after": {
+        "src/lib/_estate_module_binding_probe.py": "a420051b9993faf4a08ffa0ec33a73408df4576fff2ff8eb817e9742d32b60a0",
+        "src/lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "production_edits": false
+}

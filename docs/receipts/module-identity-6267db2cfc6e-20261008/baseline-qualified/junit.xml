@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="9" time="1.620" timestamp="2026-10-08T23:49:43.365287+09:00" hostname="05aaedaf3e50"><testcase classname="tests.test_module_identity" name="test_selected_module_imports_the_selected_source[root-module]" time="0.078" /><testcase classname="tests.test_module_identity" name="test_selected_module_imports_the_selected_source[root-package]" time="0.043" /><testcase classname="tests.test_module_identity" name="test_selected_module_imports_the_selected_source[src-package]" time="0.062" /><testcase classname="tests.test_module_identity" name="test_selected_module_imports_the_selected_source[src-lib]" time="0.042" /><testcase classname="tests.test_module_identity" name="test_selected_module_imports_the_selected_source[lib-package]" time="0.031"><failure message="AssertionError: Traceback (most recent call last):&#10;    File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;&#10;    File &quot;/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py&quot;, line 90, in import_module&#10;      return _bootstrap._gcd_import(name[level:], package, level)&#10;             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^&#10;    File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1387, in _gcd_import&#10;    File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1360, in _find_and_load&#10;    File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1324, in _find_and_load_unlocked&#10;  ModuleNotFoundError: No module named '_identity_pricing'&#10;  &#10;assert 1 == 0">tmp_path = PosixPath('/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_selected_module_imports_t4')
+relative = 'lib/_identity_pricing.py', expected_module = 'lib._identity_pricing'
+namesake = False
+
+    @pytest.mark.parametrize(
+        ("relative", "expected_module", "namesake"),
+        [
+            (f"{_NAME}.py", _NAME, False),
+            (f"pkg/{_NAME}.py", f"pkg.{_NAME}", False),
+            (f"src/pkg/{_NAME}.py", f"pkg.{_NAME}", False),
+            (f"src/lib/{_NAME}.py", f"lib.{_NAME}", False),
+            (f"lib/{_NAME}.py", f"lib.{_NAME}", False),
+            (f"lib/{_NAME}.py", f"lib.{_NAME}", True),
+            ("lib/__init__.py", "lib", False),
+        ],
+        ids=["root-module", "root-package", "src-package", "src-lib",
+             "lib-package", "lib-with-root-namesake", "lib-init"],
+    )
+    def test_selected_module_imports_the_selected_source(
+        tmp_path, relative, expected_module, namesake
+    ):
+        repo = tmp_path / "repo"
+        before = _project(repo, relative, namesake)
+        try:
+            target = _select(repo, relative)
+            command = (
+                "import importlib,json; from pathlib import Path; "
+                f"module=importlib.import_module({target.module!r}); "
+                "print(json.dumps({'path':str(Path(module.__file__).resolve()),"
+                "'value':module.selected_value()}))"
+            )
+            rc, output, timed_out = _run(
+                [sys.executable, "-c", command], repo, clean_env(repo), 10
+            )
+            assert not timed_out, output
+&gt;           assert rc == 0, output
+E           AssertionError: Traceback (most recent call last):
+E               File "&lt;string&gt;", line 1, in &lt;module&gt;
+E               File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+E                 return _bootstrap._gcd_import(name[level:], package, level)
+E                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               File "&lt;frozen importlib._bootstrap&gt;", line 1387, in _gcd_import
+E               File "&lt;frozen importlib._bootstrap&gt;", line 1360, in _find_and_load
+E               File "&lt;frozen importlib._bootstrap&gt;", line 1324, in _find_and_load_unlocked
+E             ModuleNotFoundError: No module named '_identity_pricing'
+E             
+E           assert 1 == 0
+
+tests/test_module_identity.py:89: AssertionError</failure></testcase><testcase classname="tests.test_module_identity" name="test_selected_module_imports_the_selected_source[lib-with-root-namesake]" time="0.034"><failure message="AssertionError: assert {'path': '/de..., 'value': 99} == {'path': '/de..., 'value': 23}&#10;  &#10;  Differing items:&#10;  {'value': 99} != {'value': 23}&#10;  {'path': '/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_selected_module_imports_t5/repo/_identity_pricing.py'} != {'path': '/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_selected_module_imports_t5/repo/lib/_identity_pricing.py'}&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_selected_module_imports_t5')
+relative = 'lib/_identity_pricing.py', expected_module = 'lib._identity_pricing'
+namesake = True
+
+    @pytest.mark.parametrize(
+        ("relative", "expected_module", "namesake"),
+        [
+            (f"{_NAME}.py", _NAME, False),
+            (f"pkg/{_NAME}.py", f"pkg.{_NAME}", False),
+            (f"src/pkg/{_NAME}.py", f"pkg.{_NAME}", False),
+            (f"src/lib/{_NAME}.py", f"lib.{_NAME}", False),
+            (f"lib/{_NAME}.py", f"lib.{_NAME}", False),
+            (f"lib/{_NAME}.py", f"lib.{_NAME}", True),
+            ("lib/__init__.py", "lib", False),
+        ],
+        ids=["root-module", "root-package", "src-package", "src-lib",
+             "lib-package", "lib-with-root-namesake", "lib-init"],
+    )
+    def test_selected_module_imports_the_selected_source(
+        tmp_path, relative, expected_module, namesake
+    ):
+        repo = tmp_path / "repo"
+        before = _project(repo, relative, namesake)
+        try:
+            target = _select(repo, relative)
+            command = (
+                "import importlib,json; from pathlib import Path; "
+                f"module=importlib.import_module({target.module!r}); "
+                "print(json.dumps({'path':str(Path(module.__file__).resolve()),"
+                "'value':module.selected_value()}))"
+            )
+            rc, output, timed_out = _run(
+                [sys.executable, "-c", command], repo, clean_env(repo), 10
+            )
+            assert not timed_out, output
+            assert rc == 0, output
+            observed = json.loads(output)
+&gt;           assert observed == {"path": str((repo / relative).resolve()), "value": 23}
+E           AssertionError: assert {'path': '/de..., 'value': 99} == {'path': '/de..., 'value': 23}
+E             
+E             Differing items:
+E             {'value': 99} != {'value': 23}
+E             {'path': '/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_selected_module_imports_t5/repo/_identity_pricing.py'} != {'path': '/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_selected_module_imports_t5/repo/lib/_identity_pricing.py'}
+E             Use -v to get more diff
+
+tests/test_module_identity.py:91: AssertionError</failure></testcase><testcase classname="tests.test_module_identity" name="test_selected_module_imports_the_selected_source[lib-init]" time="0.035"><failure message="AssertionError: Traceback (most recent call last):&#10;    File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;&#10;    File &quot;/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py&quot;, line 90, in import_module&#10;      return _bootstrap._gcd_import(name[level:], package, level)&#10;             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^&#10;    File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1384, in _gcd_import&#10;    File &quot;&lt;frozen importlib._bootstrap&gt;&quot;, line 1298, in _sanity_check&#10;  ValueError: Empty module name&#10;  &#10;assert 1 == 0">tmp_path = PosixPath('/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_selected_module_imports_t6')
+relative = 'lib/__init__.py', expected_module = 'lib', namesake = False
+
+    @pytest.mark.parametrize(
+        ("relative", "expected_module", "namesake"),
+        [
+            (f"{_NAME}.py", _NAME, False),
+            (f"pkg/{_NAME}.py", f"pkg.{_NAME}", False),
+            (f"src/pkg/{_NAME}.py", f"pkg.{_NAME}", False),
+            (f"src/lib/{_NAME}.py", f"lib.{_NAME}", False),
+            (f"lib/{_NAME}.py", f"lib.{_NAME}", False),
+            (f"lib/{_NAME}.py", f"lib.{_NAME}", True),
+            ("lib/__init__.py", "lib", False),
+        ],
+        ids=["root-module", "root-package", "src-package", "src-lib",
+             "lib-package", "lib-with-root-namesake", "lib-init"],
+    )
+    def test_selected_module_imports_the_selected_source(
+        tmp_path, relative, expected_module, namesake
+    ):
+        repo = tmp_path / "repo"
+        before = _project(repo, relative, namesake)
+        try:
+            target = _select(repo, relative)
+            command = (
+                "import importlib,json; from pathlib import Path; "
+                f"module=importlib.import_module({target.module!r}); "
+                "print(json.dumps({'path':str(Path(module.__file__).resolve()),"
+                "'value':module.selected_value()}))"
+            )
+            rc, output, timed_out = _run(
+                [sys.executable, "-c", command], repo, clean_env(repo), 10
+            )
+            assert not timed_out, output
+&gt;           assert rc == 0, output
+E           AssertionError: Traceback (most recent call last):
+E               File "&lt;string&gt;", line 1, in &lt;module&gt;
+E               File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py", line 90, in import_module
+E                 return _bootstrap._gcd_import(name[level:], package, level)
+E                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               File "&lt;frozen importlib._bootstrap&gt;", line 1384, in _gcd_import
+E               File "&lt;frozen importlib._bootstrap&gt;", line 1298, in _sanity_check
+E             ValueError: Empty module name
+E             
+E           assert 1 == 0
+
+tests/test_module_identity.py:89: AssertionError</failure></testcase><testcase classname="tests.test_module_identity" name="test_generated_tests_run_against_selected_module[lib-with-root-namesake]" time="0.594"><failure message="AssertionError: 0 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected&#10;  No generated test case passed. Existing-suite passes cannot verify the generated files. Write runnable tests and check project collection rules, deselection and skip conditions.&#10;  --- FAILED: test_selected_source_and_behavior&#10;  assert 99 == 23&#10;   +  where 99 = &lt;function selected_value at 0x7f6e1b17bec0&gt;()&#10;   +    where &lt;function selected_value at 0x7f6e1b17bec0&gt; = selected.selected_value&#10;  def test_selected_source_and_behavior():&#10;  &gt;       assert selected.selected_value() == 23&#10;  E       assert 99 == 23&#10;  E        +  where 99 = &lt;function selected_value at 0x7f6e1b17bec0&gt;()&#10;  E        +    where &lt;function selected_value at 0x7f6e1b17bec0&gt; = selected.selected_value&#10;  &#10;  tests/test_selected_identity.py:5: AssertionError&#10;assert False&#10; +  where False = SandboxResult(returncode=1, timed_out=False, duration_s=0.59, timeout_s=20, output='F                                 ...test_selected_identity.py')], coverage=None, generated_files=['tests/test_selected_identity.py'], junit_available=True).ok">tmp_path = PosixPath('/dev/shm/estate-6267db2cfc6e-workspace/testpilot-module-identity/baseline-qualified/fixtures/test_generated_tests_run_again0')
+relative = 'lib/_identity_pricing.py'
+
+    @pytest.mark.parametrize("relative", [f"lib/{_NAME}.py", f"src/lib/{_NAME}.py"],
+                             ids=["lib-with-root-namesake", "src-lib"])
+    def test_generated_tests_run_against_selected_module(tmp_path, relative):
+        repo = tmp_path / "repo"
+        before = _project(repo, relative, namesake=relative.startswith("lib/"))
+        try:
+            target = _select(repo, relative)
+            generated = (
+                "from pathlib import Path\n"
+                f"import {target.module} as selected\n\n"
+                "def test_selected_source_and_behavior():\n"
+                "    assert selected.selected_value() == 23\n"
+                "    assert Path(selected.__file__).resolve() == "
+                f"(Path.cwd() / {relative!r}).resolve()\n"
+            )
+            result = run_pytest(
+                repo, {"tests/test_selected_identity.py": generated},
+                timeout=20, python=sys.executable, coverage=False,
+            )
+&gt;           assert result.ok, result.failure_report()
+E           AssertionError: 0 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected
+E             No generated test case passed. Existing-suite passes cannot verify the generated files. Write runnable tests and check project collection rules, deselection and skip conditions.
+E             --- FAILED: test_selected_source_and_behavior
+E             assert 99 == 23
+E              +  where 99 = &lt;function selected_value at 0x7f6e1b17bec0&gt;()
+E              +    where &lt;function selected_value at 0x7f6e1b17bec0&gt; = selected.selected_value
+E             def test_selected_source_and_behavior():
+E             &gt;       assert selected.selected_value() == 23
+E             E       assert 99 == 23
+E             E        +  where 99 = &lt;function selected_value at 0x7f6e1b17bec0&gt;()
+E             E        +    where &lt;function selected_value at 0x7f6e1b17bec0&gt; = selected.selected_value
+E             
+E             tests/test_selected_identity.py:5: AssertionError
+E           assert False
+E            +  where False = SandboxResult(returncode=1, timed_out=False, duration_s=0.59, timeout_s=20, output='F                                 ...test_selected_identity.py')], coverage=None, generated_files=['tests/test_selected_identity.py'], junit_available=True).ok
+
+tests/test_module_identity.py:116: AssertionError</failure></testcase><testcase classname="tests.test_module_identity" name="test_generated_tests_run_against_selected_module[src-lib]" time="0.613" /></testsuite></testsuites>
