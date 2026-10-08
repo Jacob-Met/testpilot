@@ -1,0 +1,218 @@
+{
+  "schema": "testpilot.recheck-html.independent-review/1",
+  "reviewer": "ae0a1ea0b247/root",
+  "disposition": "ACCEPT",
+  "repository": "Jacob-Met/testpilot",
+  "issue": 37,
+  "pullRequest": 41,
+  "baselineCommit": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "reviewedHead": "93ab250df63fdcc063d33e78812502634d2e985f",
+  "reviewedTree": "3e9c73052118f9f228247bc9133889fd43f8d852",
+  "acceptedSource": [
+    {
+      "path": "testpilot/recheck_html.py",
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "sha": "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 12115,
+      "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "sha": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52"
+    },
+    {
+      "path": "tests/test_recheck_html.py",
+      "bytes": 8685,
+      "sha256": "d14f0186aee3eef85dba24e6407232e276364ed97c94e40dbabed4b0e728f974",
+      "sha": "416ebc35d8c5bd6b9900abd9f4a9f07b08b3e438"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13668,
+      "sha256": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+      "sha": "426085b7824979a764056c528d2ca2ccfc647d77"
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "bytes": 7125,
+      "sha256": "1742c8da5eb15e770ebcad06c4e0ac5e465e5d0bec79db2dd58c7c2e9b6e7ea4",
+      "sha": "7ac4a71d60add1ee718ab777c74aff887a453c29"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13171,
+      "sha256": "741d39d5951aa08550b16c0ffc294024e6a498c2411df8a57c888f3605b623b7",
+      "sha": "0a302f3dea5edc6688793e32da8dd5754ce2b907"
+    }
+  ],
+  "independence": {
+    "contractSha256": "f6914c4de4e9555527f865adb6979034f828edc4dc8e2652fd2a21a55165f22d",
+    "fixtureBuilderSha256": "1392d3346215b66a490d9539612505a6fa8ecadf438822120d847eb8c90523be",
+    "frozenBeforeCandidateDisclosure": true,
+    "nativeFreezeComment": 6064067702,
+    "source": "Reviewer read original native recheck/sandbox source and the actual old CLI outputs before freezing expectations. Candidate selectors were matched afterward without changing expected facts."
+  },
+  "browser": {
+    "groups": 5,
+    "passed": 5,
+    "chromium": "153.0.8010.0",
+    "genuineDownloads": 5,
+    "requests": 0,
+    "pageErrors": 0,
+    "dialogs": 0,
+    "popups": 0,
+    "driverSha256": "b4d24bbdac94de7b5b90af23e9505c5f57056c8757eee207a91062a03ac1db7f",
+    "cases": [
+      {
+        "name": "native-buggy",
+        "origin": "Exact recorded native CLI output; no new execution",
+        "status": "failed",
+        "caseCount": 5,
+        "retainedFiles": 1,
+        "download": {
+          "bytes": 4868,
+          "sha256": "91a3c8377aa1defb8ad9a15828f6de3b9b55eafa9ea69a32b70164c8808510d7",
+          "suggestedFilename": "recheck.json"
+        },
+        "result": "PASS"
+      },
+      {
+        "name": "native-fixed",
+        "origin": "Exact recorded native CLI output; no new execution",
+        "status": "passed",
+        "caseCount": 5,
+        "retainedFiles": 1,
+        "download": {
+          "bytes": 2912,
+          "sha256": "c832ffbf66b8f2169a0bc83938b5b883ed96ea7d16c9b5912709efe822a87d46",
+          "suggestedFilename": "recheck.json"
+        },
+        "result": "PASS"
+      },
+      {
+        "name": "literal-mixed",
+        "origin": "Authored consumer-only data using native baseline SandboxResult.to_dict; not executed tests",
+        "status": "failed",
+        "caseCount": 5,
+        "retainedFiles": 2,
+        "download": {
+          "bytes": 3943,
+          "sha256": "bbd347a6312c4536761f7b83683dfcd02d907b84f34902c1ed6434c44779ac2b",
+          "suggestedFilename": "recheck.json"
+        },
+        "result": "PASS"
+      },
+      {
+        "name": "missing-junit",
+        "origin": "Authored native-result consumer vector; missing JUnit, no measured run",
+        "status": "failed",
+        "caseCount": 0,
+        "retainedFiles": 2,
+        "download": {
+          "bytes": 2308,
+          "sha256": "70c4a2bf0b15d6a18fb2d542cbc3f9d486f1bfabec13bf7ed2a4f385b037f389",
+          "suggestedFilename": "recheck.json"
+        },
+        "result": "PASS"
+      },
+      {
+        "name": "no-tests",
+        "origin": "Authored native-result consumer vector; no measured run",
+        "status": "no_tests",
+        "caseCount": 0,
+        "retainedFiles": 2,
+        "download": {
+          "bytes": 2362,
+          "sha256": "96f6aa621b61ae107d3d81c39def2a3a7b38f481aeb9f4bf42c82978470d7443",
+          "suggestedFilename": "recheck.json"
+        },
+        "result": "PASS"
+      }
+    ],
+    "receivedFacts": [
+      "Current status is distinct from historical source status.",
+      "Selected-suite counts and retained-case counts match every frozen input independently.",
+      "Every recorded node identity, outcome, diagnostic, retained-file attribution, full retained source, placement, byte count and hash is preserved in the reading view.",
+      "Run/Python/repository/source identities, timestamps, timeout facts and recorded-tail label are exact.",
+      "Missing JUnit leaves case counts explicitly unavailable; no-tests is not success.",
+      "HTML-like data creates no elements, script execution, requests, dialogs or popups.",
+      "Each real JSON download equals the full original input bytes, including UTF-8 Unicode and CRLF serialization."
+    ]
+  },
+  "sourceReview": {
+    "nativeSourceBindings": [
+      "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52"
+    ],
+    "unchangedRecheckBodies": [
+      "RecheckError",
+      "SavedTests",
+      "_unique_object",
+      "_reject_constant",
+      "read_saved_tests",
+      "_placement",
+      "recheck_report",
+      "render_recheck",
+      "_output_destination",
+      "_write_console",
+      "run_recheck_command"
+    ],
+    "existingOutputTestOnlyAddsFilename": true,
+    "allSixCandidateFilesUnchangedAfterBrowser": true,
+    "rendererImports": [
+      "from __future__ import annotations",
+      "import base64",
+      "import hashlib",
+      "import html",
+      "import json"
+    ],
+    "observation": "Renderer is passive standard-library JSON-to-HTML, with no file reading, model call, subprocess, test execution or live request. Existing execution, admission, output path and CLI bodies are unchanged. Writer addition serializes through the native text encoding/newline mechanism and embeds the same bytes it writes."
+  },
+  "visual": {
+    "viewports": [
+      [
+        1280,
+        900
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "accepted": true,
+    "phoneDocumentWidth": 390,
+    "phoneCountTable": {
+      "containerWidth": 334,
+      "scrollWidth": 506,
+      "overflowConfined": true
+    },
+    "controlMinimumHeight": 44.796875,
+    "images": [
+      {
+        "path": "evidence/phone-current-result.jpg",
+        "sha256": "41c36f286cfb4e7c474e9c9fe3e86b529970bdda9237a93522b0e33039512534",
+        "bytes": 39814
+      },
+      {
+        "path": "evidence/phone-retained-source.jpg",
+        "sha256": "950807eb6b749dca9809c07720932c0daa99a399a8d0b7f15e79091b2208bd0d",
+        "bytes": 55882
+      }
+    ],
+    "observation": "Current failure, run facts, source identity and expanded literal source are readable with no clipped or overlapping controls. Long hashes/code wrap; the wide count table scrolls within its own container."
+  },
+  "limits": [
+    "The mixed-outcome, missing-JUnit and no-tests inputs are explicit consumer-only vectors built with original SandboxResult.to_dict, not measured executions. Only the buggy/fixed inputs are preserved actual native CLI outputs.",
+    "Before the first browser execution, the read-view oracle clarified the documented visible Unicode escape for carriage return. Exact JSON downloads still preserve all source code points and original serialized bytes. No case was rerun and no product change was needed.",
+    "Local CJK font glyph coverage is incomplete in the screenshots. Exact Unicode DOM text and downloaded source bytes were verified; general font coverage, accessibility, other browser/OS behavior and hosted service operation are not claimed.",
+    "The author actual CLI tests and their output-byte preservation are retained separately. This independent consumer review did not repeat the model/execution suite."
+  ],
+  "evidence": {
+    "archive": "independent-recheck-html.tar.gz",
+    "bytes": 161908,
+    "sha256": "67f48f765f20f066ee89268eb54340b108e6bd99655980adc2ce97fd8c3d44ac",
+    "gitBlob": "6dcad3820246d3e9006e97474ddd5883a9451562",
+    "members": 46
+  }
+}

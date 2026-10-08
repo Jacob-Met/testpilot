@@ -115,9 +115,46 @@
     "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=<source> TMPDIR=<owned temporary directory> <existing Python 3.12 pytest runtime> -m pytest -q -p no:cacheprovider tests/test_recheck_html.py tests/test_recheck.py"
   },
   "independent_review": {
-    "status": "in progress",
+    "status": "accepted",
     "pre_candidate_contract_sha256": "f6914c4de4e9555527f865adb6979034f828edc4dc8e2652fd2a21a55165f22d",
     "fixture_builder_sha256": "1392d3346215b66a490d9539612505a6fa8ecadf438822120d847eb8c90523be",
-    "native_contract": "https://github.com/Jacob-Met/testpilot/issues/37#issuecomment-6064067702"
+    "native_contract": "https://github.com/Jacob-Met/testpilot/issues/37#issuecomment-6064067702",
+    "source_head": "93ab250df63fdcc063d33e78812502634d2e985f",
+    "groups": 5,
+    "downloads": 5,
+    "archive": {
+      "path": "independent-recheck-html.tar.gz",
+      "bytes": 161908,
+      "sha256": "67f48f765f20f066ee89268eb54340b108e6bd99655980adc2ce97fd8c3d44ac",
+      "git_blob": "6dcad3820246d3e9006e97474ddd5883a9451562",
+      "regular_members": 46
+    },
+    "browser": {
+      "name": "Chromium",
+      "version": "153.0.8010.0",
+      "requests": 0,
+      "page_errors": 0,
+      "dialogs": 0,
+      "popups": 0
+    },
+    "consumer_limits": [
+      "Two vectors are exact original native CLI outputs; three additional vectors are authored through original SandboxResult.to_dict, not measured test execution.",
+      "Phone layout and English readability were visually accepted; installed CJK font coverage is incomplete, while Unicode DOM/source/download bytes remain exact.",
+      "Carriage returns are visible escaped text in the HTML reading view; the download retains exact CRLF artifact bytes."
+    ],
+    "concise_disposition": {
+      "path": "independent-review.json",
+      "bytes": 8627,
+      "sha256": "9eb1bf4c34ec16089f6565ac8ae7088d05a2838f9798e7010eb07971da3c05b0",
+      "git_blob": "2967863eda3490722356d75372250cd7ec048f00"
+    }
+  },
+  "hosted_evidence": {
+    "receipt": "hosted-ci.json",
+    "log": "hosted-ci.log.txt",
+    "source_head": "93ab250df63fdcc063d33e78812502634d2e985f",
+    "run": 37807062511,
+    "job": 113413995657,
+    "result": "372 passed, 18 subtests passed in 99.77s (0:01:39)"
   }
 }

@@ -16,4 +16,17 @@ The writer's narrow diff leaves all eleven other recheck function/class AST bodi
 
 The 44-test gate is the selected native recheck suite, not a claim that the full hosted suite ran. Temporary shared-storage capacity stops during metadata/archive retention are preserved separately in the author receipt; no product test failed in those stops. Original JSON/Markdown bytes stay exact. HTML cannot represent every control/surrogate as a literal text node, so the reading view shows explicit escapes while the downloadable JSON bytes retain the original representation.
 
-Independent browser/source receiving and the actual native hosted/integration results are recorded separately when complete.
+## Independent receiving
+
+The independent reviewer froze five inputs and their expected facts before reading the candidate: both exact native original CLI outputs, plus three explicitly authored vectors produced through the original `SandboxResult.to_dict`. Those authored vectors are consumer controls, not measured execution claims.
+
+All five groups passed once in actual Chromium 153.0.8010.0. Five genuine downloads reproduce their respective frozen JSON bytes exactly. The receiver checks every recorded case/message/source/placement/hash, current versus historical status, selected versus retained counts, missing JUnit and no-tests meaning, labelled output tail, source/run identity and literal markup. There were zero browser requests, page errors, dialogs or popups; all six candidate source blobs remained exact.
+
+`independent-recheck-html.tar.gz` retains all 46 members: frozen expectations and fixture builder, exact inputs, receiver, reports, DOM observations, downloads, source snapshots, two phone images and raw receipts. It is 161,908 bytes, SHA-256 `67f48f765f20f066ee89268eb54340b108e6bd99655980adc2ce97fd8c3d44ac`. The separate concise disposition is `independent-review.json`.
+
+Both phone images were visually accepted for layout and English readability. Installed CJK font coverage is incomplete; exact Unicode DOM/source/download fidelity passes. The pre-execution clarification retains the distinction between visible CR escapes in the reading view and exact CRLF bytes in the download.
+
+## Hosted qualification
+
+The unchanged repository workflow passed its full Python 3.12.15 suite: **372 tests and 18 subtests**, in 99.77 seconds. Run 37807062511 / job 113413995657 tested merge `a97a059fb27af0e753e84938cabcd0f7d0f7a442`, whose tree is byte-identical to the original published candidate `3e9c73052118f9f228247bc9133889fd43f8d852`. `hosted-ci.json` and the original decoded `hosted-ci.log.txt` retain the exact checkout and result. Later evidence-only head checks and actual source integration are recorded separately; this receipt does not relabel the original hosted checkout.
+
