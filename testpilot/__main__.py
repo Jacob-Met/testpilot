@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 import argparse
+import os
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -9,6 +11,16 @@ from pathlib import Path
 from .diff import DiffSourceError
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
+
+
+def _python_executable(value: str) -> str:
+    executable = shutil.which(os.path.expanduser(value))
+    if executable is None:
+        raise argparse.ArgumentTypeError(f"Python interpreter not found or not executable: {value}")
+    # Resolve directory symlinks/.. before the sandbox changes cwd, but keep
+    # the final executable symlink so a venv does not become the base Python.
+    path = Path(executable)
+    return str(path.parent.resolve() / path.name)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -25,6 +37,8 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--base-url", help="override OpenAI-compatible base URL")
     r.add_argument("--rounds", type=int, default=3, help="max repair rounds (default 3)")
     r.add_argument("--timeout", type=float, default=60.0, help="pytest timeout per run, seconds")
+    r.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
+                   help="project Python for all test runs; path or PATH command (default: this interpreter)")
     r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
     r.add_argument("--out", default="testpilot-out")
     a = ap.parse_args(argv)
@@ -42,7 +56,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"testpilot: {e}", file=sys.stderr)
         return 2
     pilot = TestPilot(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
-                      max_total_tokens=a.max_tokens)
+                      max_total_tokens=a.max_tokens, python=a.python)
     try:
         res = pilot.run(a.repo, diff_text)
     except DiffSourceError as e:
