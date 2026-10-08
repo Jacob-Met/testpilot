@@ -1,0 +1,23 @@
+import hashlib,json,os,subprocess,sys,time,xml.etree.ElementTree as ET
+from pathlib import Path
+from datetime import datetime,timezone
+root=Path("/dev/shm/86776bb3cdb8-receiving-testpilot"); repo=root/"repo"
+pin="2e32efee7fec4b97f3756083c66f4b860359957b"
+def git(*a): return subprocess.check_output(["git","-C",str(repo),*a]).decode().strip()
+assert git("rev-parse","HEAD")==pin and not git("status","--porcelain","--untracked-files=no")
+(root/"tmp").mkdir(exist_ok=True)
+test=root/"test_independent_collection_receiving.py"
+env=dict(os.environ);env.update(PYTHONPATH=str(repo),TMPDIR=str(root/"tmp"),PYTHONDONTWRITEBYTECODE="1")
+runtime=root/"candidate-runtime.json"; junit=root/"candidate-junit.xml"
+child="import hashlib,json,sys; from pathlib import Path; import pytest; import testpilot.sandbox as s; import testpilot.loop as l; rows=[{'module':m.__name__,'path':m.__file__,'sha256':hashlib.sha256(Path(m.__file__).read_bytes()).hexdigest()} for m in (s,l)]; Path("+repr(str(runtime))+").write_text(json.dumps({'python':sys.version,'modules':rows},indent=2)+'\\n'); raise SystemExit(pytest.main(sys.argv[1:]))"
+args=[sys.executable,"-B","-c",child,"-q","-p","no:cacheprovider","--basetemp",str(root/"tmp/candidate"),"--junitxml="+str(junit),str(test)]
+start=time.monotonic();p=subprocess.run(args,cwd=root,env=env,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+log=root/"candidate-controls.log";log.write_bytes(p.stdout)
+case_data=[]
+for case in ET.parse(junit).getroot().iter("testcase"):
+    outcome="failed" if case.find("failure") is not None else "error" if case.find("error") is not None else "skipped" if case.find("skipped") is not None else "passed"
+    case_data.append({"name":case.get("name"),"outcome":outcome})
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+receipt={"observed_at":datetime.now(timezone.utc).isoformat(),"source_head":pin,"source_tree":git("rev-parse","HEAD^{tree}"),"native_command":[*args[:3],"<pytest driver recorded in functions store>",*args[4:]],"pythonpath":str(repo),"cwd":str(root),"exit_code":p.returncode,"elapsed_ms":round((time.monotonic()-start)*1000),"test_sha256":sha(test),"log_sha256":sha(log),"junit_sha256":sha(junit),"runtime_sha256":sha(runtime),"cases":case_data,"counts":{out:sum(c["outcome"]==out for c in case_data) for out in ("passed","failed","error","skipped")},"scope":"Independent native pytest collection controls and one real scripted CLI repair path; no model network."}
+(root/"candidate-controls-receipt.json").write_text(json.dumps(receipt,indent=2)+"\n")
+print(json.dumps(receipt,indent=2));print(p.stdout.decode()[-2200:])

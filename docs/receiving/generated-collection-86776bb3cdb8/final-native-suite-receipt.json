@@ -1,0 +1,28 @@
+{
+  "source": "c556e9b883fb372b938c50240977ddb5785c43bb",
+  "tree": "b394b312f490338557cc6be7b03e53f6b51e1b4a",
+  "command": [
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/dev/shm/86776bb3cdb8-product-next/testpilot-evidence/tmp/final-native"
+  ],
+  "cwd": "/dev/shm/86776bb3cdb8-product-next/testpilot",
+  "source_environment": {
+    "PYTHONPATH": "/dev/shm/86776bb3cdb8-product-next/testpilot",
+    "TMPDIR": "/dev/shm/86776bb3cdb8-product-next/testpilot-evidence/tmp",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "observed_utc": "2026-10-08T11:08:18.853521+00:00",
+  "elapsed_seconds": 62.564,
+  "exit_code": 0,
+  "log": "final-native-suite.log",
+  "log_sha256": "20fd86f6317567ab0a844671db5809e5f407977dd2d677b6360dc7924a52e851",
+  "result_tail": "........................................................................ [ 44%]\n........................................................................ [ 88%]\n..................                                                       [100%]\n162 passed in 62.33s (0:01:02)\n",
+  "purpose": "Final native regression gate after the initial full gate exposed the now-corrected absent-JUnit count regression, on current main with the adopted original CI/eval timeout."
+}

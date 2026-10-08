@@ -326,6 +326,8 @@ class LoopResult:
 
 def count_tests(files: dict[str, str], result: SandboxResult | None, existing_ids: set[str]) -> int:
     """Number of generated test cases (from junit when available, else static count)."""
+    if result is not None and result.generated_files and result.junit_available:
+        return len(result.generated_cases)
     if result is not None and result.cases:
         return sum(1 for c in result.cases if c.nodeid not in existing_ids)
     return sum(len(re.findall(r"^\s*(?:async\s+)?def test_", c, re.M)) for c in files.values())
@@ -423,6 +425,11 @@ class TestPilot:
                 rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns, dict(files)))
             if final.ok:
                 status = "passed"
+            elif (final.generated_files and not final.timed_out and final.returncode in (0, 5)
+                  and not final.failed and not final.errors):
+                status = "no_tests"
+                message = ("no generated test case passed; existing-suite passes do not qualify "
+                           f"the generated patch: {final.summary()}")
             else:
                 status, message = "failed", f"still failing after {repairs} repair round(s): {final.summary()}"
         except BudgetExceeded as e:

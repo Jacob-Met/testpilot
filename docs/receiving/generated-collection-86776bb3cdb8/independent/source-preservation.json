@@ -1,0 +1,132 @@
+{
+  "observed_at": "2026-10-08T11:10:22.171507+00:00",
+  "source": "c556e9b883fb372b938c50240977ddb5785c43bb",
+  "tree": "b394b312f490338557cc6be7b03e53f6b51e1b4a",
+  "parents": [
+    "76df7c0fb389f31f2101894f305ca3d49eac9185",
+    "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125"
+  ],
+  "base": "9f01fcb6de085850eca00db746380795eb548d62",
+  "tested_first_source": "2e32efee7fec4b97f3756083c66f4b860359957b",
+  "fixed_source": "76df7c0fb389f31f2101894f305ca3d49eac9185",
+  "current_main": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+  "current_main_tree": "2609ac32021e4cb994fa603c3e6cf89e4abd7f45",
+  "leaf_counts": {
+    "9f01fcb6de085850eca00db746380795eb548d62": 294,
+    "2e32efee7fec4b97f3756083c66f4b860359957b": 296,
+    "76df7c0fb389f31f2101894f305ca3d49eac9185": 297,
+    "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125": 295,
+    "c556e9b883fb372b938c50240977ddb5785c43bb": 298
+  },
+  "changed_paths_from_main": [
+    "README.md",
+    "testpilot/_pytest_generated.py",
+    "testpilot/loop.py",
+    "testpilot/sandbox.py",
+    "tests/test_generated_collection.py",
+    "tests/test_generated_collection_receiving.py"
+  ],
+  "unchanged_current_main_leaves": 292,
+  "current_main_extra_files_preserved": [
+    ".github/workflows/ci.yml",
+    "tests/test_eval.py"
+  ],
+  "all_six_contribution_files_equal_fixed_source": true,
+  "runner_equal_first_tested_source": true,
+  "successor_production_delta": "Only an additive junit_available field, explicit report presence local/result wiring, and a provenance-count presence check; reversing them recreates tested production files exactly.",
+  "preserved_definition_names": {
+    "testpilot/sandbox.py": [
+      "CoverageReport",
+      "_parse_coverage",
+      "_run",
+      "_safe_join",
+      "clean_env",
+      "coverage_available"
+    ],
+    "testpilot/loop.py": [
+      "BudgetExceeded",
+      "Ledger",
+      "LedgerEntry",
+      "LoopResult",
+      "RoundRecord",
+      "_GeneratedPathConflict",
+      "_changed_line_coverage",
+      "_files_block",
+      "_functions_block",
+      "_merge_test_files",
+      "_path_occupied",
+      "_require_additions",
+      "coverage_delta",
+      "make_patch",
+      "parse_test_files",
+      "parse_verdict",
+      "render_report",
+      "sanitize_test_path",
+      "write_outputs"
+    ]
+  },
+  "loop_outside_two_added_blocks_byte_exact": true,
+  "portable_test_byte_exact": true,
+  "runtime_receipt_guards": [
+    {
+      "run": "baseline",
+      "source": "9f01fcb6de085850eca00db746380795eb548d62",
+      "loaded_modules_exact": true,
+      "receipt_files_exact": true
+    },
+    {
+      "run": "candidate",
+      "source": "2e32efee7fec4b97f3756083c66f4b860359957b",
+      "loaded_modules_exact": true,
+      "receipt_files_exact": true
+    }
+  ],
+  "instructions_and_workflows": [
+    ".github/workflows/ci.yml"
+  ],
+  "source_files": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bb32077e3837e77110fe732d2ca5a9f9d32727b",
+      "sha256": "37c09fde7d2e16929a67683271e573e49e9a71d6a1fe3361b6584161e706d60d"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4e9671b32cabda7e66ef79eb4a3a94c58d2f824",
+      "sha256": "99225601277132368efc52ba6cdc9df3329f144d50f3d322c372ca77258195c7"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca0360375bdcaace0e6014b4767acad546380242",
+      "sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434"
+    },
+    {
+      "path": "tests/test_generated_collection.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8dacdd9f6c402cbed66b716e8ec396fb633ded9",
+      "sha256": "19905510581afe3b0b56883ea2268761eda100ce6fe585a58d83ad3f5742914b"
+    },
+    {
+      "path": "tests/test_generated_collection_receiving.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b1007ff47fc6c536fb5c315904d00c21d0b0cb5d",
+      "sha256": "2af73df91390e3b44526c5ba1e4d325fb48d99fb668d6d3d565668b8347c9a83"
+    }
+  ],
+  "scope": "Immutable Git source/readback only. The current-main source composition introduced no contribution-source change. Native controls are retained at their actual tested pins."
+}
