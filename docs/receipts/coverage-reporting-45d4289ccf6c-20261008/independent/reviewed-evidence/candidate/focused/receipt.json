@@ -1,0 +1,166 @@
+{
+  "argv": [
+    "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "-o",
+    "addopts=",
+    "--basetemp=/home/jacob/testpilot-coverage-45d4289ccf6c/candidate-focused/fixtures",
+    "--junitxml=/home/jacob/testpilot-coverage-45d4289ccf6c/candidate-focused/junit.xml",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/source-candidate/tests/test_coverage_reporting.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/source-candidate/tests/test_sandbox.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/source-candidate/tests/test_loop.py"
+  ],
+  "cases": [
+    {
+      "name": "test_partial_report_preserves_measured_lines_below_threshold[0]",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_partial_report_preserves_measured_lines_below_threshold[100]",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_measured_zero_retains_its_executable_population",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_failed_collection_is_unavailable_while_test_outcome_survives",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_below_threshold_measurement_does_not_hide_failed_tests",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_public_cli_keeps_reports_when_final_collection_is_unavailable",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_report_failure_exit_two_cannot_admit_a_preexisting_report",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_pass_and_isolation",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_failure_reported",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_collection_error_counts_as_error",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_timeout_kills",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_rejects_escape",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_no_tests_is_not_ok",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_env_scrubbed",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_coverage_collected",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_passes_first_try",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_repair_then_pass",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_round_limit",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_zero_rounds",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_code_bug_verdict",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_repair_without_code_keeps_tests",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_no_changes_and_no_tests",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_model_error_and_budget",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_parse_test_files",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_sanitize_and_verdict",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_ledger_costs",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_patch_applies_with_git",
+      "outcome": "passed"
+    },
+    {
+      "name": "test_coverage_delta_and_outputs",
+      "outcome": "passed"
+    }
+  ],
+  "coverage": "7.16.2",
+  "coverage_source_sha256": {
+    "cmdline.py": "fe2cbe532e8579087a97006da8452dbaec1c83c295bd36006cb0f5eb2c8420ac",
+    "control.py": "7a69bee219345fa87f6fe561e0940122963f777898ca5d646b461134130b3f91",
+    "jsonreport.py": "58c5f326cd785026b22123eb99385cad44d026aff64bd96dc0840a1baf26dea2"
+  },
+  "executable": "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-author/venv-native/bin/python",
+  "exit": 0,
+  "pytest": "9.0.2",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "sandbox_temporary_children_after": [],
+  "schema": "testpilot-coverage-pytest-receiving/1",
+  "seconds": 34.864,
+  "source": "/home/jacob/testpilot-coverage-45d4289ccf6c/source-candidate",
+  "source_sha256": {
+    "docs/coverage-reporting.md": "697fcbf3d7276c0e34ba704b0a611908b0192f4e3c01f554dae3fc8a2bd063dd",
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+    "testpilot/diff.py": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+    "testpilot/loop.py": "aa0a7a1459fabe7016e4d4f55fd7ee5fc2a5af64ec9df24445868fcaa59f620b",
+    "testpilot/model.py": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+    "testpilot/sandbox.py": "90c1401cba1f5c488f1aa0b89b90293fda41b7971471904381d6b0b8279e18f7",
+    "tests/conftest.py": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+    "tests/test_coverage_reporting.py": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede",
+    "tests/test_loop.py": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc",
+    "tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+  },
+  "source_unchanged": true,
+  "test_source_sha256": {
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/source-candidate/tests/test_coverage_reporting.py": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/source-candidate/tests/test_loop.py": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/source-candidate/tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+  }
+}

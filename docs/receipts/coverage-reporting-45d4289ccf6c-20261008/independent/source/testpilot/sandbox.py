@@ -31,7 +31,6 @@ class CaseResult:
     nodeid: str
     outcome: str  # passed | failed | error | skipped
     message: str = ""
-    generated_file: str | None = None
 
 
 @dataclass
@@ -56,8 +55,6 @@ class SandboxResult:
     output: str
     cases: list[CaseResult] = field(default_factory=list)
     coverage: CoverageReport | None = None
-    generated_files: list[str] = field(default_factory=list)
-    junit_available: bool = False
 
     def _count(self, outcome: str) -> int:
         return sum(1 for c in self.cases if c.outcome == outcome)
@@ -79,42 +76,18 @@ class SandboxResult:
         return self._count("skipped")
 
     @property
-    def generated_cases(self) -> list[CaseResult]:
-        return [c for c in self.cases if c.generated_file in self.generated_files]
-
-    def generated_counts(self) -> dict[str, int] | None:
-        if not self.generated_files:
-            return None
-        cases = self.generated_cases
-        return {"collected": len(cases),
-                **{outcome: sum(c.outcome == outcome for c in cases)
-                   for outcome in ("passed", "failed", "error", "skipped")}}
-
-    @property
     def ok(self) -> bool:
         return (not self.timed_out and self.returncode == 0 and self.failed == 0
-                and self.errors == 0 and self.passed > 0
-                and (not self.generated_files
-                     or any(c.outcome == "passed" for c in self.generated_cases)))
+                and self.errors == 0 and self.passed > 0)
 
     def summary(self) -> str:
         if self.timed_out:
             return f"TIMEOUT after {self.timeout_s:g}s"
-        text = (f"{self.passed} passed, {self.failed} failed, {self.errors} errors, "
+        return (f"{self.passed} passed, {self.failed} failed, {self.errors} errors, "
                 f"{self.skipped} skipped (rc={self.returncode})")
-        generated = self.generated_counts()
-        if generated is not None:
-            text += (f"; generated: {generated['passed']} passed of "
-                     f"{generated['collected']} collected")
-        return text
 
     def failure_report(self, limit: int = 4000) -> str:
         parts = [self.summary()]
-        generated = self.generated_counts()
-        if generated is not None and generated["passed"] == 0:
-            parts.append("No generated test case passed. Existing-suite passes cannot verify "
-                         "the generated files. Write runnable tests and check project collection "
-                         "rules, deselection and skip conditions.")
         if self.timed_out:
             parts.append("The test run exceeded the time limit and was killed. "
                          "Look for infinite loops, blocking I/O, or very slow tests.")
@@ -130,7 +103,6 @@ class SandboxResult:
         d = asdict(self)
         d.update(passed=self.passed, failed=self.failed, errors=self.errors,
                  skipped=self.skipped, ok=self.ok, summary=self.summary())
-        d["generated"] = self.generated_counts()
         d["output"] = self.output[-3000:]
         return d
 
@@ -189,12 +161,7 @@ def parse_junit(path: Path) -> list[CaseResult]:
                 outcome = label
                 msg = (el.get("message") or "") + ("\n" + el.text if el.text else "")
                 break
-        generated_file = None
-        for prop in tc.findall("./properties/property"):
-            if prop.get("name") == "testpilot.generated_file":
-                generated_file = prop.get("value")
-                break
-        cases.append(CaseResult(nodeid, outcome, msg, generated_file))
+        cases.append(CaseResult(nodeid, outcome, msg))
     return cases
 
 
@@ -236,17 +203,8 @@ def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, t
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_text(content, encoding="utf-8")
         junit = tdp / "junit.xml"
-        options = ["-q", "-p", "no:cacheprovider", "--rootdir", str(work), "-o", "addopts=",
+        pt = ["-m", "pytest", "-q", "-p", "no:cacheprovider", "--rootdir", str(work), "-o", "addopts=",
               "-o", "junit_family=xunit2", f"--junitxml={junit}", *pytest_args]
-        generated_files = sorted(extra_files or {})
-        pt = ["-m", "pytest", *options]
-        if generated_files:
-            runner = tdp / "generated_pytest.py"
-            manifest = tdp / "generated_files.json"
-            shutil.copyfile(Path(__file__).with_name("_pytest_generated.py"), runner)
-            manifest.write_text(json.dumps({str(_safe_join(work, rel)): rel for rel in generated_files}),
-                                encoding="utf-8")
-            pt = [str(runner), str(manifest), *options]
         data_file = tdp / ".coverage"
         if use_cov:
             cmd = [python, "-m", "coverage", "run", f"--data-file={data_file}", f"--source={work}",
@@ -257,8 +215,7 @@ def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, t
         t0 = time.monotonic()
         rc, out, timed_out = _run(cmd, work, env, timeout)
         dur = time.monotonic() - t0
-        junit_available = junit.exists() and not timed_out
-        cases = parse_junit(junit) if junit_available else []
+        cases = parse_junit(junit) if junit.exists() and not timed_out else []
         cov = None
         if use_cov and not timed_out:
             # Reserve the report destination after pytest so a failed report
@@ -269,5 +226,4 @@ def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, t
                                  work, env, 60)
                 # Exit 2 can mean a complete report is below configured fail_under.
                 cov = _parse_coverage(cov_json, work) if crc in (0, 2) and cov_json.exists() else None
-        return SandboxResult(rc, timed_out, round(dur, 3), timeout, out, cases, cov,
-                             generated_files, junit_available)
+        return SandboxResult(rc, timed_out, round(dur, 3), timeout, out, cases, cov)

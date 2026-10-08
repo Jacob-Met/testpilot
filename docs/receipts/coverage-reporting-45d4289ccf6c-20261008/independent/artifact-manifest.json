@@ -1,0 +1,93 @@
+{
+  "schema": "testpilot-coverage.independent-review-manifest.v1",
+  "reviewer": "chatgpt-45d4289ccf6c/native_execution",
+  "source_commit": "ec4abaf48ee62eeec29cfc1dc5389688ca533d3b",
+  "source_tree": "2118fb1be1b9290694e5b0e4485c40736873d05c",
+  "payload_files": 16,
+  "payload_bytes": 132029,
+  "files": [
+    {
+      "path": "baseline/testpilot/loop.py",
+      "bytes": 21164,
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323"
+    },
+    {
+      "path": "baseline/testpilot/sandbox.py",
+      "bytes": 9286,
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3"
+    },
+    {
+      "path": "reviewed-evidence/baseline/regressions/junit.xml",
+      "bytes": 9058,
+      "sha256": "f40312cbbde8fe2a0c2780e5f8d1a740d62626f719754a31f98468e0ac72512c"
+    },
+    {
+      "path": "reviewed-evidence/baseline/stale/junit.xml",
+      "bytes": 2977,
+      "sha256": "0a56c6d79014db5e23af1e886d8b91b9ee4306b501d6d5047fa376dcdcebcf7f"
+    },
+    {
+      "path": "reviewed-evidence/baseline/stale/report-plugin-marker.json",
+      "bytes": 401,
+      "sha256": "571c2047392b7fc6d31772953d00c0f75c74dd1e2903f74b884e3dc89eb1560e"
+    },
+    {
+      "path": "reviewed-evidence/candidate/focused/junit.xml",
+      "bytes": 3002,
+      "sha256": "d79bd28fe601860df8137729908dfa35c1d7f96a848dcf1df3bd95aa75166439"
+    },
+    {
+      "path": "reviewed-evidence/candidate/focused/receipt.json",
+      "bytes": 5630,
+      "sha256": "2fd6fcc41e430fb85e0690deff44836cdfdb8fe6f48484ade784beae8e5c362d"
+    },
+    {
+      "path": "reviewed-evidence/candidate/focused/report-plugin-marker.json",
+      "bytes": 432,
+      "sha256": "f7704a156a1eef9fdf9f8de72a5fba72622b8d78d0081ef39a5a392f35d32463"
+    },
+    {
+      "path": "reviewed-evidence/candidate/public-cli/receipt.json",
+      "bytes": 8286,
+      "sha256": "f010c5da613397b2fb5af07688293b06f695d15c8bbc276a82f05a9e8507593a"
+    },
+    {
+      "path": "reviewed-manifest.json",
+      "bytes": 14025,
+      "sha256": "627d2388c775fdd9d01e1bb543bbc995f3f2eb968e08ea4a8af37620f0c27d11"
+    },
+    {
+      "path": "source/docs/coverage-reporting.md",
+      "bytes": 2365,
+      "sha256": "697fcbf3d7276c0e34ba704b0a611908b0192f4e3c01f554dae3fc8a2bd063dd"
+    },
+    {
+      "path": "source/testpilot/loop.py",
+      "bytes": 21143,
+      "sha256": "aa0a7a1459fabe7016e4d4f55fd7ee5fc2a5af64ec9df24445868fcaa59f620b"
+    },
+    {
+      "path": "source/testpilot/sandbox.py",
+      "bytes": 9626,
+      "sha256": "90c1401cba1f5c488f1aa0b89b90293fda41b7971471904381d6b0b8279e18f7"
+    },
+    {
+      "path": "source/tests/test_coverage_reporting.py",
+      "bytes": 6636,
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede"
+    },
+    {
+      "path": "source-readback.json",
+      "bytes": 12286,
+      "sha256": "9cffef14288f85403594bcbac98cd35d8ef7bbcf2f0f926c496557237871ca3e"
+    },
+    {
+      "path": "source-review.json",
+      "bytes": 5712,
+      "sha256": "5ccc130d16cda59401ac7e60483aedbf78b0ddcc5469e333087deec2bef5c1f5"
+    }
+  ],
+  "decision": "accepted",
+  "test_reexecution": false,
+  "candidate_source_modified": false
+}

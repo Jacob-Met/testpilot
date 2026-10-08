@@ -1,0 +1,33 @@
+{
+  "accepted_product_source": "c556e9b883fb372b938c50240977ddb5785c43bb",
+  "accepted_product_tree": "b394b312f490338557cc6be7b03e53f6b51e1b4a",
+  "accepted_source_leaves_verified": 298,
+  "author_complete_gate": {
+    "log_sha256": "20fd86f6317567ab0a844671db5809e5f407977dd2d677b6360dc7924a52e851",
+    "passed": 162,
+    "reexecuted": false
+  },
+  "complete_owner_leaves": 349,
+  "evidence_payload_files_verified": 50,
+  "independent_existing_decision": "accept_source_for_publication",
+  "new_receiver_state": "estate-965d2e86e979 offered replay in issue13 comment6058872155; no source-owner response seen at preflight, no transfer of its prior acceptance",
+  "published_owner_head": "dcd353531ad3dde353b63db4b09adca976b9f256",
+  "published_owner_tree": "bbd2dd27a39736fd94334910404763cb65773185",
+  "raw_independent_junit": {
+    "baseline": {
+      "error": 0,
+      "failed": 9,
+      "passed": 2,
+      "skipped": 0
+    },
+    "candidate": {
+      "error": 0,
+      "failed": 0,
+      "passed": 11,
+      "skipped": 0
+    }
+  },
+  "review_scope": "Bind existing source/evidence acceptance and preserve original owner; new work is only prospective coverage/collection composition.",
+  "reviewed_utc": "2026-10-08T11:36:14.688978+00:00",
+  "schema": "testpilot-pr14-original-receipt-review/1"
+}

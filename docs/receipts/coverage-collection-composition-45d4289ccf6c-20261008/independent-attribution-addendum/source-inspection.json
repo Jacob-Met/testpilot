@@ -1,0 +1,17 @@
+{
+  "controls_executed_by_this_reviewer": 0,
+  "observed_at": "2026-10-08T12:00:19.618215+00:00",
+  "parser": {
+    "finding": "parse_junit accepts the first property named testpilot.generated_file and breaks; it does not require exactly one nonempty identity.",
+    "path": "testpilot/sandbox.py",
+    "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+  },
+  "relation_to_external_negative": "Exact combined source preserves the owner code reported by receiver 965. Direct static inspection is consistent with the reported false qualification and ambiguity failures.",
+  "runner": {
+    "finding": "The collection hook appends the identity only to generated items; nongenerated items receive no authoritative marker.",
+    "path": "testpilot/_pytest_generated.py",
+    "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+  },
+  "source_commit": "09656db720176124bd206ed4bb871e6e8dcf6d42",
+  "source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17"
+}

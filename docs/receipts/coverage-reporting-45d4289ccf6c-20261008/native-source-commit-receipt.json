@@ -1,0 +1,28 @@
+{
+  "all_index_modes_git_blobs_sizes_sha256_exact": true,
+  "author": "ChatGPT estate-45d4289ccf6c <chatgpt@localhost>",
+  "base_commit": "9f01fcb6de085850eca00db746380795eb548d62",
+  "branch": "estate/45d4289ccf6c-testpilot-coverage",
+  "canonical_added_paths": [
+    "docs/coverage-reporting.md",
+    "tests/test_coverage_reporting.py"
+  ],
+  "commit": "ec4abaf48ee62eeec29cfc1dc5389688ca533d3b",
+  "created_utc": "2026-10-08T11:07:46.225196+00:00",
+  "evidence_files": 80,
+  "evidence_manifest_sha256": "627d2388c775fdd9d01e1bb543bbc995f3f2eb968e08ea4a8af37620f0c27d11",
+  "evidence_prefix": "docs/receipts/coverage-reporting-45d4289ccf6c-20261008",
+  "independent_review": "in progress",
+  "leaf_count": 376,
+  "modified_existing_paths": [
+    "testpilot/loop.py",
+    "testpilot/sandbox.py"
+  ],
+  "native_repository": "/home/jacob/testpilot-coverage-45d4289ccf6c/repository",
+  "remote_publication": "not attempted; root-ordered GitHub content recovery pending",
+  "repo_full_name": "Jacob-Met/testpilot",
+  "schema": "testpilot-native-source-commit/1",
+  "tree": "2118fb1be1b9290694e5b0e4485c40736873d05c",
+  "unchanged_base_leaves": 292,
+  "working_tree_clean": true
+}

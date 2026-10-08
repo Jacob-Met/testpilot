@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="2.391" timestamp="2026-10-08T10:56:24.010154+00:00" hostname="hamon-thinkpad"><testcase classname="regressions-final.test_coverage_reporting" name="test_report_failure_exit_two_cannot_admit_a_preexisting_report" time="1.853"><failure message="AssertionError: assert CoverageReport(percent_total=0.0, files={}) is None&#10; +  where CoverageReport(percent_total=0.0, files={}) = SandboxResult(returncode=0, timed_out=False, duration_s=1.42, timeout_s=30, output='.                                 ...existing::test_leave_old_report', outcome='passed', message='')], coverage=CoverageReport(percent_total=0.0, files={})).coverage">tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-stale/fixtures/test_report_failure_exit_two_c0')
+
+    def test_report_failure_exit_two_cannot_admit_a_preexisting_report(tmp_path):
+        marker = tmp_path / "report-plugin-marker.json"
+        test = (
+            "from pathlib import Path\nimport json\n\n"
+            "def test_leave_old_report():\n"
+            "    root = Path.cwd()\n"
+            "    stale = {'totals': {'percent_covered': 93.0}, 'files': "
+            "{'calc.py': {'executed_lines': [1, 2, 3, 4], 'missing_lines': []}}}\n"
+            "    (root.parent / 'cov.json').write_text(json.dumps(stale))\n"
+            "    (root / '.coveragerc').write_text('[run]\\nplugins = stop_report\\n')\n"
+            "    assert True\n"
+        )
+        repo = make_project(tmp_path, test=test)
+        plugin = (
+            "from pathlib import Path\nimport json\nimport sys\n\n"
+            "def coverage_init(reg, options):\n"
+            "    evidence = {'argv': sys.argv, 'stale_before_report': "
+            "(Path.cwd().parent / 'cov.json').is_file()}\n"
+            f"    Path({str(marker)!r}).write_text(json.dumps(evidence))\n"
+            "    raise SystemExit(2)\n"
+        )
+        (repo / "stop_report.py").write_text(plugin)
+        before = source_bytes(repo)
+        result = run_pytest(repo, timeout=30, coverage=True)
+        evidence = json.loads(marker.read_text())
+        assert evidence["argv"][1] == "json"
+        assert evidence["stale_before_report"] is True
+        assert result.ok and result.passed == 1 and result.returncode == 0
+        assert source_bytes(repo) == before
+&gt;       assert result.coverage is None
+E       AssertionError: assert CoverageReport(percent_total=0.0, files={}) is None
+E        +  where CoverageReport(percent_total=0.0, files={}) = SandboxResult(returncode=0, timed_out=False, duration_s=1.42, timeout_s=30, output='.                                 ...existing::test_leave_old_report', outcome='passed', message='')], coverage=CoverageReport(percent_total=0.0, files={})).coverage
+
+../regressions-final/test_coverage_reporting.py:139: AssertionError</failure></testcase></testsuite></testsuites>

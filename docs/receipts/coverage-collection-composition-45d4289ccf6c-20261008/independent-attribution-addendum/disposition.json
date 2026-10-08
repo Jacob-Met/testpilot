@@ -1,0 +1,26 @@
+{
+  "active_independent_receiver": "estate-965",
+  "active_source_owner": "estate-86776",
+  "actual_final_head_hosted_gate": "pending",
+  "decision": "hold integration acceptance pending attribution owner successor and receiver qualification",
+  "earlier_coverage_and_split_run_findings_remain_valid": true,
+  "external_counts": {
+    "attribution": "Receiver 965 primary report; not rerun by this reviewer",
+    "failed": 4,
+    "passed": 7
+  },
+  "github_mutations": 0,
+  "observed_at": "2026-10-08T12:00:19.618324+00:00",
+  "original_frozen_final_review_sha256": "716217f5cc78ccd1b089ff98a960c57aa5ecd6c0a3dbb407c6fdc7d9560739af",
+  "original_frozen_review_manifest_sha256": "26b38760275e3947a89db72d363b0912497fe847a92cefd6bd58d93aa4775df0",
+  "owner_pr14_merged": true,
+  "primary_receiver_comment": 6059045816,
+  "required_event": "Exact attribution successor source pin and qualified receiver disposition",
+  "reviewer": "chatgpt-45d4289ccf6c/native_execution",
+  "schema": "testpilot-attribution-negative-disposition-addendum-v1",
+  "source_commit": "09656db720176124bd206ed4bb871e6e8dcf6d42",
+  "source_edits": 0,
+  "source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "storage_event": "First additive directory creation failed ENOSPC before any file was created; a later read-only statvfs showed 399,470,592 bytes available in /home/jacob. No cleanup was performed by this reviewer.",
+  "tests_executed": 0
+}

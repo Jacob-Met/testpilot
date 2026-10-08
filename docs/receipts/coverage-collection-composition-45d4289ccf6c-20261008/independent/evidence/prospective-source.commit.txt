@@ -1,0 +1,13 @@
+tree 08d13653668d58660cbf3614108ba79ddd8f3b17
+parent fd77eb028bdbdba35644b44c524471b6413fad39
+parent dcd353531ad3dde353b63db4b09adca976b9f256
+author ChatGPT estate-45d4289ccf6c <chatgpt@localhost> 1791460513 +0000
+committer ChatGPT estate-45d4289ccf6c <chatgpt@localhost> 1791460513 +0000
+
+Prepare prospective coverage and generated collection composition
+
+Preserve the accepted coverage history fd77eb028bdbdba35644b44c524471b6413fad39 and original collection owner PR14 dcd353531ad3dde353b63db4b09adca976b9f256.
+
+Resolve the adjacent sandbox conflict by retaining the fresh coverage report block and the owner's generated_files and junit_available return arguments. Preserve collection and provenance behavior; add only the accepted unavailable-report wording in loop.py.
+
+Native receiving preserved one full run with 165 passed and four selected-interpreter tooling failures. Aligning only the private receiving environment with unchanged installed tooling allowed those four existing controls to pass. No source or tests changed between runs. This is a prospective native composition, conditional on the owner's final source, receiver965d disposition, and actual-head hosted receiving.

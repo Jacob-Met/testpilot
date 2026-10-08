@@ -1,0 +1,9 @@
+diff --git a/calc.py b/calc.py
+--- a/calc.py
++++ b/calc.py
+@@ -1,4 +1,4 @@
+ def classify(value):
+     if value >= 0:
+-        return "positive"
++        return "nonnegative"
+     return "negative"

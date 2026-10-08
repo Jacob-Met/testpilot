@@ -1,0 +1,25 @@
+{
+  "all_original_standalone_and_composition_evidence_preserved": true,
+  "branch": "publication/45d4289ccf6c-testpilot-coverage-current-main",
+  "component_leaves": 685,
+  "component_tree_before_current_receipt": "000610b046b7b4921d1e96b882231ea288e03430",
+  "current_main_leaves": 399,
+  "github_mutations": 0,
+  "merge_head": "9efb47561544db608613d7055f5f1226b2d7f7e7",
+  "native_receiving": "Exact runtime/test pins from reviewed 08d136 split receiving, with disjoint current-main decoder/physical-line changes preserved. No new tests; actual published-head full CI required.",
+  "new_main_delta": "PR18 physical-line selection changes only diff.py runtime, plus its tests and evidence; all coverage/collection runtime pins remain unchanged.",
+  "pins": {
+    "testpilot/_pytest_generated.py": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+    "testpilot/loop.py": "dea26d8eeec2364d3dbb702671b579ae3890881d866a76ab9d98dfe2992decee",
+    "testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931",
+    "tests/test_coverage_reporting.py": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede"
+  },
+  "previous_native_publication": "1ba6c74753966eabc5ea38ad21c3717e9dd08a50",
+  "schema": "testpilot-current-main-native-preparation/2",
+  "source_history_head": "bb50de5064622d6d918961a558257b121866e1ff",
+  "source_scope": "Independent coverage retention and unavailable wording; existing-main attribution defect remains owner86776/receiver965d scope.",
+  "tests_executed": 0,
+  "unrelated_current_main_leaves_preserved": 397,
+  "utc": "2026-10-08T12:11:38.595435+00:00",
+  "worktree": "/home/jacob/testpilot-coverage-45d4289ccf6c/publication-current-main-d7c28-worktree"
+}

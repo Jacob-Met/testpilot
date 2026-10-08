@@ -1,0 +1,11 @@
+Process started with PID 2242708 (shell: /bin/bash)
+Initial output:
+Traceback (most recent call last):
+  File "<string>", line 39, in <module>
+    assert r.returncode==0,(r.stdout,r.stderr)
+           ^^^^^^^^^^^^^^^
+AssertionError: ('', 'Traceback (most recent call last):\n  File "<string>", line 1, in <module>\n    import pytest,coverage,sys,json; from pathlib import Path; print(json.dumps({\'python\':sys.version,\'pytest\':pytest.__version__,\'pytest_origin\':pytest.__file__,\'coverage\':coverage.__version__,\'coverage_origin\':coverage.__file__,\'fixture_tooling_parent\':str(Path(pytest.__file__).resolve().parent.parent)}))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/pytest/__init__.py", line 8, in <module>\n    from _pytest._code import ExceptionInfo\n  File "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/_pytest/_code/__init__.py", line 5, in <module>\n    from .code import Code\n  File "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/_pytest/_code/code.py", line 43, in <module>\n    from _pytest._io import TerminalWriter\n  File "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/_pytest/_io/__init__.py", line 3, in <module>\n    from .terminalwriter import get_terminal_width\n  File "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/_pytest/_io/terminalwriter.py", line 19, in <module>\n    from ..compat import assert_never\n  File "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/lib/python3.14/site-packages/_pytest/compat.py", line 19, in <module>\n    import py\nModuleNotFoundError: No module named \'py\'\n')
+
+✅ Process 2242708 has finished execution
+
+[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]

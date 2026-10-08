@@ -1,0 +1,72 @@
+{
+  "base_commit": "9f01fcb6de085850eca00db746380795eb548d62",
+  "created_utc": "2026-10-08T11:11:15.312120+00:00",
+  "decision": "native source and receiving accepted by independent reviewer; hosted publication pending",
+  "independent_payload_files": 16,
+  "independent_review_manifest_sha256": "972aefbd41491cb97b83aac7b01cb582abe7b33b4533f5a8911e1cd11a437b47",
+  "independent_review_sha256": "5ccc130d16cda59401ac7e60483aedbf78b0ddcc5469e333087deec2bef5c1f5",
+  "initial_manifest_sha256": "627d2388c775fdd9d01e1bb543bbc995f3f2eb968e08ea4a8af37620f0c27d11",
+  "initial_packet_preserved": true,
+  "initial_payload_files": 79,
+  "native_focused_tests": {
+    "errors": 0,
+    "failed": 0,
+    "passed": 28,
+    "skipped": 0
+  },
+  "preserved_original_failures": {
+    "added_stale_case": {
+      "failed": 1,
+      "passed": 0
+    },
+    "initial_cases": {
+      "failed": 5,
+      "passed": 1
+    }
+  },
+  "public_cli": {
+    "configured_threshold_100": {
+      "after": 100.0,
+      "before": 75.0,
+      "delta": 25.0
+    },
+    "ordinary_threshold_0": {
+      "after": 100.0,
+      "before": 75.0,
+      "delta": 25.0
+    }
+  },
+  "remaining_gate": "Root-ordered GitHub claim/source/PR publication, fresh ownership/current-main read and normal current-head integration gates; no remote mutation attempted by this packet.",
+  "repository": "Jacob-Met/testpilot",
+  "schema": "testpilot-coverage-qualified-publication-packet/1",
+  "source_changed_since_receiving": false,
+  "source_commit": "ec4abaf48ee62eeec29cfc1dc5389688ca533d3b",
+  "source_files": [
+    {
+      "bytes": 9626,
+      "git_blob": "164206206f8896f4bc6cee23ae030bb000671b33",
+      "path": "testpilot/sandbox.py",
+      "sha256": "90c1401cba1f5c488f1aa0b89b90293fda41b7971471904381d6b0b8279e18f7"
+    },
+    {
+      "bytes": 21143,
+      "git_blob": "bee54ddce48f6d5251fef56317a0ffceb0aab5a8",
+      "path": "testpilot/loop.py",
+      "sha256": "aa0a7a1459fabe7016e4d4f55fd7ee5fc2a5af64ec9df24445868fcaa59f620b"
+    },
+    {
+      "bytes": 6636,
+      "git_blob": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "path": "tests/test_coverage_reporting.py",
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede"
+    },
+    {
+      "bytes": 2365,
+      "git_blob": "340179e676d90c744b4a826e7824efb1cda3dab4",
+      "path": "docs/coverage-reporting.md",
+      "sha256": "697fcbf3d7276c0e34ba704b0a611908b0192f4e3c01f554dae3fc8a2bd063dd"
+    }
+  ],
+  "source_tree": "2118fb1be1b9290694e5b0e4485c40736873d05c",
+  "tests_reexecuted_for_review": 0
+}

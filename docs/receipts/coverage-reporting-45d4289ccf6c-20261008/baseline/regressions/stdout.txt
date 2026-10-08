@@ -1,0 +1,120 @@
+.FFFFF                                                                   [100%]
+=================================== FAILURES ===================================
+______ test_partial_report_preserves_measured_lines_below_threshold[100] _______
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-regressions/tmp/test_partial_report_preserves_1')
+threshold = 100
+
+    @pytest.mark.parametrize("threshold", [0, 100])
+    def test_partial_report_preserves_measured_lines_below_threshold(tmp_path, threshold):
+        repo = make_project(tmp_path, threshold=threshold)
+        before = source_bytes(repo)
+        result = run_pytest(repo, timeout=30, coverage=True)
+        assert result.ok and result.passed == 1
+        assert result.coverage is not None
+>       assert result.coverage.percent_total == 75.0
+E       AssertionError: assert 0.0 == 75.0
+E        +  where 0.0 = CoverageReport(percent_total=0.0, files={}).percent_total
+E        +    where CoverageReport(percent_total=0.0, files={}) = SandboxResult(returncode=0, timed_out=False, duration_s=0.546, timeout_s=30, output='.                                ...test_existing::test_nonnegative', outcome='passed', message='')], coverage=CoverageReport(percent_total=0.0, files={})).coverage
+
+../regressions/test_coverage_reporting.py:36: AssertionError
+_____________ test_measured_zero_retains_its_executable_population _____________
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-regressions/tmp/test_measured_zero_retains_its0')
+
+    def test_measured_zero_retains_its_executable_population(tmp_path):
+        repo = make_project(tmp_path, test="def test_control():\n    assert True\n")
+        before = source_bytes(repo)
+        result = run_pytest(repo, timeout=30, coverage=True)
+        assert result.ok and result.passed == 1
+        assert result.coverage is not None
+        assert result.coverage.percent_total == 0.0
+        assert result.coverage.executed("calc.py") == set()
+>       assert result.coverage.executable("calc.py") == {1, 2, 3, 4}
+E       assert set() == {1, 2, 3, 4}
+E         
+E         Extra items in the right set:
+E         1
+E         2
+E         3
+E         4
+E         Use -v to get more diff
+
+../regressions/test_coverage_reporting.py:49: AssertionError
+______ test_failed_collection_is_unavailable_while_test_outcome_survives _______
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-regressions/tmp/test_failed_collection_is_unav0')
+
+    def test_failed_collection_is_unavailable_while_test_outcome_survives(tmp_path):
+        test = ('import calc\nfrom pathlib import Path\n\ndef test_remove_temporary_source():\n'
+                '    assert calc.classify(1) == "nonnegative"\n'
+                '    Path(calc.__file__).unlink()\n')
+        repo = make_project(tmp_path, test=test)
+        before = source_bytes(repo)
+        result = run_pytest(repo, timeout=30, coverage=True)
+        assert result.ok and result.passed == 1 and result.returncode == 0
+>       assert result.coverage is None
+E       AssertionError: assert CoverageReport(percent_total=0.0, files={}) is None
+E        +  where CoverageReport(percent_total=0.0, files={}) = SandboxResult(returncode=0, timed_out=False, duration_s=0.752, timeout_s=30, output='.                                ...g::test_remove_temporary_source', outcome='passed', message='')], coverage=CoverageReport(percent_total=0.0, files={})).coverage
+
+../regressions/test_coverage_reporting.py:60: AssertionError
+_________ test_below_threshold_measurement_does_not_hide_failed_tests __________
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-regressions/tmp/test_below_threshold_measureme0')
+
+    def test_below_threshold_measurement_does_not_hide_failed_tests(tmp_path):
+        repo = make_project(tmp_path, test=EXISTING.replace('"nonnegative"', '"wrong"'))
+        before = source_bytes(repo)
+        result = run_pytest(repo, timeout=30, coverage=True)
+        assert not result.ok and result.failed == 1 and result.returncode == 1
+        assert result.coverage is not None
+>       assert result.coverage.percent_total == 75.0
+E       AssertionError: assert 0.0 == 75.0
+E        +  where 0.0 = CoverageReport(percent_total=0.0, files={}).percent_total
+E        +    where CoverageReport(percent_total=0.0, files={}) = SandboxResult(returncode=1, timed_out=False, duration_s=0.557, timeout_s=30, output='F                                ...    + nonnegative\n\ntests/test_existing.py:4: AssertionError')], coverage=CoverageReport(percent_total=0.0, files={})).coverage
+
+../regressions/test_coverage_reporting.py:69: AssertionError
+______ test_public_cli_keeps_reports_when_final_collection_is_unavailable ______
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/baseline-regressions/tmp/test_public_cli_keeps_reports_0')
+
+    def test_public_cli_keeps_reports_when_final_collection_is_unavailable(tmp_path):
+        repo = make_project(tmp_path)
+        before = source_bytes(repo)
+        diff = tmp_path / "change.diff"
+        diff.write_text('diff --git a/calc.py b/calc.py\n--- a/calc.py\n+++ b/calc.py\n'
+                        '@@ -1,4 +1,4 @@\n def classify(value):\n     if value >= 0:\n'
+                        '-        return "positive"\n+        return "nonnegative"\n'
+                        '     return "negative"\n')
+        script = tmp_path / "script"; script.mkdir()
+        (script/"01_plan.md").write_text("Check the negative branch.\n")
+        (script/"02_tests.md").write_text(
+            '```python path=tests/test_negative.py\nimport calc\nfrom pathlib import Path\n\n'
+            'def test_negative():\n    assert calc.classify(-1) == "negative"\n'
+            '    Path(calc.__file__).unlink()\n```\n')
+        out = tmp_path/"output"
+        env = dict(os.environ)
+        for name in list(env):
+            if name.startswith("TESTPILOT_"):
+                env.pop(name)
+        source = Path(__import__("testpilot").__file__).resolve().parent.parent
+        env.update(PYTHONPATH=str(source), PYTHONDONTWRITEBYTECODE="1", PYTEST_DISABLE_PLUGIN_AUTOLOAD="1")
+        run = subprocess.run(
+            [sys.executable, "-m", "testpilot", "run", "--repo", str(repo), "--diff", str(diff),
+             "--backend", "scripted", "--script", str(script), "--rounds", "0", "--timeout", "30",
+             "--out", str(out)], env=env, cwd=tmp_path, capture_output=True, text=True, timeout=90)
+        assert run.returncode == 0, (run.stdout, run.stderr)
+        report = json.loads((out/"report.json").read_text())
+        assert report["status"] == "passed"
+        assert report["final"]["passed"] == 2
+>       assert report["final"]["coverage"] is None
+E       AssertionError: assert {'files': {}, 'percent_total': 0.0} is None
+
+../regressions/test_coverage_reporting.py:101: AssertionError
+=========================== short test summary info ============================
+FAILED ../regressions/test_coverage_reporting.py::test_partial_report_preserves_measured_lines_below_threshold[100]
+FAILED ../regressions/test_coverage_reporting.py::test_measured_zero_retains_its_executable_population
+FAILED ../regressions/test_coverage_reporting.py::test_failed_collection_is_unavailable_while_test_outcome_survives
+FAILED ../regressions/test_coverage_reporting.py::test_below_threshold_measurement_does_not_hide_failed_tests
+FAILED ../regressions/test_coverage_reporting.py::test_public_cli_keeps_reports_when_final_collection_is_unavailable
+5 failed, 1 passed in 6.60s

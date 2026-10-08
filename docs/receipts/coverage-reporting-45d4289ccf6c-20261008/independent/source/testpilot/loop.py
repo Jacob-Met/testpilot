@@ -23,7 +23,7 @@ from pathlib import Path, PurePosixPath
 
 from .diff import ChangedFunction, changed_functions
 from .model import ChatClient, ModelError, RoutingConfig, Usage
-from .sandbox import IGNORE, SandboxResult, run_pytest
+from .sandbox import SandboxResult, run_pytest
 
 SYSTEM_PLANNER = (
     "You are TestPilot's planner. Given changed Python functions from a pull request, "
@@ -181,76 +181,38 @@ def _require_additions(repo: Path, files: dict[str, str]) -> None:
             raise _GeneratedPathConflict(f"cannot add generated tests without replacing repository path {rel!r}")
 
 
-def _pytest_module_name(repo: Path, rel: str) -> str:
-    """Use pytest's default regular-package identity within the copied project."""
-    path = repo / rel
-    names = [] if path.name == "__init__.py" else [path.stem]
-    parent = path.parent
-    while (parent != repo.parent and parent.name.isidentifier()
-           and (parent / "__init__.py").is_file()):
-        names.insert(0, parent.name)
-        parent = parent.parent
-    return ".".join(names)
-
-
-def _repository_module_names(repo: Path) -> set[str]:
-    """Reserve copied Python modules without walking ignored or symlinked dirs."""
-    modules: set[str] = set()
-    for root, dirs, files in repo.walk(follow_symlinks=False):
-        ignored = IGNORE(str(root), dirs + files)
-        dirs[:] = [name for name in dirs if name not in ignored]
-        for name in files:
-            if name.endswith(".py") and name not in ignored:
-                modules.add(_pytest_module_name(repo, (root / name).relative_to(repo).as_posix()))
-    return modules
-
-
 def _merge_test_files(repo: Path, current: dict[str, str], incoming: dict[str, str],
                      aliases: dict[str, str]) -> tuple[dict[str, str], list[str]]:
-    """Apply a partial repair, reserving repository paths and pytest module names.
+    """Apply a partial repair to generated files, reserving every original repo path.
 
     Keep aliases for renamed suggestions so a repair using either the original
     suggestion or the displayed generated path updates the same generated file.
     """
     merged, remapped = dict(current), dict(aliases)
     reserved = set(current) | set(incoming) | set(aliases.values())
-    reserved_modules = {_pytest_module_name(repo, rel) for rel in reserved}
-    occupied_modules = _repository_module_names(repo)
-    occupied_modules.update(_pytest_module_name(repo, rel) for rel in current)
     updates: dict[str, str] = {}
     warnings: list[str] = []
     for rel, content in incoming.items():
         target = aliases.get(rel, rel)
-        path_conflict = target not in current and _path_occupied(repo, target)
-        module_conflict = (target not in current
-                           and _pytest_module_name(repo, target) in occupied_modules)
-        if path_conflict or module_conflict:
+        if target not in current and _path_occupied(repo, target):
             test_root = repo / "tests"
             if test_root.is_symlink() or (test_root.exists() and not test_root.is_dir()):
                 raise _GeneratedPathConflict("cannot add generated tests: repository 'tests' is not a regular directory")
-            # Path conflicts retain the safe root fallback; import-name-only
-            # conflicts keep local fixtures and relative imports in their scope.
-            parent = PurePosixPath("tests") if path_conflict else PurePosixPath(target).parent
             stem = PurePosixPath(rel).stem
             suffix = 1
             while True:
                 tag = "" if suffix == 1 else f"_{suffix}"
-                target = str(parent / f"{stem}_testpilot{tag}.py")
-                module = _pytest_module_name(repo, target)
-                if (target not in reserved and not _path_occupied(repo, target)
-                        and module not in occupied_modules and module not in reserved_modules):
+                target = f"tests/{stem}_testpilot{tag}.py"
+                if target not in reserved and not _path_occupied(repo, target):
                     break
                 suffix += 1
         if target != rel:
-            warnings.append(f"generated suggestion {rel!r} uses {target!r}; kept repository paths and pytest module names")
+            warnings.append(f"kept repository path {rel!r}; generated tests use {target!r}")
         if target in updates and updates[target] != content:
             raise _GeneratedPathConflict(f"conflicting repair blocks resolve to generated path {target!r}; kept previous tests")
         updates[target] = content
         remapped[rel] = target
         reserved.add(target)
-        module = _pytest_module_name(repo, target)
-        reserved_modules.add(module)
-        occupied_modules.add(module)
         merged[target] = content
     _require_additions(repo, merged)
     aliases.update(remapped)
@@ -364,8 +326,6 @@ class LoopResult:
 
 def count_tests(files: dict[str, str], result: SandboxResult | None, existing_ids: set[str]) -> int:
     """Number of generated test cases (from junit when available, else static count)."""
-    if result is not None and result.generated_files and result.junit_available:
-        return len(result.generated_cases)
     if result is not None and result.cases:
         return sum(1 for c in result.cases if c.nodeid not in existing_ids)
     return sum(len(re.findall(r"^\s*(?:async\s+)?def test_", c, re.M)) for c in files.values())
@@ -463,11 +423,6 @@ class TestPilot:
                 rounds.append(RoundRecord(repairs, "repair", sorted(files), final.to_dict(), warns, dict(files)))
             if final.ok:
                 status = "passed"
-            elif (final.generated_files and not final.timed_out and final.returncode in (0, 5)
-                  and not final.failed and not final.errors):
-                status = "no_tests"
-                message = ("no generated test case passed; existing-suite passes do not qualify "
-                           f"the generated patch: {final.summary()}")
             else:
                 status, message = "failed", f"still failing after {repairs} repair round(s): {final.summary()}"
         except BudgetExceeded as e:

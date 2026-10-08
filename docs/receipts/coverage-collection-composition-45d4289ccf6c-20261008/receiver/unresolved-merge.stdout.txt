@@ -1,0 +1,4 @@
+Auto-merging testpilot/loop.py
+Auto-merging testpilot/sandbox.py
+CONFLICT (content): Merge conflict in testpilot/sandbox.py
+Automatic merge failed; fix conflicts and then commit the result.

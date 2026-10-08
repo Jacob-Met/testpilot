@@ -1,0 +1,402 @@
+{
+  "files": [
+    {
+      "bytes": 5585,
+      "path": "README.md",
+      "sha256": "caecff79e792933a20c468f2dff1e6f055eeb4fb4d79181ffa29a4cc7a7b2220"
+    },
+    {
+      "bytes": 81732,
+      "path": "base-tree-readback.json",
+      "sha256": "0e5418e32548cc6c21925b284e25166e0d733233ff38175e9e2f88e1edbdc456"
+    },
+    {
+      "bytes": 0,
+      "path": "baseline/public-cli/oracle-json.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 58,
+      "path": "baseline/public-cli/oracle-json.stdout.txt",
+      "sha256": "435ffa60556c04ab68c37c318a7972f8379f2d36d24172008507d3b4616b2fd4"
+    },
+    {
+      "bytes": 0,
+      "path": "baseline/public-cli/oracle-run.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 98,
+      "path": "baseline/public-cli/oracle-run.stdout.txt",
+      "sha256": "35d86279d96ed65491ba8ff0748e1c8e7891711531404dc5d4b9cd6ae33de3ec"
+    },
+    {
+      "bytes": 1742,
+      "path": "baseline/public-cli/oracle.json",
+      "sha256": "b556aae3218b411cf6afaa02d60e8ef61c3d1464026565681a17bb1791bfcd7a"
+    },
+    {
+      "bytes": 197,
+      "path": "baseline/public-cli/ordinary/change.diff",
+      "sha256": "1f1337e262dd4985c4b9a5a9b180829ba443c98c227c087b1b4e92b6a355832b"
+    },
+    {
+      "bytes": 24,
+      "path": "baseline/public-cli/ordinary/fixture/.coveragerc",
+      "sha256": "68131c934dc32cc8cc1bb1d1037ec473c9167d997f32f44fec3b1586d085b5c6"
+    },
+    {
+      "bytes": 91,
+      "path": "baseline/public-cli/ordinary/fixture/calc.py",
+      "sha256": "44584419ae1477b96d29e0c1949650ff07af46d32550361065ed7a3a183d6e76"
+    },
+    {
+      "bytes": 91,
+      "path": "baseline/public-cli/ordinary/fixture/tests/test_existing.py",
+      "sha256": "26520d0c97d0a8b50bbcb9e1ae6096468788f7e69fa2cff77a666f8cd3f6fa1f"
+    },
+    {
+      "bytes": 33,
+      "path": "baseline/public-cli/ordinary/script/01_plan.md",
+      "sha256": "2648eabd48cc25e5e15f67de09f27e18293e4a88518c3a4739ad8aae96b9a216"
+    },
+    {
+      "bytes": 128,
+      "path": "baseline/public-cli/ordinary/script/02_tests.md",
+      "sha256": "7359a4fa15b5e1745c72852e08b8013397ba20f6d6ad8c71c011f9ddfd4d66e8"
+    },
+    {
+      "bytes": 4278,
+      "path": "baseline/public-cli/ordinary/user-output/report.json",
+      "sha256": "f85f2ea0e5155cf2cb2b8e13d6e857c45dbcaec9c05a276710e39122c859cec4"
+    },
+    {
+      "bytes": 756,
+      "path": "baseline/public-cli/ordinary/user-output/report.md",
+      "sha256": "68dce5b426540e3274031314ad65fec2632d877f280c476566133025abd5bd0b"
+    },
+    {
+      "bytes": 231,
+      "path": "baseline/public-cli/ordinary/user-output/testpilot.patch",
+      "sha256": "38884cfd4de68165cc0551b22eee3114dc8a244ca71b4cb721570ba97cc7418c"
+    },
+    {
+      "bytes": 0,
+      "path": "baseline/public-cli/ordinary-cli.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 789,
+      "path": "baseline/public-cli/ordinary-cli.stdout.txt",
+      "sha256": "21c75b227c47ee3f69aaf948535d043486ba301544dca152077472dd83190e89"
+    },
+    {
+      "bytes": 7976,
+      "path": "baseline/public-cli/receipt.json",
+      "sha256": "14208392ea91edfeb7aa8d7c84c5cdf7f9f5a080fa5f5782d853c68dc1ded516"
+    },
+    {
+      "bytes": 197,
+      "path": "baseline/public-cli/threshold/change.diff",
+      "sha256": "1f1337e262dd4985c4b9a5a9b180829ba443c98c227c087b1b4e92b6a355832b"
+    },
+    {
+      "bytes": 26,
+      "path": "baseline/public-cli/threshold/fixture/.coveragerc",
+      "sha256": "58411d684c4ee10219ca7b2eff01acf77c4457bb2294de3ea09b7a5f177881ea"
+    },
+    {
+      "bytes": 91,
+      "path": "baseline/public-cli/threshold/fixture/calc.py",
+      "sha256": "44584419ae1477b96d29e0c1949650ff07af46d32550361065ed7a3a183d6e76"
+    },
+    {
+      "bytes": 91,
+      "path": "baseline/public-cli/threshold/fixture/tests/test_existing.py",
+      "sha256": "26520d0c97d0a8b50bbcb9e1ae6096468788f7e69fa2cff77a666f8cd3f6fa1f"
+    },
+    {
+      "bytes": 33,
+      "path": "baseline/public-cli/threshold/script/01_plan.md",
+      "sha256": "2648eabd48cc25e5e15f67de09f27e18293e4a88518c3a4739ad8aae96b9a216"
+    },
+    {
+      "bytes": 128,
+      "path": "baseline/public-cli/threshold/script/02_tests.md",
+      "sha256": "7359a4fa15b5e1745c72852e08b8013397ba20f6d6ad8c71c011f9ddfd4d66e8"
+    },
+    {
+      "bytes": 4277,
+      "path": "baseline/public-cli/threshold/user-output/report.json",
+      "sha256": "d439be4b3cc7ebefa0f5ae555fc8fe9aedc1363c029f5ff667bc2dad8367d1da"
+    },
+    {
+      "bytes": 755,
+      "path": "baseline/public-cli/threshold/user-output/report.md",
+      "sha256": "03a62c01fc4469f42ff7498dd02acd6174d5a88b7250d5e277293642d13c033f"
+    },
+    {
+      "bytes": 231,
+      "path": "baseline/public-cli/threshold/user-output/testpilot.patch",
+      "sha256": "38884cfd4de68165cc0551b22eee3114dc8a244ca71b4cb721570ba97cc7418c"
+    },
+    {
+      "bytes": 0,
+      "path": "baseline/public-cli/threshold-cli.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 791,
+      "path": "baseline/public-cli/threshold-cli.stdout.txt",
+      "sha256": "54a8db6664bd821303b5f0f9e1df47bbf19808f54c2f2851e4c555c1060253ad"
+    },
+    {
+      "bytes": 9058,
+      "path": "baseline/regressions/junit.xml",
+      "sha256": "f40312cbbde8fe2a0c2780e5f8d1a740d62626f719754a31f98468e0ac72512c"
+    },
+    {
+      "bytes": 1365,
+      "path": "baseline/regressions/receipt.json",
+      "sha256": "d2a9651a856a84038d64e35e99c3b8705285d1c5a8577bb2f1556c02ed5e57cc"
+    },
+    {
+      "bytes": 0,
+      "path": "baseline/regressions/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 7555,
+      "path": "baseline/regressions/stdout.txt",
+      "sha256": "574e871eb90325075d904a6cf77275b5021c4fd611ba8c09ebd86a73ea47961a"
+    },
+    {
+      "bytes": 2977,
+      "path": "baseline/stale/junit.xml",
+      "sha256": "0a56c6d79014db5e23af1e886d8b91b9ee4306b501d6d5047fa376dcdcebcf7f"
+    },
+    {
+      "bytes": 2643,
+      "path": "baseline/stale/receipt.json",
+      "sha256": "744c8f21aba6cdcb70aebbf9337a6b1dc29c1e0cb57090de69aadc29b773ae17"
+    },
+    {
+      "bytes": 401,
+      "path": "baseline/stale/report-plugin-marker.json",
+      "sha256": "571c2047392b7fc6d31772953d00c0f75c74dd1e2903f74b884e3dc89eb1560e"
+    },
+    {
+      "bytes": 0,
+      "path": "baseline/stale/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2614,
+      "path": "baseline/stale/stdout.txt",
+      "sha256": "d21ae55dec321cf4ab467fb93561feb19ba0bbcae18edde7d235662a9c064356"
+    },
+    {
+      "bytes": 5827,
+      "path": "baseline_receiving.py",
+      "sha256": "93827aa830fd4391c030eaf857605bf3211bd787ace3e8f54d6ec0d5e6badf2f"
+    },
+    {
+      "bytes": 3002,
+      "path": "candidate/focused/junit.xml",
+      "sha256": "d79bd28fe601860df8137729908dfa35c1d7f96a848dcf1df3bd95aa75166439"
+    },
+    {
+      "bytes": 5630,
+      "path": "candidate/focused/receipt.json",
+      "sha256": "2fd6fcc41e430fb85e0690deff44836cdfdb8fe6f48484ade784beae8e5c362d"
+    },
+    {
+      "bytes": 432,
+      "path": "candidate/focused/report-plugin-marker.json",
+      "sha256": "f7704a156a1eef9fdf9f8de72a5fba72622b8d78d0081ef39a5a392f35d32463"
+    },
+    {
+      "bytes": 0,
+      "path": "candidate/focused/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 100,
+      "path": "candidate/focused/stdout.txt",
+      "sha256": "1c83212e7a28d423ccfac25dd107dc1ac7973844ab9c82f343bff2dba5d8a2ce"
+    },
+    {
+      "bytes": 0,
+      "path": "candidate/public-cli/oracle-json.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 58,
+      "path": "candidate/public-cli/oracle-json.stdout.txt",
+      "sha256": "435ffa60556c04ab68c37c318a7972f8379f2d36d24172008507d3b4616b2fd4"
+    },
+    {
+      "bytes": 0,
+      "path": "candidate/public-cli/oracle-run.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 98,
+      "path": "candidate/public-cli/oracle-run.stdout.txt",
+      "sha256": "a71df3ef716cabe43ead70bd8311cda3aeadcb986bea501da0ea9262f31c3925"
+    },
+    {
+      "bytes": 1742,
+      "path": "candidate/public-cli/oracle.json",
+      "sha256": "a3c1d1996e9fd635570780f054955608dd9d51e31ea6932a224e54351cbffc33"
+    },
+    {
+      "bytes": 197,
+      "path": "candidate/public-cli/ordinary/change.diff",
+      "sha256": "1f1337e262dd4985c4b9a5a9b180829ba443c98c227c087b1b4e92b6a355832b"
+    },
+    {
+      "bytes": 24,
+      "path": "candidate/public-cli/ordinary/fixture/.coveragerc",
+      "sha256": "68131c934dc32cc8cc1bb1d1037ec473c9167d997f32f44fec3b1586d085b5c6"
+    },
+    {
+      "bytes": 91,
+      "path": "candidate/public-cli/ordinary/fixture/calc.py",
+      "sha256": "44584419ae1477b96d29e0c1949650ff07af46d32550361065ed7a3a183d6e76"
+    },
+    {
+      "bytes": 91,
+      "path": "candidate/public-cli/ordinary/fixture/tests/test_existing.py",
+      "sha256": "26520d0c97d0a8b50bbcb9e1ae6096468788f7e69fa2cff77a666f8cd3f6fa1f"
+    },
+    {
+      "bytes": 33,
+      "path": "candidate/public-cli/ordinary/script/01_plan.md",
+      "sha256": "2648eabd48cc25e5e15f67de09f27e18293e4a88518c3a4739ad8aae96b9a216"
+    },
+    {
+      "bytes": 128,
+      "path": "candidate/public-cli/ordinary/script/02_tests.md",
+      "sha256": "7359a4fa15b5e1745c72852e08b8013397ba20f6d6ad8c71c011f9ddfd4d66e8"
+    },
+    {
+      "bytes": 4278,
+      "path": "candidate/public-cli/ordinary/user-output/report.json",
+      "sha256": "aa60d661f2a86f670bfcdaa917abb4a1b5bafbd558bd244b1db583eb26ef9988"
+    },
+    {
+      "bytes": 756,
+      "path": "candidate/public-cli/ordinary/user-output/report.md",
+      "sha256": "a1f363ebcc5967021d00c9c5c87e9fdfb887e9ab65a65a3158ef67277d83882a"
+    },
+    {
+      "bytes": 231,
+      "path": "candidate/public-cli/ordinary/user-output/testpilot.patch",
+      "sha256": "38884cfd4de68165cc0551b22eee3114dc8a244ca71b4cb721570ba97cc7418c"
+    },
+    {
+      "bytes": 0,
+      "path": "candidate/public-cli/ordinary-cli.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 807,
+      "path": "candidate/public-cli/ordinary-cli.stdout.txt",
+      "sha256": "bc69fa7fc746062dc564a649a0d2c80dbc4da6591d5e649fc6cbe480ce41d1dd"
+    },
+    {
+      "bytes": 8286,
+      "path": "candidate/public-cli/receipt.json",
+      "sha256": "f010c5da613397b2fb5af07688293b06f695d15c8bbc276a82f05a9e8507593a"
+    },
+    {
+      "bytes": 197,
+      "path": "candidate/public-cli/threshold/change.diff",
+      "sha256": "1f1337e262dd4985c4b9a5a9b180829ba443c98c227c087b1b4e92b6a355832b"
+    },
+    {
+      "bytes": 26,
+      "path": "candidate/public-cli/threshold/fixture/.coveragerc",
+      "sha256": "58411d684c4ee10219ca7b2eff01acf77c4457bb2294de3ea09b7a5f177881ea"
+    },
+    {
+      "bytes": 91,
+      "path": "candidate/public-cli/threshold/fixture/calc.py",
+      "sha256": "44584419ae1477b96d29e0c1949650ff07af46d32550361065ed7a3a183d6e76"
+    },
+    {
+      "bytes": 91,
+      "path": "candidate/public-cli/threshold/fixture/tests/test_existing.py",
+      "sha256": "26520d0c97d0a8b50bbcb9e1ae6096468788f7e69fa2cff77a666f8cd3f6fa1f"
+    },
+    {
+      "bytes": 33,
+      "path": "candidate/public-cli/threshold/script/01_plan.md",
+      "sha256": "2648eabd48cc25e5e15f67de09f27e18293e4a88518c3a4739ad8aae96b9a216"
+    },
+    {
+      "bytes": 128,
+      "path": "candidate/public-cli/threshold/script/02_tests.md",
+      "sha256": "7359a4fa15b5e1745c72852e08b8013397ba20f6d6ad8c71c011f9ddfd4d66e8"
+    },
+    {
+      "bytes": 4278,
+      "path": "candidate/public-cli/threshold/user-output/report.json",
+      "sha256": "73f99bc7e6d380e6ef3ff8cbc6d65d356247050fe26aec02a0789d9c9adb9f7d"
+    },
+    {
+      "bytes": 756,
+      "path": "candidate/public-cli/threshold/user-output/report.md",
+      "sha256": "c80d590533203419de7153acd684e4fe092840899749be99ee41a46f84a1c355"
+    },
+    {
+      "bytes": 231,
+      "path": "candidate/public-cli/threshold/user-output/testpilot.patch",
+      "sha256": "38884cfd4de68165cc0551b22eee3114dc8a244ca71b4cb721570ba97cc7418c"
+    },
+    {
+      "bytes": 0,
+      "path": "candidate/public-cli/threshold-cli.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 810,
+      "path": "candidate/public-cli/threshold-cli.stdout.txt",
+      "sha256": "6b5dcb3ddfd458f018fec05c6c5d12c458fa815ca916c85f6984fac959a4bb67"
+    },
+    {
+      "bytes": 1110,
+      "path": "candidate-source-receipt.json",
+      "sha256": "9aa8a083461243565668153b370046adb008c159df17bcfe0aa9da43eee2b453"
+    },
+    {
+      "bytes": 5193,
+      "path": "initial/test_coverage_reporting.py",
+      "sha256": "f1614f9e343eaac0d84aa63d8d06a77f9b36258c57396fc8220ad38e4b2ddf53"
+    },
+    {
+      "bytes": 3012,
+      "path": "run_receiving.py",
+      "sha256": "8755aaea0cde012820762e306be7b7f2d607cd3ae7f1ec3a5aa030452af148c1"
+    },
+    {
+      "bytes": 2005,
+      "path": "runtime.patch",
+      "sha256": "36058c9d829dd6e7f3c536411f993ba78bb1e30c8267993201706abf2f3bce0d"
+    },
+    {
+      "bytes": 11520,
+      "path": "source-and-tests.patch",
+      "sha256": "a5f4d44aa8eb5a9aac082a3472ea5c21e99d3a6e45efc96fad573c6e6ccfa1ee"
+    },
+    {
+      "bytes": 2632,
+      "path": "source-receipt.json",
+      "sha256": "11d5c61e051f95d0ce6302dd13258f737b3f86dc8e12dfa4e7275e8db84cd090"
+    }
+  ],
+  "schema": "testpilot-coverage-receiving-manifest/1",
+  "scope": "native source qualification before independent review or hosted publication",
+  "source_base": "9f01fcb6de085850eca00db746380795eb548d62"
+}

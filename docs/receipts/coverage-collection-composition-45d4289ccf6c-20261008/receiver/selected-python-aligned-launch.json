@@ -1,0 +1,15 @@
+{
+  "started_utc": "2026-10-08T11:51:24.644257+00:00",
+  "command": [
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-receiving-venv/bin/python",
+    "-B",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/run_receiving.py",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/selected-python-aligned",
+    "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair"
+  ],
+  "source_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "receiver_sha256": "8755aaea0cde012820762e306be7b7f2d607cd3ae7f1ec3a5aa030452af148c1",
+  "tooling_manifest_sha256": "c3e05c74ea93660c14157a0df1279795561182fe245230b7006c180d03b211f2",
+  "scope": "Only the four existing prepared_python spellings that failed from unavailable selected-interpreter coverage; no source/test changes and no other cases rerun."
+}

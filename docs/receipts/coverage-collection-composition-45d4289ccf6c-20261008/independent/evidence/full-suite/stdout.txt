@@ -1,0 +1,182 @@
+FFFF.................................................................... [ 42%]
+........................................................................ [ 85%]
+.........................                                                [100%]
+=================================== FAILURES ===================================
+____ test_project_environment_runs_baseline_generation_and_repair[absolute] ____
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_0')
+project = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...stpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_0/script'))
+prepared_python = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...9ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_0/physical/prepared environment'))
+spelling = 'absolute'
+
+    @pytest.mark.parametrize("spelling", ["absolute", "relative", "path", pytest.param(
+        "symlink-parent", marks=pytest.mark.skipif(os.name == "nt", reason="directory symlinks need optional Windows privileges"),
+    )])
+    def test_project_environment_runs_baseline_generation_and_repair(tmp_path, project, prepared_python, spelling):
+        python, environment = prepared_python
+        receipt = tmp_path / "executions.jsonl"
+        env = {"PROJECT_ENV_RECEIPT": str(receipt)}
+        selected = str(python)
+        if spelling == "relative":
+            selected = os.path.relpath(python, tmp_path)
+        elif spelling == "path":
+            selected = python.name
+            env["PATH"] = str(python.parent) + os.pathsep + os.environ.get("PATH", "")
+        elif spelling == "symlink-parent":
+            child = environment.parent / "child"
+            child.mkdir()
+            (tmp_path / "bridge").symlink_to(child, target_is_directory=True)
+            selected = str(Path("bridge") / ".." / environment.name / python.parent.name / python.name)
+        repo, _, _ = project
+        original = {p.relative_to(repo).as_posix(): p.read_bytes() for p in repo.rglob("*") if p.is_file()}
+    
+        result = invoke(tmp_path, project, ["--python", selected], env)
+    
+        assert result.returncode == 0, result.stderr + result.stdout
+        report = json.loads((tmp_path / "output/report.json").read_text())
+        assert report["status"] == "passed"
+        assert report["repair_rounds_used"] == 1
+        assert report["tests_written"] == 1
+        assert report["rounds"][0]["result"]["failed"] == 1
+        assert report["final"]["passed"] == 2
+        if importlib.util.find_spec("coverage"):
+>           assert report["coverage"]["changed_lines_after"] == 100.0
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: 'NoneType' object is not subscriptable
+
+../../composition-dcd353-worktree/tests/test_cli_python.py:114: TypeError
+____ test_project_environment_runs_baseline_generation_and_repair[relative] ____
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_1')
+project = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...stpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_1/script'))
+prepared_python = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...9ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_1/physical/prepared environment'))
+spelling = 'relative'
+
+    @pytest.mark.parametrize("spelling", ["absolute", "relative", "path", pytest.param(
+        "symlink-parent", marks=pytest.mark.skipif(os.name == "nt", reason="directory symlinks need optional Windows privileges"),
+    )])
+    def test_project_environment_runs_baseline_generation_and_repair(tmp_path, project, prepared_python, spelling):
+        python, environment = prepared_python
+        receipt = tmp_path / "executions.jsonl"
+        env = {"PROJECT_ENV_RECEIPT": str(receipt)}
+        selected = str(python)
+        if spelling == "relative":
+            selected = os.path.relpath(python, tmp_path)
+        elif spelling == "path":
+            selected = python.name
+            env["PATH"] = str(python.parent) + os.pathsep + os.environ.get("PATH", "")
+        elif spelling == "symlink-parent":
+            child = environment.parent / "child"
+            child.mkdir()
+            (tmp_path / "bridge").symlink_to(child, target_is_directory=True)
+            selected = str(Path("bridge") / ".." / environment.name / python.parent.name / python.name)
+        repo, _, _ = project
+        original = {p.relative_to(repo).as_posix(): p.read_bytes() for p in repo.rglob("*") if p.is_file()}
+    
+        result = invoke(tmp_path, project, ["--python", selected], env)
+    
+        assert result.returncode == 0, result.stderr + result.stdout
+        report = json.loads((tmp_path / "output/report.json").read_text())
+        assert report["status"] == "passed"
+        assert report["repair_rounds_used"] == 1
+        assert report["tests_written"] == 1
+        assert report["rounds"][0]["result"]["failed"] == 1
+        assert report["final"]["passed"] == 2
+        if importlib.util.find_spec("coverage"):
+>           assert report["coverage"]["changed_lines_after"] == 100.0
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: 'NoneType' object is not subscriptable
+
+../../composition-dcd353-worktree/tests/test_cli_python.py:114: TypeError
+______ test_project_environment_runs_baseline_generation_and_repair[path] ______
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_2')
+project = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...stpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_2/script'))
+prepared_python = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...9ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_2/physical/prepared environment'))
+spelling = 'path'
+
+    @pytest.mark.parametrize("spelling", ["absolute", "relative", "path", pytest.param(
+        "symlink-parent", marks=pytest.mark.skipif(os.name == "nt", reason="directory symlinks need optional Windows privileges"),
+    )])
+    def test_project_environment_runs_baseline_generation_and_repair(tmp_path, project, prepared_python, spelling):
+        python, environment = prepared_python
+        receipt = tmp_path / "executions.jsonl"
+        env = {"PROJECT_ENV_RECEIPT": str(receipt)}
+        selected = str(python)
+        if spelling == "relative":
+            selected = os.path.relpath(python, tmp_path)
+        elif spelling == "path":
+            selected = python.name
+            env["PATH"] = str(python.parent) + os.pathsep + os.environ.get("PATH", "")
+        elif spelling == "symlink-parent":
+            child = environment.parent / "child"
+            child.mkdir()
+            (tmp_path / "bridge").symlink_to(child, target_is_directory=True)
+            selected = str(Path("bridge") / ".." / environment.name / python.parent.name / python.name)
+        repo, _, _ = project
+        original = {p.relative_to(repo).as_posix(): p.read_bytes() for p in repo.rglob("*") if p.is_file()}
+    
+        result = invoke(tmp_path, project, ["--python", selected], env)
+    
+        assert result.returncode == 0, result.stderr + result.stdout
+        report = json.loads((tmp_path / "output/report.json").read_text())
+        assert report["status"] == "passed"
+        assert report["repair_rounds_used"] == 1
+        assert report["tests_written"] == 1
+        assert report["rounds"][0]["result"]["failed"] == 1
+        assert report["final"]["passed"] == 2
+        if importlib.util.find_spec("coverage"):
+>           assert report["coverage"]["changed_lines_after"] == 100.0
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: 'NoneType' object is not subscriptable
+
+../../composition-dcd353-worktree/tests/test_cli_python.py:114: TypeError
+_ test_project_environment_runs_baseline_generation_and_repair[symlink-parent] _
+
+tmp_path = PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3')
+project = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...stpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/script'))
+prepared_python = (PosixPath('/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_e...9ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/physical/prepared environment'))
+spelling = 'symlink-parent'
+
+    @pytest.mark.parametrize("spelling", ["absolute", "relative", "path", pytest.param(
+        "symlink-parent", marks=pytest.mark.skipif(os.name == "nt", reason="directory symlinks need optional Windows privileges"),
+    )])
+    def test_project_environment_runs_baseline_generation_and_repair(tmp_path, project, prepared_python, spelling):
+        python, environment = prepared_python
+        receipt = tmp_path / "executions.jsonl"
+        env = {"PROJECT_ENV_RECEIPT": str(receipt)}
+        selected = str(python)
+        if spelling == "relative":
+            selected = os.path.relpath(python, tmp_path)
+        elif spelling == "path":
+            selected = python.name
+            env["PATH"] = str(python.parent) + os.pathsep + os.environ.get("PATH", "")
+        elif spelling == "symlink-parent":
+            child = environment.parent / "child"
+            child.mkdir()
+            (tmp_path / "bridge").symlink_to(child, target_is_directory=True)
+            selected = str(Path("bridge") / ".." / environment.name / python.parent.name / python.name)
+        repo, _, _ = project
+        original = {p.relative_to(repo).as_posix(): p.read_bytes() for p in repo.rglob("*") if p.is_file()}
+    
+        result = invoke(tmp_path, project, ["--python", selected], env)
+    
+        assert result.returncode == 0, result.stderr + result.stdout
+        report = json.loads((tmp_path / "output/report.json").read_text())
+        assert report["status"] == "passed"
+        assert report["repair_rounds_used"] == 1
+        assert report["tests_written"] == 1
+        assert report["rounds"][0]["result"]["failed"] == 1
+        assert report["final"]["passed"] == 2
+        if importlib.util.find_spec("coverage"):
+>           assert report["coverage"]["changed_lines_after"] == 100.0
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: 'NoneType' object is not subscriptable
+
+../../composition-dcd353-worktree/tests/test_cli_python.py:114: TypeError
+=========================== short test summary info ============================
+FAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[absolute]
+FAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[relative]
+FAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[path]
+FAILED ../../composition-dcd353-worktree/tests/test_cli_python.py::test_project_environment_runs_baseline_generation_and_repair[symlink-parent]
+4 failed, 165 passed in 118.25s (0:01:58)

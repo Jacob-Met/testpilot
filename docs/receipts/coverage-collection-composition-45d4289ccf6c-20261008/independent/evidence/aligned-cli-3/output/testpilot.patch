@@ -1,0 +1,11 @@
+diff --git a/tests/test_adjusted.py b/tests/test_adjusted.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_adjusted.py
+@@ -0,0 +1,6 @@
++from testpilot_project_only_dependency import record
++from subject import adjusted
++
++def test_zero():
++    record('generated')
++    assert adjusted(0) == 41

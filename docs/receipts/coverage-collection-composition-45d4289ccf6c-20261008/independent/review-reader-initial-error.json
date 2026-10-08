@@ -1,0 +1,6 @@
+{
+  "kind": "reviewer receipt-shape assumption correction, not a product/test failure",
+  "observed": "The preserved CLI report stores unavailable coverage as null, not as a dictionary of null fields.",
+  "error": "TypeError: NoneType object is not subscriptable at rep[coverage][changed_lines_after]",
+  "correction": "Check rep[coverage] is None; no source or test changes and no tests executed."
+}

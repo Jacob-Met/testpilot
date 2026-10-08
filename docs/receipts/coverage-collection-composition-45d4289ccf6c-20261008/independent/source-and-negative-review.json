@@ -1,0 +1,290 @@
+{
+  "all_other_owner_leaves_exact": true,
+  "captures": [
+    {
+      "bytes": 2767,
+      "path": "evidence/composition-source-receipt.json",
+      "sha256": "e7456055e5a894e3740a96a6f91ede69b499eda529a549eaefd71e8bce77de78"
+    },
+    {
+      "bytes": 130489,
+      "path": "evidence/combined-source-manifest.json",
+      "sha256": "5020c8f32ef7ab3069c08e541ef2a128ece2357102577f970942d6e77a12465c"
+    },
+    {
+      "bytes": 2236,
+      "path": "evidence/relative-to-pr14-runtime.patch",
+      "sha256": "18f94215862313558bf694d61ab58a85bf5c3221082e00bcbeea8f3a7333b9c2"
+    },
+    {
+      "bytes": 1302,
+      "path": "evidence/original-pr14-review.json",
+      "sha256": "ce34c5d18bb1ecc9bd80f75848ee4e8c0a835e6807b437de71b4563c1c3e60c1"
+    },
+    {
+      "bytes": 90145,
+      "path": "evidence/full-suite/receipt.json",
+      "sha256": "f755d79edae67ea09de46c7379f02885b057c4738b7f0639615899b01a5fb4f0"
+    },
+    {
+      "bytes": 5688,
+      "path": "evidence/selected-python-tooling-diagnosis.json",
+      "sha256": "8938dbb037c0383d83dc1a28788ee55dc7ad1db0b064ef640ca07a419aee9157"
+    },
+    {
+      "bytes": 33521,
+      "path": "evidence/full-suite/junit.xml",
+      "sha256": "b437bde6f48534ad3b6c9d7cebaaaba816b9e2fea75f7e0d3dae2e9fac2858ff"
+    },
+    {
+      "bytes": 12012,
+      "path": "evidence/full-suite/stdout.txt",
+      "sha256": "8484d40f674a08903d946e553eaee062dd409118a95e96805d772787ccb4a805"
+    },
+    {
+      "bytes": 0,
+      "path": "evidence/full-suite/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "diagnosis_confirmed_by_raw_reports_and_unchanged_fixture": true,
+  "disposition": "Source composition preserves owner collection/provenance behavior and the originally qualified coverage change. Native failure diagnosis confirmed; corrected four-case receiving reviewed separately when frozen.",
+  "failed_cases": [
+    "test_project_environment_runs_baseline_generation_and_repair[absolute]",
+    "test_project_environment_runs_baseline_generation_and_repair[relative]",
+    "test_project_environment_runs_baseline_generation_and_repair[path]",
+    "test_project_environment_runs_baseline_generation_and_repair[symlink-parent]"
+  ],
+  "full_suite_junit_counts": {
+    "failed": 4,
+    "passed": 165
+  },
+  "full_suite_sandbox_temp_empty": true,
+  "full_suite_source_hashes_match_combined_tree": true,
+  "immutable_tree_leaves_verified": 451,
+  "negative_cli_reports": [
+    {
+      "case_index": 0,
+      "coverage": null,
+      "final": {
+        "cases": [
+          {
+            "generated_file": "tests/test_adjusted.py",
+            "message": "",
+            "nodeid": "tests.test_adjusted::test_zero",
+            "outcome": "passed"
+          },
+          {
+            "generated_file": null,
+            "message": "",
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed"
+          }
+        ],
+        "coverage": null,
+        "duration_s": 0.415,
+        "errors": 0,
+        "failed": 0,
+        "generated": {
+          "collected": 1,
+          "error": 0,
+          "failed": 0,
+          "passed": 1,
+          "skipped": 0
+        },
+        "generated_files": [
+          "tests/test_adjusted.py"
+        ],
+        "junit_available": true,
+        "ok": true,
+        "output": "..                                                                       [100%]\n2 passed in 0.02s\n",
+        "passed": 2,
+        "returncode": 0,
+        "skipped": 0,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "timed_out": false,
+        "timeout_s": 15.0
+      },
+      "path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_0/output/report.json",
+      "repair_rounds_used": 1,
+      "sha256": "065bfc60fb87698a4cdb86c30314a58356baf4237a582047b9cf4e3249fe3260",
+      "status": "passed",
+      "tests_written": 1
+    },
+    {
+      "case_index": 1,
+      "coverage": null,
+      "final": {
+        "cases": [
+          {
+            "generated_file": "tests/test_adjusted.py",
+            "message": "",
+            "nodeid": "tests.test_adjusted::test_zero",
+            "outcome": "passed"
+          },
+          {
+            "generated_file": null,
+            "message": "",
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed"
+          }
+        ],
+        "coverage": null,
+        "duration_s": 0.433,
+        "errors": 0,
+        "failed": 0,
+        "generated": {
+          "collected": 1,
+          "error": 0,
+          "failed": 0,
+          "passed": 1,
+          "skipped": 0
+        },
+        "generated_files": [
+          "tests/test_adjusted.py"
+        ],
+        "junit_available": true,
+        "ok": true,
+        "output": "..                                                                       [100%]\n2 passed in 0.02s\n",
+        "passed": 2,
+        "returncode": 0,
+        "skipped": 0,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "timed_out": false,
+        "timeout_s": 15.0
+      },
+      "path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_1/output/report.json",
+      "repair_rounds_used": 1,
+      "sha256": "3b4c1ed218146327b0132ec2097a3d9d87e7994cd172251b487b6b752307b433",
+      "status": "passed",
+      "tests_written": 1
+    },
+    {
+      "case_index": 2,
+      "coverage": null,
+      "final": {
+        "cases": [
+          {
+            "generated_file": "tests/test_adjusted.py",
+            "message": "",
+            "nodeid": "tests.test_adjusted::test_zero",
+            "outcome": "passed"
+          },
+          {
+            "generated_file": null,
+            "message": "",
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed"
+          }
+        ],
+        "coverage": null,
+        "duration_s": 0.504,
+        "errors": 0,
+        "failed": 0,
+        "generated": {
+          "collected": 1,
+          "error": 0,
+          "failed": 0,
+          "passed": 1,
+          "skipped": 0
+        },
+        "generated_files": [
+          "tests/test_adjusted.py"
+        ],
+        "junit_available": true,
+        "ok": true,
+        "output": "..                                                                       [100%]\n2 passed in 0.02s\n",
+        "passed": 2,
+        "returncode": 0,
+        "skipped": 0,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "timed_out": false,
+        "timeout_s": 15.0
+      },
+      "path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_2/output/report.json",
+      "repair_rounds_used": 1,
+      "sha256": "327881595188fd610eb0c65d68df84ef625c4b39001377d3f26f6f277a97df3f",
+      "status": "passed",
+      "tests_written": 1
+    },
+    {
+      "case_index": 3,
+      "coverage": null,
+      "final": {
+        "cases": [
+          {
+            "generated_file": "tests/test_adjusted.py",
+            "message": "",
+            "nodeid": "tests.test_adjusted::test_zero",
+            "outcome": "passed"
+          },
+          {
+            "generated_file": null,
+            "message": "",
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed"
+          }
+        ],
+        "coverage": null,
+        "duration_s": 0.496,
+        "errors": 0,
+        "failed": 0,
+        "generated": {
+          "collected": 1,
+          "error": 0,
+          "failed": 0,
+          "passed": 1,
+          "skipped": 0
+        },
+        "generated_files": [
+          "tests/test_adjusted.py"
+        ],
+        "junit_available": true,
+        "ok": true,
+        "output": "..                                                                       [100%]\n2 passed in 0.02s\n",
+        "passed": 2,
+        "returncode": 0,
+        "skipped": 0,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "timed_out": false,
+        "timeout_s": 15.0
+      },
+      "path": "/home/jacob/testpilot-coverage-45d4289ccf6c/composition-dcd353-evidence/full-suite/fixtures/test_project_environment_runs_3/output/report.json",
+      "repair_rounds_used": 1,
+      "sha256": "c41a0ec94c99ee23bc60979f7ceb8cf76f9a77ab73d648d189f32dc9f4afe281",
+      "status": "passed",
+      "tests_written": 1
+    }
+  ],
+  "original_collection_source": "dcd353531ad3dde353b63db4b09adca976b9f256",
+  "original_coverage_source": "fd77eb028bdbdba35644b44c524471b6413fad39",
+  "original_coverage_test_doc_evidence_leaves_exact": 102,
+  "original_full_suite_receipt_sha256": "f755d79edae67ea09de46c7379f02885b057c4738b7f0639615899b01a5fb4f0",
+  "original_owner_leaves": 349,
+  "owner_changes": [
+    "testpilot/loop.py",
+    "testpilot/sandbox.py"
+  ],
+  "prospective_tree": "08d13653668d58660cbf3614108ba79ddd8f3b17",
+  "reviewed_at": "2026-10-08T11:53:26.885922+00:00",
+  "reviewer": "chatgpt-45d4289ccf6c/native_execution",
+  "runtime_ast_review": [
+    {
+      "combined_git_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "combined_sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931",
+      "only_accepted_coverage_change": true,
+      "owner_git_blob": "ca0360375bdcaace0e6014b4767acad546380242",
+      "path": "testpilot/sandbox.py"
+    },
+    {
+      "combined_git_blob": "f1e571cef1fedb67c87e91c49b54aef7f2174d40",
+      "combined_sha256": "dea26d8eeec2364d3dbb702671b579ae3890881d866a76ab9d98dfe2992decee",
+      "only_accepted_coverage_change": true,
+      "owner_git_blob": "f4e9671b32cabda7e66ef79eb4a3a94c58d2f824",
+      "path": "testpilot/loop.py"
+    }
+  ],
+  "schema": "testpilot-combined-independent-source-negative-review-v1",
+  "tests_executed_by_reviewer": 0,
+  "working_source_changed_by_reviewer": false
+}
