@@ -1,0 +1,31 @@
+FFF...                                                                   [100%]
+=================================== FAILURES ===================================
+_________________________ test_inside_range_unchanged __________________________
+
+    def test_inside_range_unchanged():
+>       assert clamp(5, 0, 10) == 5
+E       assert 10 == 5
+E        +  where 10 = clamp(5, 0, 10)
+
+tests/test_calc_clamp.py:7: AssertionError
+_____________________________ test_below_and_above _____________________________
+
+    def test_below_and_above():
+>       assert clamp(-3, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(-3, 0, 10)
+
+tests/test_calc_clamp.py:11: AssertionError
+_______________________________ test_boundaries ________________________________
+
+    def test_boundaries():
+>       assert clamp(0, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(0, 0, 10)
+
+tests/test_calc_clamp.py:16: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5
+FAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0
+FAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0
+3 failed, 3 passed in 0.03s
