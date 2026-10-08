@@ -1,0 +1,201 @@
+{
+  "schema": "testpilot-coverage.independent-source-readback.v1",
+  "reviewer": "chatgpt-45d4289ccf6c/native_execution",
+  "commit": "ec4abaf48ee62eeec29cfc1dc5389688ca533d3b",
+  "tree": "2118fb1be1b9290694e5b0e4485c40736873d05c",
+  "parent": "9f01fcb6de085850eca00db746380795eb548d62",
+  "source_files": [
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 9626,
+      "sha256": "90c1401cba1f5c488f1aa0b89b90293fda41b7971471904381d6b0b8279e18f7",
+      "git_blob": "164206206f8896f4bc6cee23ae030bb000671b33"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "bytes": 21143,
+      "sha256": "aa0a7a1459fabe7016e4d4f55fd7ee5fc2a5af64ec9df24445868fcaa59f620b",
+      "git_blob": "bee54ddce48f6d5251fef56317a0ffceb0aab5a8"
+    },
+    {
+      "path": "tests/test_coverage_reporting.py",
+      "bytes": 6636,
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede",
+      "git_blob": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9"
+    },
+    {
+      "path": "docs/coverage-reporting.md",
+      "bytes": 2365,
+      "sha256": "697fcbf3d7276c0e34ba704b0a611908b0192f4e3c01f554dae3fc8a2bd063dd",
+      "git_blob": "340179e676d90c744b4a826e7824efb1cda3dab4"
+    }
+  ],
+  "ast_comparison": [
+    {
+      "path": "testpilot/sandbox.py",
+      "base_sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "changed_top_level_definitions": [
+        "run_pytest"
+      ],
+      "all_other_top_level_nodes_identical": true
+    },
+    {
+      "path": "testpilot/loop.py",
+      "base_sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "changed_top_level_definitions": [
+        "render_report"
+      ],
+      "all_other_top_level_nodes_identical": true
+    }
+  ],
+  "existing_controls": [
+    {
+      "path": "tests/test_sandbox.py",
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+      "unchanged": true
+    },
+    {
+      "path": "tests/test_loop.py",
+      "sha256": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc",
+      "unchanged": true
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+      "unchanged": true
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "unchanged": true
+    }
+  ],
+  "evidence_manifest_sha256": "627d2388c775fdd9d01e1bb543bbc995f3f2eb968e08ea4a8af37620f0c27d11",
+  "committed_evidence_files_verified": 79,
+  "committed_evidence_bytes_verified": 200966,
+  "all_committed_evidence_matches_manifest": true,
+  "junit_readback": [
+    {
+      "path": "candidate/focused/junit.xml",
+      "sha256": "d79bd28fe601860df8137729908dfa35c1d7f96a848dcf1df3bd95aa75166439",
+      "counts": {
+        "tests": 28,
+        "failures": 0,
+        "errors": 0,
+        "skips": 0,
+        "passed": 28
+      }
+    },
+    {
+      "path": "baseline/regressions/junit.xml",
+      "sha256": "f40312cbbde8fe2a0c2780e5f8d1a740d62626f719754a31f98468e0ac72512c",
+      "counts": {
+        "tests": 6,
+        "failures": 5,
+        "errors": 0,
+        "skips": 0,
+        "passed": 1
+      }
+    },
+    {
+      "path": "baseline/stale/junit.xml",
+      "sha256": "0a56c6d79014db5e23af1e886d8b91b9ee4306b501d6d5047fa376dcdcebcf7f",
+      "counts": {
+        "tests": 1,
+        "failures": 1,
+        "errors": 0,
+        "skips": 0,
+        "passed": 0
+      }
+    }
+  ],
+  "scoped_changed_paths": [
+    "A\tdocs/coverage-reporting.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/README.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/base-tree-readback.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/oracle-json.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/oracle-json.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/oracle-run.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/oracle-run.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/oracle.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary-cli.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary-cli.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/change.diff",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/fixture/.coveragerc",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/fixture/calc.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/fixture/tests/test_existing.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/script/01_plan.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/script/02_tests.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/user-output/report.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/user-output/report.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/ordinary/user-output/testpilot.patch",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/receipt.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold-cli.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold-cli.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/change.diff",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/fixture/.coveragerc",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/fixture/calc.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/fixture/tests/test_existing.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/script/01_plan.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/script/02_tests.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/user-output/report.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/user-output/report.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/public-cli/threshold/user-output/testpilot.patch",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/regressions/junit.xml",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/regressions/receipt.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/regressions/stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/regressions/stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/stale/junit.xml",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/stale/receipt.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/stale/report-plugin-marker.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/stale/stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline/stale/stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/baseline_receiving.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate-source-receipt.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/focused/junit.xml",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/focused/receipt.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/focused/report-plugin-marker.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/focused/stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/focused/stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/oracle-json.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/oracle-json.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/oracle-run.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/oracle-run.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/oracle.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary-cli.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary-cli.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/change.diff",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/fixture/.coveragerc",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/fixture/calc.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/fixture/tests/test_existing.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/script/01_plan.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/script/02_tests.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/user-output/report.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/user-output/report.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/ordinary/user-output/testpilot.patch",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/receipt.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold-cli.stderr.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold-cli.stdout.txt",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/change.diff",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/fixture/.coveragerc",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/fixture/calc.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/fixture/tests/test_existing.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/script/01_plan.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/script/02_tests.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/user-output/report.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/user-output/report.md",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/candidate/public-cli/threshold/user-output/testpilot.patch",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/initial/test_coverage_reporting.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/manifest.json",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/run_receiving.py",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/runtime.patch",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/source-and-tests.patch",
+    "A\tdocs/receipts/coverage-reporting-45d4289ccf6c-20261008/source-receipt.json",
+    "M\ttestpilot/loop.py",
+    "M\ttestpilot/sandbox.py",
+    "A\ttests/test_coverage_reporting.py"
+  ],
+  "tests_executed_by_reviewer": 0,
+  "candidate_source_modified": false,
+  "github_mutation_attempted": false
+}

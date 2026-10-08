@@ -1,0 +1,69 @@
+{
+  "schema": "testpilot-coverage.independent-source-review.v1",
+  "reviewer": "chatgpt-45d4289ccf6c/native_execution",
+  "authority": "Root assigned independent source review of the concrete coverage-reporting candidate, without repeating the already-qualified 28 tests absent a specific gap.",
+  "decision": "accepted",
+  "source": {
+    "repository": "Jacob-Met/TestPilot",
+    "native_repository": "/home/jacob/testpilot-coverage-45d4289ccf6c/repository",
+    "commit": "ec4abaf48ee62eeec29cfc1dc5389688ca533d3b",
+    "tree": "2118fb1be1b9290694e5b0e4485c40736873d05c",
+    "parent": "9f01fcb6de085850eca00db746380795eb548d62",
+    "source_readback_sha256": "9cffef14288f85403594bcbac98cd35d8ef7bbcf2f0f926c496557237871ca3e"
+  },
+  "review_findings": [
+    {
+      "area": "Valid below-threshold reporting",
+      "assessment": "accepted",
+      "reason": "The candidate admits an existing fresh JSON report only when coverage json returns 0 or 2. Coverage.py's documented threshold status is 2. The unchanged parser retains measured percentages and executed/executable lines; it does not replace a below-threshold report with CoverageReport(0.0). The actual configured and ordinary public CLI reports both show 75.0 -> 100.0, a 25.0-point change."
+    },
+    {
+      "area": "Fresh report custody",
+      "assessment": "accepted",
+      "reason": "A new TemporaryDirectory is reserved inside the exclusively owned outer sandbox only after pytest has completed. coverage json receives that new directory's cov.json as its output. The actual candidate plugin marker shows this fresh path while stale_before_report is true at the old fixed path. An exit-2 failure before report generation therefore has no report at the admitted path."
+    },
+    {
+      "area": "Genuine unavailability and measured zero",
+      "assessment": "accepted",
+      "reason": "No report, a non-admitted exit status or report timeout yields None. The unchanged _run timeout path returns a None status, so a partial file left during timeout is not admitted. The measured-zero case retains a real CoverageReport with its executable population. The original parser still propagates malformed JSON errors; this proposal adds no broad exception swallowing or parser-schema policy."
+    },
+    {
+      "area": "Test and repair-loop policy",
+      "assessment": "accepted",
+      "reason": "The pytest command, return code, JUnit collection, SandboxResult.ok, existing process-group timeout cleanup, coverage_delta, and TestLoop are unchanged. A valid below-threshold report cannot convert failing pytest into success. An unavailable final measurement preserves successful test results and yields an unavailable delta through the existing None guard. The only render_report change removes an inaccurate instruction to install coverage when collection can fail with coverage already installed."
+    },
+    {
+      "area": "Scope and existing regression controls",
+      "assessment": "accepted",
+      "reason": "Actual baseline Git objects and candidate source were compared. Only run_pytest and render_report differ at the top-level AST; all other definitions/imports/statements are identical. Existing test_sandbox.py, test_loop.py, conftest.py and pyproject.toml match baseline bytes. The committed diff consists of the supplied four source/test/doc paths plus the 80-file receiving packet; no other project paths change."
+    },
+    {
+      "area": "Evidence and custody",
+      "assessment": "accepted",
+      "reason": "The reviewer independently verified all 79 payload files against the frozen manifest and again against immutable candidate Git objects. Raw JUnit parses as original six-case receiving 1 passed / 5 failed, original stale-only case 0 passed / 1 failed, final receiving 28 passed / 0 failed / 0 errors / 0 skips. Both actual CLI report files preserve two passing tests and the same generated patch hash. No source edits or test reruns occurred during this review."
+    }
+  ],
+  "primary_contract": {
+    "url": "https://coverage.readthedocs.io/en/latest/commands/cmd_json.html",
+    "title": "JSON reporting: coverage json — Coverage.py 7.16.2 documentation",
+    "read_date": "2026-10-08",
+    "finding": "The JSON command documents exit status 2 when measured coverage is below fail-under and supports reporting options from project configuration."
+  },
+  "verified_receipts": {
+    "author_manifest_sha256": "627d2388c775fdd9d01e1bb543bbc995f3f2eb968e08ea4a8af37620f0c27d11",
+    "focused_receipt_sha256": "2fd6fcc41e430fb85e0690deff44836cdfdb8fe6f48484ade784beae8e5c362d",
+    "public_cli_receipt_sha256": "f010c5da613397b2fb5af07688293b06f695d15c8bbc276a82f05a9e8507593a",
+    "final_junit_sha256": "d79bd28fe601860df8137729908dfa35c1d7f96a848dcf1df3bd95aa75166439",
+    "candidate_plugin_marker_sha256": "f7704a156a1eef9fdf9f8de72a5fba72622b8d78d0081ef39a5a392f35d32463",
+    "identical_ordinary_and_threshold_patch_sha256": "38884cfd4de68165cc0551b22eee3114dc8a244ca71b4cb721570ba97cc7418c"
+  },
+  "material_unresolved_findings": [],
+  "tests_executed_by_reviewer": 0,
+  "scope_limit": "Independent source and frozen native-receipt review at the exact supplied candidate; no claim of additional execution, full repository/eval qualification, provider quality, Windows behavior or installed service adoption.",
+  "mutation_record": {
+    "candidate_source_modified": false,
+    "owner_evidence_modified": false,
+    "github_mutation_attempted": false
+  },
+  "adoption": "The author may add this complete frozen reviewer packet as evidence. Preserve the original 79-file manifest and all earlier negative receipts. Source publication remains under root's ordered GitHub recovery and integration authority."
+}
