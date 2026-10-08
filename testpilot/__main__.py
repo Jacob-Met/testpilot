@@ -113,6 +113,10 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
                    help="project Python for all test runs; path or PATH command (default: this interpreter)")
     r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
+    r.add_argument("--pytest-k", metavar="EXPR",
+                   help="native pytest keyword expression for baseline, generation and every repair")
+    r.add_argument("--pytest-m", metavar="EXPR",
+                   help="native pytest marker expression for baseline, generation and every repair")
     r.add_argument("--out", default="testpilot-out")
     r.add_argument("--target", action="append", metavar="PATH.py::QUALNAME",
                    help="select this function explicitly; repeat for caller order, instead of automatic diff selection")
@@ -159,7 +163,8 @@ def main(argv: list[str] | None = None) -> int:
         print(f"testpilot: {e}", file=sys.stderr)
         return 2
     pilot = TestPilot(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
-                      max_total_tokens=a.max_tokens, coverage=a.coverage, python=a.python)
+                      max_total_tokens=a.max_tokens, coverage=a.coverage, python=a.python,
+                      pytest_k=a.pytest_k, pytest_m=a.pytest_m)
     try:
         res = (pilot.run(a.repo, diff_text) if a.target is None
                else pilot.run(a.repo, diff_text, targets=a.target))

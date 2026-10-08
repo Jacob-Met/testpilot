@@ -252,6 +252,16 @@ def render_html_report(report_json: bytes, patch: bytes) -> str:
              '<p class="lead">' + explanation + '</p>']
     if report.get('message'):
         parts.append('<div class="notice"><p class="prose">' + _text(report['message']) + '</p></div>')
+    pytest_selection = report.get('pytest_selection')
+    if pytest_selection is not None:
+        parts.append('<div class="notice"><h2>Pytest execution selection</h2>'
+                     '<p>These native filters are configured for baseline, generation and every repair. '
+                     '<strong>Unselected tests were not verified.</strong> '
+                     'Saved-test recheck does not inherit these filters.</p>'
+                     + _table(['Native filter', 'Literal expression (JSON)'], [
+                         ['Keyword (-k)', json.dumps(pytest_selection.get('keyword'), ensure_ascii=True)],
+                         ['Marker (-m)', json.dumps(pytest_selection.get('marker'), ensure_ascii=True)]])
+                     + '</div>')
     parts.append('<div class="actions"><a class="button primary" download="testpilot.patch" href="' + patch_uri
                  + '">Download exact patch</a><a class="button" download="report.json" href="' + json_uri
                  + '">Download report JSON</a></div>'

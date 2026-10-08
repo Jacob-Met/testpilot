@@ -1,0 +1,11 @@
+{
+  "archive": "producer-native-packet.tar.gz",
+  "bytes": 104238,
+  "sha256": "089b5798f86c12a9f2e18df4629194586aa73b0be6d79007b45e42c3dd7dfdf5",
+  "git_blob": "244c123354c0b5ef0c9892db72ec61c1f99eb5e5",
+  "members": 87,
+  "member_bytes": 422506,
+  "manifest_sha256": "c3203426224aeb9f4ba7620be670e07c64828ecdddff8d802e8372144b5653bf",
+  "sealed_at": "2026-10-08T19:39:15.936807+00:00",
+  "verification": "All87 members read and matched without extraction; 86 original artifacts remain exact."
+}
