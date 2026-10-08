@@ -1,0 +1,1 @@
+{"status": "pass", "previewCases": [{"source": "original", "route": "file", "code": 2}, {"source": "original", "route": "stdin", "code": 0}, {"source": "candidate", "route": "file", "code": 0}, {"source": "candidate", "route": "stdin", "code": 0}], "realGeneratedTest": "passed", "receiptSha256": "fe66787b444ac8dc37a4803dc96c258c4a040dfa752de9311e5af602b5827acd"}
