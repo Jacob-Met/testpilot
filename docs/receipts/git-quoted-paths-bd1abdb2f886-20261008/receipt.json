@@ -1,0 +1,139 @@
+{
+  "schema": "testpilot.git-quoted-paths.receiving.v1",
+  "contributor": "chatgpt-astra-bd1abdb2f886-20261008/estate_source",
+  "recorded_utc": "2026-10-08T07:34:44.087159+00:00",
+  "repository": "Jacob-Met/testpilot",
+  "base_commit": "a565cc365fdf9cf346b6104a6abdd77d0b12d2fd",
+  "base_tree": "6e00a31af1785dae2aed3beeac76a477fbb17f00",
+  "materialized_baseline_file_count": 78,
+  "all_baseline_materialized_files_verified_by_git_blob": true,
+  "scope_record": "https://github.com/Jacob-Met/testpilot/issues/2#issuecomment-6054899236",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "pytest": "9.1.1",
+    "coverage": "7.16.2"
+  },
+  "git": "git version 2.51.1",
+  "results": {
+    "baseline_new_cases": {
+      "passed": 4,
+      "failed": 27,
+      "skipped": 0
+    },
+    "candidate_new_and_inherited_diff_cases": {
+      "passed": 37,
+      "failed": 0,
+      "skipped": 0
+    },
+    "candidate_full_native_suite": {
+      "passed": 67,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "representative_workflow": {
+    "baseline": {
+      "status": "no_changes",
+      "tests_written": 0,
+      "model_calls": 0
+    },
+    "candidate": {
+      "status": "passed",
+      "tests_written": 1,
+      "model_calls": 2,
+      "git_apply_check_returncode": 0
+    },
+    "provider": "authored ScriptedModel, no network model call",
+    "pytest": "real child process using unchanged sandbox"
+  },
+  "changed_runtime": {
+    "path": "testpilot/diff.py",
+    "base_git_blob": "2e77afd4c40d060037e706cdb0c33f1793b9cf1c",
+    "bytes": 7972,
+    "sha256": "6e02db4eb5f303227e3b1dbfc711ac57d0d2c9f358b835995e226df69cb29c29",
+    "git_blob": "e8458f9c0265276c72f96425da3e4ce094f61f84"
+  },
+  "added_tests": {
+    "path": "tests/test_git_quoted_paths.py",
+    "bytes": 5892,
+    "sha256": "57aba89eb29209b80d78b4e0aedcbd3d0d4a90b1a6269110909f09ddb1be1205",
+    "git_blob": "7935d1a61be31f035a65b32a191bf6da56e79211"
+  },
+  "evidence_files": [
+    {
+      "path": "baseline-reproduction.json",
+      "bytes": 397,
+      "sha256": "161ede150e1c9190b29a561cb779d9b8717205461a67109c8e92ef70ce4a46b8",
+      "git_blob": "62c8faa4b31da203a4f6ac22ffcc9498420305aa"
+    },
+    {
+      "path": "baseline-focused.log",
+      "bytes": 28358,
+      "sha256": "a274419e0b70714772dbfe008b1d3d801da1e079eb52a03d8e3b012539fa4852",
+      "git_blob": "7cf0025221d2f1839b60a5c6264213383e038757"
+    },
+    {
+      "path": "candidate-focused.log",
+      "bytes": 99,
+      "sha256": "2932ba0aff306ffeea7bc084b75ddeb3c9bed7638728656dbfcd598d33102eab",
+      "git_blob": "65300acd4e30c9ab7726c4aaad28004d97114f75"
+    },
+    {
+      "path": "candidate-full.log",
+      "bytes": 100,
+      "sha256": "944d8417296862efcd26215e964361b6e70ae9b25ae0f7fd8214df12d5e98266",
+      "git_blob": "8f9f05587cb282c720a4fcdace6e7cd1cbc0a660"
+    },
+    {
+      "path": "check_workflow.py",
+      "bytes": 2499,
+      "sha256": "864c0ed8dfff0fb7c76b0628759a9b9786be4cb14a266589543be410e3a8f8e1",
+      "git_blob": "c458c2a3547f56569e3117c283b48b83f2cd6446"
+    },
+    {
+      "path": "baseline-workflow.json",
+      "bytes": 353,
+      "sha256": "e6c55e010cbb940752cca3a052a0e9492bdf2413551e369ffc53bcf15c5dc158",
+      "git_blob": "c42556805cb678caf46b442228ef5030e5a74fd4"
+    },
+    {
+      "path": "candidate-workflow.json",
+      "bytes": 1726,
+      "sha256": "e118fc06e20ddc23f3a12a9cd224e67fd29059e07aab8c97c1804501ca13f9ab",
+      "git_blob": "01540adb5086fd4eb8c3385331c810ba254f926f"
+    },
+    {
+      "path": "independent_git_byte_paths.py",
+      "bytes": 2462,
+      "sha256": "9c9e803ef20784f4fc631c5c7c14360466cb5b96781e74532cc0a38913d1efe0",
+      "git_blob": "fa7a8931c7eda2612ac80f8c287f54b6e025110b"
+    },
+    {
+      "path": "independent-byte-paths.json",
+      "bytes": 545,
+      "sha256": "576e51268e40c81bc41489474d1c4e67de55c295bd00d3d0249fffa4e1b51b45",
+      "git_blob": "e3c1658f150a7bf95f1b816974d99597915e1b2b"
+    }
+  ],
+  "implementation_behavior": "Decode Git double-quoted C escapes and three-digit octal filename bytes before existing prefix/sentinel processing. Malformed quoted headers raise ValueError.",
+  "independent_review": {
+    "reviewer": "chatgpt-astra-bd1abdb2f886-20261008/root",
+    "result": "accepted",
+    "runtime_source_sha256": "6e02db4eb5f303227e3b1dbfc711ac57d0d2c9f358b835995e226df69cb29c29",
+    "matrix": "Every POSIX filename byte 1..255 except slash; NUL excluded",
+    "parsed_and_ast_selected_filenames": 254,
+    "exact_function_and_added_line_identity": true,
+    "skipped": 0,
+    "witness": "independent_git_byte_paths.py",
+    "output": "independent-byte-paths.json"
+  },
+  "external_runtime_actions": [],
+  "limits": [
+    "This is local native Python/Linux source qualification, not an installed-estate or live provider acceptance.",
+    "Filenames use existing filesystem encoding and module-name behavior; no additional Python import syntax is introduced.",
+    "Combined diffs, malformed hunk validation and unquoted-header semantics are unchanged.",
+    "No changes to loop, sandbox, CLI/model, README or CI owners."
+  ],
+  "test_platform_scope": "12 control/quote/backslash cases and one raw-byte case explicitly scoped to POSIX; all run on the qualified Linux host with zero skips."
+}

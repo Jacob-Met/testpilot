@@ -7,6 +7,7 @@ working tree.
 from __future__ import annotations
 
 import ast
+import os
 import re
 from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
@@ -47,8 +48,41 @@ class ChangedFunction:
         return asdict(self)
 
 
+def _unquote_git_path(raw: str) -> str:
+    """Decode Git's C-quoted filename bytes, including octal UTF-8 sequences."""
+    escapes = {"a": 7, "b": 8, "t": 9, "n": 10, "v": 11, "f": 12, "r": 13,
+               '"': 34, "\\": 92}
+    decoded = bytearray()
+    index = 1  # Opening double quote.
+    while index < len(raw):
+        char = raw[index]
+        index += 1
+        if char == '"':
+            if index != len(raw) or 0 in decoded:
+                raise ValueError("invalid Git-quoted diff path")
+            return os.fsdecode(bytes(decoded))
+        if char != "\\":
+            decoded.extend(os.fsencode(char))
+            continue
+        if index >= len(raw):
+            break
+        escaped = raw[index]
+        index += 1
+        if escaped in escapes:
+            decoded.append(escapes[escaped])
+        elif (escaped in "0123" and index + 1 < len(raw)
+              and all(digit in "01234567" for digit in raw[index:index + 2])):
+            decoded.append(int(escaped + raw[index:index + 2], 8))
+            index += 2
+        else:
+            raise ValueError("invalid escape in Git-quoted diff path")
+    raise ValueError("unterminated Git-quoted diff path")
+
+
 def _strip_path(raw: str) -> str | None:
     p = raw.split("\t")[0].strip()
+    if p.startswith('"'):
+        p = _unquote_git_path(p)
     if p == "/dev/null":
         return None
     if p.startswith(("a/", "b/")):

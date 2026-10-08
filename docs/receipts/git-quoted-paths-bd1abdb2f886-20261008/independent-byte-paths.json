@@ -1,0 +1,16 @@
+{
+  "source_sha256": "6e02db4eb5f303227e3b1dbfc711ac57d0d2c9f358b835995e226df69cb29c29",
+  "python": "3.12.14",
+  "git": "git version 2.51.1",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "challenge": "all nonzero single POSIX filename bytes except slash, via actual staged Git diff",
+  "core_quotePath": true,
+  "expected_paths": 254,
+  "parsed_paths": 254,
+  "selected_functions": 254,
+  "parsed_raw_bytes_exact": true,
+  "selected_raw_bytes_exact": true,
+  "function_and_added_line_identity": true,
+  "skips": 0,
+  "passed": true
+}

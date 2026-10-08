@@ -1,0 +1,12 @@
+{
+  "diff": "diff --git \"a/caf\\303\\251.py\" \"b/caf\\303\\251.py\"\nindex 1724a8e..107588d 100644\n--- \"a/caf\\303\\251.py\"\n+++ \"b/caf\\303\\251.py\"\n@@ -1,2 +1,2 @@\n def price():\n-    return 1\n+    return 2\n",
+  "parsed_paths": [
+    "\"b/caf\\303\\251.py\""
+  ],
+  "changed_functions": [],
+  "expected": {
+    "path": "café.py",
+    "module": "café",
+    "qualname": "price"
+  }
+}
