@@ -1,0 +1,151 @@
+{
+  "schema": "testpilot.receiving/paired-regression-final-1",
+  "issue": 44,
+  "pr": 51,
+  "repository": "Jacob-Met/testpilot",
+  "integration": {
+    "commit": "906ce149fba770a62c9f5f2fbc1b7238b949d423",
+    "tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
+    "parents": [
+      "e114902b4c938dbf701f30a8299460a86a32dc0a",
+      "30c56b1c738f5d2b29ce0c9cc36e43754f4c6921"
+    ],
+    "merged_at": "2026-10-08T20:36:18Z",
+    "issue_closed_at": "2026-10-08T20:36:19Z",
+    "native_readback": true,
+    "tree_nontruncated": true,
+    "leaves": 1499,
+    "unrelated_current_parent_leaves_preserved": 1485,
+    "owned_paths": 14,
+    "additions": 12,
+    "deletions": 0
+  },
+  "source": {
+    "regression": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+    "author_tests": "bbd21beaccac0fccea92bfbb1c9b4c5bf87e9998",
+    "peer_tests": "215a7ad4d7ac73aa20c63a2243a49cb5755e4f97",
+    "peer_fixture": "7a48df341b451330f70ed9c22f63d93454a9213c",
+    "guide": "af7de6f54af478d5d5056a3d403211ffca3d3ce8",
+    "workflow": "86a3236e38155506b5fe6077322d508f7f676649"
+  },
+  "native_runs": [
+    {
+      "run": 37832714318,
+      "job": 113501863080,
+      "actual_checkout": "cdb610aea375f8ff9a9620fe0ad3333afd602788",
+      "tree": "de42bf17881ef20895940cf5a7d301fa1e5e91c7",
+      "parents": [
+        "513f17454af378ee042ccd29dc930ef332a48734",
+        "8d67d5ea9dc270eb996c7b5acd876a7c7133d9f6"
+      ],
+      "passed": 473,
+      "subtests": 25,
+      "seconds": 124.86,
+      "no_reported_failures_errors_or_skips": true,
+      "pytest": "9.1.1",
+      "coverage": "7.16.2",
+      "log": "native-job-113501863080.log.gz",
+      "raw_bytes": 16865,
+      "raw_characters": 16783,
+      "raw_sha256": "e026bce40df635f10ddab583ebfdb2c87b2acd11d0d90a23ef3211624791cd5e",
+      "git_blob": "5bd87f8fa7938ad343bdeb0289f6012b1999a821"
+    },
+    {
+      "run": 37836353351,
+      "job": 113514240394,
+      "actual_checkout": "1957012ae25328b120b32766c565a742e025543f",
+      "tree": "036cf365e5b59c8cdd6edd203b599abb9bc12c7b",
+      "parents": [
+        "6c1c4973f6d88c3cc3d120c76a3b6e30f9008bbb",
+        "30c56b1c738f5d2b29ce0c9cc36e43754f4c6921"
+      ],
+      "passed": 477,
+      "subtests": 25,
+      "seconds": 104.89,
+      "no_reported_failures_errors_or_skips": true,
+      "pytest": "9.1.1",
+      "coverage": "7.16.2",
+      "log": "native-job-113514240394.log.gz",
+      "raw_bytes": 16871,
+      "raw_characters": 16789,
+      "raw_sha256": "5748b2b15114d30a9f4c9f96ad71d71ad60de1189923b6282349acdb61ee0110",
+      "git_blob": "0535c7f628b1986f89b13c5977c807ee93dd1348",
+      "earlier_metadata_checkout_not_executed": "6128004e1d76b09b8e4f4a692824a654a0d5ef8c"
+    }
+  ],
+  "composition": {
+    "parent": "e114902b4c938dbf701f30a8299460a86a32dc0a",
+    "parent_tree": "79585c12cf0dcd2be477ffdb95312412b0eaab3f",
+    "parent_leaf_count": 1487,
+    "expected_tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
+    "expected_leaf_count": 1499,
+    "unrelated_exact": 1485,
+    "scoped_paths": 14,
+    "additions": [
+      "docs/REGRESSION.md",
+      "docs/receiving/paired-regression-e82707f2bc62/README.md",
+      "docs/receiving/paired-regression-e82707f2bc62/author-evidence.zip",
+      "docs/receiving/paired-regression-e82707f2bc62/current-composition.json",
+      "docs/receiving/paired-regression-e82707f2bc62/independent/README.md",
+      "docs/receiving/paired-regression-e82707f2bc62/independent/original-peer-evidence.zip",
+      "docs/receiving/paired-regression-e82707f2bc62/independent/receiving.json",
+      "docs/receiving/paired-regression-e82707f2bc62/root-source-review-v2.json",
+      "testpilot/regression.py",
+      "tests/fixtures/regression_receiving.json",
+      "tests/test_regression.py",
+      "tests/test_regression_receiving.py"
+    ],
+    "deletions": [],
+    "shared_inverse": {
+      "README.md": {
+        "current_parent_blob": "f39fad0585524bec163418cd1e5e4085ecb7da81",
+        "combined_blob": "1d40b9336837be4fac9d54024490a7f04b8483e5",
+        "sha256": "3bbac7a9ee076cfd1d16b846a5a9cc99a066319e2dcc39641c03bd43741b7dd9",
+        "inserted_characters": [
+          543
+        ],
+        "inverse_exact": true
+      },
+      "testpilot/__main__.py": {
+        "current_parent_blob": "212edb9492e3f14ad3b2b7f6b2899d7ba4f0c750",
+        "combined_blob": "d2871016375bbfba0b55673ed4eaefd53c9adca0",
+        "sha256": "5201fd35412933b860d421b486316f4cc028e26e19386c7ad3e910397c122b65",
+        "inserted_characters": [
+          47,
+          860,
+          72
+        ],
+        "inverse_exact": true
+      }
+    },
+    "protected": {
+      "testpilot/sandbox.py": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+      "testpilot/recheck.py": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+      "testpilot/diff.py": "ab4d562bdad9e5e2ecd977df8245562d16f1cbd9",
+      "testpilot/model.py": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+    },
+    "native_tested_commit": "1957012ae25328b120b32766c565a742e025543f",
+    "native_tested_tree": "036cf365e5b59c8cdd6edd203b599abb9bc12c7b",
+    "gate_attribution": "477 passed plus25 subtests on prior current composition; current generation-only selector composition qualified statically without claiming a new run."
+  },
+  "reviews": {
+    "root_source_receipt_blob": "e48400991c3407b8ec2d7bd601c05b38576716cb",
+    "root_first_publication": "Accepted all14 original packet blobs,1424 unrelated parent leaves, exact CLI47/860/72 and README543 inverses preserving parser/timeout. Optional local review save failed ENOSPC; acceptance is retained here from the complete parent review.",
+    "root_cancellation_composition": "Accepted1475 unrelated+14 owned=1489,12 additions/no deletions; sandbox changed only _run docstring and KeyboardInterrupt kill/reap/close/re-raise, other9 top-level definitions exact. Native477 bound to actual1957012a.",
+    "independent_native": "Sibling independently fetched both full hosted logs and complete tested trees; source, author, peer, fixture and workflow blobs exact.",
+    "selector_integration": "Qualified disjoint generation-only selector changes through complete current-parent tree reconstruction and shared-file additive inverse. Paired regression dispatch precedes generation constructor; protected recheck/sandbox/diff/model exact. No claim that the477 test run executed this later selector composition."
+  },
+  "preserved_failures": [
+    "original14-method author failure on absent feature",
+    "original native clamp fail-before/pass-after witness and unsupported CLI",
+    "peer missing importlib.util harness error with import-only successor",
+    "peer ENOSPC fixture-creation attempt before product execution",
+    "local publication/storage attempts, including initial composition anchor assertion before any mutation"
+  ],
+  "scope_released": true,
+  "limits": [
+    "Local revisions and synthetic trusted projects only; no live provider, external repository access or network isolation claim.",
+    "No new full-suite execution is attributed to the later disjoint selector merge.",
+    "Original source-specific evidence remains immutable in the integrated receiving directory."
+  ]
+}

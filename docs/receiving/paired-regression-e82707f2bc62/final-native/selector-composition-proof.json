@@ -1,0 +1,55 @@
+{
+  "parent": "e114902b4c938dbf701f30a8299460a86a32dc0a",
+  "parent_tree": "79585c12cf0dcd2be477ffdb95312412b0eaab3f",
+  "parent_leaf_count": 1487,
+  "expected_tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
+  "expected_leaf_count": 1499,
+  "unrelated_exact": 1485,
+  "scoped_paths": 14,
+  "additions": [
+    "docs/REGRESSION.md",
+    "docs/receiving/paired-regression-e82707f2bc62/README.md",
+    "docs/receiving/paired-regression-e82707f2bc62/author-evidence.zip",
+    "docs/receiving/paired-regression-e82707f2bc62/current-composition.json",
+    "docs/receiving/paired-regression-e82707f2bc62/independent/README.md",
+    "docs/receiving/paired-regression-e82707f2bc62/independent/original-peer-evidence.zip",
+    "docs/receiving/paired-regression-e82707f2bc62/independent/receiving.json",
+    "docs/receiving/paired-regression-e82707f2bc62/root-source-review-v2.json",
+    "testpilot/regression.py",
+    "tests/fixtures/regression_receiving.json",
+    "tests/test_regression.py",
+    "tests/test_regression_receiving.py"
+  ],
+  "deletions": [],
+  "shared_inverse": {
+    "README.md": {
+      "current_parent_blob": "f39fad0585524bec163418cd1e5e4085ecb7da81",
+      "combined_blob": "1d40b9336837be4fac9d54024490a7f04b8483e5",
+      "sha256": "3bbac7a9ee076cfd1d16b846a5a9cc99a066319e2dcc39641c03bd43741b7dd9",
+      "inserted_characters": [
+        543
+      ],
+      "inverse_exact": true
+    },
+    "testpilot/__main__.py": {
+      "current_parent_blob": "212edb9492e3f14ad3b2b7f6b2899d7ba4f0c750",
+      "combined_blob": "d2871016375bbfba0b55673ed4eaefd53c9adca0",
+      "sha256": "5201fd35412933b860d421b486316f4cc028e26e19386c7ad3e910397c122b65",
+      "inserted_characters": [
+        47,
+        860,
+        72
+      ],
+      "inverse_exact": true
+    }
+  },
+  "protected": {
+    "testpilot/sandbox.py": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+    "testpilot/recheck.py": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+    "testpilot/diff.py": "ab4d562bdad9e5e2ecd977df8245562d16f1cbd9",
+    "testpilot/model.py": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+  },
+  "native_tested_commit": "1957012ae25328b120b32766c565a742e025543f",
+  "native_tested_tree": "036cf365e5b59c8cdd6edd203b599abb9bc12c7b",
+  "gate_attribution": "477 passed plus25 subtests on prior current composition; current generation-only selector composition qualified statically without claiming a new run."
+}
