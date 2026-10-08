@@ -1,0 +1,36 @@
+{
+  "observed_at": "2026-10-08T11:12:02.385450+00:00",
+  "decision": "accept_source_for_publication",
+  "source": "c556e9b883fb372b938c50240977ddb5785c43bb",
+  "tree": "b394b312f490338557cc6be7b03e53f6b51e1b4a",
+  "current_main": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+  "independent_first_suite": {
+    "baseline": "9f01fcb6de085850eca00db746380795eb548d62",
+    "baseline_failed": 9,
+    "baseline_passed": 2,
+    "candidate": "2e32efee7fec4b97f3756083c66f4b860359957b",
+    "candidate_passed": 11
+  },
+  "portable_cli": "one affected actual CLI case passed from foreign cwd",
+  "successor_boundary": {
+    "source": "c556e9b883fb372b938c50240977ddb5785c43bb",
+    "native_controls_passed": 3,
+    "log_sha256": "f24b083f292cd4cc531a36049acabf5f372662eb486a6034a56d3196734f32a3",
+    "receipt_sha256": "e6e2a69b46a6065b33d2ec51815af38ae3857c224cac04205528c76c6b6d5d1d",
+    "driver_sha256": "053806772d671b286d6330753cf649d0a6c1c138623f13691951b6fd2e888c9c"
+  },
+  "current_main_leaves_preserved": 292,
+  "final_leaves": 298,
+  "remote_parent_leaves_verified": 295,
+  "author_complete_gate": {
+    "source": "c556e9b883fb372b938c50240977ddb5785c43bb",
+    "passed": 162,
+    "log_sha256": "20fd86f6317567ab0a844671db5809e5f407977dd2d677b6360dc7924a52e851",
+    "receipt_sha256": "72c039c6baa5f621c6ebfc9d37aab2e595256ba6e37d501297013432462e484a",
+    "independently_reexecuted": false,
+    "raw_log_hash_checked": true
+  },
+  "source_preservation_sha256": "edebe5e5d1ee6eda0e9404180f72eb057783be928a0b58b040542bfa54c06df7",
+  "maintained_test_sha256": "2af73df91390e3b44526c5ba1e4d325fb48d99fb668d6d3d565668b8347c9a83",
+  "publication_state": "Local product source accepted; root owns publication and exact remote tree/hosted gates remain to be received."
+}

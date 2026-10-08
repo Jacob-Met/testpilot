@@ -1,0 +1,15 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "modules": [
+    {
+      "module": "testpilot.sandbox",
+      "path": "/dev/shm/86776bb3cdb8-receiving-testpilot/repo/testpilot/sandbox.py",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3"
+    },
+    {
+      "module": "testpilot.loop",
+      "path": "/dev/shm/86776bb3cdb8-receiving-testpilot/repo/testpilot/loop.py",
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323"
+    }
+  ]
+}

@@ -35,6 +35,18 @@ Design choices:
 * **Generated files are confined** to `tests/**/test_*.py`. Any path containing `..`, an absolute path, or an unexpected name is rewritten. The sandbox also refuses writes outside its temp dir.
 * **Existing tests stay in the run and out of the generated patch.** A suggested filename that already exists, or would traverse a symlink or blocked directory, is moved to an unused `tests/test_<name>_testpilot.py` path (with a numeric suffix when needed). The report's round warnings record the mapping. Repairs can use the suggested name or the displayed generated name; a reply that mentions only some generated files updates those files and keeps the others. TestPilot refuses generation when `tests` itself is a symlink or a file. Its patches add files only, so `git apply` refuses to overwrite a file that appeared after generation.
 * **Ledger.** Every model call records its role, model, and prompt/completion tokens. If the API returns `usage`, those counts are used. The stub uses a chars/4 estimate and flags it. Cost is computed only from prices you supply; TestPilot never guesses prices.
+* **Generated tests must actually run.** Generated files are added to pytest's configured
+  collection alongside the existing suite, including projects whose `testpaths` points
+  somewhere other than `tests`. Project fixtures, selection hooks and assertion rewriting
+  remain active; ordinary directory/file overlap runs each case once. The native JUnit
+  report identifies generated cases by their source file, including parameterized cases.
+  A passing result requires the complete selected suite to pass and at least one generated
+  case to pass. Helper-only, entirely skipped or entirely deselected output is sent through
+  the normal repair loop, then reported as `no_tests` if it remains unqualified. The report
+  retains the exact patch and generated-case counts for review. If a timeout or an abrupt
+  process exit prevents a complete JUnit report, `final.junit_available` is false and
+  `tests_written` retains a static count of authored test definitions; those definitions
+  do not count as verified executions or make the result pass.
 
 ## Layout
 

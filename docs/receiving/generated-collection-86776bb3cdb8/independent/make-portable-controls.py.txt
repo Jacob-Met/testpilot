@@ -1,0 +1,25 @@
+import ast,hashlib,json
+from pathlib import Path
+root=Path("/dev/shm/86776bb3cdb8-receiving-testpilot")
+original=(root/"test_independent_collection_receiving.py").read_text()
+portable=original.replace("import sys\nimport pytest", "import sys\nfrom pathlib import Path\n\nimport pytest")
+portable=portable.replace("from testpilot.loop import count_tests", "from testpilot import sandbox as sandbox_module\nfrom testpilot.loop import count_tests")
+portable=portable.replace('    env["PYTHONDONTWRITEBYTECODE"] = "1"\n', '    env["PYTHONDONTWRITEBYTECODE"] = "1"\n    env["PYTHONPATH"] = str(Path(sandbox_module.__file__).resolve().parents[1])\n')
+portable=portable.replace('subprocess.run(command, env=env, stdout=', 'subprocess.run(command, cwd=tmp_path, env=env, stdout=')
+class Normalize(ast.NodeTransformer):
+    def visit_ImportFrom(self,node):
+        if node.module=="pathlib" or (node.module=="testpilot" and any(x.asname=="sandbox_module" for x in node.names)):
+            return None
+        return node
+    def visit_Assign(self,node):
+        if any(isinstance(x,ast.Subscript) and isinstance(x.value,ast.Name) and x.value.id=="env" and isinstance(x.slice,ast.Constant) and x.slice.value=="PYTHONPATH" for x in node.targets):
+            return None
+        return self.generic_visit(node)
+    def visit_Call(self,node):
+        if isinstance(node.func,ast.Attribute) and isinstance(node.func.value,ast.Name) and node.func.value.id=="subprocess" and node.func.attr=="run":
+            node.keywords=[x for x in node.keywords if x.arg!="cwd"]
+        return self.generic_visit(node)
+assert ast.dump(Normalize().visit(ast.parse(portable)),include_attributes=False)==ast.dump(ast.parse(original),include_attributes=False)
+p=root/"test_generated_collection_receiving.py"
+p.write_text(portable)
+print(json.dumps({"portable_test":str(p),"original_sha256":hashlib.sha256(original.encode()).hexdigest(),"portable_sha256":hashlib.sha256(portable.encode()).hexdigest(),"only_changes":"Explicit CLI source root and foreign cwd, with two supporting imports; normalized AST equal."},indent=2))

@@ -1,0 +1,268 @@
+F.FFFFFFF.F                                                              [100%]
+=================================== FAILURES ===================================
+_______ test_configured_suite_and_only_requested_generated_file_are_kept _______
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_configured_suite_and_only0')
+
+    def test_configured_suite_and_only_requested_generated_file_are_kept(tmp_path):
+        repo = project(tmp_path)
+        (repo / "checks/test_existing.py").write_text(
+            'def test_existing():\n    assert False, "configured suite must remain"\n'
+        )
+        (repo / "tests").mkdir()
+        (repo / "tests/test_unselected.py").write_text(
+            'def test_unselected():\n    assert False, "ambient test must remain excluded"\n'
+        )
+        result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"})
+        assert not result.ok
+>       assert (result.passed, result.failed) == (1, 1), result.to_dict()
+E       AssertionError: {'returncode': 1, 'timed_out': False, 'duration_s': 0.419, 'timeout_s': 10, ...}
+E       assert (0, 1) == (1, 1)
+E         
+E         At index 0 diff: 0 != 1
+E         Use -v to get more diff
+
+test_independent_collection_receiving.py:45: AssertionError
+______ test_helper_beside_generated_case_keeps_conftest_fixture_and_hook _______
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_helper_beside_generated_c0')
+
+    def test_helper_beside_generated_case_keeps_conftest_fixture_and_hook(tmp_path):
+        repo = project(
+            tmp_path,
+            conftest=(
+                "import pytest\n"
+                "@pytest.fixture\n"
+                "def authored_fixture():\n    return 29\n"
+                "def pytest_collection_modifyitems(items):\n"
+                "    for item in items:\n"
+                "        item.user_properties.append(('authored_hook', 'kept'))\n"
+            ),
+        )
+        (repo / "checks/test_existing.py").write_text("def test_existing():\n    assert True\n")
+        generated = (
+            "from pathlib import Path\n"
+            "def test_generated(authored_fixture, request):\n"
+            "    assert authored_fixture == 29\n"
+            "    assert ('authored_hook', 'kept') in request.node.user_properties\n"
+            "    assert Path(__file__).with_name('test_helper.py').is_file()\n"
+        )
+        result = run(
+            repo,
+            {
+                "tests/test_helper.py": "HELPER_VALUE = 29\n",
+                "tests/test_generated.py": generated,
+            },
+        )
+        assert result.ok, result.to_dict()
+>       assert result.passed == 2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = SandboxResult(returncode=0, timed_out=False, duration_s=0.227, timeout_s=10, output='.                                ....01s\n', cases=[CaseResult(nodeid='checks.test_existing::test_existing', outcome='passed', message='')], coverage=None).passed
+
+test_independent_collection_receiving.py:94: AssertionError
+_____ test_unexecuted_generated_output_cannot_certify_success[helper-only] _____
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_unexecuted_generated_outp0')
+generated = 'HELPER_VALUE = 29\n'
+
+    @pytest.mark.parametrize(
+        "generated",
+        [
+            "HELPER_VALUE = 29\n",
+            "import pytest\npytest.skip('authored module skip', allow_module_level=True)\n",
+            "import pytest\n@pytest.mark.skip(reason='authored case skip')\ndef test_generated():\n    assert False\n",
+        ],
+        ids=["helper-only", "module-skip", "all-cases-skipped"],
+    )
+    def test_unexecuted_generated_output_cannot_certify_success(tmp_path, generated):
+        repo = project(tmp_path, testpaths="tests")
+        (repo / "tests/test_existing.py").write_text("def test_existing():\n    assert True\n")
+        result = run(repo, {"tests/test_generated.py": generated})
+        assert result.passed == 1
+>       assert not result.ok, result.to_dict()
+E       AssertionError: {'returncode': 0, 'timed_out': False, 'duration_s': 0.28, 'timeout_s': 10, ...}
+E       assert not True
+E        +  where True = SandboxResult(returncode=0, timed_out=False, duration_s=0.28, timeout_s=10, output='.                                 ...0.01s\n', cases=[CaseResult(nodeid='tests.test_existing::test_existing', outcome='passed', message='')], coverage=None).ok
+
+test_independent_collection_receiving.py:112: AssertionError
+_____ test_unexecuted_generated_output_cannot_certify_success[module-skip] _____
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_unexecuted_generated_outp1')
+generated = "import pytest\npytest.skip('authored module skip', allow_module_level=True)\n"
+
+    @pytest.mark.parametrize(
+        "generated",
+        [
+            "HELPER_VALUE = 29\n",
+            "import pytest\npytest.skip('authored module skip', allow_module_level=True)\n",
+            "import pytest\n@pytest.mark.skip(reason='authored case skip')\ndef test_generated():\n    assert False\n",
+        ],
+        ids=["helper-only", "module-skip", "all-cases-skipped"],
+    )
+    def test_unexecuted_generated_output_cannot_certify_success(tmp_path, generated):
+        repo = project(tmp_path, testpaths="tests")
+        (repo / "tests/test_existing.py").write_text("def test_existing():\n    assert True\n")
+        result = run(repo, {"tests/test_generated.py": generated})
+        assert result.passed == 1
+>       assert not result.ok, result.to_dict()
+E       AssertionError: {'returncode': 0, 'timed_out': False, 'duration_s': 0.302, 'timeout_s': 10, ...}
+E       assert not True
+E        +  where True = SandboxResult(returncode=0, timed_out=False, duration_s=0.302, timeout_s=10, output='.                                ...module skip')"), CaseResult(nodeid='tests.test_existing::test_existing', outcome='passed', message='')], coverage=None).ok
+
+test_independent_collection_receiving.py:112: AssertionError
+__ test_unexecuted_generated_output_cannot_certify_success[all-cases-skipped] __
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_unexecuted_generated_outp2')
+generated = "import pytest\n@pytest.mark.skip(reason='authored case skip')\ndef test_generated():\n    assert False\n"
+
+    @pytest.mark.parametrize(
+        "generated",
+        [
+            "HELPER_VALUE = 29\n",
+            "import pytest\npytest.skip('authored module skip', allow_module_level=True)\n",
+            "import pytest\n@pytest.mark.skip(reason='authored case skip')\ndef test_generated():\n    assert False\n",
+        ],
+        ids=["helper-only", "module-skip", "all-cases-skipped"],
+    )
+    def test_unexecuted_generated_output_cannot_certify_success(tmp_path, generated):
+        repo = project(tmp_path, testpaths="tests")
+        (repo / "tests/test_existing.py").write_text("def test_existing():\n    assert True\n")
+        result = run(repo, {"tests/test_generated.py": generated})
+        assert result.passed == 1
+>       assert not result.ok, result.to_dict()
+E       AssertionError: {'returncode': 0, 'timed_out': False, 'duration_s': 0.274, 'timeout_s': 10, ...}
+E       assert not True
+E        +  where True = SandboxResult(returncode=0, timed_out=False, duration_s=0.274, timeout_s=10, output='.s                               ...b3cdb8-receiving-testpilot/tmp/testpilot-vyeh2j_0/repo/tests/test_generated.py:2: authored case skip')], coverage=None).ok
+
+test_independent_collection_receiving.py:112: AssertionError
+______________ test_collection_hook_deselection_remains_effective ______________
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_collection_hook_deselecti0')
+
+    def test_collection_hook_deselection_remains_effective(tmp_path):
+        repo = project(
+            tmp_path,
+            testpaths="tests",
+            conftest=(
+                "def pytest_collection_modifyitems(config, items):\n"
+                "    removed = [item for item in items if item.path.name == 'test_generated.py']\n"
+                "    items[:] = [item for item in items if item not in removed]\n"
+                "    config.hook.pytest_deselected(items=removed)\n"
+            ),
+        )
+        (repo / "tests/test_existing.py").write_text("def test_existing():\n    assert True\n")
+        result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert False\n"})
+        assert result.failed == 0 and result.passed == 1
+>       assert not result.ok, result.to_dict()
+E       AssertionError: {'returncode': 0, 'timed_out': False, 'duration_s': 0.316, 'timeout_s': 10, ...}
+E       assert not True
+E        +  where True = SandboxResult(returncode=0, timed_out=False, duration_s=0.316, timeout_s=10, output='.                                ...0.01s\n', cases=[CaseResult(nodeid='tests.test_existing::test_existing', outcome='passed', message='')], coverage=None).ok
+
+test_independent_collection_receiving.py:130: AssertionError
+____ test_explicit_keyword_selector_cannot_masquerade_as_generated_success _____
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_explicit_keyword_selector0')
+
+    def test_explicit_keyword_selector_cannot_masquerade_as_generated_success(tmp_path):
+        repo = project(tmp_path, testpaths="tests")
+        (repo / "tests/test_existing.py").write_text("def test_native():\n    assert True\n")
+        result = run(
+            repo,
+            {"tests/test_generated.py": "def test_generated():\n    assert False\n"},
+            pytest_args=("-k", "native"),
+        )
+        assert result.failed == 0 and result.passed == 1
+>       assert not result.ok, result.to_dict()
+E       AssertionError: {'returncode': 0, 'timed_out': False, 'duration_s': 0.272, 'timeout_s': 10, ...}
+E       assert not True
+E        +  where True = SandboxResult(returncode=0, timed_out=False, duration_s=0.272, timeout_s=10, output='.                                ...n 0.01s\n', cases=[CaseResult(nodeid='tests.test_existing::test_native', outcome='passed', message='')], coverage=None).ok
+
+test_independent_collection_receiving.py:142: AssertionError
+_____ test_generated_count_uses_provenance_when_existing_parameters_change _____
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_generated_count_uses_prov0')
+
+    def test_generated_count_uses_provenance_when_existing_parameters_change(tmp_path):
+        repo = project(
+            tmp_path,
+            testpaths="tests",
+            conftest=(
+                "from pathlib import Path\n"
+                "def pytest_generate_tests(metafunc):\n"
+                "    if 'authored_value' in metafunc.fixturenames:\n"
+                "        added = Path(__file__).with_name('tests').joinpath('test_generated.py').is_file()\n"
+                "        metafunc.parametrize('authored_value', [0, 1] if added else [0])\n"
+            ),
+        )
+        (repo / "tests/test_existing.py").write_text(
+            "def test_existing(authored_value):\n    assert authored_value >= 0\n"
+        )
+        args = ("--junitprefix", "authored.prefix")
+        before = run(repo, pytest_args=args)
+        generated = {"tests/test_generated.py": "def test_generated():\n    assert True\n"}
+        after = run(repo, generated, pytest_args=args)
+        assert before.ok and before.passed == 1
+        assert after.ok and after.passed == 3, after.to_dict()
+>       assert count_tests(generated, after, {case.nodeid for case in before.cases}) == 1
+E       AssertionError: assert 2 == 1
+E        +  where 2 = count_tests({'tests/test_generated.py': 'def test_generated():\n    assert True\n'}, SandboxResult(returncode=0, timed_out=False, duration_s=0.323, timeout_s=10, output='...                              ...aseResult(nodeid='authored.prefix.tests.test_generated::test_generated', outcome='passed', message='')], coverage=None), {'authored.prefix.tests.test_existing::test_existing[0]'})
+
+test_independent_collection_receiving.py:166: AssertionError
+__________ test_real_scripted_cli_repairs_a_failure_outside_testpaths __________
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot/tmp/baseline/test_real_scripted_cli_repairs0')
+
+    def test_real_scripted_cli_repairs_a_failure_outside_testpaths(tmp_path):
+        repo = project(tmp_path)
+        (repo / "m.py").write_text("def double(value):\n    return value * 2\n")
+        (repo / "checks/test_existing.py").write_text(
+            "from m import double\ndef test_existing():\n    assert double(3) == 6\n"
+        )
+        diff = tmp_path / "change.diff"
+        diff.write_text(
+            "--- /dev/null\n+++ b/m.py\n@@ -0,0 +1,2 @@\n"
+            "+def double(value):\n+    return value * 2\n"
+        )
+        scripts = tmp_path / "script"
+        scripts.mkdir()
+        (scripts / "01_plan.md").write_text("Check the ordinary double result.\n")
+        fence = chr(96) * 3
+        body = (
+            f"{fence}python path=tests/test_generated.py\n"
+            "from m import double\n"
+            "def test_generated():\n"
+            "    assert double(2) == EXPECTED\n"
+            f"{fence}\n"
+        )
+        (scripts / "02_tests.md").write_text(body.replace("EXPECTED", "5"))
+        (scripts / "03_repair.md").write_text(body.replace("EXPECTED", "4"))
+        out = tmp_path / "reported"
+        env = dict(os.environ)
+        env["PYTHONDONTWRITEBYTECODE"] = "1"
+        command = [
+            sys.executable, "-B", "-m", "testpilot", "run",
+            "--repo", str(repo), "--diff", str(diff),
+            "--backend", "scripted", "--script", str(scripts),
+            "--rounds", "1", "--timeout", "10",
+            "--python", sys.executable, "--out", str(out),
+        ]
+        process = subprocess.run(command, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, timeout=35)
+        assert process.returncode == 0, process.stdout
+        report = json.loads((out / "report.json").read_text())
+        assert report["status"] == "passed"
+>       assert report["repair_rounds_used"] == 1, report
+E       AssertionError: {'status': 'passed', 'changed_functions': [{'path': 'm.py', 'module': 'm', 'qualname': 'double', 'lineno': 1, ...}], 'repair_rounds_used': 0, 'max_repair_rounds': 1, ...}
+E       assert 0 == 1
+
+test_independent_collection_receiving.py:214: AssertionError
+=========================== short test summary info ============================
+FAILED test_independent_collection_receiving.py::test_configured_suite_and_only_requested_generated_file_are_kept
+FAILED test_independent_collection_receiving.py::test_helper_beside_generated_case_keeps_conftest_fixture_and_hook
+FAILED test_independent_collection_receiving.py::test_unexecuted_generated_output_cannot_certify_success[helper-only]
+FAILED test_independent_collection_receiving.py::test_unexecuted_generated_output_cannot_certify_success[module-skip]
+FAILED test_independent_collection_receiving.py::test_unexecuted_generated_output_cannot_certify_success[all-cases-skipped]
+FAILED test_independent_collection_receiving.py::test_collection_hook_deselection_remains_effective
+FAILED test_independent_collection_receiving.py::test_explicit_keyword_selector_cannot_masquerade_as_generated_success
+FAILED test_independent_collection_receiving.py::test_generated_count_uses_provenance_when_existing_parameters_change
+FAILED test_independent_collection_receiving.py::test_real_scripted_cli_repairs_a_failure_outside_testpaths
+9 failed, 2 passed in 4.06s
