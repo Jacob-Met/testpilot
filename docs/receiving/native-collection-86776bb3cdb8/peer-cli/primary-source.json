@@ -1,0 +1,71 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "main": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "tree": "2045a73704f752d374704657fccf90fd5e774258",
+  "complete_tree_truncated": false,
+  "complete_tree_blob_count": 432,
+  "runtime_and_config": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "100644",
+      "sha": "86a3236e38155506b5fe6077322d508f7f676649",
+      "size": 586
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "100644",
+      "sha": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "size": 676
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "mode": "100644",
+      "sha": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "size": 390
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "100644",
+      "sha": "fc455a5b4866fd27503585a50903a80ff179513e",
+      "size": 5094
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "100644",
+      "sha": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+      "size": 1446
+    },
+    {
+      "path": "testpilot/diff.py",
+      "mode": "100644",
+      "sha": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "size": 9396
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "sha": "779149b82d779cb6f21ef26f58ef9b816f3a42f6",
+      "size": 23639
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "100644",
+      "sha": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "size": 9730
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "sha": "ca0360375bdcaace0e6014b4767acad546380242",
+      "size": 11537
+    },
+    {
+      "path": "tests/conftest.py",
+      "mode": "100644",
+      "sha": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "size": 144
+    }
+  ],
+  "candidate_helper_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+  "scope": "Independent current-main source review and actual CLI repair/count/JUnit integration on pytest8; no helper implementation or run_pytest edits; no repeated collection matrix."
+}

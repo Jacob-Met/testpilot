@@ -1,0 +1,168 @@
+{
+  "main": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "helper_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+  "files": [
+    {
+      "path": "REVIEW.md",
+      "archive_path": "REVIEW.md",
+      "bytes": 4589,
+      "sha256": "0c0dfa5a02a9878e35bf7683cd6236fdd91ce908740453e8c3d6768d6515d8d8"
+    },
+    {
+      "path": "primary-source.json",
+      "archive_path": "primary-source.json",
+      "bytes": 2043,
+      "sha256": "62d4eccffa287b152075e5a0f284bac36d8f9564372cbfdb00cc8ff207061a84"
+    },
+    {
+      "path": "receive-cli.py",
+      "archive_path": "receive-cli.py.txt",
+      "bytes": 12550,
+      "sha256": "dabdb432a410aa3ee01a2578dcd26abec98ba73216f281a780cce4e241dd7b3f"
+    },
+    {
+      "path": "receiving.log",
+      "archive_path": "receiving.log",
+      "bytes": 477,
+      "sha256": "2c506c353ab452b2ed7f4cd89e189c218b2e93e057ccdf75f07bb6858a6da465"
+    },
+    {
+      "path": "run/receipt.json",
+      "archive_path": "run/receipt.json",
+      "bytes": 12105,
+      "sha256": "879068102debf4b8c82d48fa055bd51911670aaeccde1bca137b3a3701f4908d"
+    },
+    {
+      "path": "run/change.diff",
+      "archive_path": "run/change.diff",
+      "bytes": 102,
+      "sha256": "0dd1e3bc043d8cb26ca563f0713cbffb04920025c689e34b0135a2203f7be210"
+    },
+    {
+      "path": "run/project/conftest.py",
+      "archive_path": "run/project/conftest.py.txt",
+      "bytes": 932,
+      "sha256": "f7fa34359dba2adb52d53ef4e0a920522cfb2dd523ccaf3dfb8fee199a8cdea8"
+    },
+    {
+      "path": "run/project/m.py",
+      "archive_path": "run/project/m.py.txt",
+      "bytes": 57,
+      "sha256": "5c900775d8b61e4e687a4605bb0b330a59b446db7639fb265a2cddb3d21d33cd"
+    },
+    {
+      "path": "run/project/pytest.ini",
+      "archive_path": "run/project/pytest.ini",
+      "bytes": 78,
+      "sha256": "cc14523cbe248115a3d9d097a67494ea21b09b1e7529918afb0296f2c85044de"
+    },
+    {
+      "path": "run/project/tests/test_existing.py",
+      "archive_path": "run/project/tests/test_existing.py.txt",
+      "bytes": 97,
+      "sha256": "27ce427106f3898184c80df9d70d2d132bf651fe9c068c82f1608df55e7bbd85"
+    },
+    {
+      "path": "run/script/01-plan.md",
+      "archive_path": "run/script/01-plan.md",
+      "bytes": 79,
+      "sha256": "a253e3118749b5ec298f025a142fb47300b8d2bb60fa1aa5b20e1c9245efc34b"
+    },
+    {
+      "path": "run/script/02-generated.md",
+      "archive_path": "run/script/02-generated.md",
+      "bytes": 222,
+      "sha256": "26a4ba5bcd44adb6be5cb9276a95f465465aabcca67059e9ec5fcf9e0d78f16b"
+    },
+    {
+      "path": "run/script/03-incomplete-repair.md",
+      "archive_path": "run/script/03-incomplete-repair.md",
+      "bytes": 235,
+      "sha256": "1c0a9e5f97c01ae61cef9b7e92e3e5505e95e2b3c0626fe7bdfd20ae733941d1"
+    },
+    {
+      "path": "run/script/04-correct-repair.md",
+      "archive_path": "run/script/04-correct-repair.md",
+      "bytes": 222,
+      "sha256": "7937e3559e6f5358d03cc3029ba160c105b79bf6f74e50face1ce38be477027d"
+    },
+    {
+      "path": "run/current-main/stdout.log",
+      "archive_path": "run/current-main/stdout.log",
+      "bytes": 791,
+      "sha256": "d9a9dc65117ccf37dae662dfd583110d45707e08947862e404d9ac11e492b941"
+    },
+    {
+      "path": "run/current-main/stderr.log",
+      "archive_path": "run/current-main/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/current-main/reported/report.json",
+      "archive_path": "run/current-main/reported/report.json",
+      "bytes": 9042,
+      "sha256": "2b60cf6558c1b25d245666659a8378547d6b654d6d6cd53c72eab8b93d650559"
+    },
+    {
+      "path": "run/current-main/junit/00-baseline.xml",
+      "archive_path": "run/current-main/junit/00-baseline.xml",
+      "bytes": 426,
+      "sha256": "69726950621a62404d906632d067bd3ae032202e652a1533ec4d29a18b404ba9"
+    },
+    {
+      "path": "run/current-main/junit/01-generated-failure.xml",
+      "archive_path": "run/current-main/junit/01-generated-failure.xml",
+      "bytes": 1348,
+      "sha256": "5f90c70650a2a64d412e304386982a610af0a63e14b16ebf30d14003362829cc"
+    },
+    {
+      "path": "run/current-main/junit/02-generated-only-repair.xml",
+      "archive_path": "run/current-main/junit/02-generated-only-repair.xml",
+      "bytes": 753,
+      "sha256": "7861d55df86691d15e10cfcb836eaa1f71fc383eec1f85cbcd6a65af3283c694"
+    },
+    {
+      "path": "run/candidate/stdout.log",
+      "archive_path": "run/candidate/stdout.log",
+      "bytes": 784,
+      "sha256": "9b011e480d8c621c93ba6d0f290be7e00e4856b6021c6d08b2a020f454015884"
+    },
+    {
+      "path": "run/candidate/stderr.log",
+      "archive_path": "run/candidate/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "run/candidate/reported/report.json",
+      "archive_path": "run/candidate/reported/report.json",
+      "bytes": 12979,
+      "sha256": "c39a52a3ef269438455706393c6b2d1065021c54ff12cbd72936bd03ee35797d"
+    },
+    {
+      "path": "run/candidate/junit/00-baseline.xml",
+      "archive_path": "run/candidate/junit/00-baseline.xml",
+      "bytes": 426,
+      "sha256": "4bdaadb71bbc3e5d9f03e1c34cfcef08b9c2281e5014e6a7e07cc7afa3b2ab0f"
+    },
+    {
+      "path": "run/candidate/junit/01-generated-failure.xml",
+      "archive_path": "run/candidate/junit/01-generated-failure.xml",
+      "bytes": 1527,
+      "sha256": "88a43a514c07bb961337c360f7c11a4df573a02706027233b3ab879ea4dcf218"
+    },
+    {
+      "path": "run/candidate/junit/02-generated-only-repair.xml",
+      "archive_path": "run/candidate/junit/02-generated-only-repair.xml",
+      "bytes": 1429,
+      "sha256": "732446cfaa57f16635a07c4c921b02e7125552bf72fee54e1b9ea63304efa550"
+    },
+    {
+      "path": "run/candidate/junit/03-correct-repair.xml",
+      "archive_path": "run/candidate/junit/03-correct-repair.xml",
+      "bytes": 932,
+      "sha256": "5572050d755213963679feab21e643411d6bc5b2035671c1b6baed12fee9581f"
+    }
+  ]
+}

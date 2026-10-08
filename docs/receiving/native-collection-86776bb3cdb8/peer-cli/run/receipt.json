@@ -1,0 +1,341 @@
+{
+  "passed": true,
+  "actual_main": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+  "actual_main_tree": "2045a73704f752d374704657fccf90fd5e774258",
+  "candidate_helper_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+  "primary_runtime_and_config_files_verified": 10,
+  "run_pytest_and_provenance_parser_unchanged": true,
+  "generated_provenance_hook_and_runner_main_byte_exact": true,
+  "sources_before": {
+    "main": [
+      {
+        "path": "testpilot/__init__.py",
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+      },
+      {
+        "path": "testpilot/__main__.py",
+        "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+        "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e"
+      },
+      {
+        "path": "testpilot/_pytest_generated.py",
+        "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+        "git_blob": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa"
+      },
+      {
+        "path": "testpilot/diff.py",
+        "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+        "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "sha256": "54a203ace8816159202e3f2df5bc8ae15b0e08e424fc1447112c9eb0a23fe082",
+        "git_blob": "779149b82d779cb6f21ef26f58ef9b816f3a42f6"
+      },
+      {
+        "path": "testpilot/model.py",
+        "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+        "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+      },
+      {
+        "path": "testpilot/sandbox.py",
+        "sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+        "git_blob": "ca0360375bdcaace0e6014b4767acad546380242"
+      }
+    ],
+    "candidate": [
+      {
+        "path": "testpilot/__init__.py",
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+      },
+      {
+        "path": "testpilot/__main__.py",
+        "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+        "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e"
+      },
+      {
+        "path": "testpilot/_pytest_generated.py",
+        "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+      },
+      {
+        "path": "testpilot/diff.py",
+        "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+        "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "sha256": "54a203ace8816159202e3f2df5bc8ae15b0e08e424fc1447112c9eb0a23fe082",
+        "git_blob": "779149b82d779cb6f21ef26f58ef9b816f3a42f6"
+      },
+      {
+        "path": "testpilot/model.py",
+        "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+        "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+      },
+      {
+        "path": "testpilot/sandbox.py",
+        "sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+        "git_blob": "ca0360375bdcaace0e6014b4767acad546380242"
+      }
+    ]
+  },
+  "sources_after_unchanged": true,
+  "original_project_unchanged": true,
+  "native_scripted_backend": true,
+  "collection_hooks_or_sandbox_results_mocked": false,
+  "junit_observer": "Project pytest_unconfigure copies completed native XML; no collection/result mutation.",
+  "collection_matrix_repeated": false,
+  "observations": [
+    {
+      "label": "current-main",
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "executable": "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+        "pytest": "8.0.0",
+        "coverage": "7.16.2",
+        "sandbox": "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/current-main/testpilot/sandbox.py"
+      },
+      "command": [
+        "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/project",
+        "--diff",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/script",
+        "--rounds",
+        "2",
+        "--timeout",
+        "15",
+        "--python",
+        "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+        "--out",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/current-main/reported"
+      ],
+      "returncode": 0,
+      "duration_s": 1.68,
+      "status": "passed",
+      "repair_rounds": 1,
+      "tests_written": 2,
+      "final_passed": 2,
+      "generated_counts": {
+        "collected": 2,
+        "passed": 2,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      },
+      "junit_cases": {
+        "00-baseline": [
+          {
+            "classname": "tests.test_existing",
+            "name": "test_existing_contract",
+            "outcome": "passed",
+            "properties": {
+              "receiver.native_fixture": "active"
+            }
+          }
+        ],
+        "01-generated-failure": [
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[2-5]",
+            "outcome": "failed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[3-6]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          }
+        ],
+        "02-generated-only-repair": [
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[2-6]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[3-9]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          }
+        ]
+      },
+      "report_sha256": "2b60cf6558c1b25d245666659a8378547d6b654d6d6cd53c72eab8b93d650559",
+      "stdout_sha256": "d9a9dc65117ccf37dae662dfd583110d45707e08947862e404d9ac11e492b941",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "candidate",
+      "runtime": {
+        "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+        "executable": "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+        "pytest": "8.0.0",
+        "coverage": "7.16.2",
+        "sandbox": "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/candidate-current/testpilot/sandbox.py"
+      },
+      "command": [
+        "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/project",
+        "--diff",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/script",
+        "--rounds",
+        "2",
+        "--timeout",
+        "15",
+        "--python",
+        "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+        "--out",
+        "/dev/shm/86776bb3cdb8-product-collector-cli/run/candidate/reported"
+      ],
+      "returncode": 0,
+      "duration_s": 2.131,
+      "status": "passed",
+      "repair_rounds": 2,
+      "tests_written": 2,
+      "final_passed": 3,
+      "generated_counts": {
+        "collected": 2,
+        "passed": 2,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      },
+      "junit_cases": {
+        "00-baseline": [
+          {
+            "classname": "tests.test_existing",
+            "name": "test_existing_contract",
+            "outcome": "passed",
+            "properties": {
+              "receiver.native_fixture": "active"
+            }
+          }
+        ],
+        "01-generated-failure": [
+          {
+            "classname": "tests.test_existing",
+            "name": "test_existing_contract",
+            "outcome": "passed",
+            "properties": {
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[2-5]",
+            "outcome": "failed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[3-6]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          }
+        ],
+        "02-generated-only-repair": [
+          {
+            "classname": "tests.test_existing",
+            "name": "test_existing_contract",
+            "outcome": "failed",
+            "properties": {
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[2-6]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[3-9]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          }
+        ],
+        "03-correct-repair": [
+          {
+            "classname": "tests.test_existing",
+            "name": "test_existing_contract",
+            "outcome": "passed",
+            "properties": {
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[2-4]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          },
+          {
+            "classname": "tests.test_generated",
+            "name": "test_generated[3-6]",
+            "outcome": "passed",
+            "properties": {
+              "testpilot.generated_file": "tests/test_generated.py",
+              "receiver.native_fixture": "active"
+            }
+          }
+        ]
+      },
+      "report_sha256": "c39a52a3ef269438455706393c6b2d1065021c54ff12cbd72936bd03ee35797d",
+      "stdout_sha256": "9b011e480d8c621c93ba6d0f290be7e00e4856b6021c6d08b2a020f454015884",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_edits": false,
+  "remote_writes": false
+}

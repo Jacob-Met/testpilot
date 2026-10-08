@@ -1,0 +1,65 @@
+[
+  {
+    "name": "generated_first_relative_root",
+    "command": [
+      "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--rootdir",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests",
+      "-o",
+      "addopts=",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests/tests/test_generated.py",
+      "tests"
+    ],
+    "returncode": 0,
+    "output": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "baseline_observed": false
+  },
+  {
+    "name": "generated_first_absolute_root",
+    "command": [
+      "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--rootdir",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests",
+      "-o",
+      "addopts=",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests/tests/test_generated.py",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests/tests"
+    ],
+    "returncode": 0,
+    "output": ".                                                                        [100%]\n1 passed in 0.00s\n",
+    "baseline_observed": false
+  },
+  {
+    "name": "explicit_leaf_targets",
+    "command": [
+      "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+      "-B",
+      "-m",
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "--rootdir",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests",
+      "-o",
+      "addopts=",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests/tests/test_generated.py",
+      "/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/selection-diagnostic/project-tests/tests/test_existing.py"
+    ],
+    "returncode": 1,
+    "output": ".F                                                                       [100%]\n=================================== FAILURES ===================================\n________________________________ test_existing _________________________________\n\n    def test_existing():\n>       assert False, 'RECEIVING_EXISTING_FAILURE'\nE       AssertionError: RECEIVING_EXISTING_FAILURE\nE       assert False\n\ntests/test_existing.py:2: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_existing.py::test_existing - AssertionError: RECEIVING_EXIS...\n1 failed, 1 passed in 0.02s\n",
+    "baseline_observed": true
+  }
+]

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="15" time="4.628" timestamp="2026-10-08T21:24:17.137146+09:00" hostname="05aaedaf3e50"><testcase classname="tests.test_generated_collection_compatibility" name="test_generated_addition_keeps_failing_baseline[tests]" time="0.302" /><testcase classname="tests.test_generated_collection_compatibility" name="test_generated_addition_keeps_failing_baseline[checks]" time="0.237" /><testcase classname="tests.test_generated_collection_compatibility" name="test_function_and_class_hooks_run_once_per_identity[tests-False]" time="0.387" /><testcase classname="tests.test_generated_collection_compatibility" name="test_function_and_class_hooks_run_once_per_identity[tests-True]" time="0.302" /><testcase classname="tests.test_generated_collection_compatibility" name="test_function_and_class_hooks_run_once_per_identity[checks-False]" time="0.292" /><testcase classname="tests.test_generated_collection_compatibility" name="test_custom_generated_names_keep_native_exclusions" time="0.301"><failure message="AssertionError: .                                                                        [100%]&#10;  1 passed in 0.01s&#10;  &#10;assert (1, 0, 0) == (2, 0, 0)&#10;  &#10;  At index 0 diff: 1 != 2&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-compat-pytest9/test_custom_generated_names_ke0')
+
+    def test_custom_generated_names_keep_native_exclusions(tmp_path):
+        repo = project(tmp_path, config="python_files = verify_*.py\nnorecursedirs = discarded generated_zone\n", files={
+            "tests/verify_existing.py": "def test_existing():\n    assert True\n",
+            "tests/test_existing.py": "raise AssertionError('NONMATCHING_BASELINE')\n",
+            "tests/verify_ignored.py": "raise AssertionError('IGNORED_BASELINE')\n",
+            "tests/discarded/verify_hidden.py": "raise AssertionError('IGNORED_DIRECTORY')\n",
+            "tests/generated_zone/verify_unwanted.py": "raise AssertionError('IGNORED_SIBLING')\n",
+            "conftest.py": (
+                "collect_ignore = ['tests/verify_ignored.py', 'tests/generated_zone/verify_unwanted.py']\n"
+            ),
+        })
+        generated = {"tests/generated_zone/emitted_cases.py": "def test_generated():\n    assert True\n"}
+        result = run(repo, generated)
+&gt;       assert (result.passed, result.failed, result.errors) == (2, 0, 0), result.output
+E       AssertionError: .                                                                        [100%]
+E         1 passed in 0.01s
+E         
+E       assert (1, 0, 0) == (2, 0, 0)
+E         
+E         At index 0 diff: 1 != 2
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:134: AssertionError</failure></testcase><testcase classname="tests.test_generated_collection_compatibility" name="test_explicit_existing_selector_is_not_broadened" time="0.302" /><testcase classname="tests.test_generated_collection_compatibility" name="test_explicit_generated_selector_is_not_broadened" time="0.261" /><testcase classname="tests.test_generated_collection_compatibility" name="test_native_selection_cannot_certify_unexecuted_generation[keyword]" time="0.348" /><testcase classname="tests.test_generated_collection_compatibility" name="test_native_selection_cannot_certify_unexecuted_generation[deselect]" time="0.332" /><testcase classname="tests.test_generated_collection_compatibility" name="test_native_selection_cannot_certify_unexecuted_generation[hook]" time="0.314" /><testcase classname="tests.test_generated_collection_compatibility" name="test_same_nodeid_doctest_and_python_keep_both_directions[42-0-tests]" time="0.345" /><testcase classname="tests.test_generated_collection_compatibility" name="test_same_nodeid_doctest_and_python_keep_both_directions[0-42-tests]" time="0.272" /><testcase classname="tests.test_generated_collection_compatibility" name="test_same_nodeid_doctest_and_python_keep_both_directions[42-42-checks]" time="0.276" /><testcase classname="tests.test_generated_collection_compatibility" name="test_valid_empty_junit_stays_distinct_from_absent_report" time="0.281" /></testsuite></testsuites>

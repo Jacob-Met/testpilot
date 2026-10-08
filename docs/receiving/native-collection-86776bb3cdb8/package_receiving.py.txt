@@ -1,0 +1,102 @@
+"""Freeze the observed compatibility receipts without rerunning native tests."""
+from pathlib import Path
+import hashlib
+import json
+import subprocess
+import xml.etree.ElementTree as ET
+
+ROOT = Path(__file__).resolve().parent
+RUNTIMES = {
+    "pytest8": "/workspace/scratch/e3a41d2b3368/agents/local_recovery/testpilot-collection-review/pytest8-venv/bin/python",
+    "pytest9": "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python",
+}
+NATIVE_METADATA = '''import sys, pytest, json, hashlib, inspect
+from pathlib import Path
+from _pytest import main, python
+result = {
+    "executable": sys.executable,
+    "python": sys.version,
+    "pytest": pytest.__version__,
+    "native_sources": [
+        {"path": str(p), "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
+        for p in [Path(pytest.__file__), Path(main.__file__), Path(python.__file__)]
+    ],
+    "search_pypath_signature": str(inspect.signature(main.search_pypath)),
+}
+print(json.dumps(result))
+'''
+
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+pins = {label: json.loads(subprocess.check_output([exe, "-B", "-c", NATIVE_METADATA], text=True))
+        for label, exe in RUNTIMES.items()}
+runs = []
+for key, source in [
+    ("current-compat-pytest8", "current"),
+    ("current-compat-pytest9", "current"),
+    ("current-pyargs-pytest8", "current"),
+    ("current-pyargs-pytest9", "current"),
+    ("candidate-a-compat-pytest8", "candidate-a"),
+    ("candidate-a-compat-pytest9", "candidate-a"),
+    ("candidate-a-pyargs-pytest8", "candidate-a"),
+    ("candidate-a-pyargs-pytest9", "candidate-a"),
+    ("candidate-b-compat-pytest8", "candidate-b"),
+    ("candidate-b-compat-pytest9", "candidate-b"),
+]:
+    logfile = ROOT / (key + ".log")
+    xmlfile = ROOT / (key + ".xml")
+    suite = ET.parse(xmlfile).getroot().find("testsuite")
+    failures = [case.attrib["name"] for case in suite.findall("testcase")
+                if case.find("failure") is not None or case.find("error") is not None]
+    native = []
+    for line in logfile.read_text().splitlines():
+        if "RECEIVING_RESULT=" in line:
+            try:
+                native.append(json.loads(line.split("RECEIVING_RESULT=", 1)[1]))
+            except json.JSONDecodeError:
+                pass
+    expected = int(suite.attrib["tests"])
+    assert len(native) == expected, (key, len(native), expected)
+    runs.append({
+        "key": key,
+        "source": source,
+        "helper_sha256": digest(ROOT / source / "testpilot/_pytest_generated.py"),
+        "pytest_suite": suite.attrib,
+        "failed_controls": failures,
+        "complete_input_and_result_records": len(native),
+        "native_output_sha256": digest(logfile),
+        "junit_sha256": digest(xmlfile),
+        "observed_process_exit": int(bool(failures)),
+    })
+
+receipt = {
+    "source_base_at_native_gates": "d7c28b0ad261e78d681f40e355447dffa4d435ed",
+    "current_main_composition": "269e55332a9bb78a0a0e107cbab6b2e5c895ca57",
+    "sandbox_and_runner_inputs_unchanged_across_main": True,
+    "reconstruction_attribution": (
+        "Own controls reconstructed from the published issue 2 collector risks and independently "
+        "discovered native argv omissions. No claim to possess the donor final v3 or peer portable controls."
+    ),
+    "runtimes": pins,
+    "runs": runs,
+    "actual_subprocesses": sum(run["complete_input_and_result_records"] for run in runs),
+    "scope": (
+        "17 bounded native collection controls on two available pytest versions; no broad suite or provider. "
+        "Candidate-a pyargs failures retained. Commands, inputs, output and native source versions are pinned."
+    ),
+    "temporary_cleanup": (
+        "Completed native-tmp pytest input copies were removed only after every input source, generated "
+        "source, argument and actual result was retained verbatim in native logs. Sources and logs remain."
+    ),
+    "static_gate": (
+        "Ruff from the actual candidate-current package root passes. An earlier check from outside the "
+        "package classified testpilot as third party and requested only import blank-line removal; "
+        "no edit was applied because the proper package-root check passes unchanged."
+    ),
+}
+(ROOT / "native-compatibility-receipt.json").write_text(json.dumps(receipt, indent=2) + "\n")
+print(json.dumps({"runs": len(runs), "native_processes": receipt["actual_subprocesses"],
+                  "receipt_sha256": digest(ROOT / "native-compatibility-receipt.json")}))

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="2" time="0.657" timestamp="2026-10-08T21:27:54.651701+09:00" hostname="05aaedaf3e50"><testcase classname="tests.test_generated_collection_compatibility" name="test_pyargs_package_root_keeps_failing_baseline" time="0.293" /><testcase classname="tests.test_generated_collection_compatibility" name="test_pyargs_generated_selector_is_not_broadened" time="0.288"><failure message="AssertionError: .F                                                                       [100%]&#10;  =================================== FAILURES ===================================&#10;  _______________________________ test_unselected ________________________________&#10;  &#10;      def test_unselected():&#10;  &gt;       assert False, 'UNSELECTED_NAMED_GENERATED'&#10;  E       AssertionError: UNSELECTED_NAMED_GENERATED&#10;  E       assert False&#10;  &#10;  pkg/tests/test_generated.py:5: AssertionError&#10;  =========================== short test summary info ============================&#10;  FAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...&#10;  1 failed, 1 passed in 0.03s&#10;  &#10;assert (1, 1, 0) == (1, 0, 0)&#10;  &#10;  At index 1 diff: 1 != 0&#10;  Use -v to get more diff">tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-pyargs-pytest9/test_pyargs_generated_selector0')
+
+    def test_pyargs_generated_selector_is_not_broadened(tmp_path):
+        repo = project(tmp_path, root="pkg/tests", files={
+            "pkg/__init__.py": "", "pkg/tests/__init__.py": "",
+        })
+        generated = {"pkg/tests/test_generated.py": (
+            "def test_keep():\n    assert True\n\n"
+            "def test_unselected():\n    assert False, 'UNSELECTED_NAMED_GENERATED'\n"
+        )}
+        result = run(repo, generated, args=("--pyargs", "pkg.tests.test_generated::test_keep"))
+&gt;       assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+E       AssertionError: .F                                                                       [100%]
+E         =================================== FAILURES ===================================
+E         _______________________________ test_unselected ________________________________
+E         
+E             def test_unselected():
+E         &gt;       assert False, 'UNSELECTED_NAMED_GENERATED'
+E         E       AssertionError: UNSELECTED_NAMED_GENERATED
+E         E       assert False
+E         
+E         pkg/tests/test_generated.py:5: AssertionError
+E         =========================== short test summary info ============================
+E         FAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...
+E         1 failed, 1 passed in 0.03s
+E         
+E       assert (1, 1, 0) == (1, 0, 0)
+E         
+E         At index 1 diff: 1 != 0
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:240: AssertionError</failure></testcase></testsuite></testsuites>

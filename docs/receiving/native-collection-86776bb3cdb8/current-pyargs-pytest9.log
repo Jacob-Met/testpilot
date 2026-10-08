@@ -1,0 +1,41 @@
+RECEIVING_RESULT={"args": ["--pyargs", "pkg.tests"], "generated": {"pkg/tests/test_generated.py": "def test_generated():\n    assert True\n"}, "inputs": {"pkg/__init__.py": "", "pkg/tests/__init__.py": "", "pkg/tests/test_existing.py": "def test_existing():\n    assert False, 'EXISTING_PACKAGE_MUST_FAIL'\n", "pytest.ini": "[pytest]\ntestpaths = pkg/tests\n"}, "native_output": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n________________________________ test_existing _________________________________\n\n    def test_existing():\n>       assert False, 'EXISTING_PACKAGE_MUST_FAIL'\nE       AssertionError: EXISTING_PACKAGE_MUST_FAIL\nE       assert False\n\npkg/tests/test_existing.py:2: AssertionError\n=========================== short test summary info ============================\nFAILED pkg/tests/test_existing.py::test_existing - AssertionError: EXISTING_P...\n1 failed, 1 passed in 0.03s\n", "pytest": "9.1.1", "python": "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python", "result": {"cases": [{"generated_file": null, "message": "AssertionError: EXISTING_PACKAGE_MUST_FAIL\nassert False\ndef test_existing():\n>       assert False, 'EXISTING_PACKAGE_MUST_FAIL'\nE       AssertionError: EXISTING_PACKAGE_MUST_FAIL\nE       assert False\n\npkg/tests/test_existing.py:2: AssertionError", "nodeid": "pkg.tests.test_existing::test_existing", "outcome": "failed"}, {"generated_file": "pkg/tests/test_generated.py", "message": "", "nodeid": "pkg.tests.test_generated::test_generated", "outcome": "passed"}], "coverage": null, "duration_s": 0.288, "errors": 0, "failed": 1, "generated": {"collected": 1, "error": 0, "failed": 0, "passed": 1, "skipped": 0}, "generated_files": ["pkg/tests/test_generated.py"], "junit_available": true, "ok": false, "output": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n________________________________ test_existing _________________________________\n\n    def test_existing():\n>       assert False, 'EXISTING_PACKAGE_MUST_FAIL'\nE       AssertionError: EXISTING_PACKAGE_MUST_FAIL\nE       assert False\n\npkg/tests/test_existing.py:2: AssertionError\n=========================== short test summary info ============================\nFAILED pkg/tests/test_existing.py::test_existing - AssertionError: EXISTING_P...\n1 failed, 1 passed in 0.03s\n", "passed": 1, "returncode": 1, "skipped": 0, "summary": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 1 collected", "timed_out": false, "timeout_s": 15}}
+.RECEIVING_RESULT={"args": ["--pyargs", "pkg.tests.test_generated::test_keep"], "generated": {"pkg/tests/test_generated.py": "def test_keep():\n    assert True\n\ndef test_unselected():\n    assert False, 'UNSELECTED_NAMED_GENERATED'\n"}, "inputs": {"pkg/__init__.py": "", "pkg/tests/__init__.py": "", "pkg/tests/test_existing.py": "def test_existing():\n    assert True\n", "pytest.ini": "[pytest]\ntestpaths = pkg/tests\n"}, "native_output": ".F                                                                       [100%]\n=================================== FAILURES ===================================\n_______________________________ test_unselected ________________________________\n\n    def test_unselected():\n>       assert False, 'UNSELECTED_NAMED_GENERATED'\nE       AssertionError: UNSELECTED_NAMED_GENERATED\nE       assert False\n\npkg/tests/test_generated.py:5: AssertionError\n=========================== short test summary info ============================\nFAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...\n1 failed, 1 passed in 0.03s\n", "pytest": "9.1.1", "python": "/workspace/scratch/86776bb3cdb8/product-delivery/venv/bin/python", "result": {"cases": [{"generated_file": "pkg/tests/test_generated.py", "message": "", "nodeid": "pkg.tests.test_generated::test_keep", "outcome": "passed"}, {"generated_file": "pkg/tests/test_generated.py", "message": "AssertionError: UNSELECTED_NAMED_GENERATED\nassert False\ndef test_unselected():\n>       assert False, 'UNSELECTED_NAMED_GENERATED'\nE       AssertionError: UNSELECTED_NAMED_GENERATED\nE       assert False\n\npkg/tests/test_generated.py:5: AssertionError", "nodeid": "pkg.tests.test_generated::test_unselected", "outcome": "failed"}], "coverage": null, "duration_s": 0.284, "errors": 0, "failed": 1, "generated": {"collected": 2, "error": 0, "failed": 1, "passed": 1, "skipped": 0}, "generated_files": ["pkg/tests/test_generated.py"], "junit_available": true, "ok": false, "output": ".F                                                                       [100%]\n=================================== FAILURES ===================================\n_______________________________ test_unselected ________________________________\n\n    def test_unselected():\n>       assert False, 'UNSELECTED_NAMED_GENERATED'\nE       AssertionError: UNSELECTED_NAMED_GENERATED\nE       assert False\n\npkg/tests/test_generated.py:5: AssertionError\n=========================== short test summary info ============================\nFAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...\n1 failed, 1 passed in 0.03s\n", "passed": 1, "returncode": 1, "skipped": 0, "summary": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 2 collected", "timed_out": false, "timeout_s": 15}}
+F
+=================================== FAILURES ===================================
+_______________ test_pyargs_generated_selector_is_not_broadened ________________
+
+tmp_path = PosixPath('/dev/shm/86776bb3cdb8-receiving-testpilot-reconciliation/native-tmp/current-pyargs-pytest9/test_pyargs_generated_selector0')
+
+    def test_pyargs_generated_selector_is_not_broadened(tmp_path):
+        repo = project(tmp_path, root="pkg/tests", files={
+            "pkg/__init__.py": "", "pkg/tests/__init__.py": "",
+        })
+        generated = {"pkg/tests/test_generated.py": (
+            "def test_keep():\n    assert True\n\n"
+            "def test_unselected():\n    assert False, 'UNSELECTED_NAMED_GENERATED'\n"
+        )}
+        result = run(repo, generated, args=("--pyargs", "pkg.tests.test_generated::test_keep"))
+>       assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+E       AssertionError: .F                                                                       [100%]
+E         =================================== FAILURES ===================================
+E         _______________________________ test_unselected ________________________________
+E         
+E             def test_unselected():
+E         >       assert False, 'UNSELECTED_NAMED_GENERATED'
+E         E       AssertionError: UNSELECTED_NAMED_GENERATED
+E         E       assert False
+E         
+E         pkg/tests/test_generated.py:5: AssertionError
+E         =========================== short test summary info ============================
+E         FAILED pkg/tests/test_generated.py::test_unselected - AssertionError: UNSELEC...
+E         1 failed, 1 passed in 0.03s
+E         
+E       assert (1, 1, 0) == (1, 0, 0)
+E         
+E         At index 1 diff: 1 != 0
+E         Use -v to get more diff
+
+tests/test_generated_collection_compatibility.py:240: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_generated_collection_compatibility.py::test_pyargs_generated_selector_is_not_broadened
+1 failed, 1 passed, 15 deselected in 0.66s

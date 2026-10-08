@@ -1,0 +1,28 @@
+import os
+from pathlib import Path
+import pytest
+
+@pytest.fixture
+def native_argument(request):
+    request.node.user_properties.append(("receiver.native_fixture", "active"))
+    return 3
+
+def pytest_unconfigure(config):
+    # Read the completed native XML. Do not alter collection or any result.
+    xml = Path(config.option.xmlpath)
+    if not xml.is_file():
+        return
+    generated = Path(config.rootpath) / "tests/test_generated.py"
+    if not generated.exists():
+        stage = "00-baseline"
+    else:
+        body = generated.read_text()
+        if "m.FACTOR = 3" in body:
+            stage = "02-generated-only-repair"
+        elif "(2, 5)" in body:
+            stage = "01-generated-failure"
+        else:
+            stage = "03-correct-repair"
+    destination = Path(os.environ["RECEIVING_JUNIT_DIR"]) / (stage + ".xml")
+    assert not destination.exists(), destination
+    destination.write_bytes(xml.read_bytes())

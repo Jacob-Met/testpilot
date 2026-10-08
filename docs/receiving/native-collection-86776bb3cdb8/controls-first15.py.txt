@@ -1,0 +1,213 @@
+"""Native collection compatibility controls, independently reconstructed.
+
+These exercise TestPilot's chosen pytest interpreter. They are not the missing
+portable controls described by worker e3a41d2b3368 in issue 2 comment 6058800140.
+"""
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+import pytest
+
+from testpilot.sandbox import run_pytest
+
+
+def project(tmp_path: Path, *, root="tests", config="", files=None):
+    repo = tmp_path / "project"
+    repo.mkdir()
+    inputs = {
+        "pytest.ini": f"[pytest]\ntestpaths = {root}\n{config}",
+        f"{root}/test_existing.py": "def test_existing():\n    assert True\n",
+        **(files or {}),
+    }
+    for name, source in inputs.items():
+        path = repo / name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(source, encoding="utf-8")
+    return repo
+
+
+def run(repo, generated, *, args=()):
+    before = {str(p.relative_to(repo)): p.read_bytes()
+              for p in repo.rglob("*") if p.is_file()}
+    result = run_pytest(repo, generated, timeout=15, python=sys.executable,
+                        coverage=False, pytest_args=args)
+    print("RECEIVING_RESULT=" + json.dumps({
+        "python": sys.executable, "pytest": pytest.__version__,
+        "inputs": {name: value.decode("utf-8") for name, value in before.items()},
+        "generated": generated, "args": args, "result": result.to_dict(),
+        "native_output": result.output,
+    }, sort_keys=True))
+    assert {str(p.relative_to(repo)): p.read_bytes()
+            for p in repo.rglob("*") if p.is_file()} == before
+    assert result.junit_available and not result.timed_out, result.output
+    return result
+
+
+@pytest.mark.parametrize("root", ["tests", "checks"])
+def test_generated_addition_keeps_failing_baseline(tmp_path, root):
+    repo = project(tmp_path, root=root, files={
+        f"{root}/test_existing.py": (
+            "def test_existing():\n"
+            "    assert False, 'EXISTING_BASELINE_MUST_FAIL'\n"
+        ),
+    })
+    result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"})
+    assert (result.passed, result.failed, result.errors) == (1, 1, 0), result.output
+    assert not result.ok and result.returncode == 1
+    assert "EXISTING_BASELINE_MUST_FAIL" in result.output
+    assert result.generated_counts() == {
+        "collected": 1, "passed": 1, "failed": 0, "error": 0, "skipped": 0,
+    }
+
+
+@pytest.mark.parametrize("root,package", [("tests", False), ("tests", True), ("checks", False)])
+def test_function_and_class_hooks_run_once_per_identity(tmp_path, root, package):
+    observer = '''from collections import Counter
+calls = Counter()
+
+def pytest_generate_tests(metafunc):
+    if 'value' not in metafunc.fixturenames:
+        return
+    identity = metafunc.definition.nodeid
+    calls[identity] += 1
+    assert calls[identity] == 1, ('REPEATED_FUNCTION_HOOK', identity, calls)
+    if metafunc.cls is None:
+        metafunc.parametrize('value', [7, 11])
+
+def pytest_collection_modifyitems(items):
+    assert len(calls) == 4 and set(calls.values()) == {1}, calls
+    assert {key.rsplit('::', 1)[-1] for key in calls} == {
+        'test_first', 'test_second', 'test_method_first', 'test_method_second'
+    }, calls
+'''
+    functions = '''def test_first(value):
+    assert value in (7, 11)
+
+def test_second(value):
+    assert value in (7, 11)
+'''
+    methods = '''from collections import Counter
+class_calls = Counter()
+
+class TestGenerated:
+    @staticmethod
+    def pytest_generate_tests(metafunc):
+        identity = metafunc.definition.nodeid
+        class_calls[identity] += 1
+        assert class_calls[identity] == 1, ('REPEATED_CLASS_HOOK', identity, class_calls)
+        metafunc.parametrize('value', [7, 11])
+
+    def test_method_first(self, value):
+        assert value in (7, 11)
+
+    def test_method_second(self, value):
+        assert value in (7, 11)
+'''
+    repo = project(tmp_path, root=root, files={"conftest.py": observer})
+    if package:
+        (repo / "tests/__init__.py").write_text("", encoding="utf-8")
+    generated = {"tests/test_generated_functions.py": functions,
+                 "tests/test_generated_methods.py": methods}
+    result = run(repo, generated, args=("-s",))
+    assert (result.passed, result.failed, result.errors) == (9, 0, 0), result.output
+    assert result.ok and result.returncode == 0
+    assert result.generated_counts()["passed"] == 8
+    assert {case.generated_file for case in result.generated_cases} == set(generated)
+
+
+def test_custom_generated_names_keep_native_exclusions(tmp_path):
+    repo = project(tmp_path, config="python_files = verify_*.py\nnorecursedirs = discarded generated_zone\n", files={
+        "tests/verify_existing.py": "def test_existing():\n    assert True\n",
+        "tests/test_existing.py": "raise AssertionError('NONMATCHING_BASELINE')\n",
+        "tests/verify_ignored.py": "raise AssertionError('IGNORED_BASELINE')\n",
+        "tests/discarded/verify_hidden.py": "raise AssertionError('IGNORED_DIRECTORY')\n",
+        "tests/generated_zone/verify_unwanted.py": "raise AssertionError('IGNORED_SIBLING')\n",
+        "conftest.py": (
+            "collect_ignore = ['tests/verify_ignored.py', 'tests/generated_zone/verify_unwanted.py']\n"
+        ),
+    })
+    generated = {"tests/generated_zone/emitted_cases.py": "def test_generated():\n    assert True\n"}
+    result = run(repo, generated)
+    assert (result.passed, result.failed, result.errors) == (2, 0, 0), result.output
+    assert result.ok and result.returncode == 0
+    assert [case.generated_file for case in result.generated_cases] == list(generated)
+
+
+def test_explicit_existing_selector_is_not_broadened(tmp_path):
+    repo = project(tmp_path, files={
+        "tests/test_existing.py": (
+            "def test_keep():\n    assert True\n\n"
+            "def test_unselected():\n    assert False, 'UNSELECTED_BASELINE'\n"
+        ),
+        "tests/test_unselected_file.py": "raise AssertionError('UNSELECTED_FILE')\n",
+    })
+    result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"},
+                 args=("tests/test_existing.py::test_keep",))
+    assert (result.passed, result.failed, result.errors) == (2, 0, 0), result.output
+    assert result.ok and result.generated_counts()["passed"] == 1
+
+
+def test_explicit_generated_selector_is_not_broadened(tmp_path):
+    repo = project(tmp_path)
+    generated = {"tests/test_generated.py": (
+        "def test_keep():\n    assert True\n\n"
+        "def test_unselected():\n    assert False, 'UNSELECTED_GENERATED'\n"
+    )}
+    result = run(repo, generated, args=("tests/test_generated.py::test_keep",))
+    assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+    assert result.ok and result.generated_counts()["passed"] == 1
+
+
+@pytest.mark.parametrize("selection", ["keyword", "deselect", "hook"])
+def test_native_selection_cannot_certify_unexecuted_generation(tmp_path, selection):
+    files = {}
+    args = {"keyword": ("-k", "existing"),
+            "deselect": ("--deselect=tests/test_generated.py",), "hook": ()}[selection]
+    if selection == "hook":
+        files["conftest.py"] = '''def pytest_collection_modifyitems(config, items):
+    excluded = [item for item in items if item.path.name == 'test_generated.py']
+    items[:] = [item for item in items if item not in excluded]
+    config.hook.pytest_deselected(items=excluded)
+'''
+    repo = project(tmp_path, files=files)
+    result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"}, args=args)
+    assert (result.passed, result.failed, result.errors) == (1, 0, 0), result.output
+    assert result.returncode == 0 and not result.ok
+    assert result.generated_counts()["collected"] == 0
+
+
+@pytest.mark.parametrize("doctest_expected,python_expected,root", [(42, 0, "tests"), (0, 42, "tests"), (42, 42, "checks")])
+def test_same_nodeid_doctest_and_python_keep_both_directions(tmp_path, doctest_expected, python_expected, root):
+    observer = '''def pytest_collection_modifyitems(items):
+    generated = [item for item in items if item.path.name == 'test_generated.py']
+    assert len(generated) == 2
+    assert len({item.nodeid for item in generated}) == 1
+    assert {type(item).__name__ for item in generated} == {'DoctestItem', 'Function'}
+'''
+    repo = project(tmp_path, root=root, files={"conftest.py": observer})
+    generated = {"tests/test_generated.py": (
+        f'"""\n>>> 6 * 7\n{doctest_expected}\n"""\n\n'
+        f"def test_generated():\n    assert 6 * 7 == {python_expected}\n"
+    )}
+    result = run(repo, generated, args=("--doctest-modules",))
+    failed = int(doctest_expected != 42) + int(python_expected != 42)
+    assert (result.passed, result.failed, result.errors) == (3 - failed, failed, 0), result.output
+    assert result.ok == (failed == 0) and result.returncode == int(bool(failed))
+    assert result.generated_counts() == {
+        "collected": 2, "passed": 2 - failed, "failed": failed, "error": 0, "skipped": 0,
+    }
+    assert all(case.generated_file == "tests/test_generated.py" for case in result.generated_cases)
+
+
+def test_valid_empty_junit_stays_distinct_from_absent_report(tmp_path):
+    repo = project(tmp_path)
+    result = run(repo, {"tests/test_generated.py": "def test_generated():\n    assert True\n"},
+                 args=("-k", "no_such_collected_test",))
+    assert result.returncode == 5 and not result.ok
+    assert result.cases == [] and result.junit_available
+    assert result.generated_counts() == {
+        "collected": 0, "passed": 0, "failed": 0, "error": 0, "skipped": 0,
+    }

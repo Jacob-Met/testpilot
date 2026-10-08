@@ -1,0 +1,4 @@
+FACTOR = 2
+
+def double(value):
+    return value * FACTOR

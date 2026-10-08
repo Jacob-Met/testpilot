@@ -1,0 +1,13 @@
+# TestPilot report: **passed**
+
+- Changed functions: m.py::double
+- Tests written: 2 in tests/test_generated.py
+- Repair rounds used: 2/2
+- Final run: 3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected in 0.352s
+- Coverage (total): 100.0% -> 100.0% (+0.0 pts)
+- Coverage (changed lines, n=2): 100.0% -> 100.0%
+- Tokens: 1226 (estimated); cost: unpriced (set TESTPILOT_PRICES)
+  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 93 in / 20 out
+  - `nvidia/Nemotron-3_5-Lightning`: 3 calls, 942 in / 171 out
+
+wrote /dev/shm/86776bb3cdb8-product-collector-cli/run/candidate/reported/testpilot.patch, /dev/shm/86776bb3cdb8-product-collector-cli/run/candidate/reported/report.json, /dev/shm/86776bb3cdb8-product-collector-cli/run/candidate/reported/report.md
