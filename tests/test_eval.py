@@ -6,7 +6,12 @@ def test_cases_present():
 
 
 def test_scripted_eval_outcomes():
-    rows = [evaluate_case(c, coverage=False, timeout=5) for c in load_cases()]
+    # timeout=10 matches the eval harness CLI default. The sandbox enforces a
+    # hard wall clock, so a smaller timeout flakes on loaded machines: a
+    # timed-out run consumes script replies (ScriptExhausted -> model_error) or
+    # breaks the bug_revealing re-runs, contradicting the "fixed by
+    # construction" determinism this test asserts.
+    rows = [evaluate_case(c, coverage=False, timeout=10) for c in load_cases()]
     by = {r["case"]: r for r in rows}
     assert by["calc_clamp"]["solved"] and by["calc_clamp"]["rounds_used"] == 1
     assert by["textutil_slugify"]["solved"] and by["textutil_slugify"]["rounds_used"] == 2
