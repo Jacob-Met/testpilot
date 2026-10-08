@@ -1,0 +1,53 @@
+{
+  "initial_baseline_commit": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+  "receiving_commit": "f350150259c00dd25c43a95d65157022612d15a8",
+  "receiving_tree": "1fabd676af1bf4cc8c396fc1962b2ea1bc618b66",
+  "only_changed_top_level_definition": [
+    "render_report"
+  ],
+  "runtime_files": [
+    {
+      "path": "testpilot/__init__.py",
+      "receiving_baseline_sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "candidate_sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "changed": false,
+      "candidate_git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "receiving_baseline_sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+      "candidate_sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+      "changed": false,
+      "candidate_git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "receiving_baseline_sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "candidate_sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "changed": false,
+      "candidate_git_blob": "425d0712b18a6a72226399a2f9d704193ace1133"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "receiving_baseline_sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf",
+      "candidate_sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "changed": true,
+      "candidate_git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa"
+    },
+    {
+      "path": "testpilot/model.py",
+      "receiving_baseline_sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "candidate_sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "changed": false,
+      "candidate_git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "receiving_baseline_sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "candidate_sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "changed": false,
+      "candidate_git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+    }
+  ],
+  "regression_sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e"
+}

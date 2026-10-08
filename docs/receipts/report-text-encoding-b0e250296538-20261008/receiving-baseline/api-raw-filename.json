@@ -1,0 +1,31 @@
+{
+  "stage": "markdown_write_failed",
+  "status": "passed",
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.193,
+    "timeout_s": 30,
+    "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_raw_filename::test_measure_raw_filename",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": null,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "exception": "'utf-8' codec can't encode character '\\udcff' in position 59: surrogates not allowed"
+}

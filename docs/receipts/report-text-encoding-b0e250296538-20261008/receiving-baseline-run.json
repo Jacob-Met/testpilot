@@ -1,0 +1,18 @@
+{
+  "base_commit": "f350150259c00dd25c43a95d65157022612d15a8",
+  "kind": "receiving-baseline",
+  "returncode": 1,
+  "command": [
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_report_text_encoding.py"
+  ],
+  "cwd": "/dev/shm/b0e250296538-testpilot-review/receiving-baseline",
+  "test_sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e",
+  "loop_sha256": "dd79fbfbdcab00978b288835645c1b5adf37fec404ec0fa6da0ac41d45a79cbf"
+}

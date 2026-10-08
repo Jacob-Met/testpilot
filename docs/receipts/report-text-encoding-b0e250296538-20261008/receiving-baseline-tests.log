@@ -1,0 +1,176 @@
+FFF.FFF                                                                  [100%]
+=================================== FAILURES ===================================
+_ test_filesystem_surrogate_is_visible_in_utf8_report_and_result_is_unchanged __
+
+    def test_filesystem_surrogate_is_visible_in_utf8_report_and_result_is_unchanged():
+        path = os.fsdecode(b"module\xff.py")
+        if "\udcff" not in path:
+            pytest.skip("filesystem codec does not use the POSIX surrogateescape spelling")
+        result = result_for(path)
+        original = result.to_dict()
+        text = render_report(result)
+>       encoded = text.encode("utf-8", errors="strict")
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       UnicodeEncodeError: 'utf-8' codec can't encode character '\udcff' in position 59: surrogates not allowed
+
+tests/test_report_text_encoding.py:46: UnicodeEncodeError
+_ test_nonfilesystem_surrogates_are_escaped_without_dropping_adjacent_unicode[message] _
+
+field = 'message'
+
+    @pytest.mark.parametrize("field", ["message", "model"])
+    def test_nonfilesystem_surrogates_are_escaped_without_dropping_adjacent_unicode(field):
+        result = result_for("café/雪.py")
+        value = "before\ud800after café 雪 🙂"
+        if field == "message":
+            result.message = value
+        else:
+            result.ledger["by_model"][value] = {"calls": 1, "prompt_tokens": 3, "completion_tokens": 4}
+        before = result.to_dict()
+        text = render_report(result)
+>       text.encode("utf-8", errors="strict")
+E       UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 38: surrogates not allowed
+
+tests/test_report_text_encoding.py:62: UnicodeEncodeError
+_ test_nonfilesystem_surrogates_are_escaped_without_dropping_adjacent_unicode[model] _
+
+field = 'model'
+
+    @pytest.mark.parametrize("field", ["message", "model"])
+    def test_nonfilesystem_surrogates_are_escaped_without_dropping_adjacent_unicode(field):
+        result = result_for("café/雪.py")
+        value = "before\ud800after café 雪 🙂"
+        if field == "message":
+            result.message = value
+        else:
+            result.ledger["by_model"][value] = {"calls": 1, "prompt_tokens": 3, "completion_tokens": 4}
+        before = result.to_dict()
+        text = render_report(result)
+>       text.encode("utf-8", errors="strict")
+E       UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 251: surrogates not allowed
+
+tests/test_report_text_encoding.py:62: UnicodeEncodeError
+_ test_write_outputs_retains_json_identity_and_exact_patch_with_surrogate_path _
+
+tmp_path = PosixPath('/dev/shm/b0e250296538-testpilot-review/tmp/pytest-of-root/pytest-5/test_write_outputs_retains_jso0')
+
+    def test_write_outputs_retains_json_identity_and_exact_patch_with_surrogate_path(tmp_path):
+        result = result_for("module\udcff.py", message="runner failed; do not relabel this green")
+        before = result.to_dict()
+>       paths = write_outputs(result, tmp_path / "outputs")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_report_text_encoding.py:81: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/loop.py:472: in write_outputs
+    paths["md"].write_text(render_report(res), encoding="utf-8")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/dev/shm/b0e250296538-testpilot-review/tmp/pytest-of-root/pytest-5/test_write_outputs_retains_jso0/outputs/report.md')
+data = '# TestPilot report: **failed**\n\nrunner failed; do not relabel this green\n\n- Changed functions: module\udcff.py::m...d (set TESTPILOT_PRICES)\n\n## Patch\n\n```diff\ndiff --git a/tests/test_generated.py b/tests/test_generated.py\n```\n'
+encoding = 'utf-8', errors = None, newline = None
+
+    def write_text(self, data, encoding=None, errors=None, newline=None):
+        """
+        Open the file in text mode, write to it, and close the file.
+        """
+        if not isinstance(data, str):
+            raise TypeError('data must be str, not %s' %
+                            data.__class__.__name__)
+        encoding = io.text_encoding(encoding)
+        with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+>           return f.write(data)
+                   ^^^^^^^^^^^^^
+E           UnicodeEncodeError: 'utf-8' codec can't encode character '\udcff' in position 101: surrogates not allowed
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1048: UnicodeEncodeError
+___ test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch ___
+
+tmp_path = PosixPath('/dev/shm/b0e250296538-testpilot-review/tmp/pytest-of-root/pytest-5/test_real_pytest_success_write0')
+
+    @pytest.mark.skipif(os.name != "posix", reason="raw filename byte workflow requires POSIX")
+    def test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch(tmp_path):
+        repo, diff, responses, before = raw_filename_repo(tmp_path)
+        pilot = TestPilot(ScriptedModel(responses), RoutingConfig(planner_model="P", editor_model="E"),
+            max_repair_rounds=0, timeout_s=30, coverage=False)
+        result = pilot.run(repo, diff)
+        assert result.ok and result.final["passed"] == 2 and len(pilot.client.calls) == 2
+        try:
+>           paths = write_outputs(result, tmp_path / "outputs")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_report_text_encoding.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/loop.py:472: in write_outputs
+    paths["md"].write_text(render_report(res), encoding="utf-8")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/dev/shm/b0e250296538-testpilot-review/tmp/pytest-of-root/pytest-5/test_real_pytest_success_write0/outputs/report.md')
+data = "# TestPilot report: **passed**\n\n- Changed functions: module\udcff.py::measure\n- Tests written: 1 in tests/test_raw...ule = runpy.run_path(os.fsdecode(bytes.fromhex('6d6f64756c65ff2e7079')))\n+    assert module['measure'](4) == 6\n```\n"
+encoding = 'utf-8', errors = None, newline = None
+
+    def write_text(self, data, encoding=None, errors=None, newline=None):
+        """
+        Open the file in text mode, write to it, and close the file.
+        """
+        if not isinstance(data, str):
+            raise TypeError('data must be str, not %s' %
+                            data.__class__.__name__)
+        encoding = io.text_encoding(encoding)
+        with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+>           return f.write(data)
+                   ^^^^^^^^^^^^^
+E           UnicodeEncodeError: 'utf-8' codec can't encode character '\udcff' in position 59: surrogates not allowed
+
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py:1048: UnicodeEncodeError
+___ test_real_cli_preserves_runner_failure_and_still_writes_readable_report ____
+
+tmp_path = PosixPath('/dev/shm/b0e250296538-testpilot-review/tmp/pytest-of-root/pytest-5/test_real_cli_preserves_runner0')
+
+    @pytest.mark.skipif(os.name != "posix" or not coverage_available(sys.executable),
+        reason="raw filename CLI coverage workflow requires POSIX and coverage")
+    def test_real_cli_preserves_runner_failure_and_still_writes_readable_report(tmp_path):
+        repo, diff, responses, before = raw_filename_repo(tmp_path)
+        script = tmp_path / "script"; script.mkdir()
+        for index, response in enumerate(responses):
+            (script / f"{index:02d}.md").write_text(response, encoding="utf-8")
+        patch_input = tmp_path / "change.diff"; patch_input.write_text(diff, encoding="ascii")
+        output = tmp_path / "outputs"
+        source_root = Path(__file__).resolve().parents[1]
+        env = dict(os.environ, PYTHONPATH=str(source_root), PYTHONDONTWRITEBYTECODE="1")
+        for key in ["TESTPILOT_BACKEND", "TESTPILOT_PLANNER_MODEL", "TESTPILOT_EDITOR_MODEL", "TESTPILOT_PRICES"]:
+            env.pop(key, None)
+        run = subprocess.run([sys.executable, "-m", "testpilot", "run", "--repo", str(repo),
+            "--diff", str(patch_input), "--backend", "scripted", "--script", str(script), "--rounds", "0",
+            "--timeout", "30", "--out", str(output)], env=env, cwd=tmp_path,
+            capture_output=True, text=True, timeout=60)
+        report = json.loads((output / "report.json").read_text(encoding="utf-8"))
+        markdown = (output / "report.md").read_bytes()
+        observed = {"returncode": run.returncode, "stdout": run.stdout, "stderr": run.stderr,
+            "report_status": report["status"], "final": report["final"], "markdown_bytes": len(markdown)}
+        record("cli-raw-filename", observed)
+        # Coverage 7.16.2 rejects this filename in SQLite despite two passing cases.
+        # Preserve the actual runner outcome; future coverage support may legitimately
+        # make it pass, while report serialization must work in either outcome.
+        expected_status = "passed" if report["final"]["returncode"] == 0 else "failed"
+        assert report["status"] == expected_status
+        assert run.returncode == (0 if expected_status == "passed" else 1)
+        assert report["final"]["ok"] is (expected_status == "passed")
+        assert report["final"]["passed"] == 2
+>       assert "UnicodeEncodeError" not in run.stderr
+E       AssertionError: assert 'UnicodeEncodeError' not in 'Traceback (...ot allowed\n'
+E         
+E         'UnicodeEncodeError' is contained here:
+E           ^^^^^^^^^
+E           UnicodeEncodeError: 'utf-8' codec can't encode character '\udcff' in position 146: surrogates not allowed
+E         ? ++++++++++++++++++
+
+tests/test_report_text_encoding.py:179: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_report_text_encoding.py::test_filesystem_surrogate_is_visible_in_utf8_report_and_result_is_unchanged
+FAILED tests/test_report_text_encoding.py::test_nonfilesystem_surrogates_are_escaped_without_dropping_adjacent_unicode[message]
+FAILED tests/test_report_text_encoding.py::test_nonfilesystem_surrogates_are_escaped_without_dropping_adjacent_unicode[model]
+FAILED tests/test_report_text_encoding.py::test_write_outputs_retains_json_identity_and_exact_patch_with_surrogate_path
+FAILED tests/test_report_text_encoding.py::test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch
+FAILED tests/test_report_text_encoding.py::test_real_cli_preserves_runner_failure_and_still_writes_readable_report
+6 failed, 1 passed in 1.67s
