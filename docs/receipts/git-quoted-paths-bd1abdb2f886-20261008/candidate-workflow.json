@@ -1,0 +1,64 @@
+{
+  "source_root": "/workspace/scratch/bd1abdb2f886/source_review/testpilot-quoted/candidate",
+  "status": "passed",
+  "changed_functions": [
+    {
+      "path": "café.py",
+      "module": "café",
+      "qualname": "price",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ],
+      "source": "def price():\n    return 2",
+      "is_method": false
+    }
+  ],
+  "tests_written": 1,
+  "model_calls": 2,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.314,
+    "timeout_s": 10,
+    "output": ".                                                                        [100%]\n1 passed in 0.02s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_price::test_price",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": {
+      "percent_total": 100.0,
+      "files": {
+        "café.py": {
+          "executed": [
+            1,
+            2
+          ],
+          "missing": []
+        }
+      }
+    },
+    "passed": 1,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "coverage": {
+    "total_before": 0.0,
+    "total_after": 100.0,
+    "total_delta": 100.0,
+    "changed_lines_executable": 1,
+    "changed_lines_before": 0.0,
+    "changed_lines_after": 100.0
+  },
+  "patch": "diff --git a/tests/test_price.py b/tests/test_price.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_price.py\n@@ -0,0 +1,4 @@\n+from café import price\n+\n+def test_price():\n+    assert price() == 2\n",
+  "fixture_module_unchanged_after_pipeline": true,
+  "generated_test_absent_from_source_after_pipeline": true,
+  "git_apply_check_returncode": 0
+}

@@ -1,0 +1,12 @@
+{
+  "source_root": "/workspace/scratch/bd1abdb2f886/source_review/testpilot-quoted/baseline",
+  "status": "no_changes",
+  "changed_functions": [],
+  "tests_written": 0,
+  "model_calls": 0,
+  "final": null,
+  "coverage": null,
+  "patch": "",
+  "fixture_module_unchanged_after_pipeline": true,
+  "generated_test_absent_from_source_after_pipeline": true
+}
