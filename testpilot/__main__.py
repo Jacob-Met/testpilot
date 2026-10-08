@@ -14,6 +14,7 @@ from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_uni
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
 from .recheck import run_recheck_command
+from .regression import run_regression_command
 from .targets import TargetSelectionError, resolve_targets, selection_record
 
 
@@ -132,7 +133,19 @@ def main(argv: list[str] | None = None) -> int:
     recheck.add_argument("--timeout", type=float, default=60.0, help="pytest timeout, seconds (default 60)")
     recheck.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
                          help="project Python; path or PATH command (default: this interpreter)")
+    regression = sub.add_parser("regression", help="check retained tests on two committed revisions")
+    regression.add_argument("--repo", required=True, help="root of the local Git worktree")
+    regression.add_argument("--report", required=True, help="saved report.json or recheck.json")
+    regression.add_argument("--before", required=True, help="explicit before Git revision")
+    regression.add_argument("--after", required=True, help="explicit after Git revision")
+    regression.add_argument("--out", required=True, help="new result directory outside the repository")
+    regression.add_argument("--timeout", type=float, default=60.0, help="pytest timeout per revision")
+    regression.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
+                            help="project Python for both runs (default: this interpreter)")
     a = ap.parse_args(argv)
+
+    if a.cmd == "regression":
+        return run_regression_command(a)
 
     if a.cmd == "recheck":
         return run_recheck_command(a)

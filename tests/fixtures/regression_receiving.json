@@ -1,0 +1,30 @@
+{
+  "schema": "testpilot-paired-independent-fixtures/1",
+  "modules": {
+    "before": "def bucket(value, width):\n    return int(value / width)\n",
+    "after": "def bucket(value, width):\n    return value // width\n",
+    "unchanged": "def answer():\n    return 42\n",
+    "drift_before": "CASES = ['before-only']\n",
+    "drift_after": "CASES = ['after-only']\n"
+  },
+  "retained": {
+    "regression": "from pathlib import Path\nimport os\nimport pytest\nfrom buckets import bucket\n\n@pytest.mark.parametrize(('value', 'expected'), [(-1, -1), (-11, -2), (20, 2)], ids=['negative-edge', 'negative-next', 'positive-control'])\ndef test_partition(value, expected):\n    assert bucket(value, 10) == expected\n\ndef test_original_committed_assets():\n    assert Path('payload.txt').read_bytes() == 'Literal café <source>\\n'.encode()\n    assert Path('build_info.txt').read_text() == '$Format:%H$\\n'\n    assert os.access('tool.py', os.X_OK)\n",
+    "unchanged": "from fixed import answer\n\ndef test_retained_answer():\n    assert answer() == 42\n",
+    "drift": "import pytest\nfrom identities import CASES\n\n@pytest.mark.parametrize('label', CASES)\ndef test_identity(label):\n    assert label.endswith('-only')\n",
+    "placement": "def test_no_execution_on_refusal():\n    assert True\n"
+  },
+  "assets": {
+    ".gitattributes": "payload.txt export-ignore\nbuild_info.txt export-subst\n",
+    "payload.txt": "Literal café <source>\n",
+    "build_info.txt": "$Format:%H$\n",
+    "tool.py": "#!/usr/bin/env python3\nprint('fixture only')\n"
+  },
+  "existing": {
+    "fail": "def test_existing():\n    assert False, 'unrelated existing failure'\n",
+    "pass": "def test_existing():\n    assert True\n"
+  },
+  "report_context": {
+    "status": "recorded-generation-failed",
+    "diagnosis": "Historical context only; independently execute both supplied refs."
+  }
+}

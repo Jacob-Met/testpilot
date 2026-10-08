@@ -1,0 +1,106 @@
+{
+  "schema": "testpilot-paired-independent-receiving/1",
+  "reviewer": "estate-e82707f2bc62/runtime_discovery",
+  "protocol": {
+    "bytes": 4268,
+    "sha256": "3f6c304189a4dd88d21933cb95f3e37fc759e4a70215e553e6f79dde31d489ee",
+    "git_blob": "1319036843142c722165d9e7ae2fe5671f62c949"
+  },
+  "fixture": {
+    "bytes": 1870,
+    "sha256": "22a80950602655564bce2e19f89010a73d83356b802c80b3604480b910418305",
+    "git_blob": "7a48df341b451330f70ed9c22f63d93454a9213c"
+  },
+  "original_test": {
+    "bytes": 13441,
+    "sha256": "33122c130acf1eac90f2f2a078f611fc18f5f4b81d052f8493eeec49b21e9f60",
+    "git_blob": "2c335654ca02093c464d286ad3613beeeb7ef770"
+  },
+  "active_native_test": {
+    "bytes": 13463,
+    "sha256": "4d6bf9da8db377daa13047d0de8f6a53b8d96ea4690a96fab1e09f7f97bd07e4",
+    "git_blob": "215a7ad4d7ac73aa20c63a2243a49cb5755e4f97"
+  },
+  "candidate_source": {
+    "README.md": "02ab6703742d6a5465c27b22a12405b99ba88bba192b10742fdf7f5102b691a7",
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "docs/REGRESSION.md": "43a4d9c0c9bbf1b6d05f64bc55170cd4259c7c6cfc34409fc8ba3b516de95d7e",
+    "tests/test_regression.py": "b3b7c8892c24db5cc7368b4960e334aee1b51835293a6045306c847819af3578",
+    "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+    "testpilot/__main__.py": "92c5dc62290e02c6c7041038322018ff2a2337a9c9bdee8beb17b5603b95301a",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "eval/cases/calc_clamp/change.diff": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+    "eval/cases/calc_clamp/case.json": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+    "eval/cases/calc_clamp/repo/calc.py": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+    "eval/cases/calc_clamp/script/03_repair.md": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+    "eval/cases/calc_clamp/script/02_tests.md": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+    "eval/cases/calc_clamp/script/01_plan.md": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+    "eval/cases/calc_clamp/fix/calc.py": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+    "eval/cases/calc_clamp/repo/tests/test_existing.py": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+  },
+  "original_baseline": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "README.md": "a446169268324fbe3e1753fd8838c03ef6fc7f791bcf62cf2143418342f5c0b4",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/__main__.py": "b9c8268797fc34bed1dc9a6a89b1fd0cb44a885ee63595cf531bfa601b33990a",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+    "eval/cases/calc_clamp/case.json": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+    "eval/cases/calc_clamp/change.diff": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+    "eval/cases/calc_clamp/fix/calc.py": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+    "eval/cases/calc_clamp/script/01_plan.md": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+    "eval/cases/calc_clamp/script/02_tests.md": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+    "eval/cases/calc_clamp/script/03_repair.md": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+    "eval/cases/calc_clamp/repo/calc.py": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+    "eval/cases/calc_clamp/repo/tests/test_existing.py": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d"
+  },
+  "original_first_runs": {
+    "baseline": "1 pass, 2 absent-CLI failures, 3 receiver importlib.util errors",
+    "candidate": "3 pass (real forward CLI, reverse CLI, original report control), 3 identical receiver errors"
+  },
+  "import_only_successor": {
+    "change": "Add explicit import importlib.util; removing that line recovers byte-identical original test; all methods/fixtures/assertions unchanged.",
+    "baseline": "Affected 3 methods: 3 absent-module failures, no errors",
+    "candidate_first": "Affected 3 stopped during fixture creation on ENOSPC; 2 setup failures and 1 setup error, no product conclusion",
+    "candidate_space_recovered": "Same 3 affected methods pass in 2.485s after preserving and compressing only own metadata",
+    "test_sha256": "4d6bf9da8db377daa13047d0de8f6a53b8d96ea4690a96fab1e09f7f97bd07e4"
+  },
+  "aggregate": "All six scenarios qualified across original 3-pass execution and affected successor 3-pass execution. No claim of a single local six-pass successor run.",
+  "native_stack": {
+    "python": "/dev/shm/e827-testpilot-revisions/runtime/bin/python",
+    "pytest": "9.1.1 genuine retained installed package",
+    "execution": "actual Git blobs/commits, subprocess CLI, native unchanged pytest collector; no fake runner/model/API"
+  },
+  "source_and_input_preservation": "Every frozen baseline/candidate source snapshot rechecked unchanged; per-case source repository/index/refs/dirty files/report byte hashes unchanged.",
+  "lint": "Ruff0.16.10 check active native receiver passes",
+  "archive": {
+    "bytes": 30193,
+    "sha256": "f5ab53553d4445cfaa3e5fd8ee3053d6af300246050846abf9cfe89179a86fd2",
+    "git_blob": "c350630cd8a2da4735804b94ce72b7483b46cf22",
+    "members": 24,
+    "every_member_readback_exact": true
+  },
+  "limits": [
+    "No security-sandbox claim; actual native subprocess boundary applies.",
+    "Source annotation or current-parent changes require hosted native qualification.",
+    "No production code edited by independent receiver."
+  ]
+}
