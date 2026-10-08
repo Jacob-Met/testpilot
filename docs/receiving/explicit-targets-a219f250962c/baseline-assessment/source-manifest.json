@@ -1,0 +1,54 @@
+{
+  "source_commit": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "qualification": "Current-main eight-module assessment; no source edits or dependencies installed",
+  "files": [
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 5275,
+      "git_blob": "6f149f5484cf7369f4f9569170cd450279c40994",
+      "sha256": "83caf8df097902120a0cfbd6adb897d5b6be7ba2407b0217606e7038599b5a5f"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "bytes": 9396,
+      "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "bytes": 24064,
+      "git_blob": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "bytes": 390,
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "path": "testpilot/model.py",
+      "bytes": 10175,
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 11877,
+      "git_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "bytes": 20656,
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "bytes": 2943,
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    }
+  ]
+}

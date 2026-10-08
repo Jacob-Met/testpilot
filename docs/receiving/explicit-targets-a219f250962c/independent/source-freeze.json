@@ -1,0 +1,203 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "source_path": "/Users/me/hamon-testpilot-explicit-targets-a219f250962c",
+  "code_commit": "00b63c8e03cc515160da1202331224167d12d253",
+  "tree": "d1ba76e3872a0e843821b799f8accb69aa32416d",
+  "canonical_base": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "canonical_base_tree": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+  "scoped_base": "33a10cd5b756b8ade8768bd6f8da75f55da369c3",
+  "scoped_base_tree": "a011210502f9171c1b6cffff76342b13fb755b85",
+  "authored_previous_commit": "fc24a55d2c5e2d94478072e8e6736bf44bab81a6",
+  "authored_previous_tree": "6b2582c2041bfa9a7cb3600bcead12574f6230c9",
+  "author_paths": [
+    "README.md",
+    "docs/EXPLICIT_TARGETS.md",
+    "testpilot/__main__.py",
+    "testpilot/html_report.py",
+    "testpilot/loop.py",
+    "testpilot/targets.py",
+    "tests/test_explicit_target_cli.py",
+    "tests/test_explicit_targets.py"
+  ],
+  "identical_author_paths_from_previous": [
+    "testpilot/targets.py",
+    "testpilot/loop.py",
+    "testpilot/html_report.py",
+    "README.md",
+    "docs/EXPLICIT_TARGETS.md",
+    "tests/test_explicit_targets.py",
+    "tests/test_explicit_target_cli.py"
+  ],
+  "unchanged_current_parent_files": 19,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 12053,
+      "sha256": "9c646cbd14a07a5af79afd9a306202d402e2037db7e6557525d9e18387e27f5a",
+      "git_blob": "3848e40614d7328eb5544a28f52cd6a75de38aa1"
+    },
+    {
+      "path": "docs/EXPLICIT_TARGETS.md",
+      "bytes": 5497,
+      "sha256": "dabf34adc34d931749f04debe601fb8f2c6a0ab668278c8539926fb05c88cca8",
+      "git_blob": "3cfe7a0370d48a1e86c6f7c49bb7508fbdfb8abd"
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "bytes": 5885,
+      "sha256": "7855d34a1e84a4fb4b4ef113aa4bc488ccf28933883623e099ae427cc0fdbfc3",
+      "git_blob": "b7eff4e6089c2974b8c277370f474935d4bf4806"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 7479,
+      "sha256": "319bc6e8b06615d657530eb35fa2f7f3e6a883a36c98ea1540fdf4c2815eac55",
+      "git_blob": "5686cb41d555890b906d2ea322149f0673e8049d"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "bytes": 9396,
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+      "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "bytes": 20982,
+      "sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+      "git_blob": "2fcc6441473684c2f8bdd16d314e8b258de51edf"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "bytes": 25406,
+      "sha256": "3ea786ae5466ebdd6087b03d829580c333882e6fd429aaf54099320b4aa0bb08",
+      "git_blob": "8a567fb35f29dc242413df3678f5f63fe08caa4f"
+    },
+    {
+      "path": "testpilot/model.py",
+      "bytes": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 12721,
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "git_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e"
+    },
+    {
+      "path": "testpilot/targets.py",
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 144,
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+      "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c"
+    },
+    {
+      "path": "tests/test_cli_diff_transport.py",
+      "bytes": 11507,
+      "sha256": "5748cd3aafbd5aa032b98d531a9091d4a91becdce187a514dafffcc271173bab",
+      "git_blob": "25017791488cf8dd3c7f95b9460d73d691ce8a06"
+    },
+    {
+      "path": "tests/test_cli_targets.py",
+      "bytes": 10853,
+      "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+      "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e"
+    },
+    {
+      "path": "tests/test_diff_source_boundary.py",
+      "bytes": 5521,
+      "sha256": "f8442bb2e26a4cbdfa7b6320627c780a83264675959ddc6339bc88b57a6faec2",
+      "git_blob": "74f9ca4d4a31b9ca447f362ac3cbf594333d560f"
+    },
+    {
+      "path": "tests/test_explicit_target_cli.py",
+      "bytes": 1930,
+      "sha256": "01eb0a6782448a59bbf876fa1d8cbf8398bb05b461f5875b4d125b0147ab3365",
+      "git_blob": "d01e0dad0cb73fe1f54b6c88d8287792dd587869"
+    },
+    {
+      "path": "tests/test_explicit_targets.py",
+      "bytes": 5268,
+      "sha256": "bd40f190a52195eed73145cbd0a721b0c555307dfd358ec1d795df3799026b1d",
+      "git_blob": "438d1c23335d79d4151a198f7e3606595cd68785"
+    },
+    {
+      "path": "tests/test_fenced_code_boundaries.py",
+      "bytes": 2990,
+      "sha256": "edff7f6dec6c754cdbd03efee84b342103bb1c43a8b614333e1ca83e75bfd91c",
+      "git_blob": "54c798f49b690d6365ec4de9b0ae78f9d99cd960"
+    },
+    {
+      "path": "tests/test_html_report.py",
+      "bytes": 9811,
+      "sha256": "bb2d6b66ecf929ee6340ae6f39875a07e64dd8c5af2053944b16ad93aa7d6f5c",
+      "git_blob": "655c4ce97b5ffbd2fe81f5b602a2ca12388c27b7"
+    },
+    {
+      "path": "tests/test_loop.py",
+      "bytes": 5465,
+      "sha256": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc",
+      "git_blob": "8540b31caf7c258e9345e62d11cd4796c5e92ba5"
+    },
+    {
+      "path": "tests/test_patch_physical_lines.py",
+      "bytes": 3085,
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b",
+      "git_blob": "f5a9ff15106d39c953cda3f783f64362634f7ad1"
+    },
+    {
+      "path": "tests/test_python_source_encoding.py",
+      "bytes": 5598,
+      "sha256": "85196e144916098af0fe677f01382eeb48c6f175008c76446756c438ee741b89",
+      "git_blob": "903abd6db569a80e3a5a61d734bf376c0ac4c8dd"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13652,
+      "sha256": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760",
+      "git_blob": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4"
+    },
+    {
+      "path": "tests/test_report_text_encoding.py",
+      "bytes": 9330,
+      "sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e",
+      "git_blob": "44e7622672361ffad936e462b0996816c55d2ddd"
+    }
+  ],
+  "receiving_scope": "Source/CLI/prompt/sandbox/patch receiving pending independent root disposition; baseline-matched native existing-test limitations retained",
+  "native_results": {
+    "old_e228": "126 passed,18 subtests passed,2 existing filename fixture failures reproduced on untouched baseline",
+    "current_631": "58 passed,18 subtests passed,1 existing skip,1 existing configured-suite expected-count failure reproduced on untouched baseline",
+    "new_tests": "All12 new explicit-target tests pass in both source compositions"
+  },
+  "clean": true
+}

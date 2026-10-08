@@ -1,0 +1,7 @@
+The bundle contains these 3 refs:
+00b63c8e03cc515160da1202331224167d12d253 refs/heads/current-main-receiving
+fc24a55d2c5e2d94478072e8e6736bf44bab81a6 refs/heads/main
+00b63c8e03cc515160da1202331224167d12d253 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/packet/source/source-history.bundle is okay

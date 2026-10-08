@@ -82,6 +82,15 @@ python -m testpilot run \
 
 On a real repo, use `--git-base main` instead of `--diff FILE`. Exit codes: 0 means the generated tests pass, 1 means any other outcome, 2 means a config error.
 
+## Choose functions explicitly
+
+Use repeated `--target path.py::qualname` flags on `targets` or `run` to select
+specific current functions, including unchanged functions affected by a change
+you have identified. The supplied diff stays available as context to planning,
+generation and repair. Without this option, automatic diff selection is unchanged.
+See [explicit targets](docs/EXPLICIT_TARGETS.md) for preview, ordering, refusals,
+saved selection context and unchanged-function coverage semantics.
+
 ## Review your own run in a browser
 
 Every run also writes **`report.html`** in its output directory. Open that file

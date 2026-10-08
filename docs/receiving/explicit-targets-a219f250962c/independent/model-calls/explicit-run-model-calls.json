@@ -1,0 +1,46 @@
+[
+  {
+    "type": "ScriptedModel",
+    "calls": [
+      [
+        "nvidia/nemotron-3-super-120b-a12b",
+        [
+          {
+            "role": "system",
+            "content": "You are TestPilot's planner. Given caller-selected Python functions and a supplied diff, list the behaviours that pytest tests should pin down: normal cases, edge cases, error cases. Be concise. Do not write code. These functions were explicitly chosen and may be unchanged."
+          },
+          {
+            "role": "user",
+            "content": "Caller selected these targets; no dependency inference was performed.\n\nCaller-selected functions:\n\n### settings.py::Policy.cap (lines 13-15; import with `from settings import Policy`)\n```python\n    @staticmethod\n    def cap(amount, limit=LIMIT):\n        return min(amount, limit)\n```\n\n### settings.py::accepts (lines 4-5; import with `from settings import accepts`)\n```python\ndef accepts(amount):\n    return amount <= LIMIT\n```\n\nSupplied diff context:\n```diff\ndiff --git a/settings.py b/settings.py\nindex 6a8ed7c..572bbe2 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 10\n+LIMIT = 7\n \n \n def accepts(amount):\n@@ -6,7 +6,7 @@ def accepts(amount):\n \n \n def ignored(amount):\n-    return amount + 5\n+    return amount + 6\n \n \n class Policy:\n\n```\n\nWrite the test plan."
+          }
+        ]
+      ],
+      [
+        "nvidia/Nemotron-3_5-Lightning",
+        [
+          {
+            "role": "system",
+            "content": "You are TestPilot's test writer. Write pytest tests for the caller-selected functions. Import the code under test by its module path. Tests must be deterministic, fast, offline, and must not sleep or touch the network. Output each file as a fenced block whose info string is `python path=tests/test_<name>.py`. Add new test files; do not replace the repository's existing tests. Output only test files. These functions were explicitly chosen and may be unchanged."
+          },
+          {
+            "role": "user",
+            "content": "Test plan:\nPin only the caller-selected boundary and captured default.\n\nCaller selected these targets; no dependency inference was performed.\n\nCaller-selected functions:\n\n### settings.py::Policy.cap (lines 13-15; import with `from settings import Policy`)\n```python\n    @staticmethod\n    def cap(amount, limit=LIMIT):\n        return min(amount, limit)\n```\n\n### settings.py::accepts (lines 4-5; import with `from settings import accepts`)\n```python\ndef accepts(amount):\n    return amount <= LIMIT\n```\n\nSupplied diff context:\n```diff\ndiff --git a/settings.py b/settings.py\nindex 6a8ed7c..572bbe2 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 10\n+LIMIT = 7\n \n \n def accepts(amount):\n@@ -6,7 +6,7 @@ def accepts(amount):\n \n \n def ignored(amount):\n-    return amount + 5\n+    return amount + 6\n \n \n class Policy:\n\n```\n\nWrite the pytest file(s)."
+          }
+        ]
+      ],
+      [
+        "nvidia/Nemotron-3_5-Lightning",
+        [
+          {
+            "role": "system",
+            "content": "You are TestPilot's test repairer. The tests below failed. If the TEST is wrong (bad expectation, import, fixture, timing), output the corrected files in the same fenced format, using the current generated file paths. Omitted files are kept unchanged; output only the generated files that need repair. Existing repository tests cannot be changed by this workflow. If the failure shows a genuine bug in the CODE under test, do not weaken the test: reply with a line `VERDICT: CODE_BUG` followed by a one-paragraph explanation. These functions were explicitly chosen and may be unchanged."
+          },
+          {
+            "role": "user",
+            "content": "Caller selected these targets; no dependency inference was performed.\n\nCaller-selected functions:\n\n### settings.py::Policy.cap (lines 13-15; import with `from settings import Policy`)\n```python\n    @staticmethod\n    def cap(amount, limit=LIMIT):\n        return min(amount, limit)\n```\n\n### settings.py::accepts (lines 4-5; import with `from settings import accepts`)\n```python\ndef accepts(amount):\n    return amount <= LIMIT\n```\n\nSupplied diff context:\n```diff\ndiff --git a/settings.py b/settings.py\nindex 6a8ed7c..572bbe2 100644\n--- a/settings.py\n+++ b/settings.py\n@@ -1,4 +1,4 @@\n-LIMIT = 10\n+LIMIT = 7\n \n \n def accepts(amount):\n@@ -6,7 +6,7 @@ def accepts(amount):\n \n \n def ignored(amount):\n-    return amount + 5\n+    return amount + 6\n \n \n class Policy:\n\n```\n\nCurrent tests:\n\n```python path=tests/test_selected.py\nfrom settings import accepts, Policy\n\ndef test_selected_limit():\n    assert accepts(8) is True\n\ndef test_selected_default():\n    assert Policy.cap(20) == 7\n```\n\nFailure report:\n2 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 2 collected\n--- FAILED: test_selected_limit\nassert False is True\n +  where False = accepts(8)\ndef test_selected_limit():\n>       assert accepts(8) is True\nE       assert False is True\nE        +  where False = accepts(8)\n\ntests/test_selected.py:4: AssertionError"
+          }
+        ]
+      ]
+    ]
+  }
+]

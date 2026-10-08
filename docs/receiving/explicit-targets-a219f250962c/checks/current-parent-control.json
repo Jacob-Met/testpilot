@@ -1,0 +1,24 @@
+{
+  "canonical_baseline": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "scoped_baseline": "33a10cd5b756b8ade8768bd6f8da75f55da369c3",
+  "command": [
+    "/Users/me/testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "/Users/me/hamon-testpilot-explicit-targets-a219f250962c-receiving/current-parent-control-tmp",
+    "tests/test_recheck.py::test_configured_suite_and_fixtures_remain_part_of_result"
+  ],
+  "returncode": 1,
+  "same_preexisting_failure": true,
+  "source_sha256": {
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "tests/test_recheck.py": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760"
+  },
+  "log_sha256": "f85c73fa065e8ceadef1c940eb342c3f17f35c6711f4ed9d636f70ce627a453a"
+}

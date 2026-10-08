@@ -1,0 +1,174 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>TestPilot run review · passed</title><style>
+:root { color-scheme: light; --ink:#192d3b; --muted:#50616d; --line:#cbd5dc;
+  --paper:#fff; --wash:#f3f6f7; --accent:#155d68; --soft:#e8f2f1; }
+* { box-sizing:border-box; }
+html { scroll-padding-top:1.5rem; }
+body { margin:0; color:var(--ink); background:var(--wash);
+  font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+a { color:var(--accent); text-underline-offset:.2em; }
+a:hover { text-decoration-thickness:2px; }
+:focus-visible { outline:3px solid #aa5e00; outline-offset:4px; }
+.skip { position:absolute; top:-100px; left:1rem; background:white; padding:.6rem; }
+.skip:focus { top:1rem; z-index:1; }
+.shell { width:min(1120px,100%); margin:auto; padding:2.5rem 2rem 3.5rem; }
+.eyebrow { margin:0 0 .7rem; color:var(--accent); font-size:.8rem;
+  font-weight:750; letter-spacing:.15em; text-transform:uppercase; }
+h1 { font-size:clamp(2rem,5vw,3.25rem); line-height:1.1; margin:.2rem 0 1rem; }
+h2 { font-size:1.4rem; line-height:1.3; margin:0 0 1rem; }
+h3 { font-size:1.08rem; margin:1.4rem 0 .7rem; }
+p { margin:.7rem 0; }
+.lead { font-size:1.1rem; max-width:78ch; }
+.muted,.note { color:var(--muted); }
+.note { font-size:.9rem; }
+.status { display:inline-block; padding:.18rem .7rem; margin-bottom:.5rem;
+  border:1px solid var(--line); border-radius:999px; font-weight:700; }
+.passed { background:#e7f3ed; color:#175137; }
+.failed,.error { background:#fceeed; color:#882e24; }
+.suspected_code_bug,.budget_exhausted,.model_error,.no_tests { background:#fff0d6; color:#6c4509; }
+.actions { display:flex; gap:.7rem; flex-wrap:wrap; margin:1.4rem 0 .6rem; }
+.button { display:inline-block; padding:.65rem 1rem; border:1px solid var(--accent);
+  border-radius:.35rem; background:var(--paper); font-weight:650; text-decoration:none; }
+.button.primary { background:var(--accent); color:white; }
+nav { display:flex; gap:.6rem 1.2rem; flex-wrap:wrap; padding:1rem 0;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin:1.8rem 0; }
+.metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin:1.4rem 0; }
+.metric { background:var(--paper); border:1px solid var(--line); border-radius:.4rem; padding:1rem; }
+.metric dt { font-size:.85rem; color:var(--muted); }
+.metric dd { margin:0; font-weight:700; font-size:1.35rem; overflow-wrap:anywhere; }
+section { background:var(--paper); border:1px solid var(--line); border-radius:.5rem;
+  padding:1.5rem; margin:1.2rem 0; min-width:0; }
+.notice { border-left:4px solid var(--accent); background:var(--soft); padding:.7rem 1rem; }
+details { border:1px solid var(--line); border-radius:.35rem; margin:.65rem 0; min-width:0; }
+summary { padding:.75rem 1rem; cursor:pointer; font-weight:600; overflow-wrap:anywhere; }
+details[open] > summary { border-bottom:1px solid var(--line); background:var(--wash); }
+.detail-body { padding:.25rem 1rem .8rem; min-width:0; }
+.badge { display:inline-block; font-size:.76rem; margin-right:.4rem; padding:.05rem .4rem;
+  border:1px solid var(--line); border-radius:.2rem; font-weight:650; }
+code,pre { font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace; }
+code { overflow-wrap:anywhere; }
+pre { margin:.6rem 0; padding:1rem; border:1px solid var(--line); border-radius:.3rem;
+  background:#f7f9fa; line-height:1.5; font-size:.86rem; overflow:auto; max-width:100%;
+  tab-size:4; white-space:pre; }
+.prose { white-space:pre-wrap; overflow-wrap:anywhere; }
+.table-scroll { overflow-x:auto; max-width:100%; }
+table { width:100%; min-width:24rem; border-collapse:collapse; text-align:left; font-size:.9rem; }
+table.wide { min-width:46rem; }
+th,td { border-bottom:1px solid var(--line); padding:.6rem .7rem; vertical-align:top; overflow-wrap:anywhere; }
+th { color:var(--muted); font-weight:650; white-space:nowrap; }
+caption { text-align:left; padding:.3rem 0 .7rem; color:var(--muted); }
+.table-hint { display:none; }
+ol,ul { padding-left:1.4rem; }
+.cases { list-style:none; padding:0; }
+.case-label { color:var(--muted); font-size:.8rem; font-weight:400; }
+.rounds { padding-left:1.4rem; }
+.rounds > li { padding-left:.3rem; margin:1rem 0; }
+footer { margin-top:2rem; font-size:.9rem; color:var(--muted); }
+@media(max-width:620px) {
+  .shell { padding:1.5rem .8rem 2rem; }
+  section { padding:1rem; }
+  .metrics { grid-template-columns:1fr; gap:.5rem; }
+  .metric { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; padding:.65rem .8rem; }
+  .metric dd { font-size:1.1rem; }
+  summary { padding:.65rem .7rem; }
+  .detail-body { padding:.2rem .7rem .6rem; }
+  .table-hint { display:block; margin:.3rem 0 .7rem; }
+}
+@media print {
+  body { background:white; font-size:10pt; }
+  .shell { width:100%; padding:0; }
+  nav,.actions,.skip,.download-note { display:none; }
+  section,details,.metric { border-color:#aaa; box-shadow:none; }
+  section { break-inside:auto; }
+  h2,h3,summary { break-after:avoid; }
+  pre { white-space:pre-wrap; overflow-wrap:anywhere; overflow:visible; }
+  .table-scroll { overflow:visible; }
+  table,table.wide { min-width:0; font-size:8pt; }
+  th { white-space:normal; }
+  .table-hint { display:none; }
+  details::details-content { content-visibility:visible; }
+  details > :not(summary) { display:block !important; }
+  .metrics { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+</style></head><body><a class="skip" href="#result">Skip to test results</a><main class="shell"><header><p class="eyebrow">TestPilot / Run review</p><h1>Passed</h1><span class="status passed">passed</span><p class="lead">The runner reported a passing selected suite. Passing tests do not establish that the changed code is correct.</p><div class="actions"><a class="button primary" download="testpilot.patch" href="data:text/plain;charset=utf-8;base64,ZGlmZiAtLWdpdCBhL3Rlc3RzL3Rlc3Rfc2VsZWN0ZWQucHkgYi90ZXN0cy90ZXN0X3NlbGVjdGVkLnB5Cm5ldyBmaWxlIG1vZGUgMTAwNjQ0Ci0tLSAvZGV2L251bGwKKysrIGIvdGVzdHMvdGVzdF9zZWxlY3RlZC5weQpAQCAtMCwwICsxLDggQEAKK2Zyb20gc2V0dGluZ3MgaW1wb3J0IGFjY2VwdHMsIFBvbGljeQorCitkZWYgdGVzdF9zZWxlY3RlZF9saW1pdCgpOgorICAgIGFzc2VydCBhY2NlcHRzKDcpIGlzIFRydWUKKyAgICBhc3NlcnQgYWNjZXB0cyg4KSBpcyBGYWxzZQorCitkZWYgdGVzdF9zZWxlY3RlZF9kZWZhdWx0KCk6CisgICAgYXNzZXJ0IFBvbGljeS5jYXAoMjApID09IDcK">Download exact patch</a><a class="button" download="report.json" href="data:application/json;base64,ewogICJzdGF0dXMiOiAicGFzc2VkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNldHRpbmdzLnB5IiwKICAgICAgIm1vZHVsZSI6ICJzZXR0aW5ncyIsCiAgICAgICJxdWFsbmFtZSI6ICJQb2xpY3kuY2FwIiwKICAgICAgImxpbmVubyI6IDEzLAogICAgICAiZW5kX2xpbmVubyI6IDE1LAogICAgICAiY2hhbmdlZF9saW5lcyI6IFtdLAogICAgICAic291cmNlIjogIiAgICBAc3RhdGljbWV0aG9kXG4gICAgZGVmIGNhcChhbW91bnQsIGxpbWl0PUxJTUlUKTpcbiAgICAgICAgcmV0dXJuIG1pbihhbW91bnQsIGxpbWl0KSIsCiAgICAgICJpc19tZXRob2QiOiB0cnVlCiAgICB9LAogICAgewogICAgICAicGF0aCI6ICJzZXR0aW5ncy5weSIsCiAgICAgICJtb2R1bGUiOiAic2V0dGluZ3MiLAogICAgICAicXVhbG5hbWUiOiAiYWNjZXB0cyIsCiAgICAgICJsaW5lbm8iOiA0LAogICAgICAiZW5kX2xpbmVubyI6IDUsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogW10sCiAgICAgICJzb3VyY2UiOiAiZGVmIGFjY2VwdHMoYW1vdW50KTpcbiAgICByZXR1cm4gYW1vdW50IDw9IExJTUlUIiwKICAgICAgImlzX21ldGhvZCI6IGZhbHNlCiAgICB9CiAgXSwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMSwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJ0ZXN0X2ZpbGVzIjogewogICAgInRlc3RzL3Rlc3Rfc2VsZWN0ZWQucHkiOiAiZnJvbSBzZXR0aW5ncyBpbXBvcnQgYWNjZXB0cywgUG9saWN5XG5cbmRlZiB0ZXN0X3NlbGVjdGVkX2xpbWl0KCk6XG4gICAgYXNzZXJ0IGFjY2VwdHMoNykgaXMgVHJ1ZVxuICAgIGFzc2VydCBhY2NlcHRzKDgpIGlzIEZhbHNlXG5cbmRlZiB0ZXN0X3NlbGVjdGVkX2RlZmF1bHQoKTpcbiAgICBhc3NlcnQgUG9saWN5LmNhcCgyMCkgPT0gN1xuIgogIH0sCiAgInRlc3RzX3dyaXR0ZW4iOiAyLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMCwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJkdXJhdGlvbl9zIjogMC43MzYsCiAgICAidGltZW91dF9zIjogMTUuMCwKICAgICJvdXRwdXQiOiAiLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFsxMDAlXVxuMyBwYXNzZWQgaW4gMC4yOXNcbiIsCiAgICAiY2FzZXMiOiBbCiAgICAgIHsKICAgICAgICAibm9kZWlkIjogInRlc3RzLnRlc3RfZXhpc3Rpbmc6OnRlc3RfZXhpc3Rpbmdfc3RheXNfaW5fcnVuIiwKICAgICAgICAib3V0Y29tZSI6ICJwYXNzZWQiLAogICAgICAgICJtZXNzYWdlIjogIiIsCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogbnVsbAogICAgICB9LAogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0X3NlbGVjdGVkX2xpbWl0IiwKICAgICAgICAib3V0Y29tZSI6ICJwYXNzZWQiLAogICAgICAgICJtZXNzYWdlIjogIiIsCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogInRlc3RzL3Rlc3Rfc2VsZWN0ZWQucHkiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibm9kZWlkIjogInRlc3Rfc2VsZWN0ZWRfZGVmYXVsdCIsCiAgICAgICAgIm91dGNvbWUiOiAicGFzc2VkIiwKICAgICAgICAibWVzc2FnZSI6ICIiLAogICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6ICJ0ZXN0cy90ZXN0X3NlbGVjdGVkLnB5IgogICAgICB9CiAgICBdLAogICAgImNvdmVyYWdlIjogewogICAgICAicGVyY2VudF90b3RhbCI6IDEwMC4wLAogICAgICAiZmlsZXMiOiB7CiAgICAgICAgInNldHRpbmdzLnB5IjogewogICAgICAgICAgImV4ZWN1dGVkIjogWwogICAgICAgICAgICAxLAogICAgICAgICAgICA0LAogICAgICAgICAgICA1LAogICAgICAgICAgICA4LAogICAgICAgICAgICA5LAogICAgICAgICAgICAxMiwKICAgICAgICAgICAgMTMsCiAgICAgICAgICAgIDE0LAogICAgICAgICAgICAxNQogICAgICAgICAgXSwKICAgICAgICAgICJtaXNzaW5nIjogW10KICAgICAgICB9CiAgICAgIH0KICAgIH0sCiAgICAiZ2VuZXJhdGVkX2ZpbGVzIjogWwogICAgICAidGVzdHMvdGVzdF9zZWxlY3RlZC5weSIKICAgIF0sCiAgICAianVuaXRfYXZhaWxhYmxlIjogdHJ1ZSwKICAgICJwYXNzZWQiOiAzLAogICAgImZhaWxlZCI6IDAsCiAgICAiZXJyb3JzIjogMCwKICAgICJza2lwcGVkIjogMCwKICAgICJvayI6IHRydWUsCiAgICAic3VtbWFyeSI6ICIzIHBhc3NlZCwgMCBmYWlsZWQsIDAgZXJyb3JzLCAwIHNraXBwZWQgKHJjPTApOyBnZW5lcmF0ZWQ6IDIgcGFzc2VkIG9mIDIgY29sbGVjdGVkIiwKICAgICJnZW5lcmF0ZWQiOiB7CiAgICAgICJjb2xsZWN0ZWQiOiAyLAogICAgICAicGFzc2VkIjogMiwKICAgICAgImZhaWxlZCI6IDAsCiAgICAgICJlcnJvciI6IDAsCiAgICAgICJza2lwcGVkIjogMAogICAgfQogIH0sCiAgInBhdGNoIjogImRpZmYgLS1naXQgYS90ZXN0cy90ZXN0X3NlbGVjdGVkLnB5IGIvdGVzdHMvdGVzdF9zZWxlY3RlZC5weVxubmV3IGZpbGUgbW9kZSAxMDA2NDRcbi0tLSAvZGV2L251bGxcbisrKyBiL3Rlc3RzL3Rlc3Rfc2VsZWN0ZWQucHlcbkBAIC0wLDAgKzEsOCBAQFxuK2Zyb20gc2V0dGluZ3MgaW1wb3J0IGFjY2VwdHMsIFBvbGljeVxuK1xuK2RlZiB0ZXN0X3NlbGVjdGVkX2xpbWl0KCk6XG4rICAgIGFzc2VydCBhY2NlcHRzKDcpIGlzIFRydWVcbisgICAgYXNzZXJ0IGFjY2VwdHMoOCkgaXMgRmFsc2VcbitcbitkZWYgdGVzdF9zZWxlY3RlZF9kZWZhdWx0KCk6XG4rICAgIGFzc2VydCBQb2xpY3kuY2FwKDIwKSA9PSA3XG4iLAogICJjb3ZlcmFnZSI6IHsKICAgICJ0b3RhbF9iZWZvcmUiOiA3Ny44LAogICAgInRvdGFsX2FmdGVyIjogMTAwLjAsCiAgICAidG90YWxfZGVsdGEiOiAyMi4yLAogICAgImNoYW5nZWRfbGluZXNfZXhlY3V0YWJsZSI6IDAsCiAgICAiY2hhbmdlZF9saW5lc19iZWZvcmUiOiBudWxsLAogICAgImNoYW5nZWRfbGluZXNfYWZ0ZXIiOiBudWxsCiAgfSwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDExOTksCiAgICAidG90YWxfY29zdF91c2QiOiAwLjAsCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLAogICAgInRva2Vuc19lc3RpbWF0ZWQiOiB0cnVlLAogICAgImJ5X21vZGVsIjogewogICAgICAibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiIjogewogICAgICAgICJjYWxscyI6IDEsCiAgICAgICAgInByb21wdF90b2tlbnMiOiAyNjUsCiAgICAgICAgImNvbXBsZXRpb25fdG9rZW5zIjogMTUsCiAgICAgICAgImNvc3RfdXNkIjogMC4wCiAgICAgIH0sCiAgICAgICJudmlkaWEvTmVtb3Ryb24tM181LUxpZ2h0bmluZyI6IHsKICAgICAgICAiY2FsbHMiOiAyLAogICAgICAgICJwcm9tcHRfdG9rZW5zIjogODExLAogICAgICAgICJjb21wbGV0aW9uX3Rva2VucyI6IDEwOCwKICAgICAgICAiY29zdF91c2QiOiAwLjAKICAgICAgfQogICAgfSwKICAgICJlbnRyaWVzIjogWwogICAgICB7CiAgICAgICAgInJvbGUiOiAicGxhbm5lciIsCiAgICAgICAgIm1vZGVsIjogIm52aWRpYS9uZW1vdHJvbi0zLXN1cGVyLTEyMGItYTEyYiIsCiAgICAgICAgInByb21wdF90b2tlbnMiOiAyNjUsCiAgICAgICAgImNvbXBsZXRpb25fdG9rZW5zIjogMTUsCiAgICAgICAgImVzdGltYXRlZCI6IHRydWUsCiAgICAgICAgImNvc3RfdXNkIjogMC4wCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicm9sZSI6ICJlZGl0b3IiLAogICAgICAgICJtb2RlbCI6ICJudmlkaWEvTmVtb3Ryb24tM181LUxpZ2h0bmluZyIsCiAgICAgICAgInByb21wdF90b2tlbnMiOiAzMzIsCiAgICAgICAgImNvbXBsZXRpb25fdG9rZW5zIjogNTAsCiAgICAgICAgImVzdGltYXRlZCI6IHRydWUsCiAgICAgICAgImNvc3RfdXNkIjogMC4wCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicm9sZSI6ICJyZXBhaXIiLAogICAgICAgICJtb2RlbCI6ICJudmlkaWEvTmVtb3Ryb24tM181LUxpZ2h0bmluZyIsCiAgICAgICAgInByb21wdF90b2tlbnMiOiA0NzksCiAgICAgICAgImNvbXBsZXRpb25fdG9rZW5zIjogNTgsCiAgICAgICAgImVzdGltYXRlZCI6IHRydWUsCiAgICAgICAgImNvc3RfdXNkIjogMC4wCiAgICAgIH0KICAgIF0KICB9LAogICJyb3VuZHMiOiBbCiAgICB7CiAgICAgICJyb3VuZCI6IDAsCiAgICAgICJraW5kIjogImdlbmVyYXRlIiwKICAgICAgImZpbGVzIjogWwogICAgICAgICJ0ZXN0cy90ZXN0X3NlbGVjdGVkLnB5IgogICAgICBdLAogICAgICAicmVzdWx0IjogewogICAgICAgICJyZXR1cm5jb2RlIjogMSwKICAgICAgICAidGltZWRfb3V0IjogZmFsc2UsCiAgICAgICAgImR1cmF0aW9uX3MiOiAwLjYxOSwKICAgICAgICAidGltZW91dF9zIjogMTUuMCwKICAgICAgICAib3V0cHV0IjogIi5GLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBbMTAwJV1cbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IEZBSUxVUkVTID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5fX19fX19fX19fX19fX19fX19fX19fX19fX19fXyB0ZXN0X3NlbGVjdGVkX2xpbWl0IF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX1xuXG4gICAgZGVmIHRlc3Rfc2VsZWN0ZWRfbGltaXQoKTpcbj4gICAgICAgYXNzZXJ0IGFjY2VwdHMoOCkgaXMgVHJ1ZVxuRSAgICAgICBhc3NlcnQgRmFsc2UgaXMgVHJ1ZVxuRSAgICAgICAgKyAgd2hlcmUgRmFsc2UgPSBhY2NlcHRzKDgpXG5cbnRlc3RzL3Rlc3Rfc2VsZWN0ZWQucHk6NDogQXNzZXJ0aW9uRXJyb3Jcbj09PT09PT09PT09PT09PT09PT09PT09PT09PSBzaG9ydCB0ZXN0IHN1bW1hcnkgaW5mbyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5GQUlMRUQgLi4vLi4vLi4vLi4vdG1wL3Rlc3RwaWxvdC1fMDd1Zmd3eS9yZXBvOjp0ZXN0X3NlbGVjdGVkX2xpbWl0IC0gYXNzZXJ0IC4uLlxuMSBmYWlsZWQsIDIgcGFzc2VkIGluIDAuMjlzXG4iLAogICAgICAgICJjYXNlcyI6IFsKICAgICAgICAgIHsKICAgICAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy50ZXN0X2V4aXN0aW5nOjp0ZXN0X2V4aXN0aW5nX3N0YXlzX2luX3J1biIsCiAgICAgICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsCiAgICAgICAgICAgICJtZXNzYWdlIjogIiIsCiAgICAgICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6IG51bGwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJub2RlaWQiOiAidGVzdF9zZWxlY3RlZF9saW1pdCIsCiAgICAgICAgICAgICJvdXRjb21lIjogImZhaWxlZCIsCiAgICAgICAgICAgICJtZXNzYWdlIjogImFzc2VydCBGYWxzZSBpcyBUcnVlXG4gKyAgd2hlcmUgRmFsc2UgPSBhY2NlcHRzKDgpXG5kZWYgdGVzdF9zZWxlY3RlZF9saW1pdCgpOlxuPiAgICAgICBhc3NlcnQgYWNjZXB0cyg4KSBpcyBUcnVlXG5FICAgICAgIGFzc2VydCBGYWxzZSBpcyBUcnVlXG5FICAgICAgICArICB3aGVyZSBGYWxzZSA9IGFjY2VwdHMoOClcblxudGVzdHMvdGVzdF9zZWxlY3RlZC5weTo0OiBBc3NlcnRpb25FcnJvciIsCiAgICAgICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6ICJ0ZXN0cy90ZXN0X3NlbGVjdGVkLnB5IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0X3NlbGVjdGVkX2RlZmF1bHQiLAogICAgICAgICAgICAib3V0Y29tZSI6ICJwYXNzZWQiLAogICAgICAgICAgICAibWVzc2FnZSI6ICIiLAogICAgICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiAidGVzdHMvdGVzdF9zZWxlY3RlZC5weSIKICAgICAgICAgIH0KICAgICAgICBdLAogICAgICAgICJjb3ZlcmFnZSI6IHsKICAgICAgICAgICJwZXJjZW50X3RvdGFsIjogMTAwLjAsCiAgICAgICAgICAiZmlsZXMiOiB7CiAgICAgICAgICAgICJzZXR0aW5ncy5weSI6IHsKICAgICAgICAgICAgICAiZXhlY3V0ZWQiOiBbCiAgICAgICAgICAgICAgICAxLAogICAgICAgICAgICAgICAgNCwKICAgICAgICAgICAgICAgIDUsCiAgICAgICAgICAgICAgICA4LAogICAgICAgICAgICAgICAgOSwKICAgICAgICAgICAgICAgIDEyLAogICAgICAgICAgICAgICAgMTMsCiAgICAgICAgICAgICAgICAxNCwKICAgICAgICAgICAgICAgIDE1CiAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAibWlzc2luZyI6IFtdCiAgICAgICAgICAgIH0KICAgICAgICAgIH0KICAgICAgICB9LAogICAgICAgICJnZW5lcmF0ZWRfZmlsZXMiOiBbCiAgICAgICAgICAidGVzdHMvdGVzdF9zZWxlY3RlZC5weSIKICAgICAgICBdLAogICAgICAgICJqdW5pdF9hdmFpbGFibGUiOiB0cnVlLAogICAgICAgICJwYXNzZWQiOiAyLAogICAgICAgICJmYWlsZWQiOiAxLAogICAgICAgICJlcnJvcnMiOiAwLAogICAgICAgICJza2lwcGVkIjogMCwKICAgICAgICAib2siOiBmYWxzZSwKICAgICAgICAic3VtbWFyeSI6ICIyIHBhc3NlZCwgMSBmYWlsZWQsIDAgZXJyb3JzLCAwIHNraXBwZWQgKHJjPTEpOyBnZW5lcmF0ZWQ6IDEgcGFzc2VkIG9mIDIgY29sbGVjdGVkIiwKICAgICAgICAiZ2VuZXJhdGVkIjogewogICAgICAgICAgImNvbGxlY3RlZCI6IDIsCiAgICAgICAgICAicGFzc2VkIjogMSwKICAgICAgICAgICJmYWlsZWQiOiAxLAogICAgICAgICAgImVycm9yIjogMCwKICAgICAgICAgICJza2lwcGVkIjogMAogICAgICAgIH0KICAgICAgfSwKICAgICAgIndhcm5pbmdzIjogW10sCiAgICAgICJjb250ZW50cyI6IHsKICAgICAgICAidGVzdHMvdGVzdF9zZWxlY3RlZC5weSI6ICJmcm9tIHNldHRpbmdzIGltcG9ydCBhY2NlcHRzLCBQb2xpY3lcblxuZGVmIHRlc3Rfc2VsZWN0ZWRfbGltaXQoKTpcbiAgICBhc3NlcnQgYWNjZXB0cyg4KSBpcyBUcnVlXG5cbmRlZiB0ZXN0X3NlbGVjdGVkX2RlZmF1bHQoKTpcbiAgICBhc3NlcnQgUG9saWN5LmNhcCgyMCkgPT0gN1xuIgogICAgICB9CiAgICB9LAogICAgewogICAgICAicm91bmQiOiAxLAogICAgICAia2luZCI6ICJyZXBhaXIiLAogICAgICAiZmlsZXMiOiBbCiAgICAgICAgInRlc3RzL3Rlc3Rfc2VsZWN0ZWQucHkiCiAgICAgIF0sCiAgICAgICJyZXN1bHQiOiB7CiAgICAgICAgInJldHVybmNvZGUiOiAwLAogICAgICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICAgICAiZHVyYXRpb25fcyI6IDAuNzM2LAogICAgICAgICJ0aW1lb3V0X3MiOiAxNS4wLAogICAgICAgICJvdXRwdXQiOiAiLi4uICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFsxMDAlXVxuMyBwYXNzZWQgaW4gMC4yOXNcbiIsCiAgICAgICAgImNhc2VzIjogWwogICAgICAgICAgewogICAgICAgICAgICAibm9kZWlkIjogInRlc3RzLnRlc3RfZXhpc3Rpbmc6OnRlc3RfZXhpc3Rpbmdfc3RheXNfaW5fcnVuIiwKICAgICAgICAgICAgIm91dGNvbWUiOiAicGFzc2VkIiwKICAgICAgICAgICAgIm1lc3NhZ2UiOiAiIiwKICAgICAgICAgICAgImdlbmVyYXRlZF9maWxlIjogbnVsbAogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0X3NlbGVjdGVkX2xpbWl0IiwKICAgICAgICAgICAgIm91dGNvbWUiOiAicGFzc2VkIiwKICAgICAgICAgICAgIm1lc3NhZ2UiOiAiIiwKICAgICAgICAgICAgImdlbmVyYXRlZF9maWxlIjogInRlc3RzL3Rlc3Rfc2VsZWN0ZWQucHkiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAibm9kZWlkIjogInRlc3Rfc2VsZWN0ZWRfZGVmYXVsdCIsCiAgICAgICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsCiAgICAgICAgICAgICJtZXNzYWdlIjogIiIsCiAgICAgICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6ICJ0ZXN0cy90ZXN0X3NlbGVjdGVkLnB5IgogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNvdmVyYWdlIjogewogICAgICAgICAgInBlcmNlbnRfdG90YWwiOiAxMDAuMCwKICAgICAgICAgICJmaWxlcyI6IHsKICAgICAgICAgICAgInNldHRpbmdzLnB5IjogewogICAgICAgICAgICAgICJleGVjdXRlZCI6IFsKICAgICAgICAgICAgICAgIDEsCiAgICAgICAgICAgICAgICA0LAogICAgICAgICAgICAgICAgNSwKICAgICAgICAgICAgICAgIDgsCiAgICAgICAgICAgICAgICA5LAogICAgICAgICAgICAgICAgMTIsCiAgICAgICAgICAgICAgICAxMywKICAgICAgICAgICAgICAgIDE0LAogICAgICAgICAgICAgICAgMTUKICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICJtaXNzaW5nIjogW10KICAgICAgICAgICAgfQogICAgICAgICAgfQogICAgICAgIH0sCiAgICAgICAgImdlbmVyYXRlZF9maWxlcyI6IFsKICAgICAgICAgICJ0ZXN0cy90ZXN0X3NlbGVjdGVkLnB5IgogICAgICAgIF0sCiAgICAgICAgImp1bml0X2F2YWlsYWJsZSI6IHRydWUsCiAgICAgICAgInBhc3NlZCI6IDMsCiAgICAgICAgImZhaWxlZCI6IDAsCiAgICAgICAgImVycm9ycyI6IDAsCiAgICAgICAgInNraXBwZWQiOiAwLAogICAgICAgICJvayI6IHRydWUsCiAgICAgICAgInN1bW1hcnkiOiAiMyBwYXNzZWQsIDAgZmFpbGVkLCAwIGVycm9ycywgMCBza2lwcGVkIChyYz0wKTsgZ2VuZXJhdGVkOiAyIHBhc3NlZCBvZiAyIGNvbGxlY3RlZCIsCiAgICAgICAgImdlbmVyYXRlZCI6IHsKICAgICAgICAgICJjb2xsZWN0ZWQiOiAyLAogICAgICAgICAgInBhc3NlZCI6IDIsCiAgICAgICAgICAiZmFpbGVkIjogMCwKICAgICAgICAgICJlcnJvciI6IDAsCiAgICAgICAgICAic2tpcHBlZCI6IDAKICAgICAgICB9CiAgICAgIH0sCiAgICAgICJ3YXJuaW5ncyI6IFtdLAogICAgICAiY29udGVudHMiOiB7CiAgICAgICAgInRlc3RzL3Rlc3Rfc2VsZWN0ZWQucHkiOiAiZnJvbSBzZXR0aW5ncyBpbXBvcnQgYWNjZXB0cywgUG9saWN5XG5cbmRlZiB0ZXN0X3NlbGVjdGVkX2xpbWl0KCk6XG4gICAgYXNzZXJ0IGFjY2VwdHMoNykgaXMgVHJ1ZVxuICAgIGFzc2VydCBhY2NlcHRzKDgpIGlzIEZhbHNlXG5cbmRlZiB0ZXN0X3NlbGVjdGVkX2RlZmF1bHQoKTpcbiAgICBhc3NlcnQgUG9saWN5LmNhcCgyMCkgPT0gN1xuIgogICAgICB9CiAgICB9CiAgXSwKICAicGxhbiI6ICJQaW4gb25seSB0aGUgY2FsbGVyLXNlbGVjdGVkIGJvdW5kYXJ5IGFuZCBjYXB0dXJlZCBkZWZhdWx0LiIsCiAgIm1lc3NhZ2UiOiAiIiwKICAic2VsZWN0aW9uIjogewogICAgIm1vZGUiOiAiZXhwbGljaXQiLAogICAgInJlcXVlc3RlZCI6IFsKICAgICAgInNldHRpbmdzLnB5OjpQb2xpY3kuY2FwIiwKICAgICAgInNldHRpbmdzLnB5OjphY2NlcHRzIiwKICAgICAgInNldHRpbmdzLnB5OjpQb2xpY3kuY2FwIgogICAgXSwKICAgICJyZWFzb24iOiAiQ2FsbGVyIHNlbGVjdGVkIHRoZXNlIHRhcmdldHM7IG5vIGRlcGVuZGVuY3kgaW5mZXJlbmNlIHdhcyBwZXJmb3JtZWQuIiwKICAgICJkaWZmX3RleHQiOiAiZGlmZiAtLWdpdCBhL3NldHRpbmdzLnB5IGIvc2V0dGluZ3MucHlcbmluZGV4IDZhOGVkN2MuLjU3MmJiZTIgMTAwNjQ0XG4tLS0gYS9zZXR0aW5ncy5weVxuKysrIGIvc2V0dGluZ3MucHlcbkBAIC0xLDQgKzEsNCBAQFxuLUxJTUlUID0gMTBcbitMSU1JVCA9IDdcbiBcbiBcbiBkZWYgYWNjZXB0cyhhbW91bnQpOlxuQEAgLTYsNyArNiw3IEBAIGRlZiBhY2NlcHRzKGFtb3VudCk6XG4gXG4gXG4gZGVmIGlnbm9yZWQoYW1vdW50KTpcbi0gICAgcmV0dXJuIGFtb3VudCArIDVcbisgICAgcmV0dXJuIGFtb3VudCArIDZcbiBcbiBcbiBjbGFzcyBQb2xpY3k6XG4iCiAgfSwKICAib2siOiB0cnVlCn0=">Download report JSON</a></div><p class="note download-note">Both downloads are embedded in this file. Opening, reviewing or downloading does not run tests or apply the patch.</p></header><dl class="metrics"><div class="metric"><dt>Generated cases passed / collected</dt><dd>2 / 2</dd></div><div class="metric"><dt>Repair rounds used / limit</dt><dd>1 / 1</dd></div><div class="metric"><dt>Tokens · estimated</dt><dd>1199</dd></div></dl><nav aria-label="Report sections"><a href="#result">Test results</a><a href="#tests">Generated files</a><a href="#rounds">Repair history</a><a href="#scope">Plan and scope</a><a href="#coverage">Coverage</a><a href="#ledger">Model ledger</a><a href="#patch">Patch</a></nav><section id="result" aria-labelledby="result-heading"><h2 id="result-heading">Final recorded result</h2><p class="prose"><strong>3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected</strong></p><p class="note">Return code: 0 · Duration: 0.736 s · Timeout: no</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded selected-suite case counts"><table><caption>Recorded selected-suite case counts</caption><thead><tr><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>3</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded generated-case counts"><table><caption>Recorded generated-case counts</caption><thead><tr><th scope="col">Collected</th><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>2</td><td>2</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><h3>Recorded test cases</h3><ol class="cases"><li><details><summary><span class="badge passed">passed</span> <code>tests.test_existing::test_existing_stays_in_run</code> <span class="case-label">Other selected test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>test_selected_limit</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>test_selected_default</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li></ol><details><summary>Recorded pytest output</summary><div class="detail-body"><p class="note">The runner retains the last 3,000 characters in its report. This is the recorded tail, not a complete process log.</p><pre tabindex="0"><code>...                                                                      [100%]
+3 passed in 0.29s
+</code></pre></div></details></section><section id="tests" aria-labelledby="tests-heading"><h2 id="tests-heading">Final generated files</h2><p class="note">Reported authored-test count: 2. This count is separate from verified generated-case execution above.</p><details><summary><code>tests/test_selected.py</code></summary><div class="detail-body"><pre tabindex="0"><code>from settings import accepts, Policy
+
+def test_selected_limit():
+    assert accepts(7) is True
+    assert accepts(8) is False
+
+def test_selected_default():
+    assert Policy.cap(20) == 7
+</code></pre></div></details></section><section id="rounds" aria-labelledby="rounds-heading"><h2 id="rounds-heading">Repair history</h2><p class="note">Each round keeps its recorded source snapshot and result. A model response without a new run does not add an execution.</p><ol class="rounds"><li><details><summary>Round 0 · generate</summary><div class="detail-body"><h3>Tests at this round</h3><details><summary><code>tests/test_selected.py</code></summary><div class="detail-body"><pre tabindex="0"><code>from settings import accepts, Policy
+
+def test_selected_limit():
+    assert accepts(8) is True
+
+def test_selected_default():
+    assert Policy.cap(20) == 7
+</code></pre></div></details><p class="prose"><strong>2 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 2 collected</strong></p><p class="note">Return code: 1 · Duration: 0.619 s · Timeout: no</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded selected-suite case counts"><table><caption>Recorded selected-suite case counts</caption><thead><tr><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>2</td><td>1</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded generated-case counts"><table><caption>Recorded generated-case counts</caption><thead><tr><th scope="col">Collected</th><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>2</td><td>1</td><td>1</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><h3>Recorded test cases</h3><ol class="cases"><li><details><summary><span class="badge passed">passed</span> <code>tests.test_existing::test_existing_stays_in_run</code> <span class="case-label">Other selected test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details open><summary><span class="badge failed">failed</span> <code>test_selected_limit</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><pre tabindex="0"><code>assert False is True
+ +  where False = accepts(8)
+def test_selected_limit():
+&gt;       assert accepts(8) is True
+E       assert False is True
+E        +  where False = accepts(8)
+
+tests/test_selected.py:4: AssertionError</code></pre></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>test_selected_default</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li></ol><details><summary>Recorded pytest output</summary><div class="detail-body"><p class="note">The runner retains the last 3,000 characters in its report. This is the recorded tail, not a complete process log.</p><pre tabindex="0"><code>.F.                                                                      [100%]
+=================================== FAILURES ===================================
+_____________________________ test_selected_limit ______________________________
+
+    def test_selected_limit():
+&gt;       assert accepts(8) is True
+E       assert False is True
+E        +  where False = accepts(8)
+
+tests/test_selected.py:4: AssertionError
+=========================== short test summary info ============================
+FAILED ../../../../tmp/testpilot-_07ufgwy/repo::test_selected_limit - assert ...
+1 failed, 2 passed in 0.29s
+</code></pre></div></details></div></details></li><li><details><summary>Round 1 · repair</summary><div class="detail-body"><h3>Tests at this round</h3><details><summary><code>tests/test_selected.py</code></summary><div class="detail-body"><pre tabindex="0"><code>from settings import accepts, Policy
+
+def test_selected_limit():
+    assert accepts(7) is True
+    assert accepts(8) is False
+
+def test_selected_default():
+    assert Policy.cap(20) == 7
+</code></pre></div></details><p class="prose"><strong>3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected</strong></p><p class="note">Return code: 0 · Duration: 0.736 s · Timeout: no</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded selected-suite case counts"><table><caption>Recorded selected-suite case counts</caption><thead><tr><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>3</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded generated-case counts"><table><caption>Recorded generated-case counts</caption><thead><tr><th scope="col">Collected</th><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>2</td><td>2</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><h3>Recorded test cases</h3><ol class="cases"><li><details><summary><span class="badge passed">passed</span> <code>tests.test_existing::test_existing_stays_in_run</code> <span class="case-label">Other selected test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>test_selected_limit</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>test_selected_default</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li></ol><details><summary>Recorded pytest output</summary><div class="detail-body"><p class="note">The runner retains the last 3,000 characters in its report. This is the recorded tail, not a complete process log.</p><pre tabindex="0"><code>...                                                                      [100%]
+3 passed in 0.29s
+</code></pre></div></details></div></details></li></ol></section><section id="scope" aria-labelledby="scope-heading"><h2 id="scope-heading">Plan and selected source</h2><p class="notice">Caller selected these targets; no dependency inference was performed.</p><details><summary>Supplied diff context</summary><div class="detail-body"><pre tabindex="0"><code>diff --git a/settings.py b/settings.py
+index 6a8ed7c..572bbe2 100644
+--- a/settings.py
++++ b/settings.py
+@@ -1,4 +1,4 @@
+-LIMIT = 10
++LIMIT = 7
+ 
+ 
+ def accepts(amount):
+@@ -6,7 +6,7 @@ def accepts(amount):
+ 
+ 
+ def ignored(amount):
+-    return amount + 5
++    return amount + 6
+ 
+ 
+ class Policy:
+</code></pre></div></details><h3>Model test plan</h3><pre tabindex="0"><code>Pin only the caller-selected boundary and captured default.</code></pre><details><summary><code>settings.py::Policy.cap</code> <span class="case-label">lines 13–15</span></summary><div class="detail-body"><pre tabindex="0"><code>    @staticmethod
+    def cap(amount, limit=LIMIT):
+        return min(amount, limit)</code></pre></div></details><details><summary><code>settings.py::accepts</code> <span class="case-label">lines 4–5</span></summary><div class="detail-body"><pre tabindex="0"><code>def accepts(amount):
+    return amount &lt;= LIMIT</code></pre></div></details></section><section id="coverage" aria-labelledby="coverage-heading"><h2 id="coverage-heading">Coverage</h2><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded coverage comparison"><table><caption>Recorded coverage comparison</caption><thead><tr><th scope="col">Measurement</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Total coverage (%)</td><td>77.8</td><td>100.0</td></tr><tr><td>Changed executable lines (%)</td><td>—</td><td>—</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><p class="note">Total change: 22.2 percentage points · Changed executable lines: 0. Coverage measures executed lines, not assertion quality.</p></section><section id="ledger" aria-labelledby="ledger-heading"><h2 id="ledger-heading">Model and token ledger</h2><p>Token counts are estimated from text length.</p><p class="notice">Cost is unpriced or incomplete. The recorded subtotal ($0.0 USD) does not establish the full cost.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Calls in recorded order"><table class="wide"><caption>Calls in recorded order</caption><thead><tr><th scope="col">Call</th><th scope="col">Role</th><th scope="col">Model</th><th scope="col">Prompt tokens</th><th scope="col">Completion tokens</th><th scope="col">Token source</th><th scope="col">Recorded cost (USD)</th></tr></thead><tbody><tr><td>1</td><td>planner</td><td>nvidia/nemotron-3-super-120b-a12b</td><td>265</td><td>15</td><td>estimated</td><td>0.0</td></tr><tr><td>2</td><td>editor</td><td>nvidia/Nemotron-3_5-Lightning</td><td>332</td><td>50</td><td>estimated</td><td>0.0</td></tr><tr><td>3</td><td>repair</td><td>nvidia/Nemotron-3_5-Lightning</td><td>479</td><td>58</td><td>estimated</td><td>0.0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p></section><section id="patch" aria-labelledby="patch-heading"><h2 id="patch-heading">Exact recorded patch</h2><pre tabindex="0"><code>diff --git a/tests/test_selected.py b/tests/test_selected.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_selected.py
+@@ -0,0 +1,8 @@
++from settings import accepts, Policy
++
++def test_selected_limit():
++    assert accepts(7) is True
++    assert accepts(8) is False
++
++def test_selected_default():
++    assert Policy.cap(20) == 7
+</code></pre></section><footer><p>This file reviews the recorded TestPilot result. It does not rerun the repository, verify a model diagnosis, or change any source. Text is displayed literally; HTML-incompatible controls and surrogate characters use visible escapes. Embedded downloads retain the original artifact bytes.</p><p>Use your browser’s Print command to print the report. No scripts, remote resources, storage or account are required.</p></footer></main></body></html>

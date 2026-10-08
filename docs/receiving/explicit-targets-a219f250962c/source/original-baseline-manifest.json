@@ -1,0 +1,131 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "canonical_commit": "e2285d68b2ea5eb2158c0a7e0d936ce5d56f8ff5",
+  "canonical_tree": "22da6a890c2befaf72d3826103538491b07793df",
+  "form": "Scoped materialization of exact current native source plus selected existing regression tests; not a complete canonical checkout",
+  "files": [
+    {
+      "path": "testpilot/__main__.py",
+      "git_blob": "6f149f5484cf7369f4f9569170cd450279c40994",
+      "size": 5275,
+      "sha256": "83caf8df097902120a0cfbd6adb897d5b6be7ba2407b0217606e7038599b5a5f"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "size": 9396,
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "git_blob": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "size": 24064,
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "size": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "path": "testpilot/model.py",
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "size": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "git_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "size": 11877,
+      "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "size": 20656,
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "size": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "path": "tests/conftest.py",
+      "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+      "size": 144,
+      "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52"
+    },
+    {
+      "path": "tests/test_cli_diff_transport.py",
+      "git_blob": "25017791488cf8dd3c7f95b9460d73d691ce8a06",
+      "size": 11507,
+      "sha256": "5748cd3aafbd5aa032b98d531a9091d4a91becdce187a514dafffcc271173bab"
+    },
+    {
+      "path": "tests/test_cli_targets.py",
+      "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e",
+      "size": 10853,
+      "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082"
+    },
+    {
+      "path": "tests/test_diff_source_boundary.py",
+      "git_blob": "74f9ca4d4a31b9ca447f362ac3cbf594333d560f",
+      "size": 5521,
+      "sha256": "f8442bb2e26a4cbdfa7b6320627c780a83264675959ddc6339bc88b57a6faec2"
+    },
+    {
+      "path": "tests/test_fenced_code_boundaries.py",
+      "git_blob": "54c798f49b690d6365ec4de9b0ae78f9d99cd960",
+      "size": 2990,
+      "sha256": "edff7f6dec6c754cdbd03efee84b342103bb1c43a8b614333e1ca83e75bfd91c"
+    },
+    {
+      "path": "tests/test_html_report.py",
+      "git_blob": "655c4ce97b5ffbd2fe81f5b602a2ca12388c27b7",
+      "size": 9811,
+      "sha256": "bb2d6b66ecf929ee6340ae6f39875a07e64dd8c5af2053944b16ad93aa7d6f5c"
+    },
+    {
+      "path": "tests/test_loop.py",
+      "git_blob": "8540b31caf7c258e9345e62d11cd4796c5e92ba5",
+      "size": 5465,
+      "sha256": "efcf833870d9fb407d324c48d8421d587089407b4b1db9f7ba24fad7c2ed67dc"
+    },
+    {
+      "path": "tests/test_patch_physical_lines.py",
+      "git_blob": "f5a9ff15106d39c953cda3f783f64362634f7ad1",
+      "size": 3085,
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b"
+    },
+    {
+      "path": "tests/test_python_source_encoding.py",
+      "git_blob": "903abd6db569a80e3a5a61d734bf376c0ac4c8dd",
+      "size": 5598,
+      "sha256": "85196e144916098af0fe677f01382eeb48c6f175008c76446756c438ee741b89"
+    },
+    {
+      "path": "tests/test_report_text_encoding.py",
+      "git_blob": "44e7622672361ffad936e462b0996816c55d2ddd",
+      "size": 9330,
+      "sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "size": 11550,
+      "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "size": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    }
+  ],
+  "scoped_commit": "a67abc30301dbcb357e866de749502045e5e40fd",
+  "scoped_tree": "dc3e2218810a72c293c22a3507b1a03db14461dc",
+  "bytes": 161306
+}
