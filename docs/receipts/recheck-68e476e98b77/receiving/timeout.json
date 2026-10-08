@@ -1,0 +1,53 @@
+{
+  "schema": "testpilot.recheck/1",
+  "status": "failed",
+  "ok": false,
+  "repo": "/home/jacob/testpilot-recheck-68e476e98b77/receiving-fixtures-r1/fixed",
+  "python": "/usr/bin/python3",
+  "started_at": "2026-10-08T13:16:17.988808+00:00",
+  "finished_at": "2026-10-08T13:16:18.199112+00:00",
+  "source_report": {
+    "path": "/home/jacob/testpilot-recheck-68e476e98b77/evidence/consumer-r1/timeout-report.json",
+    "sha256": "934a6c38f4bc586969b61067fa6386d960492140316eb2ebf85b9c302e162d88",
+    "recorded_status": null
+  },
+  "test_files": {
+    "tests/test_retained_timeout.py": "import time\ndef test_wait():\n    time.sleep(30)\n"
+  },
+  "retained_tests": [
+    {
+      "path": "tests/test_retained_timeout.py",
+      "bytes": 48,
+      "sha256": "7b7d9f892396b1ab561caf09cde0bd214d704bad255035c32a5f47d8ae7f1db1",
+      "placement": "temporary"
+    }
+  ],
+  "final": {
+    "returncode": null,
+    "timed_out": true,
+    "duration_s": 0.205,
+    "timeout_s": 0.2,
+    "output": "",
+    "cases": [],
+    "coverage": null,
+    "generated_files": [
+      "tests/test_retained_timeout.py"
+    ],
+    "junit_available": false,
+    "passed": 0,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "TIMEOUT after 0.2s",
+    "generated": {
+      "collected": 0,
+      "passed": 0,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "model_calls": 0,
+  "scope": "Current selected-suite execution of exact retained tests; no new model calls or historical coverage comparison."
+}

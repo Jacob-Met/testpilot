@@ -1,0 +1,71 @@
+{
+  "started": "2026-10-08T13:00:56.598Z",
+  "finished": "2026-10-08T13:01:00.852Z",
+  "binary": "/usr/bin/python3",
+  "args": [
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_recheck.py"
+  ],
+  "cwd": "/home/jacob/testpilot-recheck-68e476e98b77/candidate",
+  "uid": 1000,
+  "exit": 1,
+  "signal": null,
+  "before": [
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 11262,
+      "sha256": "4f13feb0fe36287bb077abbfdc982950adea5724d5fd7f54d643c46aac4e5fab"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 5884,
+      "sha256": "981ca055676d10b4f7ad5b07e9fa2d5f5846a73a556d8183f09188116e614231"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13000,
+      "sha256": "154c769253a449d340f673a41daa3fe950155e30e8eaddcbe311b1f06014481c"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 11877,
+      "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "bytes": 1446,
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+    }
+  ],
+  "after": [
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 11262,
+      "sha256": "4f13feb0fe36287bb077abbfdc982950adea5724d5fd7f54d643c46aac4e5fab"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 5884,
+      "sha256": "981ca055676d10b4f7ad5b07e9fa2d5f5846a73a556d8183f09188116e614231"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "bytes": 13000,
+      "sha256": "154c769253a449d340f673a41daa3fe950155e30e8eaddcbe311b1f06014481c"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "bytes": 11877,
+      "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "bytes": 1446,
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+    }
+  ],
+  "stdout_sha256": "c77f0319112bc463711a53e4b21fa5190b07d2c4dcd73a00d9990e1bce3995ae",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

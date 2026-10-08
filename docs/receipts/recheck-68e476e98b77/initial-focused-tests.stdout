@@ -1,0 +1,118 @@
+.F...............................                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_matching_readonly_applied_test_is_accepted_once _____________
+
+repo = PosixPath('/home/jacob/testpilot-recheck-68e476e98b77/tmp/pytest-of-jacob/pytest-0/test_matching_readonly_applied0/project')
+report_path = PosixPath('/home/jacob/testpilot-recheck-68e476e98b77/tmp/pytest-of-jacob/pytest-0/test_matching_readonly_applied0/report.json')
+
+    def recheck_report(repo: str | Path, report_path: str | Path, *,
+                       timeout_s: float = 60.0, python: str | None = None) -> dict:
+        """Execute exact retained tests in the native throwaway project copy.
+    
+        Existing matching tests stay part of the normal configured suite and the
+        generated-file manifest. Different current test bytes refuse before pytest;
+        they are never renamed, overwritten or treated as the retained tests.
+        """
+        if (isinstance(timeout_s, bool) or not isinstance(timeout_s, (int, float))
+                or not math.isfinite(timeout_s) or timeout_s <= 0):
+            raise RecheckError("timeout must be a positive finite number of seconds")
+        project = Path(repo).resolve(strict=True)
+        if not project.is_dir():
+            raise RecheckError("repository must be a directory")
+        saved = read_saved_tests(report_path)
+        files = dict(saved.tests)
+        retained = []
+        for rel, content in saved.tests:
+            data = content.encode("utf-8")
+            retained.append({"path": rel, "bytes": len(data),
+                             "sha256": hashlib.sha256(data).hexdigest(),
+                             "placement": _placement(project, rel, data)})
+        try:
+            # This is a test recheck, not a comparison with historical coverage.
+            # The same selected suite and native generated-case rules still apply.
+>           result = run_pytest(project, files, timeout=timeout_s, python=python, coverage=False)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+testpilot/recheck.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+testpilot/sandbox.py:237: in run_pytest
+    dest.write_text(content, encoding="utf-8")
+/usr/lib/python3.14/pathlib/__init__.py:810: in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/home/jacob/testpilot-recheck-68e476e98b77/tmp/testpilot-ytpq5k_b/repo/tests/test_retained.py')
+mode = 'w', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       PermissionError: [Errno 13] Permission denied: '/home/jacob/testpilot-recheck-68e476e98b77/tmp/testpilot-ytpq5k_b/repo/tests/test_retained.py'
+
+/usr/lib/python3.14/pathlib/__init__.py:772: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+project = PosixPath('/home/jacob/testpilot-recheck-68e476e98b77/tmp/pytest-of-jacob/pytest-0/test_matching_readonly_applied0/project')
+tmp_path = PosixPath('/home/jacob/testpilot-recheck-68e476e98b77/tmp/pytest-of-jacob/pytest-0/test_matching_readonly_applied0')
+
+    def test_matching_readonly_applied_test_is_accepted_once(project, tmp_path):
+        # The checkout's existing application of the saved patch is already exact.
+        # Rechecking must not require write permission on that file, even in a copy.
+        report = save_report(tmp_path / "report.json")
+        applied = project / TEST_PATH
+        applied.write_bytes(PASSING.encode("utf-8"))
+        applied.chmod(0o444)
+        try:
+            before = snapshot(project)
+>           result = recheck.recheck_report(project, report, timeout_s=10)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_recheck.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+repo = PosixPath('/home/jacob/testpilot-recheck-68e476e98b77/tmp/pytest-of-jacob/pytest-0/test_matching_readonly_applied0/project')
+report_path = PosixPath('/home/jacob/testpilot-recheck-68e476e98b77/tmp/pytest-of-jacob/pytest-0/test_matching_readonly_applied0/report.json')
+
+    def recheck_report(repo: str | Path, report_path: str | Path, *,
+                       timeout_s: float = 60.0, python: str | None = None) -> dict:
+        """Execute exact retained tests in the native throwaway project copy.
+    
+        Existing matching tests stay part of the normal configured suite and the
+        generated-file manifest. Different current test bytes refuse before pytest;
+        they are never renamed, overwritten or treated as the retained tests.
+        """
+        if (isinstance(timeout_s, bool) or not isinstance(timeout_s, (int, float))
+                or not math.isfinite(timeout_s) or timeout_s <= 0):
+            raise RecheckError("timeout must be a positive finite number of seconds")
+        project = Path(repo).resolve(strict=True)
+        if not project.is_dir():
+            raise RecheckError("repository must be a directory")
+        saved = read_saved_tests(report_path)
+        files = dict(saved.tests)
+        retained = []
+        for rel, content in saved.tests:
+            data = content.encode("utf-8")
+            retained.append({"path": rel, "bytes": len(data),
+                             "sha256": hashlib.sha256(data).hexdigest(),
+                             "placement": _placement(project, rel, data)})
+        try:
+            # This is a test recheck, not a comparison with historical coverage.
+            # The same selected suite and native generated-case rules still apply.
+            result = run_pytest(project, files, timeout=timeout_s, python=python, coverage=False)
+        except (OSError, ValueError, ET.ParseError) as exc:
+>           raise RecheckError(f"cannot complete retained-test execution: {exc}") from exc
+E           testpilot.recheck.RecheckError: cannot complete retained-test execution: [Errno 13] Permission denied: '/home/jacob/testpilot-recheck-68e476e98b77/tmp/testpilot-ytpq5k_b/repo/tests/test_retained.py'
+
+testpilot/recheck.py:156: RecheckError
+=========================== short test summary info ============================
+FAILED tests/test_recheck.py::test_matching_readonly_applied_test_is_accepted_once
+1 failed, 32 passed in 3.87s

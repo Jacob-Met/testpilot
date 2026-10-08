@@ -1,0 +1,290 @@
+"""Saved-test execution against real checkouts, independent of generation."""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import venv
+
+import pytest
+
+from testpilot import __main__ as cli
+from testpilot import recheck
+
+ROOT = Path(__file__).resolve().parents[1]
+TEST_PATH = "tests/test_retained.py"
+PASSING = "def test_retained():\n    assert True\n"
+
+
+def save_report(path, content=PASSING, **metadata):
+    path.write_text(json.dumps({"test_files": {TEST_PATH: content}, **metadata},
+                               ensure_ascii=True) + "\n", encoding="utf-8")
+    return path
+
+
+def snapshot(repo):
+    return {p.relative_to(repo).as_posix(): p.read_bytes()
+            for p in repo.rglob("*") if p.is_file()}
+
+
+@pytest.fixture
+def project(tmp_path):
+    repo = tmp_path / "project"
+    (repo / "tests").mkdir(parents=True)
+    (repo / "tests/test_existing.py").write_text("def test_existing():\n    assert True\n")
+    return repo
+
+
+def invoke(repo, report, out, *arguments, **kwargs):
+    env = dict(os.environ, PYTHONPATH=str(ROOT), PYTHONDONTWRITEBYTECODE="1",
+               TESTPILOT_BACKEND="recheck-must-not-create-a-model")
+    return subprocess.run(
+        [sys.executable, "-m", "testpilot", "recheck", "--repo", str(repo),
+         "--report", str(report), "--out", str(out), "--timeout", "10", *arguments],
+        cwd=repo.parent, env=env, capture_output=True, text=True, timeout=25, **kwargs,
+    )
+
+
+def test_buggy_to_fixed_preserves_retained_tests_and_history(project, tmp_path, monkeypatch):
+    original = "def doubled(value):\n    return value * 3\n"
+    fixed = original.replace("* 3", "* 2")
+    (project / "subject.py").write_text(original)
+    tests = "from subject import doubled\n\ndef test_retained():\n    assert doubled(4) == 8\n"
+    report = save_report(tmp_path / "report.json", tests, status="suspected_code_bug")
+    report_bytes = report.read_bytes()
+    before = snapshot(project)
+    monkeypatch.setattr(cli, "make_client", lambda *a, **kw: pytest.fail("model constructed"))
+    first = recheck.recheck_report(project, report, timeout_s=10)
+    assert first["status"] == "failed"
+    assert first["final"]["generated"]["failed"] == 1
+    assert snapshot(project) == before
+    (project / "subject.py").write_text(fixed)
+    before = snapshot(project)
+    second = recheck.recheck_report(project, report, timeout_s=10)
+    assert second["status"] == "passed"
+    assert second["final"]["generated"]["passed"] == 1
+    assert second["test_files"] == first["test_files"] == {TEST_PATH: tests}
+    assert second["source_report"]["recorded_status"] == "suspected_code_bug"
+    assert second["source_report"]["sha256"] == hashlib.sha256(report_bytes).hexdigest()
+    assert first["model_calls"] == second["model_calls"] == 0
+    assert report.read_bytes() == report_bytes
+    assert snapshot(project) == before
+
+
+def test_matching_readonly_applied_test_is_accepted_once(project, tmp_path):
+    # The checkout's existing application of the saved patch is already exact.
+    # Rechecking must not require write permission on that file, even in a copy.
+    report = save_report(tmp_path / "report.json")
+    applied = project / TEST_PATH
+    applied.write_bytes(PASSING.encode("utf-8"))
+    applied.chmod(0o444)
+    try:
+        before = snapshot(project)
+        result = recheck.recheck_report(project, report, timeout_s=10)
+        assert result["ok"]
+        assert result["retained_tests"][0]["placement"] == "already_present"
+        assert result["final"]["generated"]["collected"] == 1
+        assert result["final"]["passed"] == 2
+        assert snapshot(project) == before
+    finally:
+        applied.chmod(0o644)
+
+
+@pytest.mark.parametrize("obstacle", ["different", "parent-file", "final-directory",
+                                      "parent-symlink", "final-symlink"])
+def test_path_conflicts_refuse_before_execution(project, tmp_path, monkeypatch, obstacle):
+    target = project / TEST_PATH
+    if obstacle == "different":
+        target.write_text(PASSING + "# distinct current test\n")
+    elif obstacle == "parent-file":
+        (project / "tests/test_existing.py").unlink()
+        (project / "tests").rmdir()
+        (project / "tests").write_text("blocked")
+    elif obstacle == "final-directory":
+        target.mkdir()
+    else:
+        outside = tmp_path / "outside"
+        outside.mkdir()
+        (outside / "test_retained.py").write_text(PASSING)
+        try:
+            if obstacle == "parent-symlink":
+                (project / "tests/test_existing.py").unlink()
+                (project / "tests").rmdir()
+                (project / "tests").symlink_to(outside, target_is_directory=True)
+            else:
+                target.symlink_to(outside / "test_retained.py")
+        except OSError:
+            pytest.skip("platform does not allow fixture symlinks")
+    report = save_report(tmp_path / "report.json")
+    before = report.read_bytes()
+    monkeypatch.setattr(recheck, "run_pytest", lambda *a, **kw: pytest.fail("pytest ran"))
+    with pytest.raises(recheck.RecheckError):
+        recheck.recheck_report(project, report)
+    assert report.read_bytes() == before
+
+
+@pytest.mark.parametrize("document", [
+    b'{"test_files":{"tests/test_x.py":"x","tests/test_x.py":"y"}}',
+    b'{"test_files":{"../test_x.py":"x"}}',
+    b'{"test_files":{"/tests/test_x.py":"x"}}',
+    b'{"test_files":{"tests/test_x.py":42}}',
+    b'{"test_files":{}}',
+    b'{"schema":"testpilot.recheck/2","test_files":{"tests/test_x.py":""}}',
+    b'{"test_files":{"tests/test_x.py":""},"cost":NaN}',
+    b'{"test_files":{"tests/test_x.py":"\\ud800"}}',
+    b'[]',
+    b'\xff',
+])
+def test_invalid_saved_report_refuses_before_execution(project, tmp_path, monkeypatch, document):
+    report = tmp_path / "invalid.json"
+    report.write_bytes(document)
+    monkeypatch.setattr(recheck, "run_pytest", lambda *a, **kw: pytest.fail("pytest ran"))
+    with pytest.raises(recheck.RecheckError):
+        recheck.recheck_report(project, report)
+
+
+def test_report_admission_bounds_count_utf8_bytes(tmp_path, monkeypatch):
+    report = save_report(tmp_path / "report.json", "é" * 5)
+    monkeypatch.setattr(recheck, "MAX_TEST_BYTES", 9)
+    with pytest.raises(recheck.RecheckError, match="UTF-8 bytes"):
+        recheck.read_saved_tests(report)
+    monkeypatch.setattr(recheck, "MAX_TEST_BYTES", 10)
+    assert recheck.read_saved_tests(report).tests == ((TEST_PATH, "é" * 5),)
+    monkeypatch.setattr(recheck, "MAX_REPORT_BYTES", report.stat().st_size - 1)
+    with pytest.raises(recheck.RecheckError, match="saved report exceeds"):
+        recheck.read_saved_tests(report)
+
+
+@pytest.mark.skipif(not hasattr(os, "mkfifo"), reason="POSIX FIFO admission")
+def test_fifo_report_refuses_without_waiting_for_writer(tmp_path):
+    path = tmp_path / "report.fifo"
+    os.mkfifo(path)
+    with pytest.raises(recheck.RecheckError, match="regular file"):
+        recheck.read_saved_tests(path)
+
+
+@pytest.mark.parametrize("timeout", [0, -1, float("nan"), float("inf"), True])
+def test_invalid_timeout_refuses_before_execution(project, tmp_path, monkeypatch, timeout):
+    report = save_report(tmp_path / "report.json")
+    monkeypatch.setattr(recheck, "run_pytest", lambda *a, **kw: pytest.fail("pytest ran"))
+    with pytest.raises(recheck.RecheckError, match="positive finite"):
+        recheck.recheck_report(project, report, timeout_s=timeout)
+
+
+def test_configured_suite_and_fixtures_remain_part_of_result(project, tmp_path):
+    (project / "pytest.ini").write_text("[pytest]\ntestpaths = spec\n")
+    (project / "spec").mkdir()
+    (project / "spec/test_current.py").write_text("def test_current():\n    assert False\n")
+    (project / "conftest.py").write_text(
+        "import pytest\n@pytest.fixture\ndef current_value():\n    return 17\n")
+    report = save_report(tmp_path / "report.json",
+                         "def test_retained(current_value):\n    assert current_value == 17\n")
+    result = recheck.recheck_report(project, report, timeout_s=10)
+    assert result["status"] == "failed"
+    assert result["final"]["generated"]["passed"] == 1
+    assert result["final"]["failed"] == 1
+    assert result["final"]["passed"] == 1  # ignored tests/ existing case stays ignored
+
+
+@pytest.mark.parametrize("content", [
+    "def helper_only():\n    return 1\n",
+    "import pytest\n@pytest.mark.skip(reason='not exercised')\ndef test_retained():\n    pass\n",
+])
+def test_no_passing_generated_case_never_qualifies_existing_passes(project, tmp_path, content):
+    report = save_report(tmp_path / "report.json", content)
+    result = recheck.recheck_report(project, report, timeout_s=10)
+    assert not result["ok"]
+    assert result["status"] == "no_tests"
+    assert result["final"]["passed"] == 1
+    assert result["final"]["generated"]["passed"] == 0
+
+
+def test_timeout_is_failed_with_native_timeout_record(project, tmp_path):
+    report = save_report(tmp_path / "report.json",
+                         "import time\ndef test_retained():\n    time.sleep(30)\n")
+    result = recheck.recheck_report(project, report, timeout_s=0.2)
+    assert result["status"] == "failed"
+    assert not result["ok"]
+    assert result["final"]["timed_out"]
+    assert result["final"]["duration_s"] < 4
+
+
+def test_cli_skips_generation_and_recheck_output_is_reusable(project, tmp_path, monkeypatch, capsys):
+    # Mixed line endings, non-ASCII and no final newline must survive JSON reuse.
+    content = ("# café\r\nfrom pathlib import Path\n\ndef test_retained():\r\n"
+               "    data = Path(__file__).read_bytes()\n"
+               "    assert data.startswith('# café\\r\\nfrom pathlib import Path\\n'.encode('utf-8'))\r\n"
+               "    assert not data.endswith(b'\\n')")
+    report = save_report(tmp_path / "report.json", content, status="failed")
+    original = report.read_bytes()
+    output = tmp_path / "first"
+    for name in ("make_client", "TestPilot", "write_outputs"):
+        monkeypatch.setattr(cli, name, lambda *a, **kw: pytest.fail("generation entered"))
+    assert cli.main(["recheck", "--repo", str(project), "--report", str(report),
+                     "--out", str(output)]) == 0
+    assert "New model calls: 0" in capsys.readouterr().out
+    assert sorted(p.name for p in output.iterdir()) == ["recheck.json", "recheck.md"]
+    current = json.loads((output / "recheck.json").read_text())
+    assert current["test_files"] == {TEST_PATH: content}
+    again = recheck.recheck_report(project, output / "recheck.json", timeout_s=10)
+    assert again["ok"]
+    assert again["retained_tests"] == current["retained_tests"]
+    assert again["source_report"]["recorded_status"] == "passed"
+    assert report.read_bytes() == original
+    assert not (project / TEST_PATH).exists()
+
+
+@pytest.mark.parametrize("placement", ["existing-output", "inside-project"])
+def test_output_admission_precedes_execution(project, tmp_path, monkeypatch, placement, capsys):
+    report = save_report(tmp_path / "report.json")
+    out = tmp_path / "existing"
+    if placement == "existing-output":
+        out.mkdir()
+        (out / "keep").write_text("original")
+    else:
+        out = project / "new-output"
+    monkeypatch.setattr(recheck, "run_pytest", lambda *a, **kw: pytest.fail("pytest ran"))
+    assert cli.main(["recheck", "--repo", str(project), "--report", str(report),
+                     "--out", str(out)]) == 2
+    assert "cannot recheck saved tests" in capsys.readouterr().err
+    if placement == "existing-output":
+        assert (out / "keep").read_text() == "original"
+    else:
+        assert not out.exists()
+
+
+def test_nondefault_python_keeps_project_venv_identity(project, tmp_path):
+    environment = tmp_path / "prepared environment"
+    venv.EnvBuilder(with_pip=False, symlinks=os.name != "nt").create(environment)
+    python = environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+    purelib = Path(subprocess.check_output(
+        [str(python), "-c", "import sysconfig; print(sysconfig.get_paths()['purelib'])"], text=True,
+    ).strip())
+    # Reuse the caller's installed tooling even when it lives only in an outer
+    # venv. Do not assume pytest is installed in the base Python's site-packages.
+    tooling = Path(pytest.__file__).resolve().parent.parent
+    (purelib / "test-tooling.pth").write_text(str(tooling) + "\n")
+    content = ("import sys\n\ndef test_retained():\n"
+               f"    assert sys.prefix == {str(environment)!r}\n")
+    report = save_report(tmp_path / "report.json", content)
+    result = invoke(project, report, tmp_path / "venv-result", "--python", str(python))
+    assert result.returncode == 0, result.stderr + result.stdout
+    current = json.loads((tmp_path / "venv-result/recheck.json").read_text())
+    assert current["final"]["generated"]["passed"] == 1
+    assert current["model_calls"] == 0
+    assert current["python"] == str(python)
+
+
+@pytest.mark.skipif(not Path("/dev/full").exists(), reason="Linux full-device control")
+def test_cli_output_failure_does_not_replace_exit_with_shutdown_error(project, tmp_path):
+    report = save_report(tmp_path / "report.json")
+    env = dict(os.environ, PYTHONPATH=str(ROOT), PYTHONDONTWRITEBYTECODE="1")
+    argv = [sys.executable, "-m", "testpilot", "recheck", "--repo", str(project),
+            "--report", str(report), "--out", str(tmp_path / "result")]
+    with open("/dev/full", "w") as full:
+        result = subprocess.run(argv, cwd=tmp_path, env=env, stdout=full, stderr=full, timeout=20)
+    assert result.returncode == 2
+    assert json.loads((tmp_path / "result/recheck.json").read_text())["ok"]
