@@ -1,0 +1,80 @@
+{
+  "verdict": "PASS",
+  "reviewed_at_utc": "2026-10-08T11:46:03Z",
+  "repository": "Jacob-Met/testpilot",
+  "base": "9f01fcb6de085850eca00db746380795eb548d62",
+  "author_local_freeze": "9c2c3ef951cc0a0c063c70179e39e86797ee129b",
+  "candidate": {
+    "testpilot/__main__.py": {
+      "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+      "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+      "bytes": 5094,
+      "mode": "100644"
+    },
+    "tests/test_cli_targets.py": {
+      "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e",
+      "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+      "bytes": 10853,
+      "mode": "100644"
+    },
+    "docs/targets-preview.md": {
+      "git_blob": "e8c89fa731ae13922057c5be5b03f0b35ce1b243",
+      "sha256": "a8cd6a14ba16e0abbc40588e1568760f6f12ffa3dfa4f4a855cde88bd6303a27",
+      "bytes": 4308,
+      "mode": "100644"
+    }
+  },
+  "remote_baseline_gate": {
+    "tree": "34191a66ec22f8630aea83559cfb16f1e464ab3e",
+    "complete": true,
+    "all_seven_source_and_support_blobs_and_modes_match": true,
+    "AGENTS": []
+  },
+  "qualification": {
+    "actual_Python_CLI_children": 10,
+    "native_Git_diff_inside_CLI_children": 1,
+    "candidate_conditions": 34,
+    "candidate_failed_conditions": 0,
+    "baseline_failed_conditions": 11,
+    "run_dispatch_exact_pair": true
+  },
+  "source_preservation": {
+    "run_tail_byte_identical": true,
+    "run_parser_AST_identical": true,
+    "interpreter_helper_byte_identical": true,
+    "all_six_support_files_exact": true
+  },
+  "distinct_boundaries": [
+    "Real Git selection with a pure deletion in an outer function containing a nested definition; empty added-line list and full outer function are retained.",
+    "A decorated async method under a conditional class keeps its qualified name, inclusive decorator range, native source and method flag.",
+    "A newline/Unicode source filename survives the actual Git quoted-path producer and JSON; the human row is safely escaped and exact.",
+    "Actual module CLI Git, saved-file and stdin previews equal the native selector records or exact human view, without model, runner, writer, network or project-import effects.",
+    "A later invalid source after two valid selections yields exit 2 and no partial JSON or success output.",
+    "The unchanged run command forwards the original diff/repository and all explicit factory, routing, rounds, timeout, token and project-interpreter options in the same order on both sources."
+  ],
+  "evidence": {
+    "receive_targets.py": {
+      "git_blob": "66bb04a79d119a1ad363064c31688ac6f01e213c",
+      "sha256": "375de263831f1ba51948c5347bd3cac88c8b261fdd50b04f1f3ddce7395df0b6",
+      "bytes": 17867
+    },
+    "results.json": {
+      "git_blob": "2193b2f9ffa1119d5e63a48c394e89e29d63a48e",
+      "sha256": "df233aacbaab53245dfafc06fdc4b2c8fda1fa6e2af28c55569e08b7380d5d9c",
+      "bytes": 19533
+    }
+  },
+  "author_suite_rerun": false,
+  "author_source_edited": false,
+  "post_review_author_scope_pins_unchanged": true,
+  "native_environment": "Linux Python 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "limits": [
+    "Actual local module CLI and Git; no project import, model/provider, pytest, report output, live account or service.",
+    "Existing run dispatch is controlled at factory/runner/writer boundaries; author native run control is separate.",
+    "Preview retains native Git configuration policy; fixture Git configuration is explicit and disposable.",
+    "No native Windows qualification or full repository test suite.",
+    "Normal receiver only; the author separately qualified normal and optimized children.",
+    "The existing run path is intercepted at declared downstream boundaries; this receiver does not claim native generation or model quality."
+  ],
+  "disposition": "No blocking issue in the new targets interface on the exact frozen source/support. Publication must retain the separate source-encoding owner and gate any newer native selector or CLI changes."
+}

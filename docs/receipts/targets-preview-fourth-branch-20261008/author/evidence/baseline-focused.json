@@ -1,0 +1,337 @@
+{
+  "source": "/dev/shm/hamon-development-testpilot-targets-e04ee971c817/baseline",
+  "test": "/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "optimized": 0,
+  "methods": 8,
+  "successful": false,
+  "failures": [
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_default_human_preview_names_the_exact_location",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 125, in test_default_human_preview_names_the_exact_location\n    self.assertEqual(result.returncode, 0, result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 136, in test_empty_diff_is_a_successful_empty_preview\n    self.assertEqual(result.returncode, 0, result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 117, in test_file_and_stdin_preview_have_identical_target_records\n    self.assertEqual(saved.returncode, 0, saved.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_git_preview_selects_native_target_without_executing_project",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 98, in test_git_preview_selects_native_target_without_executing_project\n    self.assertEqual(result.returncode, 0, result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 192, in test_help_and_source_options_do_not_accept_generation_options\n    self.assertEqual(help_result.returncode, 0, help_result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output (args=('--diff', PosixPath('/dev/shm/testpilot-target-preview-91q_s4ft/missing.diff')))",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 160, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output (args=('--git-base', 'missing-ref'))",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 160, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output (args=('--diff', '-'))",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 160, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n"
+    },
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "traceback": "Traceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 166, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n"
+    }
+  ],
+  "errors": [
+    {
+      "id": "test_cli_targets.TargetPreviewTests.test_saved_diff_preview_never_constructs_model_or_test_runner",
+      "traceback": "Traceback (most recent call last):\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1943, in _parse_known_args2\n    namespace, args = self._parse_known_args(args, namespace, intermixed)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2165, in _parse_known_args\n    positionals_end_index = consume_positionals(start_index)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2141, in consume_positionals\n    take_action(action, args)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2003, in take_action\n    argument_values = self._get_values(action, argument_strings)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2523, in _get_values\n    self._check_value(action, value[0])\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2573, in _check_value\n    raise ArgumentError(action, msg % args)\nargparse.ArgumentError: argument cmd: invalid choice: 'targets' (choose from run)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 183, in test_saved_diff_preview_never_constructs_model_or_test_runner\n    result = cli.main([\"targets\", \"--repo\", str(self.repo),\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/baseline/testpilot/__main__.py\", line 44, in main\n    a = ap.parse_args(argv)\n        ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1904, in parse_args\n    args, argv = self.parse_known_args(args, namespace)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1914, in parse_known_args\n    return self._parse_known_args2(args, namespace, intermixed=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1945, in _parse_known_args2\n    self.error(str(err))\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2650, in error\n    self.exit(2, _('%(prog)s: error: %(message)s\\n') % args)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2637, in exit\n    _sys.exit(status)\nSystemExit: 2\n"
+    }
+  ],
+  "skipped": [],
+  "native_cli_invocations": 11,
+  "cli_receipts": [
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_default_human_preview_names_the_exact_location",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-jt8ujepz/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-jt8ujepz/change.diff"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-e_xrg9sj/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_existing_run_retains_native_no_changes_reports",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-bubib8mo/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-bubib8mo/empty.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/dev/shm/testpilot-target-preview-bubib8mo/script",
+        "--python",
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "--rounds",
+        "2",
+        "--out",
+        "/dev/shm/testpilot-target-preview-bubib8mo/run-output"
+      ],
+      "returncode": 1,
+      "stdout": "# TestPilot report: **no_changes**\n\ndiff touches no Python functions outside tests\n\n- Changed functions: none\n- Tests written: 0 in -\n- Repair rounds used: 0/2\n- Coverage: unavailable (install `coverage`)\n- Tokens: 0; cost: $0.000000\n\nwrote /dev/shm/testpilot-target-preview-bubib8mo/run-output/testpilot.patch, /dev/shm/testpilot-target-preview-bubib8mo/run-output/report.json, /dev/shm/testpilot-target-preview-bubib8mo/run-output/report.md\n",
+      "stderr": ""
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-qrxll8py/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-qrxll8py/change.diff",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-qrxll8py/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_git_preview_selects_native_target_without_executing_project",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-6py68zig/project",
+        "--git-base",
+        "HEAD",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--help"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-91q_s4ft/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-91q_s4ft/missing.diff",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-91q_s4ft/project",
+        "--git-base",
+        "missing-ref",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-91q_s4ft/project",
+        "--diff",
+        "-",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    },
+    {
+      "test": "test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "/dev/shm/testpilot-target-preview-91q_s4ft/project",
+        "--diff",
+        "/dev/shm/testpilot-target-preview-91q_s4ft/change.diff",
+        "--json"
+      ],
+      "returncode": 2,
+      "stdout": "",
+      "stderr": "usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n"
+    }
+  ],
+  "direct_main_tripwire_case": "test_saved_diff_preview_never_constructs_model_or_test_runner",
+  "source_before": {
+    "testpilot/__init__.py": {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+      "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+      "bytes": 3316
+    },
+    "testpilot/diff.py": {
+      "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+      "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "bytes": 9059
+    },
+    "testpilot/loop.py": {
+      "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "bytes": 21164
+    },
+    "testpilot/model.py": {
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "bytes": 9730
+    },
+    "testpilot/sandbox.py": {
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "bytes": 9286
+    }
+  },
+  "source_after": {
+    "testpilot/__init__.py": {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+      "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+      "bytes": 3316
+    },
+    "testpilot/diff.py": {
+      "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+      "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+      "bytes": 9059
+    },
+    "testpilot/loop.py": {
+      "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "bytes": 21164
+    },
+    "testpilot/model.py": {
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "bytes": 9730
+    },
+    "testpilot/sandbox.py": {
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "bytes": 9286
+    }
+  },
+  "test_before": {
+    "git_blob": "734cdec7fef8d200cf9f97f1142416b96c703652",
+    "sha256": "5aa2477ed28906ae96447510efffd5f16aa7e5e907ee7d93db1c3c77bf903995",
+    "bytes": 10760
+  },
+  "test_after": {
+    "git_blob": "734cdec7fef8d200cf9f97f1142416b96c703652",
+    "sha256": "5aa2477ed28906ae96447510efffd5f16aa7e5e907ee7d93db1c3c77bf903995",
+    "bytes": 10760
+  },
+  "source_unchanged": true,
+  "log": "test_default_human_preview_names_the_exact_location (test_cli_targets.TargetPreviewTests.test_default_human_preview_names_the_exact_location) ... FAIL\ntest_empty_diff_is_a_successful_empty_preview (test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview) ... FAIL\ntest_existing_run_retains_native_no_changes_reports (test_cli_targets.TargetPreviewTests.test_existing_run_retains_native_no_changes_reports) ... ok\ntest_file_and_stdin_preview_have_identical_target_records (test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records) ... FAIL\ntest_git_preview_selects_native_target_without_executing_project (test_cli_targets.TargetPreviewTests.test_git_preview_selects_native_target_without_executing_project) ... FAIL\ntest_help_and_source_options_do_not_accept_generation_options (test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options) ... FAIL\ntest_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) ... \n  test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) (args=('--diff', PosixPath('/dev/shm/testpilot-target-preview-91q_s4ft/missing.diff'))) ... FAIL\n  test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) (args=('--git-base', 'missing-ref')) ... FAIL\n  test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) (args=('--diff', '-')) ... FAIL\ntest_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) ... FAIL\ntest_saved_diff_preview_never_constructs_model_or_test_runner (test_cli_targets.TargetPreviewTests.test_saved_diff_preview_never_constructs_model_or_test_runner) ... ERROR\n\n======================================================================\nERROR: test_saved_diff_preview_never_constructs_model_or_test_runner (test_cli_targets.TargetPreviewTests.test_saved_diff_preview_never_constructs_model_or_test_runner)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1943, in _parse_known_args2\n    namespace, args = self._parse_known_args(args, namespace, intermixed)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2165, in _parse_known_args\n    positionals_end_index = consume_positionals(start_index)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2141, in consume_positionals\n    take_action(action, args)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2003, in take_action\n    argument_values = self._get_values(action, argument_strings)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2523, in _get_values\n    self._check_value(action, value[0])\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2573, in _check_value\n    raise ArgumentError(action, msg % args)\nargparse.ArgumentError: argument cmd: invalid choice: 'targets' (choose from run)\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 183, in test_saved_diff_preview_never_constructs_model_or_test_runner\n    result = cli.main([\"targets\", \"--repo\", str(self.repo),\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/baseline/testpilot/__main__.py\", line 44, in main\n    a = ap.parse_args(argv)\n        ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1904, in parse_args\n    args, argv = self.parse_known_args(args, namespace)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1914, in parse_known_args\n    return self._parse_known_args2(args, namespace, intermixed=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 1945, in _parse_known_args2\n    self.error(str(err))\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2650, in error\n    self.exit(2, _('%(prog)s: error: %(message)s\\n') % args)\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/argparse.py\", line 2637, in exit\n    _sys.exit(status)\nSystemExit: 2\n\n======================================================================\nFAIL: test_default_human_preview_names_the_exact_location (test_cli_targets.TargetPreviewTests.test_default_human_preview_names_the_exact_location)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 125, in test_default_human_preview_names_the_exact_location\n    self.assertEqual(result.returncode, 0, result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n\n======================================================================\nFAIL: test_empty_diff_is_a_successful_empty_preview (test_cli_targets.TargetPreviewTests.test_empty_diff_is_a_successful_empty_preview)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 136, in test_empty_diff_is_a_successful_empty_preview\n    self.assertEqual(result.returncode, 0, result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n\n======================================================================\nFAIL: test_file_and_stdin_preview_have_identical_target_records (test_cli_targets.TargetPreviewTests.test_file_and_stdin_preview_have_identical_target_records)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 117, in test_file_and_stdin_preview_have_identical_target_records\n    self.assertEqual(saved.returncode, 0, saved.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n\n======================================================================\nFAIL: test_git_preview_selects_native_target_without_executing_project (test_cli_targets.TargetPreviewTests.test_git_preview_selects_native_target_without_executing_project)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 98, in test_git_preview_selects_native_target_without_executing_project\n    self.assertEqual(result.returncode, 0, result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n\n======================================================================\nFAIL: test_help_and_source_options_do_not_accept_generation_options (test_cli_targets.TargetPreviewTests.test_help_and_source_options_do_not_accept_generation_options)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 192, in test_help_and_source_options_do_not_accept_generation_options\n    self.assertEqual(help_result.returncode, 0, help_result.stderr)\nAssertionError: 2 != 0 : usage: testpilot [-h] {run} ...\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\n\n\n======================================================================\nFAIL: test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) (args=('--diff', PosixPath('/dev/shm/testpilot-target-preview-91q_s4ft/missing.diff')))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 160, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n\n======================================================================\nFAIL: test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) (args=('--git-base', 'missing-ref'))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 160, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n\n======================================================================\nFAIL: test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output) (args=('--diff', '-'))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 160, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n\n======================================================================\nFAIL: test_input_and_native_selector_failures_have_no_success_output (test_cli_targets.TargetPreviewTests.test_input_and_native_selector_failures_have_no_success_output)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/dev/shm/hamon-development-testpilot-targets-e04ee971c817/candidate/tests/test_cli_targets.py\", line 166, in test_input_and_native_selector_failures_have_no_success_output\n    self.assertIn(\"testpilot: cannot inspect targets:\", result.stderr)\nAssertionError: 'testpilot: cannot inspect targets:' not found in \"usage: testpilot [-h] {run} ...\\ntestpilot: error: argument cmd: invalid choice: 'targets' (choose from run)\\n\"\n\n----------------------------------------------------------------------\nRan 8 tests in 1.258s\n\nFAILED (failures=9, errors=1)\n",
+  "boundary": "Actual CLI/Git and one injected no-effects main seam; no pytest framework, inference, account or live project."
+}

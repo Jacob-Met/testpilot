@@ -1,14 +1,15 @@
-"""CLI: python -m testpilot run --repo PATH (--diff FILE | --git-base REF) [--script DIR] --out DIR"""
+"""CLI for test generation and native diff-target inspection."""
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import shutil
 import subprocess
 import sys
 from pathlib import Path
 
-from .diff import DiffSourceError
+from .diff import DiffSourceError, changed_functions
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
 
@@ -21,6 +22,35 @@ def _python_executable(value: str) -> str:
     # the final executable symlink so a venv does not become the base Python.
     path = Path(executable)
     return str(path.parent.resolve() / path.name)
+
+
+def _preview_targets(args) -> int:
+    """Print the native selector's result without starting generation or tests."""
+    try:
+        if args.diff == "-":
+            diff_text = sys.stdin.read()
+        elif args.diff:
+            diff_text = Path(args.diff).read_text(encoding="utf-8")
+        else:
+            diff_text = subprocess.run(
+                ["git", "-C", args.repo, "diff", args.git_base, "--", "*.py"],
+                check=True, capture_output=True, text=True,
+            ).stdout
+        functions = changed_functions(args.repo, diff_text)
+    except (OSError, ValueError, SyntaxError, subprocess.CalledProcessError) as exc:
+        print(f"testpilot: cannot inspect targets: {exc}", file=sys.stderr)
+        return 2
+
+    if args.json:
+        print(json.dumps({"changed_functions": [f.to_dict() for f in functions]}, indent=2))
+    else:
+        noun = "function" if len(functions) == 1 else "functions"
+        print(f"{len(functions)} changed Python {noun} outside tests")
+        for function in functions:
+            path = json.dumps(function.path)
+            name = json.dumps(function.qualname)
+            print(f"{path}:{function.lineno}-{function.end_lineno}  {name}")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -41,7 +71,17 @@ def main(argv: list[str] | None = None) -> int:
                    help="project Python for all test runs; path or PATH command (default: this interpreter)")
     r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
     r.add_argument("--out", default="testpilot-out")
+
+    preview = sub.add_parser("targets", help="inspect changed functions without generating or running tests")
+    preview.add_argument("--repo", required=True)
+    source = preview.add_mutually_exclusive_group(required=True)
+    source.add_argument("--diff", help="unified diff file ('-' for stdin)")
+    source.add_argument("--git-base", help="diff the working tree against this git ref")
+    preview.add_argument("--json", action="store_true", help="include full native target records and source")
     a = ap.parse_args(argv)
+
+    if a.cmd == "targets":
+        return _preview_targets(a)
 
     if a.diff == "-":
         diff_text = sys.stdin.read()
