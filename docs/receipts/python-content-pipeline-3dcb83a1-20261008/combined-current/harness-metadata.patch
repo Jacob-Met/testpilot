@@ -1,0 +1,11 @@
+--- original-receive_combined.py
++++ current-receive_combined.py
+@@ -107,7 +107,7 @@
+ checks["all_frozen_source_bytes_unchanged"] = all(
+     hashlib.sha256((SOURCE / name).read_bytes()).hexdigest() == pin["sha256"]
+     for name, pin in manifest.items())
+-result = {"parent": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
++result = {"parent": "47a197fd46b107a797b1547db02cb5ed5ad2abe1",
+           "python": sys.version, "command": command, "cli_returncode": cli.returncode,
+           "checks": checks, "successful": all(checks.values()),
+           "report_status": report.get("status"), "tests_written": report.get("tests_written"),

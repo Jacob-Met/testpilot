@@ -1,0 +1,166 @@
+{
+  "parent": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "command": [
+    "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/home/jacob/hamon-testpilot-content-independent-3dcb83a1/combined-consumer/repo",
+    "--git-base",
+    "HEAD",
+    "--backend",
+    "scripted",
+    "--script",
+    "/home/jacob/hamon-testpilot-content-independent-3dcb83a1/combined-consumer/script",
+    "--rounds",
+    "0",
+    "--timeout",
+    "10",
+    "--python",
+    "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+    "--out",
+    "/home/jacob/hamon-testpilot-content-independent-3dcb83a1/combined-consumer/output"
+  ],
+  "cli_returncode": 0,
+  "checks": {
+    "cli_exit_0": true,
+    "report_passed": true,
+    "two_generated_tests": true,
+    "three_pipeline_pytest_passed": true,
+    "exact_selected_source": true,
+    "exact_line_identity": true,
+    "alias_preserves_existing": true,
+    "originals_before_apply": true,
+    "git_apply_check_0": true,
+    "git_apply_0": true,
+    "exact_applied_generated_bytes": true,
+    "receiving_pytest_0": true,
+    "receiving_three_passed": true,
+    "originals_after_apply": true,
+    "all_frozen_source_bytes_unchanged": true
+  },
+  "successful": true,
+  "report_status": "passed",
+  "tests_written": 2,
+  "pipeline_final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.455,
+    "timeout_s": 10.0,
+    "output": "...                                                                      [100%]\n3 passed in 0.03s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing_context",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_existing_testpilot::test_exact_literal",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_existing_testpilot::test_literal_length",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": {
+      "percent_total": 100.0,
+      "files": {
+        "sample.py": {
+          "executed": [
+            1,
+            2,
+            4,
+            5
+          ],
+          "missing": []
+        }
+      }
+    },
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "coverage": {
+    "total_before": 75.0,
+    "total_after": 100.0,
+    "total_delta": 25.0,
+    "changed_lines_executable": 1,
+    "changed_lines_before": 0.0,
+    "changed_lines_after": 100.0
+  },
+  "selected": [
+    {
+      "path": "sample.py",
+      "module": "sample",
+      "qualname": "target",
+      "lineno": 4,
+      "end_lineno": 5,
+      "changed_lines": [
+        5
+      ],
+      "source": "def target():\n    return \"answer```python\u2029tail\"",
+      "is_method": false
+    }
+  ],
+  "generated_alias": "tests/test_existing_testpilot.py",
+  "expected_generated": "from sample import target\n\ndef test_exact_literal():\n    assert target() == \"answer```python\u2029tail\"\n\ndef test_literal_length():\n    assert len(target()) == 20\n",
+  "git_apply_check": 0,
+  "git_apply_stderr": "",
+  "git_apply": 0,
+  "receiving_pytest": {
+    "returncode": 0,
+    "stdout": "...                                                                      [100%]\n3 passed in 0.01s\n",
+    "stderr": ""
+  },
+  "harness_sha256": "0a666413ecb68656346809a2f705e9d8ea32df1a6fbd29dca2c0f9474ac6323b",
+  "source_manifest": {
+    "pyproject.toml": {
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    "testpilot/__init__.py": {
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    "testpilot/__main__.py": {
+      "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+      "git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+    },
+    "testpilot/diff.py": {
+      "sha256": "36d5c4d913775d0176ec9c63196beb33042227cfd7930c7e10db6afe47daa278",
+      "git_blob": "ea74d79d2789919a7a87bff745e3b6bed12e38a7"
+    },
+    "testpilot/loop.py": {
+      "sha256": "05dfdfe3b63f5676d14f3bac1c0dfb24b50d0d3bef658a2d6781a953807ac15f",
+      "git_blob": "fc2fa150c7e9c6583f137acc8eb958a92074ac3b"
+    },
+    "testpilot/model.py": {
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+    },
+    "testpilot/sandbox.py": {
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+    },
+    "tests/test_fenced_code_boundaries.py": {
+      "sha256": "0f46a4a4ec679eb39e1cde375756625cbfc31d7dfd4df3711af9f562d505a6ac",
+      "git_blob": "4d8bdff6cacefd5b4047d158248dc4744d518000"
+    },
+    "tests/test_patch_physical_lines.py": {
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b",
+      "git_blob": "f5a9ff15106d39c953cda3f783f64362634f7ad1"
+    },
+    "tests/test_physical_lines.py": {
+      "sha256": "18feb4b461c4744188d1247e664c358b67f86622f9a590f3d055caaa5cda1640",
+      "git_blob": "b1c171dfc3f642573758984d0dc6b661881f3e5b"
+    }
+  }
+}

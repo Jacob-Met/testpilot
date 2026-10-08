@@ -1,0 +1,146 @@
+{
+  "kind": "Native authored-fixture qualification of TestPilot closing-fence boundaries",
+  "recorded_at": "2026-10-08T11:21:59.090934+00:00",
+  "source": {
+    "base": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+    "tree": "2609ac32021e4cb994fa603c3e6cf89e4abd7f45",
+    "runtime_AST_changes": [
+      "_FENCE"
+    ],
+    "original_loop": {
+      "bytes": 21164,
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa"
+    },
+    "candidate_loop": {
+      "bytes": 21267,
+      "sha256": "f8e640607ffaad5008c2ae751d8878afa40b8b5dbeea46425281626f00f7ec95",
+      "git_blob": "ddc22d98abd2c0cefd41320c13de98d1bf78335b"
+    },
+    "regression": {
+      "bytes": 2410,
+      "sha256": "0f46a4a4ec679eb39e1cde375756625cbfc31d7dfd4df3711af9f562d505a6ac",
+      "git_blob": "4d8bdff6cacefd5b4047d158248dc4744d518000"
+    },
+    "source_files_verified": 9
+  },
+  "python": "3.14.4",
+  "baseline_pipeline_witness": {
+    "base": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+    "loop_git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+    "cases": [
+      {
+        "case": "inline_fence",
+        "generated_compiles": true,
+        "parsed_equals_generated": false,
+        "parsed_source": "from sample import prefix\n\ndef test_token():\n    assert prefix('\n",
+        "parsed_syntax_error": "unterminated string literal (detected at line 4) (parsed-test.py, line 4)",
+        "status": "failed",
+        "tests_written": 1,
+        "source_unchanged": true,
+        "existing_test_unchanged": true,
+        "generated_not_applied": true,
+        "final_counts": {
+          "ok": false,
+          "returncode": 2,
+          "passed": 0,
+          "failed": 0,
+          "errors": 1,
+          "skipped": 0,
+          "timed_out": false
+        }
+      },
+      {
+        "case": "ordinary",
+        "generated_compiles": true,
+        "parsed_equals_generated": true,
+        "parsed_source": "from sample import prefix\n\ndef test_token():\n    assert prefix('ordinary') == 'literal:ordinary'\n\ndef test_ordinary():\n    assert prefix('value') == 'literal:value'\n",
+        "parsed_syntax_error": null,
+        "status": "passed",
+        "tests_written": 2,
+        "source_unchanged": true,
+        "existing_test_unchanged": true,
+        "generated_not_applied": true,
+        "final_counts": {
+          "ok": true,
+          "returncode": 0,
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "timed_out": false
+        }
+      }
+    ]
+  },
+  "runs": {
+    "baseline": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_fenced_code_boundaries.py",
+        "--junitxml=/home/jacob/hamon-testpilot-fences-3dcb83a1/baseline-tests.xml"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-fences-3dcb83a1/baseline",
+      "started_at": "2026-10-08T11:18:29.216289+00:00",
+      "exit_code": 1,
+      "tests": 12,
+      "failures": 7,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 5,
+      "source_bytes_unchanged": true,
+      "log_sha256": "af05d77f6cb2102bb3842bf0f01b1582bc620716dd3e04a2e81b4c030a4fc84d",
+      "junit_sha256": "a2ba34f646f1537e0c88b22d5871c2abf9c9da3c383d23ea35e6da099a27e72c"
+    },
+    "candidate": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_fenced_code_boundaries.py",
+        "tests/test_loop.py::test_parse_test_files",
+        "--junitxml=/home/jacob/hamon-testpilot-fences-3dcb83a1/candidate-tests.xml"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-fences-3dcb83a1/candidate",
+      "started_at": "2026-10-08T11:18:29.673389+00:00",
+      "exit_code": 0,
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 13,
+      "source_bytes_unchanged": true,
+      "log_sha256": "df6ddfd0945fb4a9a2b779fbbab65a7a6057b934789b441b070062d119e53367",
+      "junit_sha256": "a52aa82652be9a11ba537a24c7f6feda102ab0bebf1597c47989308925cebaf8"
+    }
+  },
+  "baseline_failed_cases": [
+    "test_backticks_inside_python_body_do_not_close_fence[literal]",
+    "test_backticks_inside_python_body_do_not_close_fence[fstring]",
+    "test_backticks_inside_python_body_do_not_close_fence[comment]",
+    "test_backticks_inside_python_body_do_not_close_fence[long_ticks]",
+    "test_backticks_inside_python_body_do_not_close_fence[info_line]",
+    "test_multiple_code_blocks_survive_inline_literal_and_ignored_language",
+    "test_inline_backticks_cannot_complete_an_unclosed_block"
+  ],
+  "raw_receipts": {
+    "baseline-reproduction.json": "bb80f4ffaa303ec9b93a9d537754d48c93926a8e0fd048986976b26c1dc1d668",
+    "test-results.json": "1f23f3959338c6d7892ae5d1dac15844122048c15888f895914a821699a1d116",
+    "baseline-tests.log": "af05d77f6cb2102bb3842bf0f01b1582bc620716dd3e04a2e81b4c030a4fc84d",
+    "baseline-tests.xml": "a2ba34f646f1537e0c88b22d5871c2abf9c9da3c383d23ea35e6da099a27e72c",
+    "candidate-tests.log": "df6ddfd0945fb4a9a2b779fbbab65a7a6057b934789b441b070062d119e53367",
+    "candidate-tests.xml": "a52aa82652be9a11ba537a24c7f6feda102ab0bebf1597c47989308925cebaf8"
+  },
+  "boundaries": [
+    "Only the _FENCE assignment changes among runtime AST nodes.",
+    "Inline literal, f-string, comment and longer tick runs remain code; a line containing ticks followed by language text is body content.",
+    "LF/CRLF, end-of-text, longer closing fences and trailing horizontal whitespace are retained.",
+    "All complete Python blocks are collected around an ignored-language block; inline ticks cannot terminate an otherwise unclosed block.",
+    "The current existing parse_test_files regression remains passing."
+  ],
+  "limits": "Closing-boundary correction only; opening-fence grammar is unchanged. This is not a full Markdown parser. Independent current consumer receiving is separate."
+}

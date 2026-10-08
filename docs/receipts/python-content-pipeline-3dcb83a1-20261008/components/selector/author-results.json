@@ -1,0 +1,279 @@
+{
+  "author": "estate_continuity-3dcb83a1",
+  "base": {
+    "commit": "e32f707e54ecade632cb653bc0ea9504584df7b8",
+    "tree": "1eac67a8b840bcd816f832428429238f96eef71e",
+    "runtime": {
+      "testpilot/__init__.py": {
+        "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "bytes": 390
+      },
+      "testpilot/__main__.py": {
+        "git_blob": "1f724ba942628f0b337f16594710bff11083ed33",
+        "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+        "bytes": 3316
+      },
+      "testpilot/diff.py": {
+        "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133",
+        "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+        "bytes": 9059
+      },
+      "testpilot/loop.py": {
+        "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+        "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+        "bytes": 21164
+      },
+      "testpilot/model.py": {
+        "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+        "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+        "bytes": 9730
+      },
+      "testpilot/sandbox.py": {
+        "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+        "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+        "bytes": 9286
+      }
+    }
+  },
+  "candidate": {
+    "testpilot/diff.py": {
+      "sha256": "36d5c4d913775d0176ec9c63196beb33042227cfd7930c7e10db6afe47daa278",
+      "git_blob": "ea74d79d2789919a7a87bff745e3b6bed12e38a7",
+      "bytes": 9221
+    },
+    "tests/test_physical_lines.py": {
+      "sha256": "18feb4b461c4744188d1247e664c358b67f86622f9a590f3d055caaa5cda1640",
+      "git_blob": "b1c171dfc3f642573758984d0dc6b661881f3e5b",
+      "bytes": 3299
+    }
+  },
+  "changed_functions": [
+    "parse_unified_diff",
+    "functions_touching"
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "baseline_witnesses": {
+    "line_separator": {
+      "character": "U+2028",
+      "actual_target_value": 2,
+      "parsed_added_lines": [],
+      "direct_source_compile_error": "IndentationError",
+      "selected_qualnames": []
+    },
+    "paragraph_separator": {
+      "character": "U+2029",
+      "actual_target_value": 2,
+      "parsed_added_lines": [],
+      "direct_source_compile_error": "IndentationError",
+      "selected_qualnames": []
+    },
+    "next_line": {
+      "character": "U+0085",
+      "actual_target_value": 2,
+      "parsed_added_lines": [],
+      "direct_source_compile_error": "IndentationError",
+      "selected_qualnames": []
+    },
+    "ordinary": {
+      "character": "U+002D",
+      "actual_target_value": 2,
+      "parsed_added_lines": [
+        5
+      ],
+      "direct_source_compile_error": null,
+      "selected_qualnames": [
+        "target"
+      ]
+    }
+  },
+  "focused_tests": {
+    "baseline": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_physical_lines.py",
+        "--junitxml=/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/baseline-tests.xml"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/baseline",
+      "exit_code": 1,
+      "tests": 11,
+      "failures": 6,
+      "errors": 0,
+      "skipped": 0,
+      "source_unchanged": true,
+      "log_sha256": "c18f4fbffa2dff286d26833ef7188e0174bdcb4a8ccaad6153cb08712a73e3d9",
+      "junit_sha256": "e1f18ca79b8d039a4f63f4a0271fd9b61181c4b4ccdcf7e21425301fb2cb58a6"
+    },
+    "candidate": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_physical_lines.py",
+        "tests/test_diff.py",
+        "--junitxml=/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/candidate-tests.xml"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/candidate",
+      "exit_code": 0,
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "source_unchanged": true,
+      "log_sha256": "f5fa52dfdeba6306e8dc32ebee8ac138ab3b64d37f935d4c899da18d07320746",
+      "junit_sha256": "ec5b2b2acc24d935027d8668f405274bd9f9b3d7c64fd06782ed9b945eaa085c"
+    }
+  },
+  "public_cli": {
+    "baseline": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "testpilot",
+        "run",
+        "--backend",
+        "scripted",
+        "--repo",
+        "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/workflow/baseline/repo",
+        "--git-base",
+        "HEAD",
+        "--script",
+        "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/workflow/baseline/script",
+        "--out",
+        "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/workflow/baseline/output",
+        "--rounds",
+        "0",
+        "--timeout",
+        "10",
+        "--python",
+        "/usr/bin/python3"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/baseline",
+      "exit_code": 1,
+      "status": "no_changes",
+      "tests_written": 0,
+      "changed_functions": [],
+      "final": null,
+      "original_sha256": {
+        "sample.py": "012c0b2903e5ecc8c7b4bf0d65d1780a592269db5b233d848448f3248027d489",
+        "tests/test_existing.py": "0d8ddfb50703610344e1101edfdd7dc97d74e106841c3d2705a8009379019f34"
+      },
+      "source_and_existing_test_unchanged": true,
+      "generated_file_applied_to_original": false,
+      "git_apply_check_exit": null,
+      "generated_files": {},
+      "outputs": {
+        "testpilot.patch": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        },
+        "report.md": {
+          "sha256": "095363d5b819675bd1ef5f0e887aeb2bf20646269193396d959f8c670d1dbefa",
+          "bytes": 234
+        },
+        "report.json": {
+          "sha256": "03012d5b93fc6c3f5c2b1afa11d8fa4cd897e3803084935cd821b1f8860c08af",
+          "bytes": 476
+        }
+      },
+      "stdout_sha256": "157597f25c473a70bef87f64cf173efce389463e35cb96570cf0caf90164f1a2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "candidate": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "testpilot",
+        "run",
+        "--backend",
+        "scripted",
+        "--repo",
+        "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/workflow/candidate/repo",
+        "--git-base",
+        "HEAD",
+        "--script",
+        "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/workflow/candidate/script",
+        "--out",
+        "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/workflow/candidate/output",
+        "--rounds",
+        "0",
+        "--timeout",
+        "10",
+        "--python",
+        "/usr/bin/python3"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/candidate",
+      "exit_code": 0,
+      "status": "passed",
+      "tests_written": 2,
+      "changed_functions": [
+        {
+          "path": "sample.py",
+          "module": "sample",
+          "qualname": "target",
+          "lineno": 4,
+          "end_lineno": 5,
+          "changed_lines": [
+            5
+          ],
+          "source": "def target(left=\"one\", right=\"two\"):\n    return left + \"\u2029\" + right",
+          "is_method": false
+        }
+      ],
+      "final": {
+        "returncode": 0,
+        "timed_out": false,
+        "passed": 3,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "original_sha256": {
+        "sample.py": "012c0b2903e5ecc8c7b4bf0d65d1780a592269db5b233d848448f3248027d489",
+        "tests/test_existing.py": "0d8ddfb50703610344e1101edfdd7dc97d74e106841c3d2705a8009379019f34"
+      },
+      "source_and_existing_test_unchanged": true,
+      "generated_file_applied_to_original": false,
+      "git_apply_check_exit": 0,
+      "generated_files": {
+        "tests/test_target.py": "from sample import target\n\ndef test_default_separator():\n    assert target() == \"one\\u2029two\"\n\ndef test_custom_separator():\n    assert target(\"x\", \"\") == \"x\\u2029\"\n"
+      },
+      "outputs": {
+        "testpilot.patch": {
+          "sha256": "92ec67ed24b90393c03c990427d3d70aa64b1b874284f471fb09332ae17a2ed1",
+          "bytes": 307
+        },
+        "report.md": {
+          "sha256": "f0ce8d0c667bb60f3da89dc5729a9290ff7218a21b16519a21e22e23a1889174",
+          "bytes": 778
+        },
+        "report.json": {
+          "sha256": "2ea2731e21e1c0fd63d19823bc2d6a13a09d2d67e85ffc90049c7d55192fb1ac",
+          "bytes": 4187
+        }
+      },
+      "stdout_sha256": "306b35724e8850d455610d8e5831b6d308b2d053ff8a4314579e58c61dabbaa6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "authored_cli_fixture": {
+    "before": "def untouched():\n    return \"alpha\u2028beta\"\n\ndef target(left=\"one\", right=\"two\"):\n    return left + \"-\" + right\n",
+    "after": "def untouched():\n    return \"alpha\u2028beta\"\n\ndef target(left=\"one\", right=\"two\"):\n    return left + \"\u2029\" + right\n",
+    "existing_test": "from sample import untouched\n\ndef test_original():\n    assert untouched() == \"alpha\\u2028beta\"\n",
+    "scripted_responses": [
+      "Test the changed target using the default and a custom pair.",
+      "```python path=tests/test_target.py\nfrom sample import target\n\ndef test_default_separator():\n    assert target() == \"one\\u2029two\"\n\ndef test_custom_separator():\n    assert target(\"x\", \"\") == \"x\\u2029\"\n```\n"
+    ]
+  },
+  "raw_receipts": {
+    "baseline-reproduction.json": "44e61baffe5599ad31633d80536d21b543deb4785f81a5a515af6228e78baf7c",
+    "test-results.json": "ffb77ee9cb9e122ab97dc4e56ef0cd5c7761519d2a4ca0f0adb2cd4e383992e2",
+    "workflow-results.json": "531dc01aba7333acb766cd98f0d77d790c29aa95acc84c5c666cf3ca80ef259b",
+    "receive_workflow.py": "db1c36281f8e27977551be74afafcd483425d1ab1a3aec6bc9fe88a6308d6120"
+  },
+  "limits": "Scoped selector/source-text regression and actual public CLI using authored ScriptedModel responses. No external provider, full-suite, browser, installation or deployment result. Source-decoding and containment code remain unchanged."
+}

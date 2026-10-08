@@ -1,0 +1,140 @@
+{
+  "reviewer": "estate_coordination-3dcb83a1",
+  "decision": "accept scoped make_patch physical-line repair",
+  "harness_sha256": "6408cf1e5b9eff1108e707712bd742c0435956ba82a37a1163c9996781aa42ad",
+  "review_sha256": "950a8671557621ea03f3142045d7c5129b60afb8421d79640d9cbdc5aebf491c",
+  "variants": {
+    "baseline": {
+      "tests_run": 1,
+      "failures": 1,
+      "errors": 0,
+      "skips": 0,
+      "package": {
+        "__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+        },
+        "__main__.py": {
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+        },
+        "diff.py": {
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133"
+        },
+        "loop.py": {
+          "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+          "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa"
+        },
+        "model.py": {
+          "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+          "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+        },
+        "sandbox.py": {
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+        }
+      },
+      "observation": {
+        "status": "passed",
+        "tests_written": 2,
+        "generated_aliases": [
+          "tests/test_literals_testpilot.py"
+        ],
+        "literal_codepoints": [
+          97,
+          11,
+          12,
+          28,
+          29,
+          30,
+          133,
+          8232,
+          8233,
+          98
+        ],
+        "git_apply_check": 128,
+        "git_apply_stderr": "error: corrupt patch at line 15\n",
+        "git_apply": null,
+        "applied_exact_bytes": false,
+        "receiving_pytest": null,
+        "before_apply_unchanged": true,
+        "after_apply_originals_unchanged": true
+      },
+      "pipeline_pytest_passed": 3,
+      "raw_receipts": {
+        "baseline.json": "12275d14645faf7565931d5c7713d7b305ab4462bb84ac95f9358f219c70539d",
+        "baseline.stdout.log": "07933ebbb15128c6897d2ca0df83a3a6ac633184a3c2718bb0d03597e354cf22",
+        "baseline.stderr.log": "2cf2ff9fbcd0f4fdf01fb7fa9e1bb8111f35bf15d25a33b36d58b579fce39b5d"
+      }
+    },
+    "candidate": {
+      "tests_run": 1,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "package": {
+        "__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+        },
+        "__main__.py": {
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+        },
+        "diff.py": {
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133"
+        },
+        "loop.py": {
+          "sha256": "8d999677237ee6ac8ede872cd9fb8a97a54c609eefff3d7546c23f141570d988",
+          "git_blob": "0745e4a7a232701c97998425ba6a370b26b61d60"
+        },
+        "model.py": {
+          "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+          "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+        },
+        "sandbox.py": {
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+        }
+      },
+      "observation": {
+        "status": "passed",
+        "tests_written": 2,
+        "generated_aliases": [
+          "tests/test_literals_testpilot.py"
+        ],
+        "literal_codepoints": [
+          97,
+          11,
+          12,
+          28,
+          29,
+          30,
+          133,
+          8232,
+          8233,
+          98
+        ],
+        "git_apply_check": 0,
+        "git_apply_stderr": "",
+        "git_apply": 0,
+        "applied_exact_bytes": true,
+        "receiving_pytest": {
+          "returncode": 0,
+          "stdout": "...                                                                      [100%]\n3 passed in 0.01s\n",
+          "stderr": ""
+        },
+        "before_apply_unchanged": true,
+        "after_apply_originals_unchanged": true
+      },
+      "pipeline_pytest_passed": 3,
+      "raw_receipts": {
+        "candidate.json": "96637dff9e5ec2cdc982d798acd6bb1c28450a8c318411bc6e742388d3d9f027",
+        "candidate.stdout.log": "37e0b96d393e0c93d451699f0c2914c656f5f0cdacb0aefccf8201ad24640a52",
+        "candidate.stderr.log": "f3721757ad864409e27f1e68e7dddb2e1e7e0c7c76262fd59262af16dedf3969"
+      }
+    }
+  }
+}

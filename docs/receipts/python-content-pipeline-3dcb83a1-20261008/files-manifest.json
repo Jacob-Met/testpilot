@@ -1,0 +1,133 @@
+{
+  "schema": "testpilot-content-file-manifest/1",
+  "base": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "base_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
+  "excluded_self": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/files-manifest.json",
+  "files": {
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/combined-results.json": {
+      "bytes": 6052,
+      "sha256": "fbdcf3325d325da3026f1085bff6f8d13af2b21bfbda2c21ca89487175d4d39f",
+      "git_blob": "f6053495eb8d6f8565bcb7fd14c890886535bfee"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/harness-metadata.patch": {
+      "bytes": 635,
+      "sha256": "f3a21d9e8fce4025f1b008c4662baacb2f85cd97ecfdb46c4609a85c42a61ec9",
+      "git_blob": "cf5b6c583e12e378d6985596cbcb0f7bab3b5ac5"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/REVIEW.md": {
+      "bytes": 1750,
+      "sha256": "f3c2d32efc3f0306f7b12030e4fb5911ab4852610b76c839cc788c0932535eb7",
+      "git_blob": "c1218d9f904dfa8bdc819d6f14ac11e7f225d9d4"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/source-manifest.json": {
+      "bytes": 1953,
+      "sha256": "a175c23acd123b6002d340c73c88e0021a5ccfe13f31a2224e2e0a99d203a81c",
+      "git_blob": "e7891cf50d17a34eac55ce5c8693cba0449fef6b"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/combined-results.json": {
+      "bytes": 5419,
+      "sha256": "1ab5fb702bc2d73aca75b4b269108095a8a0c4ea735a2829dde14a4f2cea8c50",
+      "git_blob": "ba933be48948a1f78bdace098fa34296dfb87e55"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/composition-review.json": {
+      "bytes": 343,
+      "sha256": "a26192bb4cf52107f7409a19d20c3eb87201ec7e8610e77786b551c44797ef6e",
+      "git_blob": "9474a5a10e2c022d922f5fb08b8d199be6035464"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/receive_combined.py": {
+      "bytes": 7319,
+      "sha256": "0a666413ecb68656346809a2f705e9d8ea32df1a6fbd29dca2c0f9474ac6323b",
+      "git_blob": "2c902649fbb01516d1837a0f78e7b0dca5503041"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/REVIEW.md": {
+      "bytes": 3450,
+      "sha256": "79ba427d70dc152207730f81829c99bb2b45c66936fcc6a6bb1b862450724d42",
+      "git_blob": "88631fee8c379e19913703e92d4393184467eb18"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined/source-manifest.json": {
+      "bytes": 1769,
+      "sha256": "3b72454fc4b563075d122d22b4682c9061f5c135e5eb08f725f4a6007db1c546",
+      "git_blob": "eccbfa9d008e21b2cc58a3913e7bf764397d98e7"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/fence/author-results.json": {
+      "bytes": 5944,
+      "sha256": "25421a7a714715bbf593471516d3867b1d59006b1bb02492cfd042cdf14c4583",
+      "git_blob": "0497fd77a20dc8477e939902a7b4ce034d279a34"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/fence/independent_review.py": {
+      "bytes": 5283,
+      "sha256": "1534c20251e44c4674d2ef0e7bd6740443959ba488b4f081187337ad6ca39518",
+      "git_blob": "53de0fd4baa448266e3c1f978ea6ee8cae69988e"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/fence/independent-results.json": {
+      "bytes": 3860,
+      "sha256": "422b35a639733a5480dff54bc1b52aeb94d13d5ac01591128bfd02c9d100f111",
+      "git_blob": "3c68cd5292319192e4ea2c234ddc061f0c9e70bd"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/patch/author-results.json": {
+      "bytes": 7212,
+      "sha256": "2f0eeba116f907ea3d42d6a0195f9283a0638f312a3a6a7adf7525efa0454768",
+      "git_blob": "b916f500d3baab0e48622dc15ef151ad3fa0843f"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/patch/independent_review.py": {
+      "bytes": 7054,
+      "sha256": "6408cf1e5b9eff1108e707712bd742c0435956ba82a37a1163c9996781aa42ad",
+      "git_blob": "c0434c6f993332ca8426577aa645627d5090f159"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/patch/independent-results.json": {
+      "bytes": 4967,
+      "sha256": "6474db6f99a2c31145fe0a7daf83160eb3a01ab3c5e58e1a9482904e1b9ad9f5",
+      "git_blob": "984ea1571b947c63dd57e210d46fc9fb6dc8359f"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/selector/author-results.json": {
+      "bytes": 10274,
+      "sha256": "be7292c9381a869208c70117ac3cf68a35b55fc084a811fdf663e838275899db",
+      "git_blob": "b14ff8138f5f5e74005e6665713b11341b615dd7"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/selector/independent_review.py": {
+      "bytes": 9294,
+      "sha256": "2dbb956db8c6d5b280a0972341d630937510b26bebceac334776b2b225670a86",
+      "git_blob": "db9b54c1f9ae8d0f9d964691eb8d51debe3de4cd"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/components/selector/independent-results.json": {
+      "bytes": 4172,
+      "sha256": "d0d96c576f6411a56dfb9e0a8cd561f015da07f7f5bf8c25cee6719ac3b6f575",
+      "git_blob": "0a26f4371ea1ce515b28d891b88405af8b4ae749"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/composition.json": {
+      "bytes": 4348,
+      "sha256": "94d99e3f491e71e58ad3417a4ab4a1e8b808cfaaf04096f55416469315a51df9",
+      "git_blob": "5051f59008adc68c7f5702811280281100e7c428"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/current-composition.json": {
+      "bytes": 3687,
+      "sha256": "bccf5f0e74723ad334b078223eb63b4fd95671e0059d2b721d8257b041f4d72f",
+      "git_blob": "fa08794b311f41f18fa6d78336acdc35a7fad4b1"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/README.md": {
+      "bytes": 6618,
+      "sha256": "3b83b9ac257a1ae424c72ceb1401c8f1c9b67a6a249935cad6214754d82520ee",
+      "git_blob": "75c0ce55b02eb13b179192a72b99103e52af7a39"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/receiving-scope.json": {
+      "bytes": 4475,
+      "sha256": "02766a4040d3baba7fc88f1b3843e9b3b6c5d90cf7e6ca0d6dcb9a2faf43c608",
+      "git_blob": "081b55af42c2d94183b53fa1fff215ca2e11de4d"
+    },
+    "testpilot/loop.py": {
+      "bytes": 23814,
+      "sha256": "d63fe6ddfb3c981ecca8d7cf6b231e9f60d82aa04cabd9ccc6af2fca6dfd1fcf",
+      "git_blob": "62c7dc97009a8461579fc3221465327f83a0b369"
+    },
+    "tests/test_fenced_code_boundaries.py": {
+      "bytes": 2410,
+      "sha256": "0f46a4a4ec679eb39e1cde375756625cbfc31d7dfd4df3711af9f562d505a6ac",
+      "git_blob": "4d8bdff6cacefd5b4047d158248dc4744d518000"
+    },
+    "tests/test_patch_physical_lines.py": {
+      "bytes": 3085,
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b",
+      "git_blob": "f5a9ff15106d39c953cda3f783f64362634f7ad1"
+    }
+  }
+}

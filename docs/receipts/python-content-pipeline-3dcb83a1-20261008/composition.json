@@ -1,0 +1,111 @@
+{
+  "base": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+  "tree": "2609ac32021e4cb994fa603c3e6cf89e4abd7f45",
+  "baseline_inputs": {
+    "testpilot/__init__.py": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+    "testpilot/__main__.py": "1f724ba942628f0b337f16594710bff11083ed33",
+    "testpilot/diff.py": "425d0712b18a6a72226399a2f9d704193ace1133",
+    "testpilot/loop.py": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+    "testpilot/model.py": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+    "testpilot/sandbox.py": "5f96a359d9e23c7b474cda7b23d3360de3dcf748",
+    "pyproject.toml": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+  },
+  "runtime_AST_changes": {
+    "testpilot/diff.py": [
+      "parse_unified_diff",
+      "functions_touching"
+    ],
+    "testpilot/loop.py": [
+      "_FENCE",
+      "make_patch"
+    ]
+  },
+  "components_retained_exactly": {
+    "selector": "36d5c4d913775d0176ec9c63196beb33042227cfd7930c7e10db6afe47daa278",
+    "patch": "8d999677237ee6ac8ede872cd9fb8a97a54c609eefff3d7546c23f141570d988",
+    "fence": "f8e640607ffaad5008c2ae751d8878afa40b8b5dbeea46425281626f00f7ec95"
+  },
+  "composed_files": {
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 3316,
+      "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+      "git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+    },
+    "testpilot/diff.py": {
+      "bytes": 9221,
+      "sha256": "36d5c4d913775d0176ec9c63196beb33042227cfd7930c7e10db6afe47daa278",
+      "git_blob": "ea74d79d2789919a7a87bff745e3b6bed12e38a7"
+    },
+    "testpilot/loop.py": {
+      "bytes": 21360,
+      "sha256": "05dfdfe3b63f5676d14f3bac1c0dfb24b50d0d3bef658a2d6781a953807ac15f",
+      "git_blob": "fc2fa150c7e9c6583f137acc8eb958a92074ac3b"
+    },
+    "testpilot/model.py": {
+      "bytes": 9730,
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 9286,
+      "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+      "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+    },
+    "pyproject.toml": {
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    "tests/test_physical_lines.py": {
+      "bytes": 3299,
+      "sha256": "18feb4b461c4744188d1247e664c358b67f86622f9a590f3d055caaa5cda1640",
+      "git_blob": "b1c171dfc3f642573758984d0dc6b661881f3e5b"
+    },
+    "tests/test_patch_physical_lines.py": {
+      "bytes": 3085,
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b",
+      "git_blob": "f5a9ff15106d39c953cda3f783f64362634f7ad1"
+    },
+    "tests/test_fenced_code_boundaries.py": {
+      "bytes": 2410,
+      "sha256": "0f46a4a4ec679eb39e1cde375756625cbfc31d7dfd4df3711af9f562d505a6ac",
+      "git_blob": "4d8bdff6cacefd5b4047d158248dc4744d518000"
+    }
+  },
+  "product_diff_sha256": "ca321333f2cf69213e5918dfdd358dfbeaa1b431921a71adf6a50b03464d1c67",
+  "receiving": {
+    "decision": "accepted by estate_coordination-3dcb83a1",
+    "independent_command": [
+      "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+      "-m",
+      "testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/hamon-testpilot-content-independent-3dcb83a1/combined-consumer/repo",
+      "--git-base",
+      "HEAD",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/hamon-testpilot-content-independent-3dcb83a1/combined-consumer/script",
+      "--rounds",
+      "0",
+      "--timeout",
+      "10",
+      "--python",
+      "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+      "--out",
+      "/home/jacob/hamon-testpilot-content-independent-3dcb83a1/combined-consumer/output"
+    ],
+    "assertions_passed": 15,
+    "result_sha256": "1ab5fb702bc2d73aca75b4b269108095a8a0c4ea735a2829dde14a4f2cea8c50",
+    "review_sha256": "79ba427d70dc152207730f81829c99bb2b45c66936fcc6a6bb1b862450724d42",
+    "result": "combined/combined-results.json",
+    "review": "combined/REVIEW.md"
+  }
+}

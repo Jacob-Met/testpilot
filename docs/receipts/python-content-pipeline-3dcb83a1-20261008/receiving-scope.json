@@ -1,0 +1,107 @@
+{
+  "schema": "testpilot-generated-content-receiving/1",
+  "author": "estate_continuity-3dcb83a1",
+  "base": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "base_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
+  "product_changes": {
+    "testpilot/loop.py": [
+      "_FENCE",
+      "make_patch"
+    ]
+  },
+  "new_regressions": [
+    "tests/test_patch_physical_lines.py",
+    "tests/test_fenced_code_boundaries.py"
+  ],
+  "source_review": {
+    "base_loop": {
+      "bytes": 23618,
+      "git_blob": "328221e1556b986b75c6e61f30eef8dc0f3d8961",
+      "sha256": "df13bbcbad7efb2232ece001b68ce32c6582b70a4a999d5510b190419f128491"
+    },
+    "candidate_loop": {
+      "bytes": 23814,
+      "git_blob": "62c7dc97009a8461579fc3221465327f83a0b369",
+      "sha256": "d63fe6ddfb3c981ecca8d7cf6b231e9f60d82aa04cabd9ccc6af2fca6dfd1fcf"
+    },
+    "changed_existing_AST_nodes": [
+      "_FENCE",
+      "make_patch"
+    ],
+    "accepted_source_segments_exact": true,
+    "all_other_current_loop_bytes_retained": true,
+    "prior_accepted_loop": {
+      "git_blob": "c97d857e34d9fd93e53251edac0a0dbf6c9de07f",
+      "sha256": "2835ceb98093ff11c7b1e2643ef3976db901c6eddac217ae09824881029c2c85"
+    },
+    "native_writes": 0,
+    "new_test_commands": 0
+  },
+  "inherited_runtime_and_selector_test": {
+    "pyproject.toml": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+    "testpilot/__init__.py": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+    "testpilot/__main__.py": "fc455a5b4866fd27503585a50903a80ff179513e",
+    "testpilot/_pytest_generated.py": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+    "testpilot/diff.py": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+    "testpilot/loop.py": "328221e1556b986b75c6e61f30eef8dc0f3d8961",
+    "testpilot/model.py": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+    "testpilot/sandbox.py": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+    "tests/test_physical_lines.py": "d25916fd9bc0cf98647e2678ce942fa6f2d2ba1c"
+  },
+  "original_base_blob_count": 728,
+  "original_unrelated_blobs_retained": 727,
+  "superseded_unpublished_paths": [
+    "testpilot/diff.py",
+    "tests/test_physical_lines.py"
+  ],
+  "integrated_selector": {
+    "pull_request": 18,
+    "commit": "9efb47561544db608613d7055f5f1226b2d7f7e7",
+    "source_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+    "test_blob": "d25916fd9bc0cf98647e2678ce942fa6f2d2ba1c",
+    "disposition": "Inherited owner bytes; prior own selector runtime/test removed; frozen component receipts retained as historical evidence."
+  },
+  "prior_qualifications": [
+    {
+      "parent": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+      "receipt": "combined/combined-results.json",
+      "sha256": "1ab5fb702bc2d73aca75b4b269108095a8a0c4ea735a2829dde14a4f2cea8c50"
+    },
+    {
+      "parent": "47a197fd46b107a797b1547db02cb5ed5ad2abe1",
+      "receipt": "combined-current/combined-results.json",
+      "sha256": "fbdcf3325d325da3026f1085bff6f8d13af2b21bfbda2c21ca89487175d4d39f"
+    }
+  ],
+  "qualification_boundary": "Only exact accepted fence/patch segments are transferred to latest main. Inherit existing owner's selector/decoder, model-timeout, preview, allocator and coverage/report source. All frozen component/combined receipts keep their original parents. No new native test execution is claimed on this receiving base; maintained submitted-head hosted CI remains required.",
+  "ownership_read": {
+    "current_open_pull_requests": 0,
+    "current_primary_parent": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+    "merged_prs_retained": [
+      10,
+      15,
+      18,
+      19,
+      20,
+      21
+    ]
+  },
+  "preparation_boundary": "Read-only source inspection and memory assembly after disk reserve declined; no baseline/candidate/evidence files modified.",
+  "prior_preparation": {
+    "base": "9efb47561544db608613d7055f5f1226b2d7f7e7",
+    "canonical_packet_sha256": "9dd30bbd31b422746751eaca3cfe72973927d31a7efbcb9c961e32b440fe6013",
+    "disposition": "Unpublished memory preparation superseded by this current-main composition; no execution was claimed for it."
+  },
+  "archive_collection": {
+    "configuration_git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+    "testpaths": [
+      "tests"
+    ],
+    "archive_root": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/",
+    "archive_python_names_match_default_test_patterns": false,
+    "new_maintained_regressions": [
+      "tests/test_patch_physical_lines.py",
+      "tests/test_fenced_code_boundaries.py"
+    ]
+  }
+}

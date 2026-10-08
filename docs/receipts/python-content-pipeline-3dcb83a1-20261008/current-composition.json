@@ -1,0 +1,91 @@
+{
+  "base": "47a197fd46b107a797b1547db02cb5ed5ad2abe1",
+  "tree": "bbd2dd27a39736fd94334910404763cb65773185",
+  "frozen_prior_base": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+  "current_baseline_runtime": {
+    "testpilot/__init__.py": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+    "testpilot/__main__.py": "1f724ba942628f0b337f16594710bff11083ed33",
+    "testpilot/diff.py": "425d0712b18a6a72226399a2f9d704193ace1133",
+    "testpilot/loop.py": "f4e9671b32cabda7e66ef79eb4a3a94c58d2f824",
+    "testpilot/model.py": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b",
+    "testpilot/sandbox.py": "ca0360375bdcaace0e6014b4767acad546380242",
+    "testpilot/_pytest_generated.py": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa"
+  },
+  "runtime_AST_changes": {
+    "testpilot/diff.py": [
+      "parse_unified_diff",
+      "functions_touching"
+    ],
+    "testpilot/loop.py": [
+      "_FENCE",
+      "make_patch"
+    ]
+  },
+  "accepted_function_bodies_exact": true,
+  "generated_collection_plugin_and_sandbox_retained": true,
+  "files": {
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 3316,
+      "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+      "git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+    },
+    "testpilot/diff.py": {
+      "bytes": 9221,
+      "sha256": "36d5c4d913775d0176ec9c63196beb33042227cfd7930c7e10db6afe47daa278",
+      "git_blob": "ea74d79d2789919a7a87bff745e3b6bed12e38a7"
+    },
+    "testpilot/loop.py": {
+      "bytes": 21845,
+      "sha256": "2835ceb98093ff11c7b1e2643ef3976db901c6eddac217ae09824881029c2c85",
+      "git_blob": "c97d857e34d9fd93e53251edac0a0dbf6c9de07f"
+    },
+    "testpilot/model.py": {
+      "bytes": 9730,
+      "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+      "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 11537,
+      "sha256": "8d9588e5ec0c712c40d36082f049b2eb4841ff9b693cc62315fb27ed7ccb0434",
+      "git_blob": "ca0360375bdcaace0e6014b4767acad546380242"
+    },
+    "pyproject.toml": {
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    "tests/test_physical_lines.py": {
+      "bytes": 3299,
+      "sha256": "18feb4b461c4744188d1247e664c358b67f86622f9a590f3d055caaa5cda1640",
+      "git_blob": "b1c171dfc3f642573758984d0dc6b661881f3e5b"
+    },
+    "tests/test_patch_physical_lines.py": {
+      "bytes": 3085,
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b",
+      "git_blob": "f5a9ff15106d39c953cda3f783f64362634f7ad1"
+    },
+    "tests/test_fenced_code_boundaries.py": {
+      "bytes": 2410,
+      "sha256": "0f46a4a4ec679eb39e1cde375756625cbfc31d7dfd4df3711af9f562d505a6ac",
+      "git_blob": "4d8bdff6cacefd5b4047d158248dc4744d518000"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 1446,
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+      "git_blob": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa"
+    }
+  },
+  "receiving": {
+    "decision": "accepted by estate_coordination-3dcb83a1",
+    "assertions_passed": 15,
+    "result": "combined-current/combined-results.json",
+    "result_sha256": "fbdcf3325d325da3026f1085bff6f8d13af2b21bfbda2c21ca89487175d4d39f",
+    "review": "combined-current/REVIEW.md",
+    "review_sha256": "f3c2d32efc3f0306f7b12030e4fb5911ab4852610b76c839cc788c0932535eb7"
+  }
+}

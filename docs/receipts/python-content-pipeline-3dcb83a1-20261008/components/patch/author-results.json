@@ -1,0 +1,159 @@
+{
+  "kind": "Native authored-fixture qualification of TestPilot Git patch line accounting",
+  "recorded_at": "2026-10-08T11:06:17.299484+00:00",
+  "source": {
+    "base": "9f01fcb6de085850eca00db746380795eb548d62",
+    "tree": "34191a66ec22f8630aea83559cfb16f1e464ab3e",
+    "runtime_AST_changes": [
+      "make_patch"
+    ],
+    "original_loop": {
+      "bytes": 21164,
+      "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+      "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa"
+    },
+    "candidate_loop": {
+      "bytes": 21257,
+      "sha256": "8d999677237ee6ac8ede872cd9fb8a97a54c609eefff3d7546c23f141570d988",
+      "git_blob": "0745e4a7a232701c97998425ba6a370b26b61d60"
+    },
+    "regression": {
+      "bytes": 3085,
+      "sha256": "8318fb4e20f87e4f0cc25013aab9f18b3a4236537bbae5f2fbb7e56a1b2a825b",
+      "git_blob": "f5a9ff15106d39c953cda3f783f64362634f7ad1"
+    },
+    "source_files_verified": 10
+  },
+  "environment": {
+    "python": "3.14.4",
+    "git": "git version 2.53.0"
+  },
+  "baseline_witness": {
+    "primary_base": "9f01fcb6de085850eca00db746380795eb548d62",
+    "source_path": "/home/jacob/hamon-testpilot-physical-lines-3dcb83a1/baseline/testpilot/loop.py",
+    "loop_git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa",
+    "loop_sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+    "results": [
+      {
+        "case": "line_separator",
+        "codepoint": "U+2028",
+        "python_compile_and_authored_assertion": "pass",
+        "physical_lf_lines": 2,
+        "patch": "diff --git a/tests/test_generated.py b/tests/test_generated.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated.py\n@@ -0,0 +1,4 @@\n+def test_generated():\n+    assert \"left\u2028+right\" == \"left\u2028+right\"\n",
+        "patch_sha256": "20a2618caebae155a1de731721dbfcd6dcca19e6ba862a18e4959c8a95a060de",
+        "git_apply_check_exit": 128,
+        "git_apply_check_stderr": "error: corrupt patch at line 8\n",
+        "input_file_exists": false
+      },
+      {
+        "case": "paragraph_separator",
+        "codepoint": "U+2029",
+        "python_compile_and_authored_assertion": "pass",
+        "physical_lf_lines": 2,
+        "patch": "diff --git a/tests/test_generated.py b/tests/test_generated.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated.py\n@@ -0,0 +1,4 @@\n+def test_generated():\n+    assert \"left\u2029+right\" == \"left\u2029+right\"\n",
+        "patch_sha256": "c5110365e73fdb4145ad72410d66420f085ed364cb9642e77282f63462aab64e",
+        "git_apply_check_exit": 128,
+        "git_apply_check_stderr": "error: corrupt patch at line 8\n",
+        "input_file_exists": false
+      },
+      {
+        "case": "ordinary",
+        "codepoint": "U+002D",
+        "python_compile_and_authored_assertion": "pass",
+        "physical_lf_lines": 2,
+        "patch": "diff --git a/tests/test_generated.py b/tests/test_generated.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated.py\n@@ -0,0 +1,2 @@\n+def test_generated():\n+    assert \"left-right\" == \"left-right\"\n",
+        "patch_sha256": "fbdafb4ca5020f4b890b0f464946da443f082aadc4db93d121a80a970e92ff22",
+        "git_apply_check_exit": 0,
+        "git_apply_check_stderr": "",
+        "input_file_exists": false
+      }
+    ]
+  },
+  "runs": {
+    "baseline": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_patch_physical_lines.py",
+        "--junitxml=/home/jacob/hamon-testpilot-patch-lines-3dcb83a1/baseline-tests.xml"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-patch-lines-3dcb83a1/baseline",
+      "started_at": "2026-10-08T11:03:02.250137+00:00",
+      "exit_code": 1,
+      "tests": 15,
+      "failures": 11,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 4,
+      "source_bytes_unchanged": true,
+      "log_sha256": "7af2fb510ea373458483362b4519d836a13eda9283ed43798a90d7a3100cb780",
+      "junit_sha256": "4ae37ceaf0272509a491bacb566dea516c23acc9e92ff9abda858c33f5846237"
+    },
+    "candidate": {
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_patch_physical_lines.py",
+        "tests/test_loop.py::test_patch_applies_with_git",
+        "tests/test_generated_test_preservation.py::test_git_refuses_patch_if_a_file_appears_after_generation",
+        "--junitxml=/home/jacob/hamon-testpilot-patch-lines-3dcb83a1/candidate-tests.xml"
+      ],
+      "cwd": "/home/jacob/hamon-testpilot-patch-lines-3dcb83a1/candidate",
+      "started_at": "2026-10-08T11:03:03.887592+00:00",
+      "exit_code": 0,
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 17,
+      "source_bytes_unchanged": true,
+      "log_sha256": "04bdb90d6ae8fd278bd8d4d73fa52eef2bbe61e37c435db79a23de7b68c5db84",
+      "junit_sha256": "3d9c5ac1333d57e57c7d3787d2358d3ff75eb4ee2e4918d226c74ffe315a3be1"
+    }
+  },
+  "baseline_failed_cases": [
+    "test_added_patch_retains_non_lf_string_content[\\x0b]",
+    "test_added_patch_retains_non_lf_string_content[\\x0c]",
+    "test_added_patch_retains_non_lf_string_content[\\x1c]",
+    "test_added_patch_retains_non_lf_string_content[\\x1d]",
+    "test_added_patch_retains_non_lf_string_content[\\x1e]",
+    "test_added_patch_retains_non_lf_string_content[\\x85]",
+    "test_added_patch_retains_non_lf_string_content[\\u2028]",
+    "test_added_patch_retains_non_lf_string_content[\\u2029]",
+    "test_modified_patch_counts_both_versions_as_physical_lines[\\u2028--]",
+    "test_modified_patch_counts_both_versions_as_physical_lines[--\\u2029]",
+    "test_modified_patch_counts_both_versions_as_physical_lines[\\u2028-\\u2029]"
+  ],
+  "raw_receipts": {
+    "baseline-reproduction.json": {
+      "sha256": "390f92e6a603e3d478957928943fbe8875855788549c977a0dc0509c100df8a3"
+    },
+    "test-results.json": {
+      "sha256": "3ef370cebac8c89388ba9ee3e9672f30ed1ead4ef707bf6332100335d478ca89"
+    },
+    "baseline-tests.log": {
+      "sha256": "7af2fb510ea373458483362b4519d836a13eda9283ed43798a90d7a3100cb780"
+    },
+    "baseline-tests.xml": {
+      "sha256": "4ae37ceaf0272509a491bacb566dea516c23acc9e92ff9abda858c33f5846237"
+    },
+    "candidate-tests.log": {
+      "sha256": "04bdb90d6ae8fd278bd8d4d73fa52eef2bbe61e37c435db79a23de7b68c5db84"
+    },
+    "candidate-tests.xml": {
+      "sha256": "3d9c5ac1333d57e57c7d3787d2358d3ff75eb4ee2e4918d226c74ffe315a3be1"
+    }
+  },
+  "receiving": [
+    "Native git apply --check and git apply receive added and modified patches; exact resulting bytes match the requested files.",
+    "Eight non-LF separators remain ordinary string content, including vertical/form feed, record separators, NEL, LS and PS.",
+    "LF/CRLF and blank-line additions retain bytes; empty/unchanged inputs emit no patch.",
+    "Additions-only output still refuses existing files and preserves existing CRLF test bytes.",
+    "Two existing project-native patch/collision tests pass with the new regression."
+  ],
+  "limits": "Focused normal-Python source/Git qualification only. Independent actual TestPilot consumer receiving is separate. No full-suite, hosted CI or installed-runtime claim."
+}
