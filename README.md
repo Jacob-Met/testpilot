@@ -188,6 +188,14 @@ The default model IDs come from the Token Factory docs' August 2026 deprecation 
 
 ## Eval (scripted stub)
 
+To apply the failed-before/passed-after check to your own committed project,
+use `testpilot regression --repo PROJECT --report REPORT --before REF --after REF --out NEW_DIRECTORY`.
+It executes the same retained tests on both revisions without model calls or
+checkout changes, and requires a matched native failure-to-pass witness.
+Timeouts, collection errors and mismatched generated cases remain inconclusive.
+See [paired revision regression checks](docs/REGRESSION.md) for interpreter setup,
+source limits and the complete result contract.
+
 Each case has a repo with one injected bug, the PR diff, a hidden `fix/` used only as an oracle, and canned model replies. The scripts are written to exercise every loop path: a first-try diagnosis, an import-error repair followed by a diagnosis, a timeout, exhausting the round limit, and weak tests that miss the bug.
 
 * **bug-revealing**: the final tests fail on the buggy repo and pass with `fix/` applied.

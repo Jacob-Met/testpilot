@@ -1,0 +1,20 @@
+{
+  "parent": "513f17454af378ee042ccd29dc930ef332a48734",
+  "tree": "ffded624f1e44bed9e10872dfb795dae2dda1a46",
+  "preserved_runtime_advances_since_received_parent": [
+    {
+      "path": "testpilot/__main__.py",
+      "before": "44f485af279e66f75c6e4ef881b5a75e5d0cdef2",
+      "after": "53b9436ca572c0cb9e9a10e32252197bdd9ffd98"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "before": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "after": "ab4d562bdad9e5e2ecd977df8245562d16f1cbd9"
+    }
+  ],
+  "shared_cli_and_readme_additions_reverse_byte_exactly": true,
+  "received_regression_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+  "parent_leaf_count": 1426,
+  "current_composed_hosted_gate": "pending at publication; local source-identical cases not relabeled"
+}

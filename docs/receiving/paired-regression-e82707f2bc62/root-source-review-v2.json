@@ -1,0 +1,74 @@
+{
+  "reviewer": "estate-e82707f2bc62/root",
+  "reviewed_at": "2026-10-08T19:10:23.022717+00:00",
+  "source_freeze": "source-freeze-v2.json",
+  "status": "Source accepted, independent native and actual current-parent hosted receiving remain required",
+  "files": [
+    {
+      "path": "testpilot/regression.py",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "git_blob": "cfb8ad4a6e3b9c30dbd5fc55c6028167c9fbc106",
+      "sha256": "92c5dc62290e02c6c7041038322018ff2a2337a9c9bdee8beb17b5603b95301a"
+    },
+    {
+      "path": "tests/test_regression.py",
+      "git_blob": "bbd21beaccac0fccea92bfbb1c9b4c5bf87e9998",
+      "sha256": "b3b7c8892c24db5cc7368b4960e334aee1b51835293a6045306c847819af3578"
+    },
+    {
+      "path": "docs/REGRESSION.md",
+      "git_blob": "af7de6f54af478d5d5056a3d403211ffca3d3ce8",
+      "sha256": "43a4d9c0c9bbf1b6d05f64bc55170cd4259c7c6cfc34409fc8ba3b516de95d7e"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "da0a4bba9bbc6680e0a16a875fcf8ad96bda51ad",
+      "sha256": "02ab6703742d6a5465c27b22a12405b99ba88bba192b10742fdf7f5102b691a7"
+    }
+  ],
+  "public_contract_sha256": "85a093ae885223e26db05b090d217ca37a4bffb0e6d72fbe4ef469b97d689ad2",
+  "exact_parent": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "additive_composition": [
+    {
+      "path": "testpilot/__main__.py",
+      "parent_blob": "44f485af279e66f75c6e4ef881b5a75e5d0cdef2",
+      "inserted_spans_chars": [
+        47,
+        860,
+        72
+      ],
+      "reverse_exact": true
+    },
+    {
+      "path": "README.md",
+      "parent_blob": "9eaab06ffbfd831cfdd2916fff4dd15198cb8f3e",
+      "inserted_spans_chars": [
+        543
+      ],
+      "reverse_exact": true
+    }
+  ],
+  "protected_local_runtime_files_exact_to_freeze": 10,
+  "reviewed_behaviors": [
+    "Resolve both refs to original complete commit/tree identities before execution; no replacement, lazy fetch, checkout or hooks",
+    "Admit regular-file trees, original blob identities/modes and both retained-test placements before either pytest phase",
+    "Reuse unchanged saved-suite reader and run_pytest with exact_files=True and coverage=False",
+    "Pair actual generated_file/nodeid values; duplicates, mismatches, missing retained files, generated skips and native errors remain inconclusive",
+    "Require successful after execution plus at least one genuine failed-before/passed-after generated witness",
+    "Preserve dirty worktree/index/ref state and existing output; publish only new external destination",
+    "Document existing sandbox execution boundary and absence of causal or test-completeness claims"
+  ],
+  "reviewed_source": "Complete336-line module,246-line author receiver,public contract,guide,CLI/README additions and unchanged retained-reader/native-sandbox boundaries",
+  "root_execution_claim": false,
+  "native_receiving_attribution": {
+    "author_original": "14 methods:2fail/12missing-module errors",
+    "author_candidate_v1": "14pass",
+    "author_candidate_v2": "same14pass",
+    "original_retained_clamp": "Separate original witness and actual candidate successor retained by author"
+  },
+  "current_main_followup": "Author reports newer e5b7ac4a malformed-diff PR48; final publication must preserve its actual CLI/parser and all unrelated leaves. This review does not claim that later composition was executed."
+}
