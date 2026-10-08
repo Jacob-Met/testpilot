@@ -1,0 +1,24 @@
+{
+  "schema": "testpilot-hosted-fence-compatibility-failure/1",
+  "repository": "Jacob-Met/testpilot",
+  "pull_request": 22,
+  "head": "c138a7992fa35066d115dee6e8fddef33496b54c",
+  "run_id": 37780846512,
+  "job_id": 113323274006,
+  "run_url": "https://github.com/Jacob-Met/testpilot/actions/runs/37780846512",
+  "outcome": "failure",
+  "counts": {
+    "failed": 2,
+    "passed": 248,
+    "subtests_passed": 6
+  },
+  "failed_cases": [
+    "tests/test_generated_test_preservation.py::test_conflicting_alias_and_canonical_repairs_preserve_previous_tests[True]",
+    "tests/test_generated_test_preservation.py::test_conflicting_alias_and_canonical_repairs_preserve_previous_tests[False]"
+  ],
+  "observed_assertion": "The previous generated tests remained failed, but result.message did not contain 'conflicting repair blocks'. Parsing the legacy directly adjacent closing/opening fences produced one malformed body instead of two incoming repair blocks.",
+  "cause": "The standalone closing-fence boundary in the initial contribution did not accept the existing six-backtick closing/opening concatenation.",
+  "scope": "This is a newly observed regression of the initial submitted source, not a pre-existing unrelated failure. Both actual failing tests and two new focused order controls are retained without weakening their expectations.",
+  "raw_logs_source": "Supported GitHub workflow job log read, job 113323274006; full raw response retained in worker memory.",
+  "summary_line": "2026-10-08T13:00:29.9467514Z 2 failed, 248 passed, 6 subtests passed in 67.24s (0:01:07)"
+}

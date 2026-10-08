@@ -1,0 +1,84 @@
+{
+  "all_source_bytes_unchanged": true,
+  "changed_runtime_node": "_FENCE",
+  "free_after": 1363410944,
+  "native_bytes": 232513,
+  "native_root": "/dev/shm/hamon-testpilot-fence-compat-3dcb83a1",
+  "receiving_head": "c138a7992fa35066d115dee6e8fddef33496b54c",
+  "results": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_fenced_code_boundaries.py",
+        "tests/test_generated_test_preservation.py::test_conflicting_alias_and_canonical_repairs_preserve_previous_tests",
+        "--junitxml=/dev/shm/hamon-testpilot-fence-compat-3dcb83a1/baseline-junit.xml",
+        "--basetemp=/dev/shm/hamon-testpilot-fence-compat-3dcb83a1/baseline-work/pytest"
+      ],
+      "counts": {
+        "errors": 0,
+        "failures": 4,
+        "skipped": 0,
+        "tests": 16
+      },
+      "cwd": "/dev/shm/hamon-testpilot-fence-compat-3dcb83a1/baseline",
+      "exit_code": 1,
+      "free_before": 1363652608,
+      "variant": "baseline"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_fenced_code_boundaries.py",
+        "tests/test_generated_test_preservation.py::test_conflicting_alias_and_canonical_repairs_preserve_previous_tests",
+        "--junitxml=/dev/shm/hamon-testpilot-fence-compat-3dcb83a1/candidate-junit.xml",
+        "--basetemp=/dev/shm/hamon-testpilot-fence-compat-3dcb83a1/candidate-work/pytest"
+      ],
+      "counts": {
+        "errors": 0,
+        "failures": 0,
+        "skipped": 0,
+        "tests": 16
+      },
+      "cwd": "/dev/shm/hamon-testpilot-fence-compat-3dcb83a1/candidate",
+      "exit_code": 0,
+      "free_before": 1363615744,
+      "variant": "candidate"
+    }
+  ],
+  "schema": "testpilot-fence-compatibility/1",
+  "scope": "Twelve prior fence controls, two new adjacent-fence orders, and the two actual hosted-failure consumer cases only; not a full suite.",
+  "source_sha256": {
+    "baseline/pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "baseline/testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "baseline/testpilot/__main__.py": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+    "baseline/testpilot/_pytest_generated.py": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+    "baseline/testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "baseline/testpilot/loop.py": "d63fe6ddfb3c981ecca8d7cf6b231e9f60d82aa04cabd9ccc6af2fca6dfd1fcf",
+    "baseline/testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "baseline/testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931",
+    "baseline/tests/test_fenced_code_boundaries.py": "edff7f6dec6c754cdbd03efee84b342103bb1c43a8b614333e1ca83e75bfd91c",
+    "baseline/tests/test_generated_test_preservation.py": "f6efd91dc4554a6cc0d1c162ae41aeec25dc94d81bad3cc5c7cd61ea674cdab7",
+    "candidate/pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "candidate/testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "candidate/testpilot/__main__.py": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+    "candidate/testpilot/_pytest_generated.py": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+    "candidate/testpilot/diff.py": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+    "candidate/testpilot/loop.py": "fbe16f8c79fb5acc1d27fe2c608ee62c3a9648770afbc5e2cb54ff5c130962ca",
+    "candidate/testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "candidate/testpilot/sandbox.py": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931",
+    "candidate/tests/test_fenced_code_boundaries.py": "edff7f6dec6c754cdbd03efee84b342103bb1c43a8b614333e1ca83e75bfd91c",
+    "candidate/tests/test_generated_test_preservation.py": "f6efd91dc4554a6cc0d1c162ae41aeec25dc94d81bad3cc5c7cd61ea674cdab7"
+  }
+}

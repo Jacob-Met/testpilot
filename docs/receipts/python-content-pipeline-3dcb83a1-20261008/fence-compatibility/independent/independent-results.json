@@ -1,0 +1,198 @@
+{
+  "scope": "Independent LF/CRLF exact parser controls plus one actual public CLI with adjacent test blocks, existing filename alias, inline six-backtick literal and raw U+2029; patch apply and receiving pytest.",
+  "baseline_loop": "62c7dc97009a8461579fc3221465327f83a0b369",
+  "candidate_loop": "129f6b1db17ef62eb0462665191d79dac8886413",
+  "changed_ast_only": "_FENCE",
+  "harness": {
+    "sha256": "a6ebf2167880e54c7169fef5bbef33ed5fbe43ab2bdf52cd80155d71f1356293",
+    "bytes": 6471
+  },
+  "variants": {
+    "baseline": {
+      "raw_receipt": {
+        "sha256": "f958b950dd1ad6861aa4d3e6033dcb10cfde2452b15489b382dc80f38356eee4",
+        "bytes": 17278
+      },
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "source_pins": {
+        "testpilot/__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "bytes": 390
+        },
+        "testpilot/__main__.py": {
+          "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+          "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+          "bytes": 5094
+        },
+        "testpilot/_pytest_generated.py": {
+          "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+          "git_blob": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+          "bytes": 1446
+        },
+        "testpilot/diff.py": {
+          "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+          "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+          "bytes": 9396
+        },
+        "testpilot/loop.py": {
+          "sha256": "d63fe6ddfb3c981ecca8d7cf6b231e9f60d82aa04cabd9ccc6af2fca6dfd1fcf",
+          "git_blob": "62c7dc97009a8461579fc3221465327f83a0b369",
+          "bytes": 23814
+        },
+        "testpilot/model.py": {
+          "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+          "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+          "bytes": 10175
+        },
+        "testpilot/sandbox.py": {
+          "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931",
+          "git_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+          "bytes": 11877
+        }
+      },
+      "source_unchanged": true,
+      "parser": [
+        {
+          "newline": "'\\n'",
+          "exact_file_bytes": false,
+          "accepted": false
+        },
+        {
+          "newline": "'\\r\\n'",
+          "exact_file_bytes": false,
+          "accepted": false
+        }
+      ],
+      "cli": {
+        "command": [
+          "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-testpilot-fence-compat-independent-3dcb83a1/baseline-consumer/repo",
+          "--git-base",
+          "HEAD",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-testpilot-fence-compat-independent-3dcb83a1/baseline-consumer/script",
+          "--rounds",
+          "0",
+          "--timeout",
+          "10",
+          "--python",
+          "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+          "--out",
+          "/tmp/hamon-testpilot-fence-compat-independent-3dcb83a1/baseline-consumer/output"
+        ],
+        "exit": 1,
+        "status": "failed",
+        "tests_written": 0,
+        "originals_unchanged": true,
+        "patch_applies": false,
+        "receiving_pytest_exit": null,
+        "receiving_pytest_output": null,
+        "receiving_pytest_passed": false,
+        "exact_delivered_bytes": false,
+        "accepted": false
+      },
+      "accepted": false
+    },
+    "candidate": {
+      "raw_receipt": {
+        "sha256": "b470b6782d60151433648faf79dcc437342e7a2de83ba03abffdbd633af943e2",
+        "bytes": 11133
+      },
+      "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+      "source_pins": {
+        "testpilot/__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "bytes": 390
+        },
+        "testpilot/__main__.py": {
+          "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4",
+          "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+          "bytes": 5094
+        },
+        "testpilot/_pytest_generated.py": {
+          "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc",
+          "git_blob": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+          "bytes": 1446
+        },
+        "testpilot/diff.py": {
+          "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c",
+          "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+          "bytes": 9396
+        },
+        "testpilot/loop.py": {
+          "sha256": "fbe16f8c79fb5acc1d27fe2c608ee62c3a9648770afbc5e2cb54ff5c130962ca",
+          "git_blob": "129f6b1db17ef62eb0462665191d79dac8886413",
+          "bytes": 23854
+        },
+        "testpilot/model.py": {
+          "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+          "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+          "bytes": 10175
+        },
+        "testpilot/sandbox.py": {
+          "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931",
+          "git_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+          "bytes": 11877
+        }
+      },
+      "source_unchanged": true,
+      "parser": [
+        {
+          "newline": "'\\n'",
+          "exact_file_bytes": true,
+          "accepted": true
+        },
+        {
+          "newline": "'\\r\\n'",
+          "exact_file_bytes": true,
+          "accepted": true
+        }
+      ],
+      "cli": {
+        "command": [
+          "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/tmp/hamon-testpilot-fence-compat-independent-3dcb83a1/candidate-consumer/repo",
+          "--git-base",
+          "HEAD",
+          "--backend",
+          "scripted",
+          "--script",
+          "/tmp/hamon-testpilot-fence-compat-independent-3dcb83a1/candidate-consumer/script",
+          "--rounds",
+          "0",
+          "--timeout",
+          "10",
+          "--python",
+          "/home/jacob/hamon-testpilot-ci-receiving-3dcb83a1/venv/bin/python",
+          "--out",
+          "/tmp/hamon-testpilot-fence-compat-independent-3dcb83a1/candidate-consumer/output"
+        ],
+        "exit": 0,
+        "status": "passed",
+        "tests_written": 2,
+        "originals_unchanged": true,
+        "patch_applies": true,
+        "receiving_pytest_exit": 0,
+        "receiving_pytest_output": "...                                                                      [100%]\n3 passed in 0.01s\n",
+        "receiving_pytest_passed": true,
+        "exact_delivered_bytes": true,
+        "accepted": true
+      },
+      "accepted": true
+    }
+  }
+}

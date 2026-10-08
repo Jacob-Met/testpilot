@@ -48,7 +48,11 @@ SYSTEM_REPAIR = (
     "explanation."
 )
 
-_FENCE = re.compile(r"```([^\n`]*)\n(.*?)```", re.S)
+# Closers start a line; keep legacy adjacent close/open fences compatible.
+_FENCE = re.compile(
+    r"```([^\n`]*)\n(.*?)^[ \t]*(?:`{3,}[ \t]*(?:\r?\n|$)|```(?=```[^\n`]*\n))",
+    re.S | re.M,
+)
 _PATH_IN_INFO = re.compile(r"path\s*=\s*([^\s`]+)")
 _PATH_COMMENT = re.compile(r"^#\s*(?:file|path)\s*:\s*(\S+)\s*\n", re.I)
 _VALID_TEST_PATH = re.compile(r"^tests/(?:[A-Za-z0-9_]+/)*test_[A-Za-z0-9_]+\.py$")
@@ -263,10 +267,11 @@ def make_patch(repo: Path, files: dict[str, str], *, additions_only: bool = Fals
     """Unified diff; generated patches use additions only so git refuses collisions."""
     chunks = []
     for rel in sorted(files):
-        new = files[rel].splitlines(keepends=True)
+        # Git counts LF-delimited lines; other separators remain file content.
+        new = re.findall(r"[^\n]*\n|[^\n]+$", files[rel])
         target = repo / rel
         if not additions_only and target.exists():
-            old = target.read_text(encoding="utf-8").splitlines(keepends=True)
+            old = re.findall(r"[^\n]*\n|[^\n]+$", target.read_text(encoding="utf-8"))
             header = [f"diff --git a/{rel} b/{rel}\n"]
             body = difflib.unified_diff(old, new, f"a/{rel}", f"b/{rel}")
         else:

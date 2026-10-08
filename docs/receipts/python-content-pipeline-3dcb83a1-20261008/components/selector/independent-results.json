@@ -1,0 +1,104 @@
+{
+  "reviewer": "estate_coordination-3dcb83a1",
+  "tested_parent": "e32f707e54ecade632cb653bc0ea9504584df7b8",
+  "harness_sha256": "2dbb956db8c6d5b280a0972341d630937510b26bebceac334776b2b225670a86",
+  "review_sha256": "5bab67f565f7f90b73f3bc95884e69fe1b3e3650fd4b7122e23fbe7d06fe2761",
+  "decision": "accept frozen physical-line selector",
+  "variants": {
+    "baseline": {
+      "tests_run": 3,
+      "failures": 17,
+      "errors": 0,
+      "skips": 0,
+      "package": {
+        "__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+        },
+        "__main__.py": {
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+        },
+        "diff.py": {
+          "sha256": "59e5042a548900f234177a281df0b1d6468ce19be79e2f5e84dd205f35394f4e",
+          "git_blob": "425d0712b18a6a72226399a2f9d704193ace1133"
+        },
+        "loop.py": {
+          "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+          "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa"
+        },
+        "model.py": {
+          "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+          "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+        },
+        "sandbox.py": {
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+        }
+      },
+      "source_subcases": 8,
+      "git_subcases": 8,
+      "consumer": {
+        "status": "passed",
+        "tests_written": 1,
+        "planner_source_exact": false,
+        "git_apply_check": 0,
+        "originals_unchanged": true
+      },
+      "final_pytest_passed": 2,
+      "raw_receipts": {
+        "baseline.json": "f5f4b1e64077cfef0aaad2fe56b69ef3fc5bec98e2e1c36bd535fd070f186418",
+        "baseline.stdout.log": "b637bfeef8996dcad4a6950ca5c0425e1a8278fb755335b5c1558cba5ad742e5",
+        "baseline.stderr.log": "559b110c91daf3dbf3d4b1957ad6cd45d178f5c42b57bb999ef5906757519304"
+      }
+    },
+    "candidate": {
+      "tests_run": 3,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "package": {
+        "__init__.py": {
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+        },
+        "__main__.py": {
+          "sha256": "d30a20e6057e37ee3b27590d11cf1eb01acbc8375c6706c9749639d65cfb16b5",
+          "git_blob": "1f724ba942628f0b337f16594710bff11083ed33"
+        },
+        "diff.py": {
+          "sha256": "36d5c4d913775d0176ec9c63196beb33042227cfd7930c7e10db6afe47daa278",
+          "git_blob": "ea74d79d2789919a7a87bff745e3b6bed12e38a7"
+        },
+        "loop.py": {
+          "sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323",
+          "git_blob": "dd8270d315b02788f0c177cbf49a802b4f0346fa"
+        },
+        "model.py": {
+          "sha256": "2566de6ad3f4dd25f31fbf60453be543bc9ca5b42e60bbd9ee11d3d844046cfc",
+          "git_blob": "20294ab3ad529b142ae955e1c4bc0ce71f87ae8b"
+        },
+        "sandbox.py": {
+          "sha256": "f37cffae5cd8b8b527bd41ac6a9eb6dba0715e0bc6cb95684ac7964339eb10b3",
+          "git_blob": "5f96a359d9e23c7b474cda7b23d3360de3dcf748"
+        }
+      },
+      "source_subcases": 8,
+      "git_subcases": 8,
+      "consumer": {
+        "status": "passed",
+        "tests_written": 1,
+        "planner_source_exact": true,
+        "git_apply_check": 0,
+        "originals_unchanged": true
+      },
+      "final_pytest_passed": 2,
+      "raw_receipts": {
+        "candidate.json": "2111c042880e4b5870f344a93637a1088e8e7ce44bc1c952f831471291ad4788",
+        "candidate.stdout.log": "7f4403faa9d24e8627f0856a0401a0db7581f4d300664ba5e91dc4043b29e07f",
+        "candidate.stderr.log": "a4d7ab1e632496227f261ba06876ec2a7ac752324bbefce6710cb0eec3fc1e2c"
+      }
+    }
+  },
+  "downstream_patch_witness_sha256": "0f4aebc131bfb565311186485192aeb943b507e2a6aa539ad58e2edf01a11a7a"
+}

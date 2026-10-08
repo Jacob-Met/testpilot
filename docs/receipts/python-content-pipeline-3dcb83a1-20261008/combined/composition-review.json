@@ -1,0 +1,13 @@
+{
+  "parent": "f1a8c8e6e7533eac5a23864ef56f4e769d0d9125",
+  "checks": {
+    "_FENCE": true,
+    "make_patch": true,
+    "loop.py_other_nodes_unchanged": true,
+    "diff.py_other_nodes_unchanged": true,
+    "__init__.py_unchanged": true,
+    "__main__.py_unchanged": true,
+    "model.py_unchanged": true,
+    "sandbox.py_unchanged": true
+  }
+}
