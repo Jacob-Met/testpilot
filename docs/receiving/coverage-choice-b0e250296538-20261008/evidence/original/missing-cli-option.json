@@ -1,0 +1,88 @@
+{
+  "label": "missing-cli-option",
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/missing-cli-option/project",
+    "--diff",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/missing-cli-option/change.diff",
+    "--backend",
+    "scripted",
+    "--script",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/missing-cli-option/replies",
+    "--rounds",
+    "0",
+    "--timeout",
+    "15",
+    "--python",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "--out",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/missing-cli-option/out",
+    "--no-coverage"
+  ],
+  "elapsed_seconds": 0.08268300001509488,
+  "returncode": 2,
+  "stdout": "",
+  "stderr": "usage: testpilot [-h] {run,targets,recheck} ...\ntestpilot: error: unrecognized arguments: --no-coverage\n",
+  "report": null,
+  "input_before": {
+    ".coveragerc": {
+      "sha256": "d388b6a06a73a5390f490914bd8026958d4a96957432dbb688ff61b151e0d502",
+      "bytes": 42,
+      "mode": "0o644"
+    },
+    "authored_coverage_failure.py": {
+      "sha256": "551ec754a0f9025c483d69a93fc53153689e1cba646e30e4b72673409ed9216e",
+      "bytes": 111,
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "sha256": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f",
+      "bytes": 48,
+      "mode": "0o644"
+    },
+    "subject.py": {
+      "sha256": "f050665608fb67518c1eb6ee0e6d093c3d808fcbff7285e4cb834cb61dd4ce8e",
+      "bytes": 38,
+      "mode": "0o644"
+    },
+    "tests/test_existing.py": {
+      "sha256": "dc6d3c29bfcc1f6f90b15ea87d63d823641ec5243261af5402342047ee47b88b",
+      "bytes": 350,
+      "mode": "0o644"
+    }
+  },
+  "input_after": {
+    ".coveragerc": {
+      "sha256": "d388b6a06a73a5390f490914bd8026958d4a96957432dbb688ff61b151e0d502",
+      "bytes": 42,
+      "mode": "0o644"
+    },
+    "authored_coverage_failure.py": {
+      "sha256": "551ec754a0f9025c483d69a93fc53153689e1cba646e30e4b72673409ed9216e",
+      "bytes": 111,
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "sha256": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f",
+      "bytes": 48,
+      "mode": "0o644"
+    },
+    "subject.py": {
+      "sha256": "f050665608fb67518c1eb6ee0e6d093c3d808fcbff7285e4cb834cb61dd4ce8e",
+      "bytes": 38,
+      "mode": "0o644"
+    },
+    "tests/test_existing.py": {
+      "sha256": "dc6d3c29bfcc1f6f90b15ea87d63d823641ec5243261af5402342047ee47b88b",
+      "bytes": 350,
+      "mode": "0o644"
+    }
+  },
+  "input_unchanged": true,
+  "source_root": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/baseline-f3b2135c"
+}

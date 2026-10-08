@@ -1,0 +1,198 @@
+{
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_cli_coverage.py",
+    "tests/test_cli_python.py",
+    "tests/test_cli_targets.py",
+    "tests/test_coverage_reporting.py",
+    "tests/test_recheck.py",
+    "--basetemp",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases",
+    "--junitxml",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/junit.xml"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 20.12822416704148,
+  "source_before": {
+    "README.md": {
+      "sha256": "c5abdb2e9f7aae560b995771d5d8573ed45df11752211ae23cb1534c7fd7d5d1",
+      "git_blob": "24b16cc93ad44f791765c24c0b0f48e7c75334dc",
+      "bytes": 13099
+    },
+    "pyproject.toml": {
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "bytes": 676
+    },
+    "testpilot/__init__.py": {
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "sha256": "3097ddba2b7ef0381ca31cb2ef20852b6541b70384da0bd137da018f35a966c1",
+      "git_blob": "65b7274680c22dfbf00e3274d01757d52c8eb55c",
+      "bytes": 6300
+    },
+    "testpilot/_pytest_generated.py": {
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "bytes": 2943
+    },
+    "testpilot/diff.py": {
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "bytes": 9387
+    },
+    "testpilot/html_report.py": {
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "bytes": 20656
+    },
+    "testpilot/loop.py": {
+      "sha256": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+      "git_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "bytes": 25480
+    },
+    "testpilot/model.py": {
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "bytes": 10175
+    },
+    "testpilot/recheck.py": {
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "bytes": 11599
+    },
+    "testpilot/sandbox.py": {
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "git_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "bytes": 12721
+    },
+    "tests/test_cli_coverage.py": {
+      "sha256": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b",
+      "git_blob": "c4dae25bacbd15b030de5cb34c8c37ec4c07d29f",
+      "bytes": 9296
+    },
+    "tests/test_cli_python.py": {
+      "sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+      "git_blob": "2aef9a0af0f5a115f647e1af0b4a218592eb274e",
+      "bytes": 7941
+    },
+    "tests/test_cli_targets.py": {
+      "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+      "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e",
+      "bytes": 10853
+    },
+    "tests/test_coverage_reporting.py": {
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede",
+      "git_blob": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "bytes": 6636
+    },
+    "tests/test_recheck.py": {
+      "sha256": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760",
+      "git_blob": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4",
+      "bytes": 13652
+    }
+  },
+  "source_after": {
+    "README.md": {
+      "sha256": "c5abdb2e9f7aae560b995771d5d8573ed45df11752211ae23cb1534c7fd7d5d1",
+      "git_blob": "24b16cc93ad44f791765c24c0b0f48e7c75334dc",
+      "bytes": 13099
+    },
+    "pyproject.toml": {
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "bytes": 676
+    },
+    "testpilot/__init__.py": {
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "sha256": "3097ddba2b7ef0381ca31cb2ef20852b6541b70384da0bd137da018f35a966c1",
+      "git_blob": "65b7274680c22dfbf00e3274d01757d52c8eb55c",
+      "bytes": 6300
+    },
+    "testpilot/_pytest_generated.py": {
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "bytes": 2943
+    },
+    "testpilot/diff.py": {
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "bytes": 9387
+    },
+    "testpilot/html_report.py": {
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "bytes": 20656
+    },
+    "testpilot/loop.py": {
+      "sha256": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+      "git_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "bytes": 25480
+    },
+    "testpilot/model.py": {
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "bytes": 10175
+    },
+    "testpilot/recheck.py": {
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "bytes": 11599
+    },
+    "testpilot/sandbox.py": {
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "git_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "bytes": 12721
+    },
+    "tests/test_cli_coverage.py": {
+      "sha256": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b",
+      "git_blob": "c4dae25bacbd15b030de5cb34c8c37ec4c07d29f",
+      "bytes": 9296
+    },
+    "tests/test_cli_python.py": {
+      "sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+      "git_blob": "2aef9a0af0f5a115f647e1af0b4a218592eb274e",
+      "bytes": 7941
+    },
+    "tests/test_cli_targets.py": {
+      "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+      "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e",
+      "bytes": 10853
+    },
+    "tests/test_coverage_reporting.py": {
+      "sha256": "49c273ba51487a02c8c5b2bccbac1522980bec0f83fad5f854aded868fab7ede",
+      "git_blob": "6c363a1262b2f9c11cd285b6e29cabd74c03eac9",
+      "bytes": 6636
+    },
+    "tests/test_recheck.py": {
+      "sha256": "dc74c36ddc2f2bd62505549648d0572e5a388840076c8965338f23d371173760",
+      "git_blob": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4",
+      "bytes": 13652
+    }
+  },
+  "source_unchanged": true,
+  "stdout_sha256": "97ff751cc5fe3d9bad6f0e58460e5919d4371b3abca540cfa82403b14ce2ced3",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "base_commit": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "source_manifest_sha256": "88805e0ac01fa98104de6c06de8f5f04ea3fcb7ad360ee0a3b2f60f55057f814",
+  "runtime": {
+    "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+    "executable": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "pytest": "9.0.2",
+    "coverage": "7.16.2"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "source_unchanged": true,
+  "all_project_inputs_unchanged": true,
+  "cases": [
+    {
+      "label": "default-broken-coverage-plugin",
+      "returncode": 1,
+      "status": "failed",
+      "final_returncode": 1,
+      "passed": 0,
+      "failed": 0,
+      "coverage_available": false,
+      "authored_coverage_initialization_error": true,
+      "stderr": ""
+    },
+    {
+      "label": "existing-api-disabled-control",
+      "returncode": 0,
+      "status": "passed",
+      "final_returncode": 0,
+      "passed": 2,
+      "failed": 0,
+      "coverage_available": false,
+      "authored_coverage_initialization_error": false,
+      "stderr": ""
+    },
+    {
+      "label": "missing-cli-option",
+      "returncode": 2,
+      "status": null,
+      "final_returncode": null,
+      "passed": null,
+      "failed": null,
+      "coverage_available": false,
+      "authored_coverage_initialization_error": false,
+      "stderr": "usage: testpilot [-h] {run,targets,recheck} ...\ntestpilot: error: unrecognized arguments: --no-coverage\n"
+    },
+    {
+      "label": "default-ordinary-control",
+      "returncode": 0,
+      "status": "passed",
+      "final_returncode": 0,
+      "passed": 2,
+      "failed": 0,
+      "coverage_available": true,
+      "authored_coverage_initialization_error": false,
+      "stderr": ""
+    }
+  ]
+}

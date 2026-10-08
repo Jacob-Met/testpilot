@@ -82,6 +82,8 @@ python -m testpilot run \
 
 On a real repo, use `--git-base main` instead of `--diff FILE`. Exit codes: 0 means the generated tests pass, 1 means any other outcome, 2 means a config error.
 
+Add `--no-coverage` to `run` to execute pytest without optional coverage measurement. The choice applies to the baseline, generated tests and every repair round, including when you select a project interpreter with `--python`. Reports then show coverage as unavailable; actual test failures and exit codes still determine the run's result. Omit the flag to keep automatic coverage when the selected interpreter has it installed.
+
 ## Review your own run in a browser
 
 Every run also writes **`report.html`** in its output directory. Open that file

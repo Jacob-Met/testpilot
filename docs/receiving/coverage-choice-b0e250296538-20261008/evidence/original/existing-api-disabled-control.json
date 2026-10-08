@@ -1,0 +1,227 @@
+{
+  "label": "existing-api-disabled-control",
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/existing-api-disabled-control/control.py",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/existing-api-disabled-control/project",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/existing-api-disabled-control/replies",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/existing-api-disabled-control/change.diff",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/existing-api-disabled-control/report.json"
+  ],
+  "returncode": 0,
+  "stdout": "{\"status\": \"passed\", \"ok\": true, \"model_calls\": 2}\n",
+  "stderr": "",
+  "report": {
+    "status": "passed",
+    "changed_functions": [
+      {
+        "path": "subject.py",
+        "module": "subject",
+        "qualname": "step",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def step(value):\n    return value + 7",
+        "is_method": false
+      }
+    ],
+    "repair_rounds_used": 0,
+    "max_repair_rounds": 0,
+    "test_files": {
+      "tests/test_generated_coverage_choice.py": "import importlib.util\nimport os\nfrom pathlib import Path\n_path = Path(__file__).resolve().parents[1] / os.fsdecode(b'subject.py')\n_spec = importlib.util.spec_from_file_location('fixture_subject', _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\ndef test_generated_value():\n    assert _subject.step(5) == 12\n"
+    },
+    "tests_written": 1,
+    "final": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.152,
+      "timeout_s": 15,
+      "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing::test_existing_value",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": null
+        },
+        {
+          "nodeid": "tests.test_generated_coverage_choice::test_generated_value",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_generated_coverage_choice.py"
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_generated_coverage_choice.py"
+      ],
+      "junit_available": true,
+      "passed": 2,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+      "generated": {
+        "collected": 1,
+        "passed": 1,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "patch": "diff --git a/tests/test_generated_coverage_choice.py b/tests/test_generated_coverage_choice.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated_coverage_choice.py\n@@ -0,0 +1,10 @@\n+import importlib.util\n+import os\n+from pathlib import Path\n+_path = Path(__file__).resolve().parents[1] / os.fsdecode(b'subject.py')\n+_spec = importlib.util.spec_from_file_location('fixture_subject', _path)\n+_subject = importlib.util.module_from_spec(_spec)\n+_spec.loader.exec_module(_subject)\n+\n+def test_generated_value():\n+    assert _subject.step(5) == 12\n",
+    "coverage": null,
+    "ledger": {
+      "total_tokens": 369,
+      "total_cost_usd": 0.0,
+      "cost_is_complete": false,
+      "tokens_estimated": true,
+      "by_model": {
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "calls": 1,
+          "prompt_tokens": 93,
+          "completion_tokens": 14,
+          "cost_usd": 0.0
+        },
+        "nvidia/Nemotron-3_5-Lightning": {
+          "calls": 1,
+          "prompt_tokens": 159,
+          "completion_tokens": 103,
+          "cost_usd": 0.0
+        }
+      },
+      "entries": [
+        {
+          "role": "planner",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "prompt_tokens": 93,
+          "completion_tokens": 14,
+          "estimated": true,
+          "cost_usd": 0.0
+        },
+        {
+          "role": "editor",
+          "model": "nvidia/Nemotron-3_5-Lightning",
+          "prompt_tokens": 159,
+          "completion_tokens": 103,
+          "estimated": true,
+          "cost_usd": 0.0
+        }
+      ]
+    },
+    "rounds": [
+      {
+        "round": 0,
+        "kind": "generate",
+        "files": [
+          "tests/test_generated_coverage_choice.py"
+        ],
+        "result": {
+          "returncode": 0,
+          "timed_out": false,
+          "duration_s": 0.152,
+          "timeout_s": 15,
+          "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_existing_value",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": null
+            },
+            {
+              "nodeid": "tests.test_generated_coverage_choice::test_generated_value",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": "tests/test_generated_coverage_choice.py"
+            }
+          ],
+          "coverage": null,
+          "generated_files": [
+            "tests/test_generated_coverage_choice.py"
+          ],
+          "junit_available": true,
+          "passed": 2,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": true,
+          "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+          "generated": {
+            "collected": 1,
+            "passed": 1,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          }
+        },
+        "warnings": [],
+        "contents": {
+          "tests/test_generated_coverage_choice.py": "import importlib.util\nimport os\nfrom pathlib import Path\n_path = Path(__file__).resolve().parents[1] / os.fsdecode(b'subject.py')\n_spec = importlib.util.spec_from_file_location('fixture_subject', _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\ndef test_generated_value():\n    assert _subject.step(5) == 12\n"
+        }
+      }
+    ],
+    "plan": "Test the changed step return with an independent input.\n",
+    "message": "",
+    "ok": true
+  },
+  "input_before": {
+    ".coveragerc": {
+      "sha256": "d388b6a06a73a5390f490914bd8026958d4a96957432dbb688ff61b151e0d502",
+      "bytes": 42,
+      "mode": "0o644"
+    },
+    "authored_coverage_failure.py": {
+      "sha256": "551ec754a0f9025c483d69a93fc53153689e1cba646e30e4b72673409ed9216e",
+      "bytes": 111,
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "sha256": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f",
+      "bytes": 48,
+      "mode": "0o644"
+    },
+    "subject.py": {
+      "sha256": "f050665608fb67518c1eb6ee0e6d093c3d808fcbff7285e4cb834cb61dd4ce8e",
+      "bytes": 38,
+      "mode": "0o644"
+    },
+    "tests/test_existing.py": {
+      "sha256": "dc6d3c29bfcc1f6f90b15ea87d63d823641ec5243261af5402342047ee47b88b",
+      "bytes": 350,
+      "mode": "0o644"
+    }
+  },
+  "input_after": {
+    ".coveragerc": {
+      "sha256": "d388b6a06a73a5390f490914bd8026958d4a96957432dbb688ff61b151e0d502",
+      "bytes": 42,
+      "mode": "0o644"
+    },
+    "authored_coverage_failure.py": {
+      "sha256": "551ec754a0f9025c483d69a93fc53153689e1cba646e30e4b72673409ed9216e",
+      "bytes": 111,
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "sha256": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f",
+      "bytes": 48,
+      "mode": "0o644"
+    },
+    "subject.py": {
+      "sha256": "f050665608fb67518c1eb6ee0e6d093c3d808fcbff7285e4cb834cb61dd4ce8e",
+      "bytes": 38,
+      "mode": "0o644"
+    },
+    "tests/test_existing.py": {
+      "sha256": "dc6d3c29bfcc1f6f90b15ea87d63d823641ec5243261af5402342047ee47b88b",
+      "bytes": 350,
+      "mode": "0o644"
+    }
+  },
+  "input_unchanged": true
+}

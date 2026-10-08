@@ -1,0 +1,43 @@
+{
+  "task": "TestPilot #36",
+  "linuxProbeOutcome": "unknown",
+  "replayed": false,
+  "creditedAsExecution": false,
+  "deviceRoutes": [
+    "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+    "cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90"
+  ],
+  "ownedRoot": "/dev/shm/b0e250296538-testpilot-coverage-cli",
+  "receiptSought": "baseline-driver.receipt.json",
+  "startOutcome": {
+    "content": [
+      {
+        "type": "text",
+        "text": "tool call error: tool call failed for `codex_apps/remote_desktop_commander.start_process`\n\nCaused by:\n    Mcp error: -32603: MCP request timed out"
+      }
+    ],
+    "isError": true
+  },
+  "readOutcomes": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "tool call error: tool call failed for `codex_apps/remote_desktop_commander.read_file`\n\nCaused by:\n    Mcp error: -32603: MCP request timed out"
+        }
+      ],
+      "isError": true
+    },
+    {
+      "content": [
+        {
+          "type": "text",
+          "text": "tool call error: tool call failed for `codex_apps/remote_desktop_commander.read_file`\n\nCaused by:\n    Mcp error: -32603: MCP request timed out"
+        }
+      ],
+      "isError": true
+    }
+  ],
+  "sourceCommit": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "followup": "Recover an authoritative receipt/process state before any replay. The separately attributed macOS run uses a different authored fixture."
+}

@@ -1,0 +1,157 @@
+{
+  "source_unchanged": true,
+  "all_project_inputs_unchanged": true,
+  "cases": [
+    {
+      "label": "default-broken-coverage-plugin",
+      "returncode": 1,
+      "status": "failed",
+      "final": {
+        "returncode": 1,
+        "timed_out": false,
+        "duration_s": 0.13,
+        "timeout_s": 15.0,
+        "output": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/__main__.py\", line 12, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 1174, in main\n    status = CoverageScript().command_line(argv)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 863, in command_line\n    return self.do_run(options, args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 1050, in do_run\n    self.coverage.start()\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/control.py\", line 696, in start\n    self._init()\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/control.py\", line 398, in _init\n    self._plugins.load_from_config(self.config.plugins, self.config)\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/plugin_support.py\", line 55, in load_from_config\n    coverage_init(self, options)\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/temporary/testpilot-g1mcmn7m/repo/authored_coverage_failure.py\", line 2, in coverage_init\n    raise RuntimeError('authored optional coverage plugin cannot initialize')\nRuntimeError: authored optional coverage plugin cannot initialize\n",
+        "cases": [],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_generated_coverage_choice.py"
+        ],
+        "junit_available": false,
+        "passed": 0,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "0 passed, 0 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 0 collected",
+        "generated": {
+          "collected": 0,
+          "passed": 0,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "coverage_delta": null,
+      "stderr": ""
+    },
+    {
+      "label": "existing-api-disabled-control",
+      "returncode": 0,
+      "status": "passed",
+      "final": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.152,
+        "timeout_s": 15,
+        "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing_value",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "tests.test_generated_coverage_choice::test_generated_value",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_generated_coverage_choice.py"
+          }
+        ],
+        "coverage": null,
+        "generated_files": [
+          "tests/test_generated_coverage_choice.py"
+        ],
+        "junit_available": true,
+        "passed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "generated": {
+          "collected": 1,
+          "passed": 1,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "coverage_delta": null,
+      "stderr": ""
+    },
+    {
+      "label": "missing-cli-option",
+      "returncode": 2,
+      "status": null,
+      "final": null,
+      "coverage_delta": null,
+      "stderr": "usage: testpilot [-h] {run,targets,recheck} ...\ntestpilot: error: unrecognized arguments: --no-coverage\n"
+    },
+    {
+      "label": "default-ordinary-control",
+      "returncode": 0,
+      "status": "passed",
+      "final": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.321,
+        "timeout_s": 15.0,
+        "output": "..                                                                       [100%]\n2 passed in 0.02s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing_value",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": null
+          },
+          {
+            "nodeid": "tests.test_generated_coverage_choice::test_generated_value",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "tests/test_generated_coverage_choice.py"
+          }
+        ],
+        "coverage": {
+          "percent_total": 100.0,
+          "files": {
+            "subject.py": {
+              "executed": [
+                1,
+                2
+              ],
+              "missing": []
+            }
+          }
+        },
+        "generated_files": [
+          "tests/test_generated_coverage_choice.py"
+        ],
+        "junit_available": true,
+        "passed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+        "generated": {
+          "collected": 1,
+          "passed": 1,
+          "failed": 0,
+          "error": 0,
+          "skipped": 0
+        }
+      },
+      "coverage_delta": {
+        "total_before": 100.0,
+        "total_after": 100.0,
+        "total_delta": 0.0,
+        "changed_lines_executable": 1,
+        "changed_lines_before": 100.0,
+        "changed_lines_after": 100.0
+      },
+      "stderr": ""
+    }
+  ]
+}

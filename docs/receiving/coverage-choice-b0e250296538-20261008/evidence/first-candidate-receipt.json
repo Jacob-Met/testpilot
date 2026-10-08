@@ -1,0 +1,57 @@
+{
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_cli_coverage.py",
+    "--basetemp",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-native-v1/cases",
+    "--junitxml",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-native-v1/junit.xml"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 5.418373416992836,
+  "source_before": {
+    "README.md": "bebb781fde91632dfb80c40a51a3aa698f84f9ac5d6b18b6177e46c0f7c85ebf",
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "3097ddba2b7ef0381ca31cb2ef20852b6541b70384da0bd137da018f35a966c1",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/loop.py": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "tests/test_cli_coverage.py": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b"
+  },
+  "source_after": {
+    "README.md": "bebb781fde91632dfb80c40a51a3aa698f84f9ac5d6b18b6177e46c0f7c85ebf",
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "3097ddba2b7ef0381ca31cb2ef20852b6541b70384da0bd137da018f35a966c1",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/loop.py": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "tests/test_cli_coverage.py": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b"
+  },
+  "source_unchanged": true,
+  "stdout_sha256": "481494282945945e8b88ca491e00598cd2592713141de5bb2884c3f6c5307e22",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "platform": "macOS 26.6.2 arm64",
+  "runtime": {
+    "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+    "executable": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "pytest": "9.0.2",
+    "coverage": "7.16.2"
+  }
+}

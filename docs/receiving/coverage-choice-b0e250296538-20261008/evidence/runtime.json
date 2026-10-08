@@ -1,0 +1,7 @@
+{
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "executable": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "pytest": "9.0.2",
+  "coverage": "7.16.2"
+}

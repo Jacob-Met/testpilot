@@ -1,0 +1,9 @@
+{
+  "platform": "macOS",
+  "fixture": "filesystem representation preflight",
+  "root": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli",
+  "free": 804102144,
+  "raw_filename_created": false,
+  "errno": 92,
+  "error": "[Errno 92] Illegal byte sequence: b'/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/raw-name-\\xff.py'"
+}

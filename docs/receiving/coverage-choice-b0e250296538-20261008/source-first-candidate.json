@@ -1,0 +1,139 @@
+{
+  "base_commit": "f3b2135cad31852b599350564fe76dd160a6a522",
+  "base_tree": "d0107a6f8b3b8cc00dadebc5f794060f275f3f5b",
+  "baseline": {
+    "testpilot/__init__.py": {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+      "bytes": 6065
+    },
+    "testpilot/_pytest_generated.py": {
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "bytes": 2943
+    },
+    "testpilot/diff.py": {
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "bytes": 9387
+    },
+    "testpilot/html_report.py": {
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "bytes": 20656
+    },
+    "testpilot/loop.py": {
+      "git_blob": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+      "bytes": 24064
+    },
+    "testpilot/model.py": {
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "bytes": 10175
+    },
+    "testpilot/recheck.py": {
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "bytes": 11599
+    },
+    "testpilot/sandbox.py": {
+      "git_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "bytes": 12721
+    },
+    "README.md": {
+      "git_blob": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14",
+      "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+      "bytes": 11550
+    },
+    "pyproject.toml": {
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "bytes": 676
+    }
+  },
+  "candidate": {
+    "README.md": {
+      "git_blob": "02d7029c1aa2ffa111eebdd7f75212c96d20d6f8",
+      "sha256": "bebb781fde91632dfb80c40a51a3aa698f84f9ac5d6b18b6177e46c0f7c85ebf",
+      "bytes": 11980
+    },
+    "pyproject.toml": {
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "bytes": 676
+    },
+    "testpilot/__init__.py": {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "git_blob": "65b7274680c22dfbf00e3274d01757d52c8eb55c",
+      "sha256": "3097ddba2b7ef0381ca31cb2ef20852b6541b70384da0bd137da018f35a966c1",
+      "bytes": 6300
+    },
+    "testpilot/_pytest_generated.py": {
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "bytes": 2943
+    },
+    "testpilot/diff.py": {
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "bytes": 9387
+    },
+    "testpilot/html_report.py": {
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "bytes": 20656
+    },
+    "testpilot/loop.py": {
+      "git_blob": "3057a9c7c9777a23e73f8b56979670001eb512fd",
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+      "bytes": 24064
+    },
+    "testpilot/model.py": {
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "bytes": 10175
+    },
+    "testpilot/recheck.py": {
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "bytes": 11599
+    },
+    "testpilot/sandbox.py": {
+      "git_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "bytes": 12721
+    },
+    "tests/test_cli_coverage.py": {
+      "git_blob": "c4dae25bacbd15b030de5cb34c8c37ec4c07d29f",
+      "sha256": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b",
+      "bytes": 9296
+    }
+  },
+  "unchanged_inherited_files": [
+    "testpilot/__init__.py",
+    "testpilot/_pytest_generated.py",
+    "testpilot/diff.py",
+    "testpilot/html_report.py",
+    "testpilot/loop.py",
+    "testpilot/model.py",
+    "testpilot/recheck.py",
+    "testpilot/sandbox.py",
+    "pyproject.toml"
+  ],
+  "unchanged_cli_definitions": [
+    "_python_executable",
+    "_read_diff",
+    "_preview_targets"
+  ]
+}

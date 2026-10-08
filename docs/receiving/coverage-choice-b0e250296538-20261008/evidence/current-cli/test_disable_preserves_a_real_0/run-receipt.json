@@ -1,0 +1,201 @@
+{
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_preserves_a_real_0/project with spaces",
+    "--diff",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_preserves_a_real_0/change.diff",
+    "--backend",
+    "scripted",
+    "--script",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_preserves_a_real_0/scripted replies",
+    "--rounds",
+    "0",
+    "--timeout",
+    "15",
+    "--out",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_preserves_a_real_0/run-out",
+    "--no-coverage"
+  ],
+  "returncode": 1,
+  "report": {
+    "status": "failed",
+    "changed_functions": [
+      {
+        "path": "subject.py",
+        "module": "subject",
+        "qualname": "add_fee",
+        "lineno": 3,
+        "end_lineno": 4,
+        "changed_lines": [
+          3,
+          4
+        ],
+        "source": "def add_fee(value):\n    return value + fee",
+        "is_method": false
+      }
+    ],
+    "repair_rounds_used": 0,
+    "max_repair_rounds": 0,
+    "test_files": {
+      "tests/test_generated_fee.py": "from subject import add_fee\nfrom fixture_receipt import record\n\ndef test_generated_fee():\n    record('generated')\n    assert add_fee(11) == 19\n"
+    },
+    "tests_written": 1,
+    "final": {
+      "returncode": 1,
+      "timed_out": false,
+      "duration_s": 0.156,
+      "timeout_s": 15.0,
+      "output": ".F                                                                       [100%]\n=================================== FAILURES ===================================\n______________________________ test_generated_fee ______________________________\n\n    def test_generated_fee():\n        record('generated')\n>       assert add_fee(11) == 19\nE       assert 18 == 19\nE        +  where 18 = add_fee(11)\n\ntests/test_generated_fee.py:6: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_generated_fee.py::test_generated_fee - assert 18 == 19\n1 failed, 1 passed in 0.02s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing::test_existing_fee",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": null
+        },
+        {
+          "nodeid": "tests.test_generated_fee::test_generated_fee",
+          "outcome": "failed",
+          "message": "assert 18 == 19\n +  where 18 = add_fee(11)\ndef test_generated_fee():\n        record('generated')\n>       assert add_fee(11) == 19\nE       assert 18 == 19\nE        +  where 18 = add_fee(11)\n\ntests/test_generated_fee.py:6: AssertionError",
+          "generated_file": "tests/test_generated_fee.py"
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_generated_fee.py"
+      ],
+      "junit_available": true,
+      "passed": 1,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "ok": false,
+      "summary": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected",
+      "generated": {
+        "collected": 1,
+        "passed": 0,
+        "failed": 1,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "patch": "diff --git a/tests/test_generated_fee.py b/tests/test_generated_fee.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated_fee.py\n@@ -0,0 +1,6 @@\n+from subject import add_fee\n+from fixture_receipt import record\n+\n+def test_generated_fee():\n+    record('generated')\n+    assert add_fee(11) == 19\n",
+    "coverage": null,
+    "ledger": {
+      "total_tokens": 311,
+      "total_cost_usd": 0.0,
+      "cost_is_complete": false,
+      "tokens_estimated": true,
+      "by_model": {
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "calls": 1,
+          "prompt_tokens": 96,
+          "completion_tokens": 10,
+          "cost_usd": 0.0
+        },
+        "nvidia/Nemotron-3_5-Lightning": {
+          "calls": 1,
+          "prompt_tokens": 157,
+          "completion_tokens": 48,
+          "cost_usd": 0.0
+        }
+      },
+      "entries": [
+        {
+          "role": "planner",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "prompt_tokens": 96,
+          "completion_tokens": 10,
+          "estimated": true,
+          "cost_usd": 0.0
+        },
+        {
+          "role": "editor",
+          "model": "nvidia/Nemotron-3_5-Lightning",
+          "prompt_tokens": 157,
+          "completion_tokens": 48,
+          "estimated": true,
+          "cost_usd": 0.0
+        }
+      ]
+    },
+    "rounds": [
+      {
+        "round": 0,
+        "kind": "generate",
+        "files": [
+          "tests/test_generated_fee.py"
+        ],
+        "result": {
+          "returncode": 1,
+          "timed_out": false,
+          "duration_s": 0.156,
+          "timeout_s": 15.0,
+          "output": ".F                                                                       [100%]\n=================================== FAILURES ===================================\n______________________________ test_generated_fee ______________________________\n\n    def test_generated_fee():\n        record('generated')\n>       assert add_fee(11) == 19\nE       assert 18 == 19\nE        +  where 18 = add_fee(11)\n\ntests/test_generated_fee.py:6: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_generated_fee.py::test_generated_fee - assert 18 == 19\n1 failed, 1 passed in 0.02s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing::test_existing_fee",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": null
+            },
+            {
+              "nodeid": "tests.test_generated_fee::test_generated_fee",
+              "outcome": "failed",
+              "message": "assert 18 == 19\n +  where 18 = add_fee(11)\ndef test_generated_fee():\n        record('generated')\n>       assert add_fee(11) == 19\nE       assert 18 == 19\nE        +  where 18 = add_fee(11)\n\ntests/test_generated_fee.py:6: AssertionError",
+              "generated_file": "tests/test_generated_fee.py"
+            }
+          ],
+          "coverage": null,
+          "generated_files": [
+            "tests/test_generated_fee.py"
+          ],
+          "junit_available": true,
+          "passed": 1,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0,
+          "ok": false,
+          "summary": "1 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected",
+          "generated": {
+            "collected": 1,
+            "passed": 0,
+            "failed": 1,
+            "error": 0,
+            "skipped": 0
+          }
+        },
+        "warnings": [],
+        "contents": {
+          "tests/test_generated_fee.py": "from subject import add_fee\nfrom fixture_receipt import record\n\ndef test_generated_fee():\n    record('generated')\n    assert add_fee(11) == 19\n"
+        }
+      }
+    ],
+    "plan": "Check add_fee with a distinct input.\n",
+    "message": "still failing after 0 repair round(s): 1 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected",
+    "ok": false
+  },
+  "executions": [
+    {
+      "label": "existing",
+      "prefix": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312",
+      "executable": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python"
+    },
+    {
+      "label": "existing",
+      "prefix": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312",
+      "executable": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python"
+    },
+    {
+      "label": "generated",
+      "prefix": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312",
+      "executable": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python"
+    }
+  ],
+  "project_unchanged": true
+}
