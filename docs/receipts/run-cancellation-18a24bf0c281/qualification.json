@@ -1,0 +1,60 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/35",
+  "base_ref": "main",
+  "base_sha": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "base_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "full_parent_blob_count": 1063,
+  "source_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+  "original_evidence_commit": "8aaacedf99c888d27971e7d1cf9751f777961d4d",
+  "current_parent_commit": "6f81b28a1ccdd09983cc5180595868ed27d4ab3a",
+  "test_freeze_commit": "d017324348fba8035646b77426aa3b94497d6d89",
+  "current_red_commit": "fe6adc337ada4421a1e978d58998eec3e8478d43",
+  "source_paths": [
+    "testpilot/sandbox.py",
+    "tests/test_sandbox_interrupt.py",
+    "docs/run-cancellation.md"
+  ],
+  "original_cli": {
+    "actions": 2,
+    "predicates_passed": 3,
+    "predicates_total": 4,
+    "head": "f3b2135cad31852b599350564fe76dd160a6a522"
+  },
+  "current_focused": {
+    "cases": 4,
+    "failed": 3,
+    "passed": 1,
+    "errors": 0
+  },
+  "candidate_pytest": {
+    "cases": 18,
+    "passed": 17,
+    "skipped": 1,
+    "skip_reason": "existing coverage test: coverage not installed"
+  },
+  "candidate_cli": {
+    "actions": 2,
+    "predicates_passed": 4,
+    "predicates_total": 4
+  },
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "pytest": "9.1.1",
+  "device_id": "0e3d582f-e25b-44b2-8418-9639fc4e4e33",
+  "native_root": "/Users/me/testpilot-cancellation-18a24bf0c281",
+  "production_inverse_reconstruction": true,
+  "all_gate_source_bytes_unchanged": true,
+  "ownership_evidence_archive_path": "evidence/current-head-ownership.json",
+  "current_parent_distinction": "f3 discovery and7f current-parent executions are separate; candidate composition sidecar is authoritative over the frozen driver's historical raw f3 labels.",
+  "preserved_receiver_error": "v1 aggregate ledger.calls KeyError, after both native flows, is retained; v2 fixes only metadata access and exposes paths.",
+  "scope_limits": [
+    "Native macOS POSIX KeyboardInterrupt during initial communication only",
+    "No escaped-session containment, Windows, SIGTERM/SIGKILL or pre-Popen claim",
+    "No optimized-Python or whole-repository-suite claim",
+    "No dependencies installed, live providers, real developer outputs or GitHub writes",
+    "Publication is a delta over the complete canonical parent tree"
+  ],
+  "raw_archive_sha256": "e66b776604382428a7c381f717cc323e4b5d7f00d31d6020553181bfd8bbddd7",
+  "raw_regular_files_verified": 250
+}

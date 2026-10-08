@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "repository": "Jacob-Met/testpilot",
+  "issue": 35,
+  "integrator": "estate-18a24bf0c281",
+  "recorded_at": "2026-10-08T16:49:24.626Z",
+  "purpose": "Stop the owned POSIX pytest process group when KeyboardInterrupt interrupts initial process communication, then propagate cancellation without publishing a result.",
+  "source": {
+    "native_candidate_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+    "native_author_evidence_commit": "70ac0bde74a6256bc76e9503592ac56d0dcb790d",
+    "original_sandbox_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+    "candidate_sandbox_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+    "candidate_sandbox_sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+    "production_change": "One 15-line KeyboardInterrupt handler plus its documentation. Send SIGKILL to the owned POSIX process group, bounded leader wait, close retained stdout pipe, and re-raise. Existing timeout implementation is byte-identical.",
+    "paths": [
+      "testpilot/sandbox.py",
+      "tests/test_sandbox_interrupt.py",
+      "docs/run-cancellation.md"
+    ]
+  },
+  "qualification_parent": {
+    "commit": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+    "tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+    "complete_leaves": 1063
+  },
+  "publication_parent": {
+    "commit": "362981dd84626fd55eda93584c2984cd9d0e5276",
+    "tree": "1a75241e7e215b3586159fce945df70a6e139d78",
+    "complete_leaves": 1072
+  },
+  "original_receiving": {
+    "commit": "f3b2135cad31852b599350564fe76dd160a6a522",
+    "actual_cli_actions": 2,
+    "checks": 4,
+    "passed": 3,
+    "failed": 1,
+    "negative": "A pytest process continues work after its TestPilot parent exits on SIGINT; a post-parent-exit barrier makes the ordering explicit.",
+    "ordinary_control": "ScriptedModel run completes with two passing pytest cases and two accepted model entries.",
+    "retained_reader_error": "The first receiver incorrectly read ledger.calls. Its KeyError and raw flows remain; v2 corrects the interface to ledger.entries.",
+    "attribution": "The original f3 execution is not relabeled as execution on current main."
+  },
+  "author_receiving": {
+    "native_platform": "macOS arm64; Python 3.12.8; pytest 9.1.1",
+    "frozen_new_tests_baseline": {
+      "passed": 1,
+      "failed": 3
+    },
+    "candidate_focused": {
+      "passed": 17,
+      "skipped": 1,
+      "composition": "Four added process cases and thirteen retained passing cases; the old optional coverage case skips because coverage is absent."
+    },
+    "candidate_actual_cli": {
+      "actions": 2,
+      "checks": 4,
+      "passed": 4
+    },
+    "candidate_cli_composition_receipt_sha256": "48e7382166bb99ab5f4e45c3fb82fc5368fcc9abd6f3f4ceee9b9305bc61e96a",
+    "controls": "Actual SIGINT, same-group children, escaped-session retained-pipe controls, bounded wait and unchanged timeout behavior. Timings are observations, not comparative performance claims.",
+    "mode": "Normal Python only; no optimized-mode or full-suite claim."
+  },
+  "independent_receiving": {
+    "evidence_commit": "ce7564c16da862d1e27a65ec6dcd6f3d013914df",
+    "driver_freeze_commit": "0c5eb9caeaaf4b3d014b1ce65eab21f45f49e546",
+    "baseline_evidence_commit": "9317bdb3a0fda248ffcbabbe94c401a4558a1b41",
+    "driver_sha256": "301391fcb3b08eb41d8958d4305a50e95cdee03127a2584357a69d3e35d893f7",
+    "original": {
+      "actual_cli_actions": 1,
+      "checks": 14,
+      "passed": 12,
+      "failed": 2
+    },
+    "candidate": {
+      "actual_cli_actions": 1,
+      "checks": 14,
+      "passed": 14,
+      "failed": 0
+    },
+    "phase": "Generated-test verification after an actual existing-test pass and two accepted ScriptedModel replies.",
+    "finding": "Original pytest and its finite worker perform work after the parent exits. Candidate pytest and worker are absent at parent exit, with no later marker and no receiver cleanup signal required.",
+    "output_preservation": "Four synthetic regular output sentinels retain exact bytes, inode, mode and write timestamps in both variants. They are not claimed to be a semantically complete prior report.",
+    "source_preservation": "All 14 original and 16 candidate captured files remain unchanged.",
+    "independence": "Distinct handwritten receiver and fixture; author suite and ordinary control were not replayed."
+  },
+  "current_parent_review": {
+    "original_review_commit": "d11523c991a0cb29bdd583b29a67dc1176b149d3",
+    "later_review_commit": "dce834a781ba61977c3be22dc5d82b28417c09be",
+    "parent_delta": [
+      {
+        "path": "README.md",
+        "status": "modified",
+        "old": "24a6c0fab34c05d17ef216a42e97a0fae2389fc2",
+        "new": "0a302f3dea5edc6688793e32da8dd5754ce2b907"
+      },
+      {
+        "path": "docs/RECHECK.md",
+        "status": "modified",
+        "old": "b7eff4e6089c2974b8c277370f474935d4bf4806",
+        "new": "7ac4a71d60add1ee718ab777c74aff887a453c29"
+      },
+      {
+        "path": "docs/receiving/recheck-html-ae0a1ea0b247/README.md",
+        "status": "added",
+        "new": "1de67e8311d14ab14b7faf5fbe6b00be17ad6630"
+      },
+      {
+        "path": "docs/receiving/recheck-html-ae0a1ea0b247/author-evidence.tar.gz",
+        "status": "added",
+        "new": "9c9143b6da834d6b6bd6dc068f480e49ffe474e7"
+      },
+      {
+        "path": "docs/receiving/recheck-html-ae0a1ea0b247/hosted-ci.json",
+        "status": "added",
+        "new": "1299166a0c7f2c77abc63a0bee6d90ca36d915d0"
+      },
+      {
+        "path": "docs/receiving/recheck-html-ae0a1ea0b247/hosted-ci.log.txt",
+        "status": "added",
+        "new": "22c7901fb682e593b21f6e422b64501cea0136dd"
+      },
+      {
+        "path": "docs/receiving/recheck-html-ae0a1ea0b247/independent-recheck-html.tar.gz",
+        "status": "added",
+        "new": "6dcad3820246d3e9006e97474ddd5883a9451562"
+      },
+      {
+        "path": "docs/receiving/recheck-html-ae0a1ea0b247/independent-review.json",
+        "status": "added",
+        "new": "2967863eda3490722356d75372250cd7ec048f00"
+      },
+      {
+        "path": "docs/receiving/recheck-html-ae0a1ea0b247/source-publication.json",
+        "status": "added",
+        "new": "2823919110f20fad1e1b70f8ecd8c2e967bea953"
+      },
+      {
+        "path": "testpilot/recheck.py",
+        "status": "modified",
+        "old": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+        "new": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52"
+      },
+      {
+        "path": "testpilot/recheck_html.py",
+        "status": "added",
+        "new": "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+      },
+      {
+        "path": "tests/test_recheck.py",
+        "status": "modified",
+        "old": "6ec7e36cd054d320842b5cdcfd34b635d4dc64f4",
+        "new": "426085b7824979a764056c528d2ca2ccfc647d77"
+      },
+      {
+        "path": "tests/test_recheck_html.py",
+        "status": "added",
+        "new": "416ebc35d8c5bd6b9900abd9f4a9f07b08b3e438"
+      }
+    ],
+    "finding": "PR41 adds passive HTML output for completed saved-test rechecks. Replacing only the writer block and removing the two imports reconstructs prior recheck.py exactly; every other function/class is AST-identical. The eager renderer import contains only standard-library imports, definitions and a literal CSS assignment. The unchanged CLI boundary does not catch KeyboardInterrupt. Default generation and cancellation paths remain unchanged.",
+    "captured_pins": {
+      "unchanged": 12,
+      "total": 14,
+      "changed": [
+        "README.md",
+        "testpilot/recheck.py"
+      ]
+    },
+    "existing_package_modules": {
+      "unchanged": 8,
+      "total": 9,
+      "changed": [
+        "testpilot/recheck.py"
+      ],
+      "added": [
+        "testpilot/recheck_html.py"
+      ]
+    },
+    "test_execution": "No rerun; source composition review only. Prior native results retain their original qualification-parent attribution."
+  },
+  "packets": [
+    {
+      "kind": "testpilot_author_packet",
+      "files": 27,
+      "packet_bytes": 713816,
+      "packet_sha256": "9883fd2329d7cc312507b6704eed0a4c98e268bf18b2e2d6b6acaa11d27a61a9",
+      "payload_bytes": 583632,
+      "native_evidence_commit": "70ac0bde74a6256bc76e9503592ac56d0dcb790d"
+    },
+    {
+      "kind": "testpilot_independent_packet",
+      "files": 14,
+      "packet_bytes": 252767,
+      "packet_sha256": "a8296e09ada11ff045949cec7391727f8861ddb41e21f559d948cfddc8175942",
+      "payload_bytes": 205728,
+      "native_evidence_commit": "ce7564c16da862d1e27a65ec6dcd6f3d013914df"
+    },
+    {
+      "kind": "testpilot_current_review_packet",
+      "files": 3,
+      "packet_bytes": 108969,
+      "packet_sha256": "16965b5f37b218aa61c6e6656753daa25775af0f8589b104e5ca452c8a59c0e0",
+      "payload_bytes": 80122,
+      "native_evidence_commit": "d11523c991a0cb29bdd583b29a67dc1176b149d3"
+    },
+    {
+      "kind": "testpilot_current362_packet",
+      "files": 2,
+      "packet_bytes": 20849,
+      "packet_sha256": "4dc34ba2e5a0f4c624311cedf9cb2e4522679b6ccba4858eb698d5cc85da386a",
+      "payload_bytes": 14417,
+      "native_evidence_commit": "dce834a781ba61977c3be22dc5d82b28417c09be"
+    }
+  ],
+  "publication_scope": {
+    "qualified_packet_paths": 46,
+    "root_record_paths": 1,
+    "total_scoped_paths": 47,
+    "parent_paths_modified": 1,
+    "additions": 46,
+    "unrelated_parent_leaves_preserved": 1071,
+    "total_leaves": 1118,
+    "full_parent_required": true,
+    "whitelist": [
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 7922,
+        "sha256": "2c101ba3d06c04e01f038f900ee091ce16f0daf84dceda4b727fc37ef6b5d6ea",
+        "git_blob": "deb55abd1c1d2798b37624bc27f1a22db91f0157"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-composition.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 5523,
+        "sha256": "48e7382166bb99ab5f4e45c3fb82fc5368fcc9abd6f3f4ceee9b9305bc61e96a",
+        "git_blob": "9b6cd7d66aaff692356009971a2019bb5523feea"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 10823,
+        "sha256": "dde39c5ceb688d4c04f165b77362e19b66247b5214cf7f289ff9b290a9fcb785",
+        "git_blob": "2085a157eba487e28bac8b345da3f07c2e9c2772"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-cli.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 306,
+        "sha256": "bd5b7946e22f019a0b6b033beff7aa566781e655a96a96e9ed1b12bf96ca069f",
+        "git_blob": "bb886d4c487d7e139ec806bca8ca36ab849982d8"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-pytest-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 6887,
+        "sha256": "3b1ad54683040546ddbcb520376e0bc6fdec3150871f39a883f6e70bf01488c0",
+        "git_blob": "374e295581f16b6fb8cd40020788fe3175331e55"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-sandbox.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 1694,
+        "sha256": "90377ed6a70b2516f23e24108f544af75def2980a7991fd83bb62dc25007f4e0",
+        "git_blob": "73864201930de820b6a537c4f1b53898acf340a8"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/candidate-source-freeze.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 4121,
+        "sha256": "81e6afefa1c48adb448bf2b59aa3674940817251aff5aedb39812ec7b72adea8",
+        "git_blob": "ccc0de3d637d2e5c14f4f7e8b4f0e5b665f275b3"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-baseline.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 3572,
+        "sha256": "f2723bb61c2390d45054ac6a48409bd00a5c07ea46aab1bd64c6a76b6847697f",
+        "git_blob": "36165fb6307abc4fe41c24ef57ef5deae24c0b61"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-focused-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 4780,
+        "sha256": "0c5251ee9431acce77539e624ce40b7eba199f13a0c066a1b5e5455e01042ae4",
+        "git_blob": "002d058626f4a378d5b603f7318dee7a8b97a6c3"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-source.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 3954,
+        "sha256": "4db841871444b2da152e1c158926f8de4fbd6dba7151f8b65d07f814eae16336",
+        "git_blob": "bf6c3f7cfd933e627d93d3962d6e3fa05ac88f70"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/focused-test-baseline-freeze.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 3368,
+        "sha256": "be2e7ade358f38f5b9ad196f591b05ca4128843da6eddcc0582bf6b92245285c",
+        "git_blob": "80dab7fa1b72df0fbada5d957fb518062f5a3db8"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/original-cli-receipt.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 10089,
+        "sha256": "2f8ee8748971ac121032f8db75746bd89e523c48fecf3815e4aa1329c13d98b8",
+        "git_blob": "9b458fd364c04678dd13a69020b8ddaf2465d59d"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v1.stderr",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 672,
+        "sha256": "3529be4ce5fabda688fefd646eaa830da24c3037de2595bab7453210cab8bcbe",
+        "git_blob": "7ec158428b4ad110208410cb5ae7a28632ddece3"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/original-v2.stdout",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 306,
+        "sha256": "0e5b7b82c8d0ebac6fc5934fd70049a62ba2d3aa7fac2f04c066ddd3bf049ff8",
+        "git_blob": "dfa1082fd8f66a9d62303d5983516a5b6f6c442a"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/production.patch",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 1332,
+        "sha256": "05582e8d9cbff9175bd7af8f12c411eba2282b8b6ec630522640bc8145a5cd04",
+        "git_blob": "e93681c0ed313d773dcc79a985de05a42cca8dd2"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/proposed-scope.md",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 4542,
+        "sha256": "6a16ea0dacd60ffdbcc6825751869f090a480cb93958264a23a5c1f35095d9f0",
+        "git_blob": "d2d0be2f421e188121654173045daf20fea1b70a"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/qualification.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 2561,
+        "sha256": "c58942a3e8fe3a3ee2d7197ec3e3ab8721c9b2aee9dd729a8ee8b518a21ea2cf",
+        "git_blob": "388c8842cfbdf8ffd4259bd06510acf07e5ee161"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-manifest.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 77463,
+        "sha256": "712565bd84bb6bbdc0937aca4e6bd3c4f1c053fc4a92e0b265ceed874485c532",
+        "git_blob": "f66f1686b0b7ca0d8d01fb1b1dfa9f9c11f183d5"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/raw-native.tar.gz",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 314629,
+        "sha256": "e66b776604382428a7c381f717cc323e4b5d7f00d31d6020553181bfd8bbddd7",
+        "git_blob": "d32a27c42f2f2ceef4a730138ad0100703ddda13"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/receive-cancellation.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 10677,
+        "sha256": "e80ecd44e02f6bc32c0994bc1665c8ed21c86fa6de266f81a2a0043d0d72b16c",
+        "git_blob": "57c18d72bce9277ca01c6ee58baf23f3c0dcbee3"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/receiver-correction.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 728,
+        "sha256": "c890422880e169a9f6631139286ac0450bb32f71e6e7bff6297084ca4ac66afd",
+        "git_blob": "46e3aabd682c9afe97800cd1c1e4d8a1b31b3753"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/run-cli-gate.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 3369,
+        "sha256": "e79c85cb8a3db30597269e8604179dd8196bad13771d4fef86c605f729951d57",
+        "git_blob": "984c7b62368eff029792a12f7facda4bf6550833"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/run-pytest-gate.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 2873,
+        "sha256": "6dff5b825a1becb44c624040596615686bc190f207ca2d6f93fe796ccf86c1b4",
+        "git_blob": "58f613b11474c28401fd505bf180e57c7996a907"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/source-intake.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 78235,
+        "sha256": "41bda19dadc07d894913d139cf115b73bb85fab6c44b4469d8b11231babf36f9",
+        "git_blob": "4f1c9b0e7293ac63c29a39fdcb32f36c6663f74a"
+      },
+      {
+        "path": "docs/run-cancellation.md",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 2985,
+        "sha256": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126",
+        "git_blob": "d8956abb39915e235531c3e217050ccc2089173d"
+      },
+      {
+        "path": "testpilot/sandbox.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 13277,
+        "sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+        "git_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72"
+      },
+      {
+        "path": "tests/test_sandbox_interrupt.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 6944,
+        "sha256": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+        "git_blob": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/README.md",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 10107,
+        "sha256": "e53caa0fe290fddea44898a2a29f669f4d65a4f18a37694af6738e3064c582f5",
+        "git_blob": "b432de0b3f6d3c351f748ff04a4e4dd7deaf138a"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/baseline-report.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 23384,
+        "sha256": "a4e37ab676d0507189a2eaf38a683bd5c39e69514458b1c93c2414ed567f6a1f",
+        "git_blob": "48e15856a490363d1c2b04f9dcd4d6ac482915f9"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-intake.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 4295,
+        "sha256": "597a1241b8d9442b8b7951890f06051fc5cb0f3c4bb8854330016cd200d9c5d0",
+        "git_blob": "8798030fda8e7d28a19b54ba74b35521d262ee74"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/candidate-report.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 21517,
+        "sha256": "18eb5b799338ddd59be8e46690635170502069a90218cbe1a96b8546b80c2b3b",
+        "git_blob": "4170dc6e1ba9f4624f47576db5056dac65fc9901"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/driver-freeze.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 1769,
+        "sha256": "b8059ec688bb8e209db55e0af86964f923113d59d331acc57e284666ba9165fa",
+        "git_blob": "e82afa952f097bc4815648af347e7e7ebf08c8db"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/candidate_intake.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 3862,
+        "sha256": "e4962bf7383729c6341d7400946fde0c1d03ddb65da24ff66eb701976729f8bc",
+        "git_blob": "d3f77326a35fc7f8fef5942d143bb6281b11c63b"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/prepare.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 6247,
+        "sha256": "9d07a0cb1b8ab7d771ba14604fdb48882eaad46b83c263c38aeb48713618fe97",
+        "git_blob": "edfa81b25d9069f3d1960bd1c4b11056e5cd228e"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/drivers/receive.py",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 13473,
+        "sha256": "301391fcb3b08eb41d8958d4305a50e95cdee03127a2584357a69d3e35d893f7",
+        "git_blob": "a2276af9c1a319a50dfdf357ebf6ca759c7f7c5e"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/environment.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 387,
+        "sha256": "2f7001a6e8a90198531531640894840962cdd22ca4ad66c0c931b2263b0a68ca",
+        "git_blob": "17cb6934bbbdef03ac80bdcc8b1ed60e3c16295f"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/native-receiving.tar.gz",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 99068,
+        "sha256": "226bed3b728d0e71685828069dc7ccca0196767b5c6c6ebcafdee06dde21516c",
+        "git_blob": "eba0a7fcfe8f1444a01f7ad5695c228966695fb2"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/qualification.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 2707,
+        "sha256": "90db2e784e8977535bd85910795040b532f2ce2982ad3fe0549363ba7242e3fe",
+        "git_blob": "6fbb6e982de262663f9af1094ae0da58655c3c49"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/raw-manifest.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 13497,
+        "sha256": "48505ba4cafc103acfc6560096c78300a49baf02891f8e23be10f38fae5fdbf9",
+        "git_blob": "b6daadb1ad9f99ab537fb511078ac59fb72275f2"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/source-intake.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 3765,
+        "sha256": "937a20f3ffa01452d5a71e012db2d11b1f98c0944ef0dfd29fa34c7f54d6a596",
+        "git_blob": "4ce2379a481bb5fe8ff8a5efbc0d2b32906bd0e2"
+      },
+      {
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/independent-generated-phase/static-candidate-review.json",
+        "mode": "100644",
+        "type": "blob",
+        "bytes": 1650,
+        "sha256": "c00a144f7a6bbb0d7be3a055017cafa700e44781113baef8d26da64ac3b4ee5d",
+        "git_blob": "e2e98bf644ab06c8439c36c58e905b847cd2da14"
+      },
+      {
+        "bytes": 4216,
+        "git_blob": "e6d0f13c603532a4e9ff0ef307a2f6f322e7b004",
+        "mode": "100644",
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/REVIEW.md",
+        "sha256": "15014df4333d0fff79160f3a00634f4352b684525cadbda505377dda5dde9f43",
+        "type": "blob"
+      },
+      {
+        "bytes": 73240,
+        "git_blob": "774b319d45efb5e5a0c07fe6b4b4d9ec6be25e3b",
+        "mode": "100644",
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current-parent-review.tar.xz",
+        "sha256": "c3c7ec225552c9ad7be87c0420734bbcf692f60f12b4147344098238dd48d1f6",
+        "type": "blob"
+      },
+      {
+        "bytes": 2666,
+        "git_blob": "cb1ed2a27bb0583c186cd03d4763f1f69fa967e1",
+        "mode": "100644",
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/qualification.json",
+        "sha256": "34ed61fbc5d073de903b8dad1a1ba8a535bc1948ef59a08a56a23b270b061d1b",
+        "type": "blob"
+      },
+      {
+        "bytes": 4070,
+        "git_blob": "b930c5d44f2186c9cd747a73e11b1eb2b0b85851",
+        "mode": "100644",
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-REVIEW.md",
+        "sha256": "60666ebba5cda65b359df41c7699612fb639c698dfcbaa3035354ee32a711e36",
+        "type": "blob"
+      },
+      {
+        "bytes": 10347,
+        "git_blob": "a5d72d87c9650c807ad902c3d97cfc66122d4e84",
+        "mode": "100644",
+        "path": "docs/receipts/run-cancellation-18a24bf0c281/current-parent-review/current362-qualification.json",
+        "sha256": "56a137a6eb665c1c6a77e46704ec01c1221bf98589b27f7248da2dd8dc4b90cd",
+        "type": "blob"
+      }
+    ],
+    "root_record_path": "docs/receipts/run-cancellation-18a24bf0c281/root-integration.json"
+  },
+  "hosted_ci_at_source_publication": "Pending; the existing unchanged Ubuntu/Python 3.12 full pytest workflow must be checked separately before source integration.",
+  "limits": [
+    "POSIX KeyboardInterrupt during initial communicate only; no pre-Popen, other-signal, Windows or escaped-session containment claim.",
+    "The one-second leader wait does not include Python's brief interrupt handling wait or scheduling delays.",
+    "Cancellation does not roll back prior test effects or model calls; SIGKILL does not execute test teardown.",
+    "No dependency/workflow/parser/model/collector/output-writer changes, provider calls, installed runtime, shared process, live goal or deployment."
+  ],
+  "ownership": "Issue 35 authorizes this narrow scope. Current saved-recheck HTML PR41 is preserved; explicit-target PR38, comparison PR33 and draft no-coverage PR40 remain with their owners."
+}

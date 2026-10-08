@@ -1,0 +1,84 @@
+{
+  "canonical_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "canonical_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "claim": "https://github.com/Jacob-Met/testpilot/issues/35",
+  "production_delta": [],
+  "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+    },
+    {
+      "path": "README.md",
+      "git_blob": "24a6c0fab34c05d17ef216a42e97a0fae2389fc2",
+      "sha256": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "git_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "sha256": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b"
+    },
+    {
+      "path": "testpilot/model.py",
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "git_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a"
+    },
+    {
+      "path": "tests/test_sandbox_deadline.py",
+      "git_blob": "d8ebce5a81205aad005e45a280aec898e3e89820",
+      "sha256": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1"
+    },
+    {
+      "path": "tests/test_sandbox.py",
+      "git_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+    },
+    {
+      "path": "tests/test_sandbox_interrupt.py",
+      "sha256": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+      "git_blob": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6"
+    }
+  ],
+  "test_policy": "Four real POSIX process-group/pipe cases; fixture-only signals, eight-second worker lifetimes, ten-second fallback cleanup. No dependency installation."
+}

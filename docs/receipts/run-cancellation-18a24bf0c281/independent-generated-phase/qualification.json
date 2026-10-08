@@ -1,0 +1,73 @@
+{
+  "accepted_native_source_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+  "accepted_sandbox_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+  "accepted_sandbox_sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+  "archive": {
+    "bytes": 99068,
+    "members": 78,
+    "sha256": "226bed3b728d0e71685828069dc7ccca0196767b5c6c6ebcafdee06dde21516c"
+  },
+  "baseline": {
+    "checks": {
+      "actual_cli_invocations": 1,
+      "checks": 14,
+      "failed": 2,
+      "passed": 12
+    },
+    "cleanup_signals": [
+      {
+        "group": 5917,
+        "live_owned_witness_pids": [
+          5917,
+          5918
+        ],
+        "signal": "SIGKILL"
+      }
+    ],
+    "continued_after_parent_exit": true,
+    "output_files_preserved": 4,
+    "parent_exit": {
+      "duration_s": 0.2846649169223383,
+      "observed_monotonic": 1015062.606122041,
+      "returncode": -2
+    },
+    "source_files_unchanged": 14
+  },
+  "candidate": {
+    "checks": {
+      "actual_cli_invocations": 1,
+      "checks": 14,
+      "failed": 0,
+      "passed": 14
+    },
+    "cleanup_signals": [],
+    "continued_after_parent_exit": false,
+    "output_files_preserved": 4,
+    "parent_exit": {
+      "duration_s": 0.2814816660247743,
+      "observed_monotonic": 1015417.467700291,
+      "returncode": -2
+    },
+    "source_files_unchanged": 16
+  },
+  "candidate_scope": "One added15-line KeyboardInterrupt handler and docstring;13 original files untouched; two declared test/doc additions.",
+  "canonical_blob_count": 1063,
+  "canonical_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "canonical_parent_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "exact_inverse_module_reconstruction": true,
+  "execution_scope": "Two actual offline CLI calls total, each interrupted during generated verification; no author suite or ordinary control replay.",
+  "generated_source_sha256": "121d3bf5dd29e14e9abff37e5e14526ecad74c0507e8daccb75317e217f1e907",
+  "issue": 35,
+  "limitations": [
+    "Current7f44 plus exact649dc7d only; later main needs separate composition review.",
+    "POSIX SIGINT during active communicate only; no escaped sessions, other signals, Windows or hostile-code containment claim.",
+    "Previous output contents are explicit synthetic regular preservation sentinels."
+  ],
+  "original_receiving_commit": "9317bdb3a0fda248ffcbabbe94c401a4558a1b41",
+  "production_edits": 0,
+  "receiver_freeze_commit": "0c5eb9caeaaf4b3d014b1ce65eab21f45f49e546",
+  "receiver_sha256": "301391fcb3b08eb41d8958d4305a50e95cdee03127a2584357a69d3e35d893f7",
+  "repository": "Jacob-Met/testpilot",
+  "retained_loop_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+  "verdict": "accepted"
+}

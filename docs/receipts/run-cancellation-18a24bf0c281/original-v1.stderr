@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/me/testpilot-cancellation-18a24bf0c281/receiving/receive_original_cancellation.py", line 194, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/Users/me/testpilot-cancellation-18a24bf0c281/receiving/receive_original_cancellation.py", line 171, in main
+    ordinary = run_case("ordinary-control", False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/me/testpilot-cancellation-18a24bf0c281/receiving/receive_original_cancellation.py", line 142, in run_case
+    "model_calls": len(report["ledger"]["calls"])})
+                       ~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'calls'
