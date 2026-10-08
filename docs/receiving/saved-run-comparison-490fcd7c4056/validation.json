@@ -1,0 +1,1241 @@
+{
+  "scope": "author qualification at exact e1d87442 base, before independent receiving",
+  "receipts": {
+    "actualBaseline": {
+      "base": "e1d87442eeecc8cf1b44ee3547849d5c1d030876",
+      "sourceFilesUnchanged": 26,
+      "commands": [
+        {
+          "argv": [
+            "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python",
+            "-B",
+            "-m",
+            "testpilot",
+            "run",
+            "--repo",
+            "/dev/shm/testpilot-490f-compare/fixtures/before",
+            "--diff",
+            "/dev/shm/testpilot-490f-compare/baseline/eval/cases/calc_clamp/change.diff",
+            "--backend",
+            "scripted",
+            "--script",
+            "/dev/shm/testpilot-490f-compare/baseline/eval/cases/calc_clamp/script",
+            "--out",
+            "/dev/shm/testpilot-490f-compare/evidence/baseline/before",
+            "--rounds",
+            "1",
+            "--timeout",
+            "15",
+            "--python",
+            "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python"
+          ],
+          "exitCode": 1,
+          "seconds": 1.1874708640389144
+        },
+        {
+          "argv": [
+            "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python",
+            "-B",
+            "-m",
+            "testpilot",
+            "run",
+            "--repo",
+            "/dev/shm/testpilot-490f-compare/fixtures/after",
+            "--diff",
+            "/dev/shm/testpilot-490f-compare/baseline/eval/cases/calc_clamp/change.diff",
+            "--backend",
+            "scripted",
+            "--script",
+            "/dev/shm/testpilot-490f-compare/baseline/eval/cases/calc_clamp/script",
+            "--out",
+            "/dev/shm/testpilot-490f-compare/evidence/baseline/after",
+            "--rounds",
+            "1",
+            "--timeout",
+            "15",
+            "--python",
+            "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python"
+          ],
+          "exitCode": 0,
+          "seconds": 1.0386686030542478
+        },
+        {
+          "argv": [
+            "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python",
+            "-B",
+            "-m",
+            "testpilot",
+            "compare",
+            "--before",
+            "/dev/shm/testpilot-490f-compare/evidence/baseline/before/report.json",
+            "--after",
+            "/dev/shm/testpilot-490f-compare/evidence/baseline/after/report.json",
+            "--out",
+            "/dev/shm/testpilot-490f-compare/evidence/baseline/missing-comparison.html"
+          ],
+          "exitCode": 2,
+          "outputExists": false
+        }
+      ],
+      "outputs": {
+        "before": {
+          "status": "suspected_code_bug",
+          "reportSha256": "01291ef8dbcf71d343905584538337d56ad2d8872a2692f9293e8f043a58dc55",
+          "final": {
+            "returncode": 1,
+            "timed_out": false,
+            "duration_s": 0.35,
+            "timeout_s": 15.0,
+            "output": "FFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5\nFAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0\nFAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0\n3 failed, 3 passed in 0.03s\n",
+            "cases": [
+              {
+                "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+                "outcome": "failed",
+                "message": "assert 10 == 5\n +  where 10 = clamp(5, 0, 10)\ndef test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_calc_clamp::test_below_and_above",
+                "outcome": "failed",
+                "message": "assert 10 == 0\n +  where 10 = clamp(-3, 0, 10)\ndef test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_calc_clamp::test_boundaries",
+                "outcome": "failed",
+                "message": "assert 10 == 0\n +  where 10 = clamp(0, 0, 10)\ndef test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_existing::test_add",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": null
+              },
+              {
+                "nodeid": "tests.test_existing::test_mean",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": null
+              }
+            ],
+            "coverage": {
+              "percent_total": 90.0,
+              "files": {
+                "calc.py": {
+                  "executed": [
+                    4,
+                    5,
+                    8,
+                    10,
+                    11,
+                    12,
+                    15,
+                    16,
+                    18
+                  ],
+                  "missing": [
+                    17
+                  ]
+                }
+              }
+            },
+            "generated_files": [
+              "tests/test_calc_clamp.py"
+            ],
+            "junit_available": true,
+            "passed": 3,
+            "failed": 3,
+            "errors": 0,
+            "skipped": 0,
+            "ok": false,
+            "summary": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 4 collected",
+            "generated": {
+              "collected": 4,
+              "passed": 1,
+              "failed": 3,
+              "error": 0,
+              "skipped": 0
+            }
+          },
+          "ledger": {
+            "total_tokens": 1124,
+            "total_cost_usd": 0.0,
+            "cost_is_complete": false,
+            "tokens_estimated": true,
+            "by_model": {
+              "nvidia/nemotron-3-super-120b-a12b": {
+                "calls": 1,
+                "prompt_tokens": 125,
+                "completion_tokens": 51,
+                "cost_usd": 0.0
+              },
+              "nvidia/Nemotron-3_5-Lightning": {
+                "calls": 2,
+                "prompt_tokens": 772,
+                "completion_tokens": 176,
+                "cost_usd": 0.0
+              }
+            },
+            "entries": [
+              {
+                "role": "planner",
+                "model": "nvidia/nemotron-3-super-120b-a12b",
+                "prompt_tokens": 125,
+                "completion_tokens": 51,
+                "estimated": true,
+                "cost_usd": 0.0
+              },
+              {
+                "role": "editor",
+                "model": "nvidia/Nemotron-3_5-Lightning",
+                "prompt_tokens": 228,
+                "completion_tokens": 109,
+                "estimated": true,
+                "cost_usd": 0.0
+              },
+              {
+                "role": "repair",
+                "model": "nvidia/Nemotron-3_5-Lightning",
+                "prompt_tokens": 544,
+                "completion_tokens": 67,
+                "estimated": true,
+                "cost_usd": 0.0
+              }
+            ]
+          },
+          "reportKeys": [
+            "status",
+            "changed_functions",
+            "repair_rounds_used",
+            "max_repair_rounds",
+            "test_files",
+            "tests_written",
+            "final",
+            "patch",
+            "coverage",
+            "ledger",
+            "rounds",
+            "plan",
+            "message",
+            "ok"
+          ]
+        },
+        "after": {
+          "status": "passed",
+          "reportSha256": "bebc3a29d269c0988711d3a8d934faa520d2e3f243a923d2ab9530c749a8212d",
+          "final": {
+            "returncode": 0,
+            "timed_out": false,
+            "duration_s": 0.346,
+            "timeout_s": 15.0,
+            "output": "......                                                                   [100%]\n6 passed in 0.02s\n",
+            "cases": [
+              {
+                "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_calc_clamp::test_below_and_above",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_calc_clamp::test_boundaries",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": "tests/test_calc_clamp.py"
+              },
+              {
+                "nodeid": "tests.test_existing::test_add",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": null
+              },
+              {
+                "nodeid": "tests.test_existing::test_mean",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": null
+              }
+            ],
+            "coverage": {
+              "percent_total": 90.0,
+              "files": {
+                "calc.py": {
+                  "executed": [
+                    4,
+                    5,
+                    8,
+                    10,
+                    11,
+                    12,
+                    15,
+                    16,
+                    18
+                  ],
+                  "missing": [
+                    17
+                  ]
+                }
+              }
+            },
+            "generated_files": [
+              "tests/test_calc_clamp.py"
+            ],
+            "junit_available": true,
+            "passed": 6,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "ok": true,
+            "summary": "6 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 4 passed of 4 collected",
+            "generated": {
+              "collected": 4,
+              "passed": 4,
+              "failed": 0,
+              "error": 0,
+              "skipped": 0
+            }
+          },
+          "ledger": {
+            "total_tokens": 513,
+            "total_cost_usd": 0.0,
+            "cost_is_complete": false,
+            "tokens_estimated": true,
+            "by_model": {
+              "nvidia/nemotron-3-super-120b-a12b": {
+                "calls": 1,
+                "prompt_tokens": 125,
+                "completion_tokens": 51,
+                "cost_usd": 0.0
+              },
+              "nvidia/Nemotron-3_5-Lightning": {
+                "calls": 1,
+                "prompt_tokens": 228,
+                "completion_tokens": 109,
+                "cost_usd": 0.0
+              }
+            },
+            "entries": [
+              {
+                "role": "planner",
+                "model": "nvidia/nemotron-3-super-120b-a12b",
+                "prompt_tokens": 125,
+                "completion_tokens": 51,
+                "estimated": true,
+                "cost_usd": 0.0
+              },
+              {
+                "role": "editor",
+                "model": "nvidia/Nemotron-3_5-Lightning",
+                "prompt_tokens": 228,
+                "completion_tokens": 109,
+                "estimated": true,
+                "cost_usd": 0.0
+              }
+            ]
+          },
+          "reportKeys": [
+            "status",
+            "changed_functions",
+            "repair_rounds_used",
+            "max_repair_rounds",
+            "test_files",
+            "tests_written",
+            "final",
+            "patch",
+            "coverage",
+            "ledger",
+            "rounds",
+            "plan",
+            "message",
+            "ok"
+          ]
+        }
+      },
+      "provider": "Actual ScriptedModel only; no network provider calls",
+      "candidateSourceModified": false
+    },
+    "firstCli": {
+      "argv": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "compare",
+        "--before",
+        "/dev/shm/testpilot-490f-compare/evidence/baseline/before/report.json",
+        "--after",
+        "/dev/shm/testpilot-490f-compare/evidence/baseline/after/report.json",
+        "--out",
+        "/dev/shm/testpilot-490f-compare/evidence/candidate/native-pair.html"
+      ],
+      "exitCode": 0,
+      "stdout": "wrote /dev/shm/testpilot-490f-compare/evidence/candidate/native-pair.html\n",
+      "stderr": ""
+    },
+    "focusedFirst": {
+      "command": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_compare.py",
+        "tests/test_compare_cli.py"
+      ],
+      "cwd": "/dev/shm/testpilot-490f-compare/candidate",
+      "returncode": 0,
+      "seconds": 2.0428339880891144,
+      "stdout": "......................................                                   [100%]\n38 passed in 1.56s\n",
+      "stderr": ""
+    },
+    "inherited": {
+      "command": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_cli_targets.py",
+        "tests/test_cli_python.py",
+        "tests/test_html_report.py"
+      ],
+      "cwd": "/dev/shm/testpilot-490f-compare/candidate",
+      "returncode": 0,
+      "seconds": 28.03103758697398,
+      "stdout": "....................................                               [100%]\n36 passed, 6 subtests passed in 26.85s\n",
+      "stderr": ""
+    },
+    "focusedFinal": {
+      "command": [
+        "/home/jacob/hamon-universal-e3a41d2b3368-testpilot-main-9f01/complete-tooling-receiving/venv-pytest9-complete/bin/python",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_compare.py",
+        "tests/test_compare_cli.py"
+      ],
+      "returncode": 0,
+      "seconds": 3.5807173179928213,
+      "stdout": "......................................                                   [100%]\n38 passed in 2.86s\n",
+      "stderr": ""
+    },
+    "browserFirst": {
+      "kind": "author native offline-browser qualification",
+      "groups": [
+        {
+          "name": "Actual saved bug/fix reports retain recorded status and six-case/four-generated distinction",
+          "passed": true,
+          "ms": 292
+        },
+        {
+          "name": "Native keyboard navigation and detail toggles work with page JavaScript disabled",
+          "passed": true,
+          "ms": 479
+        },
+        {
+          "name": "Changed-input literal source and unknown metrics remain explicit while raw formatting survives downloads",
+          "passed": true,
+          "ms": 300
+        }
+      ],
+      "downloads": [
+        {
+          "id": "download-before",
+          "suggestedFilename": "before-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/baseline/before/report.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/actual-before-download.json",
+          "bytes": 12461,
+          "sha256": "01291ef8dbcf71d343905584538337d56ad2d8872a2692f9293e8f043a58dc55"
+        },
+        {
+          "id": "download-after",
+          "suggestedFilename": "after-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/baseline/after/report.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/actual-after-download.json",
+          "bytes": 8085,
+          "sha256": "bebc3a29d269c0988711d3a8d934faa520d2e3f243a923d2ab9530c749a8212d"
+        },
+        {
+          "id": "download-before",
+          "suggestedFilename": "before-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-before.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-before-download.json",
+          "bytes": 12402,
+          "sha256": "4a865d379e593bdd71da366d0581bdb63024e638842b94e0b94c76a93903cd8c"
+        },
+        {
+          "id": "download-after",
+          "suggestedFilename": "after-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-after.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-after-download.json",
+          "bytes": 6078,
+          "sha256": "5a60e2c5d5fb867b5dbd7c979a2700183ddd7b44f5cc311f8fec136a479adf5d"
+        }
+      ],
+      "externalRequests": [],
+      "pageErrors": [],
+      "browser": "154.0.8037.57",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: page has horizontal overflow: {\"width\":390,\"scroll\":846}\n    at /dev/shm/testpilot-490f-compare/author_browser.cjs:102:14\n    at async group (/dev/shm/testpilot-490f-compare/author_browser.cjs:14:3)\n    at async /dev/shm/testpilot-490f-compare/author_browser.cjs:98:5"
+    },
+    "browserFinal": {
+      "kind": "author native offline-browser qualification",
+      "groups": [
+        {
+          "name": "Actual saved bug/fix reports retain recorded status and six-case/four-generated distinction",
+          "passed": true,
+          "ms": 271
+        },
+        {
+          "name": "Native keyboard navigation and detail toggles work with page JavaScript disabled",
+          "passed": true,
+          "ms": 461
+        },
+        {
+          "name": "Changed-input literal source and unknown metrics remain explicit while raw formatting survives downloads",
+          "passed": true,
+          "ms": 427
+        },
+        {
+          "name": "390px layout confines wide tables and source text; touch-size download controls retain native actions",
+          "passed": true,
+          "ms": 139
+        }
+      ],
+      "downloads": [
+        {
+          "id": "download-before",
+          "suggestedFilename": "before-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/baseline/before/report.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/actual-before-download.json",
+          "bytes": 12461,
+          "sha256": "01291ef8dbcf71d343905584538337d56ad2d8872a2692f9293e8f043a58dc55"
+        },
+        {
+          "id": "download-after",
+          "suggestedFilename": "after-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/baseline/after/report.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/actual-after-download.json",
+          "bytes": 8085,
+          "sha256": "bebc3a29d269c0988711d3a8d934faa520d2e3f243a923d2ab9530c749a8212d"
+        },
+        {
+          "id": "download-before",
+          "suggestedFilename": "before-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-before.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-before-download.json",
+          "bytes": 12402,
+          "sha256": "4a865d379e593bdd71da366d0581bdb63024e638842b94e0b94c76a93903cd8c"
+        },
+        {
+          "id": "download-after",
+          "suggestedFilename": "after-report.json",
+          "source": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-after.json",
+          "saved": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-after-download.json",
+          "bytes": 6078,
+          "sha256": "5a60e2c5d5fb867b5dbd7c979a2700183ddd7b44f5cc311f8fec136a479adf5d"
+        }
+      ],
+      "externalRequests": [],
+      "pageErrors": [],
+      "browser": "154.0.8037.57",
+      "mobile": {
+        "width": 390,
+        "scroll": 390
+      },
+      "passed": true
+    },
+    "browserFixtureIdentities": {
+      "kind": "author browser fixtures, including clearly modified saved reports",
+      "files": [
+        {
+          "path": "/dev/shm/testpilot-490f-compare/evidence/baseline/before/report.json",
+          "bytes": 12461,
+          "sha256": "01291ef8dbcf71d343905584538337d56ad2d8872a2692f9293e8f043a58dc55"
+        },
+        {
+          "path": "/dev/shm/testpilot-490f-compare/evidence/baseline/after/report.json",
+          "bytes": 8085,
+          "sha256": "bebc3a29d269c0988711d3a8d934faa520d2e3f243a923d2ab9530c749a8212d"
+        },
+        {
+          "path": "/dev/shm/testpilot-490f-compare/evidence/candidate/native-pair.html",
+          "bytes": 48124,
+          "sha256": "b6ea7c7a9af5927117db11fb02bb55849f0f5bb23cbfaa9324283d1b644f5cd2"
+        },
+        {
+          "path": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-before.json",
+          "bytes": 12402,
+          "sha256": "4a865d379e593bdd71da366d0581bdb63024e638842b94e0b94c76a93903cd8c"
+        },
+        {
+          "path": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-after.json",
+          "bytes": 6078,
+          "sha256": "5a60e2c5d5fb867b5dbd7c979a2700183ddd7b44f5cc311f8fec136a479adf5d"
+        },
+        {
+          "path": "/dev/shm/testpilot-490f-compare/evidence/candidate/browser/literal-pair.html",
+          "bytes": 46745,
+          "sha256": "b92dcf83b73ee2077e717e1efd34fe4ae170069d58cfa075b17aa941aa8d4485"
+        }
+      ]
+    },
+    "overflowMeasurements": [
+      {
+        "tag": "TABLE",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table",
+        "minWidth": "448px",
+        "text": null
+      },
+      {
+        "tag": "CAPTION",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-caption",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "THEAD",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-header-group",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TBODY",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row-group",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "passed"
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "1"
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "3"
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "4"
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "0 / 1"
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "Available"
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "6 passed, 0 failed, 0 errors, 0 skipped"
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 317.21875,
+        "right": 477.796875,
+        "width": 160.578125,
+        "scroll": 161,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "4 collected, 4 passed, 0 failed, 0 error, 0 skipped"
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "cls": "",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 762,
+        "overflow": "visible",
+        "display": "block",
+        "minWidth": "auto",
+        "text": null
+      },
+      {
+        "tag": "H3",
+        "id": "",
+        "cls": "",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 762,
+        "overflow": "visible",
+        "display": "block",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "cls": "meta",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 762,
+        "overflow": "visible",
+        "display": "block",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "PRE",
+        "id": "",
+        "cls": "",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 760,
+        "overflow": "auto",
+        "display": "block",
+        "minWidth": "0px",
+        "text": ""
+      },
+      {
+        "tag": "CODE",
+        "id": "",
+        "cls": "",
+        "left": 58.984375,
+        "right": 472.953125,
+        "width": 413.96875,
+        "scroll": 0,
+        "overflow": "visible",
+        "display": "inline",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "DIV",
+        "id": "",
+        "cls": "",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 762,
+        "overflow": "visible",
+        "display": "block",
+        "minWidth": "auto",
+        "text": null
+      },
+      {
+        "tag": "H3",
+        "id": "",
+        "cls": "",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 762,
+        "overflow": "visible",
+        "display": "block",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "P",
+        "id": "",
+        "cls": "meta",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 762,
+        "overflow": "visible",
+        "display": "block",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "PRE",
+        "id": "",
+        "cls": "",
+        "left": 44.390625,
+        "right": 805.96875,
+        "width": 761.578125,
+        "scroll": 760,
+        "overflow": "auto",
+        "display": "block",
+        "minWidth": "0px",
+        "text": ""
+      },
+      {
+        "tag": "CODE",
+        "id": "",
+        "cls": "",
+        "left": 58.984375,
+        "right": 791.375,
+        "width": 732.390625,
+        "scroll": 0,
+        "overflow": "visible",
+        "display": "inline",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TABLE",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table",
+        "minWidth": "448px",
+        "text": null
+      },
+      {
+        "tag": "CAPTION",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-caption",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "THEAD",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-header-group",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TH",
+        "id": "",
+        "cls": "",
+        "left": 369.484375,
+        "right": 477.796875,
+        "width": 108.3125,
+        "scroll": 108,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TBODY",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row-group",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TR",
+        "id": "",
+        "cls": "",
+        "left": 29.796875,
+        "right": 477.796875,
+        "width": 448,
+        "scroll": 448,
+        "overflow": "visible",
+        "display": "table-row",
+        "minWidth": "0px",
+        "text": null
+      },
+      {
+        "tag": "TD",
+        "id": "",
+        "cls": "",
+        "left": 369.484375,
+        "right": 477.796875,
+        "width": 108.3125,
+        "scroll": 108,
+        "overflow": "visible",
+        "display": "table-cell",
+        "minWidth": "0px",
+        "text": "391"
+      }
+    ]
+  },
+  "receiptIdentities": {
+    "actualBaseline": {
+      "path": "evidence/baseline/receipt.json",
+      "bytes": 12584,
+      "sha256": "714400748d0deb93b0e4210551c72baf6821521ed37a2aed94f59d005a5fa803"
+    },
+    "firstCli": {
+      "path": "evidence/candidate/first-cli.json",
+      "bytes": 593,
+      "sha256": "26cef174a1ca6dab342816bd44176844bfc23d37d4d5dcc81f105cd1334286aa"
+    },
+    "focusedFirst": {
+      "path": "evidence/candidate/author-tests-first.json",
+      "bytes": 529,
+      "sha256": "f788731193a298143f1c15dec5855edc6df96e8334641c25c0aaf25cd125963e"
+    },
+    "inherited": {
+      "path": "evidence/candidate/inherited-tests.json",
+      "bytes": 578,
+      "sha256": "7ce7784af9b6d783099a023bfb5c9e99cdfbd1df4a430e15f686863bdb9e5e03"
+    },
+    "focusedFinal": {
+      "path": "evidence/candidate/author-tests-final.json",
+      "bytes": 475,
+      "sha256": "58ce42027575da15d23824ab42b803ea9c3289f1a506cae42699c773c85ccc0a"
+    },
+    "browserFirst": {
+      "path": "evidence/candidate/browser/receipt-first.json",
+      "bytes": 2573,
+      "sha256": "3b45b92316cfa6c3d31f2b63ffc9b6870df64c2b08fa34801b4cdc9311b48475"
+    },
+    "browserFinal": {
+      "path": "evidence/candidate/browser/receipt.json",
+      "bytes": 2476,
+      "sha256": "cd58a3043441e4796658bf052e08dcca137fe147f35a5da0c1655ff4a01bf856"
+    },
+    "browserFixtureIdentities": {
+      "path": "evidence/candidate/browser/fixtures.json",
+      "bytes": 1346,
+      "sha256": "b91fa63b14394226513545edbaa15a9d9a6399f07246c8972a12e5321da17898"
+    },
+    "overflowMeasurements": {
+      "path": "evidence/candidate/browser/overflow-diagnosis.json",
+      "bytes": 9671,
+      "sha256": "60741775c415c280ead38f1070b9eb56e925d5c3ceba91cfb887aa441791c594"
+    }
+  },
+  "driverAndArtifactIdentities": [
+    {
+      "path": "capture_baseline.py",
+      "bytes": 3162,
+      "sha256": "1d39eb885c227dce343e3c96a86df839d9854c05278f1bfa68f05b6cb3c6be7c"
+    },
+    {
+      "path": "prepare_browser.py",
+      "bytes": 2106,
+      "sha256": "66ce82a8f072325c46e2ac8dd92e0be50716f6fe2e258f4826ea2f502512acda"
+    },
+    {
+      "path": "author_browser.cjs",
+      "bytes": 7725,
+      "sha256": "28b53b1180b2f339201af2cf3ad6fcf3ff975f016ce42d388a52a4d270feb7c5"
+    },
+    {
+      "path": "evidence/candidate/browser/driver-first.cjs",
+      "bytes": 7695,
+      "sha256": "ceff2e599b909b23b6e4a2bb324c2d27df30df294fbed4e91f07a8913ab494ff"
+    },
+    {
+      "path": "evidence/candidate/compare_html-before-layout.py",
+      "bytes": 21180,
+      "sha256": "0bfce49cbd4602179c3e6f3b5306e92c0ebc0484802ec2af066e96d256afea7e"
+    },
+    {
+      "path": "evidence/candidate/native-pair.html",
+      "bytes": 48124,
+      "sha256": "b6ea7c7a9af5927117db11fb02bb55849f0f5bb23cbfaa9324283d1b644f5cd2"
+    },
+    {
+      "path": "evidence/candidate/native-pair-fixed.html",
+      "bytes": 48157,
+      "sha256": "f753cc0522ec9073e57e5e28540bb58f97ce0fd672d95be8e6e6a3b8478a03d8"
+    },
+    {
+      "path": "evidence/candidate/browser/literal-pair.html",
+      "bytes": 46745,
+      "sha256": "b92dcf83b73ee2077e717e1efd34fe4ae170069d58cfa075b17aa941aa8d4485"
+    },
+    {
+      "path": "evidence/candidate/browser/literal-pair-fixed.html",
+      "bytes": 46778,
+      "sha256": "6a75c0b1d5821de28764393671d4486b6968d3106f6c534acec11e21f381219f"
+    },
+    {
+      "path": "evidence/candidate/browser/phone-before-fix.png",
+      "bytes": 57665,
+      "sha256": "7c39ed132f61a5c1cb09bd767f3cdcb831be36a63754bef271a83aa0244b0536"
+    },
+    {
+      "path": "evidence/candidate/browser/actual-desktop-fixed.png",
+      "bytes": 92128,
+      "sha256": "a578c7b2cbac2b41c5c031c5274dca632e61c0b389c613b782b62a8848df9d58"
+    },
+    {
+      "path": "evidence/candidate/browser/literal-phone.png",
+      "bytes": 57665,
+      "sha256": "7c39ed132f61a5c1cb09bd767f3cdcb831be36a63754bef271a83aa0244b0536"
+    }
+  ],
+  "all31FrozenSourceHashesPreserved": true
+}

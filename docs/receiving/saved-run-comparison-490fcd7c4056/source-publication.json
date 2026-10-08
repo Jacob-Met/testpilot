@@ -1,0 +1,145 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "claim": 26,
+  "base_commit": "63174afd8e63a0ea562cf188b7d971522f017a30",
+  "base_tree": "cea947d9aeb2253466593044889a1bb548f8b7c4",
+  "original_source_manifest_sha256": "c6b4074dc7361ce896f32f9f36008ace1b7aebde0f359991ae36b85189c815b4",
+  "final_source_manifest_sha256": "4bcdb3f6773673f19dbf6b93de0eb2cf0a4e61df108829a171a01185419ba1eb",
+  "author_packet_sha256": "cd8c4215591c71acd79c73db46dfe4c77209a8b312212f749d7cd750bd6699bb",
+  "source_files": [
+    {
+      "path": "README.md",
+      "bytes": 12209,
+      "sha256": "d902c616f81a35ea112c57f66ae620ad1c5c31e42278d733ab24e511fe71f36d",
+      "gitBlob": "759c383880cb25abdff28f23643c4f461685e9ad",
+      "before_git_blob": "eaf87ecdc04aee56e7de8e5ec28ebaec20d0de14"
+    },
+    {
+      "path": "docs/COMPARE.md",
+      "bytes": 7060,
+      "sha256": "d29083a272b923fbfccf76abb37eb941d9b09425a408f4ae5745e71b0c73a12e",
+      "gitBlob": "6b8bc429d143587f3eb2269030744e2666b38aaa",
+      "before_git_blob": null
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 6859,
+      "sha256": "a9cd128e5a31aec3616c4a49f4aa25744f21af472ae683d877baa9c5a080e613",
+      "gitBlob": "1aedb4f7e4be08f275be9a50dcca454cf95f02a3",
+      "before_git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a"
+    },
+    {
+      "path": "testpilot/compare.py",
+      "bytes": 14483,
+      "sha256": "df3fe0c0c035498facc20317d1d4663c89563b35286cf30666b8ca1c729f8983",
+      "gitBlob": "b0e5c794eea23c4ea088acaafb03cba9faa5c7cf",
+      "before_git_blob": null
+    },
+    {
+      "path": "testpilot/compare_html.py",
+      "bytes": 21213,
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "gitBlob": "40da0f674798583bd25a177021759aa38b3c5b7b",
+      "before_git_blob": null
+    },
+    {
+      "path": "tests/test_compare.py",
+      "bytes": 9573,
+      "sha256": "dba0946a6964d916e986b185b23ff27ba0903bf7b6e8910b3a1f7bdc49b332c8",
+      "gitBlob": "894c6cc09bcac88c64748828ca7230c11f0289e1",
+      "before_git_blob": null
+    },
+    {
+      "path": "tests/test_compare_cli.py",
+      "bytes": 2740,
+      "sha256": "e720a2ffaca4dff936206a04ccc9fd85c90ca6fb871d997210261dab20ead06b",
+      "gitBlob": "a65cd89c9e9052e36231e3ed25eeac6d49c2c6ff",
+      "before_git_blob": null
+    }
+  ],
+  "author_evidence_files": [
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/README.md",
+      "bytes": 5658,
+      "sha256": "97286fe67fe3884a574e38117a22848df73ed9959960487bb8a76041ea909599",
+      "gitBlob": "882798a80a375653cc459a5e37f0f098a06203d3"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/author_browser.cjs",
+      "bytes": 7725,
+      "sha256": "28b53b1180b2f339201af2cf3ad6fcf3ff975f016ce42d388a52a4d270feb7c5",
+      "gitBlob": "2db6ee335f48cef18907b4b21daa9322f6a5db2d"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/current-receiving.json",
+      "bytes": 10045,
+      "sha256": "0a865fb36e16dacf05e2386f127ac8aa747c082ba3e9a49995044718f14f5069",
+      "gitBlob": "be4c887cdddb4b9f0a1006302f583722eba5f5e1"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/current-receiving.md",
+      "bytes": 2721,
+      "sha256": "46a068a54a84e765893347ca8cf7302f42b068ac12ef99775ee82f775cbd0ba9",
+      "gitBlob": "2fc186b3dc99b8695036d64697212e4ef86124bb"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/latest-receiving.json",
+      "bytes": 15822,
+      "sha256": "d9cc2f6999e61f6393b003983658f21cedf4ae40460200aa45ccd1f09e3d4dbc",
+      "gitBlob": "919d723bc1dd2680ca518d1ce09806acd802c59c"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/latest-receiving.md",
+      "bytes": 2863,
+      "sha256": "f732651b74b30350efc0f65a195df9b023eb82482d529e59caddb7136f3697ca",
+      "gitBlob": "f997034bdd143a7142a3f4f497d1df4e4cbfc8c8"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/receive_coexistence.py",
+      "bytes": 4462,
+      "sha256": "e3c0d09cc7c7d03f3efb8cf5d2ab07641e1a9cc962906ce1e446018266ff7903",
+      "gitBlob": "ba7ef8d90cb5c7f6df8752890f22efc999154381"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/source-manifest.json",
+      "bytes": 7597,
+      "sha256": "c6b4074dc7361ce896f32f9f36008ace1b7aebde0f359991ae36b85189c815b4",
+      "gitBlob": "32fae362153c0916daa90771fb0110c0251f85e8"
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/validation.json",
+      "bytes": 39537,
+      "sha256": "c5fb4761e2a9f4739201c3dfef437cbffee0a4ae20d6c8ad10a33568fa90c540",
+      "gitBlob": "bf112d731d425716cb68fa2e6238931c243ee0ec"
+    }
+  ],
+  "archives": [
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/testpilot-saved-run-comparison-author.zip",
+      "bytes": 702908,
+      "sha256": "fb4174bfd4c9ade5883da583c5ee3928c01f4cb979bc86982e018cccf095999c",
+      "git_blob": "aadc66639cf5c4a70f11e27b9d56824393c9bdb8",
+      "verified_members": 113
+    },
+    {
+      "path": "docs/receiving/saved-run-comparison-490fcd7c4056/testpilot-independent-receiving.zip",
+      "bytes": 546641,
+      "sha256": "de966705ba75362f116e754a2f83395648768b485ab5e24955474bececa4e429",
+      "git_blob": "98492bb919933e4b0d3e7d54c09f5231369c99f4",
+      "verified_members": 175
+    }
+  ],
+  "receiving": {
+    "independent_cli": "5be774c44e23f87df89937fe2522c40283a94c08dd3bb399daf9702a9d4f2fff",
+    "independent_browser": "9011c865bc9b941c6987c7c948e4406dc01c2fe357b4e7fe532a11823794afc9",
+    "independent_current_main": "ccfe04fe15a66f11e492e1ed9618452d234ce8a87eada88b3b69b58c5800babc",
+    "no_product_source_mutated_by_reviewer": true
+  },
+  "transport_receiving": {
+    "rejected_precommit_tree": "d1d1bf119c1a4da66ae0489c44c87d3c7e069735",
+    "reason": "The source packet explicitly encoded 16 file payloads as base64; the initial tree call incorrectly treated them as UTF-8. Exact precommit blob verification rejected all 16 before any commit/branch/PR was created.",
+    "correction": "Create each file blob using its declared packet encoding and compare the returned Git blob with the native expected identity. All 16 now match. Root receiving files and binary archives were already correct.",
+    "source_runtime_unchanged": true,
+    "plain_receipts": "RDC text extraction omitted each final LF; the original newline was restored only after matching each native SHA256. Published independent JSON receipts are exact original bytes."
+  }
+}

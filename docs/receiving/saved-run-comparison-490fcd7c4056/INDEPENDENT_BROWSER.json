@@ -1,0 +1,278 @@
+{
+  "driver_sha256": "6c31e82157b95dddc74cbec3a09097d17361339aef98936fe062d55ba090e3b3",
+  "candidate_manifest_sha256": "c6b4074dc7361ce896f32f9f36008ace1b7aebde0f359991ae36b85189c815b4",
+  "cli_receipt_sha256": "5be774c44e23f87df89937fe2522c40283a94c08dd3bb399daf9702a9d4f2fff",
+  "javaScriptEnabled": true,
+  "groups": [
+    {
+      "name": "actual_bug_to_fix",
+      "passed": true,
+      "dimensions": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "results": {
+        "Recorded status": [
+          "suspected_code_bug",
+          "passed"
+        ],
+        "Selected targets": [
+          "1",
+          "1"
+        ],
+        "Retained generated files": [
+          "1",
+          "1"
+        ],
+        "Tests written (reported)": [
+          "3",
+          "3"
+        ],
+        "Repair rounds used / allowed": [
+          "1 / 1",
+          "0 / 0"
+        ],
+        "JUnit availability": [
+          "Available",
+          "Available"
+        ],
+        "Complete-suite recorded counts": [
+          "2 passed, 2 failed, 0 errors, 0 skipped",
+          "4 passed, 0 failed, 0 errors, 0 skipped"
+        ],
+        "Generated-case recorded counts": [
+          "3 collected, 1 passed, 2 failed, 0 error, 0 skipped",
+          "3 collected, 3 passed, 0 failed, 0 error, 0 skipped"
+        ]
+      },
+      "downloads": 2,
+      "screenshot": {
+        "path": "/dev/shm/tp490f-ir/evidence/browser/desktop-bug-to-fix.png",
+        "bytes": 86253,
+        "sha256": "69096ac215a818717333a1e27c90d0ceb53847bdcd3f728f632b5045dc973cf2"
+      }
+    },
+    {
+      "name": "expanded_tests_phone_pricing_and_literal_text",
+      "passed": true,
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "layout": {
+        "width": 390,
+        "document": 390,
+        "source_scroll_regions": 7
+      },
+      "results": {
+        "Recorded status": [
+          "passed",
+          "passed"
+        ],
+        "Selected targets": [
+          "1",
+          "1"
+        ],
+        "Retained generated files": [
+          "1",
+          "2"
+        ],
+        "Tests written (reported)": [
+          "3",
+          "5"
+        ],
+        "Repair rounds used / allowed": [
+          "0 / 0",
+          "0 / 0"
+        ],
+        "JUnit availability": [
+          "Available",
+          "Available"
+        ],
+        "Complete-suite recorded counts": [
+          "4 passed, 0 failed, 0 errors, 0 skipped",
+          "6 passed, 0 failed, 0 errors, 0 skipped"
+        ],
+        "Generated-case recorded counts": [
+          "3 collected, 3 passed, 0 failed, 0 error, 0 skipped",
+          "5 collected, 5 passed, 0 failed, 0 error, 0 skipped"
+        ]
+      },
+      "added_file": "tests/test_percent_boundaries.py",
+      "recorded_costs": [
+        "Unpriced / incomplete",
+        "USD 0.001625"
+      ],
+      "downloads": 2,
+      "screenshot": {
+        "path": "/dev/shm/tp490f-ir/evidence/browser/phone-expanded-files.png",
+        "bytes": 60528,
+        "sha256": "83bef42cd24fbb4f92d541faf1e946ee60cc553a1b97806a3e87a445bc59ac12"
+      }
+    },
+    {
+      "name": "coverage_unavailable_preserved_with_real_pass_counts",
+      "passed": true,
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "coverage": {
+        "Total before generation": [
+          "75.0%",
+          "Unavailable"
+        ],
+        "Total after generation": [
+          "100.0%",
+          "Unavailable"
+        ],
+        "Within-run total change": [
+          "25.0 percentage points",
+          "Unavailable"
+        ],
+        "Executable changed lines": [
+          "3",
+          "Unavailable"
+        ],
+        "Changed lines before generation": [
+          "66.7%",
+          "Unavailable"
+        ],
+        "Changed lines after generation": [
+          "100.0%",
+          "Unavailable"
+        ]
+      }
+    },
+    {
+      "name": "actual_no_generated_tests_does_not_invent_execution",
+      "passed": true,
+      "dimensions": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "results": {
+        "Recorded status": [
+          "passed",
+          "no_tests"
+        ],
+        "Selected targets": [
+          "1",
+          "1"
+        ],
+        "Retained generated files": [
+          "1",
+          "0"
+        ],
+        "Tests written (reported)": [
+          "3",
+          "0"
+        ],
+        "Repair rounds used / allowed": [
+          "0 / 0",
+          "0 / 0"
+        ],
+        "JUnit availability": [
+          "Available",
+          "No test result recorded"
+        ],
+        "Complete-suite recorded counts": [
+          "4 passed, 0 failed, 0 errors, 0 skipped",
+          "Unavailable as complete execution evidence"
+        ],
+        "Generated-case recorded counts": [
+          "3 collected, 3 passed, 0 failed, 0 error, 0 skipped",
+          "Unavailable as complete execution evidence"
+        ]
+      }
+    },
+    {
+      "name": "different_targets_preserve_addition_removal_context",
+      "passed": true,
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "targets": [
+        "metrics.py::percentage",
+        "ratios.py::unit_fraction"
+      ]
+    },
+    {
+      "name": "semantic_equality_with_distinct_BOM_CRLF_unicode_bytes",
+      "passed": true,
+      "dimensions": {
+        "viewport": 390,
+        "document": 390,
+        "body": 390
+      },
+      "downloads": 2,
+      "before_sha256": "c9373b351768c096b3cc4053aa5fe0368184f42f4c625380d0c1dcac5c2ef3bc",
+      "after_sha256": "5806c3defe0bd64aa6a5c126e87b772655c068e2d0fd81feb801f6f670fc920b"
+    }
+  ],
+  "downloads": [
+    {
+      "comparison": "bug-to-fix",
+      "role": "before",
+      "suggested_filename": "before-report.json",
+      "saved": "/dev/shm/tp490f-ir/evidence/browser/downloads/bug-to-fix-before.json",
+      "bytes": 12168,
+      "sha256": "765cdb0ee4fa0e05169416f4e3dcd1acd5ea3db60ff688754feaaace5c238163"
+    },
+    {
+      "comparison": "bug-to-fix",
+      "role": "after",
+      "suggested_filename": "after-report.json",
+      "saved": "/dev/shm/tp490f-ir/evidence/browser/downloads/bug-to-fix-after.json",
+      "bytes": 6787,
+      "sha256": "85e401f63244b640f2739874275d554c921edd6a0f88da5f09c903a33f8b7ddd"
+    },
+    {
+      "comparison": "expanded-tests",
+      "role": "before",
+      "suggested_filename": "before-report.json",
+      "saved": "/dev/shm/tp490f-ir/evidence/browser/downloads/expanded-tests-before.json",
+      "bytes": 6787,
+      "sha256": "85e401f63244b640f2739874275d554c921edd6a0f88da5f09c903a33f8b7ddd"
+    },
+    {
+      "comparison": "expanded-tests",
+      "role": "after",
+      "suggested_filename": "after-report.json",
+      "saved": "/dev/shm/tp490f-ir/evidence/browser/downloads/expanded-tests-after.json",
+      "bytes": 8826,
+      "sha256": "c9373b351768c096b3cc4053aa5fe0368184f42f4c625380d0c1dcac5c2ef3bc"
+    },
+    {
+      "comparison": "same-values-different-bytes",
+      "role": "before",
+      "suggested_filename": "before-report.json",
+      "saved": "/dev/shm/tp490f-ir/evidence/browser/downloads/same-values-different-bytes-before.json",
+      "bytes": 8826,
+      "sha256": "c9373b351768c096b3cc4053aa5fe0368184f42f4c625380d0c1dcac5c2ef3bc"
+    },
+    {
+      "comparison": "same-values-different-bytes",
+      "role": "after",
+      "suggested_filename": "after-report.json",
+      "saved": "/dev/shm/tp490f-ir/evidence/browser/downloads/same-values-different-bytes-after.json",
+      "bytes": 9957,
+      "sha256": "5806c3defe0bd64aa6a5c126e87b772655c068e2d0fd81feb801f6f670fc920b"
+    }
+  ],
+  "external_requests": [],
+  "page_errors": [],
+  "console_errors": [],
+  "passed": true,
+  "browser": "154.0.8037.57",
+  "node": "v22.22.1",
+  "playwright": "1.62.1",
+  "all31_source_hashes_unchanged": true,
+  "seconds": 4.702
+}
