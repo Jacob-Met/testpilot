@@ -47,8 +47,11 @@ SYSTEM_REPAIR = (
     "explanation."
 )
 
-# Closing fences occupy their own line; inline backticks remain code.
-_FENCE = re.compile(r"```([^\n`]*)\n(.*?)^[ \t]*`{3,}[ \t]*(?:\r?\n|$)", re.S | re.M)
+# Closers start a line; keep legacy adjacent close/open fences compatible.
+_FENCE = re.compile(
+    r"```([^\n`]*)\n(.*?)^[ \t]*(?:`{3,}[ \t]*(?:\r?\n|$)|```(?=```[^\n`]*\n))",
+    re.S | re.M,
+)
 _PATH_IN_INFO = re.compile(r"path\s*=\s*([^\s`]+)")
 _PATH_COMMENT = re.compile(r"^#\s*(?:file|path)\s*:\s*(\S+)\s*\n", re.I)
 _VALID_TEST_PATH = re.compile(r"^tests/(?:[A-Za-z0-9_]+/)*test_[A-Za-z0-9_]+\.py$")

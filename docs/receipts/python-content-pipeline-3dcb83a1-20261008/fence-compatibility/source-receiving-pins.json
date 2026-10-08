@@ -1,0 +1,48 @@
+{
+  "free_before": 1545564160,
+  "head": "c138a7992fa35066d115dee6e8fddef33496b54c",
+  "own_limit": 16777216,
+  "reserve": 805306368,
+  "source_files": {
+    "pyproject.toml": {
+      "bytes": 676,
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 5094,
+      "git_blob": "fc455a5b4866fd27503585a50903a80ff179513e",
+      "sha256": "901d0a25802454296107fa6149fc8375b4acc58e144d0a8bd5a4656483ce2bf4"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 1446,
+      "git_blob": "4a03e4baee144eec97bc5b7fe5da1b697f71c1aa",
+      "sha256": "8168919730b2ef480f34ea54095caaa11dbb785dd60d7390c59bf11fb1362dcc"
+    },
+    "testpilot/diff.py": {
+      "bytes": 9396,
+      "git_blob": "f92280a9ad3f9f79713dce7ba7ae28c55414783a",
+      "sha256": "659021d4a4b462b86eadc25957407b683c733fec60ae33c0703295cb7640a06c"
+    },
+    "testpilot/model.py": {
+      "bytes": 10175,
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 11877,
+      "git_blob": "dd6b25f1a93bc6f313ae8c8d01ede5ba83440b5b",
+      "sha256": "2e852248ffc238371cf2b11b5797a88c519330db359b2cb969bc61aa72ef1931"
+    },
+    "tests/test_generated_test_preservation.py": {
+      "bytes": 11369,
+      "git_blob": "9f27d8ec63e4926b37bdfa1ac642d5cb77ae31c5",
+      "sha256": "f6efd91dc4554a6cc0d1c162ae41aeec25dc94d81bad3cc5c7cd61ea674cdab7"
+    }
+  }
+}

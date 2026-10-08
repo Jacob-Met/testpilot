@@ -1,7 +1,9 @@
 {
   "schema": "testpilot-content-file-manifest/1",
-  "base": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
-  "base_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
+  "base": "c138a7992fa35066d115dee6e8fddef33496b54c",
+  "base_tree": "9845b7324a7e095b545d3f867d2a32c3bc58f8b0",
+  "receiving_main": "3e745e6b6a2f7e383fc6b43f12e69f7a221fb051",
+  "receiving_main_tree": "56b8c198f3d88e133c6d641b0cc7c63de0dd6fcd",
   "excluded_self": "docs/receipts/python-content-pipeline-3dcb83a1-20261008/files-manifest.json",
   "files": {
     "docs/receipts/python-content-pipeline-3dcb83a1-20261008/combined-current/combined-results.json": {
@@ -104,10 +106,50 @@
       "sha256": "bccf5f0e74723ad334b078223eb63b4fd95671e0059d2b721d8257b041f4d72f",
       "git_blob": "fa08794b311f41f18fa6d78336acdc35a7fad4b1"
     },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/hosted-failure.json": {
+      "bytes": 1576,
+      "sha256": "ab9889a42d00f2dde84274d80fc94028e65ad957cc143ca388e6aff9511a38f5",
+      "git_blob": "e7b808465bdf87f5c18cc3cd850bbfd0d9c54abc"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/independent/independent-results.json": {
+      "bytes": 7185,
+      "sha256": "be893a582a70e3a9aa8a09758ecd5176dc62c7aac37f0550cf3258b87b47d357",
+      "git_blob": "2e50809fe11e48cac60886b3ee5c2caa2043ce0a"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/independent/receive_adjacent_fences.py": {
+      "bytes": 6471,
+      "sha256": "a6ebf2167880e54c7169fef5bbef33ed5fbe43ab2bdf52cd80155d71f1356293",
+      "git_blob": "2d7bf333338e10ca69c938e89a615cff3725d176"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/independent/REVIEW.md": {
+      "bytes": 1766,
+      "sha256": "0df337824572ae27dfd00934b81bb1e98a9c8075a0bc10c3176d705ba57dc5d2",
+      "git_blob": "76d0cc825f9e8a88fca29a115c6a5eec1bf7d027"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/native-results.json": {
+      "bytes": 4258,
+      "sha256": "2280c67d04a579c5cf8c954af8f3d5fca9f043699ac0fced100899f25dac7314",
+      "git_blob": "994e90ee1ad331a0a2a87791f3bf13c73ec7a40a"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/receiving-scope.json": {
+      "bytes": 3990,
+      "sha256": "e4d53c3517974068bbd96c6ad96e04c1391f31122f391b841ee183e3a7fdd63c",
+      "git_blob": "205cd6b80069f960883430ba959f7dbc89dafb9d"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/run_controls.py": {
+      "bytes": 2838,
+      "sha256": "96f0f4da06bfd35c5c32fa75d13ce8809b6c5d8f4ab4a7d7b5cd235158bd7946",
+      "git_blob": "00e3a569138be410c858b81c7abfd44460e59620"
+    },
+    "docs/receipts/python-content-pipeline-3dcb83a1-20261008/fence-compatibility/source-receiving-pins.json": {
+      "bytes": 1806,
+      "sha256": "4a9b75b0b5f96b396498ed174a434e633c9e31647eefeae97d54b0bd3f6d214a",
+      "git_blob": "5ce956ab3fd22a7fc7b90d36ba37748d745f4746"
+    },
     "docs/receipts/python-content-pipeline-3dcb83a1-20261008/README.md": {
-      "bytes": 6618,
-      "sha256": "3b83b9ac257a1ae424c72ceb1401c8f1c9b67a6a249935cad6214754d82520ee",
-      "git_blob": "75c0ce55b02eb13b179192a72b99103e52af7a39"
+      "bytes": 9513,
+      "sha256": "89db27afd5fca40f13f89074554d6333130beefc134ce79a094a1c083e9fdd44",
+      "git_blob": "b23f1cdd90f7fb65d8fc17b547276a46a81a3690"
     },
     "docs/receipts/python-content-pipeline-3dcb83a1-20261008/receiving-scope.json": {
       "bytes": 4475,
@@ -115,14 +157,14 @@
       "git_blob": "081b55af42c2d94183b53fa1fff215ca2e11de4d"
     },
     "testpilot/loop.py": {
-      "bytes": 23814,
-      "sha256": "d63fe6ddfb3c981ecca8d7cf6b231e9f60d82aa04cabd9ccc6af2fca6dfd1fcf",
-      "git_blob": "62c7dc97009a8461579fc3221465327f83a0b369"
+      "bytes": 23854,
+      "sha256": "fbe16f8c79fb5acc1d27fe2c608ee62c3a9648770afbc5e2cb54ff5c130962ca",
+      "git_blob": "129f6b1db17ef62eb0462665191d79dac8886413"
     },
     "tests/test_fenced_code_boundaries.py": {
-      "bytes": 2410,
-      "sha256": "0f46a4a4ec679eb39e1cde375756625cbfc31d7dfd4df3711af9f562d505a6ac",
-      "git_blob": "4d8bdff6cacefd5b4047d158248dc4744d518000"
+      "bytes": 2990,
+      "sha256": "edff7f6dec6c754cdbd03efee84b342103bb1c43a8b614333e1ca83e75bfd91c",
+      "git_blob": "54c798f49b690d6365ec4de9b0ae78f9d99cd960"
     },
     "tests/test_patch_physical_lines.py": {
       "bytes": 3085,

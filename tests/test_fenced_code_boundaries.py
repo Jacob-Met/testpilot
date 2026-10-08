@@ -60,3 +60,15 @@ def test_inline_backticks_cannot_complete_an_unclosed_block():
     files, warnings = parse_test_files(reply)
     assert files == {}
     assert warnings == []
+
+
+@pytest.mark.parametrize("reverse", [False, True])
+def test_directly_adjacent_fences_keep_legacy_compact_boundaries(reverse):
+    first = ("tests/test_first.py", BODIES[0])
+    second = ("tests/test_second.py", "def test_second():\n    assert True\n")
+    pairs = [second, first] if reverse else [first, second]
+    # Existing repair callers concatenate a closing and opening fence directly.
+    reply = "".join(block(path, body).removesuffix("\n") for path, body in pairs)
+    files, warnings = parse_test_files(reply)
+    assert warnings == []
+    assert files == dict(pairs)
