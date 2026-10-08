@@ -1,0 +1,8 @@
+diff --git "a/module\377.py" "b/module\377.py"
+index f08a5db..89bcc8a 100644
+--- "a/module\377.py"
++++ "b/module\377.py"
+@@ -1,2 +1,2 @@
+ def measure(value):
+-    return value + 1
++    return value + 2

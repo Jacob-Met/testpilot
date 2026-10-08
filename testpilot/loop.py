@@ -438,6 +438,7 @@ class TestPilot:
 
 # ---------------------------------------------------------------------- report
 def render_report(res: LoopResult) -> str:
+    """Render UTF-8 text, visibly escaping unencodable filesystem/string surrogates."""
     lines = [f"# TestPilot report: **{res.status}**", ""]
     if res.message:
         lines += [res.message, ""]
@@ -460,7 +461,8 @@ def render_report(res: LoopResult) -> str:
         lines.append(f"  - `{m}`: {s['calls']} calls, {s['prompt_tokens']} in / {s['completion_tokens']} out")
     if res.patch:
         lines += ["", "## Patch", "", "```diff", res.patch.rstrip("\n"), "```"]
-    return "\n".join(lines) + "\n"
+    text = "\n".join(lines) + "\n"
+    return text.encode("utf-8", errors="backslashreplace").decode("utf-8")
 
 
 def write_outputs(res: LoopResult, out_dir: str | Path) -> dict[str, Path]:

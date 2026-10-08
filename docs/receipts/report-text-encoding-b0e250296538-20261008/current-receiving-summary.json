@@ -1,0 +1,48 @@
+{
+  "receiving-baseline": {
+    "api": {
+      "status": "passed",
+      "ok": true,
+      "final_ok": true,
+      "runner_rc": 0,
+      "tests_passed": 2,
+      "markdown_bytes": 0,
+      "patch_sha256": "3e42a3c5abbfbc4da8e28e83f5c08ad4fe64d7ad6f72564f581dbdd29f16f7a0"
+    },
+    "cli": {
+      "status": "failed",
+      "ok": false,
+      "final_ok": false,
+      "runner_rc": 1,
+      "tests_passed": 2,
+      "markdown_bytes": 0,
+      "patch_sha256": "3e42a3c5abbfbc4da8e28e83f5c08ad4fe64d7ad6f72564f581dbdd29f16f7a0",
+      "cli_rc": 1,
+      "stderr_bytes": 948,
+      "stdout_bytes": 0
+    }
+  },
+  "receiving-candidate": {
+    "api": {
+      "status": "passed",
+      "ok": true,
+      "final_ok": true,
+      "runner_rc": 0,
+      "tests_passed": 2,
+      "markdown_bytes": 756,
+      "patch_sha256": "3e42a3c5abbfbc4da8e28e83f5c08ad4fe64d7ad6f72564f581dbdd29f16f7a0"
+    },
+    "cli": {
+      "status": "failed",
+      "ok": false,
+      "final_ok": false,
+      "runner_rc": 1,
+      "tests_passed": 2,
+      "markdown_bytes": 950,
+      "patch_sha256": "3e42a3c5abbfbc4da8e28e83f5c08ad4fe64d7ad6f72564f581dbdd29f16f7a0",
+      "cli_rc": 1,
+      "stderr_bytes": 0,
+      "stdout_bytes": 962
+    }
+  }
+}

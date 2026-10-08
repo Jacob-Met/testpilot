@@ -1,0 +1,131 @@
+{
+  "status": "passed",
+  "changed_functions": [
+    {
+      "path": "module\udcff.py",
+      "module": "module\udcff",
+      "qualname": "measure",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ],
+      "source": "def measure(value):\n    return value + 2",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 0,
+  "test_files": {
+    "tests/test_raw_filename.py": "import os\nimport runpy\n\ndef test_measure_raw_filename():\n    module = runpy.run_path(os.fsdecode(bytes.fromhex('6d6f64756c65ff2e7079')))\n    assert module['measure'](4) == 6\n"
+  },
+  "tests_written": 1,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.193,
+    "timeout_s": 30,
+    "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_raw_filename::test_measure_raw_filename",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": null,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "patch": "diff --git a/tests/test_raw_filename.py b/tests/test_raw_filename.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_raw_filename.py\n@@ -0,0 +1,6 @@\n+import os\n+import runpy\n+\n+def test_measure_raw_filename():\n+    module = runpy.run_path(os.fsdecode(bytes.fromhex('6d6f64756c65ff2e7079')))\n+    assert module['measure'](4) == 6\n",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 324,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "P": {
+        "calls": 1,
+        "prompt_tokens": 96,
+        "completion_tokens": 13,
+        "cost_usd": 0.0
+      },
+      "E": {
+        "calls": 1,
+        "prompt_tokens": 160,
+        "completion_tokens": 55,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "P",
+        "prompt_tokens": 96,
+        "completion_tokens": 13,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "E",
+        "prompt_tokens": 160,
+        "completion_tokens": 55,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_raw_filename.py"
+      ],
+      "result": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.193,
+        "timeout_s": 30,
+        "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_raw_filename::test_measure_raw_filename",
+            "outcome": "passed",
+            "message": ""
+          }
+        ],
+        "coverage": null,
+        "passed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_raw_filename.py": "import os\nimport runpy\n\ndef test_measure_raw_filename():\n    module = runpy.run_path(os.fsdecode(bytes.fromhex('6d6f64756c65ff2e7079')))\n    assert module['measure'](4) == 6\n"
+      }
+    }
+  ],
+  "plan": "Test the changed arithmetic through the real file.",
+  "message": "",
+  "ok": true
+}

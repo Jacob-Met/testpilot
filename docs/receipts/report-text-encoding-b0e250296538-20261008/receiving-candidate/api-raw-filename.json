@@ -1,0 +1,33 @@
+{
+  "stage": "complete",
+  "status": "passed",
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.208,
+    "timeout_s": 30,
+    "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_raw_filename::test_measure_raw_filename",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": null,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "patch_sha256": "3e42a3c5abbfbc4da8e28e83f5c08ad4fe64d7ad6f72564f581dbdd29f16f7a0",
+  "receiving_pytest_stdout": "..                                                                       [100%]\n2 passed in 0.01s\n",
+  "original_module_and_crlf_test_unchanged": true
+}

@@ -1,0 +1,144 @@
+{
+  "status": "failed",
+  "changed_functions": [
+    {
+      "path": "module\udcff.py",
+      "module": "module\udcff",
+      "qualname": "measure",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ],
+      "source": "def measure(value):\n    return value + 2",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 0,
+  "test_files": {
+    "tests/test_raw_filename.py": "import os\nimport runpy\n\ndef test_measure_raw_filename():\n    module = runpy.run_path(os.fsdecode(bytes.fromhex('6d6f64756c65ff2e7079')))\n    assert module['measure'](4) == 6\n"
+  },
+  "tests_written": 1,
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "duration_s": 0.419,
+    "timeout_s": 30.0,
+    "output": "ption, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/__main__.py\", line 12, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 1174, in main\n    status = CoverageScript().command_line(argv)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 863, in command_line\n    return self.do_run(options, args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 1060, in do_run\n    self.coverage.save()\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 864, in save\n    data = self.get_data()\n           ^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 945, in get_data\n    self._post_save_work()\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 976, in _post_save_work\n    self._data.touch_files(paths, plugin_name)\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqldata.py\", line 684, in touch_files\n    self._file_id(filename, add=True)\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqldata.py\", line 467, in _file_id\n    self._file_map[filename] = con.execute_for_rowid(\n                               ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 165, in execute_for_rowid\n    with self.execute(sql, parameters) as cur:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 144, in execute\n    cur = self._execute(sql, parameters)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 127, in _execute\n    return self.con.execute(sql, parameters)  # type: ignore[arg-type]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'utf-8' codec can't encode character '\\udcff' in position 73: surrogates not allowed\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_raw_filename::test_measure_raw_filename",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": {
+      "percent_total": 0.0,
+      "files": {}
+    },
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=1)"
+  },
+  "patch": "diff --git a/tests/test_raw_filename.py b/tests/test_raw_filename.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_raw_filename.py\n@@ -0,0 +1,6 @@\n+import os\n+import runpy\n+\n+def test_measure_raw_filename():\n+    module = runpy.run_path(os.fsdecode(bytes.fromhex('6d6f64756c65ff2e7079')))\n+    assert module['measure'](4) == 6\n",
+  "coverage": {
+    "total_before": 0.0,
+    "total_after": 0.0,
+    "total_delta": 0.0,
+    "changed_lines_executable": 0,
+    "changed_lines_before": null,
+    "changed_lines_after": null
+  },
+  "ledger": {
+    "total_tokens": 324,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 96,
+        "completion_tokens": 13,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 1,
+        "prompt_tokens": 160,
+        "completion_tokens": 55,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 96,
+        "completion_tokens": 13,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 160,
+        "completion_tokens": 55,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_raw_filename.py"
+      ],
+      "result": {
+        "returncode": 1,
+        "timed_out": false,
+        "duration_s": 0.419,
+        "timeout_s": 30.0,
+        "output": "ption, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/__main__.py\", line 12, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 1174, in main\n    status = CoverageScript().command_line(argv)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 863, in command_line\n    return self.do_run(options, args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 1060, in do_run\n    self.coverage.save()\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 864, in save\n    data = self.get_data()\n           ^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 945, in get_data\n    self._post_save_work()\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 976, in _post_save_work\n    self._data.touch_files(paths, plugin_name)\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqldata.py\", line 684, in touch_files\n    self._file_id(filename, add=True)\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqldata.py\", line 467, in _file_id\n    self._file_map[filename] = con.execute_for_rowid(\n                               ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 165, in execute_for_rowid\n    with self.execute(sql, parameters) as cur:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 144, in execute\n    cur = self._execute(sql, parameters)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 127, in _execute\n    return self.con.execute(sql, parameters)  # type: ignore[arg-type]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'utf-8' codec can't encode character '\\udcff' in position 73: surrogates not allowed\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_existing",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_raw_filename::test_measure_raw_filename",
+            "outcome": "passed",
+            "message": ""
+          }
+        ],
+        "coverage": {
+          "percent_total": 0.0,
+          "files": {}
+        },
+        "passed": 2,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": false,
+        "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=1)"
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_raw_filename.py": "import os\nimport runpy\n\ndef test_measure_raw_filename():\n    module = runpy.run_path(os.fsdecode(bytes.fromhex('6d6f64756c65ff2e7079')))\n    assert module['measure'](4) == 6\n"
+      }
+    }
+  ],
+  "plan": "Test the changed arithmetic through the real file.",
+  "message": "still failing after 0 repair round(s): 2 passed, 0 failed, 0 errors, 0 skipped (rc=1)",
+  "ok": false
+}

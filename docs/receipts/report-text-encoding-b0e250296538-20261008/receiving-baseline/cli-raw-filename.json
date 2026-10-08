@@ -1,0 +1,36 @@
+{
+  "returncode": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/dev/shm/b0e250296538-testpilot-review/receiving-baseline/testpilot/__main__.py\", line 72, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/dev/shm/b0e250296538-testpilot-review/receiving-baseline/testpilot/__main__.py\", line 65, in main\n    paths = write_outputs(res, a.out)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/dev/shm/b0e250296538-testpilot-review/receiving-baseline/testpilot/loop.py\", line 472, in write_outputs\n    paths[\"md\"].write_text(render_report(res), encoding=\"utf-8\")\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1048, in write_text\n    return f.write(data)\n           ^^^^^^^^^^^^^\nUnicodeEncodeError: 'utf-8' codec can't encode character '\\udcff' in position 146: surrogates not allowed\n",
+  "report_status": "failed",
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "duration_s": 0.364,
+    "timeout_s": 30.0,
+    "output": "ption, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/__main__.py\", line 12, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 1174, in main\n    status = CoverageScript().command_line(argv)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 863, in command_line\n    return self.do_run(options, args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/cmdline.py\", line 1060, in do_run\n    self.coverage.save()\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 864, in save\n    data = self.get_data()\n           ^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 945, in get_data\n    self._post_save_work()\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/control.py\", line 976, in _post_save_work\n    self._data.touch_files(paths, plugin_name)\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqldata.py\", line 684, in touch_files\n    self._file_id(filename, add=True)\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqldata.py\", line 467, in _file_id\n    self._file_map[filename] = con.execute_for_rowid(\n                               ^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 165, in execute_for_rowid\n    with self.execute(sql, parameters) as cur:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 144, in execute\n    cur = self._execute(sql, parameters)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/lib/python3.12/site-packages/coverage/sqlitedb.py\", line 127, in _execute\n    return self.con.execute(sql, parameters)  # type: ignore[arg-type]\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'utf-8' codec can't encode character '\\udcff' in position 73: surrogates not allowed\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_raw_filename::test_measure_raw_filename",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": {
+      "percent_total": 0.0,
+      "files": {}
+    },
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=1)"
+  },
+  "markdown_bytes": 0
+}

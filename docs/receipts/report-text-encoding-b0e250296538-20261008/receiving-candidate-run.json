@@ -1,0 +1,20 @@
+{
+  "base_commit": "f350150259c00dd25c43a95d65157022612d15a8",
+  "kind": "receiving-candidate",
+  "returncode": 0,
+  "command": [
+    "/workspace/scratch/20b27c2ea29e/workers/estate-production/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_report_text_encoding.py",
+    "tests/test_loop.py",
+    "tests/test_generated_test_preservation.py"
+  ],
+  "cwd": "/dev/shm/b0e250296538-testpilot-review/receiving-candidate",
+  "test_sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e",
+  "loop_sha256": "d664e0037d99ac8fd2526521afc9437044d26dd389ca31d750f19e6ab248d323"
+}
