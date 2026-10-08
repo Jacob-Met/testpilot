@@ -1,0 +1,28 @@
+{
+  "added_paths": [
+    "docs/run-cancellation.md",
+    "tests/test_sandbox_interrupt.py"
+  ],
+  "bare_reraise_preserved": true,
+  "bounded_wait_seconds": 1.0,
+  "candidate_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+  "candidate_executed": false,
+  "changed_original_paths": [
+    "testpilot/sandbox.py"
+  ],
+  "handler": "    except KeyboardInterrupt:\n        if os.name == \"posix\":\n            try:\n                try:\n                    os.killpg(proc.pid, signal.SIGKILL)\n                except ProcessLookupError:\n                    pass\n                # Reap the leader without draining an escaped helper's pipe.\n                proc.wait(timeout=1.0)\n            except (OSError, subprocess.TimeoutExpired):\n                # Cleanup failure must not replace the caller's cancellation.\n                pass\n            finally:\n                proc.stdout.close()\n        raise\n",
+  "handler_lines": 15,
+  "inspected_interrupt_calls": [
+    "proc.wait(timeout=1.0)",
+    "proc.stdout.close()",
+    "os.killpg(proc.pid, signal.SIGKILL)"
+  ],
+  "inverse_reconstruction_matches_complete_original": true,
+  "new_sandbox_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+  "new_sandbox_sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+  "old_sandbox_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+  "original_sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+  "reconstructed_sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+  "retained_loop_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+  "unchanged_original_paths": 13
+}

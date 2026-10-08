@@ -1,0 +1,8 @@
+{
+  "original_driver_commit": "b1c06cb272cb2398baa4fd2275181c901f09ac43",
+  "original_driver_sha256": "db99d5fa877b9dbbedabba743e18cac38f687616db902e82a6841869effe8461",
+  "v1_result": "Two native CLI flows executed; interruption proof and positive report retained. Aggregate assembly failed only because the receiver expected ledger.calls instead of the existing ledger.entries.",
+  "v2_change": "Read ledger.entries; expose source/output/interpreter arguments for unchanged-case candidate receiving. All actual fixture behavior, SIGINT boundary, predicates and finite owned-group cleanup stay unchanged.",
+  "v2_driver_sha256": "e80ecd44e02f6bc32c0994bc1665c8ed21c86fa6de266f81a2a0043d0d72b16c",
+  "production_edits": false
+}

@@ -1,0 +1,8 @@
+{
+  "bytecode_disabled": true,
+  "coverage_installed": false,
+  "executable": "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+  "pytest": "9.1.1",
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "reuse": "Explicitly authorized read-only interpreter; all source, fixtures and process/output state are independent."
+}

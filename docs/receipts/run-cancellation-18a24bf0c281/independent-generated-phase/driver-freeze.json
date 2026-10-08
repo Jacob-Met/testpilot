@@ -1,0 +1,24 @@
+{
+  "candidate_intake": false,
+  "fixture_state": {
+    "change.diff": "fdf29283205d641bea9625d96c87d85601df9edf64aed5c0588756ff4018e9c3",
+    "expected.json": "12bb82dba8c53b29a14a4469995a5a78f428390b42489062ab94b237e609d725",
+    "previous-output/report.html": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635",
+    "previous-output/report.json": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8",
+    "previous-output/report.md": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750",
+    "previous-output/testpilot.patch": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1",
+    "project/owned_worker.py": "72c3f714724d257085d6aa2686d592c0f7038855071484d278cdaa4199561ab7",
+    "project/pair_math.py": "b4f11cfcf74af1a726f275faf93119ccd08c844a934e3432d9085a8164075eed",
+    "project/tests/test_existing_pair.py": "107b43e18c3f80a439a851fb551144748023236dfd7b1886a0626b99d35aa531",
+    "script/00-plan.txt": "c5b05cd689fc7bce881c9960775ac99ea54c16b2d666f6d4ba77ff496b6c9dfc",
+    "script/01-generated.txt": "4d42991580252e7d5bd686cdf5ea9696287cc6d39138a3e713ec19a898e0f8a6"
+  },
+  "frozen_utc": "2026-10-08T16:04:02.009387+00:00",
+  "intake_sha256": "dde3903d14f62047ebb94eb41510c7c43ae79995dc1708f3b1ee207081ab98f0",
+  "original_source": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "prepare_sha256": "9d07a0cb1b8ab7d771ba14604fdb48882eaad46b83c263c38aeb48713618fe97",
+  "receiver_sha256": "301391fcb3b08eb41d8958d4305a50e95cdee03127a2584357a69d3e35d893f7",
+  "source_boundary": "Exact14-file current native closure; full upstream tree1063blobs is preserved by owner/root.",
+  "source_intake_sha256": "937a20f3ffa01452d5a71e012db2d11b1f98c0944ef0dfd29fa34c7f54d6a596",
+  "testpilot_executed": false
+}
