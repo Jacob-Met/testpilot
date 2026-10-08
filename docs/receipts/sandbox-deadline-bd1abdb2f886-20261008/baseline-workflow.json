@@ -1,0 +1,48 @@
+{
+  "source_root": "/workspace/scratch/bd1abdb2f886/source_review/testpilot-deadline/baseline",
+  "sandbox_sha256": "d2c6b810180b1f1aa5aac1d2ae89c84a737fa009b33a3c19c8b392072047d881",
+  "configured_pytest_timeout_s": 1,
+  "observed_pipeline_duration_s": 6.651,
+  "first_round": {
+    "returncode": null,
+    "timed_out": true,
+    "duration_s": 6.182,
+    "output": ".authored-detached-helper-ready\n",
+    "summary": "TIMEOUT after 1s"
+  },
+  "status": "passed",
+  "repair_rounds_used": 1,
+  "model_calls": 3,
+  "tests_written": 1,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.188,
+    "timeout_s": 1,
+    "output": "..                                                                       [100%]\n2 passed in 0.01s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_existing",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_price::test_price",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": null,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "patch": "diff --git a/tests/test_price.py b/tests/test_price.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_price.py\n@@ -0,0 +1,4 @@\n+from price import price\n+\n+def test_price():\n+    assert price() == 2\n",
+  "git_apply_check_returncode": 0,
+  "source_files_unchanged": true,
+  "generated_test_absent_from_source": true,
+  "scope": "Authored local ScriptedModel replies and actual pytest; no provider or installed runtime."
+}

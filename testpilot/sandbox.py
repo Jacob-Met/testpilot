@@ -122,8 +122,9 @@ def clean_env(root: Path) -> dict[str, str]:
 
 
 def _run(cmd: list[str], cwd: Path, env: dict, timeout: float) -> tuple[int | None, str, bool]:
+    """Collect output, with at most one extra second of POSIX timeout cleanup."""
     proc = subprocess.Popen(cmd, cwd=cwd, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
-                            stderr=subprocess.STDOUT, text=True, start_new_session=True)
+                            stderr=subprocess.STDOUT, text=True, errors="replace", start_new_session=True)
     try:
         out, _ = proc.communicate(timeout=timeout)
         return proc.returncode, out, False
@@ -132,7 +133,18 @@ def _run(cmd: list[str], cwd: Path, env: dict, timeout: float) -> tuple[int | No
             os.killpg(proc.pid, signal.SIGKILL)
         except (ProcessLookupError, AttributeError, PermissionError):
             proc.kill()
-        out, _ = proc.communicate()
+        try:
+            # A detached helper may retain stdout after the target group dies.
+            # POSIX communicate uses synchronous reads that we can stop and close;
+            # preserve the existing Windows reader-thread cleanup behavior.
+            out, _ = proc.communicate(timeout=1.0 if os.name == "posix" else None)
+        except subprocess.TimeoutExpired as exc:
+            # TimeoutExpired.output is bytes even in text mode. Preserve complete
+            # diagnostics plus a replacement for a character cut off by the kill.
+            out = (exc.output or b"").decode(proc.stdout.encoding, errors="replace")
+            out = out.replace("\r\n", "\n").replace("\r", "\n")
+            proc.stdout.close()
+            proc.poll()  # Reap the killed leader without waiting for escaped helpers.
         return None, out or "", True
 
 
