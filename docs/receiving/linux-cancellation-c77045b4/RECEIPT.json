@@ -1,0 +1,323 @@
+{
+  "schema": "testpilot.independent.linux.receiving.v1",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "platform": "linux",
+  "source_head": "95a3116c175debdf97fd9dc1c984a587a90a5d3b",
+  "current_base": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "source_sha256": {
+    "baseline": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "candidate": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b"
+  },
+  "results": [
+    {
+      "variant": "baseline",
+      "mode": "ordinary",
+      "ok": true,
+      "returncode": 0,
+      "returned": {
+        "result": [
+          7,
+          "out-control\nerr-control\n",
+          false
+        ]
+      }
+    },
+    {
+      "variant": "baseline",
+      "mode": "same",
+      "ok": false,
+      "returncode": 130,
+      "caught_keyboard_interrupt": true,
+      "interrupt_to_parent_exit_seconds": 0.3165570009732619,
+      "barrier_released_after_parent_exit": true,
+      "helpers": {
+        "leader": {
+          "pid": 818942,
+          "pgid": 818942,
+          "sid": 818942,
+          "start_ticks": "85385609"
+        },
+        "leaf": {
+          "pid": 818948,
+          "pgid": 818942,
+          "sid": 818942,
+          "start_ticks": "85385614"
+        }
+      },
+      "at_parent_exit": {
+        "leader": {
+          "pid": 818942,
+          "state": "S",
+          "same_identity": true,
+          "active": true
+        },
+        "leaf": {
+          "pid": 818948,
+          "state": "S",
+          "same_identity": true,
+          "active": true
+        }
+      },
+      "post_barrier_markers": {
+        "leader": true,
+        "leaf": true
+      },
+      "final": {
+        "leader": {
+          "pid": 818942,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        },
+        "leaf": {
+          "pid": 818948,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        }
+      }
+    },
+    {
+      "variant": "baseline",
+      "mode": "escaped",
+      "ok": false,
+      "returncode": 130,
+      "caught_keyboard_interrupt": true,
+      "interrupt_to_parent_exit_seconds": 0.31485199998132885,
+      "barrier_released_after_parent_exit": true,
+      "helpers": {
+        "leader": {
+          "pid": 819049,
+          "pgid": 819049,
+          "sid": 819049,
+          "start_ticks": "85385672"
+        },
+        "leaf": {
+          "pid": 819054,
+          "pgid": 819054,
+          "sid": 819054,
+          "start_ticks": "85385677"
+        }
+      },
+      "at_parent_exit": {
+        "leader": {
+          "pid": 819049,
+          "state": "S",
+          "same_identity": true,
+          "active": true
+        },
+        "leaf": {
+          "pid": 819054,
+          "state": "S",
+          "same_identity": true,
+          "active": true
+        }
+      },
+      "post_barrier_markers": {
+        "leader": true,
+        "leaf": true
+      },
+      "final": {
+        "leader": {
+          "pid": 819049,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        },
+        "leaf": {
+          "pid": 819054,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        }
+      }
+    },
+    {
+      "variant": "candidate",
+      "mode": "ordinary",
+      "ok": true,
+      "returncode": 0,
+      "returned": {
+        "result": [
+          7,
+          "out-control\nerr-control\n",
+          false
+        ]
+      }
+    },
+    {
+      "variant": "candidate",
+      "mode": "same",
+      "ok": true,
+      "returncode": 130,
+      "caught_keyboard_interrupt": true,
+      "interrupt_to_parent_exit_seconds": 0.3140206820098683,
+      "barrier_released_after_parent_exit": true,
+      "helpers": {
+        "leader": {
+          "pid": 819082,
+          "pgid": 819082,
+          "sid": 819082,
+          "start_ticks": "85385741"
+        },
+        "leaf": {
+          "pid": 819083,
+          "pgid": 819082,
+          "sid": 819082,
+          "start_ticks": "85385746"
+        }
+      },
+      "at_parent_exit": {
+        "leader": {
+          "pid": 819082,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        },
+        "leaf": {
+          "pid": 819083,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        }
+      },
+      "post_barrier_markers": {
+        "leader": false,
+        "leaf": false
+      },
+      "final": {
+        "leader": {
+          "pid": 819082,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        },
+        "leaf": {
+          "pid": 819083,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        }
+      }
+    },
+    {
+      "variant": "candidate",
+      "mode": "escaped",
+      "ok": true,
+      "returncode": 130,
+      "caught_keyboard_interrupt": true,
+      "interrupt_to_parent_exit_seconds": 0.31546424597036093,
+      "barrier_released_after_parent_exit": true,
+      "helpers": {
+        "leader": {
+          "pid": 819103,
+          "pgid": 819103,
+          "sid": 819103,
+          "start_ticks": "85385790"
+        },
+        "leaf": {
+          "pid": 819125,
+          "pgid": 819125,
+          "sid": 819125,
+          "start_ticks": "85385794"
+        }
+      },
+      "at_parent_exit": {
+        "leader": {
+          "pid": 819103,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        },
+        "leaf": {
+          "pid": 819125,
+          "state": "S",
+          "same_identity": true,
+          "active": true
+        }
+      },
+      "post_barrier_markers": {
+        "leader": false,
+        "leaf": true
+      },
+      "final": {
+        "leader": {
+          "pid": 819103,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        },
+        "leaf": {
+          "pid": 819125,
+          "state": "absent",
+          "same_identity": false,
+          "active": false
+        }
+      }
+    }
+  ],
+  "sentinels_before": {
+    "output-3.txt": {
+      "sha256": "77fa29ad0f63f2b8426f093ebfafe7a976aaede503e3ede0d40cb751f7ba801e",
+      "inode": 334941,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176365922
+    },
+    "output-2.txt": {
+      "sha256": "16173aeaa3e77f979f0866295390852c869d029d2f7e0da9866c27fcc01ba2eb",
+      "inode": 334940,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176296636
+    },
+    "output-1.txt": {
+      "sha256": "feb8801d596acd837ac235e2f73fe74669a2a20c0491400d1050e1a87e969543",
+      "inode": 334939,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176217113
+    },
+    "output-0.txt": {
+      "sha256": "d7ab95fb02c17e3cb2c35c1ee66a82498490b575d43dd8494fa12eccfa8702c2",
+      "inode": 334937,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176100191
+    }
+  },
+  "sentinels_after": {
+    "output-3.txt": {
+      "sha256": "77fa29ad0f63f2b8426f093ebfafe7a976aaede503e3ede0d40cb751f7ba801e",
+      "inode": 334941,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176365922
+    },
+    "output-2.txt": {
+      "sha256": "16173aeaa3e77f979f0866295390852c869d029d2f7e0da9866c27fcc01ba2eb",
+      "inode": 334940,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176296636
+    },
+    "output-1.txt": {
+      "sha256": "feb8801d596acd837ac235e2f73fe74669a2a20c0491400d1050e1a87e969543",
+      "inode": 334939,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176217113
+    },
+    "output-0.txt": {
+      "sha256": "d7ab95fb02c17e3cb2c35c1ee66a82498490b575d43dd8494fa12eccfa8702c2",
+      "inode": 334937,
+      "mode": 416,
+      "mtime_ns": 1660000000123456789,
+      "ctime_ns": 1791487834176100191
+    }
+  },
+  "sentinels_exact": true,
+  "receiver_cleanup": [],
+  "scope": "Complete sandbox module actual POSIX process boundary; no full CLI/provider/full suite gate claimed",
+  "accepted": true
+}

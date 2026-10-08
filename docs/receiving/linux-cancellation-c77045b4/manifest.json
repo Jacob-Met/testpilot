@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-08T19:35:10.221937+00:00",
+  "root": "/home/jacob/hamon-ultra-c77045b4-testpilot-cancellation",
+  "head": "fc2ed75804ef193a3e945f310e2dae7667b8d457",
+  "tree": "77141f7b277f2566f226e8dc146219970895b7f7",
+  "files": 62,
+  "receipt_sha256": "c51afa64f3a1aa12ee0f1860e48e38853ab121fa6791d3a90d33da6ef25f91d3",
+  "receiver_sha256": "71f3e1a9c68d4cfb2df4f5bfb7307b3a8fe8f23171fe28767e1b00cae99e6a38",
+  "bundle": "/home/jacob/hamon-ultra-c77045b4-testpilot-cancellation-accepted.bundle",
+  "bundle_bytes": 26027,
+  "bundle_sha256": "482153971452228f376e456f2c0ef0b90129b62fe6fb64507dd3065f00fadab1",
+  "archive": "/home/jacob/hamon-ultra-c77045b4-testpilot-cancellation-accepted.zip",
+  "archive_bytes": 36822,
+  "archive_sha256": "2b50e170422868037c5336eaeee64377df7acef57e5c6a50c612e5224f6b3732",
+  "all_raw_bytes_exact": true,
+  "hosted_ci": "Failed2/399; independent acceptance is bounded and does not authorize integration."
+}
