@@ -1,0 +1,67 @@
+{
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "executable": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+  "pytest": "9.0.2",
+  "coverage": "7.16.2",
+  "source_commit": "f3b2135cad31852b599350564fe76dd160a6a522",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "thinkpad_probe_outcome": "unknown; not replayed",
+  "source_before": {
+    "README.md": {
+      "sha256": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+      "bytes": 11550,
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "bytes": 676,
+      "mode": "0o644"
+    },
+    "testpilot/__init__.py": {
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "bytes": 390,
+      "mode": "0o644"
+    },
+    "testpilot/__main__.py": {
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+      "bytes": 6065,
+      "mode": "0o644"
+    },
+    "testpilot/_pytest_generated.py": {
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "bytes": 2943,
+      "mode": "0o644"
+    },
+    "testpilot/diff.py": {
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "bytes": 9387,
+      "mode": "0o644"
+    },
+    "testpilot/html_report.py": {
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "bytes": 20656,
+      "mode": "0o644"
+    },
+    "testpilot/loop.py": {
+      "sha256": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+      "bytes": 24064,
+      "mode": "0o644"
+    },
+    "testpilot/model.py": {
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "bytes": 10175,
+      "mode": "0o644"
+    },
+    "testpilot/recheck.py": {
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "bytes": 11599,
+      "mode": "0o644"
+    },
+    "testpilot/sandbox.py": {
+      "sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "bytes": 12721,
+      "mode": "0o644"
+    }
+  },
+  "receiver_sha256": "011d2727e3fce85fdc1403064c1936b76aae1df69deec1a3eec3c95ca240c6b5"
+}

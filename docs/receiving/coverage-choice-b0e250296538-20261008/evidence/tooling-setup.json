@@ -1,0 +1,39 @@
+{
+  "steps": [
+    {
+      "command": [
+        "/opt/homebrew/bin/python3.12",
+        "-B",
+        "-m",
+        "venv",
+        "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312"
+      ],
+      "returncode": 0,
+      "seconds": 2.210709833074361,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "--disable-pip-version-check",
+        "install",
+        "--no-cache-dir",
+        "--retries",
+        "0",
+        "--timeout",
+        "25",
+        "pytest==9.0.2",
+        "coverage==7.16.2"
+      ],
+      "returncode": 0,
+      "seconds": 2.4243684579851106,
+      "stdout_sha256": "2c95028037c5528678f840c97bb21af6c5f2c1d8c47acfc90e9827188ef483f0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "free": 371253248
+}

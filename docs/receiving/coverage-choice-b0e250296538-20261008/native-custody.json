@@ -1,0 +1,21 @@
+{
+  "archive": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/testpilot-coverage-cli-author-native-20261008.tar.gz",
+  "bytes": 411211,
+  "sha256": "f5a33976e0c5e1a0d502d90db571bf497d074c7dcc9f456d913d4e1abade1712",
+  "verified_regular_members": 564,
+  "uncompressed_bytes": 1916907,
+  "source_commit": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "source_manifest_sha256": "88805e0ac01fa98104de6c06de8f5f04ea3fcb7ad360ee0a3b2f60f55057f814",
+  "new_cli_receipts": [
+    "evidence/current-cli/test_default_and_explicit_choi0/run-receipt.json",
+    "evidence/current-cli/test_default_and_explicit_choi1/run-receipt.json",
+    "evidence/current-cli/test_disable_bypasses_only_the0/default-receipt.json",
+    "evidence/current-cli/test_disable_bypasses_only_the0/disabled-receipt.json",
+    "evidence/current-cli/test_disable_composes_with_the0/prepared-receipt.json",
+    "evidence/current-cli/test_disable_composes_with_the0/unprepared-receipt.json",
+    "evidence/current-cli/test_disable_preserves_a_real_0/run-receipt.json",
+    "evidence/current-cli/test_disable_reaches_baseline_0/run-receipt.json"
+  ],
+  "excluded_virtual_environments": 8,
+  "free": 861061120
+}

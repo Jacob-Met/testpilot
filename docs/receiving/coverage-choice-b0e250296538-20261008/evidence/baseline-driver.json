@@ -1,0 +1,14 @@
+{
+  "platform": "separate macOS native run",
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/receive_baseline_macos.py"
+  ],
+  "returncode": 0,
+  "elapsed_seconds": 2.8266981669003144,
+  "stdout_sha256": "fb839a926d4d9637595a9f7a6f423b8687de176932d26ae60ea5226fe81f36f6",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "probe_sha256": "011d2727e3fce85fdc1403064c1936b76aae1df69deec1a3eec3c95ca240c6b5",
+  "thinkpad_probe_outcome": "unknown; not replayed"
+}

@@ -1,0 +1,217 @@
+{
+  "label": "default-broken-coverage-plugin",
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/project",
+    "--diff",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/change.diff",
+    "--backend",
+    "scripted",
+    "--script",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/replies",
+    "--rounds",
+    "0",
+    "--timeout",
+    "15",
+    "--python",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "--out",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/out"
+  ],
+  "elapsed_seconds": 0.8112011250341311,
+  "returncode": 1,
+  "stdout": "# TestPilot report: **failed**\n\nstill failing after 0 repair round(s): 0 passed, 0 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 0 collected\n\n- Changed functions: subject.py::step\n- Tests written: 1 in tests/test_generated_coverage_choice.py\n- Repair rounds used: 0/0\n- Final run: 0 passed, 0 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 0 collected in 0.13s\n- Coverage: unavailable\n- Tokens: 369 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 93 in / 14 out\n  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 159 in / 103 out\n\nwrote /Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/out/testpilot.patch, /Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/out/report.json, /Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/out/report.md, /Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/out/report.html\n",
+  "stderr": "",
+  "report": {
+    "status": "failed",
+    "changed_functions": [
+      {
+        "path": "subject.py",
+        "module": "subject",
+        "qualname": "step",
+        "lineno": 1,
+        "end_lineno": 2,
+        "changed_lines": [
+          2
+        ],
+        "source": "def step(value):\n    return value + 7",
+        "is_method": false
+      }
+    ],
+    "repair_rounds_used": 0,
+    "max_repair_rounds": 0,
+    "test_files": {
+      "tests/test_generated_coverage_choice.py": "import importlib.util\nimport os\nfrom pathlib import Path\n_path = Path(__file__).resolve().parents[1] / os.fsdecode(b'subject.py')\n_spec = importlib.util.spec_from_file_location('fixture_subject', _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\ndef test_generated_value():\n    assert _subject.step(5) == 12\n"
+    },
+    "tests_written": 1,
+    "final": {
+      "returncode": 1,
+      "timed_out": false,
+      "duration_s": 0.13,
+      "timeout_s": 15.0,
+      "output": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/__main__.py\", line 12, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 1174, in main\n    status = CoverageScript().command_line(argv)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 863, in command_line\n    return self.do_run(options, args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 1050, in do_run\n    self.coverage.start()\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/control.py\", line 696, in start\n    self._init()\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/control.py\", line 398, in _init\n    self._plugins.load_from_config(self.config.plugins, self.config)\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/plugin_support.py\", line 55, in load_from_config\n    coverage_init(self, options)\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/temporary/testpilot-g1mcmn7m/repo/authored_coverage_failure.py\", line 2, in coverage_init\n    raise RuntimeError('authored optional coverage plugin cannot initialize')\nRuntimeError: authored optional coverage plugin cannot initialize\n",
+      "cases": [],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_generated_coverage_choice.py"
+      ],
+      "junit_available": false,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": false,
+      "summary": "0 passed, 0 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 0 collected",
+      "generated": {
+        "collected": 0,
+        "passed": 0,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "patch": "diff --git a/tests/test_generated_coverage_choice.py b/tests/test_generated_coverage_choice.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated_coverage_choice.py\n@@ -0,0 +1,10 @@\n+import importlib.util\n+import os\n+from pathlib import Path\n+_path = Path(__file__).resolve().parents[1] / os.fsdecode(b'subject.py')\n+_spec = importlib.util.spec_from_file_location('fixture_subject', _path)\n+_subject = importlib.util.module_from_spec(_spec)\n+_spec.loader.exec_module(_subject)\n+\n+def test_generated_value():\n+    assert _subject.step(5) == 12\n",
+    "coverage": null,
+    "ledger": {
+      "total_tokens": 369,
+      "total_cost_usd": 0.0,
+      "cost_is_complete": false,
+      "tokens_estimated": true,
+      "by_model": {
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "calls": 1,
+          "prompt_tokens": 93,
+          "completion_tokens": 14,
+          "cost_usd": 0.0
+        },
+        "nvidia/Nemotron-3_5-Lightning": {
+          "calls": 1,
+          "prompt_tokens": 159,
+          "completion_tokens": 103,
+          "cost_usd": 0.0
+        }
+      },
+      "entries": [
+        {
+          "role": "planner",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "prompt_tokens": 93,
+          "completion_tokens": 14,
+          "estimated": true,
+          "cost_usd": 0.0
+        },
+        {
+          "role": "editor",
+          "model": "nvidia/Nemotron-3_5-Lightning",
+          "prompt_tokens": 159,
+          "completion_tokens": 103,
+          "estimated": true,
+          "cost_usd": 0.0
+        }
+      ]
+    },
+    "rounds": [
+      {
+        "round": 0,
+        "kind": "generate",
+        "files": [
+          "tests/test_generated_coverage_choice.py"
+        ],
+        "result": {
+          "returncode": 1,
+          "timed_out": false,
+          "duration_s": 0.13,
+          "timeout_s": 15.0,
+          "output": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/__main__.py\", line 12, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 1174, in main\n    status = CoverageScript().command_line(argv)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 863, in command_line\n    return self.do_run(options, args)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/cmdline.py\", line 1050, in do_run\n    self.coverage.start()\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/control.py\", line 696, in start\n    self._init()\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/control.py\", line 398, in _init\n    self._plugins.load_from_config(self.config.plugins, self.config)\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/lib/python3.12/site-packages/coverage/plugin_support.py\", line 55, in load_from_config\n    coverage_init(self, options)\n  File \"/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/macos-baseline-receiving/default-broken-coverage-plugin/temporary/testpilot-g1mcmn7m/repo/authored_coverage_failure.py\", line 2, in coverage_init\n    raise RuntimeError('authored optional coverage plugin cannot initialize')\nRuntimeError: authored optional coverage plugin cannot initialize\n",
+          "cases": [],
+          "coverage": null,
+          "generated_files": [
+            "tests/test_generated_coverage_choice.py"
+          ],
+          "junit_available": false,
+          "passed": 0,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "ok": false,
+          "summary": "0 passed, 0 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 0 collected",
+          "generated": {
+            "collected": 0,
+            "passed": 0,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          }
+        },
+        "warnings": [],
+        "contents": {
+          "tests/test_generated_coverage_choice.py": "import importlib.util\nimport os\nfrom pathlib import Path\n_path = Path(__file__).resolve().parents[1] / os.fsdecode(b'subject.py')\n_spec = importlib.util.spec_from_file_location('fixture_subject', _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\ndef test_generated_value():\n    assert _subject.step(5) == 12\n"
+        }
+      }
+    ],
+    "plan": "Test the changed step return with an independent input.\n",
+    "message": "still failing after 0 repair round(s): 0 passed, 0 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 0 collected",
+    "ok": false
+  },
+  "input_before": {
+    ".coveragerc": {
+      "sha256": "d388b6a06a73a5390f490914bd8026958d4a96957432dbb688ff61b151e0d502",
+      "bytes": 42,
+      "mode": "0o644"
+    },
+    "authored_coverage_failure.py": {
+      "sha256": "551ec754a0f9025c483d69a93fc53153689e1cba646e30e4b72673409ed9216e",
+      "bytes": 111,
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "sha256": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f",
+      "bytes": 48,
+      "mode": "0o644"
+    },
+    "subject.py": {
+      "sha256": "f050665608fb67518c1eb6ee0e6d093c3d808fcbff7285e4cb834cb61dd4ce8e",
+      "bytes": 38,
+      "mode": "0o644"
+    },
+    "tests/test_existing.py": {
+      "sha256": "dc6d3c29bfcc1f6f90b15ea87d63d823641ec5243261af5402342047ee47b88b",
+      "bytes": 350,
+      "mode": "0o644"
+    }
+  },
+  "input_after": {
+    ".coveragerc": {
+      "sha256": "d388b6a06a73a5390f490914bd8026958d4a96957432dbb688ff61b151e0d502",
+      "bytes": 42,
+      "mode": "0o644"
+    },
+    "authored_coverage_failure.py": {
+      "sha256": "551ec754a0f9025c483d69a93fc53153689e1cba646e30e4b72673409ed9216e",
+      "bytes": 111,
+      "mode": "0o644"
+    },
+    "pyproject.toml": {
+      "sha256": "0f792d73d83e29f0fb703a46db10647879b1415b0de84941d5c746117996609f",
+      "bytes": 48,
+      "mode": "0o644"
+    },
+    "subject.py": {
+      "sha256": "f050665608fb67518c1eb6ee0e6d093c3d808fcbff7285e4cb834cb61dd4ce8e",
+      "bytes": 38,
+      "mode": "0o644"
+    },
+    "tests/test_existing.py": {
+      "sha256": "dc6d3c29bfcc1f6f90b15ea87d63d823641ec5243261af5402342047ee47b88b",
+      "bytes": 350,
+      "mode": "0o644"
+    }
+  },
+  "input_unchanged": true,
+  "source_root": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/baseline-f3b2135c"
+}

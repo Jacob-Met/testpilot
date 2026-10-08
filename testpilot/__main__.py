@@ -88,6 +88,8 @@ def main(argv: list[str] | None = None) -> int:
     r.add_argument("--base-url", help="override OpenAI-compatible base URL")
     r.add_argument("--rounds", type=int, default=3, help="max repair rounds (default 3)")
     r.add_argument("--timeout", type=float, default=60.0, help="pytest timeout per run, seconds")
+    r.add_argument("--no-coverage", dest="coverage", action="store_const", const=False, default=None,
+                   help="run pytest without optional coverage measurement (default: automatic when installed)")
     r.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
                    help="project Python for all test runs; path or PATH command (default: this interpreter)")
     r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
@@ -131,7 +133,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"testpilot: {e}", file=sys.stderr)
         return 2
     pilot = TestPilot(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
-                      max_total_tokens=a.max_tokens, python=a.python)
+                      max_total_tokens=a.max_tokens, coverage=a.coverage, python=a.python)
     try:
         res = (pilot.run(a.repo, diff_text) if a.target is None
                else pilot.run(a.repo, diff_text, targets=a.target))

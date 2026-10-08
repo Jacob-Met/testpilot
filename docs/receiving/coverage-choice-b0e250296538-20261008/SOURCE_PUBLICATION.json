@@ -1,0 +1,261 @@
+{
+  "base_commit": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "base_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "declared_files": [
+    {
+      "path": "testpilot/__main__.py",
+      "bytes": 6300,
+      "sha256": "3097ddba2b7ef0381ca31cb2ef20852b6541b70384da0bd137da018f35a966c1",
+      "git_blob": "65b7274680c22dfbf00e3274d01757d52c8eb55c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13099,
+      "sha256": "c5abdb2e9f7aae560b995771d5d8573ed45df11752211ae23cb1534c7fd7d5d1",
+      "git_blob": "24b16cc93ad44f791765c24c0b0f48e7c75334dc"
+    },
+    {
+      "path": "tests/test_cli_coverage.py",
+      "bytes": 9296,
+      "sha256": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b",
+      "git_blob": "c4dae25bacbd15b030de5cb34c8c37ec4c07d29f"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/README.md",
+      "bytes": 5446,
+      "sha256": "b2a2930743cd643715d5b66b8f5d928ac54633eb64d70873e8f54a8ade0829ad",
+      "git_blob": "e000f1d900bd2472710968b747986f63052cafe7"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/baseline-driver.json",
+      "bytes": 689,
+      "sha256": "61722f8ebe50d50f39e2da5f7bb07166ad558614ba0c8df8015cd37459743c46",
+      "git_blob": "1339d8dbcb5852bdb4a05ce885e7fd11a4ba5c14"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/baseline-driver.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/baseline-driver.stdout.log",
+      "bytes": 1326,
+      "sha256": "fb839a926d4d9637595a9f7a6f423b8687de176932d26ae60ea5226fe81f36f6",
+      "git_blob": "8e46d4eb20003059c713da80adbe1d7ac13b7c03"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/baseline-started.json",
+      "bytes": 2344,
+      "sha256": "9f9b5c56cc91456a61c2822b1f05c449fb333b42001af65f34cf20d01479f1c1",
+      "git_blob": "1abff0f3b691ff212c74e0848b62e5f84dbcc54b"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/baseline-summary.json",
+      "bytes": 6633,
+      "sha256": "ac570980759001474993adf4f77c194c368b6c77142c5eb376870c6cbd6f4072",
+      "git_blob": "09f81f8fac492e5e0c0f65c89bfd878ff4ecbd50"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-candidate-junit.xml",
+      "bytes": 9198,
+      "sha256": "a88eaf7686fb26b912547029aabdb6c88768f5b0340a96926cba31efe6a287e4",
+      "git_blob": "330f16d1f902c2a70b27f305bb53d2359b86d2fd"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-candidate-receipt.json",
+      "bytes": 8038,
+      "sha256": "13a437d6fa2cfdd8e1aa5db9313228e0a012f4e89f5ffe23b37091d077684193",
+      "git_blob": "524a70b68b414391c2cafb1bfe755e0022439aa9"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-candidate-skips.json",
+      "bytes": 348,
+      "sha256": "84f599f8d6ec74c321ea456135055f55f11781c80889e2329aea1d380efa98ad",
+      "git_blob": "98e6cd4fc38407feb719bba95308d1894506fbfd"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-candidate.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-candidate.stdout.log",
+      "bytes": 124,
+      "sha256": "97ff751cc5fe3d9bad6f0e58460e5919d4371b3abca540cfa82403b14ce2ced3",
+      "git_blob": "bf374311b6aebeee0f811e4885617bf235c22302"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_default_and_explicit_choi0/run-receipt.json",
+      "bytes": 7969,
+      "sha256": "5ca71d8f22599feb359373caeb68c5249c3bdea54344d1b771f5b30a736f745d",
+      "git_blob": "11bd179e98e22fb64854fd32130c04ab8fee00ac"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_default_and_explicit_choi1/run-receipt.json",
+      "bytes": 6905,
+      "sha256": "895756e64b4654f20d097d034feee8dcdf088339d2883fbbe5c3a5667c5d18f8",
+      "git_blob": "f6ad6ed62b1a3f99eec04f14b7fec4c7a320831f"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_disable_bypasses_only_the0/default-receipt.json",
+      "bytes": 9595,
+      "sha256": "8577dab757794f1381381a73aab78ca9ec8b0ad8f4bcbda2bf313c7ff6228b72",
+      "git_blob": "98f797b8e03452a056dfeb5cd9586c41f8bce2f4"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_disable_bypasses_only_the0/disabled-receipt.json",
+      "bytes": 6912,
+      "sha256": "4472a29afcd1ff532ec3c30d764778284b14b30f36f335bef90700cad9311bac",
+      "git_blob": "15811e81966a5e2dc464f169bc78cd2222c36afd"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_disable_composes_with_the0/prepared-receipt.json",
+      "bytes": 7533,
+      "sha256": "697361fdeacf7c99cadcd36effbaf491348ccbd833b888fead3833e0cf9c3d10",
+      "git_blob": "80b7005de585fc09bfe500ca25b36f7044cd7661"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_disable_composes_with_the0/unprepared-receipt.json",
+      "bytes": 13755,
+      "sha256": "c60b5f4cc91d59a75db7d7de01cc629ea1ffbebb08911c09e19643410b5e89a9",
+      "git_blob": "0599fe22aa32dfeb7392ae048ea006d621546a28"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_disable_preserves_a_real_0/run-receipt.json",
+      "bytes": 8589,
+      "sha256": "144327c205b7c341278fef0682f00f79e2da1f13cefe0fafe537cb7b1b3f46ee",
+      "git_blob": "3a0e9df9f994cf51cd1df4a668f9db2fe3e0d358"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/current-cli/test_disable_reaches_baseline_0/run-receipt.json",
+      "bytes": 10156,
+      "sha256": "4f0cc581d50e2bd3e5806eecb00887e3e23189669776403f318aacdba33e0be5",
+      "git_blob": "a0a1a9d9fc71d048ca05b5778b31cc30839b2b42"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/first-candidate-receipt.json",
+      "bytes": 3519,
+      "sha256": "8a6dc05ead48582c65e2d5495e30c9c132c8f1633c13614746cba45ce0366823",
+      "git_blob": "dd3f9d8c7678446a87884d2fe15e668594f5532b"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/first-candidate.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/first-candidate.stdout.log",
+      "bytes": 98,
+      "sha256": "481494282945945e8b88ca491e00598cd2592713141de5bb2884c3f6c5307e22",
+      "git_blob": "e49bd47eaf476c81f22587326960a1a983eaddac"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/macos-filesystem-preflight.json",
+      "bytes": 401,
+      "sha256": "9f91cf095ea941d03d80490a5bf43940c6dde14760220ee9b5e2b490e0382d37",
+      "git_blob": "9b54ccffa3e5506d3a0b06d367fe762833513eba"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/original/default-broken-coverage-plugin.json",
+      "bytes": 13485,
+      "sha256": "39ac0cd971defcb5ca0f246c60805007ec64b6e25da25c51f46569f659d3bb99",
+      "git_blob": "987f04ac653838d11e8e63fcd4faba6d4a50be88"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/original/default-ordinary-control.json",
+      "bytes": 9867,
+      "sha256": "86fec3f26c7844d28837bbef7cc11f6db5dfc41169ce78abd7e164497075e7b6",
+      "git_blob": "5c3a3e5229f51a07b9800640a0b43bffbda771bc"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/original/existing-api-disabled-control.json",
+      "bytes": 8445,
+      "sha256": "3fc973362fc78f679906b9e2926c21ab769e453e214df0c636d1eaf4012cac95",
+      "git_blob": "904dda4a9078a10d8f9372c1b244e93f708dcf9f"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/original/missing-cli-option.json",
+      "bytes": 3115,
+      "sha256": "32c9d62806e64de4f830c248b0ff382405ed92df6f41fbcd2222942ec74083c2",
+      "git_blob": "7e3694e74473f736c74cabcbd611ecf110440481"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/runtime.json",
+      "bytes": 315,
+      "sha256": "531488fbf02dee7776f5436c35e0cb05315f39196e4278d13741327e77af43e7",
+      "git_blob": "a573a3067e98cf9691f64b37b678a419fc12d2b0"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/evidence/tooling-setup.json",
+      "bytes": 1176,
+      "sha256": "33440de923796a83163b7ebc9dc135f3b385e326c6f42a8f11cfefc4ef2e3865",
+      "git_blob": "a1e44fae2f2ea4158106b25315550e848eafa1d1"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/native-custody.json",
+      "bytes": 1208,
+      "sha256": "ecaa8ec80a761a155e74bfd1d04fb7cf475947df079bd72efb81ea3c92ab7651",
+      "git_blob": "f813094f3a94ef31d4fce2af01cea5ab0144469b"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/receive_baseline_macos.py",
+      "bytes": 9948,
+      "sha256": "011d2727e3fce85fdc1403064c1936b76aae1df69deec1a3eec3c95ca240c6b5",
+      "git_blob": "89d34e4605e5c5474fc8a798ccd43e69837eb0a5"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/runtime.patch",
+      "bytes": 1293,
+      "sha256": "93d5f244206ab534c0b04a223c79da7f25ccb9a789774949cd4e8af7c4aa429c",
+      "git_blob": "d31cd512ef50f33d13d8f66f9d1087aeadf95c4c"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/source-current.json",
+      "bytes": 4141,
+      "sha256": "88805e0ac01fa98104de6c06de8f5f04ea3fcb7ad360ee0a3b2f60f55057f814",
+      "git_blob": "877e2aa2c438c76b69bd44f7fcef84187a52c5f5"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/source-first-candidate.json",
+      "bytes": 5224,
+      "sha256": "7653550859994bc6ec90a7aa3a862f334e59169b7e4869eac7656ecf7ef3726f",
+      "git_blob": "eae62bfc340f5e0bc37ab9cdcf9ac9867963fff5"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/thinkpad-outcome-unknown.json",
+      "bytes": 1410,
+      "sha256": "174bd53de35be3e9c3ac99105ddf381079ed898874778f115a45ed6c89775602",
+      "git_blob": "902030108bd15ca839056086f2e8ba453ba8aecc"
+    },
+    {
+      "path": "docs/receiving/coverage-choice-b0e250296538-20261008/unreceived-thinkpad-probe.py",
+      "bytes": 9222,
+      "sha256": "8e3eff998738469855b6be67d66302565ee0f5b520b6c7ad244a1419f8b2d628",
+      "git_blob": "d1de2ca6a227012d9f91e86b77aac3fa8045d3f2"
+    }
+  ],
+  "native_archive": {
+    "archive": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/testpilot-coverage-cli-author-native-20261008.tar.gz",
+    "bytes": 411211,
+    "sha256": "f5a33976e0c5e1a0d502d90db571bf497d074c7dcc9f456d913d4e1abade1712",
+    "verified_regular_members": 564,
+    "uncompressed_bytes": 1916907,
+    "source_commit": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+    "source_manifest_sha256": "88805e0ac01fa98104de6c06de8f5f04ea3fcb7ad360ee0a3b2f60f55057f814",
+    "new_cli_receipts": [
+      "evidence/current-cli/test_default_and_explicit_choi0/run-receipt.json",
+      "evidence/current-cli/test_default_and_explicit_choi1/run-receipt.json",
+      "evidence/current-cli/test_disable_bypasses_only_the0/default-receipt.json",
+      "evidence/current-cli/test_disable_bypasses_only_the0/disabled-receipt.json",
+      "evidence/current-cli/test_disable_composes_with_the0/prepared-receipt.json",
+      "evidence/current-cli/test_disable_composes_with_the0/unprepared-receipt.json",
+      "evidence/current-cli/test_disable_preserves_a_real_0/run-receipt.json",
+      "evidence/current-cli/test_disable_reaches_baseline_0/run-receipt.json"
+    ],
+    "excluded_virtual_environments": 8,
+    "free": 861061120
+  }
+}

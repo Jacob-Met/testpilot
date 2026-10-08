@@ -1,0 +1,8 @@
+[
+  {
+    "classname": "tests.test_recheck",
+    "name": "test_cli_output_failure_does_not_replace_exit_with_shutdown_error",
+    "message": "Linux full-device control",
+    "text": "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-7f44c4f1/tests/test_recheck.py:281: Linux full-device control"
+  }
+]

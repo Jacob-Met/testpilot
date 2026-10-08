@@ -1,0 +1,185 @@
+{
+  "command": [
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/tooling-python312/bin/python",
+    "-B",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/project with spaces",
+    "--diff",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/change.diff",
+    "--backend",
+    "scripted",
+    "--script",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/scripted replies",
+    "--rounds",
+    "0",
+    "--timeout",
+    "15",
+    "--out",
+    "/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-out",
+    "--no-coverage"
+  ],
+  "returncode": 1,
+  "report": {
+    "status": "failed",
+    "changed_functions": [
+      {
+        "path": "subject.py",
+        "module": "subject",
+        "qualname": "add_fee",
+        "lineno": 3,
+        "end_lineno": 4,
+        "changed_lines": [
+          3,
+          4
+        ],
+        "source": "def add_fee(value):\n    return value + fee",
+        "is_method": false
+      }
+    ],
+    "repair_rounds_used": 0,
+    "max_repair_rounds": 0,
+    "test_files": {
+      "tests/test_generated_fee.py": "from subject import add_fee\nfrom fixture_receipt import record\n\ndef test_generated_fee():\n    record('generated')\n    assert add_fee(11) == 18\n"
+    },
+    "tests_written": 0,
+    "final": {
+      "returncode": 2,
+      "timed_out": false,
+      "duration_s": 0.285,
+      "timeout_s": 15.0,
+      "output": "\n==================================== ERRORS ====================================\n___________________ ERROR collecting tests/test_existing.py ____________________\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_existing.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_existing.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'\n_________________ ERROR collecting tests/test_generated_fee.py _________________\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_generated_fee.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_generated_fee.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'\n=========================== short test summary info ============================\nERROR tests/test_existing.py\nERROR tests/test_generated_fee.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 errors in 0.10s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_existing",
+          "outcome": "error",
+          "message": "collection failure\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_existing.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_existing.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'",
+          "generated_file": null
+        },
+        {
+          "nodeid": "tests.test_generated_fee",
+          "outcome": "error",
+          "message": "collection failure\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_generated_fee.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_generated_fee.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'",
+          "generated_file": null
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_generated_fee.py"
+      ],
+      "junit_available": true,
+      "passed": 0,
+      "failed": 0,
+      "errors": 2,
+      "skipped": 0,
+      "ok": false,
+      "summary": "0 passed, 0 failed, 2 errors, 0 skipped (rc=2); generated: 0 passed of 0 collected",
+      "generated": {
+        "collected": 0,
+        "passed": 0,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "patch": "diff --git a/tests/test_generated_fee.py b/tests/test_generated_fee.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated_fee.py\n@@ -0,0 +1,6 @@\n+from subject import add_fee\n+from fixture_receipt import record\n+\n+def test_generated_fee():\n+    record('generated')\n+    assert add_fee(11) == 18\n",
+    "coverage": null,
+    "ledger": {
+      "total_tokens": 311,
+      "total_cost_usd": 0.0,
+      "cost_is_complete": false,
+      "tokens_estimated": true,
+      "by_model": {
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "calls": 1,
+          "prompt_tokens": 96,
+          "completion_tokens": 10,
+          "cost_usd": 0.0
+        },
+        "nvidia/Nemotron-3_5-Lightning": {
+          "calls": 1,
+          "prompt_tokens": 157,
+          "completion_tokens": 48,
+          "cost_usd": 0.0
+        }
+      },
+      "entries": [
+        {
+          "role": "planner",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "prompt_tokens": 96,
+          "completion_tokens": 10,
+          "estimated": true,
+          "cost_usd": 0.0
+        },
+        {
+          "role": "editor",
+          "model": "nvidia/Nemotron-3_5-Lightning",
+          "prompt_tokens": 157,
+          "completion_tokens": 48,
+          "estimated": true,
+          "cost_usd": 0.0
+        }
+      ]
+    },
+    "rounds": [
+      {
+        "round": 0,
+        "kind": "generate",
+        "files": [
+          "tests/test_generated_fee.py"
+        ],
+        "result": {
+          "returncode": 2,
+          "timed_out": false,
+          "duration_s": 0.285,
+          "timeout_s": 15.0,
+          "output": "\n==================================== ERRORS ====================================\n___________________ ERROR collecting tests/test_existing.py ____________________\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_existing.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_existing.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'\n_________________ ERROR collecting tests/test_generated_fee.py _________________\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_generated_fee.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_generated_fee.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'\n=========================== short test summary info ============================\nERROR tests/test_existing.py\nERROR tests/test_generated_fee.py\n!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!\n2 errors in 0.10s\n",
+          "cases": [
+            {
+              "nodeid": "tests.test_existing",
+              "outcome": "error",
+              "message": "collection failure\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_existing.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_existing.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'",
+              "generated_file": null
+            },
+            {
+              "nodeid": "tests.test_generated_fee",
+              "outcome": "error",
+              "message": "collection failure\nImportError while importing test module '/Users/me/workspace/estate/contributions-b0e250296538-20261008/testpilot-coverage-cli/candidate-current-native-v1/cases/test_disable_composes_with_the0/unprepared-temporary/testpilot-gw1wm8rn/repo/tests/test_generated_fee.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py:90: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntests/test_generated_fee.py:1: in <module>\n    from subject import add_fee\nsubject.py:1: in <module>\n    from testpilot_coverage_project_dependency import fee\nE   ModuleNotFoundError: No module named 'testpilot_coverage_project_dependency'",
+              "generated_file": null
+            }
+          ],
+          "coverage": null,
+          "generated_files": [
+            "tests/test_generated_fee.py"
+          ],
+          "junit_available": true,
+          "passed": 0,
+          "failed": 0,
+          "errors": 2,
+          "skipped": 0,
+          "ok": false,
+          "summary": "0 passed, 0 failed, 2 errors, 0 skipped (rc=2); generated: 0 passed of 0 collected",
+          "generated": {
+            "collected": 0,
+            "passed": 0,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          }
+        },
+        "warnings": [],
+        "contents": {
+          "tests/test_generated_fee.py": "from subject import add_fee\nfrom fixture_receipt import record\n\ndef test_generated_fee():\n    record('generated')\n    assert add_fee(11) == 18\n"
+        }
+      }
+    ],
+    "plan": "Check add_fee with a distinct input.\n",
+    "message": "still failing after 0 repair round(s): 0 passed, 0 failed, 2 errors, 0 skipped (rc=2); generated: 0 passed of 0 collected",
+    "ok": false
+  },
+  "executions": [],
+  "project_unchanged": true
+}
