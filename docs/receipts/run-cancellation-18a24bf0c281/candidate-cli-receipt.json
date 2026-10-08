@@ -1,0 +1,216 @@
+{
+  "canonical_head": "f3b2135cad31852b599350564fe76dd160a6a522",
+  "source_tree": "d0107a6f8b3b8cc00dadebc5f794060f275f3f5b",
+  "received_source": "/Users/me/testpilot-cancellation-18a24bf0c281/candidate",
+  "driver_sha256": "e80ecd44e02f6bc32c0994bc1665c8ed21c86fa6de266f81a2a0043d0d72b16c",
+  "python": "3.12.8",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "selected_python": "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+  "cases": [
+    {
+      "label": "interrupt",
+      "argv": [
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/interrupt/repo",
+        "--diff",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/interrupt/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/interrupt/script",
+        "--python",
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "--timeout",
+        "12",
+        "--rounds",
+        "0",
+        "--out",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/interrupt/output"
+      ],
+      "exit_code": -2,
+      "events": [
+        {
+          "event": "pytest_ready",
+          "testpilot_pid": 48810,
+          "command_identity": "/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -m pytest -q -p no:cacheprovider --rootdir /tmp/testpilot-bjpettv2/repo -o addopts= -o junit_family=xunit2 --junitxml=/tmp/testpilot-bjpettv2/junit.xml",
+          "pid": 48820,
+          "pgid": 48820
+        },
+        {
+          "event": "parent_exited_after_sigint",
+          "returncode": -2,
+          "elapsed_s": 0.2904583750059828
+        },
+        {
+          "event": "post_parent_exit_release",
+          "pytest_continued": false
+        },
+        {
+          "event": "owned_pytest_not_running_at_exit",
+          "pid": 48820
+        }
+      ],
+      "fixture_before": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "1dd8da4121a47f20d2b8e66da109a26ed76b0fc480c0ad10e10bcadfa97ddc18",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_after": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "1dd8da4121a47f20d2b8e66da109a26ed76b0fc480c0ad10e10bcadfa97ddc18",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_unchanged": true,
+      "continued_after_parent_exit": false,
+      "output_exists": false
+    },
+    {
+      "label": "ordinary-control",
+      "argv": [
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/ordinary-control/repo",
+        "--diff",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/ordinary-control/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/ordinary-control/script",
+        "--python",
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "--timeout",
+        "12",
+        "--rounds",
+        "0",
+        "--out",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/ordinary-control/output"
+      ],
+      "exit_code": 0,
+      "events": [
+        {
+          "event": "pytest_ready",
+          "testpilot_pid": 49025,
+          "command_identity": "/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -m pytest -q -p no:cacheprovider --rootdir /tmp/testpilot-xb0hfqou/repo -o addopts= -o junit_family=xunit2 --junitxml=/tmp/testpilot-xb0hfqou/junit.xml",
+          "pid": 49028,
+          "pgid": 49028
+        },
+        {
+          "event": "ordinary_completed",
+          "returncode": 0,
+          "status": "passed",
+          "final": {
+            "returncode": 0,
+            "timed_out": false,
+            "duration_s": 0.211,
+            "timeout_s": 12.0,
+            "output": "..                                                                       [100%]\n2 passed in 0.09s\n",
+            "cases": [
+              {
+                "nodeid": "tests.test_existing::test_existing_work",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": null
+              },
+              {
+                "nodeid": "test_generated_double",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": "tests/test_testpilot_generated.py"
+              }
+            ],
+            "coverage": null,
+            "generated_files": [
+              "tests/test_testpilot_generated.py"
+            ],
+            "junit_available": true,
+            "passed": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "ok": true,
+            "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+            "generated": {
+              "collected": 1,
+              "passed": 1,
+              "failed": 0,
+              "error": 0,
+              "skipped": 0
+            }
+          },
+          "model_calls": 2
+        },
+        {
+          "event": "owned_pytest_not_running_at_exit",
+          "pid": 49028
+        }
+      ],
+      "fixture_before": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "3f5eeb6a8b68465c3f9b1aff8a28bbdd9edacbbd6bf3a170adc99feebd1278d6",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_after": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "3f5eeb6a8b68465c3f9b1aff8a28bbdd9edacbbd6bf3a170adc99feebd1278d6",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_unchanged": true,
+      "continued_after_parent_exit": null,
+      "output_exists": true
+    }
+  ],
+  "checks": {
+    "interrupted_cli_failed_without_publishing_result": true,
+    "interrupted_pytest_work_stops_before_parent_returns": true,
+    "ordinary_scripted_run_passes": true,
+    "all_original_source_bytes_unchanged": true
+  },
+  "source_before": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "README.md": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+    "testpilot/loop.py": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    "tests/test_sandbox_deadline.py": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1",
+    "tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+    "tests/test_sandbox_interrupt.py": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+    "docs/run-cancellation.md": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+  },
+  "source_after": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "README.md": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+    "testpilot/loop.py": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    "tests/test_sandbox_deadline.py": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1",
+    "tests/test_sandbox.py": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+    "tests/test_sandbox_interrupt.py": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+    "docs/run-cancellation.md": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+  },
+  "scope": "A real SIGINT delivered only to the owned CLI child while its real pytest is active; the pytest fixture is bounded to five seconds and touches only these own fixture paths. No external provider, live task, package installation, production edit or escaped-descendant containment claim."
+}

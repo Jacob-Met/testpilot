@@ -1,0 +1,128 @@
+{
+  "source_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+  "actual_canonical_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "actual_canonical_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "actual_source": "/Users/me/testpilot-cancellation-18a24bf0c281/candidate",
+  "source_freeze": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "size": 586,
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649"
+    },
+    {
+      "path": "README.md",
+      "size": 12669,
+      "sha256": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854",
+      "git_blob": "24a6c0fab34c05d17ef216a42e97a0fae2389fc2"
+    },
+    {
+      "path": "docs/run-cancellation.md",
+      "size": 2985,
+      "sha256": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126",
+      "git_blob": "d8956abb39915e235531c3e217050ccc2089173d"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "size": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "size": 6065,
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+      "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "size": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "size": 9387,
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "size": 20656,
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "size": 25480,
+      "sha256": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+      "git_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a"
+    },
+    {
+      "path": "testpilot/model.py",
+      "size": 10175,
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "size": 11599,
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "size": 13277,
+      "sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+      "git_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72"
+    },
+    {
+      "path": "tests/test_sandbox.py",
+      "size": 2545,
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+      "git_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055"
+    },
+    {
+      "path": "tests/test_sandbox_deadline.py",
+      "size": 4248,
+      "sha256": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1",
+      "git_blob": "d8ebce5a81205aad005e45a280aec898e3e89820"
+    },
+    {
+      "path": "tests/test_sandbox_interrupt.py",
+      "size": 6944,
+      "sha256": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+      "git_blob": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6"
+    }
+  ],
+  "raw_receiver_receipt": "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli/receipt.json",
+  "raw_receiver_receipt_sha256": "dde39c5ceb688d4c04f165b77362e19b66247b5214cf7f289ff9b290a9fcb785",
+  "historical_label_notice": "The unchanged frozen receiver contains hardcoded canonical_head/source_tree fields naming its original f3 discovery source. They are historical labels, not the executed source identity for this candidate run. The actual executed current parent plus repair and all input hashes are explicitly bound here; raw receipt bytes are preserved.",
+  "argv": [
+    "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+    "/Users/me/testpilot-cancellation-18a24bf0c281/receiving/receive_cancellation.py",
+    "--source",
+    "/Users/me/testpilot-cancellation-18a24bf0c281/candidate",
+    "--output",
+    "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/candidate-cli"
+  ],
+  "exit_code": 0,
+  "elapsed_s": 3.4259277919773012,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "python": "3.12.8 (main, Dec  3 2024, 18:42:41) [Clang 16.0.0 (clang-1600.0.26.4)]",
+  "driver_sha256": "e80ecd44e02f6bc32c0994bc1665c8ed21c86fa6de266f81a2a0043d0d72b16c",
+  "checks": {
+    "interrupted_cli_failed_without_publishing_result": true,
+    "interrupted_pytest_work_stops_before_parent_returns": true,
+    "ordinary_scripted_run_passes": true,
+    "all_original_source_bytes_unchanged": true
+  },
+  "source_unchanged": true,
+  "scope": "Two actual native CLI actions with the unchanged frozen receiver; no live provider or developer repository. Original f3 evidence remains separate. This receipt qualifies the exact current7f44 staging composition plus the cancellation repair."
+}

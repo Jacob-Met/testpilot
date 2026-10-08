@@ -1,0 +1,574 @@
+{
+  "argv": [
+    "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+    "-m",
+    "testpilot",
+    "run",
+    "--repo",
+    "/Users/me/testpilot-independent-interrupt-18a24bf0c281/fixture/project",
+    "--diff",
+    "/Users/me/testpilot-independent-interrupt-18a24bf0c281/fixture/change.diff",
+    "--backend",
+    "scripted",
+    "--script",
+    "/Users/me/testpilot-independent-interrupt-18a24bf0c281/fixture/script",
+    "--rounds",
+    "0",
+    "--timeout",
+    "30",
+    "--python",
+    "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+    "--out",
+    "/Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/saved-output"
+  ],
+  "checks": [
+    {
+      "actual": true,
+      "expected": true,
+      "name": "Actual generated verification is reached after existing tests and scripted model replies",
+      "passed": true
+    },
+    {
+      "actual": [
+        "121d3bf5dd29e14e9abff37e5e14526ecad74c0507e8daccb75317e217f1e907",
+        13,
+        "generated-verification",
+        true
+      ],
+      "expected": [
+        "121d3bf5dd29e14e9abff37e5e14526ecad74c0507e8daccb75317e217f1e907",
+        13,
+        "generated-verification",
+        true
+      ],
+      "name": "The accepted generated file and its actual input assertion match the frozen reply",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "Pytest owns a separate group and the recorded worker inherits that exact group",
+      "passed": true
+    },
+    {
+      "actual": [
+        55653,
+        55654
+      ],
+      "expected": [
+        55653,
+        55654
+      ],
+      "name": "Both owned processes are doing work before the cancellation signal",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "name": "No post-parent-exit marker exists before the parent exits",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "The CLI propagates cancellation and exits within the finite three-second bound",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "expected": [],
+      "name": "No owned pytest/worker process is still running when the CLI exits",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "The owned worker cannot continue after the post-parent-exit handshake",
+      "passed": true
+    },
+    {
+      "actual": [
+        true,
+        false
+      ],
+      "expected": [
+        true,
+        false
+      ],
+      "name": "Cancellation remains visible as KeyboardInterrupt and prints no publication success",
+      "passed": true
+    },
+    {
+      "actual": [],
+      "expected": [],
+      "name": "All recorded owned work is stopped at the end of finite receiver cleanup",
+      "passed": true
+    },
+    {
+      "actual": {
+        "report.html": {
+          "bytes": 83,
+          "inode": 134806911,
+          "mode": 288,
+          "mtime_ns": 1735689600000000000,
+          "sha256": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635"
+        },
+        "report.json": {
+          "bytes": 63,
+          "inode": 134806908,
+          "mode": 416,
+          "mtime_ns": 1735689601000000000,
+          "sha256": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8"
+        },
+        "report.md": {
+          "bytes": 77,
+          "inode": 134806909,
+          "mode": 288,
+          "mtime_ns": 1735689602000000000,
+          "sha256": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750"
+        },
+        "testpilot.patch": {
+          "bytes": 49,
+          "inode": 134806910,
+          "mode": 416,
+          "mtime_ns": 1735689603000000000,
+          "sha256": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1"
+        }
+      },
+      "expected": {
+        "report.html": {
+          "bytes": 83,
+          "inode": 134806911,
+          "mode": 288,
+          "mtime_ns": 1735689600000000000,
+          "sha256": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635"
+        },
+        "report.json": {
+          "bytes": 63,
+          "inode": 134806908,
+          "mode": 416,
+          "mtime_ns": 1735689601000000000,
+          "sha256": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8"
+        },
+        "report.md": {
+          "bytes": 77,
+          "inode": 134806909,
+          "mode": 288,
+          "mtime_ns": 1735689602000000000,
+          "sha256": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750"
+        },
+        "testpilot.patch": {
+          "bytes": 49,
+          "inode": 134806910,
+          "mode": 416,
+          "mtime_ns": 1735689603000000000,
+          "sha256": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1"
+        }
+      },
+      "name": "All four preexisting output files preserve bytes/inode/mode/write time",
+      "passed": true
+    },
+    {
+      "actual": [
+        "report.html",
+        "report.json",
+        "report.md",
+        "testpilot.patch"
+      ],
+      "expected": [
+        "report.html",
+        "report.json",
+        "report.md",
+        "testpilot.patch"
+      ],
+      "name": "No partial publication path is added to the existing output directory",
+      "passed": true
+    },
+    {
+      "actual": {
+        "change.diff": "fdf29283205d641bea9625d96c87d85601df9edf64aed5c0588756ff4018e9c3",
+        "expected.json": "12bb82dba8c53b29a14a4469995a5a78f428390b42489062ab94b237e609d725",
+        "previous-output/report.html": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635",
+        "previous-output/report.json": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8",
+        "previous-output/report.md": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750",
+        "previous-output/testpilot.patch": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1",
+        "project/owned_worker.py": "72c3f714724d257085d6aa2686d592c0f7038855071484d278cdaa4199561ab7",
+        "project/pair_math.py": "b4f11cfcf74af1a726f275faf93119ccd08c844a934e3432d9085a8164075eed",
+        "project/tests/test_existing_pair.py": "107b43e18c3f80a439a851fb551144748023236dfd7b1886a0626b99d35aa531",
+        "script/00-plan.txt": "c5b05cd689fc7bce881c9960775ac99ea54c16b2d666f6d4ba77ff496b6c9dfc",
+        "script/01-generated.txt": "4d42991580252e7d5bd686cdf5ea9696287cc6d39138a3e713ec19a898e0f8a6"
+      },
+      "expected": {
+        "change.diff": "fdf29283205d641bea9625d96c87d85601df9edf64aed5c0588756ff4018e9c3",
+        "expected.json": "12bb82dba8c53b29a14a4469995a5a78f428390b42489062ab94b237e609d725",
+        "previous-output/report.html": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635",
+        "previous-output/report.json": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8",
+        "previous-output/report.md": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750",
+        "previous-output/testpilot.patch": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1",
+        "project/owned_worker.py": "72c3f714724d257085d6aa2686d592c0f7038855071484d278cdaa4199561ab7",
+        "project/pair_math.py": "b4f11cfcf74af1a726f275faf93119ccd08c844a934e3432d9085a8164075eed",
+        "project/tests/test_existing_pair.py": "107b43e18c3f80a439a851fb551144748023236dfd7b1886a0626b99d35aa531",
+        "script/00-plan.txt": "c5b05cd689fc7bce881c9960775ac99ea54c16b2d666f6d4ba77ff496b6c9dfc",
+        "script/01-generated.txt": "4d42991580252e7d5bd686cdf5ea9696287cc6d39138a3e713ec19a898e0f8a6"
+      },
+      "name": "Original project and scripted replies remain byte-identical",
+      "passed": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "name": "All captured native production/context source bytes remain exact",
+      "passed": true
+    }
+  ],
+  "cleanup": {
+    "actions": [],
+    "after": [],
+    "before": [],
+    "owned_pids": [
+      55653,
+      55654
+    ],
+    "pgid": 55653
+  },
+  "cli_pgid": 55620,
+  "cli_pid": 55620,
+  "cwd": "/Users/me/testpilot-independent-interrupt-18a24bf0c281/source-candidate",
+  "environment_overrides": {
+    "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "PYTHONPATH": "/Users/me/testpilot-independent-interrupt-18a24bf0c281/source-candidate",
+    "TMPDIR": "/Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/tmp",
+    "TP_REVIEW_CONTROL": "/Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/control"
+  },
+  "finished_utc": "2026-10-08T16:10:51.488530+00:00",
+  "fixture_before": {
+    "change.diff": "fdf29283205d641bea9625d96c87d85601df9edf64aed5c0588756ff4018e9c3",
+    "expected.json": "12bb82dba8c53b29a14a4469995a5a78f428390b42489062ab94b237e609d725",
+    "previous-output/report.html": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635",
+    "previous-output/report.json": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8",
+    "previous-output/report.md": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750",
+    "previous-output/testpilot.patch": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1",
+    "project/owned_worker.py": "72c3f714724d257085d6aa2686d592c0f7038855071484d278cdaa4199561ab7",
+    "project/pair_math.py": "b4f11cfcf74af1a726f275faf93119ccd08c844a934e3432d9085a8164075eed",
+    "project/tests/test_existing_pair.py": "107b43e18c3f80a439a851fb551144748023236dfd7b1886a0626b99d35aa531",
+    "script/00-plan.txt": "c5b05cd689fc7bce881c9960775ac99ea54c16b2d666f6d4ba77ff496b6c9dfc",
+    "script/01-generated.txt": "4d42991580252e7d5bd686cdf5ea9696287cc6d39138a3e713ec19a898e0f8a6"
+  },
+  "generated_ready": {
+    "asserted_result": 13,
+    "child_pid": 55654,
+    "generated_path": "/Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/tmp/testpilot-yyp1g728/repo/tests/test_generated_lifecycle.py",
+    "generated_sha256": "121d3bf5dd29e14e9abff37e5e14526ecad74c0507e8daccb75317e217f1e907",
+    "pgid": 55653,
+    "phase": "generated-verification",
+    "pid": 55653,
+    "ppid": 55620
+  },
+  "heartbeat_before_signal": {
+    "monotonic": 1015417.104319458,
+    "pgid": 55653,
+    "pid": 55654,
+    "ppid": 55653
+  },
+  "label": "candidate",
+  "outputs_after": {
+    "report.html": {
+      "bytes": 83,
+      "inode": 134806911,
+      "mode": 288,
+      "mtime_ns": 1735689600000000000,
+      "sha256": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635"
+    },
+    "report.json": {
+      "bytes": 63,
+      "inode": 134806908,
+      "mode": 416,
+      "mtime_ns": 1735689601000000000,
+      "sha256": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8"
+    },
+    "report.md": {
+      "bytes": 77,
+      "inode": 134806909,
+      "mode": 288,
+      "mtime_ns": 1735689602000000000,
+      "sha256": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750"
+    },
+    "testpilot.patch": {
+      "bytes": 49,
+      "inode": 134806910,
+      "mode": 416,
+      "mtime_ns": 1735689603000000000,
+      "sha256": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1"
+    }
+  },
+  "outputs_before": {
+    "report.html": {
+      "bytes": 83,
+      "inode": 134806911,
+      "mode": 288,
+      "mtime_ns": 1735689600000000000,
+      "sha256": "15de2ee20b37d881a45c2fd164f244a73b770115afc5d57d5e96faeb083a4635"
+    },
+    "report.json": {
+      "bytes": 63,
+      "inode": 134806908,
+      "mode": 416,
+      "mtime_ns": 1735689601000000000,
+      "sha256": "92720968fab69a2e3438a971830f7b2efa9998f382b8cc3e26576782bd3dc8d8"
+    },
+    "report.md": {
+      "bytes": 77,
+      "inode": 134806909,
+      "mode": 288,
+      "mtime_ns": 1735689602000000000,
+      "sha256": "d9a3c8664c31b4e4329c4bd8ce5d173ff6d74ab10da37ccfccbfd5500eff3750"
+    },
+    "testpilot.patch": {
+      "bytes": 49,
+      "inode": 134806910,
+      "mode": 416,
+      "mtime_ns": 1735689603000000000,
+      "sha256": "abc9f0d11f10264811f6f3b59fcf0915ae8b9d331ebf22bf35347c9ebfd5d4d1"
+    }
+  },
+  "owned_at_parent_exit": [],
+  "owned_before_signal": [
+    {
+      "command": "/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/tmp/testpilot-yyp1g728/generated_pytest.py /Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/tmp/testpilot-yyp1g728/generated_files.json -q -p no:cacheprovider --rootdir /Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/tmp/testpilot-yyp1g728/repo -o addopts= -o junit_family=xunit2 --junitxml=/Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/tmp/testpilot-yyp1g728/junit.xml",
+      "pgid": 55653,
+      "pid": 55653,
+      "ppid": 55620,
+      "running": true,
+      "stat": "Ss"
+    },
+    {
+      "command": "/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python /Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/tmp/testpilot-yyp1g728/repo/owned_worker.py /Users/me/testpilot-independent-interrupt-18a24bf0c281/runs/candidate/control",
+      "pgid": 55653,
+      "pid": 55654,
+      "ppid": 55653,
+      "running": true,
+      "stat": "S"
+    }
+  ],
+  "parent_exit": {
+    "duration_s": 0.2814816660247743,
+    "observed_monotonic": 1015417.467700291,
+    "returncode": -2
+  },
+  "post_parent_exit_marker": null,
+  "receiver_sha256": "301391fcb3b08eb41d8958d4305a50e95cdee03127a2584357a69d3e35d893f7",
+  "signal": {
+    "monotonic": 1015417.186214625,
+    "number": 2,
+    "target_pid": 55620
+  },
+  "source_after": [
+    {
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+      "matches_frozen_source": true,
+      "path": ".github/workflows/ci.yml",
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+    },
+    {
+      "git_blob": "24a6c0fab34c05d17ef216a42e97a0fae2389fc2",
+      "matches_frozen_source": true,
+      "path": "README.md",
+      "sha256": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854"
+    },
+    {
+      "git_blob": "d8956abb39915e235531c3e217050ccc2089173d",
+      "matches_frozen_source": true,
+      "path": "docs/run-cancellation.md",
+      "sha256": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126"
+    },
+    {
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "matches_frozen_source": true,
+      "path": "pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "matches_frozen_source": true,
+      "path": "testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "matches_frozen_source": true,
+      "path": "testpilot/__main__.py",
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84"
+    },
+    {
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "matches_frozen_source": true,
+      "path": "testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "matches_frozen_source": true,
+      "path": "testpilot/diff.py",
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0"
+    },
+    {
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "matches_frozen_source": true,
+      "path": "testpilot/html_report.py",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4"
+    },
+    {
+      "git_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "matches_frozen_source": true,
+      "path": "testpilot/loop.py",
+      "sha256": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b"
+    },
+    {
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "matches_frozen_source": true,
+      "path": "testpilot/model.py",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "matches_frozen_source": true,
+      "path": "testpilot/recheck.py",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e"
+    },
+    {
+      "git_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+      "matches_frozen_source": true,
+      "path": "testpilot/sandbox.py",
+      "sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b"
+    },
+    {
+      "git_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "matches_frozen_source": true,
+      "path": "tests/test_sandbox.py",
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+    },
+    {
+      "git_blob": "d8ebce5a81205aad005e45a280aec898e3e89820",
+      "matches_frozen_source": true,
+      "path": "tests/test_sandbox_deadline.py",
+      "sha256": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1"
+    },
+    {
+      "git_blob": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6",
+      "matches_frozen_source": true,
+      "path": "tests/test_sandbox_interrupt.py",
+      "sha256": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325"
+    }
+  ],
+  "source_before": [
+    {
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+      "matches_frozen_source": true,
+      "path": ".github/workflows/ci.yml",
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+    },
+    {
+      "git_blob": "24a6c0fab34c05d17ef216a42e97a0fae2389fc2",
+      "matches_frozen_source": true,
+      "path": "README.md",
+      "sha256": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854"
+    },
+    {
+      "git_blob": "d8956abb39915e235531c3e217050ccc2089173d",
+      "matches_frozen_source": true,
+      "path": "docs/run-cancellation.md",
+      "sha256": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126"
+    },
+    {
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "matches_frozen_source": true,
+      "path": "pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "matches_frozen_source": true,
+      "path": "testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "matches_frozen_source": true,
+      "path": "testpilot/__main__.py",
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84"
+    },
+    {
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "matches_frozen_source": true,
+      "path": "testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "matches_frozen_source": true,
+      "path": "testpilot/diff.py",
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0"
+    },
+    {
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "matches_frozen_source": true,
+      "path": "testpilot/html_report.py",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4"
+    },
+    {
+      "git_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "matches_frozen_source": true,
+      "path": "testpilot/loop.py",
+      "sha256": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b"
+    },
+    {
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "matches_frozen_source": true,
+      "path": "testpilot/model.py",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673"
+    },
+    {
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "matches_frozen_source": true,
+      "path": "testpilot/recheck.py",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e"
+    },
+    {
+      "git_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+      "matches_frozen_source": true,
+      "path": "testpilot/sandbox.py",
+      "sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b"
+    },
+    {
+      "git_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "matches_frozen_source": true,
+      "path": "tests/test_sandbox.py",
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992"
+    },
+    {
+      "git_blob": "d8ebce5a81205aad005e45a280aec898e3e89820",
+      "matches_frozen_source": true,
+      "path": "tests/test_sandbox_deadline.py",
+      "sha256": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1"
+    },
+    {
+      "git_blob": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6",
+      "matches_frozen_source": true,
+      "path": "tests/test_sandbox_interrupt.py",
+      "sha256": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325"
+    }
+  ],
+  "started_utc": "2026-10-08T16:10:49.660921+00:00",
+  "totals": {
+    "actual_cli_invocations": 1,
+    "checks": 14,
+    "failed": 0,
+    "passed": 14
+  },
+  "worker_ready": {
+    "pgid": 55653,
+    "pid": 55654,
+    "ppid": 55653
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "canonical_head": "f3b2135cad31852b599350564fe76dd160a6a522",
+  "source_tree": "d0107a6f8b3b8cc00dadebc5f794060f275f3f5b",
+  "received_source": "/Users/me/testpilot-cancellation-18a24bf0c281/baseline",
+  "driver_sha256": "e80ecd44e02f6bc32c0994bc1665c8ed21c86fa6de266f81a2a0043d0d72b16c",
+  "python": "3.12.8",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "selected_python": "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+  "cases": [
+    {
+      "label": "interrupt",
+      "argv": [
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/interrupt/repo",
+        "--diff",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/interrupt/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/interrupt/script",
+        "--python",
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "--timeout",
+        "12",
+        "--rounds",
+        "0",
+        "--out",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/interrupt/output"
+      ],
+      "exit_code": -2,
+      "events": [
+        {
+          "event": "pytest_ready",
+          "testpilot_pid": 74017,
+          "command_identity": "/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -m pytest -q -p no:cacheprovider --rootdir /tmp/testpilot-36v1_b2r/repo -o addopts= -o junit_family=xunit2 --junitxml=/tmp/testpilot-36v1_b2r/junit.xml",
+          "pid": 74029,
+          "pgid": 74029
+        },
+        {
+          "event": "parent_exited_after_sigint",
+          "returncode": -2,
+          "elapsed_s": 0.2841661659767851
+        },
+        {
+          "event": "post_parent_exit_release",
+          "pytest_continued": true
+        },
+        {
+          "event": "owned_pytest_not_running_at_exit",
+          "pid": 74029
+        }
+      ],
+      "fixture_before": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "02ca9398271b26a6f8685f6381c74a3cd9aac6c43640e817ba729cc216f8fdd0",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_after": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "02ca9398271b26a6f8685f6381c74a3cd9aac6c43640e817ba729cc216f8fdd0",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_unchanged": true,
+      "continued_after_parent_exit": true,
+      "output_exists": false
+    },
+    {
+      "label": "ordinary-control",
+      "argv": [
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/ordinary-control/repo",
+        "--diff",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/ordinary-control/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/ordinary-control/script",
+        "--python",
+        "/Users/me/capturesuite-independent-checkpoint-18a24bf0c281/venv/bin/python",
+        "--timeout",
+        "12",
+        "--rounds",
+        "0",
+        "--out",
+        "/Users/me/testpilot-cancellation-18a24bf0c281/evidence/original-cancellation-v2/ordinary-control/output"
+      ],
+      "exit_code": 0,
+      "events": [
+        {
+          "event": "pytest_ready",
+          "testpilot_pid": 74134,
+          "command_identity": "/opt/homebrew/Cellar/python@3.12/3.12.8/Frameworks/Python.framework/Versions/3.12/Resources/Python.app/Contents/MacOS/Python -m pytest -q -p no:cacheprovider --rootdir /tmp/testpilot-hrgp9z6f/repo -o addopts= -o junit_family=xunit2 --junitxml=/tmp/testpilot-hrgp9z6f/junit.xml",
+          "pid": 74155,
+          "pgid": 74155
+        },
+        {
+          "event": "ordinary_completed",
+          "returncode": 0,
+          "status": "passed",
+          "final": {
+            "returncode": 0,
+            "timed_out": false,
+            "duration_s": 0.202,
+            "timeout_s": 12.0,
+            "output": "..                                                                       [100%]\n2 passed in 0.08s\n",
+            "cases": [
+              {
+                "nodeid": "tests.test_existing::test_existing_work",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": null
+              },
+              {
+                "nodeid": "test_generated_double",
+                "outcome": "passed",
+                "message": "",
+                "generated_file": "tests/test_testpilot_generated.py"
+              }
+            ],
+            "coverage": null,
+            "generated_files": [
+              "tests/test_testpilot_generated.py"
+            ],
+            "junit_available": true,
+            "passed": 2,
+            "failed": 0,
+            "errors": 0,
+            "skipped": 0,
+            "ok": true,
+            "summary": "2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+            "generated": {
+              "collected": 1,
+              "passed": 1,
+              "failed": 0,
+              "error": 0,
+              "skipped": 0
+            }
+          },
+          "model_calls": 2
+        },
+        {
+          "event": "owned_pytest_not_running_at_exit",
+          "pid": 74155
+        }
+      ],
+      "fixture_before": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "f207cbe301faee79170dc177f6982787d9ad8108e216fe72a31ba7fef2a01b70",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_after": {
+        "repo/sample.py": "e77335c804a116a2e8a7445a96ea133bd60d7bbe5361606d933bcb5509392962",
+        "repo/tests/test_existing.py": "f207cbe301faee79170dc177f6982787d9ad8108e216fe72a31ba7fef2a01b70",
+        "script/02-generate.md": "9bc8e4cf0d52a79e42edad54a0ca5f1a961483f01e1d9f6707187e1fe11959e8",
+        "script/01-plan.md": "d537d6c884758129eaca0d0cf72a19d2e6e83d325ad98e4dbceb9cdeede18658"
+      },
+      "fixture_unchanged": true,
+      "continued_after_parent_exit": null,
+      "output_exists": true
+    }
+  ],
+  "checks": {
+    "interrupted_cli_failed_without_publishing_result": true,
+    "interrupted_pytest_work_stops_before_parent_returns": false,
+    "ordinary_scripted_run_passes": true,
+    "all_original_source_bytes_unchanged": true
+  },
+  "source_before": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "README.md": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/loop.py": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+  },
+  "source_after": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "README.md": "a75d56db555f787886056157c9d07d625ab18c5f06299561ae9889f3610efe00",
+    "testpilot/html_report.py": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+    "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+    "testpilot/loop.py": "990d6df8b65877e6f25e319771ccad189767575587b4a165f3c3a8e2280c4c93",
+    "testpilot/diff.py": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+    "testpilot/recheck.py": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/__main__.py": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+    ".github/workflows/ci.yml": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+  },
+  "scope": "A real SIGINT delivered only to the owned CLI child while its real pytest is active; the pytest fixture is bounded to five seconds and touches only these own fixture paths. No external provider, live task, package installation, production edit or escaped-descendant containment claim."
+}

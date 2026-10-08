@@ -1,0 +1,53 @@
+FFF.                                                                     [100%]
+=================================== FAILURES ===================================
+___ test_interrupt_stops_same_group_descendant_and_reaps_leader[group-wait] ____
+
+tmp_path = PosixPath('/Users/me/testpilot-cancellation-18a24bf0c281/evidence/current-baseline-focused/temporary-fixtures/test_interrupt_stops_same_grou0')
+mode = 'group-wait'
+
+    @pytest.mark.parametrize("mode", ["group-wait", "group-exit"])
+    def test_interrupt_stops_same_group_descendant_and_reaps_leader(tmp_path, mode):
+        observed = interrupt_run(tmp_path, mode)
+        assert observed["receipt"]["kind"] == "KeyboardInterrupt"
+>       assert observed["receipt"]["leader_reaped_before_return"], observed
+E       AssertionError: {'receipt': {'kind': 'KeyboardInterrupt', 'leader_reaped_before_return': False, 'waitpid_probe': [0, 0]}, 'elapsed_s': 0.28633162495680153, 'leader_running': True, 'child_running': True, ...}
+E       assert False
+
+tests/test_sandbox_interrupt.py:157: AssertionError
+___ test_interrupt_stops_same_group_descendant_and_reaps_leader[group-exit] ____
+
+tmp_path = PosixPath('/Users/me/testpilot-cancellation-18a24bf0c281/evidence/current-baseline-focused/temporary-fixtures/test_interrupt_stops_same_grou1')
+mode = 'group-exit'
+
+    @pytest.mark.parametrize("mode", ["group-wait", "group-exit"])
+    def test_interrupt_stops_same_group_descendant_and_reaps_leader(tmp_path, mode):
+        observed = interrupt_run(tmp_path, mode)
+        assert observed["receipt"]["kind"] == "KeyboardInterrupt"
+        assert observed["receipt"]["leader_reaped_before_return"], observed
+        assert not observed["leader_running"], observed
+>       assert not observed["child_running"], observed
+E       AssertionError: {'receipt': {'kind': 'KeyboardInterrupt', 'leader_reaped_before_return': True, 'waitpid_probe': None}, 'elapsed_s': 0.008811958017759025, 'leader_running': False, 'child_running': True, ...}
+E       assert not True
+
+tests/test_sandbox_interrupt.py:159: AssertionError
+______ test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-wait] ______
+
+tmp_path = PosixPath('/Users/me/testpilot-cancellation-18a24bf0c281/evidence/current-baseline-focused/temporary-fixtures/test_interrupt_does_not_drain_0')
+mode = 'escape-wait'
+
+    @pytest.mark.parametrize("mode", ["escape-wait", "escape-exit"])
+    def test_interrupt_does_not_drain_a_detached_helpers_pipe(tmp_path, mode):
+        observed = interrupt_run(tmp_path, mode)
+        assert observed["receipt"]["kind"] == "KeyboardInterrupt"
+>       assert observed["receipt"]["leader_reaped_before_return"], observed
+E       AssertionError: {'receipt': {'kind': 'KeyboardInterrupt', 'leader_reaped_before_return': False, 'waitpid_probe': [0, 0]}, 'elapsed_s': 0.27368849993217736, 'leader_running': True, 'child_running': True, ...}
+E       assert False
+
+tests/test_sandbox_interrupt.py:167: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-exit]
+FAILED tests/test_sandbox_interrupt.py::test_interrupt_stops_same_group_descendant_and_reaps_leader[group-wait]
+FAILED tests/test_sandbox_interrupt.py::test_interrupt_stops_same_group_descendant_and_reaps_leader[group-exit]
+FAILED tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-wait]
+3 failed, 1 passed in 1.31s

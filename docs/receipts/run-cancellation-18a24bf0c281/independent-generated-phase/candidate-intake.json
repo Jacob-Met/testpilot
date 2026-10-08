@@ -1,0 +1,123 @@
+{
+  "baseline_receiving_commit": "9317bdb3a0fda248ffcbabbe94c401a4558a1b41",
+  "candidate_executed": false,
+  "canonical_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "canonical_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "captured_files": [
+    {
+      "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+      "mode": "100644",
+      "path": ".github/workflows/ci.yml",
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59",
+      "size": 586
+    },
+    {
+      "git_blob": "24a6c0fab34c05d17ef216a42e97a0fae2389fc2",
+      "mode": "100644",
+      "path": "README.md",
+      "sha256": "9e1c93aa93ca1942d002c3bd28779d780b568b606cfa7e001058c13997e34854",
+      "size": 12669
+    },
+    {
+      "git_blob": "d8956abb39915e235531c3e217050ccc2089173d",
+      "mode": "100644",
+      "path": "docs/run-cancellation.md",
+      "sha256": "ab37125e75d03005813477f6ec1703117ca844209a559f289a8be5ee720bf126",
+      "size": 2985
+    },
+    {
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "mode": "100644",
+      "path": "pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "size": 676
+    },
+    {
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "100644",
+      "path": "testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "size": 390
+    },
+    {
+      "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "mode": "100644",
+      "path": "testpilot/__main__.py",
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84",
+      "size": 6065
+    },
+    {
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "100644",
+      "path": "testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "size": 2943
+    },
+    {
+      "git_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "mode": "100644",
+      "path": "testpilot/diff.py",
+      "sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+      "size": 9387
+    },
+    {
+      "git_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "mode": "100644",
+      "path": "testpilot/html_report.py",
+      "sha256": "183703d05f32552f7f7c39aa958c39bae61d824e3fa9cd6a6dd686f0d4c228a4",
+      "size": 20656
+    },
+    {
+      "git_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "mode": "100644",
+      "path": "testpilot/loop.py",
+      "sha256": "dde4ee52e0a1fabded9902137ede6dd68aa17f6542c316e5d134b8510495170b",
+      "size": 25480
+    },
+    {
+      "git_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "mode": "100644",
+      "path": "testpilot/model.py",
+      "sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "size": 10175
+    },
+    {
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "mode": "100644",
+      "path": "testpilot/recheck.py",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e",
+      "size": 11599
+    },
+    {
+      "git_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+      "mode": "100644",
+      "path": "testpilot/sandbox.py",
+      "sha256": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b",
+      "size": 13277
+    },
+    {
+      "git_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "mode": "100644",
+      "path": "tests/test_sandbox.py",
+      "sha256": "ee47d6a3f40c2f612197614088ea40cbdd50a7f04047780c95a71e37c1555992",
+      "size": 2545
+    },
+    {
+      "git_blob": "d8ebce5a81205aad005e45a280aec898e3e89820",
+      "mode": "100644",
+      "path": "tests/test_sandbox_deadline.py",
+      "sha256": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1",
+      "size": 4248
+    },
+    {
+      "git_blob": "184e969e57fc2a483b6a4e7b1709e16f66ce37e6",
+      "mode": "100644",
+      "path": "tests/test_sandbox_interrupt.py",
+      "sha256": "466bbdd470001a5e23e55a1205352dfccc8c714470fe903ff241b28416449325",
+      "size": 6944
+    }
+  ],
+  "native_candidate_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+  "observed_utc": "2026-10-08T16:09:19.206764+00:00",
+  "repository": "Jacob-Met/testpilot"
+}

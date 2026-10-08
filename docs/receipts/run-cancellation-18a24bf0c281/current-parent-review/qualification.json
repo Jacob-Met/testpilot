@@ -1,0 +1,66 @@
+{
+  "all9_runtime_modules_current": true,
+  "author_evidence_commit": "70ac0bde74a6256bc76e9503592ac56d0dcb790d",
+  "author_only_expected_leaves": 1089,
+  "author_only_expected_tree": "6a99b015b8ffead56c9c866005b0fbeeeeb61e72",
+  "author_source_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+  "candidate_sandbox_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+  "current_leaves": 1063,
+  "current_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "current_tree": "ea3f7b4170f1515abb7188d31dc269623b9e0738",
+  "decision": "Current parent and native receiving closure preserved; no later production delta",
+  "issue": 35,
+  "later_production_changes": [],
+  "limits": [
+    "This is a static current-parent and complete-whitelist review, not a duplicate receiving run.",
+    "Expected tree includes author27 paths only; root must account separately for product's independent evidence.",
+    "Future main advances need their own exact-parent comparison; no claim of future branch preservation."
+  ],
+  "loop_output_staging_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+  "native_closure_all14_pins_current": true,
+  "no_github_mutation": true,
+  "no_source_edit": true,
+  "no_test_execution": true,
+  "original_sandbox_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+  "ownership": {
+    "issue35": "Cancellation owner retains sandbox._run; generated-phase independent receiver remains separate.",
+    "issue36": {
+      "draft": true,
+      "head": "949d41109600811912b096d287d02f6b74d0c47d",
+      "landed": false,
+      "scope": "Only run CLI --no-coverage and constructor forwarding; sandbox/loop/recheck excluded.",
+      "source_pr": 40,
+      "state": "open"
+    },
+    "issue37": {
+      "current_recheck_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "landed": false,
+      "latest_comment": 6064067702,
+      "scope": "New offline recheck HTML and additive output writer; sandbox/CLI/loop/model excluded.",
+      "state": "open"
+    },
+    "other_open_prs": [
+      {
+        "draft": true,
+        "head": "949d41109600811912b096d287d02f6b74d0c47d",
+        "number": 40
+      },
+      {
+        "draft": false,
+        "head": "34d647d0921964c9336d10d365b59b772b667caa",
+        "number": 38
+      },
+      {
+        "draft": false,
+        "head": "a978524a75bb53d9beaa2e271b187069deafb800",
+        "number": 33
+      }
+    ]
+  },
+  "packet_files_verified": 27,
+  "packet_sha256": "9883fd2329d7cc312507b6704eed0a4c98e268bf18b2e2d6b6acaa11d27a61a9",
+  "recorded_at": "2026-10-08T16:15:05.617536+00:00",
+  "repository": "Jacob-Met/testpilot",
+  "tree_complete_and_reconstructed": true,
+  "unrelated_parent_retained": 1062
+}

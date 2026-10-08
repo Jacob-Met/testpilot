@@ -1,0 +1,311 @@
+{
+  "author27_expected_leaves": 1098,
+  "author27_expected_tree": "57f86b70e34c5bca1ee83a41d9d33c22ec579d73",
+  "candidate_sandbox_blob": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72",
+  "candidate_source_commit": "649dc7d1fd02493af298876eea0697849404bba9",
+  "current_leaves": 1072,
+  "current_parent": "362981dd84626fd55eda93584c2984cd9d0e5276",
+  "current_tree": "1a75241e7e215b3586159fce945df70a6e139d78",
+  "decision": "Accept bounded current362 output-path composition; no cancellation rerun required",
+  "delta": {
+    "added_leaves": 9,
+    "changed_leaves": 13,
+    "commits": 3,
+    "files": [
+      {
+        "additions": 9,
+        "deletions": 0,
+        "filename": "README.md",
+        "sha": "0a302f3dea5edc6688793e32da8dd5754ce2b907",
+        "status": "modified"
+      },
+      {
+        "additions": 18,
+        "deletions": 0,
+        "filename": "docs/RECHECK.md",
+        "sha": "7ac4a71d60add1ee718ab777c74aff887a453c29",
+        "status": "modified"
+      },
+      {
+        "additions": 32,
+        "deletions": 0,
+        "filename": "docs/receiving/recheck-html-ae0a1ea0b247/README.md",
+        "sha": "1de67e8311d14ab14b7faf5fbe6b00be17ad6630",
+        "status": "added"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "filename": "docs/receiving/recheck-html-ae0a1ea0b247/author-evidence.tar.gz",
+        "sha": "9c9143b6da834d6b6bd6dc068f480e49ffe474e7",
+        "status": "added"
+      },
+      {
+        "additions": 27,
+        "deletions": 0,
+        "filename": "docs/receiving/recheck-html-ae0a1ea0b247/hosted-ci.json",
+        "sha": "1299166a0c7f2c77abc63a0bee6d90ca36d915d0",
+        "status": "added"
+      },
+      {
+        "additions": 207,
+        "deletions": 0,
+        "filename": "docs/receiving/recheck-html-ae0a1ea0b247/hosted-ci.log.txt",
+        "sha": "22c7901fb682e593b21f6e422b64501cea0136dd",
+        "status": "added"
+      },
+      {
+        "additions": 0,
+        "deletions": 0,
+        "filename": "docs/receiving/recheck-html-ae0a1ea0b247/independent-recheck-html.tar.gz",
+        "sha": "6dcad3820246d3e9006e97474ddd5883a9451562",
+        "status": "added"
+      },
+      {
+        "additions": 218,
+        "deletions": 0,
+        "filename": "docs/receiving/recheck-html-ae0a1ea0b247/independent-review.json",
+        "sha": "2967863eda3490722356d75372250cd7ec048f00",
+        "status": "added"
+      },
+      {
+        "additions": 160,
+        "deletions": 0,
+        "filename": "docs/receiving/recheck-html-ae0a1ea0b247/source-publication.json",
+        "sha": "2823919110f20fad1e1b70f8ecd8c2e967bea953",
+        "status": "added"
+      },
+      {
+        "additions": 13,
+        "deletions": 2,
+        "filename": "testpilot/recheck.py",
+        "sha": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+        "status": "modified"
+      },
+      {
+        "additions": 152,
+        "deletions": 0,
+        "filename": "testpilot/recheck_html.py",
+        "sha": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+        "status": "added"
+      },
+      {
+        "additions": 1,
+        "deletions": 1,
+        "filename": "tests/test_recheck.py",
+        "sha": "426085b7824979a764056c528d2ca2ccfc647d77",
+        "status": "modified"
+      },
+      {
+        "additions": 184,
+        "deletions": 0,
+        "filename": "tests/test_recheck_html.py",
+        "sha": "416ebc35d8c5bd6b9900abd9f4a9f07b08b3e438",
+        "status": "added"
+      }
+    ],
+    "modified_leaves": 4
+  },
+  "exact_existing_package_modules": 8,
+  "exact_qualified_pins": 12,
+  "existing_package_modules": 9,
+  "full_tree_and_subtrees_reconstructed": true,
+  "interaction": {
+    "KeyboardInterrupt_not_caught_by_unchanged_recheck_command_boundary": true,
+    "cli_eager_import_reviewed": true,
+    "default_generation_and_coverage_behavior_preserved": true,
+    "generation_cli_loop_model_collector_sandbox_original_exact": true,
+    "intentional_peer_behavior": "Successful completed rechecks additionally prepare/write recheck.html; this output change is preserved.",
+    "new_renderer_module_only_stdlib_imports_definitions_literal_style": true,
+    "recheck_without_new_writer_and_imports_byte_exact": true,
+    "rendering_only_after_completed_recheck_before_output_directory_creation": true,
+    "unchanged_recheck_definitions": [
+      "RecheckError",
+      "SavedTests",
+      "_unique_object",
+      "_reject_constant",
+      "read_saved_tests",
+      "_placement",
+      "recheck_report",
+      "render_recheck",
+      "_output_destination",
+      "_write_console",
+      "run_recheck_command"
+    ]
+  },
+  "issue": 35,
+  "limits": [
+    "This is static source interaction, not execution on362 or a repeated cancellation/recheck test.",
+    "Original7f44 review and both native cancellation receivers retain their original source bindings.",
+    "Computed expected tree includes the27 author files only; root composes separate evidence packets.",
+    "No source, production state, GitHub reference or test outcome changed."
+  ],
+  "new_package_modules": [
+    {
+      "mode": "100644",
+      "path": "testpilot/recheck_html.py",
+      "sha": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "type": "blob"
+    }
+  ],
+  "ownership": {
+    "coverage_head": "949d41109600811912b096d287d02f6b74d0c47d",
+    "coverage_issue36_pr40": "open draft, not landed",
+    "issue37": "closed",
+    "merged_head": "0ff58452254a89969ccfced9444bff9f247280ca",
+    "merged_pr": 41,
+    "other_open_prs": [
+      38,
+      33
+    ]
+  },
+  "prior_review_commit": "d11523c991a0cb29bdd583b29a67dc1176b149d3",
+  "production_changed": [
+    {
+      "mode": "100644",
+      "path": "testpilot/recheck.py",
+      "sha": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+      "type": "blob"
+    },
+    {
+      "mode": "100644",
+      "path": "testpilot/recheck_html.py",
+      "sha": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "type": "blob"
+    }
+  ],
+  "qualified14_pins": [
+    {
+      "current_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+      "exact": true,
+      "mode": "100644",
+      "path": ".github/workflows/ci.yml",
+      "qualified_blob": "86a3236e38155506b5fe6077322d508f7f676649"
+    },
+    {
+      "current_blob": "0a302f3dea5edc6688793e32da8dd5754ce2b907",
+      "exact": false,
+      "mode": "100644",
+      "path": "README.md",
+      "qualified_blob": "24a6c0fab34c05d17ef216a42e97a0fae2389fc2"
+    },
+    {
+      "current_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "exact": true,
+      "mode": "100644",
+      "path": "pyproject.toml",
+      "qualified_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    {
+      "current_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/__init__.py",
+      "qualified_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "current_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/__main__.py",
+      "qualified_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a"
+    },
+    {
+      "current_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/_pytest_generated.py",
+      "qualified_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+    },
+    {
+      "current_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/diff.py",
+      "qualified_blob": "29dd325ab288ac1d43fd70f33b207281f5375d4b"
+    },
+    {
+      "current_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/html_report.py",
+      "qualified_blob": "bb30d903542d836f5afe8e116ba894f93d9d3a0c"
+    },
+    {
+      "current_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/loop.py",
+      "qualified_blob": "ed0f5f7f057c217b931a1756bd679ae087247e0a"
+    },
+    {
+      "current_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/model.py",
+      "qualified_blob": "6d4abca38cc1c256df00bcac7923e2dc0bd42b16"
+    },
+    {
+      "current_blob": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+      "exact": false,
+      "mode": "100644",
+      "path": "testpilot/recheck.py",
+      "qualified_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b"
+    },
+    {
+      "current_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e",
+      "exact": true,
+      "mode": "100644",
+      "path": "testpilot/sandbox.py",
+      "qualified_blob": "8ca4a4102c7890e89eae99548e28ba8325974f1e"
+    },
+    {
+      "current_blob": "d8ebce5a81205aad005e45a280aec898e3e89820",
+      "exact": true,
+      "mode": "100644",
+      "path": "tests/test_sandbox_deadline.py",
+      "qualified_blob": "d8ebce5a81205aad005e45a280aec898e3e89820"
+    },
+    {
+      "current_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055",
+      "exact": true,
+      "mode": "100644",
+      "path": "tests/test_sandbox.py",
+      "qualified_blob": "de2fde7cd5dd683c338810d4707987ea5a2e9055"
+    }
+  ],
+  "qualified_parent": "7f44c4f134f4d56d37dd14c7c2d2aaa3c8c8749e",
+  "recorded_at": "2026-10-08T16:40:11.959873+00:00",
+  "repository": "Jacob-Met/testpilot",
+  "source_manifest": [
+    {
+      "bytes": 6065,
+      "git_blob": "2d98e2a85320ac2827ea48fa9d58d30a60354b6a",
+      "label": "current",
+      "path": "testpilot/__main__.py",
+      "sha256": "90577ea3a939642f5cb29818f6360df96d9fa0d35d05af11bf97054425c32c84"
+    },
+    {
+      "bytes": 12115,
+      "git_blob": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+      "label": "current",
+      "path": "testpilot/recheck.py",
+      "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6"
+    },
+    {
+      "bytes": 10184,
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "label": "current",
+      "path": "testpilot/recheck_html.py",
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "bytes": 11599,
+      "git_blob": "4ab26cbb83beff563b9c3683c593b3efd2495b6b",
+      "label": "qualified",
+      "path": "testpilot/recheck.py",
+      "sha256": "1ecbe0ff7da7bb4a8117d730a76624c8929e0e4b10cb9d502ab7358cb38d8f2e"
+    }
+  ],
+  "unrelated_current_retained": 1071
+}
