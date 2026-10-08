@@ -1,0 +1,17 @@
+...................................................... [ 13%]
+........................................................................ [ 30%]
+........................................................................ [ 47%]
+...............................................s........................ [ 65%]
+........................................................................ [ 82%]
+.........................................................s.......s.....F [100%]
+=================================== FAILURES ===================================
+_________________ test_real_pytest_timeout_then_fresh_success __________________
+tests/test_sandbox_deadline.py:103: in test_real_pytest_timeout_then_fresh_success
+    assert marker.exists(), "the actual pytest test must start its helper"
+E   AssertionError: the actual pytest test must start its helper
+E   assert False
+E    +  where False = exists()
+E    +    where exists = PosixPath('/tmp/pytest-of-jacob/pytest-211/test_real_pytest_timeout_then_0/pytest-helper.pid').exists
+=========================== short test summary info ============================
+FAILED tests/test_sandbox_deadline.py::test_real_pytest_timeout_then_fresh_success
+1 failed, 410 passed, 4 skipped, 18 subtests passed in 301.15s (0:05:01)

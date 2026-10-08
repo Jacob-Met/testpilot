@@ -1,0 +1,11 @@
+{
+  "reason": "Keep an inert retained fixture out of TestPilot automatic Python target selection.",
+  "original_receipt": "receiving.json",
+  "original_receipt_sha256": "a7856b415faceafd450f683fb5045ec32837a67c01511bc9cfba87b995b4819b",
+  "original_source_path": "project/sample.py",
+  "retained_source_path": "project/sample.py.txt",
+  "sha256": "0a39e6db6d5e99a973953cc715febd5036bc8da95a19d78b1f91a26c3361a1ca",
+  "source_bytes_unchanged": true,
+  "original_receipt_unchanged": true,
+  "original_git_commit": "9265ae42bde5b6bd559584a11cbb7c30b7849743"
+}

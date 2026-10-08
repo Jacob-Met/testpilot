@@ -1,0 +1,130 @@
+diff --git a/alpha.py b/alpha.py
+index c146194..d9f6196 100644
+--- a/alpha.py
++++ b/alpha.py
+@@ -1,5 +1,5 @@
+ def first():
+-    return 1
++    return 2
+ 
+ # gap 00
+ # gap 01
+@@ -17,7 +17,7 @@ def first():
+ # gap 13
+ 
+ def second():
+-    return 3
++    return 4
+ 
+ def unchanged():
+     return 99
+diff --git a/beta.py b/beta.py
+index 602f556..92177fc 100644
+--- a/beta.py
++++ b/beta.py
+@@ -1,2 +1,2 @@
+ def beta():
+-    return 10
+\ No newline at end of file
++    return 11
+\ No newline at end of file
+diff --git a/blob.bin b/blob.bin
+index c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644
+GIT binary patch
+literal 1024
+zcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&
+z%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo
+z>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85
+zDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa
+zu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz
+a;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp
+
+literal 1024
+zcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH
+zG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k
+zO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz
+zF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n
+z9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo
+aU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k
+
+diff --git a/copy_from.py b/copy_to.py
+similarity index 100%
+copy from copy_from.py
+copy to copy_to.py
+diff --git a/crlf.py b/crlf.py
+index 80ebf23..be8ff5d 100644
+--- a/crlf.py
++++ b/crlf.py
+@@ -1,2 +1,2 @@
+ def crlf_fn():
+-    return 20
++    return 21
+diff --git a/deleted.py b/deleted.py
+deleted file mode 100644
+index f139dc3..0000000
+--- a/deleted.py
++++ /dev/null
+@@ -1,2 +0,0 @@
+-def obsolete_unique():
+-    return 'deleted-old-constant'
+diff --git a/drop.py b/drop.py
+index f01c1b7..8fa78a2 100644
+--- a/drop.py
++++ b/drop.py
+@@ -1,4 +1,3 @@
+ def removedline():
+     keep = 1
+-    drop = 2
+     return keep
+diff --git a/insert.py b/insert.py
+index 2ec68c3..f63ae52 100644
+--- a/insert.py
++++ b/insert.py
+@@ -1,2 +1,3 @@
+ def insertedline():
++    inserted = 50
+     return 51
+diff --git a/mode.py b/mode.py
+old mode 100644
+new mode 100755
+diff --git a/new.py b/new.py
+new file mode 100644
+index 0000000..527fb67
+--- /dev/null
++++ b/new.py
+@@ -0,0 +1,2 @@
++def gamma_unique():
++    return 'new-post-change-constant'
+diff --git "a/odd\t\303\244.py" "b/odd\t\303\244.py"
+index bccf2fb..1c8d696 100644
+--- "a/odd\t\303\244.py"
++++ "b/odd\t\303\244.py"
+@@ -1,2 +1,2 @@
+ def odd_fn():
+-    return 40
++    return 41
+diff --git a/payload.py b/payload.py
+index 2e5b6c2..beed200 100644
+--- a/payload.py
++++ b/payload.py
+@@ -1,5 +1,5 @@
+ def payload():
+-    return """old
+---- old literal
+-+++ old literal
++    return """new
++--- new literal
+++++ new literal
+ """
+diff --git a/rename_before.py b/rename_after.py
+similarity index 100%
+rename from rename_before.py
+rename to rename_after.py
+diff --git a/unicode.py b/unicode.py
+index 5d9a19b..d8fb77d 100644
+--- a/unicode.py
++++ b/unicode.py
+@@ -1,2 +1,2 @@
+ def unicode_fn():
+-    return "old tail end"
++    return "new tail end"

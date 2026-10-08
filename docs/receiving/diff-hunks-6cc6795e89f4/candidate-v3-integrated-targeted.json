@@ -1,0 +1,26 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/test_diff_hunk_validation.py",
+    "tests/test_cli_coverage.py"
+  ],
+  "cwd": "/home/jacob/testpilot-hunks-integration-6cc6795e89f4",
+  "started": "2026-10-08T17:42:15.019328+00:00",
+  "finished": "2026-10-08T17:42:35.377969+00:00",
+  "exit": 0,
+  "canonical_base": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "files_sha256": {
+    "testpilot/diff.py": "586f5b981d2c8d66e47cd8c5566ace994b152cde87f43db9b6e1c02ac5337490",
+    "testpilot/__main__.py": "32bb84da429e297e82aa9121e54764e615eadfd9ea8400b7f0ce804560d7cf16",
+    "tests/test_diff_hunk_validation.py": "fe9d56da3bca14d31e5f6eb764b20dd9e54ddf0ca9169c75c3c5a6d6dcc09d89",
+    "tests/test_cli_coverage.py": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b"
+  },
+  "files_unchanged": true,
+  "output_sha256": "bb697bd096c056db918fdb3819a74c8dff6769fc33d1a348db1e25f23d727ed8",
+  "summary": "49 passed, 1 skipped in 19.49s"
+}

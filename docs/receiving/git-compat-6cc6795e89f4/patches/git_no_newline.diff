@@ -1,0 +1,10 @@
+diff --git a/beta.py b/beta.py
+index 602f556..92177fc 100644
+--- a/beta.py
++++ b/beta.py
+@@ -1,2 +1,2 @@
+ def beta():
+-    return 10
+\ No newline at end of file
++    return 11
+\ No newline at end of file

@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/test_diff_hunk_validation.py",
+    "-k",
+    "mail or diff_error_precedes"
+  ],
+  "cwd": "/home/jacob/testpilot-hunks-6cc6795e89f4",
+  "started": "2026-10-08T17:31:55.494381+00:00",
+  "finished": "2026-10-08T17:31:58.994074+00:00",
+  "exit": 1,
+  "checkpoint": "V1 footer/preflight behavior, with only independent numeric conversion normalization already applied",
+  "files_sha256": {
+    "testpilot/diff.py": "f2c4d8a5d9f75d74ad31b11d6b321695bc7b1d8d19d7716300d79b8170814c97",
+    "testpilot/__main__.py": "67013a86b7a36c7d0fc56668d29dd97e084d4da4ce358b546633829be840c020",
+    "tests/test_diff_hunk_validation.py": "1ac50251037a2a4d355fdb1993c9c8ee4d2a0f892b29e947e4068969800ccf0a"
+  },
+  "output_sha256": "72be823f6cf814572e29654620e71e9ee59e18d64b6568a19967413f1384aa4b"
+}

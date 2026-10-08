@@ -1,0 +1,16 @@
+{
+  "changed_functions": [
+    {
+      "path": "sample.py",
+      "module": "sample",
+      "qualname": "selected",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ],
+      "source": "def selected():\n    return 2",
+      "is_method": false
+    }
+  ]
+}

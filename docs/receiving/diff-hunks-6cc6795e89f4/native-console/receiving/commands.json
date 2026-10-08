@@ -1,0 +1,179 @@
+[
+  {
+    "kind": "git",
+    "args": [
+      "init",
+      "-q"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "kind": "git",
+    "args": [
+      "config",
+      "core.autocrlf",
+      "false"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "kind": "git",
+    "args": [
+      "add",
+      "sample.py"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "kind": "git",
+    "args": [
+      "-c",
+      "user.name=TestPilot native receiving",
+      "-c",
+      "user.email=testpilot-native@example.invalid",
+      "commit",
+      "-qm",
+      "Original fixture source"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "kind": "git",
+    "args": [
+      "diff",
+      "--no-ext-diff",
+      "--no-textconv",
+      "--no-color",
+      "--src-prefix=a/",
+      "--dst-prefix=b/",
+      "HEAD",
+      "--",
+      "sample.py"
+    ],
+    "exit": 0,
+    "stdout": "diff --git a/sample.py b/sample.py\nindex 419cbd0..578716e 100644\n--- a/sample.py\n+++ b/sample.py\n@@ -1,2 +1,2 @@\n def selected():\n-    return 1\n+    return 2\n",
+    "stderr": ""
+  },
+  {
+    "kind": "git",
+    "args": [
+      "apply",
+      "--reverse",
+      "--check",
+      "-"
+    ],
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "kind": "git",
+    "args": [
+      "apply",
+      "--reverse",
+      "--check",
+      "-"
+    ],
+    "exit": 128,
+    "stdout": "",
+    "stderr": "error: corrupt patch at line 9\n"
+  },
+  {
+    "name": "installed-targets",
+    "at": "2026-10-08T18:01:12.800001+00:00",
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+      "targets",
+      "--repo",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/project",
+      "--git-base",
+      "HEAD",
+      "--json"
+    ],
+    "cwd": "/home/jacob/testpilot-native-6cc6795e89f4/receiving",
+    "exit": 0,
+    "stdout_sha256": "cb010fe951762bf18eba8c7889933fec8cf199113bc1ce53ec5516656d42e900",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "installed-valid-run",
+    "at": "2026-10-08T18:01:13.674280+00:00",
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/project",
+      "--diff",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid.diff",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/script",
+      "--rounds",
+      "0",
+      "--no-coverage",
+      "--out",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid-result"
+    ],
+    "cwd": "/home/jacob/testpilot-native-6cc6795e89f4/receiving",
+    "exit": 0,
+    "stdout_sha256": "ec492bd514346d55ad9d5d2948e384a5b2aed56897d0f476e7bd30870a799378",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "installed-invalid-new",
+    "at": "2026-10-08T18:01:18.177196+00:00",
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/project",
+      "--diff",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/damaged.diff",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/nonexistent-model-config",
+      "--rounds",
+      "0",
+      "--out",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/refused-result"
+    ],
+    "cwd": "/home/jacob/testpilot-native-6cc6795e89f4/receiving",
+    "exit": 2,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e0dcf9b14862a303da4290fbcb41cac786fcc39780d05580a1631f1cef77c66e"
+  },
+  {
+    "name": "installed-invalid-existing",
+    "at": "2026-10-08T18:01:18.580558+00:00",
+    "command": [
+      "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+      "run",
+      "--repo",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/project",
+      "--diff",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/damaged.diff",
+      "--backend",
+      "scripted",
+      "--script",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/nonexistent-model-config",
+      "--rounds",
+      "0",
+      "--out",
+      "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid-result"
+    ],
+    "cwd": "/home/jacob/testpilot-native-6cc6795e89f4/receiving",
+    "exit": 2,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e0dcf9b14862a303da4290fbcb41cac786fcc39780d05580a1631f1cef77c66e"
+  }
+]

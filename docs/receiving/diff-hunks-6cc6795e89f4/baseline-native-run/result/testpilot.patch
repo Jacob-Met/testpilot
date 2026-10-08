@@ -1,0 +1,8 @@
+diff --git a/tests/test_testpilot_generated.py b/tests/test_testpilot_generated.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_testpilot_generated.py
+@@ -0,0 +1,3 @@
++from sample import selected
++def test_selected():
++    assert selected() == 2

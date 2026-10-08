@@ -1,0 +1,135 @@
+{
+  "schema": "hamon.independent_installed_console_contract.v1",
+  "at": "2026-10-08T18:03:26.884812+00:00",
+  "reviewer": "hamon-6cc6795e89f4/coordination_evidence",
+  "source_head": "40860534a8fdc760b105ac9bc7d14ac9087172dd",
+  "source_tree": "ba7272658e66a5ff2e02674352eb5046b33c26f4",
+  "console": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+  "console_sha256": "6ae5527b2002612e544456d5df3ee22f0a2aacb72301bc3e27faf7c911094cb2",
+  "installed_package": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/lib/python3.14/site-packages/testpilot",
+  "installed_source_pins": {
+    "testpilot/__init__.py": {
+      "git_sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "installed_sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "match": true
+    },
+    "testpilot/__main__.py": {
+      "git_sha256": "45572d34cff56b521d4a48a5db90164fa70ca71d5090e35b8fd0880aecde4420",
+      "installed_sha256": "45572d34cff56b521d4a48a5db90164fa70ca71d5090e35b8fd0880aecde4420",
+      "match": true
+    },
+    "testpilot/_pytest_generated.py": {
+      "git_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "installed_sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "match": true
+    },
+    "testpilot/diff.py": {
+      "git_sha256": "586f5b981d2c8d66e47cd8c5566ace994b152cde87f43db9b6e1c02ac5337490",
+      "installed_sha256": "586f5b981d2c8d66e47cd8c5566ace994b152cde87f43db9b6e1c02ac5337490",
+      "match": true
+    },
+    "testpilot/html_report.py": {
+      "git_sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+      "installed_sha256": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+      "match": true
+    },
+    "testpilot/loop.py": {
+      "git_sha256": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+      "installed_sha256": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+      "match": true
+    },
+    "testpilot/model.py": {
+      "git_sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "installed_sha256": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "match": true
+    },
+    "testpilot/recheck.py": {
+      "git_sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "installed_sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "match": true
+    },
+    "testpilot/recheck_html.py": {
+      "git_sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "installed_sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "match": true
+    },
+    "testpilot/sandbox.py": {
+      "git_sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "installed_sha256": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "match": true
+    },
+    "testpilot/targets.py": {
+      "git_sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "installed_sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "match": true
+    }
+  },
+  "receiver_sha256": "fcae956355b52221ec7205338494b3e35c072b52f81b5a06082b1506af024828",
+  "fixture_provenance_sha256": "f65a99c33d8102f50ae076553da1efb7b291f4b89d75802a5c5cb41474c298b7",
+  "positive": {
+    "path": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_default.diff",
+    "sha256": "e63cd0f0a8fc9f08aece050dfc5a92d5e19dac4b982f4c7787bf4f474572db0f",
+    "committed_blob": "59bd4aa37cf28edf1a82cf550f2bcf24be1f0f6f"
+  },
+  "positive_expected_targets": [
+    [
+      "alpha.py",
+      "first"
+    ],
+    [
+      "alpha.py",
+      "second"
+    ],
+    [
+      "beta.py",
+      "beta"
+    ],
+    [
+      "crlf.py",
+      "crlf_fn"
+    ],
+    [
+      "drop.py",
+      "removedline"
+    ],
+    [
+      "insert.py",
+      "insertedline"
+    ],
+    [
+      "new.py",
+      "gamma_unique"
+    ],
+    [
+      "odd\t\u00e4.py",
+      "odd_fn"
+    ],
+    [
+      "payload.py",
+      "payload"
+    ],
+    [
+      "unicode.py",
+      "unicode_fn"
+    ]
+  ],
+  "negative": {
+    "path": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/malformed_unfinished_tail.diff",
+    "sha256": "37e73553137f56a839e75050e5072aee77bbca6941867f2c8257fb5ab5c4ec93",
+    "committed_blob": "192dbf89f6dc2372893ae2b79ed5d8f7992f00e0"
+  },
+  "negative_expected": {
+    "returncode": 2,
+    "diagnostic": "invalid unified diff",
+    "model_setup": false,
+    "pytest_collection": false,
+    "output_created": false
+  },
+  "environment_changes": {
+    "PYTHONPATH": "removed",
+    "PYTHONHOME": "removed",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "cwd": "/home/jacob/testpilot-publication-6cc6795e89f4",
+  "scope": "Two installed-console cases only: real native Git multi-file target selection and early malformed-input refusal; no model call, no full suite, no product-source mutation."
+}

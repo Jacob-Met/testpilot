@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short"
+  ],
+  "cwd": "/home/jacob/testpilot-hunks-6cc6795e89f4",
+  "source_commit": "0dc429c3012b03df2e703fad2c35aca452069cf1",
+  "started": "2026-10-08T17:35:16.700603+00:00",
+  "finished": "2026-10-08T17:40:20.998349+00:00",
+  "elapsed_seconds": 304.3,
+  "exit": 1,
+  "files_sha256": {
+    "testpilot/diff.py": "3995b19d6d68867efa1ef73f9f20db93f95d34f05cdc9b760e9f71d7e2caa69a",
+    "testpilot/__main__.py": "f5e644cb4f6bb9278657939bd6dc51390a974f7f8834efb8459e11fbce4a95cd",
+    "tests/test_diff_hunk_validation.py": "1ac50251037a2a4d355fdb1993c9c8ee4d2a0f892b29e947e4068969800ccf0a"
+  },
+  "files_unchanged": true,
+  "output_sha256": "adfacc2268d6d98d54ff56acf42244d46ad56d794220182a479884a5dc0ead08",
+  "summary": "1 failed, 410 passed, 4 skipped, 18 subtests passed in 301.15s (0:05:01)"
+}

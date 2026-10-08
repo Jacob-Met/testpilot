@@ -1,0 +1,81 @@
+"""Independently receive authored Git fixture containment on private sentinels."""
+import hashlib, importlib.util, json, os, subprocess, sys
+from pathlib import Path
+source = Path(sys.argv[1]).resolve()
+out = Path(sys.argv[2]).resolve()
+out.mkdir(parents=True, exist_ok=False)
+test = source / "tests/test_diff_hunk_validation.py"
+original_env = dict(os.environ)
+clean = {k:v for k,v in original_env.items() if not k.startswith("GIT_")}
+clean.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull, PYTHONDONTWRITEBYTECODE="1")
+os.environ.clear()
+os.environ.update(clean)
+sys.path.insert(0, str(source))
+spec = importlib.util.spec_from_file_location("private_fixture_receiver", test)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+def git(path, *args):
+    result = subprocess.run(["git", "-C", str(path), *args], env=clean, capture_output=True, timeout=15)
+    if result.returncode:
+        raise RuntimeError(result.stderr.decode("utf8", "replace"))
+    return result
+def hashes(path):
+    return {p.relative_to(path).as_posix():hashlib.sha256(p.read_bytes()).hexdigest()
+            for p in sorted(path.rglob("*")) if p.is_file()}
+results = []
+for case in ("git_dir_and_work_tree", "external_index"):
+    root = out / case
+    sentinel, fixture = root / "sentinel", root / "fixture"
+    sentinel.mkdir(parents=True)
+    fixture.mkdir()
+    git(sentinel, "init", "-q")
+    (sentinel / "sample.py").write_text("def sentinel():\n    return 7\n", encoding="utf8")
+    git(sentinel, "add", "sample.py")
+    (fixture / "sample.py").write_text("def selected():\n    return 1\n", encoding="utf8")
+    if case == "external_index":
+        index = sentinel / "external.index"
+        index.write_bytes((sentinel / ".git/index").read_bytes())
+        extra = {"GIT_INDEX_FILE":str(index)}
+    else:
+        extra = {"GIT_DIR":str(sentinel / ".git"), "GIT_WORK_TREE":str(sentinel)}
+    before = hashes(sentinel)
+    env = dict(clean)
+    env.update(extra)
+    os.environ.clear()
+    os.environ.update(env)
+    commands, failure = [], None
+    for args in (("init", "-q"), ("config", "core.autocrlf", "false"), ("add", "sample.py")):
+        try:
+            result = module._git(fixture, *args)
+            commands.append({"args":list(args), "returncode":result.returncode,
+                             "stdout":result.stdout, "stderr":result.stderr})
+        except Exception as exc:
+            failure = {"type":type(exc).__name__, "message":str(exc)}
+            break
+    os.environ.clear()
+    os.environ.update(clean)
+    after = hashes(sentinel)
+    changed = sorted(k for k in before.keys() | after.keys() if before.get(k) != after.get(k))
+    result = {
+        "case":case, "private_sentinel_only":True, "inherited_routing_keys":sorted(extra),
+        "commands":commands, "error":failure, "sentinel_before":before,
+        "sentinel_after":after, "changed_sentinel_paths":changed,
+        "fixture_has_own_git_directory":(fixture / ".git").is_dir(),
+        "passed":not changed and failure is None and (fixture / ".git").is_dir()
+    }
+    results.append(result)
+os.environ.clear()
+os.environ.update(original_env)
+receipt = {
+    "schema":"hamon.independent-fixture-containment.v1",
+    "source_head":git(source, "rev-parse", "HEAD").stdout.decode().strip(),
+    "test_sha256":hashlib.sha256(test.read_bytes()).hexdigest(),
+    "reviewer":"estate-6cc6795e89f4/root",
+    "method":"Invoke the exact authored _git helper with privately owned external Git directory/worktree and index controls; compare all sentinel bytes before and after. No user repository or external provider is a test target.",
+    "results":results, "passed":all(r["passed"] for r in results)
+}
+(out / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf8")
+print(json.dumps({"receipt":str(out/"receipt.json"),"source_head":receipt["source_head"],
+                  "test_sha256":receipt["test_sha256"],"passed":receipt["passed"],
+                  "cases":[{"case":r["case"],"passed":r["passed"],"changed":r["changed_sentinel_paths"],
+                            "fixture_has_own_git_directory":r["fixture_has_own_git_directory"]} for r in results]}))

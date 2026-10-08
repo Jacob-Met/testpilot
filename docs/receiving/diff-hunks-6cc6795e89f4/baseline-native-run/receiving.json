@@ -1,0 +1,110 @@
+{
+  "at": "2026-10-08T17:11:42.020979+00:00",
+  "original_test_path": "/tmp/pytest-of-jacob/pytest-194/test_native_run_cli_refuses_da0",
+  "copied_after_execution_without_replay": true,
+  "files": [
+    {
+      "path": "damaged.diff",
+      "bytes": 158,
+      "sha256": "93e6854a4ae3f14e2b800fa8f93bcf92b11fd3afaf2d70026b7daac6ddc654e0"
+    },
+    {
+      "path": "project/sample.py",
+      "bytes": 29,
+      "sha256": "0a39e6db6d5e99a973953cc715febd5036bc8da95a19d78b1f91a26c3361a1ca"
+    },
+    {
+      "path": "script/01_plan.md",
+      "bytes": 28,
+      "sha256": "3047ef940de7a0e92dad4a76d76bc5abfcc02619aece28518dff33bac6d735ba"
+    },
+    {
+      "path": "script/02_tests.md",
+      "bytes": 113,
+      "sha256": "b47b02e00d70fe8a81da2aae2e86543d28c4286b3b97c38295d566f1bc7e8c2b"
+    },
+    {
+      "path": "result/report.json",
+      "bytes": 4028,
+      "sha256": "cdad77c59819bc009605a096de77ff3cba9481945f3b7433cecadd7f74ccd771"
+    },
+    {
+      "path": "result/testpilot.patch",
+      "bytes": 253,
+      "sha256": "02912f066519b84d64a9966b216ceef68ecc479720784f53011e8b8b48ecc903"
+    }
+  ],
+  "status": "passed",
+  "test_count": 1,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.416,
+    "timeout_s": 60.0,
+    "output": ".                                                                        [100%]\n1 passed in 0.02s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_testpilot_generated::test_selected",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_testpilot_generated.py"
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "tests/test_testpilot_generated.py"
+    ],
+    "junit_available": true,
+    "passed": 1,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+    "generated": {
+      "collected": 1,
+      "passed": 1,
+      "failed": 0,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "ledger": {
+    "total_tokens": 280,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 93,
+        "completion_tokens": 7,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 1,
+        "prompt_tokens": 151,
+        "completion_tokens": 29,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 93,
+        "completion_tokens": 7,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 151,
+        "completion_tokens": 29,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  }
+}

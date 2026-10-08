@@ -1,0 +1,105 @@
+from pathlib import Path
+from datetime import datetime, timezone
+import hashlib, json, os, subprocess, sys
+HERE = Path("/home/jacob/testpilot-publication-6cc6795e89f4")
+SRC = Path("/home/jacob/testpilot-hunks-integration-6cc6795e89f4")
+HEAD = "40860534a8fdc760b105ac9bc7d14ac9087172dd"
+CONSOLE = Path("/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot")
+PKG = CONSOLE.parent.parent / "lib/python3.14/site-packages/testpilot"
+EVIDENCE = Path("/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4")
+FIX = json.loads((EVIDENCE / "fixture-provenance.json").read_text())
+CASE = next(x for x in FIX["cases"] if x["name"] == "git_default")
+def sha(b): return hashlib.sha256(b).hexdigest()
+def git(*args):
+    return subprocess.run(["git","-C",str(SRC),*args],check=True,capture_output=True).stdout
+def pin_source():
+    pairs = {}
+    for item in git("ls-tree","-r","--name-only",HEAD,"testpilot").decode().splitlines():
+        if item.endswith(".py"):
+            original = git("show",HEAD+":"+item)
+            installed = (PKG / Path(item).relative_to("testpilot")).read_bytes()
+            pairs[item] = {"git_sha256":sha(original),"installed_sha256":sha(installed),"match":original==installed}
+    assert len(pairs) == 11 and all(x["match"] for x in pairs.values())
+    return pairs
+def fixture_pin(path):
+    path = Path(path)
+    relative = str(path.relative_to(EVIDENCE))
+    native = path.read_bytes()
+    expected = git("show",HEAD+":docs/receiving/git-compat-6cc6795e89f4/"+relative)
+    assert native == expected, relative
+    return {"path":str(path),"sha256":sha(native),"committed_blob":git("rev-parse",HEAD+":docs/receiving/git-compat-6cc6795e89f4/"+relative).decode().strip()}
+positive_pin = fixture_pin(CASE["patch"])
+assert positive_pin["sha256"] == CASE["sha256"]
+negative_pin = fixture_pin(FIX["malformed"])
+tripwire = Path(FIX["tripwire"])
+out = HERE / "installed-malformed-result"
+missing_script = HERE / "deliberately-missing-model-replies"
+assert not tripwire.exists() and not out.exists() and not missing_script.exists()
+console_sha = sha(CONSOLE.read_bytes())
+assert console_sha == "6ae5527b2002612e544456d5df3ee22f0a2aacb72301bc3e27faf7c911094cb2"
+before = pin_source()
+contract = {
+    "schema":"hamon.independent_installed_console_contract.v1",
+    "at":datetime.now(timezone.utc).isoformat(),
+    "reviewer":"hamon-6cc6795e89f4/coordination_evidence",
+    "source_head":HEAD,
+    "source_tree":git("rev-parse",HEAD+"^{tree}").decode().strip(),
+    "console":str(CONSOLE),"console_sha256":console_sha,
+    "installed_package":str(PKG),"installed_source_pins":before,
+    "receiver_sha256":sha(Path(__file__).read_bytes()),
+    "fixture_provenance_sha256":sha((EVIDENCE/"fixture-provenance.json").read_bytes()),
+    "positive":positive_pin,"positive_expected_targets":CASE["expected_targets"],
+    "negative":negative_pin,
+    "negative_expected":{"returncode":2,"diagnostic":"invalid unified diff","model_setup":False,"pytest_collection":False,"output_created":False},
+    "environment_changes":{"PYTHONPATH":"removed","PYTHONHOME":"removed","PYTHONDONTWRITEBYTECODE":"1"},
+    "cwd":str(HERE),
+    "scope":"Two installed-console cases only: real native Git multi-file target selection and early malformed-input refusal; no model call, no full suite, no product-source mutation."
+}
+contract_path = HERE / "installed-console-contract.json"
+contract_path.write_text(json.dumps(contract,indent=2,ensure_ascii=True)+"\n")
+env = os.environ.copy()
+env.pop("PYTHONPATH",None)
+env.pop("PYTHONHOME",None)
+env["PYTHONDONTWRITEBYTECODE"] = "1"
+def run(args):
+    command = [str(CONSOLE),*map(str,args)]
+    p = subprocess.run(command,cwd=HERE,env=env,capture_output=True,timeout=20)
+    return {"command":command,"returncode":p.returncode,
+            "stdout":p.stdout.decode("utf-8","backslashreplace"),
+            "stderr":p.stderr.decode("utf-8","backslashreplace")}
+positive = run(["targets","--repo",FIX["repo"],"--diff",CASE["patch"],"--json"])
+try:
+    selected = json.loads(positive["stdout"])["changed_functions"]
+    observed = sorted([[x["path"],x["qualname"]] for x in selected])
+except Exception as exc:
+    observed = []
+    positive["receiver_parse_error"] = type(exc).__name__+": "+str(exc)
+positive["observed_targets"] = observed
+positive["pass"] = positive["returncode"] == 0 and observed == CASE["expected_targets"] and positive["stderr"] == ""
+negative = run(["run","--repo",FIX["repo"],"--diff",FIX["malformed"],"--script",missing_script,"--out",out])
+combined = negative["stdout"]+negative["stderr"]
+negative["output_absent"] = not out.exists()
+negative["pytest_tripwire_absent"] = not tripwire.exists()
+negative["missing_model_script_absent"] = not missing_script.exists()
+negative["pass"] = (negative["returncode"] == 2 and "invalid unified diff" in combined.lower()
+                    and not any(x in combined for x in ("Traceback","FileNotFoundError","No such file"))
+                    and negative["output_absent"] and negative["pytest_tripwire_absent"] and negative["missing_model_script_absent"])
+after = pin_source()
+unchanged = before == after and sha(CONSOLE.read_bytes()) == console_sha
+record = {
+    "schema":"hamon.independent_installed_console_receiving.v1",
+    "at":datetime.now(timezone.utc).isoformat(),
+    "reviewer":contract["reviewer"],"source_head":HEAD,"source_tree":contract["source_tree"],
+    "contract_path":str(contract_path),"contract_sha256":sha(contract_path.read_bytes()),
+    "console":str(CONSOLE),"console_sha256":console_sha,
+    "positive":positive,"negative":negative,
+    "source_unchanged":unchanged,
+    "summary":{"cases":2,"passed":int(positive["pass"])+int(negative["pass"]),"selected_functions":len(observed),"installed_source_files":len(before),"source_unchanged":unchanged},
+    "limitations":contract["scope"]
+}
+target = HERE / "installed-console-receiving.json"
+target.write_text(json.dumps(record,indent=2,ensure_ascii=True)+"\n")
+print(json.dumps({"receipt":str(target),"receipt_sha256":sha(target.read_bytes()),
+                  "contract_sha256":record["contract_sha256"],"receiver_sha256":contract["receiver_sha256"],
+                  "summary":record["summary"]}))
+sys.exit(0 if positive["pass"] and negative["pass"] and unchanged else 1)

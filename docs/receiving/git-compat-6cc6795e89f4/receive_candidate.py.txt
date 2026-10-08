@@ -1,0 +1,115 @@
+from pathlib import Path
+from datetime import datetime, timezone
+import dataclasses, hashlib, importlib.machinery, importlib.util, json, os, subprocess, sys, traceback
+HERE = Path(__file__).resolve().parent
+WORKTREE = HERE.parents[2]
+DATA = Path("/home/jacob/testpilot-git-compat-6cc6795e89f4-data")
+FIX = json.loads((HERE / "fixture-provenance.json").read_text())
+REPO = Path(FIX["repo"])
+pins = {"testpilot/diff.py":"b67f7a47f187491090e921f80d790a8eaa16684997f8ac08d504a3a1eff5659f",
+        "testpilot/__main__.py":"67013a86b7a36c7d0fc56668d29dd97e084d4da4ce358b546633829be840c020"}
+for rel, expected in pins.items():
+    assert hashlib.sha256((WORKTREE / rel).read_bytes()).hexdigest() == expected, rel
+expectation_sha = hashlib.sha256((HERE / "EXPECTATIONS.md").read_bytes()).hexdigest()
+builder_sha = hashlib.sha256((HERE / "build_fixtures.py.txt").read_bytes()).hexdigest()
+receiver_sha = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+# Freeze independent receiver identities before candidate import.
+(HERE / "pre-import-contract.json").write_text(json.dumps({
+    "frozen_at":datetime.now(timezone.utc).isoformat(), "expectations_sha256":expectation_sha,
+    "builder_sha256":builder_sha,"receiver_sha256":receiver_sha,
+    "candidate_pins":pins, "fixture_provenance_sha256":hashlib.sha256((HERE/"fixture-provenance.json").read_bytes()).hexdigest()
+},indent=2,sort_keys=True)+"\n")
+loader = importlib.machinery.SourceFileLoader("baseline_diff", str(HERE / "baseline_diff.py.txt"))
+spec = importlib.util.spec_from_loader(loader.name, loader)
+baseline = importlib.util.module_from_spec(spec)
+sys.modules[loader.name] = baseline
+loader.exec_module(baseline)
+sys.path.insert(0, str(WORKTREE))
+import testpilot.diff as candidate
+assert Path(candidate.__file__).resolve() == WORKTREE / "testpilot/diff.py"
+def normalized_files(module, text):
+    return [dict(path=x.path,old_path=x.old_path,is_new=x.is_new,is_deleted=x.is_deleted,
+                 added_lines=sorted(x.added_lines),touched_lines=sorted(x.touched_lines))
+            for x in module.parse_unified_diff(text)]
+def normalized_functions(module, text):
+    return [dict(path=x.path,qualname=x.qualname,lineno=x.lineno,end_lineno=x.end_lineno,
+                 changed_lines=x.changed_lines,source=x.source,is_method=x.is_method)
+            for x in module.changed_functions(REPO,text)]
+def observe(module, text):
+    try:
+        files = normalized_files(module,text)
+        functions = normalized_functions(module,text)
+        return {"ok":True,"files":files,"functions":functions,
+                "targets":sorted([[x["path"],x["qualname"]] for x in functions])}
+    except Exception as exc:
+        return {"ok":False,"error_type":type(exc).__name__,"message":str(exc),"traceback":traceback.format_exc()}
+env = os.environ.copy()
+env["PYTHONPATH"] = str(WORKTREE)
+env["PYTHONDONTWRITEBYTECODE"] = "1"
+def cli(argv):
+    p = subprocess.run([sys.executable,"-B","-m","testpilot",*argv],cwd=WORKTREE,env=env,
+                       stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=20)
+    return {"argv":[sys.executable,"-B","-m","testpilot",*map(str,argv)],"returncode":p.returncode,
+            "stdout":p.stdout.decode("utf-8","backslashreplace"),"stderr":p.stderr.decode("utf-8","backslashreplace")}
+results = []
+for case in FIX["cases"]:
+    text = Path(case["patch"]).read_bytes().decode("utf-8")
+    assert hashlib.sha256(Path(case["patch"]).read_bytes()).hexdigest() == case["sha256"]
+    b = observe(baseline,text)
+    c = observe(candidate,text)
+    observed_cli = cli(["targets","--repo",str(REPO),"--diff",case["patch"]])
+    expected = case["expected_targets"]
+    ok = b.get("ok") and c.get("ok") and b["targets"] == expected and c["targets"] == expected and b["files"] == c["files"] and b["functions"] == c["functions"] and observed_cli["returncode"] == 0
+    results.append({"case":case,"baseline":b,"candidate":c,"cli":observed_cli,"pass":bool(ok)})
+bad_text = Path(FIX["malformed"]).read_bytes().decode("utf-8")
+negative_api = {"baseline":observe(baseline,bad_text),"candidate":observe(candidate,bad_text)}
+negative_cli = []
+tripwire = Path(FIX["tripwire"])
+assert not tripwire.exists()
+for explicit in (False,True):
+    for existing in (False,True):
+        name = ("explicit" if explicit else "auto") + ("_existing" if existing else "_new")
+        out = DATA / ("out_" + name)
+        snapshots = {}
+        if existing:
+            out.mkdir()
+            for rel in ("report.json","report.md","report.html","testpilot.patch"):
+                payload = ("sentinel " + name + " " + rel + "\n").encode()
+                (out / rel).write_bytes(payload)
+                snapshots[rel] = hashlib.sha256(payload).hexdigest()
+        argv = ["run","--repo",str(REPO),"--diff",FIX["malformed"],
+                "--script",str(DATA/"deliberately_missing_model_replies"),"--out",str(out)]
+        if explicit:
+            argv += ["--target","alpha.py::first"]
+        observed = cli(argv)
+        combined = observed["stdout"] + observed["stderr"]
+        output_preserved = all(hashlib.sha256((out/rel).read_bytes()).hexdigest() == sha for rel,sha in snapshots.items()) if existing else not out.exists()
+        contents = sorted(p.name for p in out.iterdir()) if out.exists() else []
+        if existing:
+            output_preserved = output_preserved and contents == sorted(snapshots)
+        ok = observed["returncode"] == 2 and "diff" in combined.lower() and "Traceback" not in combined and "FileNotFoundError" not in combined and "No such file" not in combined and output_preserved and not tripwire.exists()
+        negative_cli.append({"name":name,**observed,"output_preserved":output_preserved,"out_names":contents,
+                             "pytest_tripwire_absent":not tripwire.exists(),"pass":ok})
+source_unchanged = {rel:hashlib.sha256((WORKTREE/rel).read_bytes()).hexdigest() == sha for rel,sha in pins.items()}
+summary = {"valid_cases":len(results),"valid_cases_passed":sum(x["pass"] for x in results),
+           "documented_cases_passed":sum(x["pass"] for x in results if not x["case"]["optional_envelope"]),
+           "documented_cases":sum(not x["case"]["optional_envelope"] for x in results),
+           "malformed_cli_cases":len(negative_cli),"malformed_cli_cases_passed":sum(x["pass"] for x in negative_cli),
+           "negative_api_refuses":negative_api["candidate"].get("ok") is False,
+           "source_unchanged":source_unchanged}
+record = {"observed_at":datetime.now(timezone.utc).isoformat(),"python":sys.version,"worktree":str(WORKTREE),
+          "candidate_source_commit":"9265ae42bde5b6bd559584a11cbb7c30b7849743",
+          "expectations_sha256":expectation_sha,"summary":summary,
+          "positive_cases":results,"negative_api":negative_api,"negative_cli":negative_cli}
+(HERE/"independent-receiving.json").write_text(json.dumps(record,indent=2,sort_keys=True,ensure_ascii=True)+"\n",encoding="utf-8")
+print(json.dumps(summary))
+for x in results:
+    if not x["pass"]:
+        print(json.dumps({"failed_positive":x["case"]["name"],"baseline_error":x["baseline"].get("message"),
+                          "candidate_error":x["candidate"].get("message"),"candidate_targets":x["candidate"].get("targets"),
+                          "expected_targets":x["case"]["expected_targets"],"cli":x["cli"]}))
+for x in negative_cli:
+    if not x["pass"]:
+        print(json.dumps({"failed_negative":x}))
+assert all(source_unchanged.values())
+raise SystemExit(0 if all(x["pass"] for x in results) and all(x["pass"] for x in negative_cli) and summary["negative_api_refuses"] else 1)

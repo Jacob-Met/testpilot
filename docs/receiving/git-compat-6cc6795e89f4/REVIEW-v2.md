@@ -1,0 +1,9 @@
+# Independent native receiving — v2 result
+
+Frozen source: dece74cdcefe125bbb3b38f5f9ca4a92097b998b, received as f97e984 in the independent worktree. diff.py SHA2563995b19d6d68867efa1ef73f9f20db93f95d34f05cdc9b760e9f71d7e2caa69a; __main__.py SHA256f5e644cb4f6bb9278657939bd6dc51390a974f7f8834efb8459e11fbce4a95cd. Both stayed unchanged across this receiving run.
+
+The exact original patch bytes and independently frozen target expectations were reused; native Git validation from fixture-provenance.json remains the oracle. All10 documented git diff/GNU diff-u cases pass with complete original/candidate file and function mappings equal. All4 malformed CLI cases now return clean format-error exit2 before nonexistent model-script loading; new output directories remain absent, existing report/patch sentinel bytes are identical, and the pytest collection tripwire is absent. The API still rejects the native-Git-refused unfinished tail.
+
+The additional mail-envelope case still fails at record158. The native Git-generated patch uses --signature='HAMON Receiving Fixture'. V2's footer branch accepts only a terminal _GIT_SIGNATURE_VERSION line followed by blanks, so the legal custom signature does not match. This is an explicit residual optional compatibility observation, distinguished from the10 documented diff cases. The integration lead and source owner have the exact mismatch for scope judgment; this receipt makes no claim that arbitrary Git mail signatures are supported.
+
+V1 evidence is unchanged. Separate v2 artifacts are receive_candidate_v2.py.txt, pre-import-contract-v2.json and independent-receiving-v2.json. The diagnostic assertion now requires the actual 'invalid unified diff' text, which strengthens error classification without changing the previously frozen behavioral expectations. No product source was edited by the independent reviewer and no full-suite run was repeated here.

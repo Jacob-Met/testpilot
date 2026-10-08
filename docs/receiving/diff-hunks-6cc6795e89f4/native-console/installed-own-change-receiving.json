@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+    "targets",
+    "--repo",
+    "/home/jacob/testpilot-hunks-integration-6cc6795e89f4",
+    "--git-base",
+    "cec50d8df4499ba509615e179d82ef3861379bd2",
+    "--json"
+  ],
+  "exit": 0,
+  "targets": [
+    [
+      "testpilot/__main__.py",
+      "main"
+    ],
+    [
+      "testpilot/diff.py",
+      "parse_unified_diff"
+    ]
+  ],
+  "output_sha256": "af765465c66afc862e82d864307a4f80398f5706b734b241c0216eba8f69091c"
+}

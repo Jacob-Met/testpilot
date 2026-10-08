@@ -1,0 +1,1 @@
+Check selected returns two.

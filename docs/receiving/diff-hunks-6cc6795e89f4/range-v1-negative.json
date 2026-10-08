@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/test_diff_hunk_validation.py",
+    "-k",
+    "unsupported_hunk_integer"
+  ],
+  "cwd": "/home/jacob/testpilot-hunks-6cc6795e89f4",
+  "started": "2026-10-08T17:28:22.245370+00:00",
+  "finished": "2026-10-08T17:28:25.332076+00:00",
+  "exit": 1,
+  "expected_before_fix": "Four failing cases: old/new starts/counts raise plain ValueError instead of DiffFormatError",
+  "source_sha256": "b67f7a47f187491090e921f80d790a8eaa16684997f8ac08d504a3a1eff5659f",
+  "test_sha256": "522b0202242774da52fba2077d47f27e16430c641bd968505fed9310a00d73d6",
+  "output_sha256": "5e0b1577f230fc1aa224c25545e5bb20728525fd1b1d09b47f62f39cc31a4ed8"
+}

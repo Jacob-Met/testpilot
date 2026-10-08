@@ -1,0 +1,82 @@
+{
+  "scope": "One controlled sequential replay of the unchanged native deadline fixture on original base and current integration. No deadline or sandbox edits; load readings are context, not proof of causality.",
+  "original_full_suite_failure": "candidate-v2-suite.json / candidate-v2-suite.txt",
+  "receiving": [
+    {
+      "variant": "baseline",
+      "cwd": "/home/jacob/testpilot-hunks-deadline-baseline-6cc6795e89f4",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "tests/test_sandbox_deadline.py::test_real_pytest_timeout_then_fresh_success"
+      ],
+      "before": {
+        "at": "2026-10-08T17:45:09.355874+00:00",
+        "load_1_5_15": [
+          14.41015625,
+          16.4677734375,
+          16.33740234375
+        ],
+        "cpu_count": 8
+      },
+      "after": {
+        "at": "2026-10-08T17:45:15.500296+00:00",
+        "load_1_5_15": [
+          14.69775390625,
+          16.49365234375,
+          16.3466796875
+        ]
+      },
+      "elapsed_seconds": 6.144,
+      "exit": 0,
+      "files_sha256": {
+        "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+        "tests/test_sandbox_deadline.py": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1"
+      },
+      "output_sha256": "efd82ce3b5ad31657e7eb28c8e129cb14185c784f4d957bb4b0e70170268b09a",
+      "summary": "1 passed in 3.12s"
+    },
+    {
+      "variant": "current",
+      "cwd": "/home/jacob/testpilot-hunks-integration-6cc6795e89f4",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "--tb=short",
+        "tests/test_sandbox_deadline.py::test_real_pytest_timeout_then_fresh_success"
+      ],
+      "before": {
+        "at": "2026-10-08T17:45:15.500489+00:00",
+        "load_1_5_15": [
+          14.69775390625,
+          16.49365234375,
+          16.3466796875
+        ],
+        "cpu_count": 8
+      },
+      "after": {
+        "at": "2026-10-08T17:45:18.858640+00:00",
+        "load_1_5_15": [
+          14.2412109375,
+          16.369140625,
+          16.30712890625
+        ]
+      },
+      "elapsed_seconds": 3.358,
+      "exit": 0,
+      "files_sha256": {
+        "testpilot/sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+        "tests/test_sandbox_deadline.py": "6a9abfdc79bcb2cc3102d94b6b61d20ea09b0f89d5c7c5842387ce77c136d7e1"
+      },
+      "output_sha256": "13bca62673148710b531a24ec87c2103ff741d3bd74fed53ae70dac529468609",
+      "summary": "1 passed in 2.66s"
+    }
+  ]
+}

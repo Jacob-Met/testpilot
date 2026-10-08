@@ -1,0 +1,17 @@
+[
+  {
+    "source": "/home/jacob/testpilot-publication-6cc6795e89f4/installed-console-receiving.json",
+    "retained": "installed-console-receiving.json",
+    "sha256": "2c5aa3f6ceccb407ba8cb83160552ffe06c8884a2035a001bbca4c00ab998214"
+  },
+  {
+    "source": "/home/jacob/testpilot-publication-6cc6795e89f4/installed-console-contract.json",
+    "retained": "installed-console-contract.json",
+    "sha256": "401e6a2210e29e4b4f3833aa54e78d7602825f65663f89c1ab9c08bd29dd2745"
+  },
+  {
+    "source": "/home/jacob/testpilot-publication-6cc6795e89f4/receive_installed_console.py",
+    "retained": "receive_installed_console.py.txt",
+    "sha256": "fcae956355b52221ec7205338494b3e35c072b52f81b5a06082b1506af024828"
+  }
+]

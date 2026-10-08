@@ -1,0 +1,126 @@
+{
+  "schema": "hamon.native_product_installation.v1",
+  "at": "2026-10-08T17:59:10.549966+00:00",
+  "worker": "hamon-6cc6795e89f4/estate_production",
+  "repository": "Jacob-Met/testpilot",
+  "source_head": "40860534a8fdc760b105ac9bc7d14ac9087172dd",
+  "source_tree": "ba7272658e66a5ff2e02674352eb5046b33c26f4",
+  "canonical_base": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "source_worktree": "/home/jacob/testpilot-hunks-integration-6cc6795e89f4",
+  "release": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd",
+  "console": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+  "source_archive": {
+    "path": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/source-40860534a8fd.tar",
+    "bytes": 16189440,
+    "sha256": "b8f1052a80b2803f29c79f427afee447cbf1e5dd30c1d2deb2cbe66a5c349e8c"
+  },
+  "wheel": {
+    "path": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/testpilot-0.1.0-py3-none-any.whl",
+    "bytes": 55316,
+    "sha256": "83c756b33833e004c6421c203888c54862a4eb4995dba1e08bfea3128dec9c4b"
+  },
+  "installed_console_sha256": "6ae5527b2002612e544456d5df3ee22f0a2aacb72301bc3e27faf7c911094cb2",
+  "runtime": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "prefix": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd",
+    "module": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/lib/python3.14/site-packages/testpilot",
+    "project_version": "0.1.0",
+    "pytest_version": "9.0.2",
+    "pip_version": "25.1.1",
+    "source_files": {
+      "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "__main__.py": "45572d34cff56b521d4a48a5db90164fa70ca71d5090e35b8fd0880aecde4420",
+      "_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "diff.py": "586f5b981d2c8d66e47cd8c5566ace994b152cde87f43db9b6e1c02ac5337490",
+      "html_report.py": "f2b65ee9201f9e91ad183fcb8f6b8bf6e69c77b1a066fcd90bb431951e41a2f6",
+      "loop.py": "7e2336ff4d3e88aa8f575e4d7c04f3fe1cc1bf3023f0d230941ab63cead675a8",
+      "model.py": "f6ae697f1f5d686ffdcb96f5451d1a9600d7d41c7bcf324d7e8c276a107e8673",
+      "recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "sandbox.py": "8d5aadafff5188473ec45eb1cd8f01fb562836ff05bf12a27939cde83b33472a",
+      "targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    "entry_points": [
+      "EntryPoint(name='testpilot', value='testpilot.__main__:main', group='console_scripts')"
+    ]
+  },
+  "steps": [
+    {
+      "name": "source-archive",
+      "command": [
+        "git",
+        "-C",
+        "/home/jacob/testpilot-hunks-integration-6cc6795e89f4",
+        "archive",
+        "--format=tar",
+        "--output",
+        "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/source-40860534a8fd.tar",
+        "40860534a8fdc760b105ac9bc7d14ac9087172dd"
+      ],
+      "exit": 0,
+      "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/source-archive.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "venv-bootstrap",
+      "command": [
+        "/usr/bin/python3",
+        "-m",
+        "venv",
+        "--system-site-packages",
+        "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd"
+      ],
+      "exit": 0,
+      "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/venv-bootstrap.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "build-wheel",
+      "command": [
+        "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-cache-dir",
+        "--wheel-dir",
+        "/home/jacob/testpilot-native-6cc6795e89f4/artifacts",
+        "/home/jacob/testpilot-native-6cc6795e89f4/build-source"
+      ],
+      "exit": 0,
+      "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/build-wheel.log",
+      "sha256": "9d97755a682ffb49bf53653e6ad5d9932f7db350ee3a954fc4e45a62ee5ff039"
+    },
+    {
+      "name": "install-wheel",
+      "command": [
+        "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/python",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--no-cache-dir",
+        "--no-compile",
+        "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/testpilot-0.1.0-py3-none-any.whl"
+      ],
+      "exit": 0,
+      "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/install-wheel.log",
+      "sha256": "d6e8e349e8f167d1515d7f4689e9f0eb530f574b9bffe0a0aa757127e14d88fe"
+    },
+    {
+      "name": "installed-help",
+      "command": [
+        "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+        "--help"
+      ],
+      "exit": 0,
+      "log": "/home/jacob/testpilot-native-6cc6795e89f4/artifacts/installed-help.log",
+      "sha256": "b47b803f077188d47e7ed173248144474dbf4d256b5d3c7d8b17b945eeaec015"
+    }
+  ],
+  "scope": "Exclusive versioned native venv through declared project console script; recorded system pytest reused, no global PATH/service/other project installation change; all bootstrap/build/install inputs offline",
+  "receiving": "Help and source-byte identity verified; actual valid/invalid console flow receiving follows"
+}

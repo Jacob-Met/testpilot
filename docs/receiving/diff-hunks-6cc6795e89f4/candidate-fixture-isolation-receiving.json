@@ -1,0 +1,28 @@
+{
+  "started_at": "2026-10-08T18:43:24.822325+00:00",
+  "finished_at": "2026-10-08T18:43:48.292880+00:00",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "--tb=short",
+    "tests/test_diff_hunk_validation.py"
+  ],
+  "source_base": "385ded4f4c02b57f98a07ef4beb4a1d2e8a0bf1f",
+  "purpose": "Only test helpers sanitize inherited Git environment; product source unchanged",
+  "exit": 0,
+  "seconds": 23.468345599016175,
+  "sha256_before": {
+    "testpilot/diff.py": "586f5b981d2c8d66e47cd8c5566ace994b152cde87f43db9b6e1c02ac5337490",
+    "testpilot/__main__.py": "45572d34cff56b521d4a48a5db90164fa70ca71d5090e35b8fd0880aecde4420",
+    "tests/test_diff_hunk_validation.py": "af9f03bf39b00eb042a2cf7e64e76a810aef8093860d71357890318a08380e26"
+  },
+  "sha256_after": {
+    "testpilot/diff.py": "586f5b981d2c8d66e47cd8c5566ace994b152cde87f43db9b6e1c02ac5337490",
+    "testpilot/__main__.py": "45572d34cff56b521d4a48a5db90164fa70ca71d5090e35b8fd0880aecde4420",
+    "tests/test_diff_hunk_validation.py": "af9f03bf39b00eb042a2cf7e64e76a810aef8093860d71357890318a08380e26"
+  },
+  "output_sha256": "0e191574acdc75d99c4706070b20ef3268a1a65fe126469075a3d6a09cb70b2d"
+}

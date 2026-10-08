@@ -1,0 +1,928 @@
+{
+  "baseline_sha256": "2cf38707ea175bb1f04d55335de344ae943458658055332b4aa68f27763214c0",
+  "candidate_evidence_head": "628f9e3eb0a597d79e8fa9ad58fff62c9681d121",
+  "candidate_source_commit": "9265ae42bde5b6bd559584a11cbb7c30b7849743",
+  "cases": [
+    {
+      "expected_targets": [
+        [
+          "alpha.py",
+          "first"
+        ],
+        [
+          "alpha.py",
+          "second"
+        ],
+        [
+          "beta.py",
+          "beta"
+        ],
+        [
+          "crlf.py",
+          "crlf_fn"
+        ],
+        [
+          "drop.py",
+          "removedline"
+        ],
+        [
+          "insert.py",
+          "insertedline"
+        ],
+        [
+          "new.py",
+          "gamma_unique"
+        ],
+        [
+          "odd\t\u00e4.py",
+          "odd_fn"
+        ],
+        [
+          "payload.py",
+          "payload"
+        ],
+        [
+          "unicode.py",
+          "unicode_fn"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_default",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_default.diff",
+      "sha256": "e63cd0f0a8fc9f08aece050dfc5a92d5e19dac4b982f4c7787bf4f474572db0f"
+    },
+    {
+      "expected_targets": [
+        [
+          "alpha.py",
+          "first"
+        ],
+        [
+          "alpha.py",
+          "second"
+        ],
+        [
+          "beta.py",
+          "beta"
+        ],
+        [
+          "crlf.py",
+          "crlf_fn"
+        ],
+        [
+          "drop.py",
+          "removedline"
+        ],
+        [
+          "insert.py",
+          "insertedline"
+        ],
+        [
+          "new.py",
+          "gamma_unique"
+        ],
+        [
+          "odd\t\u00e4.py",
+          "odd_fn"
+        ],
+        [
+          "payload.py",
+          "payload"
+        ],
+        [
+          "unicode.py",
+          "unicode_fn"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_zero",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_zero.diff",
+      "sha256": "0107f3f423d6f8e4150587ae8f649f8fb146176d01ddca27e37fbbd2b57e02d9"
+    },
+    {
+      "expected_targets": [
+        [
+          "alpha.py",
+          "first"
+        ],
+        [
+          "alpha.py",
+          "second"
+        ],
+        [
+          "beta.py",
+          "beta"
+        ],
+        [
+          "crlf.py",
+          "crlf_fn"
+        ],
+        [
+          "drop.py",
+          "removedline"
+        ],
+        [
+          "insert.py",
+          "insertedline"
+        ],
+        [
+          "new.py",
+          "gamma_unique"
+        ],
+        [
+          "odd\t\u00e4.py",
+          "odd_fn"
+        ],
+        [
+          "payload.py",
+          "payload"
+        ],
+        [
+          "unicode.py",
+          "unicode_fn"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_one",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_one.diff",
+      "sha256": "5cf9bc987e7021c0002aa89e22fc1af01dc42f3628b87745880c6aff839f9070"
+    },
+    {
+      "expected_targets": [
+        [
+          "alpha.py",
+          "first"
+        ],
+        [
+          "alpha.py",
+          "second"
+        ],
+        [
+          "beta.py",
+          "beta"
+        ],
+        [
+          "crlf.py",
+          "crlf_fn"
+        ],
+        [
+          "drop.py",
+          "removedline"
+        ],
+        [
+          "insert.py",
+          "insertedline"
+        ],
+        [
+          "new.py",
+          "gamma_unique"
+        ],
+        [
+          "odd\t\u00e4.py",
+          "odd_fn"
+        ],
+        [
+          "payload.py",
+          "payload"
+        ],
+        [
+          "unicode.py",
+          "unicode_fn"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_function",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_function.diff",
+      "sha256": "9fc48c9a310a702951d64df8ff928fd2135b69373fa25bf8a0ab12c6788ab177"
+    },
+    {
+      "expected_targets": [
+        [
+          "alpha.py",
+          "first"
+        ],
+        [
+          "alpha.py",
+          "second"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_binary_python",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_binary_python.diff",
+      "sha256": "0579a99651579908d9153bc12a0661e8b5081438055bdf3d5bab61a9cb787335"
+    },
+    {
+      "expected_targets": [],
+      "git_valid": true,
+      "name": "git_metadata_only",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_metadata_only.diff",
+      "sha256": "5fc98cf71c98a4b1dab24b32c06820ea5b27e4088559e3adea93b0c474eba286"
+    },
+    {
+      "expected_targets": [
+        [
+          "beta.py",
+          "beta"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_no_newline",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_no_newline.diff",
+      "sha256": "3ba147b42f25628fc5ac2ec4f4cb73cae632127a75c8c009049ace99477210be"
+    },
+    {
+      "expected_targets": [
+        [
+          "crlf.py",
+          "crlf_fn"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_crlf",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_crlf.diff",
+      "sha256": "672b210a94fb9319e86d29d91027d732011c0cb34986539007d3012a4aa76ab6"
+    },
+    {
+      "expected_targets": [
+        [
+          "odd\t\u00e4.py",
+          "odd_fn"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_quoted_path",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_quoted_path.diff",
+      "sha256": "369169bf2ce73a58e47ff3af1e352a9a450f65fd8985ea1be9d74dde0ad859a9"
+    },
+    {
+      "expected_targets": [
+        [
+          "alpha.py",
+          "first"
+        ],
+        [
+          "alpha.py",
+          "second"
+        ],
+        [
+          "beta.py",
+          "beta"
+        ],
+        [
+          "crlf.py",
+          "crlf_fn"
+        ],
+        [
+          "drop.py",
+          "removedline"
+        ],
+        [
+          "insert.py",
+          "insertedline"
+        ],
+        [
+          "new.py",
+          "gamma_unique"
+        ],
+        [
+          "odd\t\u00e4.py",
+          "odd_fn"
+        ],
+        [
+          "payload.py",
+          "payload"
+        ],
+        [
+          "unicode.py",
+          "unicode_fn"
+        ]
+      ],
+      "git_valid": true,
+      "name": "git_mail_envelope",
+      "optional_envelope": true,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_mail_envelope.diff",
+      "sha256": "c997fa37a532088118d9caee74cad1a589ce0b0948c9653b733cbde7a3a2c21e"
+    },
+    {
+      "expected_targets": [
+        [
+          "alpha.py",
+          "first"
+        ],
+        [
+          "alpha.py",
+          "second"
+        ]
+      ],
+      "git_valid": true,
+      "name": "gnu_diff_u_timestamps",
+      "optional_envelope": false,
+      "patch": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/gnu_diff_u_timestamps.diff",
+      "sha256": "90735a0300b765bbf11cb51beca006a26dfcb71f2b5e4c00be8ac262d2742066"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "init",
+        "--quiet"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "add",
+        "-A"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "-c",
+        "user.name=HAMON Receiving Fixture",
+        "-c",
+        "user.email=fixture@localhost",
+        "commit",
+        "--quiet",
+        "-m",
+        "fixture before"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "add",
+        "-A"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "-c",
+        "user.name=HAMON Receiving Fixture",
+        "-c",
+        "user.email=fixture@localhost",
+        "commit",
+        "--quiet",
+        "-m",
+        "fixture after"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "b9c650347018c5dc7f4bd22a7779c19606fac02b\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "worktree",
+        "add",
+        "--quiet",
+        "--detach",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/alpha.py b/alpha.py\nindex c146194..d9f6196 100644\n--- a/alpha.py\n+++ b/alpha.py\n@@ -1,5 +1,5 @@\n def first():\n-    return 1\n+    return 2\n \n # gap 00\n # gap 01\n@@ -17,7 +17,7 @@ def first():\n # gap 13\n \n def second():\n-    return 3\n+    return 4\n \n def unchanged():\n     return 99\ndiff --git a/beta.py b/beta.py\nindex 602f556..92177fc 100644\n--- a/beta.py\n+++ b/beta.py\n@@ -1,2 +1,2 @@\n def beta():\n-    return 10\n\\ No newline at end of file\n+    return 11\n\\ No newline at end of file\ndiff --git a/blob.bin b/blob.bin\nindex c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644\nGIT binary patch\nliteral 1024\nzcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&\nz%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo\nz>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85\nzDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa\nzu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz\na;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp\n\nliteral 1024\nzcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH\nzG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k\nzO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz\nzF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n\nz9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo\naU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k\n\ndiff --git a/copy_from.py b/copy_to.py\nsimilarity index 100%\ncopy from copy_from.py\ncopy to copy_to.py\ndiff --git a/crlf.py b/crlf.py\nindex 80ebf23..be8ff5d 100644\n--- a/crlf.py\n+++ b/crlf.py\n@@ -1,2 +1,2 @@\n def crlf_fn():\r\n-    return 20\r\n+    return 21\r\ndiff --git a/deleted.py b/deleted.py\ndeleted file mode 100644\nindex f139dc3..0000000\n--- a/deleted.py\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-def obsolete_unique():\n-    return 'deleted-old-constant'\ndiff --git a/drop.py b/drop.py\nindex f01c1b7..8fa78a2 100644\n--- a/drop.py\n+++ b/drop.py\n@@ -1,4 +1,3 @@\n def removedline():\n     keep = 1\n-    drop = 2\n     return keep\ndiff --git a/insert.py b/insert.py\nindex 2ec68c3..f63ae52 100644\n--- a/insert.py\n+++ b/insert.py\n@@ -1,2 +1,3 @@\n def insertedline():\n+    inserted = 50\n     return 51\ndiff --git a/mode.py b/mode.py\nold mode 100644\nnew mode 100755\ndiff --git a/new.py b/new.py\nnew file mode 100644\nindex 0000000..527fb67\n--- /dev/null\n+++ b/new.py\n@@ -0,0 +1,2 @@\n+def gamma_unique():\n+    return 'new-post-change-constant'\ndiff --git \"a/odd\\t\\303\\244.py\" \"b/odd\\t\\303\\244.py\"\nindex bccf2fb..1c8d696 100644\n--- \"a/odd\\t\\303\\244.py\"\n+++ \"b/odd\\t\\303\\244.py\"\n@@ -1,2 +1,2 @@\n def odd_fn():\n-    return 40\n+    return 41\ndiff --git a/payload.py b/payload.py\nindex 2e5b6c2..beed200 100644\n--- a/payload.py\n+++ b/payload.py\n@@ -1,5 +1,5 @@\n def payload():\n-    return \"\"\"old\n---- old literal\n-+++ old literal\n+    return \"\"\"new\n+--- new literal\n++++ new literal\n \"\"\"\ndiff --git a/rename_before.py b/rename_after.py\nsimilarity index 100%\nrename from rename_before.py\nrename to rename_after.py\ndiff --git a/unicode.py b/unicode.py\nindex 5d9a19b..d8fb77d 100644\n--- a/unicode.py\n+++ b/unicode.py\n@@ -1,2 +1,2 @@\n def unicode_fn():\n-    return \"old\u2028tail\u2029end\"\n+    return \"new\u2028tail\u2029end\"\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_default.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "-U0",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/alpha.py b/alpha.py\nindex c146194..d9f6196 100644\n--- a/alpha.py\n+++ b/alpha.py\n@@ -2 +2 @@ def first():\n-    return 1\n+    return 2\n@@ -20 +20 @@ def second():\n-    return 3\n+    return 4\ndiff --git a/beta.py b/beta.py\nindex 602f556..92177fc 100644\n--- a/beta.py\n+++ b/beta.py\n@@ -2 +2 @@ def beta():\n-    return 10\n\\ No newline at end of file\n+    return 11\n\\ No newline at end of file\ndiff --git a/blob.bin b/blob.bin\nindex c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644\nGIT binary patch\nliteral 1024\nzcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&\nz%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo\nz>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85\nzDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa\nzu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz\na;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp\n\nliteral 1024\nzcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH\nzG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k\nzO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz\nzF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n\nz9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo\naU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k\n\ndiff --git a/copy_from.py b/copy_to.py\nsimilarity index 100%\ncopy from copy_from.py\ncopy to copy_to.py\ndiff --git a/crlf.py b/crlf.py\nindex 80ebf23..be8ff5d 100644\n--- a/crlf.py\n+++ b/crlf.py\n@@ -2 +2 @@ def crlf_fn():\n-    return 20\r\n+    return 21\r\ndiff --git a/deleted.py b/deleted.py\ndeleted file mode 100644\nindex f139dc3..0000000\n--- a/deleted.py\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-def obsolete_unique():\n-    return 'deleted-old-constant'\ndiff --git a/drop.py b/drop.py\nindex f01c1b7..8fa78a2 100644\n--- a/drop.py\n+++ b/drop.py\n@@ -3 +2,0 @@ def removedline():\n-    drop = 2\ndiff --git a/insert.py b/insert.py\nindex 2ec68c3..f63ae52 100644\n--- a/insert.py\n+++ b/insert.py\n@@ -1,0 +2 @@ def insertedline():\n+    inserted = 50\ndiff --git a/mode.py b/mode.py\nold mode 100644\nnew mode 100755\ndiff --git a/new.py b/new.py\nnew file mode 100644\nindex 0000000..527fb67\n--- /dev/null\n+++ b/new.py\n@@ -0,0 +1,2 @@\n+def gamma_unique():\n+    return 'new-post-change-constant'\ndiff --git \"a/odd\\t\\303\\244.py\" \"b/odd\\t\\303\\244.py\"\nindex bccf2fb..1c8d696 100644\n--- \"a/odd\\t\\303\\244.py\"\n+++ \"b/odd\\t\\303\\244.py\"\n@@ -2 +2 @@ def odd_fn():\n-    return 40\n+    return 41\ndiff --git a/payload.py b/payload.py\nindex 2e5b6c2..beed200 100644\n--- a/payload.py\n+++ b/payload.py\n@@ -2,3 +2,3 @@ def payload():\n-    return \"\"\"old\n---- old literal\n-+++ old literal\n+    return \"\"\"new\n+--- new literal\n++++ new literal\ndiff --git a/rename_before.py b/rename_after.py\nsimilarity index 100%\nrename from rename_before.py\nrename to rename_after.py\ndiff --git a/unicode.py b/unicode.py\nindex 5d9a19b..d8fb77d 100644\n--- a/unicode.py\n+++ b/unicode.py\n@@ -2 +2 @@ def unicode_fn():\n-    return \"old\u2028tail\u2029end\"\n+    return \"new\u2028tail\u2029end\"\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "--unidiff-zero",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_zero.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "-U1",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/alpha.py b/alpha.py\nindex c146194..d9f6196 100644\n--- a/alpha.py\n+++ b/alpha.py\n@@ -1,3 +1,3 @@\n def first():\n-    return 1\n+    return 2\n \n@@ -19,3 +19,3 @@ def first():\n def second():\n-    return 3\n+    return 4\n \ndiff --git a/beta.py b/beta.py\nindex 602f556..92177fc 100644\n--- a/beta.py\n+++ b/beta.py\n@@ -1,2 +1,2 @@\n def beta():\n-    return 10\n\\ No newline at end of file\n+    return 11\n\\ No newline at end of file\ndiff --git a/blob.bin b/blob.bin\nindex c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644\nGIT binary patch\nliteral 1024\nzcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&\nz%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo\nz>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85\nzDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa\nzu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz\na;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp\n\nliteral 1024\nzcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH\nzG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k\nzO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz\nzF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n\nz9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo\naU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k\n\ndiff --git a/copy_from.py b/copy_to.py\nsimilarity index 100%\ncopy from copy_from.py\ncopy to copy_to.py\ndiff --git a/crlf.py b/crlf.py\nindex 80ebf23..be8ff5d 100644\n--- a/crlf.py\n+++ b/crlf.py\n@@ -1,2 +1,2 @@\n def crlf_fn():\r\n-    return 20\r\n+    return 21\r\ndiff --git a/deleted.py b/deleted.py\ndeleted file mode 100644\nindex f139dc3..0000000\n--- a/deleted.py\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-def obsolete_unique():\n-    return 'deleted-old-constant'\ndiff --git a/drop.py b/drop.py\nindex f01c1b7..8fa78a2 100644\n--- a/drop.py\n+++ b/drop.py\n@@ -2,3 +2,2 @@ def removedline():\n     keep = 1\n-    drop = 2\n     return keep\ndiff --git a/insert.py b/insert.py\nindex 2ec68c3..f63ae52 100644\n--- a/insert.py\n+++ b/insert.py\n@@ -1,2 +1,3 @@\n def insertedline():\n+    inserted = 50\n     return 51\ndiff --git a/mode.py b/mode.py\nold mode 100644\nnew mode 100755\ndiff --git a/new.py b/new.py\nnew file mode 100644\nindex 0000000..527fb67\n--- /dev/null\n+++ b/new.py\n@@ -0,0 +1,2 @@\n+def gamma_unique():\n+    return 'new-post-change-constant'\ndiff --git \"a/odd\\t\\303\\244.py\" \"b/odd\\t\\303\\244.py\"\nindex bccf2fb..1c8d696 100644\n--- \"a/odd\\t\\303\\244.py\"\n+++ \"b/odd\\t\\303\\244.py\"\n@@ -1,2 +1,2 @@\n def odd_fn():\n-    return 40\n+    return 41\ndiff --git a/payload.py b/payload.py\nindex 2e5b6c2..beed200 100644\n--- a/payload.py\n+++ b/payload.py\n@@ -1,5 +1,5 @@\n def payload():\n-    return \"\"\"old\n---- old literal\n-+++ old literal\n+    return \"\"\"new\n+--- new literal\n++++ new literal\n \"\"\"\ndiff --git a/rename_before.py b/rename_after.py\nsimilarity index 100%\nrename from rename_before.py\nrename to rename_after.py\ndiff --git a/unicode.py b/unicode.py\nindex 5d9a19b..d8fb77d 100644\n--- a/unicode.py\n+++ b/unicode.py\n@@ -1,2 +1,2 @@\n def unicode_fn():\n-    return \"old\u2028tail\u2029end\"\n+    return \"new\u2028tail\u2029end\"\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_one.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "-W",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/alpha.py b/alpha.py\nindex c146194..d9f6196 100644\n--- a/alpha.py\n+++ b/alpha.py\n@@ -1,23 +1,23 @@\n def first():\n-    return 1\n+    return 2\n \n # gap 00\n # gap 01\n # gap 02\n # gap 03\n # gap 04\n # gap 05\n # gap 06\n # gap 07\n # gap 08\n # gap 09\n # gap 10\n # gap 11\n # gap 12\n # gap 13\n \n def second():\n-    return 3\n+    return 4\n \n def unchanged():\n     return 99\ndiff --git a/beta.py b/beta.py\nindex 602f556..92177fc 100644\n--- a/beta.py\n+++ b/beta.py\n@@ -1,2 +1,2 @@\n def beta():\n-    return 10\n\\ No newline at end of file\n+    return 11\n\\ No newline at end of file\ndiff --git a/blob.bin b/blob.bin\nindex c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644\nGIT binary patch\nliteral 1024\nzcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&\nz%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo\nz>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85\nzDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa\nzu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz\na;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp\n\nliteral 1024\nzcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH\nzG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k\nzO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz\nzF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n\nz9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo\naU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k\n\ndiff --git a/copy_from.py b/copy_to.py\nsimilarity index 100%\ncopy from copy_from.py\ncopy to copy_to.py\ndiff --git a/crlf.py b/crlf.py\nindex 80ebf23..be8ff5d 100644\n--- a/crlf.py\n+++ b/crlf.py\n@@ -1,2 +1,2 @@\n def crlf_fn():\r\n-    return 20\r\n+    return 21\r\ndiff --git a/deleted.py b/deleted.py\ndeleted file mode 100644\nindex f139dc3..0000000\n--- a/deleted.py\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-def obsolete_unique():\n-    return 'deleted-old-constant'\ndiff --git a/drop.py b/drop.py\nindex f01c1b7..8fa78a2 100644\n--- a/drop.py\n+++ b/drop.py\n@@ -1,4 +1,3 @@\n def removedline():\n     keep = 1\n-    drop = 2\n     return keep\ndiff --git a/insert.py b/insert.py\nindex 2ec68c3..f63ae52 100644\n--- a/insert.py\n+++ b/insert.py\n@@ -1,2 +1,3 @@\n def insertedline():\n+    inserted = 50\n     return 51\ndiff --git a/mode.py b/mode.py\nold mode 100644\nnew mode 100755\ndiff --git a/new.py b/new.py\nnew file mode 100644\nindex 0000000..527fb67\n--- /dev/null\n+++ b/new.py\n@@ -0,0 +1,2 @@\n+def gamma_unique():\n+    return 'new-post-change-constant'\ndiff --git \"a/odd\\t\\303\\244.py\" \"b/odd\\t\\303\\244.py\"\nindex bccf2fb..1c8d696 100644\n--- \"a/odd\\t\\303\\244.py\"\n+++ \"b/odd\\t\\303\\244.py\"\n@@ -1,2 +1,2 @@\n def odd_fn():\n-    return 40\n+    return 41\ndiff --git a/payload.py b/payload.py\nindex 2e5b6c2..beed200 100644\n--- a/payload.py\n+++ b/payload.py\n@@ -1,5 +1,5 @@\n def payload():\n-    return \"\"\"old\n---- old literal\n-+++ old literal\n+    return \"\"\"new\n+--- new literal\n++++ new literal\n \"\"\"\ndiff --git a/rename_before.py b/rename_after.py\nsimilarity index 100%\nrename from rename_before.py\nrename to rename_after.py\ndiff --git a/unicode.py b/unicode.py\nindex 5d9a19b..d8fb77d 100644\n--- a/unicode.py\n+++ b/unicode.py\n@@ -1,2 +1,2 @@\n def unicode_fn():\n-    return \"old\u2028tail\u2029end\"\n+    return \"new\u2028tail\u2029end\"\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_function.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b",
+        "--",
+        "alpha.py",
+        "blob.bin"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/alpha.py b/alpha.py\nindex c146194..d9f6196 100644\n--- a/alpha.py\n+++ b/alpha.py\n@@ -1,5 +1,5 @@\n def first():\n-    return 1\n+    return 2\n \n # gap 00\n # gap 01\n@@ -17,7 +17,7 @@ def first():\n # gap 13\n \n def second():\n-    return 3\n+    return 4\n \n def unchanged():\n     return 99\ndiff --git a/blob.bin b/blob.bin\nindex c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644\nGIT binary patch\nliteral 1024\nzcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&\nz%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo\nz>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85\nzDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa\nzu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz\na;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp\n\nliteral 1024\nzcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH\nzG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k\nzO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz\nzF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n\nz9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo\naU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k\n\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_binary_python.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b",
+        "--",
+        "mode.py",
+        "rename_before.py",
+        "rename_after.py",
+        "copy_from.py",
+        "copy_to.py"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/copy_from.py b/copy_to.py\nsimilarity index 100%\ncopy from copy_from.py\ncopy to copy_to.py\ndiff --git a/mode.py b/mode.py\nold mode 100644\nnew mode 100755\ndiff --git a/rename_before.py b/rename_after.py\nsimilarity index 100%\nrename from rename_before.py\nrename to rename_after.py\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_metadata_only.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b",
+        "--",
+        "beta.py"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/beta.py b/beta.py\nindex 602f556..92177fc 100644\n--- a/beta.py\n+++ b/beta.py\n@@ -1,2 +1,2 @@\n def beta():\n-    return 10\n\\ No newline at end of file\n+    return 11\n\\ No newline at end of file\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_no_newline.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b",
+        "--",
+        "crlf.py"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/crlf.py b/crlf.py\nindex 80ebf23..be8ff5d 100644\n--- a/crlf.py\n+++ b/crlf.py\n@@ -1,2 +1,2 @@\n def crlf_fn():\r\n-    return 20\r\n+    return 21\r\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_crlf.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b",
+        "--",
+        "odd\t\u00e4.py"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git \"a/odd\\t\\303\\244.py\" \"b/odd\\t\\303\\244.py\"\nindex bccf2fb..1c8d696 100644\n--- \"a/odd\\t\\303\\244.py\"\n+++ \"b/odd\\t\\303\\244.py\"\n@@ -1,2 +1,2 @@\n def odd_fn():\n-    return 40\n+    return 41\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_quoted_path.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "format-patch",
+        "--stdout",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "--subject-prefix=PATCH",
+        "--signature=HAMON Receiving Fixture",
+        "-1",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "From b9c650347018c5dc7f4bd22a7779c19606fac02b Mon Sep 17 00:00:00 2001\nFrom: HAMON Receiving Fixture <fixture@localhost>\nDate: Thu, 8 Oct 2026 17:22:18 +0000\nSubject: [PATCH] fixture after\n\n---\n alpha.py                            |   4 ++--\n beta.py                             |   2 +-\n blob.bin                            | Bin 1024 -> 1024 bytes\n copy_from.py => copy_to.py          |   0\n crlf.py                             |   2 +-\n deleted.py                          |   2 --\n drop.py                             |   1 -\n insert.py                           |   1 +\n mode.py                             |   0\n new.py                              |   2 ++\n \"odd\\t\\303\\244.py\"                  |   2 +-\n payload.py                          |   6 +++---\n rename_before.py => rename_after.py |   0\n unicode.py                          |   2 +-\n 14 files changed, 12 insertions(+), 12 deletions(-)\n copy copy_from.py => copy_to.py (100%)\n delete mode 100644 deleted.py\n mode change 100644 => 100755 mode.py\n create mode 100644 new.py\n rename rename_before.py => rename_after.py (100%)\n\ndiff --git a/alpha.py b/alpha.py\nindex c146194..d9f6196 100644\n--- a/alpha.py\n+++ b/alpha.py\n@@ -1,5 +1,5 @@\n def first():\n-    return 1\n+    return 2\n \n # gap 00\n # gap 01\n@@ -17,7 +17,7 @@ def first():\n # gap 13\n \n def second():\n-    return 3\n+    return 4\n \n def unchanged():\n     return 99\ndiff --git a/beta.py b/beta.py\nindex 602f556..92177fc 100644\n--- a/beta.py\n+++ b/beta.py\n@@ -1,2 +1,2 @@\n def beta():\n-    return 10\n\\ No newline at end of file\n+    return 11\n\\ No newline at end of file\ndiff --git a/blob.bin b/blob.bin\nindex c8b49c8cd518e58491924bfc364ff26e01a85009..991c98a05128d446b067c2ae39bd7dff0a11686a 100644\nGIT binary patch\nliteral 1024\nzcmezW@9&@AzkdGs{_X3R&!0Yic>nJ0o7b;izIguZ>66Eg9zM8#@9v%3w{G6Je(ma&\nz%a<-*IDhW!nbW6Eo;ZH&=#j&R4j$OQZ||PnyLRr_zHRH4&6_rESif%Vn$@dTu2{Zo\nz>5|2Z7A}}SZ|<Dgvu4hiK5goh$&)5d=<n<8>F(<6Xm4w6X>Mw4sIRN7sjjN5C@(85\nzDK083$j{5o$<E5mNKZ>mNlr>kh>weniH?el2oDPl2@VPj@b~le@%HlcaCdWcadvWa\nzu(z|dv9_|bFgG(bF*Y(Z(AU$|(bm$`P*+n`QC3n^ke8E{k(QE_5El~_5f%~@;OFDz\na;pXDxU}s}xVP;}v_&@6Z(fA+1=^p@?&i)Vp\n\nliteral 1024\nzcmZQzWMXDvWn<^y<l^Sx<>MC+6cQE@6%&_`l#-T_m6KOcR8m$^Ra4i{)Y8_`)zddH\nzG%_|ZH8Z!cw6eCbwX=6{baHlab#wRd^z!!c_45x13<?ej4GWKmjEatljf+o6OiE5k\nzO-s+n%*xKm&C4$+EGjN3Ei136tg5c5t*dWnY-(<4ZENr7?CS36?dzW~anj@|Q>RUz\nzF>}`JIdkXDU$Ah|;w4L$Enl&6)#^2C*R9{Mant54TeofBv2)k%J$v`<KXCBS;Uh<n\nz9Y1mM)af&4&z-+;@zUihSFc^aar4&gJ9qEhfAH|p<0ns_J%91?)$2EJ-@X6v@zduo\naU%!3-@$=X3KY#!IXBhSWX#9`h^bY{!$^H-k\n\ndiff --git a/copy_from.py b/copy_to.py\nsimilarity index 100%\ncopy from copy_from.py\ncopy to copy_to.py\ndiff --git a/crlf.py b/crlf.py\nindex 80ebf23..be8ff5d 100644\n--- a/crlf.py\n+++ b/crlf.py\n@@ -1,2 +1,2 @@\n def crlf_fn():\r\n-    return 20\r\n+    return 21\r\ndiff --git a/deleted.py b/deleted.py\ndeleted file mode 100644\nindex f139dc3..0000000\n--- a/deleted.py\n+++ /dev/null\n@@ -1,2 +0,0 @@\n-def obsolete_unique():\n-    return 'deleted-old-constant'\ndiff --git a/drop.py b/drop.py\nindex f01c1b7..8fa78a2 100644\n--- a/drop.py\n+++ b/drop.py\n@@ -1,4 +1,3 @@\n def removedline():\n     keep = 1\n-    drop = 2\n     return keep\ndiff --git a/insert.py b/insert.py\nindex 2ec68c3..f63ae52 100644\n--- a/insert.py\n+++ b/insert.py\n@@ -1,2 +1,3 @@\n def insertedline():\n+    inserted = 50\n     return 51\ndiff --git a/mode.py b/mode.py\nold mode 100644\nnew mode 100755\ndiff --git a/new.py b/new.py\nnew file mode 100644\nindex 0000000..527fb67\n--- /dev/null\n+++ b/new.py\n@@ -0,0 +1,2 @@\n+def gamma_unique():\n+    return 'new-post-change-constant'\ndiff --git \"a/odd\\t\\303\\244.py\" \"b/odd\\t\\303\\244.py\"\nindex bccf2fb..1c8d696 100644\n--- \"a/odd\\t\\303\\244.py\"\n+++ \"b/odd\\t\\303\\244.py\"\n@@ -1,2 +1,2 @@\n def odd_fn():\n-    return 40\n+    return 41\ndiff --git a/payload.py b/payload.py\nindex 2e5b6c2..beed200 100644\n--- a/payload.py\n+++ b/payload.py\n@@ -1,5 +1,5 @@\n def payload():\n-    return \"\"\"old\n---- old literal\n-+++ old literal\n+    return \"\"\"new\n+--- new literal\n++++ new literal\n \"\"\"\ndiff --git a/rename_before.py b/rename_after.py\nsimilarity index 100%\nrename from rename_before.py\nrename to rename_after.py\ndiff --git a/unicode.py b/unicode.py\nindex 5d9a19b..d8fb77d 100644\n--- a/unicode.py\n+++ b/unicode.py\n@@ -1,2 +1,2 @@\n def unicode_fn():\n-    return \"old\u2028tail\u2029end\"\n+    return \"new\u2028tail\u2029end\"\n-- \nHAMON Receiving Fixture\n\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/git_mail_envelope.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "diff",
+        "-u",
+        "a/alpha.py",
+        "b/alpha.py"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/gnu",
+      "returncode": 1,
+      "stderr": "",
+      "stdout": "--- a/alpha.py\t2026-10-08 17:22:18.769718272 +0000\n+++ b/alpha.py\t2026-10-08 17:22:18.769798328 +0000\n@@ -1,5 +1,5 @@\n def first():\n-    return 1\n+    return 2\n \n # gap 00\n # gap 01\n@@ -17,7 +17,7 @@\n # gap 13\n \n def second():\n-    return 3\n+    return 4\n \n def unchanged():\n     return 99\n"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "apply",
+        "--check",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/gnu_diff_u_timestamps.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "diff",
+        "--no-ext-diff",
+        "--binary",
+        "-M",
+        "-C",
+        "--find-copies-harder",
+        "-U0",
+        "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+        "b9c650347018c5dc7f4bd22a7779c19606fac02b",
+        "--",
+        "alpha.py"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "diff --git a/alpha.py b/alpha.py\nindex c146194..d9f6196 100644\n--- a/alpha.py\n+++ b/alpha.py\n@@ -2 +2 @@ def first():\n-    return 1\n+    return 2\n@@ -20 +20 @@ def second():\n-    return 3\n+    return 4\n"
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "--unidiff-zero",
+        "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/malformed_unfinished_tail.diff"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+      "returncode": 128,
+      "stderr": "error: corrupt patch at line 14\n",
+      "stdout": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "core.autocrlf=false",
+        "-c",
+        "core.fileMode=true",
+        "--git-dir=/home/jacob/testpilot-hunks-6cc6795e89f4.git",
+        "show",
+        "eacb9907f51aeb9360da654c60cbbd7cf99ad877:testpilot/diff.py"
+      ],
+      "cwd": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+      "returncode": 0,
+      "stderr": "",
+      "stdout": "\"\"\"Parse a unified diff and map changed lines onto Python functions (via ``ast``).\n\nOnly the *new* side of the diff matters: TestPilot writes tests for the code as\nit exists after the change, so line numbers refer to the post-change file in the\nworking tree.\n\"\"\"\nfrom __future__ import annotations\n\nimport ast\nimport os\nimport re\nimport tokenize\nfrom dataclasses import asdict, dataclass, field\nfrom pathlib import Path, PurePosixPath\n\n_HUNK = re.compile(r\"^@@ -(\\d+)(?:,(\\d+))? \\+(\\d+)(?:,(\\d+))? @@\")\n\n\n@dataclass\nclass FileChange:\n    \"\"\"Changed lines for one file, in new-file line numbers.\"\"\"\n\n    path: str\n    old_path: str | None\n    added_lines: set[int] = field(default_factory=set)\n    # added lines plus anchor lines around pure deletions\n    touched_lines: set[int] = field(default_factory=set)\n    is_new: bool = False\n    is_deleted: bool = False\n\n\n@dataclass\nclass ChangedFunction:\n    path: str\n    module: str\n    qualname: str\n    lineno: int\n    end_lineno: int\n    changed_lines: list[int]\n    source: str\n    is_method: bool\n\n    @property\n    def import_name(self) -> str:\n        \"\"\"Top-level name to import from ``module`` (class name for methods).\"\"\"\n        return self.qualname.split(\".\")[0]\n\n    def to_dict(self) -> dict:\n        return asdict(self)\n\n\ndef _unquote_git_path(raw: str) -> str:\n    \"\"\"Decode Git's C-quoted filename bytes, including octal UTF-8 sequences.\"\"\"\n    escapes = {\"a\": 7, \"b\": 8, \"t\": 9, \"n\": 10, \"v\": 11, \"f\": 12, \"r\": 13,\n               '\"': 34, \"\\\\\": 92}\n    decoded = bytearray()\n    index = 1  # Opening double quote.\n    while index < len(raw):\n        char = raw[index]\n        index += 1\n        if char == '\"':\n            if index != len(raw) or 0 in decoded:\n                raise ValueError(\"invalid Git-quoted diff path\")\n            return os.fsdecode(bytes(decoded))\n        if char != \"\\\\\":\n            decoded.extend(os.fsencode(char))\n            continue\n        if index >= len(raw):\n            break\n        escaped = raw[index]\n        index += 1\n        if escaped in escapes:\n            decoded.append(escapes[escaped])\n        elif (escaped in \"0123\" and index + 1 < len(raw)\n              and all(digit in \"01234567\" for digit in raw[index:index + 2])):\n            decoded.append(int(escaped + raw[index:index + 2], 8))\n            index += 2\n        else:\n            raise ValueError(\"invalid escape in Git-quoted diff path\")\n    raise ValueError(\"unterminated Git-quoted diff path\")\n\n\ndef _strip_path(raw: str) -> str | None:\n    p = raw.split(\"\\t\")[0].strip()\n    if p.startswith('\"'):\n        p = _unquote_git_path(p)\n    if p == \"/dev/null\":\n        return None\n    if p.startswith((\"a/\", \"b/\")):\n        p = p[2:]\n    return p\n\n\ndef parse_unified_diff(text: str) -> list[FileChange]:\n    \"\"\"Parse ``git diff`` / ``diff -u`` output into per-file changed line sets.\n\n    Hunk line counters are tracked so that removed lines whose content starts\n    with ``-- `` are not mistaken for file headers.\n    \"\"\"\n    files: list[FileChange] = []\n    cur: FileChange | None = None\n    pending_old: str | None = None\n    old_left = new_left = 0\n    new_ln = 0\n    # Git hunk counts use LF-delimited records, not Unicode separators.\n    for line in text.split(\"\\n\"):\n        if cur is not None and (old_left > 0 or new_left > 0):\n            if line.startswith(\"\\\\\"):  # \"\\ No newline at end of file\"\n                continue\n            if line.startswith(\"+\"):\n                cur.added_lines.add(new_ln)\n                cur.touched_lines.add(new_ln)\n                new_ln += 1\n                new_left -= 1\n            elif line.startswith(\"-\"):\n                # anchor a pure deletion to the surrounding new-file lines\n                for anchor in (new_ln - 1, new_ln):\n                    if anchor >= 1:\n                        cur.touched_lines.add(anchor)\n                old_left -= 1\n            else:  # context line (\" \" prefix, or blank if whitespace was stripped)\n                new_ln += 1\n                new_left -= 1\n                old_left -= 1\n            continue\n        if line.startswith(\"diff --git \"):\n            cur, pending_old = None, None\n            continue\n        if line.startswith(\"--- \"):\n            pending_old = _strip_path(line[4:])\n            continue\n        if line.startswith(\"+++ \"):\n            new_path = _strip_path(line[4:])\n            cur = FileChange(\n                path=new_path or pending_old or \"\",\n                old_path=pending_old,\n                is_new=pending_old is None,\n                is_deleted=new_path is None,\n            )\n            files.append(cur)\n            continue\n        m = _HUNK.match(line)\n        if m and cur is not None:\n            old_left = int(m.group(2)) if m.group(2) is not None else 1\n            new_left = int(m.group(4)) if m.group(4) is not None else 1\n            new_ln = int(m.group(3))\n            if new_left == 0:  # pure deletion hunk: \"+N,0\" means \"after line N\"\n                new_ln += 1\n    return files\n\n\ndef is_test_path(path: str) -> bool:\n    p = PurePosixPath(path)\n    return (\n        \"tests\" in p.parts\n        or \"test\" in p.parts\n        or p.name.startswith(\"test_\")\n        or p.name.endswith(\"_test.py\")\n        or p.name == \"conftest.py\"\n    )\n\n\ndef module_name(path: str) -> str:\n    parts = list(PurePosixPath(path).with_suffix(\"\").parts)\n    if parts and parts[0] == \"src\":\n        parts = parts[1:]\n    if parts and parts[-1] == \"__init__\":\n        parts = parts[:-1]\n    return \".\".join(parts)\n\n\ndef _iter_functions(body, prefix: str = \"\", in_class: bool = False):\n    \"\"\"Yield (qualname, node, is_method) for top-level functions and methods.\n\n    Nested functions are attributed to their enclosing function. Functions\n    defined under ``if``/``try``/``with``/``match`` blocks at module/class level count.\n    \"\"\"\n    for node in body:\n        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):\n            yield prefix + node.name, node, in_class\n        elif isinstance(node, ast.ClassDef):\n            yield from _iter_functions(node.body, prefix + node.name + \".\", True)\n        elif isinstance(node, ast.Match):\n            for case in node.cases:\n                yield from _iter_functions(case.body, prefix, in_class)\n        else:\n            for attr in (\"body\", \"orelse\", \"finalbody\"):\n                sub = getattr(node, attr, None)\n                if isinstance(sub, list):\n                    yield from _iter_functions(sub, prefix, in_class)\n            for handler in getattr(node, \"handlers\", None) or []:\n                yield from _iter_functions(handler.body, prefix, in_class)\n\n\ndef functions_touching(source: str, path: str, lines: set[int], added: set[int]) -> list[ChangedFunction]:\n    tree = ast.parse(source, filename=path)\n    # Python physical lines use LF/CRLF/CR; other separators can be literals.\n    src_lines = source.replace(\"\\r\\n\", \"\\n\").replace(\"\\r\", \"\\n\").split(\"\\n\")\n    out: list[ChangedFunction] = []\n    for qualname, node, is_method in _iter_functions(tree.body):\n        start = min([node.lineno] + [d.lineno for d in node.decorator_list])\n        end = node.end_lineno or node.lineno\n        if not any(start <= ln <= end for ln in lines):\n            continue\n        out.append(\n            ChangedFunction(\n                path=path,\n                module=module_name(path),\n                qualname=qualname,\n                lineno=start,\n                end_lineno=end,\n                changed_lines=sorted(ln for ln in added if start <= ln <= end),\n                source=\"\\n\".join(src_lines[start - 1 : end]),\n                is_method=is_method,\n            )\n        )\n    return out\n\n\nclass DiffSourceError(ValueError):\n    \"\"\"A diff selects a source path outside the requested repository.\"\"\"\n\n\ndef _source_path(repo: Path, raw: str) -> Path:\n    \"\"\"Resolve a relative diff path without admitting an outside source file.\"\"\"\n    relative = Path(raw)\n    if relative.anchor or \"..\" in relative.parts:\n        raise DiffSourceError(f\"diff source must be repository-relative: {raw!r}\")\n    try:\n        resolved = (repo / relative).resolve()\n    except (OSError, RuntimeError, ValueError) as exc:\n        raise DiffSourceError(f\"cannot resolve diff source: {raw!r}\") from exc\n    if not resolved.is_relative_to(repo):\n        raise DiffSourceError(f\"diff source resolves outside repository: {raw!r}\")\n    return resolved\n\n\ndef changed_functions(repo: str | Path, diff_text: str, include_tests: bool = False) -> list[ChangedFunction]:\n    \"\"\"Return touched Python functions, rejecting selected sources outside ``repo``.\n\n    Paths must be relative without parent traversal. Symlinks are supported\n    when their resolved destination remains inside the resolved repository.\n    Source encoding follows Python's BOM and encoding-cookie rules.\n    \"\"\"\n    repo = Path(repo).resolve()\n    result: list[ChangedFunction] = []\n    for fc in parse_unified_diff(diff_text):\n        if fc.is_deleted or not fc.path.endswith(\".py\"):\n            continue\n        if not include_tests and is_test_path(fc.path):\n            continue\n        f = _source_path(repo, fc.path)\n        if not f.is_file():\n            continue\n        with tokenize.open(f) as source_file:\n            source = source_file.read()\n        result.extend(functions_touching(source, fc.path, fc.touched_lines, fc.added_lines))\n    return result\n"
+    }
+  ],
+  "frozen_at": "2026-10-08T17:22:18.817535+00:00",
+  "malformed": "/home/jacob/testpilot-git-compat-6cc6795e89f4/docs/receiving/git-compat-6cc6795e89f4/patches/malformed_unfinished_tail.diff",
+  "new_fixture_commit": "b9c650347018c5dc7f4bd22a7779c19606fac02b",
+  "old_fixture_commit": "5337d8707ac0ab30f2b7a9e75df84ca11a5f26e0",
+  "oracle": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/oracle-before",
+  "repo": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/fixture",
+  "tripwire": "/home/jacob/testpilot-git-compat-6cc6795e89f4-data/pytest-tripwire"
+}

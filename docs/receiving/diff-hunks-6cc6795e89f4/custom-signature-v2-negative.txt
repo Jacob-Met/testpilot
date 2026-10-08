@@ -1,0 +1,21 @@
+FF...                                                                    [100%]
+=================================== FAILURES ===================================
+_ test_actual_git_mail_footer_preserves_complete_target_selection[custom-text] _
+tests/test_diff_hunk_validation.py:241: in test_actual_git_mail_footer_preserves_complete_target_selection
+    selected = changed_functions(repo, patch)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:318: in changed_functions
+    for fc in parse_unified_diff(diff_text):
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+testpilot/diff.py:215: in parse_unified_diff
+    raise invalid("body record exceeds the declared hunk ranges")
+E   testpilot.diff.DiffFormatError: invalid unified diff at record 15: body record exceeds the declared hunk ranges
+_ test_git_mail_footer_never_completes_a_missing_body_record[custom-text-old] __
+tests/test_diff_hunk_validation.py:257: in test_git_mail_footer_never_completes_a_missing_body_record
+    with pytest.raises(DiffFormatError, match="diff"):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   Failed: DID NOT RAISE <class 'testpilot.diff.DiffFormatError'>
+=========================== short test summary info ============================
+FAILED tests/test_diff_hunk_validation.py::test_actual_git_mail_footer_preserves_complete_target_selection[custom-text]
+FAILED tests/test_diff_hunk_validation.py::test_git_mail_footer_never_completes_a_missing_body_record[custom-text-old]
+2 failed, 3 passed, 37 deselected in 2.95s

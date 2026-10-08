@@ -1,0 +1,114 @@
+{
+  "schema": "hamon.installed_product_receiving.v1",
+  "at": "2026-10-08T18:01:18.878935+00:00",
+  "console": "/home/jacob/testpilot-native-6cc6795e89f4/40860534a8fd/bin/testpilot",
+  "source_head": "40860534a8fdc760b105ac9bc7d14ac9087172dd",
+  "wheel_sha256": "83c756b33833e004c6421c203888c54862a4eb4995dba1e08bfea3128dec9c4b",
+  "source_fixture_git_head": "15d9d9d72e77b2f2bc847ae9ec0f2a306dc3f9bd",
+  "valid_git_apply_check": true,
+  "damaged_git_apply_refused": true,
+  "targets": 1,
+  "valid_run": {
+    "exit": 0,
+    "report_status": "passed",
+    "ok": true,
+    "final": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 1.217,
+      "timeout_s": 60.0,
+      "output": ".                                                                        [100%]\n1 passed in 0.03s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_testpilot_generated::test_selected",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_testpilot_generated.py"
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_testpilot_generated.py"
+      ],
+      "junit_available": true,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+      "generated": {
+        "collected": 1,
+        "passed": 1,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "tests_written": 1,
+    "ledger": {
+      "total_tokens": 280,
+      "total_cost_usd": 0.0,
+      "cost_is_complete": false,
+      "tokens_estimated": true,
+      "by_model": {
+        "nvidia/nemotron-3-super-120b-a12b": {
+          "calls": 1,
+          "prompt_tokens": 93,
+          "completion_tokens": 7,
+          "cost_usd": 0.0
+        },
+        "nvidia/Nemotron-3_5-Lightning": {
+          "calls": 1,
+          "prompt_tokens": 151,
+          "completion_tokens": 29,
+          "cost_usd": 0.0
+        }
+      },
+      "entries": [
+        {
+          "role": "planner",
+          "model": "nvidia/nemotron-3-super-120b-a12b",
+          "prompt_tokens": 93,
+          "completion_tokens": 7,
+          "estimated": true,
+          "cost_usd": 0.0
+        },
+        {
+          "role": "editor",
+          "model": "nvidia/Nemotron-3_5-Lightning",
+          "prompt_tokens": 151,
+          "completion_tokens": 29,
+          "estimated": true,
+          "cost_usd": 0.0
+        }
+      ]
+    },
+    "output": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/valid-result",
+    "output_files_sha256": {
+      "testpilot.patch": "02912f066519b84d64a9966b216ceef68ecc479720784f53011e8b8b48ecc903",
+      "report.md": "08652aa33d5d7c6c04fc97c05ffd3f4990a7b926f4c62f5917a6bffce910086e",
+      "report.html": "a759d64aecc36e213297aec71e96b80a35261ef4276ee107763ce214fa212ed2",
+      "report.json": "2743e3e27891263b29fced6533cf57075faf3a5f800faf1e386f29be2be23f87"
+    }
+  },
+  "refusals": [
+    {
+      "name": "installed-invalid-new",
+      "exit": 2,
+      "new_output_absent": true,
+      "existing_outputs_unchanged": true,
+      "nonexistent_model_config_not_opened": true
+    },
+    {
+      "name": "installed-invalid-existing",
+      "exit": 2,
+      "new_output_absent": true,
+      "existing_outputs_unchanged": true,
+      "nonexistent_model_config_not_opened": true
+    }
+  ],
+  "original_source_preserved": true,
+  "scope": "Actual installed console through local ScriptedModel fixtures only; no external model/provider call",
+  "commands": "/home/jacob/testpilot-native-6cc6795e89f4/receiving/commands.json"
+}
