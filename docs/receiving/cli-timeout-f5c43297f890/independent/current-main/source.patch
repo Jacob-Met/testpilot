@@ -1,0 +1,41 @@
+--- baseline/testpilot/__main__.py
++++ candidate/testpilot/__main__.py
+@@ -3,6 +3,7 @@
+ 
+ import argparse
+ import json
++import math
+ import os
+ import shutil
+ import subprocess
+@@ -14,6 +15,21 @@
+ from .model import ModelError, RoutingConfig, make_client
+ from .recheck import run_recheck_command
+ from .targets import TargetSelectionError, resolve_targets, selection_record
++
++
++def _positive_timeout(value: str) -> float:
++    """Admit a run limit before reading inputs or starting any work."""
++    try:
++        seconds = float(value)
++    except ValueError as exc:
++        raise argparse.ArgumentTypeError(
++            "timeout must be a positive finite number of seconds"
++        ) from exc
++    if not math.isfinite(seconds) or seconds <= 0:
++        raise argparse.ArgumentTypeError(
++            "timeout must be a positive finite number of seconds"
++        )
++    return seconds
+ 
+ 
+ def _python_executable(value: str) -> str:
+@@ -91,7 +107,7 @@
+     r.add_argument("--script", help="dir of canned responses for the scripted backend")
+     r.add_argument("--base-url", help="override OpenAI-compatible base URL")
+     r.add_argument("--rounds", type=int, default=3, help="max repair rounds (default 3)")
+-    r.add_argument("--timeout", type=float, default=60.0, help="pytest timeout per run, seconds")
++    r.add_argument("--timeout", type=_positive_timeout, default=60.0, help="positive finite pytest timeout per run, seconds")
+     r.add_argument("--no-coverage", dest="coverage", action="store_const", const=False, default=None,
+                    help="run pytest without optional coverage measurement (default: automatic when installed)")
+     r.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",

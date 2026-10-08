@@ -1,0 +1,24 @@
+{
+  "schema": "hamon.external_contribution.v1",
+  "worker_id": "chatgpt-f5c43297f890/production_execution",
+  "repository": "Jacob-Met/testpilot",
+  "source_base": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "source_tree": "2602440d626872f0293755723dc6ca610b1e360b",
+  "state": "baseline_receiving_before_product_edit",
+  "scope": [
+    "testpilot/__main__.py: math import, private _positive_timeout helper, run --timeout argument type only",
+    "tests/test_cli_timeout.py",
+    "docs/receiving/cli-timeout-f5c43297f890/",
+    "README.md concise timeout usage"
+  ],
+  "contract": "Reject nonfinite/nonpositive run timeout before input reads, client creation, sandbox launch or report publication. Preserve all finite-positive/default paths. Recheck parser/API and sandbox remain unchanged.",
+  "preserved_owners": [
+    "#35 sandbox cancellation",
+    "#33 saved comparison",
+    "#39 history",
+    "6cc6795e89f4 diff hunk validation",
+    "e46e74cdc4f4 Git acquisition argv"
+  ],
+  "native_goal_mutated": false,
+  "publication": "Root serializes GitHub publication after cooldown; no GitHub mutation from this lane."
+}

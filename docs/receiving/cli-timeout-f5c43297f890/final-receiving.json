@@ -1,0 +1,62 @@
+{
+  "schema": "hamon.testpilot_timeout.final_receiving.v1",
+  "recorded_at": "2026-10-08T18:38:08.490032+00:00",
+  "original_base": "191cca4e416286a9e1fa4b5d5daf5fc30b936db6",
+  "composition_base": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "original_author_regressions": {
+    "failed": 9,
+    "passed": 5,
+    "log": "baseline-pytest.log"
+  },
+  "candidate_author_regressions": {
+    "passed": 14,
+    "failed": 0,
+    "log": "candidate-pytest.log"
+  },
+  "original_actual_cli": "before-receipt.json",
+  "candidate_actual_cli": "after-receipt.json",
+  "independent_original": {
+    "passed": 11,
+    "failed": 9,
+    "receipt": "independent/original/baseline-receipt.json"
+  },
+  "independent_current_composition": {
+    "passed": 20,
+    "failed": 0,
+    "receipt": "independent/current-main/candidate-receipt.json"
+  },
+  "affected_gate": {
+    "original_completed": false,
+    "original_limit_seconds": 160,
+    "original_collected": 51,
+    "observed_progress_dots": 35,
+    "original_receipt": "composed-incomplete-gate.json",
+    "remaining_completed": true,
+    "remaining_returncode": 0,
+    "remaining_passed": 15,
+    "remaining_skipped": 1,
+    "remaining_subtests_passed": 13,
+    "remaining_receipt": "composed-remaining-gate.json",
+    "skip_reason": "coverage needed for the optional-plugin boundary; native interpreter has no coverage module",
+    "disposition": "No full seven-module pass is claimed. Original run is INCOMPLETE; remaining 16 nodeids separately completed, 15 passed and one inherited optional-coverage skip. No full suite run was performed."
+  },
+  "composition": {
+    "changed_parent_paths": [
+      "README.md",
+      "testpilot/__main__.py"
+    ],
+    "unchanged_parent_leaves": 1295,
+    "git_diff_acquisition_preserved": true,
+    "parent_git_diff_readme_restored": true,
+    "readme_sha256": "db9e77cbeff6d35d956912faf4a001c3154cf08ecdf86ac4b632013f8a99b25e",
+    "cli_sha256": "db5c92b169a40473371ed8e660bdc38133be6f167adbd2b8af24a966c4ba2320",
+    "recheck_sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6"
+  },
+  "claim_limits": [
+    "Run argparse admission only. Recheck parser/API, model, loop, sandbox, target resolution and report writers are unchanged.",
+    "Reject zero/negative/nonfinite numbers before input or output effects. Finite positive/default paths are retained, not a promise of successful completion for arbitrarily small deadlines.",
+    "Native Python 3.14.4 Linux focused evidence only; hosted CI and publication-parent integration remain root gates.",
+    "No provider/model-paid calls, installation, deployment, live repository mutation, resident lease or permission change.",
+    "Observed dots are preserved as progress evidence, not a completed original affected-gate result."
+  ]
+}

@@ -91,6 +91,8 @@ existing decoding and selection behavior.
 
 Add `--no-coverage` to `run` to execute pytest without optional coverage measurement. The choice applies to the baseline, generated tests and every repair round, including when you select a project interpreter with `--python`. Reports then show coverage as unavailable; actual test failures and exit codes still determine the run's result. Omit the flag to keep automatic coverage when the selected interpreter has it installed.
 
+For `run`, `--timeout` must be a positive finite number of seconds (default 60). Invalid limits are rejected as configuration errors before reading the diff, constructing a model client, starting tests or replacing saved reports. Fractional seconds and scientific notation are supported.
+
 ## Choose functions explicitly
 
 Use repeated `--target path.py::qualname` flags on `targets` or `run` to select

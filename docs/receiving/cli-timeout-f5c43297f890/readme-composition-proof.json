@@ -1,0 +1,19 @@
+{
+  "schema": "hamon.testpilot_timeout.readme_composition.v1",
+  "parent": "cec50d8df4499ba509615e179d82ef3861379bd2",
+  "parent_readme": {
+    "byte_count": 14534,
+    "sha256": "9b87f414f792ef371b09d2e512ab3432191bf85c54853d220f236fa020c18181",
+    "git_blob": "9eaab06ffbfd831cfdd2916fff4dd15198cb8f3e"
+  },
+  "candidate_readme": {
+    "byte_count": 14823,
+    "sha256": "db9e77cbeff6d35d956912faf4a001c3154cf08ecdf86ac4b632013f8a99b25e",
+    "git_blob": "df07258a3f6e3f4a07eb8d6b5584a9aa39712867"
+  },
+  "remove_exact_timeout_paragraph_reproduces_complete_parent": true,
+  "timeout_paragraph_utf8": "For `run`, `--timeout` must be a positive finite number of seconds (default 60). Invalid limits are rejected as configuration errors before reading the diff, constructing a model client, starting tests or replacing saved reports. Fractional seconds and scientific notation are supported.\n\n",
+  "pr42_paragraph_present_in_both": true,
+  "pr42_paragraph_sha256": "8660bcb5b8da600e28dac45cf60b447e1d7e6c852445c54611a973337f5cc4ad",
+  "pr42_paragraph_utf8": "The `--git-base` path requests a raw, uncolored Git patch with standard file\nprefixes. Git display preferences such as `diff.noprefix`, `diff.mnemonicprefix`\nand forced color therefore keep the same source targets. External diff and\ntext-conversion helpers are disabled for this read; the repository's Git\nconfiguration stays unchanged. Saved-file and stdin `--diff` inputs retain their\nexisting decoding and selection behavior.\n"
+}

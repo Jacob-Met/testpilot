@@ -1,0 +1,12 @@
+{"timeout": "nan", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "NaN", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "inf", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "+inf", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "-inf", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "1e309", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "0", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "-0.0", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "-1", "returncode": 2, "previous_outputs_preserved": true, "status": null, "model_entries": null}
+{"timeout": "0.125", "returncode": 1, "previous_outputs_preserved": false, "status": "no_changes", "model_entries": 0}
+{"timeout": "6e1", "returncode": 1, "previous_outputs_preserved": false, "status": "no_changes", "model_entries": 0}
+RECEIPT 6212b2cfac889feac1fe61e47b449bf98effb7503f2e3da6a0e927621bcbef2b

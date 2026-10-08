@@ -1,0 +1,7 @@
+{
+  "stage": "read-only parent preservation before carrier",
+  "process": 346631,
+  "result": "refused before carrier creation",
+  "reason": "git ls-tree line output quoted a Unicode path; opened quoted representation as filename",
+  "correction": "Use ls-tree -rz and decode actual path bytes, preserving every original source leaf. No source or evidence repair was required."
+}

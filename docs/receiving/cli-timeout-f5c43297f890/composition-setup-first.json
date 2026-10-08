@@ -1,0 +1,5 @@
+{
+  "status": "preflight_refused_before_pytest",
+  "reason": "Guessed test_cli_no_coverage.py and test_git_diff_acquisition.py do not exist. Used actual tree names test_cli_coverage.py and test_cli_git_diff_config.py instead.",
+  "source_changed": false
+}
