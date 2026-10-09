@@ -154,6 +154,17 @@ all four files: a later replacement error or a process/system failure can leave 
 mixture of old and new files. Concurrent writers are not coordinated. Use a separate
 output directory when separate runs need independent saved results.
 
+## Export retained test files for review
+
+On Linux, `python -m testpilot export-tests --report saved/report.json --out NEW_DIRECTORY`
+materializes every admitted final retained test with its exact UTF-8 bytes. The
+new directory also contains the original report bytes and a source/hash manifest.
+It does not run the tests or a model, apply a patch, or write into a project.
+Historical failure and no-tests statuses stay visible; export success means the
+files were copied for review. Existing output paths are protected by atomic
+create-only directory publication. See [retained test export](docs/EXPORT_TESTS.md)
+for supported platforms, input limits and provenance details.
+
 ## Inspect a saved-test recheck
 
 The model-free `testpilot recheck` command also writes **`recheck.html`** beside

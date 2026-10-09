@@ -14,6 +14,7 @@ from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_uni
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
 from .recheck import run_recheck_command
+from .export_tests import run_export_tests_command
 from .regression import run_regression_command
 from .targets import TargetSelectionError, resolve_targets, selection_record
 
@@ -146,7 +147,13 @@ def main(argv: list[str] | None = None) -> int:
     regression.add_argument("--timeout", type=float, default=60.0, help="pytest timeout per revision")
     regression.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
                             help="project Python for both runs (default: this interpreter)")
+    export = sub.add_parser("export-tests", help="copy retained final tests to a new review directory without execution")
+    export.add_argument("--report", required=True, help="saved report.json or recheck.json")
+    export.add_argument("--out", required=True, help="unused directory under an existing directory parent (Linux)")
     a = ap.parse_args(argv)
+
+    if a.cmd == "export-tests":
+        return run_export_tests_command(a)
 
     if a.cmd == "regression":
         return run_regression_command(a)
