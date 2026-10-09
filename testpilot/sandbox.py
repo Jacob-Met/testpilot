@@ -150,7 +150,7 @@ def clean_env(root: Path) -> dict[str, str]:
 
 
 def _run(cmd: list[str], cwd: Path, env: dict, timeout: float) -> tuple[int | None, str, bool]:
-    """Collect output, bounding POSIX timeout and interrupt cleanup."""
+    """Collect output; bound POSIX cleanup and Windows leader cancellation."""
     proc = subprocess.Popen(cmd, cwd=cwd, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
                             stderr=subprocess.STDOUT, text=True, errors="replace", start_new_session=True)
     try:
@@ -170,6 +170,14 @@ def _run(cmd: list[str], cwd: Path, env: dict, timeout: float) -> tuple[int | No
                 pass
             finally:
                 proc.stdout.close()
+        elif os.name == "nt":
+            try:
+                # Reap only the launched leader; an active reader may retain the pipe.
+                proc.kill()
+                proc.wait(timeout=1.0)
+            except (OSError, subprocess.TimeoutExpired):
+                # Cleanup failure must not replace the caller's cancellation.
+                pass
         raise
     except subprocess.TimeoutExpired:
         try:
