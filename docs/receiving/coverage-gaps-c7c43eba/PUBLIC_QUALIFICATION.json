@@ -1,0 +1,169 @@
+{
+  "schema": "testpilot.coverage-gaps.public-qualification-summary.v1",
+  "record_type": "newly derived sanitized summary; not an original native receipt",
+  "date_utc": "2026-10-09",
+  "owner": "hamon-ultra-c7c43eba-production",
+  "receiver": "hamon-ultra-c7c43eba-integration",
+  "root_reviewer": "chatgpt:c7c43eba:root",
+  "disposition": "qualified source handoff; PR and main held by existing Actions triggers",
+  "base_commit": "906ce149fba770a62c9f5f2fbc1b7238b949d423",
+  "base_tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
+  "qualified_four_path_tree": "9ac14779a83ec9d03d49ab2621895f0f26e4c731",
+  "source_files": [
+    {
+      "path": "testpilot/coverage_gaps.py",
+      "bytes": 8552,
+      "sha256": "5197ea78b6a4a30fb37a7f0246389849d22ac16972feb120c81d5134ce875176",
+      "git_blob": "10bba90a3883ddfc37dc0efe7e6baf28b3569a26",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/test_coverage_gaps.py",
+      "bytes": 10461,
+      "sha256": "429855cd7ddf3fd5202d24a024fdf1bfd41d985aa4ab805982d0ca04de1ddcb1",
+      "git_blob": "5439fddd806bf688cdf5ecaf8e0d9d084db69092",
+      "mode": "100644"
+    },
+    {
+      "path": "docs/COVERAGE_GAPS.md",
+      "bytes": 3900,
+      "sha256": "5a190c18e051a7e932f1655d501ecb7e042b838d33853473cd5e419d712492a6",
+      "git_blob": "bb3b51244401a51b04244ef2362794774b230460",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/fixtures/coverage_gaps_report.json",
+      "bytes": 1762,
+      "sha256": "e05f0d9a50916475946bf5f0dd8bcbbef04e0af431eabb49fd035ab66c19aa3d",
+      "git_blob": "b214c7fd3e1beee95fb386e90ea13fe044a61857",
+      "mode": "100644"
+    }
+  ],
+  "frozen_contract_sha256": "5f843b9c92ce3918503fbdf25c44b93850815640fbd91e888ececdd68668617d",
+  "candidate_freeze_sha256": "c6856872ef33362ec59db16f35805ad30508c44eb6eeb17a597057d1e2ee6f67",
+  "composition": {
+    "base_head": "906ce149fba770a62c9f5f2fbc1b7238b949d423",
+    "base_tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
+    "predicted_candidate_tree": "9ac14779a83ec9d03d49ab2621895f0f26e4c731",
+    "actual_projection_files": 18,
+    "base_files_exact": 14,
+    "new_paths": 4,
+    "all_directory_trees_recomputed": 407,
+    "base_leaf_metadata": 1499,
+    "candidate_leaf_metadata": 1503,
+    "new_module_sha256": "5197ea78b6a4a30fb37a7f0246389849d22ac16972feb120c81d5134ce875176",
+    "tree_proof_scope": "Exactcurrenttree metadata plus14base+4new actualbytes; no full1499leaf worktree/refcreated"
+  },
+  "author": {
+    "platform": "Linux",
+    "python": "3.14.4",
+    "methods": 16,
+    "joined_cli_children": 7,
+    "actual_python_exit": 0,
+    "receipt_sha256": "11c7fe34b3600bed1f1da4fef1a153fda787925516caf7534f04ed8c52cd8fe3",
+    "outer_wrapper_exit": "unretained; distinct from durable actual Python result"
+  },
+  "independent_original_gate": {
+    "cases": 122,
+    "passed": 122,
+    "exit_code": 0,
+    "runtime_seconds": 7.07,
+    "receipt_sha256": "0e24601f78e780045373ad96e19cdd05b661428246cd70b89561e0bb2a5bdf7b"
+  },
+  "before_parse": "PASS; productexit2, noJSONdecoder, nooutput, inputunchanged",
+  "post_source_review_integer_followups": {
+    "cases": 2,
+    "passed": 2,
+    "cli_exit": 2,
+    "api_exception": "ReportError",
+    "int_limit": 4300,
+    "setting_changes": 0,
+    "original122oracles_unchanged": true
+  },
+  "integer_followup_receipt_sha256": "32a2a09e83de64f85c2a0a7cc744bb6d87b7201f79dc461645a48df997c40e8d",
+  "preparse_receipt_sha256": "7c5633d9defb49c9338feb41f9125646af255059e6b65b44147574e9f3244c74",
+  "root_review_sha256": "0cd476d0af42e90893dff227f9aced059e5d08aea9155f7e2e72dede97bca534",
+  "v3_to_v4_delta_sha256": "76b493487ca5c7ef46b0feb6a46ab1299067d0bf7874a8891fa3757a64386aa9",
+  "retained_history": [
+    "Producer staleauthortestcountv1",
+    "MacV2 actual121/122 APIoutputcapfail",
+    "MacV3 original122PASS plusactualintegerfollowup2FAIL",
+    "MacV4 admissionRAMstopbeforeanysourcewrite/run",
+    "RDCspawnE2BIGbeforeprocess correctedbysame-nativeinputread"
+  ],
+  "original_native_artifacts": [
+    {
+      "native_artifact_name": "source-evidence-v1.zip",
+      "bytes": 1438891,
+      "sha256": "aeb244f273e24546b5dd9d44cc42533299a39b31a000c84a69329f3751d39561"
+    },
+    {
+      "native_artifact_name": "source-evidence-manifest-v1.json",
+      "bytes": 47091,
+      "sha256": "907c1977deb2a2071639ed7c8d3606e9ee11260d2e21127a35ac310f8bbf92fe"
+    },
+    {
+      "native_artifact_name": "source-evidence-seal-v1.json",
+      "bytes": 1274,
+      "sha256": "063c73347c92b2c4356a8ea882a379ceb62c498f60a3a1945ca6d4bf06c6d193"
+    },
+    {
+      "native_artifact_name": "source-evidence-handoff-v1.json",
+      "bytes": 8705,
+      "sha256": "61e2661a0e9eb8feaff1af6f1af6eb00d7f1161ec353791d244555eadf9b9bae"
+    },
+    {
+      "native_artifact_name": "independent-receiving-evidence-v4.zip",
+      "bytes": 629401,
+      "sha256": "225fd3ed9e882893038645c59ad211ec08eda89e4d4c2148bfd05b9c8310341d"
+    },
+    {
+      "native_artifact_name": "independent-receiving-manifest-v4.json",
+      "bytes": 59586,
+      "sha256": "edee9019a91faa8087888ccca988ac597d8354cd60e3704230f80a9349805b3d"
+    },
+    {
+      "native_artifact_name": "independent-receiving-seal-v4.json",
+      "bytes": 1257,
+      "sha256": "2196d0bc2441d61b235affadc95bd94b2fbf06e3c37e5153f7b045079c99b89e"
+    }
+  ],
+  "custody": {
+    "producer_members": 148,
+    "producer_payloads": 147,
+    "independent_members": 122,
+    "independent_payloads": 121,
+    "nested_Mac_members": 242,
+    "original_archives": "Unchanged in ordinary native estate custody",
+    "public_record": "New summary separate from original bytes; no raw native archives or runtime paths publicly exported",
+    "stress_stdout": "Full16MiB stressstdout notretained; exactbytes/hash and independentexpectedhash/prefix/suffixretained. NormalrawCLIstreams/stderrpreserved."
+  },
+  "runtime_scope": "NativeLinuxPython3.14.4 >= declared3.12; no V4Mac or MSIproductqualificationclaim",
+  "resource_policy": {
+    "disk_reserve": 67108864,
+    "owned_stage_budget": 33554432,
+    "RAM_floor": 536870912,
+    "no_floorlowering": true
+  },
+  "limits": [
+    "No version4 Mac or Windows runtime qualification",
+    "No new model/provider/generation/pytest/repository execution",
+    "No coverage-producer path normalization or inference of unrecorded execution evidence",
+    "Existing owners and integer/resource limits remain unchanged"
+  ],
+  "actions_boundary": {
+    "workflow": ".github/workflows/ci.yml",
+    "bytes": 586,
+    "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+    "events": {
+      "push_branches": [
+        "main"
+      ],
+      "pull_request": true
+    },
+    "non_main_branch_without_PR": "Eligible under existing filters; ref and run count require readback",
+    "PR_and_main": "Held because these trigger Actions",
+    "workflow_or_gate_changes": false,
+    "unrun_gate_pass": false
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "changed_functions": [
+    {
+      "path": "calc.py",
+      "qualname": "classify",
+      "lineno": 1,
+      "end_lineno": 8,
+      "changed_lines": [
+        3,
+        4,
+        4,
+        7
+      ]
+    },
+    {
+      "path": "calc.py",
+      "qualname": "wrapper",
+      "lineno": 1,
+      "end_lineno": 10,
+      "changed_lines": [
+        4,
+        9
+      ]
+    },
+    {
+      "path": "calc.py",
+      "qualname": "deletion_only",
+      "lineno": 11,
+      "end_lineno": 12,
+      "changed_lines": []
+    },
+    {
+      "path": "Calc.py",
+      "qualname": "case_distinct",
+      "lineno": 1,
+      "end_lineno": 3,
+      "changed_lines": [
+        2
+      ]
+    },
+    {
+      "path": "Δ\\literal.py",
+      "qualname": "literal_label",
+      "lineno": 1,
+      "end_lineno": 3,
+      "changed_lines": [
+        2
+      ]
+    }
+  ],
+  "final": {
+    "coverage": {
+      "percent_total": 99,
+      "files": {
+        "calc.py": {
+          "executed": [
+            1,
+            2,
+            3,
+            8
+          ],
+          "missing": [
+            4,
+            9
+          ]
+        },
+        "Δ\\literal.py": {
+          "executed": [
+            1
+          ],
+          "missing": [
+            2
+          ]
+        }
+      }
+    }
+  },
+  "coverage": {
+    "changed_lines_after": 100
+  },
+  "rounds": [
+    {
+      "result": {
+        "coverage": {
+          "files": {
+            "calc.py": {
+              "executed": [
+                4,
+                7,
+                9
+              ],
+              "missing": []
+            }
+          }
+        }
+      }
+    }
+  ],
+  "synthetic_fixture_notice": "Authored coverage states for saved-reader qualification; no actual pytest/model run implied."
+}
