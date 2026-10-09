@@ -178,7 +178,7 @@ def test_destination_created_after_staging_is_not_replaced(tmp_path, monkeypatch
 
 
 def test_unsupported_platform_refuses_before_read(tmp_path, monkeypatch):
-    monkeypatch.setattr(export.sys, "platform", "win32")
+    monkeypatch.setattr(export.sys, "platform", "unsupported-platform")
     with pytest.raises(export.ExportTestsError, match="supported on Linux"):
         export.export_saved_tests(tmp_path / "absent.json", tmp_path / "review")
     assert list(tmp_path.iterdir()) == []

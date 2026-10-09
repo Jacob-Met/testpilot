@@ -1,0 +1,85 @@
+{
+  "schema": "testpilot.windows-export.public-evidence-index.v1",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/65",
+  "sourceParent": "f92bf8e37b82df3ce54911001be891b54aceb40b",
+  "sourceManifestSha256": "488966c42c720a53bca53d91e1303331d04881467e8ab7dbbcae349a26a89755",
+  "state": "windows_qualified_linux_compatibility_held",
+  "rootReviewSha256": "97a6b7000ba9def9cbdbd786741d4b20f5306217b3e9df8275f45eeeb07aabad",
+  "fullProjectSuite": "unrun",
+  "CI": "unrun",
+  "actions": 0,
+  "bundles": [
+    {
+      "id": "evidence",
+      "filename": "TestPilot-Windows-qualified-source-evidence-r1.zip",
+      "bytes": 697303,
+      "sha256": "318305f123028d8d9e72bb980b75ff436d96b05191cc546f6eb01956fc5a6830",
+      "parts": [
+        {
+          "path": "evidence-part-00.base64",
+          "bytes": 100001,
+          "sha256": "214c08cc543989ebb3b46ecb7a6d2c533a8236e2cbfacbd2c04accb9946cff43"
+        },
+        {
+          "path": "evidence-part-01.base64",
+          "bytes": 100001,
+          "sha256": "fc98f5e79737114152c84d510432b34f4e8ac23876cd0c90a43d8d0527797569"
+        },
+        {
+          "path": "evidence-part-02.base64",
+          "bytes": 100001,
+          "sha256": "18948807983935cf95647423a6599833065076d38bc2711bbb80f4ab7304e72d"
+        },
+        {
+          "path": "evidence-part-03.base64",
+          "bytes": 100001,
+          "sha256": "62cbb51b660cc2c595cd6ebff6e25774a8ff2e2d73d3d694efe3d9905412eb7e"
+        },
+        {
+          "path": "evidence-part-04.base64",
+          "bytes": 100001,
+          "sha256": "d941920566e5965124f7f125e34131b9ad5c36a82bfec56a3a93bb0b42e34eb5"
+        },
+        {
+          "path": "evidence-part-05.base64",
+          "bytes": 100001,
+          "sha256": "9340f1a4e51dc45be7d5a2e90c58d00461f3921a45bc9afde6575da116c8a452"
+        },
+        {
+          "path": "evidence-part-06.base64",
+          "bytes": 100001,
+          "sha256": "507616de6b6217dd17eba37c8118e8d406aa5811067a64dcde31b057df2e9a67"
+        },
+        {
+          "path": "evidence-part-07.base64",
+          "bytes": 100001,
+          "sha256": "deea3d6df15c3b576eff547ff1f06b7e0d77d37ea1db87b7d85912d1eec68f31"
+        },
+        {
+          "path": "evidence-part-08.base64",
+          "bytes": 100001,
+          "sha256": "74ee598917436c0563b43c0eaad6c36dded9158ceeb7d7a80cbeea36b68aa064"
+        },
+        {
+          "path": "evidence-part-09.base64",
+          "bytes": 29741,
+          "sha256": "eaa319d55627d8fc3378dcd9500a0e261366d48f4875b2c02c3af66243262e05"
+        }
+      ]
+    },
+    {
+      "id": "portable",
+      "filename": "TestPilot-Windows-review-export-r1.zip",
+      "bytes": 62274,
+      "sha256": "c51d50f114f79a36268d3b1c697aa99986ef282a3a271be31c88d46ed7ac8228",
+      "parts": [
+        {
+          "path": "portable-part-00.base64",
+          "bytes": 83033,
+          "sha256": "6ef737abf49dd92189cad1af85de89df45afb67e8a753b55a97eae7de1b7834e"
+        }
+      ]
+    }
+  ],
+  "reconstruction": "Concatenate each bundle.parts file in listed order, base64-decode to bundle.filename, verify exact bundle.bytes and SHA-256 before extraction. No package code execution is needed."
+}

@@ -67,10 +67,14 @@ def _portable_paths(tests: tuple[tuple[str, str], ...]) -> None:
 
 
 def _directory_publisher():
+    if sys.platform == "win32":
+        # Windows os.rename refuses every existing destination, including an
+        # empty directory. The caller stages beside out; never copy or replace.
+        return os.rename
     # POSIX rename can replace an existing empty directory. It is not a safe
     # fallback for this command's explicit create-only destination contract.
     if not sys.platform.startswith("linux"):
-        raise ExportTestsError("atomic create-only directory export is currently supported on Linux")
+        raise ExportTestsError("atomic create-only directory export is currently supported on Linux or Windows")
     libc = ctypes.CDLL(None, use_errno=True)
     rename = getattr(libc, "renameat2", None)
     if rename is None:

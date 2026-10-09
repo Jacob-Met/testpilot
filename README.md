@@ -233,3 +233,8 @@ These numbers are fixed by construction, because the stub replays scripts. `dura
 ## License
 
 Apache-2.0. Copyright 2026 Jacob Scott-Metoyer. See `LICENSE`.
+
+
+### Export saved tests on Windows
+
+The released `export-tests` review-directory workflow also has a native Windows publisher. Use the same `python -m testpilot export-tests --report REPORT --out NEW_DIRECTORY` command and select an unused output name. It exports exact retained files for review and never runs them. See [platform publication and its limits](docs/EXPORT_TESTS.md#native-windows-publication).
