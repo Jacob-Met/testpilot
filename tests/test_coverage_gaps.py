@@ -20,7 +20,7 @@ class CoverageGapsTests(unittest.TestCase):
 
     def run_cli(self, root, report, *args):
         env = dict(os.environ, PYTHONPATH=str(SOURCE), PYTHONDONTWRITEBYTECODE="1")
-        return subprocess.run([sys.executable, "-B", "-m", "testpilot.coverage_gaps",
+        return subprocess.run([sys.executable, "-S", "-B", "-m", "testpilot.coverage_gaps",
                                "--report", str(report), *args], cwd=root, env=env,
                               capture_output=True, timeout=10)
 
@@ -191,6 +191,18 @@ class CoverageGapsTests(unittest.TestCase):
             alias = self.run_cli(root, report, "--output", str(report))
             self.assertNotEqual(alias.returncode, 0)
             self.assertEqual(report.read_bytes(), raw)
+
+    def test_real_cli_stdout_matches_file_bytes(self):
+        with tempfile.TemporaryDirectory() as td:
+            root = Path(td)
+            report = root / "report.json"
+            report.write_bytes(FIXTURE.read_bytes())
+            target = root / "gaps.json"
+            stdout_result = self.run_cli(root, report)
+            file_result = self.run_cli(root, report, "--output", str(target))
+            self.assertEqual(stdout_result.returncode, 0, stdout_result.stderr)
+            self.assertEqual(file_result.returncode, 0, file_result.stderr)
+            self.assertEqual(stdout_result.stdout, target.read_bytes())
 
     def test_real_cli_stdout_missing_and_invalid(self):
         with tempfile.TemporaryDirectory() as td:

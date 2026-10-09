@@ -208,8 +208,8 @@ def main(argv=None) -> int:
             with Path(args.output).open("xb") as stream:
                 stream.write(payload)
         else:
-            sys.stdout.write(payload.decode("utf-8"))
-            sys.stdout.flush()
+            sys.stdout.buffer.write(payload)
+            sys.stdout.buffer.flush()
     except ReportError as exc:
         print(f"coverage-gaps: {exc}", file=sys.stderr)
         return 2

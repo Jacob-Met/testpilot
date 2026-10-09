@@ -13,7 +13,9 @@ python3 -B -m testpilot.coverage_gaps --report saved/report.json --output gaps.j
 ```
 
 The output parent must already exist and the output path must be new. Omitting
-`--output` writes the same JSON to stdout. An existing file or symlink, including
+`--output` writes the same UTF-8 JSON bytes to stdout. Both destinations use LF
+line endings, including on Windows, so publication preserves the checked byte
+limit. An existing file or symlink, including
 the input report itself, is refused. Invalid report metadata is rejected before
 output creation. An actual output I/O failure stays nonzero; partial output after
 such a failure is not promised to be rolled back.

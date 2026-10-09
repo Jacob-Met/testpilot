@@ -1,34 +1,32 @@
 {
-  "schema": "testpilot.coverage-gaps.public-qualification-summary.v1",
-  "record_type": "newly derived sanitized summary; not an original native receipt",
+  "schema": "testpilot.coverage-gaps.public-qualification-summary.v2",
+  "record_type": "Newly derived sanitized summary; not an original native receipt",
   "date_utc": "2026-10-09",
-  "owner": "hamon-ultra-c7c43eba-production",
-  "receiver": "hamon-ultra-c7c43eba-integration",
-  "root_reviewer": "chatgpt:c7c43eba:root",
-  "disposition": "qualified source handoff; PR and main held by existing Actions triggers",
-  "base_commit": "906ce149fba770a62c9f5f2fbc1b7238b949d423",
-  "base_tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
-  "qualified_four_path_tree": "9ac14779a83ec9d03d49ab2621895f0f26e4c731",
+  "source_version": 5,
+  "disposition": "Qualified source follow-up; pull request, main integration and installed adoption remain held",
+  "parent_source_commit": "b77d3868a63f8a596f916c7aa3177ec99f401e45",
+  "parent_source_tree": "9cae8b2127ec3da0dc2c2f5f8e1ba23e759cbf9c",
+  "original_base_commit": "906ce149fba770a62c9f5f2fbc1b7238b949d423",
   "source_files": [
     {
       "path": "testpilot/coverage_gaps.py",
-      "bytes": 8552,
-      "sha256": "5197ea78b6a4a30fb37a7f0246389849d22ac16972feb120c81d5134ce875176",
-      "git_blob": "10bba90a3883ddfc37dc0efe7e6baf28b3569a26",
+      "bytes": 8550,
+      "sha256": "5ddb8e63e650e59615199553eb7c63d9797cc3bfe10ea05d1ccc9ebe1f9c0762",
+      "git_blob": "ce8820fa624432a4a6deaeca0731d473b59c7bd3",
       "mode": "100644"
     },
     {
       "path": "tests/test_coverage_gaps.py",
-      "bytes": 10461,
-      "sha256": "429855cd7ddf3fd5202d24a024fdf1bfd41d985aa4ab805982d0ca04de1ddcb1",
-      "git_blob": "5439fddd806bf688cdf5ecaf8e0d9d084db69092",
+      "bytes": 11097,
+      "sha256": "9d3c0974114a284444ebbb7ad4df1dce964899d9ab11f25d6f3f8d894bfd1342",
+      "git_blob": "ef10e2b7d2a763a994dadc59e8e37fb8352fd4aa",
       "mode": "100644"
     },
     {
       "path": "docs/COVERAGE_GAPS.md",
-      "bytes": 3900,
-      "sha256": "5a190c18e051a7e932f1655d501ecb7e042b838d33853473cd5e419d712492a6",
-      "git_blob": "bb3b51244401a51b04244ef2362794774b230460",
+      "bytes": 4022,
+      "sha256": "f1b3304a51edead0a2568fdd455cea44490546b4f6b29a56c5ca85177b921bc5",
+      "git_blob": "890424ce2ab714de4054cc5146f6354b19d61253",
       "mode": "100644"
     },
     {
@@ -39,118 +37,226 @@
       "mode": "100644"
     }
   ],
-  "frozen_contract_sha256": "5f843b9c92ce3918503fbdf25c44b93850815640fbd91e888ececdd68668617d",
-  "candidate_freeze_sha256": "c6856872ef33362ec59db16f35805ad30508c44eb6eeb17a597057d1e2ee6f67",
-  "composition": {
-    "base_head": "906ce149fba770a62c9f5f2fbc1b7238b949d423",
-    "base_tree": "626557015edc297dfc6ba00028a8de64f7dfdfa9",
-    "predicted_candidate_tree": "9ac14779a83ec9d03d49ab2621895f0f26e4c731",
-    "actual_projection_files": 18,
-    "base_files_exact": 14,
-    "new_paths": 4,
-    "all_directory_trees_recomputed": 407,
-    "base_leaf_metadata": 1499,
-    "candidate_leaf_metadata": 1503,
-    "new_module_sha256": "5197ea78b6a4a30fb37a7f0246389849d22ac16972feb120c81d5134ce875176",
-    "tree_proof_scope": "Exactcurrenttree metadata plus14base+4new actualbytes; no full1499leaf worktree/refcreated"
-  },
-  "author": {
-    "platform": "Linux",
-    "python": "3.14.4",
-    "methods": 16,
-    "joined_cli_children": 7,
-    "actual_python_exit": 0,
-    "receipt_sha256": "11c7fe34b3600bed1f1da4fef1a153fda787925516caf7534f04ed8c52cd8fe3",
-    "outer_wrapper_exit": "unretained; distinct from durable actual Python result"
-  },
-  "independent_original_gate": {
-    "cases": 122,
-    "passed": 122,
-    "exit_code": 0,
-    "runtime_seconds": 7.07,
-    "receipt_sha256": "0e24601f78e780045373ad96e19cdd05b661428246cd70b89561e0bb2a5bdf7b"
-  },
-  "before_parse": "PASS; productexit2, noJSONdecoder, nooutput, inputunchanged",
-  "post_source_review_integer_followups": {
-    "cases": 2,
-    "passed": 2,
-    "cli_exit": 2,
-    "api_exception": "ReportError",
-    "int_limit": 4300,
-    "setting_changes": 0,
-    "original122oracles_unchanged": true
-  },
-  "integer_followup_receipt_sha256": "32a2a09e83de64f85c2a0a7cc744bb6d87b7201f79dc461645a48df997c40e8d",
-  "preparse_receipt_sha256": "7c5633d9defb49c9338feb41f9125646af255059e6b65b44147574e9f3244c74",
-  "root_review_sha256": "0cd476d0af42e90893dff227f9aced059e5d08aea9155f7e2e72dede97bca534",
-  "v3_to_v4_delta_sha256": "76b493487ca5c7ef46b0feb6a46ab1299067d0bf7874a8891fa3757a64386aa9",
-  "retained_history": [
-    "Producer staleauthortestcountv1",
-    "MacV2 actual121/122 APIoutputcapfail",
-    "MacV3 original122PASS plusactualintegerfollowup2FAIL",
-    "MacV4 admissionRAMstopbeforeanysourcewrite/run",
-    "RDCspawnE2BIGbeforeprocess correctedbysame-nativeinputread"
+  "changed_existing_owned_paths": [
+    "testpilot/coverage_gaps.py",
+    "tests/test_coverage_gaps.py",
+    "docs/COVERAGE_GAPS.md",
+    "docs/receiving/coverage-gaps-c7c43eba/README.md",
+    "docs/receiving/coverage-gaps-c7c43eba/PUBLIC_QUALIFICATION.json"
   ],
-  "original_native_artifacts": [
-    {
-      "native_artifact_name": "source-evidence-v1.zip",
-      "bytes": 1438891,
-      "sha256": "aeb244f273e24546b5dd9d44cc42533299a39b31a000c84a69329f3751d39561"
-    },
-    {
-      "native_artifact_name": "source-evidence-manifest-v1.json",
-      "bytes": 47091,
-      "sha256": "907c1977deb2a2071639ed7c8d3606e9ee11260d2e21127a35ac310f8bbf92fe"
-    },
-    {
-      "native_artifact_name": "source-evidence-seal-v1.json",
-      "bytes": 1274,
-      "sha256": "063c73347c92b2c4356a8ea882a379ceb62c498f60a3a1945ca6d4bf06c6d193"
-    },
-    {
-      "native_artifact_name": "source-evidence-handoff-v1.json",
-      "bytes": 8705,
-      "sha256": "61e2661a0e9eb8feaff1af6f1af6eb00d7f1161ec353791d244555eadf9b9bae"
-    },
-    {
-      "native_artifact_name": "independent-receiving-evidence-v4.zip",
-      "bytes": 629401,
-      "sha256": "225fd3ed9e882893038645c59ad211ec08eda89e4d4c2148bfd05b9c8310341d"
-    },
-    {
-      "native_artifact_name": "independent-receiving-manifest-v4.json",
-      "bytes": 59586,
-      "sha256": "edee9019a91faa8087888ccca988ac597d8354cd60e3704230f80a9349805b3d"
-    },
-    {
-      "native_artifact_name": "independent-receiving-seal-v4.json",
-      "bytes": 1257,
-      "sha256": "2196d0bc2441d61b235affadc95bd94b2fbf06e3c37e5153f7b045079c99b89e"
+  "v4_to_v5": {
+    "product_delta": "Two statements publish the already-admitted payload through sys.stdout.buffer.write and buffer.flush",
+    "unchanged": "Analysis APIs, data semantics, input/admission limits, integer setting, exclusive binary file creation and OSError handling",
+    "test_delta": "One actual CLI stdout/file byte-equivalence regression; test subprocess helper adds -S while preserving explicit PYTHONPATH, environment, cwd, timeout and byte capture",
+    "guide_delta": "Explicitly documents identical UTF-8/LF bytes for stdout and file output",
+    "candidate_freeze": {
+      "bytes": 7803,
+      "sha256": "069a72335aae00f0341599b4358a1c52c0da90df2d2965f20de345f1d2238e98"
     }
-  ],
+  },
+  "v4_windows_initial_receiving": {
+    "platform": "Windows x64",
+    "python": "3.12.14",
+    "source_version": 4,
+    "api_cases": 3,
+    "cli_cases": 8,
+    "status": "PASS within the frozen semantic/filesystem scope",
+    "actual_cli_exits": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      120
+    ],
+    "actual_receiver_exit": 0,
+    "outer_wrapper_exit": 0,
+    "receipt": {
+      "bytes": 11601,
+      "sha256": "78ee9c7281580f290ce5b5312dbcaf58a1e83ae3674945ac6aec2511016fd73d"
+    },
+    "coverage": "Exact literal labels/ordinals and null counts; Unicode paths; native case alias, hardlink/input aliases, existing-output/late-invalid refusal and real closed anonymous stdout",
+    "source_exposure_disclosure": "Original values frozen before v4 implementation; before execution, adapters clarified empty function records versus changed-line file groups and semantic same-JSON versus platform line endings"
+  },
+  "v4_windows_physical_followup": {
+    "classification": "Separately frozen after source review; witnessed contract failure, not original blind receiving",
+    "input_bytes": 3632470,
+    "raw_line_entries": 90649,
+    "functions": 128,
+    "documented_output_limit_bytes": 16777216,
+    "admitted_LF_bytes": 16777197,
+    "admitted_LF_sha256": "8c16302121ddf10d1abd5aa0c40963a2a6faa90318d57c1442c2f4a968d40d5b",
+    "actual_stdout_bytes": 17503564,
+    "actual_stdout_sha256": "65beb99983e085274cb4089f9a98075b57633eef1e9ab2b73f9e2ed4b531a475",
+    "actual_stdout_excess_bytes": 726348,
+    "newline_expansion_bytes": 726367,
+    "actual_cli_exit": 0,
+    "stderr_bytes": 0,
+    "actual_receiver_exit": 0,
+    "receipt": {
+      "bytes": 3914,
+      "sha256": "8c12b61548926b3df8f93187c05a16e76a626da832ae9241ccfa4631188453e2"
+    },
+    "collection_success_is_not_product_pass": true
+  },
+  "v4_new_author_regression": {
+    "methods": 1,
+    "status": "Expected FAIL at raw stdout/file equality",
+    "actual_cli_exits": [
+      0,
+      0
+    ],
+    "stdout_CRLF_bytes": 2572,
+    "file_LF_bytes": 2443,
+    "only_newline_difference_verified": true,
+    "receipt": {
+      "bytes": 5540,
+      "sha256": "d25aee47a3d57eb0a1b5b0f2ab0e968006e39b6e4f82d7d685f5c9777cd8a35f"
+    }
+  },
+  "v5_author": {
+    "platform": "Windows x64",
+    "python": "3.12.14",
+    "methods": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "joined_cli_children": 9,
+    "actual_cli_exits": [
+      2,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      2
+    ],
+    "actual_author_python_exit": 0,
+    "actual_monitor_exit": 0,
+    "outer_wrapper_exit": 0,
+    "receipt": {
+      "bytes": 15080,
+      "sha256": "d2d7f04a3c0eb6d9956d3bc2af4e41c6cc5b53b745b66c7d8c474232ebf6c5df"
+    },
+    "source_and_runtime_bytes_and_mtimes_unchanged": true,
+    "integer_conversion_limit": 4300,
+    "site_initialization": false
+  },
+  "v5_independent_windows_receiving": {
+    "classification": "Four repair expectations frozen before v5 implementation/author-test exposure",
+    "cli_cases": 4,
+    "passed": 4,
+    "actual_cli_exits": [
+      0,
+      0,
+      120,
+      0
+    ],
+    "actual_receiver_exit": 0,
+    "outer_wrapper_exit": 0,
+    "small_stdout_and_new_Unicode_file": {
+      "bytes": 3998,
+      "sha256": "e52529909e4985afe505a162a78b1991584e80b82c2f5e3b625c3071374d98ec",
+      "exact_original_binary_file_gold": true
+    },
+    "near_ceiling_stdout": {
+      "bytes": 16777197,
+      "sha256": "8c16302121ddf10d1abd5aa0c40963a2a6faa90318d57c1442c2f4a968d40d5b",
+      "within_16777216_byte_limit": true,
+      "actual_cli_exit": 0
+    },
+    "real_closed_stdout_exit": 120,
+    "prior_v4_receipts_and_source_runtime_inputs_unchanged": true,
+    "receipt": {
+      "bytes": 7515,
+      "sha256": "982c58b3bfc4016c3929060ff4ad6af9e3b2ad42fc42e3458d6964dd17bd51ab"
+    },
+    "large_stream_retention": "Full actual CLI stdout was not retained as an artifact; actual collection kept count, SHA-256 and 128-byte prefix/suffix. Expected LF/CRLF byte oracles were computed in memory, and the API materialized admitted result bytes."
+  },
+  "post_receiving_source_peer": {
+    "status": "CLEAR within narrow byte-publication scope",
+    "product_retests": 0,
+    "original_files_git_exact": 16,
+    "unchanged_package_dependencies": 12,
+    "fixture_unchanged": true,
+    "exact_inverse_recovers_original_module_test_and_guide": true,
+    "author_stream_output_pins_verified": 27,
+    "receipt": {
+      "bytes": 4517,
+      "sha256": "2b35ec434725b0221e6b3c2d81e4b535d4a069b132f16a29dc1575a2efa4d6d1"
+    },
+    "outer_collector_exit": "Unknown after session disappeared; distinct from verified artifacts and actual product exits",
+    "stream_output_pin_breakdown": {
+      "stdout": 11,
+      "stderr": 11,
+      "saved_output_files": 5,
+      "baseline_pins": 5,
+      "candidate_pins": 22
+    }
+  },
   "custody": {
-    "producer_members": 148,
-    "producer_payloads": 147,
-    "independent_members": 122,
-    "independent_payloads": 121,
-    "nested_Mac_members": 242,
-    "original_archives": "Unchanged in ordinary native estate custody",
-    "public_record": "New summary separate from original bytes; no raw native archives or runtime paths publicly exported",
-    "stress_stdout": "Full16MiB stressstdout notretained; exactbytes/hash and independentexpectedhash/prefix/suffixretained. NormalrawCLIstreams/stderrpreserved."
+    "author_v5": {
+      "archive_bytes": 237013,
+      "archive_sha256": "fc19790d2f6fcc487180169678591f03247574a0c805839b8954de54c20945be",
+      "native_files": 115,
+      "ZIP_members": 116,
+      "payload_bytes": 671777,
+      "manifest_bytes": 27362,
+      "manifest_sha256": "f3ba7841a82479baae8ffbc043c0f75d53b4a78a48d629054c86a0a9c2ed6718"
+    },
+    "receiving_v4": {
+      "archive_bytes": 401994,
+      "archive_sha256": "927691749b6db1645ff4d5c1dca6d698f9aeef9e7fc89eb5188b821b2951e0e9",
+      "native_files": 91,
+      "ZIP_members": 92,
+      "outer_sealer_exit": "Unknown after session disappeared; no replay"
+    },
+    "receiving_v5": {
+      "archive_bytes": 101339,
+      "archive_sha256": "61e2e8b9042b84db1724b7c30a9ea2a4310ce2fde91eb7f0028e62333e1fa0e6",
+      "native_files": 43,
+      "ZIP_members": 44,
+      "outer_sealer_exit": 0
+    },
+    "root_receiving_custody_peer": {
+      "bytes": 2002,
+      "sha256": "6e1a846ead07a91f48e0e8ab87bd43e0521beabab9862a1f01c49c36a362c66b",
+      "all_listed_native_bytes_mtimes_and_ZIP_members_verified": true,
+      "product_retests": 0
+    },
+    "public_export": "Derived summaries and owned source only; original native packets, runtime paths and unrelated coordination remain private"
   },
-  "runtime_scope": "NativeLinuxPython3.14.4 >= declared3.12; no V4Mac or MSIproductqualificationclaim",
-  "resource_policy": {
-    "disk_reserve": 67108864,
-    "owned_stage_budget": 33554432,
-    "RAM_floor": 536870912,
-    "no_floorlowering": true
+  "prior_v4": {
+    "exact_public_summary": "https://github.com/Jacob-Met/testpilot/blob/b77d3868a63f8a596f916c7aa3177ec99f401e45/docs/receiving/coverage-gaps-c7c43eba/PUBLIC_QUALIFICATION.json",
+    "author_platform": "Linux/Python3.14.4",
+    "author_methods": 16,
+    "joined_author_cli_children": 7,
+    "original_independent_observations": 122,
+    "post_source_integer_followups": 2,
+    "before_parse_witness": "Over8MiB input refused before decoder/output",
+    "Mac_v4": "Memory-floor stop before source writes or product execution",
+    "applicability": "Prior receipts apply to their exact source versions; no v5 Linux/Mac runtime claimed"
   },
-  "limits": [
-    "No version4 Mac or Windows runtime qualification",
-    "No new model/provider/generation/pytest/repository execution",
-    "No coverage-producer path normalization or inference of unrecorded execution evidence",
-    "Existing owners and integer/resource limits remain unchanged"
+  "preserved_failures": [
+    "V1 stale author fixture denominator",
+    "V2 Mac API output-cap failure",
+    "V3 integer conversion follow-up failures",
+    "V4 Mac admission stop",
+    "Windows oracle-builder preparation stops before product execution",
+    "V4 Windows physical stdout bound failure",
+    "V4 new raw-byte regression failure"
   ],
+  "resource_policy": {
+    "Windows_disk_reserve_bytes": 67108864,
+    "Windows_author_stage_budget_bytes": 16777216,
+    "Windows_combined_receiving_budget_bytes": 16777216,
+    "Windows_available_RAM_floor_bytes": 1610612736,
+    "no_floor_lowering": true
+  },
   "actions_boundary": {
     "workflow": ".github/workflows/ci.yml",
     "bytes": 586,
@@ -161,9 +267,18 @@
       ],
       "pull_request": true
     },
-    "non_main_branch_without_PR": "Eligible under existing filters; ref and run count require readback",
+    "publication_vehicle": "Existing owned non-main branch; must remain without any associated PR; exact ref/run readback required",
     "PR_and_main": "Held because these trigger Actions",
-    "workflow_or_gate_changes": false,
+    "workflow_or_required_gate_changes": false,
     "unrun_gate_pass": false
-  }
+  },
+  "limits": [
+    "Focused copied-source Windows qualification; no installed/canonical adoption",
+    "No version5 Linux/Mac or all-platform runtime qualification",
+    "No full-repository pytest or GitHub Actions gate claimed",
+    "No model/provider/generation, repository-source execution, source-selector or coverage-producer change",
+    "I/O failure remains nonzero; partial delivery after an actual I/O failure is not promised to roll back"
+  ],
+  "unchanged_parent_leaf_count_required": 1500,
+  "publication_tree_audit": "Before moving the contribution branch, the complete candidate tree must preserve all 1500 other parent leaves with exact path, type, mode and Git blob identity."
 }
