@@ -10,6 +10,7 @@ import ast
 import os
 import re
 import tokenize
+from bisect import bisect_left, bisect_right
 from dataclasses import asdict, dataclass, field
 from pathlib import Path, PurePosixPath
 
@@ -274,11 +275,15 @@ def functions_touching(source: str, path: str, lines: set[int], added: set[int])
     tree = ast.parse(source, filename=path)
     # Python physical lines use LF/CRLF/CR; other separators can be literals.
     src_lines = source.replace("\r\n", "\n").replace("\r", "\n").split("\n")
+    # Reuse ordered line indexes across every function in this source file.
+    touched = sorted(lines)
+    additions = sorted(added)
     out: list[ChangedFunction] = []
     for qualname, node, is_method in _iter_functions(tree.body):
         start = min([node.lineno] + [d.lineno for d in node.decorator_list])
         end = node.end_lineno or node.lineno
-        if not any(start <= ln <= end for ln in lines):
+        first = bisect_left(touched, start)
+        if first == len(touched) or touched[first] > end:
             continue
         out.append(
             ChangedFunction(
@@ -287,7 +292,7 @@ def functions_touching(source: str, path: str, lines: set[int], added: set[int])
                 qualname=qualname,
                 lineno=start,
                 end_lineno=end,
-                changed_lines=sorted(ln for ln in added if start <= ln <= end),
+                changed_lines=additions[bisect_left(additions, start):bisect_right(additions, end)],
                 source="\n".join(src_lines[start - 1 : end]),
                 is_method=is_method,
             )

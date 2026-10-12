@@ -1,0 +1,45 @@
+............................................... [  8%]
+........................................................................ [ 22%]
+........................................................................ [ 35%]
+........................................................................ [ 48%]
+........................................................................ [ 62%]
+................................................................ [ 73%]
+........................................................................ [ 87%]
+...................................................................FF    [100%]
+=================================== FAILURES ===================================
+______ test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-wait] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-88/test_interrupt_does_not_drain_0')
+mode = 'escape-wait'
+
+    @pytest.mark.parametrize("mode", ["escape-wait", "escape-exit"])
+    def test_interrupt_does_not_drain_a_detached_helpers_pipe(tmp_path, mode):
+        observed = interrupt_run(tmp_path, mode)
+        assert observed["receipt"]["kind"] == "KeyboardInterrupt"
+        assert observed["receipt"]["leader_reaped_before_return"], observed
+        assert not observed["leader_running"], observed
+>       assert observed["child_running"], "escaped-session containment is outside this contract"
+E       AssertionError: escaped-session containment is outside this contract
+E       assert False
+
+tests/test_sandbox_interrupt.py:170: AssertionError
+______ test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-exit] ______
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-88/test_interrupt_does_not_drain_1')
+mode = 'escape-exit'
+
+    @pytest.mark.parametrize("mode", ["escape-wait", "escape-exit"])
+    def test_interrupt_does_not_drain_a_detached_helpers_pipe(tmp_path, mode):
+        observed = interrupt_run(tmp_path, mode)
+        assert observed["receipt"]["kind"] == "KeyboardInterrupt"
+        assert observed["receipt"]["leader_reaped_before_return"], observed
+        assert not observed["leader_running"], observed
+>       assert observed["child_running"], "escaped-session containment is outside this contract"
+E       AssertionError: escaped-session containment is outside this contract
+E       assert False
+
+tests/test_sandbox_interrupt.py:170: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-wait]
+FAILED tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-exit]
+2 failed, 538 passed, 33 subtests passed in 147.62s (0:02:27)
