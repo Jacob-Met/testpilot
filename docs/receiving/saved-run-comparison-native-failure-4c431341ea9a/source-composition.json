@@ -1,0 +1,44 @@
+{
+  "local_base": "79522b644a5530a42c25654c486483b86238c504",
+  "remote_equivalent_base": "f8d7297ceba9cb03cfe8f2ca59a4b75b8870bc2e",
+  "shared_base_tree": "7f2ed85c1a250bd860dbcecb56cf0aae8f28795c",
+  "added_main_parent": "86617fc90becf79b20d9cf5212b848bff8227147",
+  "main_changes": {
+    "docs/BASELINE_RUNNER_ADMISSION.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd7b2232efbff0325c37d4c3fc49273be5551828"
+    },
+    "testpilot/loop.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be94eb5cde2ee3315c2df38a8fd7298bcadf13ff"
+    },
+    "tests/test_baseline_runner_admission.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2b815f14bc0d76cbb3f106b62c4a9da03905a52"
+    }
+  },
+  "conflict_free_composition_tree_before_returncode_fix_and_receiving": "e46f2e1e2563f17dd78dd77724b622db552b996f",
+  "unchanged_base_leaves": 1568,
+  "all_main_leaves_match": true,
+  "all_other_base_leaves_match": true,
+  "qualified_file_sha256": {
+    "testpilot/compare.py": "93ad3a6f34cb0ab997c6b9e973dc61f9bf7a21e89811d210fdcc64feb8d71291",
+    "testpilot/compare_html.py": "7baa79998b816fc43f64bc525d86cfb7cda064ada5a354e0560fa84f482688c8",
+    "testpilot/loop.py": "8029f4c1687d0235cc9cdda34e4f2d568769579c870efd50a887b1e23caa37a5",
+    "docs/COMPARE.md": "e8546a89d76557f02bce4dfefbf6b0994ceaf961f0c3f0a85d8de3c65a8729ee",
+    "tests/test_compare_native_runner_failure.py": "6f597ab11d0786a0063368632f31bb2941bd909918052d83ca177b675ce3791b"
+  },
+  "renderer_unchanged": true,
+  "sealing_custody": {
+    "reason": "Shared workspace filesystem exhausted; existing qualified files remain readable.",
+    "tested_checkout": "/workspace/scratch/4c431341ea9a/source_products/testpilot-current-main",
+    "temporary_sealing_checkout": "/dev/shm/hamon-source-products-4c431341ea9a-testpilot",
+    "tracked_working_files_compared_equal": 1571,
+    "new_test_compared_equal": true,
+    "all_native_failure_evidence_compared_equal": true,
+    "new_product_test_run_required": false
+  }
+}

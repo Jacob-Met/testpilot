@@ -150,7 +150,11 @@ def _result(value: Any, where: str) -> None:
     if value is None:
         return
     value = _object(value, where)
-    _integer(value.get("returncode"), where + ".returncode", -MAX_INTEGER)
+    if "returncode" not in value:
+        _fail(where + ".returncode", "missing recorded return code")
+    # A native timeout records no completed pytest exit code.
+    if value["returncode"] is not None:
+        _integer(value["returncode"], where + ".returncode", -MAX_INTEGER)
     for key in ("timed_out", "ok"):
         _bool(value.get(key), where + "." + key)
     _number(value.get("duration_s"), where + ".duration_s", 0)

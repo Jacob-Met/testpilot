@@ -1,0 +1,53 @@
+﻿{
+  "status": "failed",
+  "changed_functions": [
+    {
+      "path": "calc.py",
+      "module": "calc",
+      "qualname": "answer",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ],
+      "source": "def answer():\n    return 7",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 0,
+  "test_files": {},
+  "tests_written": 0,
+  "final": {
+    "returncode": null,
+    "timed_out": true,
+    "duration_s": 2.004,
+    "timeout_s": 2,
+    "output": "",
+    "cases": [],
+    "coverage": null,
+    "generated_files": [],
+    "junit_available": false,
+    "passed": 0,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "TIMEOUT after 2s",
+    "generated": null
+  },
+  "patch": "",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": true,
+    "tokens_estimated": false,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "",
+  "message": "baseline pytest run did not produce a complete test report; fix the runner or project setup before generation",
+  "ok": false
+}

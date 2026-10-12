@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+    "-m",
+    "testpilot",
+    "compare",
+    "--before",
+    "docs/receiving/saved-run-comparison-native-failure-4c431341ea9a/native-example/before-timeout.json",
+    "--after",
+    "docs/receiving/saved-run-comparison-native-failure-4c431341ea9a/native-example/after-missing-pytest.json",
+    "--out",
+    "docs/receiving/saved-run-comparison-native-failure-4c431341ea9a/native-example/comparison.html"
+  ],
+  "started_utc": "2026-10-12T22:37:33.971936+00:00",
+  "completed_utc": "2026-10-12T22:37:34.077831+00:00",
+  "elapsed_seconds": 0.106,
+  "exit_code": 0,
+  "stdout": "wrote docs/receiving/saved-run-comparison-native-failure-4c431341ea9a/native-example/comparison.html\n",
+  "inputs": [
+    {
+      "file": "before-timeout.json",
+      "bytes": 1190,
+      "sha256": "ec995a7a284974ec4246eb28de80bee8ebe99d1d9c926949224bc583880c5dad",
+      "native_gate_origin": "/tmp/pytest-of-root/pytest-221/test_native_runner_failure_rem0/before.json",
+      "status": "failed",
+      "returncode": null,
+      "timed_out": true,
+      "junit_available": false,
+      "model_calls": 0
+    },
+    {
+      "file": "after-missing-pytest.json",
+      "bytes": 1278,
+      "sha256": "1e762a8005e64804fe21743f419d1103e66862ad4993c898f7043e41dda90e1d",
+      "native_gate_origin": "/tmp/pytest-of-root/pytest-221/test_native_runner_failure_rem1/after.json",
+      "status": "failed",
+      "returncode": 1,
+      "timed_out": false,
+      "junit_available": false,
+      "model_calls": 0
+    }
+  ],
+  "output": {
+    "file": "comparison.html",
+    "bytes": 16076,
+    "sha256": "7d425770751eb5932e62bc63564cb1500f9d6f46bc37ece460f15e0de6632fa5"
+  },
+  "exact_original_downloads": true,
+  "retained_timeout_and_runner_diagnostics": true,
+  "native_inputs_generated_by": "tests/test_compare_native_runner_failure.py in the candidate 45-test gate",
+  "source_sha256": {
+    "testpilot/compare.py": "93ad3a6f34cb0ab997c6b9e973dc61f9bf7a21e89811d210fdcc64feb8d71291",
+    "testpilot/compare_html.py": "7baa79998b816fc43f64bc525d86cfb7cda064ada5a354e0560fa84f482688c8",
+    "testpilot/loop.py": "8029f4c1687d0235cc9cdda34e4f2d568769579c870efd50a887b1e23caa37a5",
+    "tests/test_compare_native_runner_failure.py": "6f597ab11d0786a0063368632f31bb2941bd909918052d83ca177b675ce3791b"
+  },
+  "new_browser_observation": false
+}

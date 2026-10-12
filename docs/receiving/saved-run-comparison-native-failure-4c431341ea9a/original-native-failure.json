@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_compare_native_runner_failure.py"
+  ],
+  "started_utc": "2026-10-12T22:31:53.931522+00:00",
+  "completed_utc": "2026-10-12T22:31:56.309813+00:00",
+  "elapsed_seconds": 2.378,
+  "exit_code": 1,
+  "source_composition": "published comparison f8d7297ceba9cb03cfe8f2ca59a4b75b8870bc2e plus unchanged baseline-admission main 86617fc90becf79b20d9cf5212b848bff8227147; unmodified compare.py",
+  "log_sha256": "467849b2dac11eccf2e67d1d1bcf4ec007daf36d421f035912e3af531ba11c80"
+}

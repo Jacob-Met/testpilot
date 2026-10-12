@@ -1,0 +1,78 @@
+F.                                                                       [100%]
+=================================== FAILURES ===================================
+____________ test_native_runner_failure_remains_reviewable[timeout] ____________
+
+failure = 'timeout'
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-220/test_native_runner_failure_rem0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f18e2c2ec90>
+
+    @pytest.mark.parametrize("failure", ["timeout", "missing_pytest"])
+    def test_native_runner_failure_remains_reviewable(failure, tmp_path, monkeypatch):
+        repo = tmp_path / "project"
+        repo.mkdir()
+        source = "def answer():\n    return 7\n"
+        (repo / "calc.py").write_text(source)
+        diff = ("--- a/calc.py\n+++ b/calc.py\n@@ -1,2 +1,2 @@\n"
+                " def answer():\n-    return 6\n+    return 7\n")
+        python = sys.executable
+        marker = tmp_path / "collection-started.txt"
+        if failure == "timeout":
+            # A real pytest collection process reaches this marker before it blocks.
+            (repo / "conftest.py").write_text(
+                "from pathlib import Path\nimport time\n"
+                f"Path({str(marker)!r}).write_text('started')\n"
+                "time.sleep(30)\n"
+            )
+        else:
+            env_root = tmp_path / "without-pytest"
+            venv.EnvBuilder(with_pip=False, system_site_packages=False,
+                            symlinks=os.name != "nt").create(env_root)
+            python = str(env_root / ("Scripts/python.exe" if os.name == "nt" else "bin/python"))
+    
+        model = ScriptedModel([])
+        result = TestPilot(model, max_repair_rounds=0, timeout_s=2, coverage=False,
+                           python=python).run(repo, diff)
+        report = result.to_dict()
+        assert result.status == "failed"
+        assert "complete test report" in result.message
+        assert model.calls == []
+        assert result.ledger["entries"] == []
+        assert result.test_files == {} and result.patch == ""
+        assert report["final"]["junit_available"] is False
+        assert report["coverage"] is None
+        assert (repo / "calc.py").read_text() == source
+        if failure == "timeout":
+            assert marker.read_text() == "started"
+            assert report["final"]["timed_out"] is True
+            assert report["final"]["returncode"] is None
+            assert report["final"]["summary"] == "TIMEOUT after 2s"
+        else:
+            assert report["final"]["timed_out"] is False
+            assert report["final"]["returncode"] == 1
+            assert "No module named pytest" in report["final"]["output"]
+    
+        from testpilot import __main__ as cli
+    
+        def forbidden(*args, **kwargs):
+            pytest.fail("saved-run comparison must not call a model or execute tests")
+    
+        monkeypatch.setattr(cli, "make_client", forbidden)
+        monkeypatch.setattr(cli.TestPilot, "run", forbidden)
+        raw = json.dumps(report, indent=2).encode()
+        originals = [b"\xef\xbb\xbf" + raw.replace(b"\n", b"\r\n"), raw + b"\n"]
+        before, after = tmp_path / "before.json", tmp_path / "after.json"
+        before.write_bytes(originals[0])
+        after.write_bytes(originals[1])
+        output = tmp_path / "comparison.html"
+>       assert cli.main(["compare", "--before", str(before), "--after", str(after),
+                         "--out", str(output)]) == 0
+E       AssertionError: assert 2 == 0
+E        +  where 2 = <function main at 0x7f18e2b7f920>(['compare', '--before', '/tmp/pytest-of-root/pytest-220/test_native_runner_failure_rem0/before.json', '--after', '/tmp/pytest-of-root/pytest-220/test_native_runner_failure_rem0/after.json', '--out', ...])
+E        +    where <function main at 0x7f18e2b7f920> = <module 'testpilot.__main__' from '/workspace/scratch/4c431341ea9a/source_products/testpilot-current-main/testpilot/__main__.py'>.main
+
+tests/test_compare_native_runner_failure.py:77: AssertionError
+----------------------------- Captured stderr call -----------------------------
+testpilot: cannot compare saved reports: report.final.returncode: expected an integer from -9007199254740991 through 9007199254740991
+=========================== short test summary info ============================
+FAILED tests/test_compare_native_runner_failure.py::test_native_runner_failure_remains_reviewable[timeout]
+1 failed, 1 passed in 2.14s

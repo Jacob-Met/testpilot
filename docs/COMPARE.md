@@ -32,6 +32,13 @@ The page displays recorded outcomes without adding a claim of improvement, corre
 
 When a report lacks complete JUnit evidence, suite and generated execution counts remain unavailable. The reported tests-written value may count authored definitions without proving any execution. Missing coverage remains unavailable. Incomplete pricing remains unpriced even if a partial numeric cost was recorded. The comparison neither fills missing measurements with zero nor estimates a missing price.
 
+A native timeout records a `null` exit code. The comparison accepts that recorded
+absence and retains the timeout summary and diagnostics; incomplete suite counts
+remain unavailable. The return-code field must still be present, and a recorded
+numeric exit code must still be an integer in the supported range. A runner
+failure such as missing pytest likewise remains reviewable with its original
+diagnostics and call ledger.
+
 An otherwise measured run can have unavailable changed-line percentages, such as
 after a pure deletion or when an explicitly selected function has no added lines.
 The native report records those percentages as `null`; the comparison accepts
@@ -71,7 +78,8 @@ Above the inline-diff threshold, the page explicitly omits only that diff; compl
 The focused tests exercise exact original bytes, deeply immutable parsed inputs, missing evidence, Decimal precision, differing/duplicate target labels, added empty files, source-line edge cases, malformed and bounded admission, no-overwrite publication, staged-write failures, special-file refusal, and a consumer-only CLI path:
 
 ~~~bash
-python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_native_coverage.py
+python -m pytest -q tests/test_compare.py tests/test_compare_cli.py \
+  tests/test_compare_native_coverage.py tests/test_compare_native_runner_failure.py
 ~~~
 
 Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.

@@ -1,0 +1,20 @@
+{
+  "reviewer": "/root/shared_delivery",
+  "recorded_utc": "2026-10-12T22:55:01.313449+00:00",
+  "result": "PASS",
+  "scope": "Read-only source preservation and narrow nullable return-code admission.",
+  "main_paths_exact": 3,
+  "other_parent_leaves_exact": 1568,
+  "conflicts": [],
+  "renderer_unchanged": true,
+  "required_returncode_key_preserved": true,
+  "explicit_null_admitted": true,
+  "nonnull_exact_integer_type_and_bounds_preserved": true,
+  "real_timeout_and_missing_pytest_fixtures_reviewed": true,
+  "zero_model_calls_and_ledger_and_patch_preserved": true,
+  "exact_original_downloads_and_unavailable_complete_counts_reviewed": true,
+  "original_and_candidate_receipts_read": true,
+  "additional_test_runs": false,
+  "additional_browser_runs": false,
+  "external_delivery_changes": false
+}
