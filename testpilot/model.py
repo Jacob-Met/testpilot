@@ -156,7 +156,9 @@ class OpenAICompatClient:
                     self._sleep(2 ** attempt)
                     continue
                 try:
-                    detail = e.read().decode("utf-8", "replace")[:500] if hasattr(e, "read") else ""
+                    # Bound the body before decoding: 500 Unicode characters
+                    # need at most 2,000 UTF-8 bytes, even for four-byte scalars.
+                    detail = e.read(2000).decode("utf-8", "replace")[:500] if hasattr(e, "read") else ""
                 except TimeoutError:
                     # Preserve a terminal status even if its diagnostic body stalls.
                     detail = "response body timed out"
