@@ -1,0 +1,126 @@
+{
+  "scope": "TestPilot native receiving of the exact supplied portable comparison HTML; extracted from the combined raw receipt without altering TestPilot results.",
+  "browser": "151.0.7922.34",
+  "testpilot": {
+    "artifact": "C:\\Users\\jacob\\HAMON-Receiving\\shared-delivery-4c431341ea9a\\peer-input\\testpilot-native\\comparison.html",
+    "artifact_sha256": "f074598a711791c2665ea890044ff4db036354c9c0c508cfc3dc10caef32ce9a",
+    "scenarios": [
+      {
+        "width": 1280,
+        "coverage": [
+          [
+            "Total before generation",
+            "50.0%",
+            "50.0%"
+          ],
+          [
+            "Total after generation",
+            "100.0%",
+            "100.0%"
+          ],
+          [
+            "Within-run total change",
+            "50.0 percentage points",
+            "50.0 percentage points"
+          ],
+          [
+            "Executable changed lines",
+            "0",
+            "1"
+          ],
+          [
+            "Changed lines before generation",
+            "Unavailable",
+            "0.0%"
+          ],
+          [
+            "Changed lines after generation",
+            "Unavailable",
+            "100.0%"
+          ]
+        ],
+        "no_page_overflow": true,
+        "page_errors": [],
+        "network_requests": []
+      },
+      {
+        "width": 390,
+        "coverage": [
+          [
+            "Total before generation",
+            "50.0%",
+            "50.0%"
+          ],
+          [
+            "Total after generation",
+            "100.0%",
+            "100.0%"
+          ],
+          [
+            "Within-run total change",
+            "50.0 percentage points",
+            "50.0 percentage points"
+          ],
+          [
+            "Executable changed lines",
+            "0",
+            "1"
+          ],
+          [
+            "Changed lines before generation",
+            "Unavailable",
+            "0.0%"
+          ],
+          [
+            "Changed lines after generation",
+            "Unavailable",
+            "100.0%"
+          ]
+        ],
+        "no_page_overflow": true,
+        "page_errors": [],
+        "network_requests": []
+      }
+    ],
+    "downloads": [
+      {
+        "report": "before",
+        "bytes": 4742,
+        "sha256": "2191e1e97f9e6cc4242094a51e0efd288e35e773650ae60644068d6aafa7e697",
+        "keyboard_download": true
+      },
+      {
+        "report": "after",
+        "bytes": 4759,
+        "sha256": "4ae633c00e2f1183bb0eb2cf86597a2302a149b6ecd77db3b4fd69d28af563ca",
+        "keyboard_download": true
+      }
+    ],
+    "accepted": true
+  },
+  "narrow_screen_followup": {
+    "width": 390,
+    "keyboard_horizontal_scroll": true,
+    "before": {
+      "clientWidth": 330,
+      "scrollWidth": 448,
+      "scrollLeft": 0,
+      "focused": true
+    },
+    "after": {
+      "clientWidth": 330,
+      "scrollWidth": 448,
+      "scrollLeft": 118,
+      "focused": true
+    },
+    "after_column_fully_visible": true
+  },
+  "visual_review": "At 390 CSS pixels the coverage table is contained in a labeled focusable scroll region. ArrowRight moved scrollLeft from 0 to 118, revealing the full After report column. Initial and scrolled coverage screenshots were visually inspected.",
+  "browser_closed": true,
+  "provenance": {
+    "full_receipt": "peer-browser-receipt.json",
+    "full_receipt_sha256": "58a4c31faa2cece47c49a4c03e88f7b3c4912646c42b44288682307385912ea9",
+    "followup_receipt": "peer-visual-followup.json"
+  },
+  "limits": "Chromium 151.0.7922.34 on Windows using isolated browser contexts with 1280 and 390 CSS-pixel viewports. This is bounded artifact receiving, not a physical-phone or screen-reader claim."
+}

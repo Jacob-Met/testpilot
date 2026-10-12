@@ -1,0 +1,117 @@
+{
+  "schema": "testpilot.comparison-current-receiving/1",
+  "base_commit": "c32b5459657ec26aac9837b823b1bc326510873e",
+  "donor_pr": "https://github.com/Jacob-Met/testpilot/pull/33",
+  "donor_commit": "a978524a75bb53d9beaa2e271b187069deafb800",
+  "source_commit": "07803317b576be0ce27852e806c1ee530d6d9fea",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "packages": {
+    "pytest": "9.1.1",
+    "coverage": "7.16.2"
+  },
+  "source_sha256": {
+    "testpilot/__main__.py": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db",
+    "testpilot/compare.py": "1213c0b5d2979201a59d59536d9211cce2626d83dabd030d8f2e639c9bda99c7",
+    "testpilot/compare_html.py": "7baa79998b816fc43f64bc525d86cfb7cda064ada5a354e0560fa84f482688c8",
+    "testpilot/loop.py": "af87b8921060cc4f515635f87fd402763f68b76469a5f4268ba16597d33fa5ef",
+    "testpilot/model.py": "8994cb2192b94ab04d989182af26118cfc4da5d2d35afe92578211894bee0ca6",
+    "testpilot/sandbox.py": "0adf5eb81f8fd15ca09170c5328e6ff4165e1a0f903221b9730de3b480be0b1b"
+  },
+  "commands": [
+    {
+      "command": [
+        "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/project",
+        "--diff",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/script",
+        "--rounds",
+        "0",
+        "--timeout",
+        "15",
+        "--python",
+        "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+        "--out",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result"
+      ],
+      "returncode": 0,
+      "seconds": 1.1343528989964398,
+      "stdout": "# TestPilot report: **passed**\n\n- Changed functions: calc.py::answer\n- Tests written: 1 in tests/test_answer.py\n- Repair rounds used: 0/0\n- Final run: 2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected in 0.394s\n- Coverage (total): 50.0% -> 100.0% (+50.0 pts)\n- Coverage (changed lines, n=0): None% -> None%\n- Tokens: 274 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 90 in / 7 out\n  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 149 in / 28 out\n\nwrote /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/testpilot.patch, /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/report.json, /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/report.md, /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/report.html\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/project",
+        "--diff",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/script",
+        "--rounds",
+        "0",
+        "--timeout",
+        "15",
+        "--python",
+        "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+        "--out",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result"
+      ],
+      "returncode": 0,
+      "seconds": 1.0113024230013252,
+      "stdout": "# TestPilot report: **passed**\n\n- Changed functions: calc.py::answer\n- Tests written: 1 in tests/test_answer.py\n- Repair rounds used: 0/0\n- Final run: 2 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected in 0.314s\n- Coverage (total): 50.0% -> 100.0% (+50.0 pts)\n- Coverage (changed lines, n=1): 0.0% -> 100.0%\n- Tokens: 274 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 90 in / 7 out\n  - `nvidia/Nemotron-3_5-Lightning`: 1 calls, 149 in / 28 out\n\nwrote /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/testpilot.patch, /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/report.json, /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/report.md, /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/report.html\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "compare",
+        "--before",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/report.json",
+        "--after",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/report.json",
+        "--out",
+        "/workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/comparison.html"
+      ],
+      "returncode": 0,
+      "seconds": 0.06944819400086999,
+      "stdout": "wrote /workspace/scratch/4c431341ea9a/source_products/testpilot/docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/comparison.html\n",
+      "stderr": ""
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "pure-deletion/result/report.json",
+      "bytes": 4742,
+      "sha256": "2191e1e97f9e6cc4242094a51e0efd288e35e773650ae60644068d6aafa7e697"
+    },
+    {
+      "path": "measured/result/report.json",
+      "bytes": 4759,
+      "sha256": "4ae633c00e2f1183bb0eb2cf86597a2302a149b6ecd77db3b4fd69d28af563ca"
+    },
+    {
+      "path": "comparison.html",
+      "bytes": 28290,
+      "sha256": "f074598a711791c2665ea890044ff4db036354c9c0c508cfc3dc10caef32ce9a"
+    }
+  ],
+  "passed": true
+}

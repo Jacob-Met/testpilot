@@ -78,4 +78,31 @@ input identity, and final artifact hashes. Every run needs a new directory.
 The two reports exercise different diff selection contexts against the same
 function. They demonstrate unavailable versus measured changed-line coverage;
 they do not establish a quality or performance improvement. The original donor
-browser evidence remains historical until a new browser receipt is recorded.
+browser evidence remains historical. Current native-browser receiving is recorded
+below and in `testpilot-native-receiving.json`.
+
+## Current native/browser receiving and delivery
+
+The `native-example/` directory retains three successful native CLI processes:
+two ScriptedModel generation runs on small controlled projects, followed by a
+saved comparison using an invalid default provider setting. Its receipt pins
+local source commit `07803317b576be0ce27852e806c1ee530d6d9fea` and source hashes.
+GitHub source commit `cd15c2db2e4cd6ff07f40f85103c30137f32ba5c` has the identical
+qualified tree `80101f399499f8572e8b258d5bffd7932bd7bc09`; branch, tree, parent,
+and all 28 changed blobs were independently read back.
+
+The peer receiver opened the exact 28,290-byte comparison in Chromium
+151.0.7922.34 on the verified MSI, at 1280 and 390 CSS-pixel widths. Both show
+the unavailable percentages separately from measured `0.0%` and `100.0%`.
+Both JSON downloads were activated with the keyboard and matched their original
+bytes and SHA-256 hashes. The page had no external requests, page errors, or
+document overflow. At 390 pixels, ArrowRight scrolled the labeled focusable
+coverage region from 0 to 118 pixels and revealed the complete After column;
+the peer visually inspected that view. This is a desktop-browser viewport check,
+not physical-phone or screen-reader qualification.
+
+The delivered comparison is SHA-256
+`f074598a711791c2665ea890044ff4db036354c9c0c508cfc3dc10caef32ce9a`.
+`testpilot-native-receiving.json` preserves the independent result and full raw
+receipt identity. `DELIVERY.md` links the established Drive packet and existing
+Notion record, including the verified packet identity.
