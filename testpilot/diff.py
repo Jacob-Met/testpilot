@@ -93,7 +93,7 @@ def _strip_path(raw: str) -> str | None:
 
 
 class DiffFormatError(ValueError):
-    """A unified diff has incomplete headers, ranges, or hunk records."""
+    """A unified diff has invalid paths, headers, ranges, or hunk records."""
 
 
 def parse_unified_diff(text: str) -> list[FileChange]:
@@ -113,6 +113,12 @@ def parse_unified_diff(text: str) -> list[FileChange]:
 
     def invalid(reason: str) -> DiffFormatError:
         return DiffFormatError(f"invalid unified diff at record {record_number}: {reason}")
+
+    def header_path(raw: str) -> str | None:
+        try:
+            return _strip_path(raw)
+        except ValueError as exc:
+            raise invalid(str(exc)) from exc
 
     # Git records use LF, not Unicode separators. The token after a terminal LF
     # is not a blank context record and must not satisfy a missing hunk line.
@@ -172,14 +178,14 @@ def parse_unified_diff(text: str) -> list[FileChange]:
             if pending_header or (cur is not None and not saw_hunk):
                 raise invalid("file headers have no complete hunk")
             cur = None
-            pending_old = _strip_path(line[4:])
+            pending_old = header_path(line[4:])
             pending_header = True
             saw_hunk = False
             continue
         if line.startswith("+++ "):
             if not pending_header:
                 raise invalid("new file header has no old file header")
-            new_path = _strip_path(line[4:])
+            new_path = header_path(line[4:])
             cur = FileChange(
                 path=new_path or pending_old or "",
                 old_path=pending_old,
