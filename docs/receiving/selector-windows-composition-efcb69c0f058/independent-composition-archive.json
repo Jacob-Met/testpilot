@@ -1,0 +1,45 @@
+{
+  "origin": "context_adoption/testpilot-composition-review",
+  "reviewed_head": "3ae1e18d970878a1713a374b7e5fcd3587083a98",
+  "reviewed_tree": "5f2c71beb723d911ef59b9d28cb179bddc0f378e",
+  "preservation": "All six original review files are retained byte-exact; source and test execution were not repeated.",
+  "archive": {
+    "path": "independent-composition.tar.gz",
+    "bytes": 134125,
+    "sha256": "0fdc62e96a607273bf103d190e364460fd49159c40bce28545ec57aa21d045aa",
+    "member_count": 6
+  },
+  "members": [
+    {
+      "path": "baseline-guide-response.json",
+      "bytes": 3438,
+      "sha256": "c0f3e9469ec9e18d823e6d856e330c4d4e922bfd331482ce0e8af3be6b64e698"
+    },
+    {
+      "path": "baseline-loop-response.json",
+      "bytes": 40369,
+      "sha256": "62a3bda3d557fd21af8ceee28815367b315c4b15f7282cd73146e8068298c495"
+    },
+    {
+      "path": "baseline-tests-response.json",
+      "bytes": 11995,
+      "sha256": "6e20fd9bee317f8f5e0fec9923be09f53667da96f9f150684947acada28d7bfa"
+    },
+    {
+      "path": "complete-source-inventory.json",
+      "bytes": 480383,
+      "sha256": "4a5bc0dff96a0dfd689d5aab4741b48a0b357e7bdce5049d698dbea4bc16572b"
+    },
+    {
+      "path": "independent-composition-receipt.json",
+      "bytes": 5539,
+      "sha256": "13a27ada362ca6eb1b52109ca3c1df9d6b7367a5e458a3c02e1aefcfed8b97f3"
+    },
+    {
+      "path": "review_composition.py",
+      "bytes": 7414,
+      "sha256": "0c4affe97519b71b00252e7d06f5b023ee4b4d6336827e1d8ab06888041f62ba"
+    }
+  ],
+  "archive_reopened_and_every_member_verified": true
+}

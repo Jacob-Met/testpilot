@@ -1,0 +1,13 @@
+{
+  "purpose": "Check the maintained interruption-test ps ownership predicate against one owned ready live child",
+  "owned_child_ready": true,
+  "owned_child_poll_before": null,
+  "owned_child_poll_after": null,
+  "ps_exit_code": 0,
+  "ps_has_process_record": true,
+  "ps_record_contains_owned_worker_path": false,
+  "ps_record_is_zombie": false,
+  "raw_ps_command_text_omitted": true,
+  "conclusion": "Popen sees the owned child live, but the ps command record does not identify its script. This environment cannot qualify the maintained path-based process-ownership predicate.",
+  "owned_child_reaped_after_probe": true
+}

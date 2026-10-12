@@ -1,0 +1,51 @@
+{
+  "base": "86617fc90becf79b20d9cf5212b848bff8227147",
+  "base_tree": "d17133cc67a840e3f34ec67b530d0a5664eb7a75",
+  "line_index_offer": "57ea98545a22974d73d712cf9ae6290bc0f4bbe6",
+  "windows_offer": "067cf4597c067aad41216ba39c8c29fe3ecd9f3a",
+  "common_offer_parent": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+  "combined_source_tree": "55e6fa5ce1d72727137493dc1f6ff7642907388e",
+  "inherited_leaves": 1517,
+  "changed_inherited_paths": [
+    "testpilot/diff.py",
+    "testpilot/sandbox.py"
+  ],
+  "all_other_inherited_leaves_and_modes_exact": true,
+  "complete_tree_equals_current_main_plus_exact_disjoint_offer_deltas": true,
+  "new_main_paths_preserved": [
+    "docs/BASELINE_RUNNER_ADMISSION.md",
+    "testpilot/loop.py",
+    "tests/test_baseline_runner_admission.py"
+  ],
+  "offer_paths": {
+    "line_index": [
+      "docs/FUNCTION_LINE_SELECTION.md",
+      "docs/receiving/function-line-index-efcb69c0f058/README.md",
+      "docs/receiving/function-line-index-efcb69c0f058/benchmark-concurrent.json",
+      "docs/receiving/function-line-index-efcb69c0f058/benchmark.json",
+      "docs/receiving/function-line-index-efcb69c0f058/benchmark.py",
+      "docs/receiving/function-line-index-efcb69c0f058/candidate-boundaries.log",
+      "docs/receiving/function-line-index-efcb69c0f058/candidate-focused.log",
+      "docs/receiving/function-line-index-efcb69c0f058/candidate-full-suite.log",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-archive.json",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-receipt.json",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-receiver.py",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-receiving.tar.gz",
+      "docs/receiving/function-line-index-efcb69c0f058/original-compatibility.log",
+      "docs/receiving/function-line-index-efcb69c0f058/original-full-suite.log",
+      "docs/receiving/function-line-index-efcb69c0f058/process-observation.json",
+      "docs/receiving/function-line-index-efcb69c0f058/source-scope.json",
+      "testpilot/diff.py",
+      "tests/test_function_line_index.py"
+    ],
+    "windows": [
+      "docs/windows-run-interruption.md",
+      "testpilot/sandbox.py",
+      "tests/test_sandbox_windows_interrupt.py"
+    ]
+  },
+  "source_sha256": {
+    "testpilot/diff.py": "60255ce91ded605323ad6d58608ba4681c7c70a1478f1e6da9e89a7675034977",
+    "testpilot/sandbox.py": "899a454dea73c988645b04cba887b13f7770b824b00f0c0f8be5c179903577e0"
+  }
+}

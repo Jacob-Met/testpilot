@@ -1,0 +1,14 @@
+{
+  "base": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+  "original_measurement_base": "8e9c0d3ab67e376a94c06acab04877d265f959df",
+  "candidate_source_commit": "e0605702c37a17cf7d8ae92385fe17c546da6a72",
+  "base_leaves": 1515,
+  "changed_base_paths": [
+    "testpilot/diff.py"
+  ],
+  "production_sha256": "60255ce91ded605323ad6d58608ba4681c7c70a1478f1e6da9e89a7675034977",
+  "regression_sha256": "9c1655b22aa7683bb08677e8f0c83fc3b68e0f0e4a3f6ea87a4e24824811784a",
+  "benchmark_sha256": "7c8e80ea01d32f7d75082f4d3b8d3e7d9ef0fad8c16766cfa88d73c60553fd01",
+  "workflow_sha": "86a3236e38155506b5fe6077322d508f7f676649",
+  "ownership_issue": "https://github.com/Jacob-Met/testpilot/issues/79"
+}

@@ -1,0 +1,374 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "source_sha256": {
+    "before": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "after": "60255ce91ded605323ad6d58608ba4681c7c70a1478f1e6da9e89a7675034977"
+  },
+  "samples_per_variant": 7,
+  "clock": "perf_counter: complete child process, captured output",
+  "fixtures": [
+    {
+      "name": "small-new",
+      "functions": 5,
+      "physical_lines": 15,
+      "selected_functions": 5,
+      "input_sha256": {
+        "many.py": "fa5752c707149085977196c534d531c81e71006385d96c1fe385ea5ca472a296",
+        "change.diff": "724fd76663e7969afa1c34871773de53de111e4ae85668b60faa3b11b5af9046"
+      },
+      "runs": {
+        "before": [
+          {
+            "seconds": 0.23371412299457006,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.24074587899667677,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.2605302180018043,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.18131111799448263,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.17294024799775798,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.1763435729953926,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.13582917100575287,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          }
+        ],
+        "after": [
+          {
+            "seconds": 0.19588170199858723,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.16375777600478614,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.23531464099505683,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.13447196999914013,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.17804821299796458,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.13642504699964775,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.1205905909955618,
+            "stdout_bytes": 1305,
+            "stdout_sha256": "7d87b07146f6c49ace3a255fae979a468e58974267d3642e8db42f990b252d42",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          }
+        ]
+      },
+      "median_seconds": {
+        "before": 0.18131111799448263,
+        "after": 0.16375777600478614
+      },
+      "complete_output_equal": true,
+      "inputs_unchanged": true
+    },
+    {
+      "name": "dense-new",
+      "functions": 2000,
+      "physical_lines": 6000,
+      "selected_functions": 2000,
+      "input_sha256": {
+        "many.py": "8f4128c26009d76990c3443663e1409237b8cd744852f61e8371f0bba9d6f791",
+        "change.diff": "a8d3d93684d7a4b07ab5b12c202df705a3e5f0ff2a1eae28044339a8a1b1000f"
+      },
+      "runs": {
+        "before": [
+          {
+            "seconds": 1.3550723109947285,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 1.73430770199775,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 1.543948938997346,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.9460940930002835,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 1.0934693539966247,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 1.6509540019978886,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.9356328840003698,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          }
+        ],
+        "after": [
+          {
+            "seconds": 0.311209368002892,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.2132441099965945,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.2901011159992777,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.3123390440014191,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.4089460679970216,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.3612287860014476,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.1386834250006359,
+            "stdout_bytes": 543226,
+            "stdout_sha256": "f31c6b3dc9a9feb0e826e86fca45a8b04f381a62f9337b821be91cabf8d4ce76",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          }
+        ]
+      },
+      "median_seconds": {
+        "before": 1.3550723109947285,
+        "after": 0.311209368002892
+      },
+      "complete_output_equal": true,
+      "inputs_unchanged": true
+    },
+    {
+      "name": "sparse-edit",
+      "functions": 2000,
+      "physical_lines": 6000,
+      "selected_functions": 20,
+      "input_sha256": {
+        "many.py": "8f4128c26009d76990c3443663e1409237b8cd744852f61e8371f0bba9d6f791",
+        "change.diff": "439c838d5b297c4f2f4fcdb10961b15309f97f67cc00a08f088cffe0ad615aa5"
+      },
+      "runs": {
+        "before": [
+          {
+            "seconds": 0.20956588000262855,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.2807315810059663,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.2058245820007869,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.18145261199970264,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.21543587099586148,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.20317205000174,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.1852963350029313,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          }
+        ],
+        "after": [
+          {
+            "seconds": 0.1006664219967206,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.22510767300263979,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.1284234929989907,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.13892673100053798,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.21785814999748254,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.2568262909990153,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          },
+          {
+            "seconds": 0.13573205799912103,
+            "stdout_bytes": 5178,
+            "stdout_sha256": "c7bc9e6867e88e88a91193f80b9efc58e1e99b13123169aeb5726b8c032957fa",
+            "stderr_bytes": 0,
+            "exit_code": 0
+          }
+        ]
+      },
+      "median_seconds": {
+        "before": 0.2058245820007869,
+        "after": 0.13892673100053798
+      },
+      "complete_output_equal": true,
+      "inputs_unchanged": true
+    }
+  ],
+  "no_model_calls": true,
+  "source_unchanged": true
+}

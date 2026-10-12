@@ -1,0 +1,111 @@
+{
+  "reviewer": "estate-efcb69c0f058 / context_adoption",
+  "reviewed_at_utc": "2026-10-12T22:12:33.154701+00:00",
+  "accepted": true,
+  "scope": "Independent exact source-composition and retained-receipt review; no new tests, native run, benchmark, publication, or default-branch adoption.",
+  "candidate_head": "3ae1e18d970878a1713a374b7e5fcd3587083a98",
+  "candidate_tree": "5f2c71beb723d911ef59b9d28cb179bddc0f378e",
+  "parents": [
+    "86617fc90becf79b20d9cf5212b848bff8227147",
+    "57ea98545a22974d73d712cf9ae6290bc0f4bbe6",
+    "067cf4597c067aad41216ba39c8c29fe3ecd9f3a"
+  ],
+  "current_parent_received_from_connected_github": "86617fc90becf79b20d9cf5212b848bff8227147",
+  "inherited_main_leaves": 1517,
+  "candidate_leaves": 1542,
+  "changed_inherited_paths": [
+    "testpilot/diff.py",
+    "testpilot/sandbox.py"
+  ],
+  "exact_offer_delta_paths": [
+    [
+      "docs/FUNCTION_LINE_SELECTION.md",
+      "docs/receiving/function-line-index-efcb69c0f058/README.md",
+      "docs/receiving/function-line-index-efcb69c0f058/benchmark-concurrent.json",
+      "docs/receiving/function-line-index-efcb69c0f058/benchmark.json",
+      "docs/receiving/function-line-index-efcb69c0f058/benchmark.py",
+      "docs/receiving/function-line-index-efcb69c0f058/candidate-boundaries.log",
+      "docs/receiving/function-line-index-efcb69c0f058/candidate-focused.log",
+      "docs/receiving/function-line-index-efcb69c0f058/candidate-full-suite.log",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-archive.json",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-receipt.json",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-receiver.py",
+      "docs/receiving/function-line-index-efcb69c0f058/independent-receiving.tar.gz",
+      "docs/receiving/function-line-index-efcb69c0f058/original-compatibility.log",
+      "docs/receiving/function-line-index-efcb69c0f058/original-full-suite.log",
+      "docs/receiving/function-line-index-efcb69c0f058/process-observation.json",
+      "docs/receiving/function-line-index-efcb69c0f058/source-scope.json",
+      "testpilot/diff.py",
+      "tests/test_function_line_index.py"
+    ],
+    [
+      "docs/windows-run-interruption.md",
+      "testpilot/sandbox.py",
+      "tests/test_sandbox_windows_interrupt.py"
+    ]
+  ],
+  "offer_deltas_disjoint": true,
+  "complete_source_union_exact": true,
+  "new_receiving_only_paths": [
+    "docs/receiving/selector-windows-composition-efcb69c0f058/README.md",
+    "docs/receiving/selector-windows-composition-efcb69c0f058/focused-receipt.json",
+    "docs/receiving/selector-windows-composition-efcb69c0f058/focused.stderr.log",
+    "docs/receiving/selector-windows-composition-efcb69c0f058/focused.stdout.log",
+    "docs/receiving/selector-windows-composition-efcb69c0f058/source-scope.json",
+    "docs/receiving/selector-windows-composition-efcb69c0f058/windows-offer-review.json"
+  ],
+  "working_tree_files_and_modes_match_every_git_blob": true,
+  "working_tree_bytes_and_modification_times_unchanged": true,
+  "whole_source_pins": {
+    "testpilot/diff.py": "60255ce91ded605323ad6d58608ba4681c7c70a1478f1e6da9e89a7675034977",
+    "testpilot/sandbox.py": "899a454dea73c988645b04cba887b13f7770b824b00f0c0f8be5c179903577e0"
+  },
+  "direct_connected_github_main_files_received": [
+    {
+      "path": "docs/BASELINE_RUNNER_ADMISSION.md",
+      "url": "https://github.com/Jacob-Met/testpilot/blob/86617fc90becf79b20d9cf5212b848bff8227147/docs/BASELINE_RUNNER_ADMISSION.md",
+      "mode": "100644",
+      "git_blob": "cd7b2232efbff0325c37d4c3fc49273be5551828",
+      "sha256": "4b9d792ae9d52aedc1c721e15adb23a9e19c13ce59184e4075ecc6eee4d6637a",
+      "bytes": 2299,
+      "mtime_ns": 1791842809188153447
+    },
+    {
+      "path": "testpilot/loop.py",
+      "url": "https://github.com/Jacob-Met/testpilot/blob/86617fc90becf79b20d9cf5212b848bff8227147/testpilot/loop.py",
+      "mode": "100644",
+      "git_blob": "be94eb5cde2ee3315c2df38a8fd7298bcadf13ff",
+      "sha256": "8029f4c1687d0235cc9cdda34e4f2d568769579c870efd50a887b1e23caa37a5",
+      "bytes": 29133,
+      "mtime_ns": 1791842809280753755
+    },
+    {
+      "path": "tests/test_baseline_runner_admission.py",
+      "url": "https://github.com/Jacob-Met/testpilot/blob/86617fc90becf79b20d9cf5212b848bff8227147/tests/test_baseline_runner_admission.py",
+      "mode": "100644",
+      "git_blob": "f2b815f14bc0d76cbb3f106b62c4a9da03905a52",
+      "sha256": "b65b623625c0736c3b70ede75282298521607aed024031382398acca303bd355",
+      "bytes": 8503,
+      "mtime_ns": 1791842809281882512
+    }
+  ],
+  "qualification_log_received": {
+    "passed_tests": 40,
+    "passed_subtests": 13,
+    "pytest_seconds": 4.49,
+    "receipt_elapsed_seconds": 4.692393980003544,
+    "stdout_sha256": "f93b16844de4664206db911da1ffa5095f8e3ad48a33d225268004646902eb23",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "all_nine_source_and_test_hashes_match": true,
+    "modules_resolve_to_candidate": true,
+    "replayed_by_this_reviewer": false
+  },
+  "retained_windows_review_byte_identical": true,
+  "limits": [
+    "Original source-offer qualifications retain their own exact source scope.",
+    "Current baseline-runner admission files are byte-identical to connected main 86617fc.",
+    "Native Windows and all descendant/POSIX acceptance remain separate.",
+    "The original full-suite observation failures are preserved, not relabeled as resolved.",
+    "No publication or Actions execution was attempted by this reviewer."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "accepted": true,
+  "api_cases": 176,
+  "literal_cases": 168,
+  "cli_invocations_per_source": 8,
+  "candidate_sha256": "60255ce91ded605323ad6d58608ba4681c7c70a1478f1e6da9e89a7675034977",
+  "original_sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+  "all_complete_records_equal": true,
+  "all_cli_bytes_equal": true,
+  "all_source_inputs_unchanged": true,
+  "freeze": {
+    "created_utc": "2026-10-12T21:20:47Z",
+    "receiver_sha256": "ab61af4bb183ef2d8aedcf6a2b24413df54cbd2b54cc3ce04eef79060745d987",
+    "fixtures_sha256": "14594e2e5b8a3b49d2463301224ac2aeedec0a37f041d42e62505f1e9d5088e9",
+    "original_results_sha256": "ae08faf9f26b313805ce5f31e9a1dc938c8716bdbdd2c42e28b37ab51da881cb",
+    "original_cli_sha256": "db9ccaa41e9bc9ff6638315a0b5ed5535b9c934c23fe7cd77db84f1eec37ed32",
+    "candidate_source_read": false,
+    "api_cases": 176,
+    "literal_cases": 168,
+    "cli_invocations": 8
+  },
+  "scope": "Normal integer set inputs; original source and CLI contract read before candidate source or candidate tests. No full-suite rerun, empirical performance generalization, or installed adoption claim."
+}

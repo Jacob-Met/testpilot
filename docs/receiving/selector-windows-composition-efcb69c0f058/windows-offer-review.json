@@ -1,0 +1,31 @@
+{
+  "accepted": true,
+  "base_sha": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+  "inherited_leaves": 1515,
+  "changed_inherited_paths": [
+    "testpilot/sandbox.py"
+  ],
+  "changed_top_level_definitions": [
+    "_run"
+  ],
+  "coverage_available_exact_source_preserved": true,
+  "candidate_minus_nt_arm_and_docstring_exactly_equals_base": true,
+  "files": {
+    "testpilot/sandbox.py": {
+      "sha256": "899a454dea73c988645b04cba887b13f7770b824b00f0c0f8be5c179903577e0",
+      "git_blob": "1b569a75a38cfa09c565a3d6d78ab6c3300251be"
+    },
+    "tests/test_sandbox_windows_interrupt.py": {
+      "sha256": "87952ed50a7f781dc648597b4c99e2e5b0f7b8e34fdde59559b5fa7557521484",
+      "git_blob": "1ccde1501e1a4f6a239ff4f80c9435b9e83c45b0"
+    },
+    "docs/windows-run-interruption.md": {
+      "sha256": "3aaa797bc3c72a1b710ac175188279949b60177c33f39e019ca9d9a49bc648a3",
+      "git_blob": "d7bbc4d52311225ab458d5c7ef098e1566770ae1"
+    }
+  },
+  "review_scope": "Read-only source review plus complete inherited-leaf byte comparison. No local test rerun or native Windows execution. Existing #78 optional coverage probe unchanged. NT cancellation only kills/reaps launched leader; POSIX/timeout and descendant behavior unchanged.",
+  "retained_commit": "8a5571dd43ea8077c07cb4d7dec8b5b5e3967d1a",
+  "retained_tree": "97b1d1967966e6269f789c24e67737ff26360aba",
+  "retained_test_and_doc_exact_git_blob_matches": true
+}
