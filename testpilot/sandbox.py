@@ -24,6 +24,7 @@ IGNORE = shutil.ignore_patterns(".git", "__pycache__", ".pytest_cache", ".venv",
                                 "*.pyc", ".coverage", "node_modules", ".mypy_cache")
 _SECRET_MARKERS = ("KEY", "TOKEN", "SECRET", "PASSWORD", "CREDENTIAL")
 _OMIT = "*/tests/*,*/test_*.py,*_test.py,*/conftest.py"
+_COVERAGE_PROBE_TIMEOUT_S = 5.0
 
 
 @dataclass
@@ -137,7 +138,16 @@ class SandboxResult:
 
 @lru_cache(maxsize=None)
 def coverage_available(python: str) -> bool:
-    return subprocess.run([python, "-c", "import coverage"], capture_output=True).returncode == 0
+    """Detect optional coverage without waiting indefinitely before pytest starts."""
+    try:
+        result = subprocess.run(
+            [python, "-c", "import coverage"], stdin=subprocess.DEVNULL,
+            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            timeout=_COVERAGE_PROBE_TIMEOUT_S,
+        )
+    except subprocess.TimeoutExpired:
+        return False
+    return result.returncode == 0
 
 
 def clean_env(root: Path) -> dict[str, str]:
