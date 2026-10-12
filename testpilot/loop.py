@@ -479,6 +479,12 @@ class TestPilot:
         if pytest_selection is not None and baseline.returncode == 4:
             final = baseline
             return result("failed", "pytest refused the selected baseline run; inspect its diagnostics")
+        if not baseline.junit_available:
+            final = baseline
+            return result(
+                "failed", "baseline pytest run did not produce a complete test report; "
+                "fix the runner or project setup before generation",
+            )
         try:
             plan = self._ask(ledger, "planner", planner_system,
                              f"{context}\n\nWrite the test plan.")
