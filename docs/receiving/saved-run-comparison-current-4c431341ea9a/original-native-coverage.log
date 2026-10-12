@@ -1,0 +1,75 @@
+FF...                                                                    [100%]
+=================================== FAILURES ===================================
+_ test_current_native_coverage_compares_without_fabricated_percentages[pure_deletion] _
+
+native_report = {'status': 'passed', 'changed_functions': [{'path': 'calc.py', 'module': 'calc', 'qualname': 'answer', 'lineno': 1, ...}], 'repair_rounds_used': 0, 'max_repair_rounds': 0, ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-31/test_current_native_coverage_c0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8000d91190>
+
+    @pytest.mark.parametrize("native_report", [
+        "pure_deletion", "explicit_unchanged", "measured", "no_coverage"
+    ], indirect=True)
+    def test_current_native_coverage_compares_without_fabricated_percentages(
+        native_report, tmp_path, monkeypatch
+    ):
+        from testpilot import __main__ as cli
+    
+        def forbidden(*args, **kwargs):
+            pytest.fail("comparing saved reports must not execute a test run or call a model")
+    
+        monkeypatch.setattr(cli, "make_client", forbidden)
+        monkeypatch.setattr(cli.TestPilot, "run", forbidden)
+        raw = json.dumps(native_report, ensure_ascii=True, indent=2).encode()
+        originals = [b"\xef\xbb\xbf" + raw.replace(b"\n", b"\r\n"), raw + b"\n"]
+        before, after = tmp_path / "before.json", tmp_path / "after.json"
+        before.write_bytes(originals[0])
+        after.write_bytes(originals[1])
+        output = tmp_path / "comparison.html"
+>       assert cli.main(["compare", "--before", str(before), "--after", str(after),
+                         "--out", str(output)]) == 0
+E       AssertionError: assert 2 == 0
+E        +  where 2 = <function main at 0x7f8000c1e8e0>(['compare', '--before', '/tmp/pytest-of-root/pytest-31/test_current_native_coverage_c0/before.json', '--after', '/tmp/pytest-of-root/pytest-31/test_current_native_coverage_c0/after.json', '--out', ...])
+E        +    where <function main at 0x7f8000c1e8e0> = <module 'testpilot.__main__' from '/workspace/scratch/4c431341ea9a/source_products/testpilot/testpilot/__main__.py'>.main
+
+tests/test_compare_native_coverage.py:70: AssertionError
+----------------------------- Captured stderr call -----------------------------
+testpilot: cannot compare saved reports: report.coverage.changed_lines_before: expected a finite number
+_ test_current_native_coverage_compares_without_fabricated_percentages[explicit_unchanged] _
+
+native_report = {'status': 'passed', 'changed_functions': [{'path': 'calc.py', 'module': 'calc', 'qualname': 'answer', 'lineno': 3, ...}], 'repair_rounds_used': 0, 'max_repair_rounds': 0, ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-31/test_current_native_coverage_c1')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8000bfeed0>
+
+    @pytest.mark.parametrize("native_report", [
+        "pure_deletion", "explicit_unchanged", "measured", "no_coverage"
+    ], indirect=True)
+    def test_current_native_coverage_compares_without_fabricated_percentages(
+        native_report, tmp_path, monkeypatch
+    ):
+        from testpilot import __main__ as cli
+    
+        def forbidden(*args, **kwargs):
+            pytest.fail("comparing saved reports must not execute a test run or call a model")
+    
+        monkeypatch.setattr(cli, "make_client", forbidden)
+        monkeypatch.setattr(cli.TestPilot, "run", forbidden)
+        raw = json.dumps(native_report, ensure_ascii=True, indent=2).encode()
+        originals = [b"\xef\xbb\xbf" + raw.replace(b"\n", b"\r\n"), raw + b"\n"]
+        before, after = tmp_path / "before.json", tmp_path / "after.json"
+        before.write_bytes(originals[0])
+        after.write_bytes(originals[1])
+        output = tmp_path / "comparison.html"
+>       assert cli.main(["compare", "--before", str(before), "--after", str(after),
+                         "--out", str(output)]) == 0
+E       AssertionError: assert 2 == 0
+E        +  where 2 = <function main at 0x7f8000c1e8e0>(['compare', '--before', '/tmp/pytest-of-root/pytest-31/test_current_native_coverage_c1/before.json', '--after', '/tmp/pytest-of-root/pytest-31/test_current_native_coverage_c1/after.json', '--out', ...])
+E        +    where <function main at 0x7f8000c1e8e0> = <module 'testpilot.__main__' from '/workspace/scratch/4c431341ea9a/source_products/testpilot/testpilot/__main__.py'>.main
+
+tests/test_compare_native_coverage.py:70: AssertionError
+----------------------------- Captured stderr call -----------------------------
+testpilot: cannot compare saved reports: report.coverage.changed_lines_before: expected a finite number
+=========================== short test summary info ============================
+FAILED tests/test_compare_native_coverage.py::test_current_native_coverage_compares_without_fabricated_percentages[pure_deletion]
+FAILED tests/test_compare_native_coverage.py::test_current_native_coverage_compares_without_fabricated_percentages[explicit_unchanged]
+2 failed, 3 passed in 4.62s
+
