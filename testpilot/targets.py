@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import ast
 import tokenize
+import unicodedata
 from collections.abc import Sequence
 from pathlib import Path
 
@@ -107,7 +108,9 @@ def resolve_targets(repo: str | Path, diff_text: str,
         except (OSError, ValueError, SyntaxError, LookupError) as exc:
             raise TargetSelectionError(f"cannot inspect target {spec!r}: {exc}") from exc
 
-        matches = [function for function in functions_by_path[path] if function.qualname == qualname]
+        # Python normalizes parsed identifiers; preserve the caller's spelling elsewhere.
+        normalized_name = unicodedata.normalize("NFKC", qualname)
+        matches = [function for function in functions_by_path[path] if function.qualname == normalized_name]
         if not matches:
             raise TargetSelectionError(f"no selectable function matches {spec!r}")
         if len(matches) != 1:

@@ -37,6 +37,13 @@ their enclosing function and cannot be selected separately. The final `::`
 separates the path from the name; quote the complete argument in your shell when
 the path needs it.
 
+Qualified names use Python's NFKC identifier normalization when matching the
+parsed source. A name copied from the source therefore also works when its
+Unicode spelling differs from the normalized AST name; for example, `Kelvin`
+and `Kelvin` select the same function. Class and method names follow the same
+rule. Original argument spelling and source text remain in the saved records;
+source filenames are not Unicode-normalized, and matching is case-sensitive.
+
 A name must identify one source definition. Multiple definitions with the same
 qualified name are refused, including definitions in mutually exclusive branches
 or property getter/setter definitions. TestPilot does not guess which definition
