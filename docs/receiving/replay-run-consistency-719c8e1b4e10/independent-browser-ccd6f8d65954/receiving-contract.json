@@ -1,0 +1,165 @@
+{
+  "schema": "hamon.testpilot.independent-browser-contract.v1",
+  "created_utc": "2026-10-12",
+  "beneficiary": "Jacob and the existing TestPilot replay owner: trust the displayed recorded verdict and use its exact downloaded evidence",
+  "candidate": "bfb5cc2830fbe535d705ac2649503e3ae7647224",
+  "baseline": "478f68adf01658a94a3ede22526da00f580785bd",
+  "source_identities": [
+    {
+      "path": "web-demo/app.mjs",
+      "git_blob": "3a1b379e62df5d4c14c76479dc81db6d0e66f0e1",
+      "chars": 12486
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/baseline.log",
+      "git_blob": "9883a9b803a061f2a80441efc2426fca2cb5eeb8",
+      "chars": 179
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/change.diff",
+      "git_blob": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+      "chars": 410
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/fixed.log",
+      "git_blob": "6404237d11069bf4571070427eba75414f100f3f",
+      "chars": 179
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/generated.log",
+      "git_blob": "107d68b61d619f858322806659c5ea65fa64b6a0",
+      "chars": 1340
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/oracle.py",
+      "git_blob": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+      "chars": 361
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/pipeline.json",
+      "git_blob": "2068cd4edb9f57e20d2092cf9c24df3570b71078",
+      "chars": 10601
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/record.json",
+      "git_blob": "1a8d8be9f09bdb0902bd15e8b88d371cde1ca090",
+      "chars": 13090
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/source.py",
+      "git_blob": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+      "chars": 361
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/testpilot.patch",
+      "git_blob": "13267ab82cd6ed27a2d08d69c8b5c9ce91e68dd0",
+      "chars": 561
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness.py",
+      "git_blob": "3564190aafd99c7b7c432ac6c4a7eec664efcb3a",
+      "chars": 86
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness_buggy.log",
+      "git_blob": "24829e935749496c2391970d8154f459d41292d5",
+      "chars": 702
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness_fixed.log",
+      "git_blob": "1306d56836bb073470347a30f7fd5d852d9847a6",
+      "chars": 179
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/baseline.log",
+      "git_blob": "57bbb7ea0a51414f1216e01b25f537a839f450b0",
+      "chars": 179
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/change.diff",
+      "git_blob": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+      "chars": 404
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/fixed.log",
+      "git_blob": "1536e8e81a91a3a657d87c58c14dec88359fe548",
+      "chars": 179
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/generated.log",
+      "git_blob": "eb400ca6182e5ac1f7f4f3edac6f88439f3817ed",
+      "chars": 179
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/oracle.py",
+      "git_blob": "bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+      "chars": 375
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/pipeline.json",
+      "git_blob": "f4502acce9bc97631fa0a3b5bed2243d2de63f77",
+      "chars": 5084
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/record.json",
+      "git_blob": "0714ad89649222b75f7645da14bd2dd90fffb6b3",
+      "chars": 9763
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/source.py",
+      "git_blob": "a851be68344da385d18845063dbec48dbcd03894",
+      "chars": 315
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/testpilot.patch",
+      "git_blob": "d1ba39803e1e25a51767b0e79bdb9f39ada6a645",
+      "chars": 384
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness.py",
+      "git_blob": "e8957999a94a998287de547fd5800f1f9663c9d4",
+      "chars": 96
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness_buggy.log",
+      "git_blob": "4a1c2ce3537a7731e35e98e784a8b039b2ddb66f",
+      "chars": 716
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness_fixed.log",
+      "git_blob": "53ce0e968bd1a4e6be05a7ec553cd6332765d34c",
+      "chars": 179
+    },
+    {
+      "path": "web-demo/data/replays.json",
+      "git_blob": "dbc4d8144b926eeec94089d1e5c01c037a2ffcf0",
+      "chars": 28129
+    },
+    {
+      "path": "web-demo/index.html",
+      "git_blob": "ab128030cae84f967813469439321e80ac3d47e5",
+      "chars": 4658
+    },
+    {
+      "path": "web-demo/styles.css",
+      "git_blob": "e6658a43e7404d15de28c1b79e78be4bd2210514",
+      "chars": 12133
+    }
+  ],
+  "baseline_app_git_blob": "5795114a641ffb83dff466b359424fb78502d7e5",
+  "acceptance": [
+    "Exact candidate runtime source and unchanged common baseline inputs",
+    "Real Chrome desktop and 390px journey across both cases and all four stages",
+    "Native keyboard stage navigation and retained deep links",
+    "Actual browser downloads of patch, case record and full log match original declared bytes and SHA256",
+    "Contradictory run exit and false success with no failure cases expose no replay or enabled download in candidate, while original visibly admits the same data",
+    "Missing run-case evidence rejected by candidate; reload with original healthy bytes recovers without persistent modified data",
+    "Browser and ephemeral loopback server close; all received source bytes remain unchanged"
+  ],
+  "limits": [
+    "The static browser replays existing Python results; it does not execute a fresh Python pipeline or live model.",
+    "Native input is Chrome DevTools dispatch, not physical human/device input.",
+    "A narrow desktop Chrome viewport does not qualify a physical phone, a screen reader, or every browser.",
+    "Source owner retains integration and site adoption; this receiver does not create a PR, push main, or trigger Actions."
+  ]
+}
