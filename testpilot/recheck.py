@@ -138,8 +138,13 @@ def recheck_report(repo: str | Path, report_path: str | Path, *,
     generated-file manifest. Different current test bytes refuse before pytest;
     they are never renamed, overwritten or treated as the retained tests.
     """
-    if (isinstance(timeout_s, bool) or not isinstance(timeout_s, (int, float))
-            or not math.isfinite(timeout_s) or timeout_s <= 0):
+    try:
+        invalid_timeout = (isinstance(timeout_s, bool)
+                           or not isinstance(timeout_s, (int, float))
+                           or not math.isfinite(timeout_s) or timeout_s <= 0)
+    except OverflowError:
+        invalid_timeout = True
+    if invalid_timeout:
         raise RecheckError("timeout must be a positive finite number of seconds")
     project = Path(repo).resolve(strict=True)
     if not project.is_dir():
