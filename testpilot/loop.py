@@ -28,6 +28,7 @@ from pathlib import Path, PurePosixPath
 
 from .diff import ChangedFunction, changed_functions
 from .html_report import render_html_report
+from .limits import nonnegative_integer
 from .model import ChatClient, ModelError, RoutingConfig, Usage
 from .sandbox import IGNORE, SandboxResult, run_pytest
 from .targets import resolve_targets, selection_record
@@ -396,6 +397,9 @@ class TestPilot:
                  timeout_s: float = 60.0, max_total_tokens: int | None = None, coverage: bool | None = None,
                  python: str | None = None, pytest_k: str | None = None,
                  pytest_m: str | None = None):
+        nonnegative_integer(max_repair_rounds, name="max_repair_rounds")
+        if max_total_tokens is not None:
+            nonnegative_integer(max_total_tokens, name="max_total_tokens")
         for name, value in (("pytest_k", pytest_k), ("pytest_m", pytest_m)):
             if value is not None and (not isinstance(value, str) or "\x00" in value):
                 raise ValueError(f"{name} must be a string without NUL or None")
