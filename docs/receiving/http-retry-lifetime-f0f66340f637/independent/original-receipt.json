@@ -1,0 +1,185 @@
+{
+  "schema": "testpilot.http-close-independent-receiving.v1",
+  "source": {
+    "name": "original",
+    "sha256": "8994cb2192b94ab04d989182af26118cfc4da5d2d35afe92578211894bee0ca6"
+  },
+  "python": "3.12.14",
+  "actual_loopback_http": true,
+  "provider_requests": 0,
+  "source_unchanged": true,
+  "cases": [
+    {
+      "name": "two-unread-retries-then-success",
+      "requests": [
+        {
+          "path": "/chat/completions",
+          "body": "{\"model\": \"requested-fixture\", \"messages\": [{\"role\": \"user\", \"content\": \"independent local fixture\"}], \"temperature\": 0.3, \"max_tokens\": 11}",
+          "authorization": "Bearer local-fixture-no-provider-credential",
+          "content_type": "application/json"
+        },
+        {
+          "path": "/chat/completions",
+          "body": "{\"model\": \"requested-fixture\", \"messages\": [{\"role\": \"user\", \"content\": \"independent local fixture\"}], \"temperature\": 0.3, \"max_tokens\": 11}",
+          "authorization": "Bearer local-fixture-no-provider-credential",
+          "content_type": "application/json"
+        },
+        {
+          "path": "/chat/completions",
+          "body": "{\"model\": \"requested-fixture\", \"messages\": [{\"role\": \"user\", \"content\": \"independent local fixture\"}], \"temperature\": 0.3, \"max_tokens\": 11}",
+          "authorization": "Bearer local-fixture-no-provider-credential",
+          "content_type": "application/json"
+        }
+      ],
+      "backoff_delays": [
+        2,
+        4
+      ],
+      "response_state_during_backoff": [
+        [
+          {
+            "status": 503,
+            "closed": false,
+            "underlying_closed": false,
+            "reads": []
+          }
+        ],
+        [
+          {
+            "status": 503,
+            "closed": false,
+            "underlying_closed": false,
+            "reads": []
+          },
+          {
+            "status": 429,
+            "closed": false,
+            "underlying_closed": false,
+            "reads": []
+          }
+        ]
+      ],
+      "prior_responses_closed_at_next_post": [
+        [
+          false
+        ],
+        [
+          false,
+          false
+        ]
+      ],
+      "terminal_error": null,
+      "error_reads": [
+        [],
+        []
+      ],
+      "response": {
+        "content": "fixture-ok",
+        "model": "served-fixture",
+        "prompt_tokens": 3,
+        "completion_tokens": 5,
+        "estimated": false
+      },
+      "status": "failed",
+      "failures": [
+        "Unread error response must be closed before backoff",
+        "Previous error response must be closed before next POST"
+      ]
+    },
+    {
+      "name": "unread-response-before-interrupted-backoff",
+      "requests": [
+        {
+          "path": "/chat/completions",
+          "body": "{\"model\": \"requested-fixture\", \"messages\": [{\"role\": \"user\", \"content\": \"independent local fixture\"}], \"temperature\": 0.3, \"max_tokens\": 11}",
+          "authorization": "Bearer local-fixture-no-provider-credential",
+          "content_type": "application/json"
+        }
+      ],
+      "backoff_delays": [
+        2
+      ],
+      "response_state_during_backoff": [
+        [
+          {
+            "status": 503,
+            "closed": false,
+            "underlying_closed": false,
+            "reads": []
+          }
+        ]
+      ],
+      "prior_responses_closed_at_next_post": [],
+      "terminal_error": {
+        "type": "InterruptedBackoff",
+        "message": "independent backoff interrupted"
+      },
+      "error_reads": [
+        []
+      ],
+      "response": null,
+      "status": "failed",
+      "failures": [
+        "Unread error response must be closed before backoff"
+      ]
+    },
+    {
+      "name": "terminal-401-diagnostic-control",
+      "requests": [
+        {
+          "path": "/chat/completions",
+          "body": "{\"model\": \"requested-fixture\", \"messages\": [{\"role\": \"user\", \"content\": \"independent local fixture\"}], \"temperature\": 0.3, \"max_tokens\": 11}",
+          "authorization": "Bearer local-fixture-no-provider-credential",
+          "content_type": "application/json"
+        }
+      ],
+      "backoff_delays": [],
+      "response_state_during_backoff": [],
+      "prior_responses_closed_at_next_post": [],
+      "terminal_error": {
+        "type": "ModelError",
+        "message": "HTTP 401 from http://127.0.0.1:36035/chat/completions: local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation only. local diagnostic: observation on"
+      },
+      "error_reads": [
+        [
+          {
+            "args": [
+              2000
+            ],
+            "kwargs": {}
+          }
+        ]
+      ],
+      "response": null,
+      "status": "passed",
+      "failures": []
+    },
+    {
+      "name": "immediate-success-control",
+      "requests": [
+        {
+          "path": "/chat/completions",
+          "body": "{\"model\": \"requested-fixture\", \"messages\": [{\"role\": \"user\", \"content\": \"independent local fixture\"}], \"temperature\": 0.3, \"max_tokens\": 11}",
+          "authorization": "Bearer local-fixture-no-provider-credential",
+          "content_type": "application/json"
+        }
+      ],
+      "backoff_delays": [],
+      "response_state_during_backoff": [],
+      "prior_responses_closed_at_next_post": [],
+      "terminal_error": null,
+      "error_reads": [],
+      "response": {
+        "content": "fixture-ok",
+        "model": "served-fixture",
+        "prompt_tokens": 3,
+        "completion_tokens": 5,
+        "estimated": false
+      },
+      "status": "passed",
+      "failures": []
+    }
+  ],
+  "passed": 2,
+  "total": 4
+}

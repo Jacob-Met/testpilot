@@ -1,0 +1,8 @@
+test_existing_utf8_character_limit_and_short_diagnostics_are_preserved (test_model_error_detail.ErrorDetailTests.test_existing_utf8_character_limit_and_short_diagnostics_are_preserved) ... ok
+test_real_terminal_errors_keep_available_prefix_and_retry_policy (test_model_error_detail.ErrorDetailTests.test_real_terminal_errors_keep_available_prefix_and_retry_policy) ... ok
+test_short_unfinished_prefix_keeps_existing_timeout_and_retry_policy (test_model_error_detail.ErrorDetailTests.test_short_unfinished_prefix_keeps_existing_timeout_and_retry_policy) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.540s
+
+OK

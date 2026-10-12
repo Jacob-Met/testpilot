@@ -1,0 +1,9 @@
+test_each_retry_closes_its_response_before_backoff (test_model_retry_lifetime.RetryResponseLifetimeTests.test_each_retry_closes_its_response_before_backoff) ... ok
+test_nonretryable_error_is_one_closed_response (test_model_retry_lifetime.RetryResponseLifetimeTests.test_nonretryable_error_is_one_closed_response) ... ok
+test_retry_exhaustion_closes_all_responses_and_keeps_terminal_error (test_model_retry_lifetime.RetryResponseLifetimeTests.test_retry_exhaustion_closes_all_responses_and_keeps_terminal_error) ... ok
+test_zero_retries_closes_one_retryable_terminal_error (test_model_retry_lifetime.RetryResponseLifetimeTests.test_zero_retries_closes_one_retryable_terminal_error) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.096s
+
+OK

@@ -1,0 +1,39 @@
+test_each_retry_closes_its_response_before_backoff (test_model_retry_lifetime.RetryResponseLifetimeTests.test_each_retry_closes_its_response_before_backoff) ... FAIL
+test_nonretryable_error_is_one_closed_response (test_model_retry_lifetime.RetryResponseLifetimeTests.test_nonretryable_error_is_one_closed_response) ... ok
+test_retry_exhaustion_closes_all_responses_and_keeps_terminal_error (test_model_retry_lifetime.RetryResponseLifetimeTests.test_retry_exhaustion_closes_all_responses_and_keeps_terminal_error) ... FAIL
+test_zero_retries_closes_one_retryable_terminal_error (test_model_retry_lifetime.RetryResponseLifetimeTests.test_zero_retries_closes_one_retryable_terminal_error) ... ok
+
+======================================================================
+FAIL: test_each_retry_closes_its_response_before_backoff (test_model_retry_lifetime.RetryResponseLifetimeTests.test_each_retry_closes_its_response_before_backoff)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f0f66340f637/source_delivery/testpilot-http-original/tests/test_model_retry_lifetime.py", line 78, in test_each_retry_closes_its_response_before_backoff
+    self.assertEqual(backoffs, [(2, [True]), (4, [True, True])])
+AssertionError: Lists differ: [(2, [False]), (4, [False, False])] != [(2, [True]), (4, [True, True])]
+
+First differing element 0:
+(2, [False])
+(2, [True])
+
+- [(2, [False]), (4, [False, False])]
++ [(2, [True]), (4, [True, True])]
+
+======================================================================
+FAIL: test_retry_exhaustion_closes_all_responses_and_keeps_terminal_error (test_model_retry_lifetime.RetryResponseLifetimeTests.test_retry_exhaustion_closes_all_responses_and_keeps_terminal_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/f0f66340f637/source_delivery/testpilot-http-original/tests/test_model_retry_lifetime.py", line 95, in test_retry_exhaustion_closes_all_responses_and_keeps_terminal_error
+    self.assertEqual([error.closed for error in errors], [True, True, True])
+AssertionError: Lists differ: [False, False, True] != [True, True, True]
+
+First differing element 0:
+False
+True
+
+- [False, False, True]
++ [True, True, True]
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.096s
+
+FAILED (failures=2)

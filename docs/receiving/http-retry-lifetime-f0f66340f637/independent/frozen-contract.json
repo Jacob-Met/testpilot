@@ -1,0 +1,26 @@
+{
+  "schema": "testpilot.http-response-close-independent-contract.v1",
+  "actor": "chatgpt-f0f66340f637/runtime_integration",
+  "sources": [
+    {
+      "name": "original",
+      "sha256": "8994cb2192b94ab04d989182af26118cfc4da5d2d35afe92578211894bee0ca6"
+    },
+    {
+      "name": "candidate",
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    }
+  ],
+  "scenarios": [
+    "real HTTP503 then429 then200: unread failed response closed at both backoff callbacks and before subsequent POSTs;2/4 delay values and request bytes preserved",
+    "real HTTP503 then interrupted backoff: unread failed response closed before callback raises, same interruption escapes, no second POST",
+    "real HTTP401 terminal: no backoff, bounded diagnostic read2000 bytes then close, same ModelError message",
+    "real HTTP200: no backoff/error body operation, same model/content/exactusage"
+  ],
+  "constraints": [
+    "localhost127.0.0.1 ephemeral server only",
+    "actual unchanged urllib transport; capture original HTTPError object without replacing body or close",
+    "no provider, environment key, installation or dependency",
+    "before/after product pins unchanged"
+  ]
+}

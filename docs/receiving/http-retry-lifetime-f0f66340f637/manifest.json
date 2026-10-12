@@ -1,0 +1,199 @@
+{
+  "recorded_at": "2026-10-12T20:33:23.513719+00:00",
+  "repository": "Jacob-Met/testpilot",
+  "source_parent": "c32b5459657ec26aac9837b823b1bc326510873e",
+  "source_parent_tree": "88a87eccf9f7b13c697019d426cb6c08d120c8ef",
+  "python": "3.12.14",
+  "original_model": {
+    "bytes": 10338,
+    "git_blob": "768006185b0d51145f3a88ba2cb5bfc9af73825a",
+    "sha256": "8994cb2192b94ab04d989182af26118cfc4da5d2d35afe92578211894bee0ca6"
+  },
+  "candidate_model": {
+    "bytes": 10454,
+    "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+    "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+  },
+  "unchanged_receiver": {
+    "bytes": 5396,
+    "git_blob": "6b264bec04d42507e92f794920a448191e316737",
+    "sha256": "e6477465cc343b3e05dee4f8fb1a7f9059a6d9baa7b91e70a8d148f539006741"
+  },
+  "other_unchanged_intake_files": [
+    {
+      "path": "pyproject.toml",
+      "sha": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "sha": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "sha": "d2871016375bbfba0b55673ed4eaefd53c9adca0"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "sha": "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "sha": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "sha": "fb105c23a535d1b446c913f4df0a461b3bfcad75"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "sha": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52"
+    },
+    {
+      "path": "testpilot/recheck_html.py",
+      "sha": "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+    },
+    {
+      "path": "testpilot/regression.py",
+      "sha": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "sha": "84330f96ebd71b37dc40575fa2ac59ba53cf2a72"
+    },
+    {
+      "path": "testpilot/targets.py",
+      "sha": "2da1600eca93edbe47605e6ca2a9e715663fa370"
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha": "2a855d9fdb8debae0b082088580a4c41e499e33c"
+    },
+    {
+      "path": "tests/test_model.py",
+      "sha": "761c6de8806cc1a3577d0332c78b845c012a1617"
+    },
+    {
+      "path": "tests/test_model_error_detail.py",
+      "sha": "082060b918c68bdc55f7b9414c5a3d6e9ffd0aa9"
+    },
+    {
+      "path": "tests/test_model_timeouts.py",
+      "sha": "dc4e91e557586ea63f99355ac1611e1679989ff5"
+    }
+  ],
+  "runs": [
+    {
+      "log": "original-retry-lifetime.log",
+      "test_file": "tests/test_model_retry_lifetime.py",
+      "exit_code": 1,
+      "passed": 2,
+      "failed": 2
+    },
+    {
+      "log": "candidate-retry-lifetime.log",
+      "test_file": "tests/test_model_retry_lifetime.py",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0
+    },
+    {
+      "log": "candidate-error-detail.log",
+      "test_file": "tests/test_model_error_detail.py",
+      "exit_code": 0,
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "log": "held-protocol-composition.setup-error.log",
+      "exit_code": 1,
+      "passed": 0,
+      "setup_error": "Supporting package modules absent; no receiver test body executed."
+    },
+    {
+      "log": "held-protocol-composition.log",
+      "test_file": "tests/test_model_retry_lifetime.py",
+      "exit_code": 0,
+      "passed": 4,
+      "failed": 0
+    }
+  ],
+  "held_protocol_compatibility": {
+    "owner_issue": 54,
+    "source_commit": "eec7730ec1c0b91e0a5dd086296888adfafa0762",
+    "model_blob": "383d91fa1b7f6b3b47057a5ab183ccbb938f89af",
+    "composed_model": {
+      "bytes": 11747,
+      "git_blob": "a0b896dd1372c1566cab7a898454790216cad4bb",
+      "sha256": "f9e2dd8efccae1c602fbe9e172c21c2de76ec0de0d23d40a12894a134501f731"
+    },
+    "removing_only_insertion_recovers_complete_held_model": true,
+    "owner_branch_modified": false,
+    "held_contribution_qualified": false
+  },
+  "log_identities": {
+    "candidate-error-detail.log": {
+      "bytes": 658,
+      "git_blob": "5435c27f8b200e588ab6c3c3369ef9f31780f4a6",
+      "sha256": "939a18918a09663368486b0960de16c7bce8c5e048cdc590237d6c834430476f"
+    },
+    "candidate-retry-lifetime.log": {
+      "bytes": 786,
+      "git_blob": "d6244f0d60fbf63d10f7bbed108e9e8a0a5a9cea",
+      "sha256": "c13072824cf1d23db28ce5a071aed3c8318a48b2f2eb4acb40f549bb6965902b"
+    },
+    "held-protocol-composition.log": {
+      "bytes": 786,
+      "git_blob": "e83967a2ccf990e19e1ada3dcd6be027c710e0d1",
+      "sha256": "223460356d75ca569ae2f4b08d777657cdf836112ffb860e9f86ed54d00e6dfb"
+    },
+    "held-protocol-composition.setup-error.log": {
+      "bytes": 1501,
+      "git_blob": "a1392bb92b5a11d8631f150c6d4a263770da6f91",
+      "sha256": "8511be7e4d1b87d4b42bb814ba004e2764a35c460d000467cf6b1354d2da131e"
+    },
+    "original-retry-lifetime.log": {
+      "bytes": 2428,
+      "git_blob": "f93a2c0272b34100f2dfb2df6ab4d0def6b09ac2",
+      "sha256": "18a47f9e89f7ffb35ffefe8cf2b52f2ea2b638c97a30bfc978fdfcc3cf841660"
+    }
+  },
+  "full_pytest_suite_run": false,
+  "full_pytest_suite_limit": "pytest unavailable; no dependency install attempted",
+  "provider_requests": 0,
+  "deployment_performed": false,
+  "independent_receiving": {
+    "actor": "chatgpt-f0f66340f637/runtime_integration",
+    "accepted_source_sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "original_passed": 2,
+    "candidate_passed": 4,
+    "total": 4,
+    "author_tests_read": false,
+    "actual_loopback_http": true,
+    "files": {
+      "independent/frozen-contract.json": {
+        "bytes": 1202,
+        "sha256": "dc004d83965fa7181953874e73c12f787bc63120fb940c6ab04387553d691e60",
+        "git_blob": "ad49836fff3cb944ff6f871d899e691394f609c8"
+      },
+      "independent/original-receipt.json": {
+        "bytes": 6053,
+        "sha256": "3546ab6d28f56e19c2c31b7501512cfd7423fa01e9d770cced3989326b2bed4e",
+        "git_blob": "373816233c0691f49a33d82186c56b39c423c5e6"
+      },
+      "independent/candidate-receipt.json": {
+        "bytes": 5838,
+        "sha256": "c0f4559b805750dce2c423532473938a86dc2fd877f2c1610e28f6fee55ecd3a",
+        "git_blob": "4a4585e6ad7057e74fc7b4cf7b7f80424b97cd1a"
+      },
+      "independent/receive_http.py": {
+        "bytes": 8485,
+        "sha256": "5cf5063e0c331412350385cc361bcddeb7d3c43debe8aecc290d2199c20d73ba",
+        "git_blob": "33f72f79045c061d13167ae5a2a2df649bccc30a"
+      }
+    }
+  }
+}

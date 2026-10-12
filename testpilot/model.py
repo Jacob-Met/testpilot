@@ -152,6 +152,8 @@ class OpenAICompatClient:
                 break
             except urllib.error.HTTPError as e:
                 if e.code in self.RETRY_STATUS and attempt < self.retries:
+                    # Release the failed response before backoff and another request.
+                    e.close()
                     attempt += 1
                     self._sleep(2 ** attempt)
                     continue
