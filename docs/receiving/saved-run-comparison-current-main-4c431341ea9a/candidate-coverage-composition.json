@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_compare_native_coverage.py",
+    "tests/test_coverage_probe.py"
+  ],
+  "cwd": "/workspace/scratch/4c431341ea9a/source_products/testpilot-current-main",
+  "started_utc": "2026-10-12T22:01:32.000407+00:00",
+  "completed_utc": "2026-10-12T22:01:37.498823+00:00",
+  "elapsed_seconds": 5.292,
+  "exit_code": 0,
+  "versions": {
+    "python": "3.12.14",
+    "pytest": "9.1.1",
+    "coverage": "7.16.2"
+  },
+  "log_file": "candidate-coverage-composition.log",
+  "log_sha256": "b5220230d82241d0dc03e59f024cd52785e49f3bd27c771a5233e8e3c1bc6a4e",
+  "scope": "Native producer/compare cases and the intervening real-process coverage-probe tests; prior source, browser and delivery receipts remain at their original source pins."
+}

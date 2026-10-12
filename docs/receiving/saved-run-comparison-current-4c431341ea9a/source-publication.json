@@ -1,0 +1,14 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "branch": "integration/4c431341-saved-run-comparison",
+  "base_commit": "c32b5459657ec26aac9837b823b1bc326510873e",
+  "local_source_commit": "07803317b576be0ce27852e806c1ee530d6d9fea",
+  "remote_source_commit": "cd15c2db2e4cd6ff07f40f85103c30137f32ba5c",
+  "qualified_tree": "80101f399499f8572e8b258d5bffd7932bd7bc09",
+  "remote_tree": "80101f399499f8572e8b258d5bffd7932bd7bc09",
+  "verified_changed_blobs": 28,
+  "remote_leaf_count": 1527,
+  "branch_readback": "refs/heads/integration/4c431341-saved-run-comparison",
+  "sha256_note": "Native example receipts retain the local source commit; this remote commit has the identical qualified Git tree.",
+  "commit_url": "https://github.com/Jacob-Met/testpilot/commit/cd15c2db2e4cd6ff07f40f85103c30137f32ba5c"
+}

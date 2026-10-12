@@ -1,0 +1,9 @@
+diff --git a/tests/test_answer.py b/tests/test_answer.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_answer.py
+@@ -0,0 +1,4 @@
++from calc import answer
++
++def test_answer():
++    assert answer() == 7

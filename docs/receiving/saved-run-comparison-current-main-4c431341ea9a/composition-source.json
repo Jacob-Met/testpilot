@@ -1,0 +1,351 @@
+{
+  "base": "c32b5459657ec26aac9837b823b1bc326510873e",
+  "main_parent": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+  "comparison_parent": "96a71bf2c418f56d6262dc36be5de3500f8fcfee",
+  "composition_tree_before_this_receiving_record": "947f89c5f160b4a22ba5a079439b19d9f9c7e741",
+  "conflicts": [],
+  "main_changes": {
+    "docs/COVERAGE_DETECTION.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ac8a3953890dd46dc1b6d4788bf40e6f157f9f1"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/README.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c9f48773d3b4f0d2102fa68b20cad9197cc3d87"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/candidate-error-detail.log": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5435c27f8b200e588ab6c3c3369ef9f31780f4a6"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/candidate-retry-lifetime.log": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6244f0d60fbf63d10f7bbed108e9e8a0a5a9cea"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/held-protocol-composition.log": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e83967a2ccf990e19e1ada3dcd6be027c710e0d1"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/held-protocol-composition.setup-error.log": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1392bb92b5a11d8631f150c6d4a263770da6f91"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/independent/candidate-receipt.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4a4585e6ad7057e74fc7b4cf7b7f80424b97cd1a"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/independent/frozen-contract.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad49836fff3cb944ff6f871d899e691394f609c8"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/independent/original-receipt.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "373816233c0691f49a33d82186c56b39c423c5e6"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/independent/receive_http.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "33f72f79045c061d13167ae5a2a2df649bccc30a"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/manifest.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ad72916004050dc7e5eab0979b1da5ea2939dc1"
+    },
+    "docs/receiving/http-retry-lifetime-f0f66340f637/original-retry-lifetime.log": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f93a2c0272b34100f2dfb2df6ab4d0def6b09ac2"
+    },
+    "testpilot/model.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+    },
+    "testpilot/sandbox.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6dc325b68ee9de568e93c45666e3da845d6237de"
+    },
+    "tests/test_coverage_probe.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "711da53840228698d64e6e92e2a52f0fa992fcc2"
+    },
+    "tests/test_model_retry_lifetime.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b264bec04d42507e92f794920a448191e316737"
+    }
+  },
+  "comparison_changes": {
+    "README.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a7486a3841f38f9a27d74deb0440f748915329bd"
+    },
+    "docs/COMPARE.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b88fe321ea2df0d03ebc01040c7304877a073c42"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/INDEPENDENT_BROWSER.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7152459dbb053e53ee56fc4f65b938b769feb55e"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/INDEPENDENT_CLI.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90492b225a4304bb13acf9145ef8aef9a011825d"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/INDEPENDENT_CURRENT_MAIN.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4bf5aaf357c962fd35dd82bb524677453445d56c"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/INDEPENDENT_RECEIVING.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff352bf3c28a46c5a49fba529f56dff31c1f0f51"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/README.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "882798a80a375653cc459a5e37f0f098a06203d3"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/author_browser.cjs": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2db6ee335f48cef18907b4b21daa9322f6a5db2d"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/current-receiving.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be4c887cdddb4b9f0a1006302f583722eba5f5e1"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/current-receiving.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fc186b3dc99b8695036d64697212e4ef86124bb"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/latest-receiving.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "919d723bc1dd2680ca518d1ce09806acd802c59c"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/latest-receiving.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f997034bdd143a7142a3f4f497d1df4e4cbfc8c8"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/receive_coexistence.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba7ef8d90cb5c7f6df8752890f22efc999154381"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/source-manifest.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "32fae362153c0916daa90771fb0110c0251f85e8"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/source-publication.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f1a17634e383a720a4393e0b171ff18ccdf03aba"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/testpilot-independent-receiving.zip": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98492bb919933e4b0d3e7d54c09f5231369c99f4"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/testpilot-saved-run-comparison-author.zip": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aadc66639cf5c4a70f11e27b9d56824393c9bdb8"
+    },
+    "docs/receiving/saved-run-comparison-490fcd7c4056/validation.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf112d731d425716cb68fa2e6238931c243ee0ec"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/DELIVERY.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5878a2bb53a4f1cd9eecee3e19cc9f4356f8bb5b"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/README.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a8f92b063d112103d7e3f1a5d6fe0a2443ccb44"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/candidate-gate.log": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fab170a5f35893dd225f756bac6ecde305fa691"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/comparison.html": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bcf5a70bf42c55caaf6c4357f786c3053f83eee1"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/change.diff": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17473fe9d5be697ba5d297405dafa309bf27f7a3"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/project/calc.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "588a5e942d54ec8e7b80dfc7d3c521f9cedc784f"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/project/tests/test_existing.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52bf7f580c1026518f3a7274425791c08d2ed55b"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/report.html": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7c1141748d044f5ed45c7e3e55ada74f50c2a48a"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/report.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "80ec67440a2bd5e77a13c164996f076cabc81af3"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/report.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "986f5086e900adaef101afa14bae2e1319e54225"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/result/testpilot.patch": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69c6e9dcfb8a95a1f81300d816f444543deecd87"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/script/01-plan.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dd3e82bc3dfc50ac5868c5a50be3794973e946b"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/measured/script/02-tests.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3587886746fe1f0a462c1d62fef8f107f38a30bf"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/change.diff": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "680ad9e3567244ac5626826b8dd567d69179eb9f"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/project/calc.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "588a5e942d54ec8e7b80dfc7d3c521f9cedc784f"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/project/tests/test_existing.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52bf7f580c1026518f3a7274425791c08d2ed55b"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/report.html": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a12e5e9e41e8d63d63180881a2609f43475de36a"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/report.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "acf11d7e30e395d997eab140a32a23ff4db63683"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/report.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3100c7b85cee0877f02a4d4d2699a41e8349550"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/result/testpilot.patch": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69c6e9dcfb8a95a1f81300d816f444543deecd87"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/script/01-plan.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dd3e82bc3dfc50ac5868c5a50be3794973e946b"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/pure-deletion/script/02-tests.md": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3587886746fe1f0a462c1d62fef8f107f38a30bf"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/native-example/receipt.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0fb805da7dc22c0c7110754d87eed1d1ef220e1"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/original-native-coverage.log": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bd384fd97e003af17ba59b69998fda0e40e8dd8"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/receive_native.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fb6bf988f949d6837e5e424dde75948e2b5351d"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/source-publication.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b546e8270a56c60e747b37d143a63b7ffa98c53"
+    },
+    "docs/receiving/saved-run-comparison-current-4c431341ea9a/testpilot-native-receiving.json": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09e60a0afc056f37bc27adae57a41fe32f99ea85"
+    },
+    "testpilot/__main__.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c1f799a830abc759ba4489251f58095b47d36ad"
+    },
+    "testpilot/compare.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fd5b9b0ca523abd26ba8a415ee6310231dc0a39"
+    },
+    "testpilot/compare_html.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4b6c852c7513c3d2d2912e9ab908ecd8fd8bfeae"
+    },
+    "tests/test_compare.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "894c6cc09bcac88c64748828ca7230c11f0289e1"
+    },
+    "tests/test_compare_cli.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a65cd89c9e9052e36231e3ed25eeac6d49c2c6ff"
+    },
+    "tests/test_compare_native_coverage.py": {
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8345cd5353f78e5b0da2f9142954cd48bb3d3796"
+    }
+  },
+  "verified": {
+    "main_changes_match": true,
+    "comparison_changes_match": true,
+    "unchanged_base_leaves": 1497
+  }
+}

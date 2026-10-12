@@ -1,0 +1,6 @@
+--- a/calc.py
++++ b/calc.py
+@@ -1,2 +1,2 @@
+ def answer():
+-    return 6
++    return 7
