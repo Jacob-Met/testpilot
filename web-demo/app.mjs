@@ -24,8 +24,23 @@ function validate(data) {
     ids.add(item.id);
     for (const name of ['baseline', 'generated', 'fixed', 'witness_buggy', 'witness_fixed']) {
       const run = item.runs?.[name];
-      if (!run || !Number.isInteger(run.passed) || !Number.isInteger(run.failed) || run.errors || run.timed_out || run.skipped) {
+      if (!run || !Number.isSafeInteger(run.passed) || run.passed < 0 ||
+          !Number.isSafeInteger(run.failed) || run.failed < 0 ||
+          run.errors !== 0 || run.skipped !== 0 || run.timed_out !== false ||
+          typeof run.ok !== 'boolean' || !Array.isArray(run.cases)) {
         throw new Error('A required fixture run is incomplete.');
+      }
+      let passed = 0;
+      let failed = 0;
+      for (const observed of run.cases) {
+        if (observed?.outcome === 'passed') passed++;
+        else if (observed?.outcome === 'failed') failed++;
+        else throw new Error('A required fixture run is incomplete.');
+      }
+      if (run.passed !== passed || run.failed !== failed ||
+          (run.ok ? run.returncode !== 0 || failed !== 0 || passed === 0 :
+            run.returncode !== 1 || failed === 0)) {
+        throw new Error('A required fixture run has inconsistent results.');
       }
     }
     if (!item.runs.baseline.ok || !item.runs.fixed.ok || item.runs.witness_buggy.ok || !item.runs.witness_fixed.ok ||

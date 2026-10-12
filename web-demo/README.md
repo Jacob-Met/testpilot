@@ -102,3 +102,27 @@ python3 -m http.server 8000 --bind 127.0.0.1 \
 
 Apache-2.0, matching TestPilot. The fixture source and authored replies are reused
 from the pinned repository; ownership and the root license/notice are preserved.
+
+## Recorded-run consistency
+
+The replay checks each of its five required runs before exposing a fixture.
+Counts must be nonnegative safe integers and agree with the retained case
+outcomes. Each run must explicitly report no errors, skips or timeout. A passing
+run requires process exit 0, at least one recorded pass and no recorded failure;
+a failing witness requires exit 1 and at least one recorded failure. Missing or
+contradictory evidence shows the existing loading error and leaves downloads
+unavailable.
+
+These checks establish consistency within the supplied recording. They do not
+authenticate its origin, verify artifact hashes in the browser or execute tests.
+
+The dependency-free application regression course runs with Node's test runner:
+
+```sh
+node --test web-demo/tests/run-evidence.test.mjs
+```
+
+It executes the exact application with a small DOM and a local fixture response,
+checks all eight fixture/stage views and rejects malformed run evidence in every
+required position before any verdict or download appears. Use the separate
+browser acceptance command above to qualify real browser behavior.
