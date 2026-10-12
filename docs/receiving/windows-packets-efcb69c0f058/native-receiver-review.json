@@ -1,0 +1,46 @@
+{
+  "schema": "testpilot.windows-native-receiver-review/1",
+  "reviewer": "source_delivery",
+  "reviewed_at_utc": "2026-10-12T22:02:14Z",
+  "accepted_for_bounded_native_trial": true,
+  "receiver": {
+    "path": "/workspace/scratch/efcb69c0f058/runtime_consumer/windows-native-receive.py",
+    "sha256": "84555629146d016784a6b857dc476a93ee1b2cbd99b170f5ecb06bf4359eaab9",
+    "compile_without_execution": "pass"
+  },
+  "source_identity": {
+    "baseline_commit": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+    "baseline_sandbox_sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+    "candidate_commit": "067cf4597c067aad41216ba39c8c29fe3ecd9f3a",
+    "candidate_sandbox_sha256": "899a454dea73c988645b04cba887b13f7770b824b00f0c0f8be5c179903577e0",
+    "both_receiver_pins_match_reviewed_source_bytes": true
+  },
+  "static_review": {
+    "total_planned_cases": 8,
+    "cases_per_source": [
+      "finite output and nonzero exit",
+      "live leader cancellation",
+      "live leader with helper-retained pipe",
+      "already-exited leader with helper-retained pipe"
+    ],
+    "real_communication": "A separate owned thread calls captured REAL_POPEN.communicate on the real Popen instance; stdout_thread must be active before cancellation injection.",
+    "cancellation": "The overridden caller-facing communicate raises a captured KeyboardInterrupt object; caught object identity and elapsed product cleanup are checked.",
+    "differential": "The baseline is expected to leave live leaders running; the candidate must reap the leader; the already-exited case preserves returncode 23.",
+    "helper_observation": "Helper PID comes from a file written by the receiver-launched helper in the receiver-owned case directory; a SYNCHRONIZE handle observes its liveness before and after product cleanup.",
+    "owned_cleanup": "Finally restores subprocess.Popen, releases only each receiver-owned case by its release file, kills/reaps only the Popen leader created by this invocation, waits for its helper handle, joins the reader, then closes stdout only after that reader exits.",
+    "bounded_failure": "Readiness, leader reap, helper wait and reader join are bounded. Owned leader/helper also have 15-second self-exit deadlines. Top-level receipt records refusal/failure and finishes on BaseException.",
+    "preservation": "Production sources are read and hash-checked; no source file is modified. No external PID sweep, console-wide event, installed app, service or process-tree operation exists in the receiver."
+  },
+  "execution_contract": {
+    "platform": "Native Windows",
+    "python": "Normal CPython execution with assertions enabled; do not use -O or PYTHONOPTIMIZE.",
+    "root": "A fresh receiver-owned directory containing the two exact source files; never reuse a prior case directory."
+  },
+  "scope_limits": [
+    "This is read-only source/fixture review and compilation, with no receiver execution by source_delivery.",
+    "The fixture qualifies a controlled exception while real Windows communication is active; it does not exercise hardware Ctrl-C or console signal propagation.",
+    "Any native pass must include the top-level receipt passed flag, all eight cases, final cleanup checks, and exact receiver/source hashes.",
+    "No installed TestPilot consumer, POSIX behavior, descendant-tree cleanup, or full-suite receiving is claimed."
+  ],
+  "fixture_changes_by_reviewer": false
+}
