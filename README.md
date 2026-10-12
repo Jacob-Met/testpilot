@@ -231,7 +231,7 @@ These numbers are fixed by construction, because the stub replays scripts. `dura
 ## Limitations
 
 * The sandbox gives process-level isolation only: a temp copy, a killed process group, and a scrubbed env. Network and filesystem access are **not** blocked. Run untrusted repos inside a container or VM.
-* Only Python is supported, and imports are resolved from the repo root or `src/`. Repos that need an install step, such as compiled extensions or heavy dependencies, need their environment prepared first (`--python` hook in `run_pytest`).
+* Only Python is supported, and imports are resolved from the repo root or `src/`. Repos that need an install step, such as compiled extensions or heavy dependencies, need their environment prepared first. Select that environment with `run --python EXECUTABLE`; without `--python`, tests use the interpreter running TestPilot. See the [project Python guide](docs/project-python.md) for setup and path resolution.
 * With `coverage`, changed-line coverage counts executable added lines only. Pure deletions affect which functions are selected but not the coverage figure.
 
 ## License
