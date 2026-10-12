@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import os
+import selectors
 import shutil
 import signal
 import subprocess
@@ -25,6 +26,7 @@ IGNORE = shutil.ignore_patterns(".git", "__pycache__", ".pytest_cache", ".venv",
 _SECRET_MARKERS = ("KEY", "TOKEN", "SECRET", "PASSWORD", "CREDENTIAL")
 _OMIT = "*/tests/*,*/test_*.py,*_test.py,*/conftest.py"
 _COVERAGE_PROBE_TIMEOUT_S = 5.0
+_OUTPUT_TAIL_BYTES = 256 * 1024
 
 
 @dataclass
@@ -159,12 +161,62 @@ def clean_env(root: Path) -> dict[str, str]:
     return env
 
 
+class _PosixOutputCapture:
+    """Drain one native output pipe while retaining a bounded diagnostic tail."""
+
+    def __init__(self, proc: subprocess.Popen[str]):
+        self.proc = proc
+        self.encoding = proc.stdout.encoding
+        self.tail = bytearray()
+        self.omitted = 0
+        self.eof = False
+
+    def _output_bytes(self) -> bytes:
+        prefix = (f"[testpilot: omitted {self.omitted} earlier output bytes]\n".encode("ascii")
+                  if self.omitted else b"")
+        return prefix + self.tail
+
+    def communicate(self, timeout: float | None) -> tuple[str, None]:
+        deadline = None if timeout is None else time.monotonic() + timeout
+        try:
+            with selectors.DefaultSelector() as selector:
+                if not self.eof:
+                    selector.register(self.proc.stdout, selectors.EVENT_READ)
+                while not self.eof:
+                    remaining = None if deadline is None else deadline - time.monotonic()
+                    if ((remaining is not None and remaining <= 0)
+                            or not selector.select(remaining)):
+                        raise subprocess.TimeoutExpired(self.proc.args, timeout)
+                    chunk = os.read(self.proc.stdout.fileno(), 64 * 1024)
+                    if not chunk:
+                        self.eof = True
+                        selector.unregister(self.proc.stdout)
+                        self.proc.stdout.close()
+                        break
+                    self.tail.extend(chunk)
+                    extra = len(self.tail) - _OUTPUT_TAIL_BYTES
+                    if extra > 0:
+                        del self.tail[:extra]
+                        self.omitted += extra
+            remaining = None if deadline is None else max(0.0, deadline - time.monotonic())
+            self.proc.wait(timeout=remaining)
+        except subprocess.TimeoutExpired as exc:
+            # The existing timeout handler may resume collection after its kill.
+            # Keep prior bytes and expose the same bytes-valued timeout contract.
+            exc.output = self._output_bytes()
+            raise
+        out = self._output_bytes().decode(self.encoding, errors="replace")
+        return out.replace("\r\n", "\n").replace("\r", "\n"), None
+
+
 def _run(cmd: list[str], cwd: Path, env: dict, timeout: float) -> tuple[int | None, str, bool]:
-    """Collect output, bounding POSIX timeout and interrupt cleanup."""
+    """Collect output, bounding POSIX memory, timeout and interrupt cleanup."""
     proc = subprocess.Popen(cmd, cwd=cwd, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE,
                             stderr=subprocess.STDOUT, text=True, errors="replace", start_new_session=True)
+    communicate = (_PosixOutputCapture(proc).communicate
+                   if os.name == "posix" else proc.communicate)
     try:
-        out, _ = proc.communicate(timeout=timeout)
+        out, _ = communicate(timeout=timeout)
         return proc.returncode, out, False
     except KeyboardInterrupt:
         if os.name == "posix":
@@ -188,9 +240,9 @@ def _run(cmd: list[str], cwd: Path, env: dict, timeout: float) -> tuple[int | No
             proc.kill()
         try:
             # A detached helper may retain stdout after the target group dies.
-            # POSIX communicate uses synchronous reads that we can stop and close;
+            # POSIX collection uses synchronous reads that we can stop and close;
             # preserve the existing Windows reader-thread cleanup behavior.
-            out, _ = proc.communicate(timeout=1.0 if os.name == "posix" else None)
+            out, _ = communicate(timeout=1.0 if os.name == "posix" else None)
         except subprocess.TimeoutExpired as exc:
             # TimeoutExpired.output is bytes even in text mode. Preserve complete
             # diagnostics plus a replacement for a character cut off by the kill.
