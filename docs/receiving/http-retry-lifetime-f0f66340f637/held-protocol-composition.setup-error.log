@@ -1,0 +1,24 @@
+test_model_retry_lifetime (unittest.loader._FailedTest.test_model_retry_lifetime) ... ERROR
+
+======================================================================
+ERROR: test_model_retry_lifetime (unittest.loader._FailedTest.test_model_retry_lifetime)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_model_retry_lifetime
+Traceback (most recent call last):
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "/workspace/scratch/f0f66340f637/source_delivery/testpilot-http-composition/tests/test_model_retry_lifetime.py", line 9, in <module>
+    from testpilot.model import ModelError, OpenAICompatClient, _urllib_transport
+  File "/workspace/scratch/f0f66340f637/source_delivery/testpilot-http-composition/testpilot/__init__.py", line 4, in <module>
+    from .diff import ChangedFunction, changed_functions, parse_unified_diff  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'testpilot.diff'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)
