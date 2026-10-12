@@ -22,10 +22,13 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 import urllib.error
 import urllib.request
 from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 from typing import Callable, Protocol
 
@@ -119,6 +122,44 @@ def _urllib_transport(url: str, headers: dict, body: bytes, timeout: float) -> d
         return json.loads(resp.read().decode("utf-8"))
 
 
+_MAX_RETRY_AFTER_SECONDS = 120
+
+
+def _retry_after_seconds(value: str | None) -> float | None:
+    """Read provider guidance; values over our wait limit need only a sentinel."""
+    if not isinstance(value, str):
+        return None
+    value = value.strip()
+    if value.isascii() and value.isdecimal():
+        digits = value.lstrip("0") or "0"
+        # Avoid converting an arbitrarily long integer just to refuse its wait.
+        return float(digits) if len(digits) <= 3 else _MAX_RETRY_AFTER_SECONDS + 1.0
+    try:
+        date = parsedate_to_datetime(value)
+    except (TypeError, ValueError, OverflowError):
+        return None
+    if date.tzinfo is None:
+        # The obsolete asctime HTTP-date has no suffix, but always means UTC.
+        date = date.replace(tzinfo=timezone.utc)
+    now = datetime.fromtimestamp(time.time(), timezone.utc)
+    obsolete = re.fullmatch(
+        r"[A-Za-z]+, [0-9]{2}-[A-Za-z]{3}-([0-9]{2}) [0-9]{2}:[0-9]{2}:[0-9]{2} GMT",
+        value,
+    )
+    if obsolete:
+        # HTTP uses a rolling fifty-year horizon, unlike email's fixed pivot.
+        year = ((now.year + 50) // 100) * 100 + int(obsolete[1])
+        proposed = (year, date.month, date.day, date.hour, date.minute, date.second)
+        horizon = (now.year + 50, now.month, now.day, now.hour, now.minute, now.second)
+        if proposed > horizon:
+            year -= 100
+        try:
+            date = date.replace(year=year)
+        except ValueError:
+            return None
+    return max(0.0, (date - now).total_seconds())
+
+
 class OpenAICompatClient:
     """Minimal stdlib client for any OpenAI-compatible ``/chat/completions`` API."""
 
@@ -152,10 +193,19 @@ class OpenAICompatClient:
                 break
             except urllib.error.HTTPError as e:
                 if e.code in self.RETRY_STATUS and attempt < self.retries:
-                    # Release the failed response before backoff and another request.
-                    e.close()
+                    try:
+                        retry_after = _retry_after_seconds(e.headers.get("Retry-After") if e.headers else None)
+                        if retry_after is not None and retry_after > _MAX_RETRY_AFTER_SECONDS:
+                            raise ModelError(
+                                f"HTTP {e.code} from {url}: Retry-After requires more than "
+                                f"{_MAX_RETRY_AFTER_SECONDS} seconds; retry later"
+                            ) from e
+                        delay = max(2 ** (attempt + 1), retry_after or 0.0)
+                    finally:
+                        # Release before either backoff or a long-wait refusal.
+                        e.close()
                     attempt += 1
-                    self._sleep(2 ** attempt)
+                    self._sleep(delay)
                     continue
                 try:
                     # Bound the body before decoding: 500 Unicode characters

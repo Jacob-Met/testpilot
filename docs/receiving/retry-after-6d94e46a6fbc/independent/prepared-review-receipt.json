@@ -1,0 +1,21 @@
+{
+  "recorded_at_utc": "2026-10-12T21:58:43.186735+00:00",
+  "scope": "Independent contract-derived TestPilot public-API review prepared before the owner candidate changed from original bytes. No source or integration authority.",
+  "files": {
+    "independent_retry_review.py": {
+      "bytes": 11898,
+      "sha256": "a0ecf3212a60f61aeee1230d732196d8acafc3fb29d1da04aa8ddee14e6cf4a3"
+    },
+    "original-review.json": {
+      "bytes": 62721,
+      "sha256": "63627898d0711668a99b9d3163bc54d885f12f1b9c99dadec4c809e873a312ec"
+    }
+  },
+  "original_source_sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+  "cases": 52,
+  "original_controls_passed": 28,
+  "original_expected_failures": 24,
+  "failure_exceptions": {
+    "AssertionError": 24
+  }
+}

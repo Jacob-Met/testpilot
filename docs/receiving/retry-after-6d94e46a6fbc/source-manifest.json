@@ -1,0 +1,20 @@
+[
+  {
+    "path": "testpilot/model.py",
+    "bytes": 12670,
+    "sha256": "7cfcebb2b087f788de7ecd62d11426b97b2035f9ca9c7e3f1dac65f162987287",
+    "git_blob": "40b3072300be396cfc32c76488f289e699343277"
+  },
+  {
+    "path": "tests/test_model_retry_after.py",
+    "bytes": 8589,
+    "sha256": "2890ecfda7606b7cb60f45fa5b21a0e5f8ff3198372c9b53f9e5b6709a15a9a0",
+    "git_blob": "deec84c2bfbe0d0b93cc4d94071306d470948946"
+  },
+  {
+    "path": "docs/PROVIDER_RETRY_AFTER.md",
+    "bytes": 3455,
+    "sha256": "5d9a334c7fceb7224fa9a05123b2113e959d18bb245f1416759a192acc13536e",
+    "git_blob": "631c7addb456eb4cab847f8b2f2eb2605f7db4d3"
+  }
+]

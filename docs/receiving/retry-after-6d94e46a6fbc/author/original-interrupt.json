@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/workspace/scratch/6d94e46a6fbc/product_workflow/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe",
+    "--junitxml=/workspace/scratch/6d94e46a6fbc/product_workflow/original-interrupt.xml"
+  ],
+  "exit_code": 1,
+  "elapsed": 1.456348180770874
+}

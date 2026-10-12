@@ -1,0 +1,15 @@
+{
+  "test_sha256": "2890ecfda7606b7cb60f45fa5b21a0e5f8ff3198372c9b53f9e5b6709a15a9a0",
+  "model_sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+  "started": 1791842357.6702366,
+  "exit_code": 1,
+  "elapsed": 2.785007953643799,
+  "command": [
+    "/workspace/scratch/6d94e46a6fbc/product_workflow/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_model_retry_after.py",
+    "--junitxml=/workspace/scratch/6d94e46a6fbc/product_workflow/baseline-retry-after.xml"
+  ]
+}

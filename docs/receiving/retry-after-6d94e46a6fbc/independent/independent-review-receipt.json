@@ -1,0 +1,69 @@
+{
+  "reviewer": "/root/engine_reliability",
+  "reviewed_at_utc": "2026-10-12T22:05:31.815679+00:00",
+  "verdict": "accepted: no blocking correctness or source-scope finding",
+  "source_owner": "/root/product_workflow; existing integration authority retained",
+  "reviewed_files": {
+    "testpilot/model.py": {
+      "bytes": 12670,
+      "sha256": "7cfcebb2b087f788de7ecd62d11426b97b2035f9ca9c7e3f1dac65f162987287",
+      "git_blob": "40b3072300be396cfc32c76488f289e699343277"
+    },
+    "tests/test_model_retry_after.py": {
+      "bytes": 8589,
+      "sha256": "2890ecfda7606b7cb60f45fa5b21a0e5f8ff3198372c9b53f9e5b6709a15a9a0",
+      "git_blob": "deec84c2bfbe0d0b93cc4d94071306d470948946"
+    },
+    "docs/PROVIDER_RETRY_AFTER.md": {
+      "bytes": 3455,
+      "sha256": "5d9a334c7fceb7224fa9a05123b2113e959d18bb245f1416759a192acc13536e",
+      "git_blob": "631c7addb456eb4cab847f8b2f2eb2605f7db4d3"
+    }
+  },
+  "original_model": {
+    "bytes": 10454,
+    "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+  },
+  "receiver": {
+    "bytes": 11898,
+    "sha256": "a0ecf3212a60f61aeee1230d732196d8acafc3fb29d1da04aa8ddee14e6cf4a3",
+    "git_blob": "8796674dd4dc1c3ebc41f3dc32b0b19249288cd4"
+  },
+  "original_receipt": {
+    "bytes": 62721,
+    "sha256": "63627898d0711668a99b9d3163bc54d885f12f1b9c99dadec4c809e873a312ec",
+    "git_blob": "c09294143725cec79c3582603cb700b4b0cf9186"
+  },
+  "candidate_receipt": {
+    "bytes": 55300,
+    "sha256": "30f4e2ad8a90917000e4593550ab2bb4a2fb4217b1e790806a83e7c19a3f9c4c",
+    "git_blob": "fed17737a783fae6655515a0ada2614c45887fc8"
+  },
+  "original_result": {
+    "passed": 28,
+    "expected_failures": 24,
+    "exit_code": 1
+  },
+  "candidate_result": {
+    "passed": 52,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "timezone": "EST5",
+    "fixed_clock_utc": "2026-10-12T21:00:00Z"
+  },
+  "limitations": [
+    "No external provider requests or real sleeping; transport and sleep are injected.",
+    "Source review plus this independent public-API receiver only; owner maintained-suite and real-loopback CLI results are separate receipts.",
+    "No installation, release, full protocol compliance or runtime behavior beyond the recorded cases is asserted."
+  ],
+  "references": [
+    "https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3",
+    "https://www.rfc-editor.org/rfc/rfc9110.html#section-5.6.7",
+    "https://docs.python.org/3/library/email.utils.html#email.utils.parsedate_to_datetime"
+  ]
+}

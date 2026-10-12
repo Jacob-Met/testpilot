@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/workspace/scratch/6d94e46a6fbc/product_workflow/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_model_retry_after.py",
+    "tests/test_model.py",
+    "tests/test_model_timeouts.py",
+    "tests/test_model_retry_lifetime.py",
+    "tests/test_model_error_detail.py",
+    "tests/test_baseline_runner_admission.py",
+    "tests/test_loop.py",
+    "--junitxml=/workspace/scratch/6d94e46a6fbc/product_workflow/composed-model.xml"
+  ],
+  "exit_code": 0,
+  "elapsed": 16.19761085510254,
+  "parent": "86617fc90becf79b20d9cf5212b848bff8227147",
+  "model_sha256": "7cfcebb2b087f788de7ecd62d11426b97b2035f9ca9c7e3f1dac65f162987287"
+}

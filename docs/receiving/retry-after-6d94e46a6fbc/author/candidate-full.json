@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/scratch/6d94e46a6fbc/product_workflow/venv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "--junitxml=/workspace/scratch/6d94e46a6fbc/product_workflow/candidate-full.xml"
+  ],
+  "exit_code": 1,
+  "elapsed": 148.17631697654724,
+  "model_sha256": "7cfcebb2b087f788de7ecd62d11426b97b2035f9ca9c7e3f1dac65f162987287",
+  "python": "Python 3.12.14"
+}

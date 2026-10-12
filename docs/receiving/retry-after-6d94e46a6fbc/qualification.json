@@ -1,0 +1,140 @@
+{
+  "schema": "testpilot.retry_after_receiving.v1",
+  "recorded_at_utc": "2026-10-12T22:36:04.532752+00:00",
+  "repository": "Jacob-Met/testpilot",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/83",
+  "owner": "/root/product_workflow, continuing HAMON team 6d94e46a6fbc",
+  "reviewer": "/root/engine_reliability",
+  "publication_parent": "e222894c095e16aff19413e6e3f8a2b6201a059a",
+  "publication_base_tree": "d1a59e55e6930387eb466b632d198de3b7084a4a",
+  "base_tree_leaf_count": 1524,
+  "current_projection_file_count": 109,
+  "projection_receiving": "Every existing projected file matches the publication parent except the reviewed model change; all current testpilot modules, test files and pyproject.toml are present. Repository metadata and older receiving records are preserved through the remote base tree.",
+  "source": [
+    {
+      "path": "testpilot/model.py",
+      "bytes": 12670,
+      "sha256": "7cfcebb2b087f788de7ecd62d11426b97b2035f9ca9c7e3f1dac65f162987287",
+      "git_blob": "40b3072300be396cfc32c76488f289e699343277"
+    },
+    {
+      "path": "tests/test_model_retry_after.py",
+      "bytes": 8589,
+      "sha256": "2890ecfda7606b7cb60f45fa5b21a0e5f8ff3198372c9b53f9e5b6709a15a9a0",
+      "git_blob": "deec84c2bfbe0d0b93cc4d94071306d470948946"
+    },
+    {
+      "path": "docs/PROVIDER_RETRY_AFTER.md",
+      "bytes": 3455,
+      "sha256": "5d9a334c7fceb7224fa9a05123b2113e959d18bb245f1416759a192acc13536e",
+      "git_blob": "631c7addb456eb4cab847f8b2f2eb2605f7db4d3"
+    }
+  ],
+  "author_execution": [
+    {
+      "name": "baseline-retry-after",
+      "source_parent": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+      "scope": "Original model plus the new frozen tests",
+      "passed": 14,
+      "failed": 17,
+      "subtests_passed": 0,
+      "exit_code": 1,
+      "receipt": "author/baseline-retry-after.json",
+      "output": "author/baseline-retry-after.log"
+    },
+    {
+      "name": "candidate-model",
+      "source_parent": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+      "scope": "Frozen candidate, maintained model/HTTP tests",
+      "passed": 55,
+      "failed": 0,
+      "subtests_passed": 8,
+      "exit_code": 0,
+      "receipt": "author/candidate-model.json",
+      "output": "author/candidate-model.log"
+    },
+    {
+      "name": "candidate-full",
+      "source_parent": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+      "scope": "Frozen candidate, full maintained suite",
+      "passed": 574,
+      "failed": 2,
+      "subtests_passed": 33,
+      "exit_code": 1,
+      "receipt": "author/candidate-full.json",
+      "output": "author/candidate-full.log"
+    },
+    {
+      "name": "original-interrupt",
+      "source_parent": "52275f50e672c145d8f69e90cf40948ab28a7d79",
+      "scope": "Untouched original, exact detached-child failing cases",
+      "passed": 0,
+      "failed": 2,
+      "subtests_passed": 0,
+      "exit_code": 1,
+      "receipt": "author/original-interrupt.json",
+      "output": "author/original-interrupt.log"
+    },
+    {
+      "name": "composed-model",
+      "source_parent": "86617fc90becf79b20d9cf5212b848bff8227147",
+      "scope": "Candidate plus upstream baseline-runner admission",
+      "passed": 75,
+      "failed": 0,
+      "subtests_passed": 15,
+      "exit_code": 0,
+      "receipt": "author/composed-model.json",
+      "output": "author/composed-model.log"
+    },
+    {
+      "name": "current-model",
+      "source_parent": "e222894c095e16aff19413e6e3f8a2b6201a059a",
+      "scope": "Candidate plus upstream baseline admission and verdict repair",
+      "passed": 128,
+      "failed": 0,
+      "subtests_passed": 15,
+      "exit_code": 0,
+      "receipt": "author/current-model.json",
+      "output": "author/current-model.log"
+    }
+  ],
+  "independent_execution": {
+    "candidate_passed": 52,
+    "candidate_failed": 0,
+    "candidate_exit_code": 0,
+    "original_controls_passed": 28,
+    "original_expected_failures": 24,
+    "original_exit_code": 1,
+    "review": "independent/INDEPENDENT_REVIEW.md"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "pytest": "9.1.1",
+    "coverage": "7.16.2",
+    "environment": "Isolated local virtual environment and temporary repositories; no provider requests or real retry sleeps"
+  },
+  "known_full_suite_failures": [
+    "tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-wait]",
+    "tests/test_sandbox_interrupt.py::test_interrupt_does_not_drain_a_detached_helpers_pipe[escape-exit]"
+  ],
+  "failure_receiving": "Both full-suite failures assert that an intentionally detached child is still running. Both fail identically on untouched original source in this environment. They are retained as failures; no wholly green suite is claimed.",
+  "workflow_preflight": {
+    "path": ".github/workflows/ci.yml",
+    "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+    "push_branches": [
+      "main"
+    ],
+    "pull_request": true,
+    "workflow_file_count": 1,
+    "feature_branch_push_matches": false,
+    "create_trigger_present": false,
+    "issue_trigger_present": false,
+    "inspection_parent": "e222894c095e16aff19413e6e3f8a2b6201a059a"
+  },
+  "boundaries": [
+    "Reviewed source contribution on an isolated feature branch.",
+    "No PR creation, main movement, hosted workflow, deployment or installed provider behavior is included.",
+    "The 120-second bound applies to provider guidance, not the existing exponential backoff.",
+    "The full-suite receipt uses the original parent; current-parent combined receiving passes the 128 affected tests and 15 subtests."
+  ]
+}

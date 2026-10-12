@@ -1,0 +1,327 @@
+.FFFFFFFF..........FFF.FFFF..FF                                          [100%]
+=================================== FAILURES ===================================
+_ test_integer_guidance_never_shortens_backoff_or_changes_the_request[00017-17] _
+
+value = '00017', expected = 17
+
+    @pytest.mark.parametrize("value, expected", [("0", 2), ("00017", 17), ("119", 119), ("120", 120)])
+    def test_integer_guidance_never_shortens_backoff_or_changes_the_request(value, expected):
+        client, requests, delays, bodies = recovering_client(value)
+        result = client.chat("fixture", MESSAGES, max_tokens=23)
+>       assert delays == [expected]
+E       assert [2] == [17]
+E         
+E         At index 0 diff: 2 != 17
+E         Use -v to get more diff
+
+tests/test_model_retry_after.py:52: AssertionError
+_ test_integer_guidance_never_shortens_backoff_or_changes_the_request[119-119] _
+
+value = '119', expected = 119
+
+    @pytest.mark.parametrize("value, expected", [("0", 2), ("00017", 17), ("119", 119), ("120", 120)])
+    def test_integer_guidance_never_shortens_backoff_or_changes_the_request(value, expected):
+        client, requests, delays, bodies = recovering_client(value)
+        result = client.chat("fixture", MESSAGES, max_tokens=23)
+>       assert delays == [expected]
+E       assert [2] == [119]
+E         
+E         At index 0 diff: 2 != 119
+E         Use -v to get more diff
+
+tests/test_model_retry_after.py:52: AssertionError
+_ test_integer_guidance_never_shortens_backoff_or_changes_the_request[120-120] _
+
+value = '120', expected = 120
+
+    @pytest.mark.parametrize("value, expected", [("0", 2), ("00017", 17), ("119", 119), ("120", 120)])
+    def test_integer_guidance_never_shortens_backoff_or_changes_the_request(value, expected):
+        client, requests, delays, bodies = recovering_client(value)
+        result = client.chat("fixture", MESSAGES, max_tokens=23)
+>       assert delays == [expected]
+E       assert [2] == [120]
+E         
+E         At index 0 diff: 2 != 120
+E         Use -v to get more diff
+
+tests/test_model_retry_after.py:52: AssertionError
+____________ test_all_existing_retryable_statuses_use_guidance[429] ____________
+
+status = 429
+
+    @pytest.mark.parametrize("status", [429, 500, 502, 503, 504])
+    def test_all_existing_retryable_statuses_use_guidance(status):
+        client, requests, delays, _ = recovering_client("8", status=status)
+        assert client.chat("fixture", MESSAGES).content == "recovered"
+>       assert delays == [8] and len(requests) == 2
+E       assert ([2] == [8]
+E         
+E         At index 0 diff: 2 != 8
+E         Use -v to get more diff)
+
+tests/test_model_retry_after.py:62: AssertionError
+____________ test_all_existing_retryable_statuses_use_guidance[500] ____________
+
+status = 500
+
+    @pytest.mark.parametrize("status", [429, 500, 502, 503, 504])
+    def test_all_existing_retryable_statuses_use_guidance(status):
+        client, requests, delays, _ = recovering_client("8", status=status)
+        assert client.chat("fixture", MESSAGES).content == "recovered"
+>       assert delays == [8] and len(requests) == 2
+E       assert ([2] == [8]
+E         
+E         At index 0 diff: 2 != 8
+E         Use -v to get more diff)
+
+tests/test_model_retry_after.py:62: AssertionError
+____________ test_all_existing_retryable_statuses_use_guidance[502] ____________
+
+status = 502
+
+    @pytest.mark.parametrize("status", [429, 500, 502, 503, 504])
+    def test_all_existing_retryable_statuses_use_guidance(status):
+        client, requests, delays, _ = recovering_client("8", status=status)
+        assert client.chat("fixture", MESSAGES).content == "recovered"
+>       assert delays == [8] and len(requests) == 2
+E       assert ([2] == [8]
+E         
+E         At index 0 diff: 2 != 8
+E         Use -v to get more diff)
+
+tests/test_model_retry_after.py:62: AssertionError
+____________ test_all_existing_retryable_statuses_use_guidance[503] ____________
+
+status = 503
+
+    @pytest.mark.parametrize("status", [429, 500, 502, 503, 504])
+    def test_all_existing_retryable_statuses_use_guidance(status):
+        client, requests, delays, _ = recovering_client("8", status=status)
+        assert client.chat("fixture", MESSAGES).content == "recovered"
+>       assert delays == [8] and len(requests) == 2
+E       assert ([2] == [8]
+E         
+E         At index 0 diff: 2 != 8
+E         Use -v to get more diff)
+
+tests/test_model_retry_after.py:62: AssertionError
+____________ test_all_existing_retryable_statuses_use_guidance[504] ____________
+
+status = 504
+
+    @pytest.mark.parametrize("status", [429, 500, 502, 503, 504])
+    def test_all_existing_retryable_statuses_use_guidance(status):
+        client, requests, delays, _ = recovering_client("8", status=status)
+        assert client.chat("fixture", MESSAGES).content == "recovered"
+>       assert delays == [8] and len(requests) == 2
+E       assert ([2] == [8]
+E         
+E         At index 0 diff: 2 != 8
+E         Use -v to get more diff)
+
+tests/test_model_retry_after.py:62: AssertionError
+___ test_http_date_formats_use_the_utc_clock[Tue, 14 Nov 2023 22:13:30 GMT] ____
+
+value = 'Tue, 14 Nov 2023 22:13:30 GMT'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f33a40>
+
+    @pytest.mark.parametrize("value", [
+        "Tue, 14 Nov 2023 22:13:30 GMT",
+        "Tuesday, 14-Nov-23 22:13:30 GMT",
+        "Tue Nov 14 22:13:30 2023",
+    ])
+    def test_http_date_formats_use_the_utc_clock(value, monkeypatch):
+        monkeypatch.setattr(model_module.time, "time", lambda: NOW)
+        client, _, delays, _ = recovering_client(value)
+        client.chat("fixture", MESSAGES)
+>       assert delays == [10]
+E       assert [2] == [10]
+E         
+E         At index 0 diff: 2 != 10
+E         Use -v to get more diff
+
+tests/test_model_retry_after.py:81: AssertionError
+__ test_http_date_formats_use_the_utc_clock[Tuesday, 14-Nov-23 22:13:30 GMT] ___
+
+value = 'Tuesday, 14-Nov-23 22:13:30 GMT'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f349b0>
+
+    @pytest.mark.parametrize("value", [
+        "Tue, 14 Nov 2023 22:13:30 GMT",
+        "Tuesday, 14-Nov-23 22:13:30 GMT",
+        "Tue Nov 14 22:13:30 2023",
+    ])
+    def test_http_date_formats_use_the_utc_clock(value, monkeypatch):
+        monkeypatch.setattr(model_module.time, "time", lambda: NOW)
+        client, _, delays, _ = recovering_client(value)
+        client.chat("fixture", MESSAGES)
+>       assert delays == [10]
+E       assert [2] == [10]
+E         
+E         At index 0 diff: 2 != 10
+E         Use -v to get more diff
+
+tests/test_model_retry_after.py:81: AssertionError
+______ test_http_date_formats_use_the_utc_clock[Tue Nov 14 22:13:30 2023] ______
+
+value = 'Tue Nov 14 22:13:30 2023'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f351c0>
+
+    @pytest.mark.parametrize("value", [
+        "Tue, 14 Nov 2023 22:13:30 GMT",
+        "Tuesday, 14-Nov-23 22:13:30 GMT",
+        "Tue Nov 14 22:13:30 2023",
+    ])
+    def test_http_date_formats_use_the_utc_clock(value, monkeypatch):
+        monkeypatch.setattr(model_module.time, "time", lambda: NOW)
+        client, _, delays, _ = recovering_client(value)
+        client.chat("fixture", MESSAGES)
+>       assert delays == [10]
+E       assert [2] == [10]
+E         
+E         At index 0 diff: 2 != 10
+E         Use -v to get more diff
+
+tests/test_model_retry_after.py:81: AssertionError
+__ test_excessive_provider_wait_refuses_without_early_retry_or_body_read[121] __
+
+value = '121'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f35e80>
+
+    @pytest.mark.parametrize("value", ["121", "9" * 5000, "Tue, 14 Nov 2023 22:15:21 GMT"])
+    def test_excessive_provider_wait_refuses_without_early_retry_or_body_read(value, monkeypatch):
+        monkeypatch.setattr(model_module.time, "time", lambda: NOW)
+        client, requests, delays, bodies = recovering_client(value)
+>       with pytest.raises(ModelError, match="Retry-After.*120") as caught:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ModelError
+
+tests/test_model_retry_after.py:95: Failed
+_ test_excessive_provider_wait_refuses_without_early_retry_or_body_read[99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999] _
+
+value = '999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999...9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a970e3a40>
+
+    @pytest.mark.parametrize("value", ["121", "9" * 5000, "Tue, 14 Nov 2023 22:15:21 GMT"])
+    def test_excessive_provider_wait_refuses_without_early_retry_or_body_read(value, monkeypatch):
+        monkeypatch.setattr(model_module.time, "time", lambda: NOW)
+        client, requests, delays, bodies = recovering_client(value)
+>       with pytest.raises(ModelError, match="Retry-After.*120") as caught:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ModelError
+
+tests/test_model_retry_after.py:95: Failed
+_ test_excessive_provider_wait_refuses_without_early_retry_or_body_read[Tue, 14 Nov 2023 22:15:21 GMT] _
+
+value = 'Tue, 14 Nov 2023 22:15:21 GMT'
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f36030>
+
+    @pytest.mark.parametrize("value", ["121", "9" * 5000, "Tue, 14 Nov 2023 22:15:21 GMT"])
+    def test_excessive_provider_wait_refuses_without_early_retry_or_body_read(value, monkeypatch):
+        monkeypatch.setattr(model_module.time, "time", lambda: NOW)
+        client, requests, delays, bodies = recovering_client(value)
+>       with pytest.raises(ModelError, match="Retry-After.*120") as caught:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ModelError
+
+tests/test_model_retry_after.py:95: Failed
+____________ test_obsolete_year_uses_the_rolling_fifty_year_window _____________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f34ef0>
+
+    def test_obsolete_year_uses_the_rolling_fifty_year_window(monkeypatch):
+        now = datetime(2026, 10, 12, tzinfo=timezone.utc).timestamp()
+        monkeypatch.setattr(model_module.time, "time", lambda: now)
+        client, requests, delays, bodies = recovering_client("Tuesday, 01-Jan-69 00:00:00 GMT")
+>       with pytest.raises(ModelError, match="Retry-After.*120"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ModelError
+
+tests/test_model_retry_after.py:105: Failed
+_____ test_real_http_recovery_reaches_the_existing_cli_and_passing_outputs _____
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-188/test_real_http_recovery_reache0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f310d0>
+
+    def test_real_http_recovery_reaches_the_existing_cli_and_passing_outputs(tmp_path, monkeypatch):
+        repo, diff, source, existing = changed_repo(tmp_path)
+        output, delays = tmp_path / "output", []
+        with local_replies([(429, "7", "throttled"), (200, None, PLAN), (200, None, GOOD)]) as (url, requests):
+            client = OpenAICompatClient(base_url=url, api_key="synthetic", timeout=1, sleep=delays.append)
+            assert run_cli(monkeypatch, repo, diff, output, client) == 0
+            assert len(requests) == 3 and requests[0] == requests[1]
+        report = json.loads((output / "report.json").read_text())
+        assert report["status"] == "passed" and report["final"]["passed"] == 3
+        assert report["ledger"]["total_tokens"] == 20 and len(report["ledger"]["entries"]) == 2
+>       assert delays == [7]
+E       assert [2] == [7]
+E         
+E         At index 0 diff: 2 != 7
+E         Use -v to get more diff
+
+tests/test_model_retry_after.py:175: AssertionError
+----------------------------- Captured stdout call -----------------------------
+# TestPilot report: **passed**
+
+- Changed functions: sample.py::double
+- Tests written: 2 in tests/test_generated_double.py
+- Repair rounds used: 0/1
+- Final run: 3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected in 0.431s
+- Coverage (total): 100.0% -> 100.0% (+0.0 pts)
+- Coverage (changed lines, n=1): 100.0% -> 100.0%
+- Tokens: 20; cost: unpriced (set TESTPILOT_PRICES)
+  - `fixture-plan`: 1 calls, 7 in / 3 out
+  - `fixture-editor`: 1 calls, 7 in / 3 out
+
+wrote /tmp/pytest-of-root/pytest-188/test_real_http_recovery_reache0/output/testpilot.patch, /tmp/pytest-of-root/pytest-188/test_real_http_recovery_reache0/output/report.json, /tmp/pytest-of-root/pytest-188/test_real_http_recovery_reache0/output/report.md, /tmp/pytest-of-root/pytest-188/test_real_http_recovery_reache0/output/report.html
+_____ test_real_http_long_wait_retains_completed_work_in_cli_error_outputs _____
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-188/test_real_http_long_wait_retai0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f8a96f557c0>
+
+    def test_real_http_long_wait_retains_completed_work_in_cli_error_outputs(tmp_path, monkeypatch):
+        repo, diff, source, existing = changed_repo(tmp_path)
+        output, delays = tmp_path / "output", []
+        with local_replies([(200, None, PLAN), (200, None, BAD), (503, "121", "unavailable")]) as (url, requests):
+            client = OpenAICompatClient(base_url=url, api_key="synthetic", timeout=1, sleep=delays.append)
+            assert run_cli(monkeypatch, repo, diff, output, client) == 1
+>           assert len(requests) == 3
+E           assert 4 == 3
+E            +  where 4 = len([('/v1/chat/completions', b'{"model": "fixture-plan", "messages": [{"role": "system", "content": "You are TestPilot\'s...== 5\\nE        +  where 4 = double(2)\\n\\ntests/test_generated_double.py:4: AssertionError"}], "temperature": 0.2}')])
+
+tests/test_model_retry_after.py:185: AssertionError
+----------------------------- Captured stdout call -----------------------------
+# TestPilot report: **model_error**
+
+HTTP 400 from http://127.0.0.1:44309/v1/chat/completions: {"model": "fixture-editor", "choices": [{"message": {"content": "unexpected retry"}}], "usage": {"prompt_tokens": 7, "completion_tokens": 3}}
+
+- Changed functions: sample.py::double
+- Tests written: 1 in tests/test_generated_double.py
+- Repair rounds used: 1/1
+- Final run: 1 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected in 0.367s
+- Coverage (total): 100.0% -> 100.0% (+0.0 pts)
+- Coverage (changed lines, n=1): 100.0% -> 100.0%
+- Tokens: 20; cost: unpriced (set TESTPILOT_PRICES)
+  - `fixture-plan`: 1 calls, 7 in / 3 out
+  - `fixture-editor`: 1 calls, 7 in / 3 out
+
+wrote /tmp/pytest-of-root/pytest-188/test_real_http_long_wait_retai0/output/testpilot.patch, /tmp/pytest-of-root/pytest-188/test_real_http_long_wait_retai0/output/report.json, /tmp/pytest-of-root/pytest-188/test_real_http_long_wait_retai0/output/report.md, /tmp/pytest-of-root/pytest-188/test_real_http_long_wait_retai0/output/report.html
+=========================== short test summary info ============================
+FAILED tests/test_model_retry_after.py::test_integer_guidance_never_shortens_backoff_or_changes_the_request[00017-17]
+FAILED tests/test_model_retry_after.py::test_integer_guidance_never_shortens_backoff_or_changes_the_request[119-119]
+FAILED tests/test_model_retry_after.py::test_integer_guidance_never_shortens_backoff_or_changes_the_request[120-120]
+FAILED tests/test_model_retry_after.py::test_all_existing_retryable_statuses_use_guidance[429]
+FAILED tests/test_model_retry_after.py::test_all_existing_retryable_statuses_use_guidance[500]
+FAILED tests/test_model_retry_after.py::test_all_existing_retryable_statuses_use_guidance[502]
+FAILED tests/test_model_retry_after.py::test_all_existing_retryable_statuses_use_guidance[503]
+FAILED tests/test_model_retry_after.py::test_all_existing_retryable_statuses_use_guidance[504]
+FAILED tests/test_model_retry_after.py::test_http_date_formats_use_the_utc_clock[Tue, 14 Nov 2023 22:13:30 GMT]
+FAILED tests/test_model_retry_after.py::test_http_date_formats_use_the_utc_clock[Tuesday, 14-Nov-23 22:13:30 GMT]
+FAILED tests/test_model_retry_after.py::test_http_date_formats_use_the_utc_clock[Tue Nov 14 22:13:30 2023]
+FAILED tests/test_model_retry_after.py::test_excessive_provider_wait_refuses_without_early_retry_or_body_read[121]
+FAILED tests/test_model_retry_after.py::test_excessive_provider_wait_refuses_without_early_retry_or_body_read[99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999]
+FAILED tests/test_model_retry_after.py::test_excessive_provider_wait_refuses_without_early_retry_or_body_read[Tue, 14 Nov 2023 22:15:21 GMT]
+FAILED tests/test_model_retry_after.py::test_obsolete_year_uses_the_rolling_fifty_year_window
+FAILED tests/test_model_retry_after.py::test_real_http_recovery_reaches_the_existing_cli_and_passing_outputs
+FAILED tests/test_model_retry_after.py::test_real_http_long_wait_retains_completed_work_in_cli_error_outputs
+17 failed, 14 passed in 2.55s
