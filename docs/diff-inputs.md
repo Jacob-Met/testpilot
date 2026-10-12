@@ -15,3 +15,5 @@ A Git diff can contain raw non-UTF-8 bytes from a valid Python file, including a
 Selected Python files are still read from the requested working tree with Python's native source decoder. Their encoding cookies and UTF-8 BOMs determine source decoding, and the existing path-containment and AST-selection rules remain in effect. Source files are not rewritten. A transport change does not make an invalid Python source file valid or reserve its contents for a later invocation.
 
 Saved files, Git stdout and ordinary binary stdin use UTF-8 with `surrogateescape` for undecodable bytes. Existing universal-newline handling is retained for LF, CRLF and CR input. Direct callers that supply a text-only stdin object remain supported.
+
+Malformed Git-quoted old or new path headers reject the entire diff with a record-indexed `DiffFormatError`, including when an earlier file was valid. Both `targets` and `run` use their existing configuration-error status **2** and stderr diagnostic; `run` refuses the input before model setup or report writes. Valid quoted paths, including Git's octal filename bytes, keep their existing decoding and source-selection behavior.
