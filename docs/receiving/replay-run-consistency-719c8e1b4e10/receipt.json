@@ -1,0 +1,68 @@
+{
+  "started_at": "2026-10-12T23:12:51.998785+00:00",
+  "parent": "478f68adf01658a94a3ede22526da00f580785bd",
+  "candidate": "1c01e0b9b720f22b2c1a9ea5bfe08c6b66c35a55",
+  "device": "cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90",
+  "node": "v22.22.1",
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+  "uid": 1000,
+  "qualification": "Exact application under Node with a minimal authored DOM and local fixture response; no browser, provider, service, or full Python-suite result is claimed.",
+  "source_files": {
+    "before-app.mjs": {
+      "git_blob": "5795114a641ffb83dff466b359424fb78502d7e5",
+      "sha256": "103eab1f846d98f275ff82156d9d1600a8f32ce5b8b9fb43b2c1749b97426830",
+      "bytes": 11802
+    },
+    "candidate-app.mjs": {
+      "git_blob": "3a1b379e62df5d4c14c76479dc81db6d0e66f0e1",
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115",
+      "bytes": 12509
+    },
+    "run-evidence.test.mjs": {
+      "git_blob": "5abcc4aff5bd2f7b93430cfd93ae88cb5b849622",
+      "sha256": "31b33a9b6df7a72565a1d683bd894ea84a5c826f766c345aab2e169c6858bc28",
+      "bytes": 8257
+    },
+    "replays.json": {
+      "git_blob": "dbc4d8144b926eeec94089d1e5c01c037a2ffcf0",
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319",
+      "bytes": 28129
+    }
+  },
+  "runs": [
+    {
+      "variant": "baseline",
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "web-demo/tests/run-evidence.test.mjs"
+      ],
+      "exit": 1,
+      "inputs_unchanged": true,
+      "log": "baseline.tap",
+      "log_sha256": "5828e4df21c723f48f133a0779809c2fa9b52f8e1dc7b83b863ea159c5403945",
+      "tap": "TAP version 13\n# Subtest: both bundled recordings retain every deep-linked stage and exact download paths\nok 1 - both bundled recordings retain every deep-linked stage and exact download paths\n  ---\n  duration_ms: 10.846883\n  type: 'test'\n  ...\n# Subtest: inconsistent or incomplete required runs never expose a verdict or download\nnot ok 2 - inconsistent or incomplete required runs never expose a verdict or download\n  ---\n  duration_ms: 1.926012\n  type: 'test'\n  location: '/var/tmp/testpilot-run-evidence-719c8e1b4e10-h2q_k01m/baseline/web-demo/tests/run-evidence.test.mjs:134:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    calc_clamp/baseline/count mismatch\n    \n    false !== true\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  actual: false\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///var/tmp/testpilot-run-evidence-719c8e1b4e10-h2q_k01m/baseline/web-demo/tests/run-evidence.test.mjs:143:16)\n    async Test.run (node:internal/test_runner/test:1054:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: a complete failing run can contain no passing cases\nok 3 - a complete failing run can contain no passing cases\n  ---\n  duration_ms: 0.861059\n  type: 'test'\n  ...\n# Subtest: a failed process without a recorded failing case is not a regression witness\nnot ok 4 - a failed process without a recorded failing case is not a regression witness\n  ---\n  duration_ms: 0.80612\n  type: 'test'\n  location: '/var/tmp/testpilot-run-evidence-719c8e1b4e10-h2q_k01m/baseline/web-demo/tests/run-evidence.test.mjs:170:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    false !== true\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  actual: false\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///var/tmp/testpilot-run-evidence-719c8e1b4e10-h2q_k01m/baseline/web-demo/tests/run-evidence.test.mjs:177:10)\n    async Test.run (node:internal/test_runner/test:1054:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 2\n# fail 2\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 145.525169\n",
+      "stderr": ""
+    },
+    {
+      "variant": "candidate",
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "web-demo/tests/run-evidence.test.mjs"
+      ],
+      "exit": 0,
+      "inputs_unchanged": true,
+      "log": "candidate.tap",
+      "log_sha256": "a350e7ccabab3e1eda27392fc59b45cd6edfc917443ab8f03325481db794b5ab",
+      "tap": "TAP version 13\n# Subtest: both bundled recordings retain every deep-linked stage and exact download paths\nok 1 - both bundled recordings retain every deep-linked stage and exact download paths\n  ---\n  duration_ms: 11.603937\n  type: 'test'\n  ...\n# Subtest: inconsistent or incomplete required runs never expose a verdict or download\nok 2 - inconsistent or incomplete required runs never expose a verdict or download\n  ---\n  duration_ms: 60.250198\n  type: 'test'\n  ...\n# Subtest: a complete failing run can contain no passing cases\nok 3 - a complete failing run can contain no passing cases\n  ---\n  duration_ms: 0.871207\n  type: 'test'\n  ...\n# Subtest: a failed process without a recorded failing case is not a regression witness\nok 4 - a failed process without a recorded failing case is not a regression witness\n  ---\n  duration_ms: 0.564745\n  type: 'test'\n  ...\n1..4\n# tests 4\n# suites 0\n# pass 4\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 212.529467\n",
+      "stderr": ""
+    }
+  ],
+  "completed_at": "2026-10-12T23:12:52.567601+00:00",
+  "expected_baseline_failure": true,
+  "candidate_passed": true,
+  "all_inputs_unchanged": true
+}

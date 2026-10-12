@@ -126,3 +126,19 @@ It executes the exact application with a small DOM and a local fixture response,
 checks all eight fixture/stage views and rejects malformed run evidence in every
 required position before any verdict or download appears. Use the separate
 browser acceptance command above to qualify real browser behavior.
+
+### Native source qualification
+
+The exact application and unchanged bundled data were received on Node
+v22.22.1 on 2026-10-12. The same four maintained tests produced two passes and
+two expected failures on original commit
+`478f68adf01658a94a3ede22526da00f580785bd`, then four passes on candidate
+`1c01e0b9b720f22b2c1a9ea5bfe08c6b66c35a55`. The passing course includes all
+160 malformed-run controls and eight healthy fixture/stage views. Every
+received source/data file remained byte-identical after execution.
+
+The [native receipt](../docs/receiving/replay-run-consistency-719c8e1b4e10/receipt.json)
+retains source identities, commands, complete test output and timing. This is
+Node application qualification with an authored DOM; it does not claim an
+independent review, fresh browser acceptance, full Python-suite run or deployed
+site adoption.
