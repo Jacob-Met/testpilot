@@ -1,0 +1,59 @@
+{
+  "device_id": "edc358ed-5ad6-4036-b7aa-8667bf0e14e0",
+  "artifact": {
+    "path": "/dev/shm/testpilot-wheel-windows-1caa1d8e028a.zip",
+    "native_path": "C:\\Users\\jacob\\hamon-testpilot-wheel-windows-1caa1d8e028a\\windows-wheel-receiving-evidence.zip",
+    "bytes": 41361,
+    "sha256": "306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee"
+  },
+  "export_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 153092 (shell: powershell.exe)\nInitial output:\n{\"path\": \"C:\\\\Users\\\\jacob\\\\hamon-testpilot-wheel-windows-1caa1d8e028a\\\\windows-wheel-receiving-evidence.zip\", \"bytes\": 41361, \"sha256\": \"306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee\", \"members\": 27, \"payloads\": 26, \"receipt_sha256\": \"a7689119f24ffdf3d69777fdedad0859577ee5ae2747b4f19cfc0555c1fd95b0\", \"manifest_sha256\": \"d5dff9605cef20dc5a6fc24cd727c47866ee15031d06340048cce350ca4e8bbd\", \"input_guards\": 36, \"installed_modules\": 14}\r\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "export_completion": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"path\": \"C:\\\\Users\\\\jacob\\\\hamon-testpilot-wheel-windows-1caa1d8e028a\\\\windows-wheel-receiving-evidence.zip\", \"bytes\": 41361, \"sha256\": \"306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee\", \"members\": 27, \"payloads\": 26, \"receipt_sha256\": \"a7689119f24ffdf3d69777fdedad0859577ee5ae2747b4f19cfc0555c1fd95b0\", \"manifest_sha256\": \"d5dff9605cef20dc5a6fc24cd727c47866ee15031d06340048cce350ca4e8bbd\", \"input_guards\": 36, \"installed_modules\": 14}\r\n\n✅ Process completed with exit code 0 (runtime: 0.44s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "readback": {
+    "pid": 123320,
+    "bytes": 41361,
+    "sha256": "306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee",
+    "completion": [
+      "✅ Process completed with exit code 0 (runtime: 0.36s)",
+      "[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+    ]
+  },
+  "cloud_write": {
+    "chunk_id": "6d8b7a",
+    "wall_time_seconds": 0.00004663,
+    "exit_code": 0,
+    "original_token_count": 39,
+    "output": "{\"path\": \"/dev/shm/testpilot-wheel-windows-1caa1d8e028a.zip\", \"bytes\": 41361, \"sha256\": \"306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee\"}\n"
+  },
+  "cloud_verification": {
+    "chunk_id": "0f452f",
+    "wall_time_seconds": 0.000030345,
+    "exit_code": 0,
+    "original_token_count": 103,
+    "output": "{\"archive\": \"/dev/shm/testpilot-wheel-windows-1caa1d8e028a.zip\", \"bytes\": 41361, \"sha256\": \"306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee\", \"members\": 27, \"payloads\": 26, \"kit_inputs\": 31, \"guards\": 36, \"installed_modules\": 14, \"calls\": 7, \"actual_exits\": [0, 0, 0, 0, 0, 0, 1], \"status\": \"suspected_code_bug\", \"case_outcomes\": {\"passed\": 3, \"failed\": 3, \"generated\": 4}, \"all_checks\": true}\n"
+  },
+  "publication_scope": "Project delivery owns this accepted-artifact companion. No source modification or broader current-main/maintained-suite claim; remote_consumer's existing independent product/root gates remain unchanged."
+}

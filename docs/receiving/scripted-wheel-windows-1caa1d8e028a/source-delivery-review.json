@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "reviewer": "estate-1caa1d8e028a/source_delivery",
+  "utc": "2026-10-13T10:50:21.910Z",
+  "scope": "Read-only final guide, controller, source/tree, archive and receipt review. No product or native receiving rerun.",
+  "publication_manifest_sha256": "8b382cca78258b4fd238ac9d2139cb61648cd264f4f9784b18a802459ff1b7af",
+  "guide_sha256": "606a7c33c5d2bc8e4170f3ddf9655fdb990d821fd1be8d4a8c8abd734d9e3231",
+  "archive_sha256": "306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee",
+  "receipt_sha256": "a7689119f24ffdf3d69777fdedad0859577ee5ae2747b4f19cfc0555c1fd95b0",
+  "source_commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "source_tree": "3b6d270f655310fa2f98cab9bccffca23ec146cf",
+  "checks": {
+    "six_publication_files_size_sha256_git_blob": true,
+    "archive_members": 27,
+    "archive_payloads_size_sha256_crc": 26,
+    "fresh_connected_github_source_pins": 25,
+    "unchanged_input_guards": 36,
+    "unchanged_installed_module_guards": 14,
+    "raw_stdout_stderr_pairs": 7,
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "actual_report": {
+      "status": "suspected_code_bug",
+      "passed": 3,
+      "failed": 3,
+      "generated": 4,
+      "generated_passed": 1,
+      "generated_failed": 3,
+      "junit_available": true,
+      "timed_out": false
+    }
+  },
+  "conclusions": [
+    "The documented ordinary --system-site-packages Windows venv is supported by actual pytest9.0.2 user-site import and installed testpilot module location under the new venv. No -I success is claimed.",
+    "Local wheel flags exclude index/dependency/cache/compile operations. Source, input and installed-module guards cover the claimed exact historical version.",
+    "The complete final guide and as-run controller preserve the intended sample failure, four report artifacts, CMD examples versus argument-list execution, and no patch application/provider/browser/current-main/full-suite claims.",
+    "Preliminary isolated capability start lacks a separate completion object; the guide explicitly discloses this while product/export/readback have their recorded completion."
+  ],
+  "review_attempt_history": [
+    "An initial local metadata-check command embedded the entire1573-leaf tree and was rejected before process creation with E2BIG. No product process or artifact changed. The subsequent read-only check used the exact25 needed entries from that same freshly fetched tree and passed."
+  ],
+  "blockers": []
+}
