@@ -1,0 +1,124 @@
+{
+  "schema": "hamon.testpilot-cleanup-independent-review.v1",
+  "reviewer": "dc06b3a12de5/shared_delivery",
+  "disposition": "ACCEPT exact bounded source, guide and separate native receiving",
+  "repository": "https://github.com/Jacob-Met/testpilot",
+  "baseline_commit": "478f68adf01658a94a3ede22526da00f580785bd",
+  "candidate_commit": "ac0dc717b854d38401c450a855ea2fdb5b6b0d49",
+  "candidate_tree": "88feab3d499e3cba547a37e4b24de6417525d899",
+  "static_review": {
+    "static_disposition": "ACCEPT bounded private-stage cleanup OSError correction",
+    "candidate_commit": "ac0dc717b854d38401c450a855ea2fdb5b6b0d49",
+    "tree": "88feab3d499e3cba547a37e4b24de6417525d899",
+    "source_delta_bytes": 141,
+    "three_files_hash_verified": true,
+    "all_other_source_bytes_exact": true,
+    "unrelated_leaves_and_modes_conserved": 1543,
+    "guide_diff": "--- baseline/docs/COMPARE.md\n+++ candidate/docs/COMPARE.md\n@@ -12,6 +12,8 @@\n Open the HTML directly in a browser. The command consumes saved reports and writes one new file. It does not call a model, run pytest, apply a patch, inspect a working repository, or recompute prices. Comparison needs only Python 3.12+ and TestPilot's source; pytest, coverage, provider credentials, a server, and a network connection are not needed.\n \n The output path must be new, and its parent directory must already exist. Existing output files and aliases of either input are refused. TestPilot first reads and validates both reports, renders the complete page, and stages it beside the requested output. It then publishes the completed bytes without replacing an existing path. A filesystem that cannot create a hard link in that directory refuses publication. Exit code 0 means the page was written; 2 means the inputs, arguments, or output destination were refused. The original inputs are never rewritten.\n+\n+Cleanup of the private `.testpilot-compare-*.html` stage is best effort. A filesystem error removing that stage does not undo successful publication or replace an earlier write/publication error. The private stage may remain beside the output when removal fails; an already-published page still has its complete bytes. Other cleanup exceptions, including interruption, remain visible.\n \n ## What the page shows\n \n@@ -64,7 +66,7 @@\n The focused tests exercise exact original bytes, deeply immutable parsed inputs, missing evidence, Decimal precision, differing/duplicate target labels, added empty files, source-line edge cases, malformed and bounded admission, no-overwrite publication, staged-write failures, special-file refusal, and a consumer-only CLI path:\n \n ~~~bash\n-python -m pytest -q tests/test_compare.py tests/test_compare_cli.py\n+python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py\n ~~~\n \n Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.\n"
+  },
+  "oracle": {
+    "path": "/dev/shm/hamon-shared-delivery-dc06b3a12de5/testpilot-cleanup-oracle-v1.json",
+    "bytes": 3930,
+    "sha256": "64bf9e785e88b2b24df283902e98f6f442c1f487c08fceaa47eb7a12c110d203",
+    "frozen_utc": "2026-10-13 00:27:29 UTC",
+    "candidate_seen_when_frozen": false
+  },
+  "receiver": {
+    "path": "/dev/shm/hamon-shared-delivery-dc06b3a12de5/receive_testpilot_cleanup.py",
+    "bytes": 14628,
+    "sha256": "5ea5c97be7d9633d0962bc59ae78f15f673ca268bb7b1048179e4dba423a2bb6",
+    "unchanged_between_courses": true
+  },
+  "native": {
+    "device_id": "1ba59ba0-d800-4a16-8da6-963afed2c12a",
+    "root": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5",
+    "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "uid": 501,
+    "selected_files_per_source": 16,
+    "actual_native_permission_error": true,
+    "directory_mode_during_cleanup": "0500",
+    "owned_directory_modes_restored": true,
+    "baseline_contracts_passed": 2,
+    "candidate_contracts_passed": 4,
+    "contracts_per_source": 4,
+    "baseline_pattern": [
+      false,
+      false,
+      true,
+      true
+    ],
+    "candidate_pattern": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "expected_html_bytes": 45291,
+    "expected_html_sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+    "complete_selected_source_report_states_unchanged": true,
+    "terminal_processes": [
+      {
+        "role": "baseline-negative-witness",
+        "pid": 32985,
+        "exit_code": 0
+      },
+      {
+        "role": "candidate",
+        "pid": 41103,
+        "exit_code": 0
+      }
+    ]
+  },
+  "raw_original_receipts": [
+    {
+      "path": "/dev/shm/hamon-shared-delivery-dc06b3a12de5/testpilot-native-receiving/baseline-receipt.json",
+      "bytes": 23820,
+      "sha256": "67783c401cb5e8fd3fe37d4aaa986c7e310c95fafbe863c175e35234f6c094af"
+    },
+    {
+      "path": "/dev/shm/hamon-shared-delivery-dc06b3a12de5/testpilot-native-receiving/candidate-receipt.json",
+      "bytes": 23769,
+      "sha256": "64a5fa10f456e858f10006e8d0e03eb4a21d9e5a4233ac8ee00fd5d8d1d90f0e"
+    }
+  ],
+  "controls": [
+    {
+      "case": "published_then_real_cleanup_permission_failure",
+      "baseline_contract_pass": false,
+      "candidate_contract_pass": true,
+      "baseline_error": "PermissionError",
+      "candidate_error": null,
+      "candidate_original_publication_error_identity_preserved": false,
+      "candidate_real_native_permission_refusal": true
+    },
+    {
+      "case": "occupied_output_then_real_cleanup_permission_failure",
+      "baseline_contract_pass": false,
+      "candidate_contract_pass": true,
+      "baseline_error": "PermissionError",
+      "candidate_error": "FileExistsError",
+      "candidate_original_publication_error_identity_preserved": true,
+      "candidate_real_native_permission_refusal": true
+    },
+    {
+      "case": "non_oserror_cleanup_exception",
+      "baseline_contract_pass": true,
+      "candidate_contract_pass": true,
+      "baseline_error": "RuntimeError",
+      "candidate_error": "RuntimeError",
+      "candidate_original_publication_error_identity_preserved": false,
+      "candidate_real_native_permission_refusal": false
+    },
+    {
+      "case": "ordinary_success_control",
+      "baseline_contract_pass": true,
+      "candidate_contract_pass": true,
+      "baseline_error": null,
+      "candidate_error": null,
+      "candidate_original_publication_error_identity_preserved": false,
+      "candidate_real_native_permission_refusal": false
+    }
+  ],
+  "limits": "Four independently authored native API/filesystem controls only; maintained pytest, full repository, model/provider and browser suites not run. First two controls use actual hard-link publication and permission-failing unlink. Non-OSError cleanup uses an explicit named test hook. Raw receipt bytes and integer nanosecond timestamps are retained without reserialization."
+}

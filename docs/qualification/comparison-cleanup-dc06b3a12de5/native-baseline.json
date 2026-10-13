@@ -1,0 +1,621 @@
+{
+  "schema": "hamon.testpilot-cleanup-independent-native-receiving.v1",
+  "reviewer": "dc06b3a12de5/shared_delivery",
+  "created_utc": "2026-10-13T00:35:02.983605+00:00",
+  "role": "baseline",
+  "repository": "Jacob-Met/testpilot",
+  "source_commit": "478f68adf01658a94a3ede22526da00f580785bd",
+  "source_tree": "ca0756e20da9c87c90ebd24c45ab494bfa31d47b",
+  "source_directory": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/selected/baseline",
+  "manifest_path": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/selected/SOURCE.json",
+  "manifest_sha256": "f15e9fe55e91194496a968aeea2548235c0b7f7951b0e56bc6adef29f31ee17d",
+  "oracle_sha256": "64bf9e785e88b2b24df283902e98f6f442c1f487c08fceaa47eb7a12c110d203",
+  "receiver_sha256": "5ea5c97be7d9633d0962bc59ae78f15f673ca268bb7b1048179e4dba423a2bb6",
+  "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "uid": 501,
+  "source_before": {
+    "eval/results/calc_clamp/report.json": {
+      "bytes": 11467,
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac",
+      "mode": 420,
+      "inode": 146670786,
+      "device": 16777234,
+      "mtime_ns": 1791851524512752912
+    },
+    "eval/results/stats_median/report.json": {
+      "bytes": 5721,
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0",
+      "mode": 420,
+      "inode": 146670788,
+      "device": 16777234,
+      "mtime_ns": 1791851524512899244
+    },
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "mode": 420,
+      "inode": 146670790,
+      "device": 16777234,
+      "mtime_ns": 1791851524513046951
+    },
+    "testpilot/__main__.py": {
+      "bytes": 11020,
+      "sha256": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db",
+      "mode": 420,
+      "inode": 146670791,
+      "device": 16777234,
+      "mtime_ns": 1791851524513305074
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "mode": 420,
+      "inode": 146670792,
+      "device": 16777234,
+      "mtime_ns": 1791851524513420447
+    },
+    "testpilot/compare.py": {
+      "bytes": 14483,
+      "sha256": "df3fe0c0c035498facc20317d1d4663c89563b35286cf30666b8ca1c729f8983",
+      "mode": 420,
+      "inode": 146670793,
+      "device": 16777234,
+      "mtime_ns": 1791851524513545238
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 21213,
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "mode": 420,
+      "inode": 146670794,
+      "device": 16777234,
+      "mtime_ns": 1791851524513699945
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "mode": 420,
+      "inode": 146670795,
+      "device": 16777234,
+      "mtime_ns": 1791851524513827694
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "mode": 420,
+      "inode": 146670796,
+      "device": 16777234,
+      "mtime_ns": 1791851524513936651
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "mode": 420,
+      "inode": 146670797,
+      "device": 16777234,
+      "mtime_ns": 1791851524514039150
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "mode": 420,
+      "inode": 146670798,
+      "device": 16777234,
+      "mtime_ns": 1791851524514154899
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12115,
+      "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "mode": 420,
+      "inode": 146670799,
+      "device": 16777234,
+      "mtime_ns": 1791851524514300773
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "mode": 420,
+      "inode": 146670800,
+      "device": 16777234,
+      "mtime_ns": 1791851524514437355
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "mode": 420,
+      "inode": 146670801,
+      "device": 16777234,
+      "mtime_ns": 1791851524514585771
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "mode": 420,
+      "inode": 146670802,
+      "device": 16777234,
+      "mtime_ns": 1791851524514723353
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "mode": 420,
+      "inode": 146670803,
+      "device": 16777234,
+      "mtime_ns": 1791851524514856727
+    }
+  },
+  "source_after": {
+    "eval/results/calc_clamp/report.json": {
+      "bytes": 11467,
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac",
+      "mode": 420,
+      "inode": 146670786,
+      "device": 16777234,
+      "mtime_ns": 1791851524512752912
+    },
+    "eval/results/stats_median/report.json": {
+      "bytes": 5721,
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0",
+      "mode": 420,
+      "inode": 146670788,
+      "device": 16777234,
+      "mtime_ns": 1791851524512899244
+    },
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "mode": 420,
+      "inode": 146670790,
+      "device": 16777234,
+      "mtime_ns": 1791851524513046951
+    },
+    "testpilot/__main__.py": {
+      "bytes": 11020,
+      "sha256": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db",
+      "mode": 420,
+      "inode": 146670791,
+      "device": 16777234,
+      "mtime_ns": 1791851524513305074
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "mode": 420,
+      "inode": 146670792,
+      "device": 16777234,
+      "mtime_ns": 1791851524513420447
+    },
+    "testpilot/compare.py": {
+      "bytes": 14483,
+      "sha256": "df3fe0c0c035498facc20317d1d4663c89563b35286cf30666b8ca1c729f8983",
+      "mode": 420,
+      "inode": 146670793,
+      "device": 16777234,
+      "mtime_ns": 1791851524513545238
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 21213,
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "mode": 420,
+      "inode": 146670794,
+      "device": 16777234,
+      "mtime_ns": 1791851524513699945
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "mode": 420,
+      "inode": 146670795,
+      "device": 16777234,
+      "mtime_ns": 1791851524513827694
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "mode": 420,
+      "inode": 146670796,
+      "device": 16777234,
+      "mtime_ns": 1791851524513936651
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "mode": 420,
+      "inode": 146670797,
+      "device": 16777234,
+      "mtime_ns": 1791851524514039150
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "mode": 420,
+      "inode": 146670798,
+      "device": 16777234,
+      "mtime_ns": 1791851524514154899
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12115,
+      "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "mode": 420,
+      "inode": 146670799,
+      "device": 16777234,
+      "mtime_ns": 1791851524514300773
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "mode": 420,
+      "inode": 146670800,
+      "device": 16777234,
+      "mtime_ns": 1791851524514437355
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "mode": 420,
+      "inode": 146670801,
+      "device": 16777234,
+      "mtime_ns": 1791851524514585771
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "mode": 420,
+      "inode": 146670802,
+      "device": 16777234,
+      "mtime_ns": 1791851524514723353
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "mode": 420,
+      "inode": 146670803,
+      "device": 16777234,
+      "mtime_ns": 1791851524514856727
+    }
+  },
+  "source_and_reports_unchanged": true,
+  "source_selection": "Complete 14-module package and two report fixtures, not a full repository checkout",
+  "native_permission_observation": {
+    "uid": 501,
+    "directory_mode_during_unlink": 320,
+    "actual_unlink_error": {
+      "type": "PermissionError",
+      "module": "builtins",
+      "message": "[Errno 13] Permission denied: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/permission-probe/owned.txt'",
+      "errno": 13,
+      "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/permission-probe/owned.txt",
+      "filename2": null
+    },
+    "restored_directory_mode": 493,
+    "bytes_preserved": true
+  },
+  "cases": [
+    {
+      "case": "published_then_real_cleanup_permission_failure",
+      "contract_pass": false,
+      "returned_path": null,
+      "returned_type": null,
+      "observed_error": {
+        "type": "PermissionError",
+        "module": "builtins",
+        "message": "[Errno 13] Permission denied: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/published_then_real_cleanup_permission_failure/.testpilot-compare-qeyzt07q.html'",
+        "errno": 13,
+        "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/published_then_real_cleanup_permission_failure/.testpilot-compare-qeyzt07q.html",
+        "filename2": null
+      },
+      "primary_error": null,
+      "cleanup_error": {
+        "type": "PermissionError",
+        "module": "builtins",
+        "message": "[Errno 13] Permission denied: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/published_then_real_cleanup_permission_failure/.testpilot-compare-qeyzt07q.html'",
+        "errno": 13,
+        "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/published_then_real_cleanup_permission_failure/.testpilot-compare-qeyzt07q.html",
+        "filename2": null
+      },
+      "observed_is_primary_error": false,
+      "observed_is_cleanup_error": true,
+      "actual_native_permission_refusal": true,
+      "events": [
+        {
+          "operation": "real_os_link",
+          "result": "published",
+          "stage": {
+            "bytes": 45291,
+            "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+            "mode": 384,
+            "inode": 146683989,
+            "device": 16777234,
+            "mtime_ns": 1791851702969708786
+          },
+          "output": {
+            "bytes": 45291,
+            "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+            "mode": 384,
+            "inode": 146683989,
+            "device": 16777234,
+            "mtime_ns": 1791851702969708786
+          },
+          "same_inode": true
+        },
+        {
+          "operation": "receiver_chmod",
+          "mode": 320,
+          "after": "real_successful_link"
+        },
+        {
+          "operation": "real_Path_unlink_attempt",
+          "path": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/published_then_real_cleanup_permission_failure/.testpilot-compare-qeyzt07q.html",
+          "directory_mode": 320
+        },
+        {
+          "operation": "real_Path_unlink",
+          "result": "error",
+          "error": {
+            "type": "PermissionError",
+            "module": "builtins",
+            "message": "[Errno 13] Permission denied: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/published_then_real_cleanup_permission_failure/.testpilot-compare-qeyzt07q.html'",
+            "errno": 13,
+            "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/published_then_real_cleanup_permission_failure/.testpilot-compare-qeyzt07q.html",
+            "filename2": null
+          }
+        }
+      ],
+      "output_before": null,
+      "output_after": {
+        "bytes": 45291,
+        "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+        "mode": 384,
+        "inode": 146683989,
+        "device": 16777234,
+        "mtime_ns": 1791851702969708786
+      },
+      "expected_html_bytes": 45291,
+      "expected_html_sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+      "output_exact_complete_html": true,
+      "private_stages": [
+        {
+          "name": ".testpilot-compare-qeyzt07q.html",
+          "bytes": 45291,
+          "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+          "mode": 384,
+          "inode": 146683989,
+          "device": 16777234,
+          "mtime_ns": 1791851702969708786
+        }
+      ],
+      "restored_directory_mode": 493,
+      "source_and_report_state_unchanged": true
+    },
+    {
+      "case": "occupied_output_then_real_cleanup_permission_failure",
+      "contract_pass": false,
+      "returned_path": null,
+      "returned_type": null,
+      "observed_error": {
+        "type": "PermissionError",
+        "module": "builtins",
+        "message": "[Errno 13] Permission denied: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html'",
+        "errno": 13,
+        "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html",
+        "filename2": null
+      },
+      "primary_error": {
+        "type": "FileExistsError",
+        "module": "builtins",
+        "message": "[Errno 17] File exists: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html' -> '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/comparison.html'",
+        "errno": 17,
+        "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html",
+        "filename2": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/comparison.html"
+      },
+      "cleanup_error": {
+        "type": "PermissionError",
+        "module": "builtins",
+        "message": "[Errno 13] Permission denied: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html'",
+        "errno": 13,
+        "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html",
+        "filename2": null
+      },
+      "observed_is_primary_error": false,
+      "observed_is_cleanup_error": true,
+      "actual_native_permission_refusal": true,
+      "events": [
+        {
+          "operation": "real_os_link",
+          "result": "error",
+          "error": {
+            "type": "FileExistsError",
+            "module": "builtins",
+            "message": "[Errno 17] File exists: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html' -> '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/comparison.html'",
+            "errno": 17,
+            "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html",
+            "filename2": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/comparison.html"
+          }
+        },
+        {
+          "operation": "receiver_chmod",
+          "mode": 320,
+          "after": "real_link_failure"
+        },
+        {
+          "operation": "real_Path_unlink_attempt",
+          "path": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html",
+          "directory_mode": 320
+        },
+        {
+          "operation": "real_Path_unlink",
+          "result": "error",
+          "error": {
+            "type": "PermissionError",
+            "module": "builtins",
+            "message": "[Errno 13] Permission denied: '/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html'",
+            "errno": 13,
+            "filename": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/occupied_output_then_real_cleanup_permission_failure/.testpilot-compare-g1fxvxgs.html",
+            "filename2": null
+          }
+        }
+      ],
+      "output_before": {
+        "bytes": 42,
+        "sha256": "c2d5742812cdfc8807dcdce7f1e83669bd4ba444d4c41a0fa327105639c1e725",
+        "mode": 420,
+        "inode": 146683993,
+        "device": 16777234,
+        "mtime_ns": 1791851702971796976
+      },
+      "output_after": {
+        "bytes": 42,
+        "sha256": "c2d5742812cdfc8807dcdce7f1e83669bd4ba444d4c41a0fa327105639c1e725",
+        "mode": 420,
+        "inode": 146683993,
+        "device": 16777234,
+        "mtime_ns": 1791851702971796976
+      },
+      "expected_html_bytes": 45291,
+      "expected_html_sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+      "output_exact_complete_html": false,
+      "private_stages": [
+        {
+          "name": ".testpilot-compare-g1fxvxgs.html",
+          "bytes": 45291,
+          "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+          "mode": 384,
+          "inode": 146683994,
+          "device": 16777234,
+          "mtime_ns": 1791851702973933666
+        }
+      ],
+      "restored_directory_mode": 493,
+      "source_and_report_state_unchanged": true
+    },
+    {
+      "case": "non_oserror_cleanup_exception",
+      "contract_pass": true,
+      "returned_path": null,
+      "returned_type": null,
+      "observed_error": {
+        "type": "RuntimeError",
+        "module": "builtins",
+        "message": "receiver-authored non-OSError cleanup control",
+        "errno": null,
+        "filename": null,
+        "filename2": null
+      },
+      "primary_error": null,
+      "cleanup_error": {
+        "type": "RuntimeError",
+        "module": "builtins",
+        "message": "receiver-authored non-OSError cleanup control",
+        "errno": null,
+        "filename": null,
+        "filename2": null
+      },
+      "observed_is_primary_error": false,
+      "observed_is_cleanup_error": true,
+      "actual_native_permission_refusal": false,
+      "events": [
+        {
+          "operation": "real_os_link",
+          "result": "published",
+          "stage": {
+            "bytes": 45291,
+            "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+            "mode": 384,
+            "inode": 146683996,
+            "device": 16777234,
+            "mtime_ns": 1791851702977488302
+          },
+          "output": {
+            "bytes": 45291,
+            "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+            "mode": 384,
+            "inode": 146683996,
+            "device": 16777234,
+            "mtime_ns": 1791851702977488302
+          },
+          "same_inode": true
+        },
+        {
+          "operation": "scoped_cleanup_hook",
+          "error": {
+            "type": "RuntimeError",
+            "module": "builtins",
+            "message": "receiver-authored non-OSError cleanup control",
+            "errno": null,
+            "filename": null,
+            "filename2": null
+          }
+        }
+      ],
+      "output_before": null,
+      "output_after": {
+        "bytes": 45291,
+        "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+        "mode": 384,
+        "inode": 146683996,
+        "device": 16777234,
+        "mtime_ns": 1791851702977488302
+      },
+      "expected_html_bytes": 45291,
+      "expected_html_sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+      "output_exact_complete_html": true,
+      "private_stages": [
+        {
+          "name": ".testpilot-compare-rnc42abc.html",
+          "bytes": 45291,
+          "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+          "mode": 384,
+          "inode": 146683996,
+          "device": 16777234,
+          "mtime_ns": 1791851702977488302
+        }
+      ],
+      "restored_directory_mode": 493,
+      "source_and_report_state_unchanged": true
+    },
+    {
+      "case": "ordinary_success_control",
+      "contract_pass": true,
+      "returned_path": "/Users/me/hamon-testpilot-cleanup-receiving-dc06b3a12de5/baseline-receiving/ordinary_success_control/comparison.html",
+      "returned_type": "PosixPath",
+      "observed_error": null,
+      "primary_error": null,
+      "cleanup_error": null,
+      "observed_is_primary_error": false,
+      "observed_is_cleanup_error": false,
+      "actual_native_permission_refusal": false,
+      "events": [],
+      "output_before": null,
+      "output_after": {
+        "bytes": 45291,
+        "sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+        "mode": 384,
+        "inode": 146684000,
+        "device": 16777234,
+        "mtime_ns": 1791851702981209769
+      },
+      "expected_html_bytes": 45291,
+      "expected_html_sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+      "output_exact_complete_html": true,
+      "private_stages": [],
+      "restored_directory_mode": 493,
+      "source_and_report_state_unchanged": true
+    }
+  ],
+  "contract_passed": 2,
+  "contract_total": 4,
+  "expected_pattern": [
+    false,
+    false,
+    true,
+    true
+  ],
+  "observed_pattern": [
+    false,
+    false,
+    true,
+    true
+  ],
+  "qualified_for_expected_course": true,
+  "limits": "Four separately authored API/filesystem controls only. No dependency installation, maintained pytest suite, external provider or installed runtime mutation. Actual link and permission-failing unlink are used in the first two controls; the non-OSError branch is a named scoped test hook. All owned directory modes are restored in finally."
+}
