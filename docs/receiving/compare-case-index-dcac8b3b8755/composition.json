@@ -1,0 +1,1189 @@
+{
+  "schema": "testpilot.case-index-current-main-composition/1",
+  "base_commit": "0595bcf1e5ada54480baf79991bc8946996d63cc",
+  "base_tree": "839cbef78c1a345cdfdb95a223bf046e58fe5e40",
+  "qualified_product_commit": "be59e562020762e593f3dfc5b8dd27408966e739",
+  "qualified_product_tree": "94016564ebda3e8e738c1b45d861dcef8318388e",
+  "meaning": "Derived exact Git tree comparison; historical author/browser source epochs remain distinct.",
+  "product_entries": [
+    {
+      "path": "testpilot/compare_html.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fd6c65058fd847342633a28fe6c8c8157b8cfc5"
+    },
+    {
+      "path": "tests/test_compare_case_index.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9e0588f4b92c8f46aa2f410730779bf06399f98"
+    },
+    {
+      "path": "docs/COMPARE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df90ac7329c6acea3e399e31c9f16b69a54e7566"
+    }
+  ],
+  "current_main_owner_delta": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24858cf69c6cd089355902a8e3f3b56b1e421d2f"
+    },
+    {
+      "path": "docs/HISTORY.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6382294a22b56c5312eeb6a701857cc071c76603"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "65f9f7169171412ab7362c18cbc1e5ea66e85226"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/assemble-publication-v1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "332658f51add7fc8d917b85bd68ba000d3577783"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author-publication-inputs-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cf4a10619c43589cb5f04062bfc4833f4e5fa10"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "223689cac9081d56867f9d702ee0876a540d6068"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/README.md.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7473d292b096045e2b9dc6fddd68d5dba249ff1f"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-compare-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-compare-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "065da57f0d9eb6fa1f46f7cd49905d014a429a0e"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-recheck-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-recheck-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3558cc4f8176e1bbfa942feeebcc882d485d632"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-regression-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-regression-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5ba8f8d8351d7ec5e93ff823c0ff9816a17608e"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-run-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-run-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "299844593cfa3d63281c08aefdd45c5cca142f07"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-targets-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/candidate-targets-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4f7d11543580d0e87df3e6182c984b38f50e864"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/optimized-six.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "573a2dca2714b45e6e3dea5d30ed97f94d46e155"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/optimized-six.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-compare-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-compare-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "065da57f0d9eb6fa1f46f7cd49905d014a429a0e"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-recheck-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-recheck-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b3558cc4f8176e1bbfa942feeebcc882d485d632"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-regression-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-regression-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5ba8f8d8351d7ec5e93ff823c0ff9816a17608e"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-run-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-run-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "299844593cfa3d63281c08aefdd45c5cca142f07"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-targets-help.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/original-targets-help.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4f7d11543580d0e87df3e6182c984b38f50e864"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97f9ae0d16ae3c3e3152bc00d1923ef673d765ab"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-qualification-v1/testpilot-__main__.py.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "609e84b61fcfd166b0e01c896750c9f8167e1b70"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-read-bound-v2/receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "259ac453d71393a2cb8266afa91a2e9aad97d9fe"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-read-bound-v2/source-v1-to-v2.patch",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d917c247f373cff89953932ecd5df3eec52ddc4d"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-read-bound-v2/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "310f8c09f80579df9e07ba070f921fd8e27e0ac9"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-read-bound-v2/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b25e1178b035d5a380ae3275d50c08156165fa57"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-tests-v1/receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37b03605b79586fea22352b0b5281628bcf396cb"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-tests-v1/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4a9ddbb6c556f429fc92c4b4549690e4eec8fff"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/author-tests-v1/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/candidate-freeze-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e16d1b1aa79f9b3cf91f1ae2305f749b0d96a128"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/candidate-freeze-v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0a72b247a10b7d2ee2d208c5211505f365075cf"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/candidate-receiving-manifest-v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8245b590165aae75e99505bf7ac28ebf85eab26"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/original-observation-v1/receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b98b30ffedc05be677f5615cdc1bac457da8902"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/original-observation-v1/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bbc61486b09ae222776fd3637b38050ee3b7232b"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/original-observation-v1/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/preparation/observe-original-v1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3367232bd82804682bba840cd47064341d2d9919"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/preparation/owner-check-before-receiving-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "90b1949758c584895b0eea8adfe93d0003d8d7e8"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/preparation/public-contract-v1-addendum-v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9724611a9bc3ee220657b1194b661eb5806863d8"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/preparation/public-contract-v1-addendum.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29050bc5160ef7cc022d31faf1c8f1c509a47e9b"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/preparation/public-contract-v1.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3401d6da75d7f4641d2ff33e2d9cc4954aa2ec86"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/preparation/source-intake-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "edecd086c2b3285d35149f8acbf85de81f0a6b54"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/author/received-v1/history.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a753cef5e82a57a89590e44b37e42fce78d50958"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-publication-inputs-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "adf67bb51939c0929b8041286e6c09a756079a9a"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "342c6cc1553a4d192830f88e4b1d314dee8c19ae"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/candidate-offer/candidate-freeze-v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f0a72b247a10b7d2ee2d208c5211505f365075cf"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/candidate-offer/candidate-receiving-manifest-v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8245b590165aae75e99505bf7ac28ebf85eab26"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/course-v1.stderr",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/course-v1.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa1dc3235bb99588bf5512e67a3a21f245437f82"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/freeze-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f98a67edeaa39d15dfa0f94db9d7f108745f3aa2"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/case-spec-v1.json.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7810b108b461abbacdba6b48db31258c88b4cfcd"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/case-summary-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17b75c3f95c83c1c4a5ec3c4724cc9f19a38c43f"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/compressed-spec-binding-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa55ae143239770c54bb5241621f791bd97b6c68"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/64MiB-exact-then-fifth-counted.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a83c4e61cafdd6ea73386c3a5f81d1f8d2427be"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/actual-1001-candidate-limit.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3df288f588e491d256c7e4808823a0f8769f308"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/actual-20001-entry-limit.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cc5a38b56986ca7b036c6ac85079f2b8415ed47"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/argparse-invalid-kind.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/argparse-missing-root.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/diagnostic-body-not-searched.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e64a26e82bdcf4f8651bafa823e0a755d9d7895"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/empty-query.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4ae017df9cace81f5a4921650cd40b189a33fee"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/empty-root.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b67801421e35cecfe4313b89ddc668874a338229"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/exact-16MiB-admitted.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e330c0320a5fd6c774b082c8ac2986950bc3eef3"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/exact-64MiB-complete.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35366fed45b3c159459695fb11d19cdb947c6b54"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/explicit-root-symlink-resolves.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "027d1d195a9812525b2b766b0c57a4a887e00007"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/file-root.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/hardlinks-distinct-records.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "013d38de83dd8f6e90a530dcdd27891c48d4676c"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/internal-symlinks-and-candidate-named-directory.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c58a4a953e00ee5a5a07bed517035fee1121292a"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/invalid-depth.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/invalid-neighbor-text.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6f23f9e3635ccc0e3d3be03bbd7bf2204761169"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/invalid-neighbors-survive-filter.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79e12a880fa44d34171e82640c334a344e88e7a2"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/literal-casefold-qualname.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "038581f402232704ce14f7f3a1e70e3b36e28b3a"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/literal-casefold-source-path.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6343776ededba69a11162562fcb50cb1f2df08d"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/literal-relative-path.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1197f8d6f9177a1a01c9079e6595e2342fc4901"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/literal-test-path.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e223051ac3509dbc9344ec4b93d3931c2313f5cb"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/missing-root.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/mixed-default-json.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "027d1d195a9812525b2b766b0c57a4a887e00007"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/mixed-default-text.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5871ed93c1e55a6daee4b533c5a445e2a8f439dc"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/mixed-depth-two.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "151a8dbc5741dd31b34870b3b24b7f97ca0616f6"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/mixed-root-only.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c35fadd392a1c9846047b86d1f3512755561b65"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/named-fifo-no-read.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dd6092d07770197dcff54831b8265f21f5e1fe1"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/per-file-oversize-continues.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e8d45b89244751419d144f0fdcac3e7d5f554ac"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/per-file-precedes-global-budget.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7a171f1ddb9f04445309cf62afa0ef8506726e2"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/recorded-source-path-not-searched.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d7af0480efca12ce4f9800deb261993bd6dd584"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/source-body-not-searched.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c95246358c891d3f3c1255bf523529f958011e77"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/status-not-searched.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "646bba87624d7ee6e159a9c272013badf54a1954"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/statuses-or-kind-query-and.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70b1fc0d427fd7299bf76f329a3f17c539469596"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/expected/unknown-empty-status.stdout",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "307ffe7dbf768b58963cec63af8ce5d7e2356520"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/generator-v1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b5d6006ddedc9bfe3e301e707fe09e71f5d1cb4"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/provenance-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed1ca8fd81947c1d074d7f9d547a798fdbf978d7"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/public-clarification-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b79bb52467b93c6cefb3df4936ded97717be788f"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/seeds/calc_clamp.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06c4a8f04d954cd059c1e6872d775bda500728a8"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/seeds/stats_median.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "282a6a27a00ac58726a441d9a1b313a492336ced"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/seeds/synthetic-minimal.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82325baa47b045889e45ec60387f51cb54808c33"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/seeds/synthetic-recheck.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b69af162af9ad90af45c97051ad983e1bedd9e96"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/oracles/seeds/synthetic-unicode.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e05faaa5abfee7a94f626135e957951358a00711"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/peer-reviews/forge-controller-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6459c82413de27583e33d10a85bcf74492685cb4"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/peer-reviews/forge-source-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e8ddd66db57c6ebc124cd4bdf5c198c082ae4e8"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/peer-reviews/loom-controller-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48d32068009bb066a2f4978e3c65548dcf25d411"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/public-contract/public-contract-v1-addendum-v2.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9724611a9bc3ee220657b1194b661eb5806863d8"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/public-contract/public-contract-v1-addendum.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "29050bc5160ef7cc022d31faf1c8f1c509a47e9b"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/public-contract/public-contract-v1.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3401d6da75d7f4641d2ff33e2d9cc4954aa2ec86"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/receive-history-v1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d1de0bd1bb268a4b5ef557b83f0b1ae0b211447"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/64MiB-exact-then-fifth-counted/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/64MiB-exact-then-fifth-counted/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a83c4e61cafdd6ea73386c3a5f81d1f8d2427be"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/actual-1001-candidate-limit/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/actual-1001-candidate-limit/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f3df288f588e491d256c7e4808823a0f8769f308"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/actual-20001-entry-limit/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/actual-20001-entry-limit/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9cc5a38b56986ca7b036c6ac85079f2b8415ed47"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/argparse-invalid-kind/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9fa9920163196088ccf1be0e9b5beec3a8488289"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/argparse-invalid-kind/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/argparse-missing-root/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67741448fbd314a458eb07a31dfaa042a1d6b07e"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/argparse-missing-root/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/diagnostic-body-not-searched/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/diagnostic-body-not-searched/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e64a26e82bdcf4f8651bafa823e0a755d9d7895"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/empty-query/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/empty-query/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4ae017df9cace81f5a4921650cd40b189a33fee"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/empty-root/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/empty-root/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b67801421e35cecfe4313b89ddc668874a338229"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/exact-16MiB-admitted/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/exact-16MiB-admitted/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e330c0320a5fd6c774b082c8ac2986950bc3eef3"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/exact-64MiB-complete/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/exact-64MiB-complete/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "35366fed45b3c159459695fb11d19cdb947c6b54"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/explicit-root-symlink-resolves/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/explicit-root-symlink-resolves/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "027d1d195a9812525b2b766b0c57a4a887e00007"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/file-root/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87e6cac8f87b59cdf150e7e788187bbf487cae84"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/file-root/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/hardlinks-distinct-records/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/hardlinks-distinct-records/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "013d38de83dd8f6e90a530dcdd27891c48d4676c"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/internal-symlinks-and-candidate-named-directory/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/internal-symlinks-and-candidate-named-directory/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c58a4a953e00ee5a5a07bed517035fee1121292a"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/invalid-depth/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e60960fa9c5455747d56b9dcdd995149a84448f"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/invalid-depth/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/invalid-neighbor-text/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/invalid-neighbor-text/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d6f23f9e3635ccc0e3d3be03bbd7bf2204761169"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/invalid-neighbors-survive-filter/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/invalid-neighbors-survive-filter/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79e12a880fa44d34171e82640c334a344e88e7a2"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-casefold-qualname/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-casefold-qualname/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "038581f402232704ce14f7f3a1e70e3b36e28b3a"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-casefold-source-path/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-casefold-source-path/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6343776ededba69a11162562fcb50cb1f2df08d"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-relative-path/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-relative-path/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d1197f8d6f9177a1a01c9079e6595e2342fc4901"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-test-path/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/literal-test-path/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e223051ac3509dbc9344ec4b93d3931c2313f5cb"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/missing-root/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87e6cac8f87b59cdf150e7e788187bbf487cae84"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/missing-root/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-default-json/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-default-json/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "027d1d195a9812525b2b766b0c57a4a887e00007"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-default-text/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-default-text/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5871ed93c1e55a6daee4b533c5a445e2a8f439dc"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-depth-two/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-depth-two/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "151a8dbc5741dd31b34870b3b24b7f97ca0616f6"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-root-only/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/mixed-root-only/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c35fadd392a1c9846047b86d1f3512755561b65"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/named-fifo-no-read/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/named-fifo-no-read/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dd6092d07770197dcff54831b8265f21f5e1fe1"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/per-file-oversize-continues/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/per-file-oversize-continues/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e8d45b89244751419d144f0fdcac3e7d5f554ac"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/per-file-precedes-global-budget/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/per-file-precedes-global-budget/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e7a171f1ddb9f04445309cf62afa0ef8506726e2"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/receipt.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14d6097da2148af8d5eb269561cd4f474dd28717"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/recorded-source-path-not-searched/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/recorded-source-path-not-searched/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d7af0480efca12ce4f9800deb261993bd6dd584"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/source-body-not-searched/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/source-body-not-searched/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c95246358c891d3f3c1255bf523529f958011e77"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/status-not-searched/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/status-not-searched/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "646bba87624d7ee6e159a9c272013badf54a1954"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/statuses-or-kind-query-and/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/statuses-or-kind-query-and/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70b1fc0d427fd7299bf76f329a3f17c539469596"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/unknown-empty-status/stderr.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/received-v1/unknown-empty-status/stdout.bin",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "307ffe7dbf768b58963cec63af8ce5d7e2356520"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/receiving-criteria-v1.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d5b5f38d66128062db3e941d6170f85669fa1256"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/review-source-v1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c05c9c4bf2e6cc70d25699935183f54ce93c1e9f"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/seal-publication-v1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fc6d8f8993142e18edf724ffa397da7b8cd457a"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/independent-root/source-review-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4387773c3e255a59deee454decc7e3c2e9c373f4"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/owner-check-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5fe2f1563543d721c70ccd5aa0349b9e9ca7f70"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/peer-reviews/public-clarification-review-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ce5bef2b679d657e27d99e4d1d81a370276e0c9"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/peer-reviews/public-contract-review-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c6ca67d85d1b48142143ea7b2a74d2c6d0649e2"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/publication-tools.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e70ed66486d4585a1abfdf3d9d2004059e7149e8"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/seal-author-v1.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47f8a707b387049ad4885d78edd6b5dc659963cc"
+    },
+    {
+      "path": "docs/qualification/saved-run-finder-loom-d3745/source-binding-v1.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b94064ac8943995742233581f39be99caec4501d"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fffa528c6e17460e96d76112d41eba4da1184eaa"
+    },
+    {
+      "path": "testpilot/history.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b32f19b80241b2744c27991ab60aa500e41c19b9"
+    },
+    {
+      "path": "tests/test_history.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0093347b825c8b892a48dd984caf3d28e879ac91"
+    }
+  ],
+  "no_removed_original": true,
+  "preserved_current_tuples": 1927,
+  "product_only_leaf_count": 1930,
+  "current_runtime_change": [
+    "testpilot/__main__.py",
+    "testpilot/history.py"
+  ]
+}

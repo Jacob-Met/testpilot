@@ -1,0 +1,112 @@
+[
+  {
+    "role": "before",
+    "position": 1,
+    "id": "diagnostic-before-case-1",
+    "open": false,
+    "summary": "passedtests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "outcome": "passed",
+    "message": "before occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "before",
+    "position": 2,
+    "id": "diagnostic-before-case-2",
+    "open": true,
+    "summary": "failedtests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "outcome": "failed",
+    "message": "before occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "before",
+    "position": 3,
+    "id": "diagnostic-before-case-3",
+    "open": false,
+    "summary": "skippedtests/test_skip.py::skip",
+    "label": "tests/test_skip.py::skip",
+    "outcome": "skipped",
+    "message": "before occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "before",
+    "position": 4,
+    "id": "diagnostic-before-case-4",
+    "open": true,
+    "summary": "errortests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "outcome": "error",
+    "message": "before occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "before",
+    "position": 5,
+    "id": "diagnostic-before-case-5",
+    "open": false,
+    "summary": "passedtests/test_ok.py::ok",
+    "label": "tests/test_ok.py::ok",
+    "outcome": "passed",
+    "message": "before occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "before",
+    "position": 6,
+    "id": "diagnostic-before-case-6",
+    "open": true,
+    "summary": "failedtests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+    "label": "tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+    "outcome": "failed",
+    "message": "before occurrence 6: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "after",
+    "position": 1,
+    "id": "diagnostic-after-case-1",
+    "open": true,
+    "summary": "errortests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "outcome": "error",
+    "message": "after occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "after",
+    "position": 2,
+    "id": "diagnostic-after-case-2",
+    "open": true,
+    "summary": "failedtests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+    "outcome": "failed",
+    "message": "after occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "after",
+    "position": 3,
+    "id": "diagnostic-after-case-3",
+    "open": false,
+    "summary": "passedtests/test_ok.py::ok",
+    "label": "tests/test_ok.py::ok",
+    "outcome": "passed",
+    "message": "after occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "after",
+    "position": 4,
+    "id": "diagnostic-after-case-4",
+    "open": false,
+    "summary": "skippedtests/test_skip.py::skip",
+    "label": "tests/test_skip.py::skip",
+    "outcome": "skipped",
+    "message": "after occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  },
+  {
+    "role": "after",
+    "position": 5,
+    "id": "diagnostic-after-case-5",
+    "open": true,
+    "summary": "failedtests/test_separator.py::line\\u2028separator",
+    "label": "tests/test_separator.py::line\\u2028separator",
+    "outcome": "failed",
+    "message": "after occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+  }
+]

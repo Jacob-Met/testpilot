@@ -1,0 +1,83 @@
+FFFF...                                                                  [100%]
+=================================== FAILURES ===================================
+___ test_links_keep_report_roles_and_original_duplicate_occurrence_positions ___
+
+    def test_links_keep_report_roles_and_original_duplicate_occurrence_positions():
+        before = saved(["passed", "failed", "error", "failed", "skipped"])
+        after = saved(["failed", "passed", "error"])
+        page = render_comparison(before, after)
+        found = index(page)
+        expected = [
+            ("before", "Before", 2, "failed"), ("before", "Before", 3, "error"),
+            ("before", "Before", 4, "failed"), ("after", "After", 1, "failed"),
+            ("after", "After", 3, "error"),
+        ]
+>       assert found.links == [
+            {"href": f"#diagnostic-{key}-case-{position}",
+             "text": f"{role} case {position} · {outcome} · same::case"}
+            for key, role, position, outcome in expected
+        ]
+E       AssertionError: assert [] == [{'href': '#d... same::case'}]
+E         
+E         Right contains 5 more items, first extra item: {'href': '#diagnostic-before-case-2', 'text': 'Before case 2 · failed · same::case'}
+E         Use -v to get more diff
+
+tests/test_compare_case_index.py:64: AssertionError
+_ test_literal_labels_cannot_create_targets_or_markup_and_downloads_keep_bytes _
+
+    def test_literal_labels_cannot_create_targets_or_markup_and_downloads_keep_bytes():
+        original = saved(["error"])
+        data = json.loads(original.raw.decode("utf-8-sig"))
+        label = 'same <node id="diagnostic-after-case-1"> & Ω'
+        data["final"]["cases"][0]["nodeid"] = label
+        raw = b"\xef\xbb\xbf" + json.dumps(data, ensure_ascii=False, indent=2).replace("\n", "\r\n").encode()
+        before = parse_report(raw)
+        after = saved(["passed", "failed"])
+        page = render_comparison(before, after)
+        found = index(page)
+>       assert found.links == [
+            {"href": "#diagnostic-before-case-1", "text": "Before case 1 · error · " + label},
+            {"href": "#diagnostic-after-case-2", "text": "After case 2 · failed · same::case"},
+        ]
+E       assert [] == [{'href': '#d... same::case'}]
+E         
+E         Right contains 2 more items, first extra item: {'href': '#diagnostic-before-case-1', 'text': 'Before case 1 · error · same <node id="diagnostic-after-case-1"> & Ω'}
+E         Use -v to get more diff
+
+tests/test_compare_case_index.py:87: AssertionError
+___ test_incomplete_junit_retains_case_links_without_promoting_counts[False] ___
+
+junit = False
+
+    @pytest.mark.parametrize("junit", [False, None])
+    def test_incomplete_junit_retains_case_links_without_promoting_counts(junit):
+        report = saved(["failed", "error"], junit)
+        page = render_comparison(report, report)
+>       assert len(index(page).links) == 4
+E       assert 0 == 4
+E        +  where 0 = len([])
+E        +    where [] = <test_compare_case_index.Index object at 0x7fdfa32211c0>.links
+E        +      where <test_compare_case_index.Index object at 0x7fdfa32211c0> = index('<!doctype html><html lang="en"><head><meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initia...r with visible escapes; original downloads are unchanged. No report content is executed.</footer></main></body></html>')
+
+tests/test_compare_case_index.py:103: AssertionError
+___ test_incomplete_junit_retains_case_links_without_promoting_counts[None] ____
+
+junit = None
+
+    @pytest.mark.parametrize("junit", [False, None])
+    def test_incomplete_junit_retains_case_links_without_promoting_counts(junit):
+        report = saved(["failed", "error"], junit)
+        page = render_comparison(report, report)
+>       assert len(index(page).links) == 4
+E       assert 0 == 4
+E        +  where 0 = len([])
+E        +    where [] = <test_compare_case_index.Index object at 0x7fdfa3220e60>.links
+E        +      where <test_compare_case_index.Index object at 0x7fdfa3220e60> = index('<!doctype html><html lang="en"><head><meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initia...r with visible escapes; original downloads are unchanged. No report content is executed.</footer></main></body></html>')
+
+tests/test_compare_case_index.py:103: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_compare_case_index.py::test_links_keep_report_roles_and_original_duplicate_occurrence_positions
+FAILED tests/test_compare_case_index.py::test_literal_labels_cannot_create_targets_or_markup_and_downloads_keep_bytes
+FAILED tests/test_compare_case_index.py::test_incomplete_junit_retains_case_links_without_promoting_counts[False]
+FAILED tests/test_compare_case_index.py::test_incomplete_junit_retains_case_links_without_promoting_counts[None]
+4 failed, 3 passed in 0.23s

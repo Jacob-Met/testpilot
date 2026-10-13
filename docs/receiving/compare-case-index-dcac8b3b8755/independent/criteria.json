@@ -1,0 +1,135 @@
+{
+  "schema": "hamon.testpilot-failure-index-receiving/1",
+  "source_main": "f9ba2d2260f7aa93b3958661aa178ad418df9af6",
+  "original_renderer": "6893d082285e6963b3761c886330185c286e38b8",
+  "expectations": [
+    {
+      "role": "before",
+      "position": 1,
+      "outcome": "passed",
+      "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+      "message": "before occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": false
+    },
+    {
+      "role": "before",
+      "position": 2,
+      "outcome": "failed",
+      "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+      "message": "before occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": true
+    },
+    {
+      "role": "before",
+      "position": 3,
+      "outcome": "skipped",
+      "label": "tests/test_skip.py::skip",
+      "message": "before occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": false
+    },
+    {
+      "role": "before",
+      "position": 4,
+      "outcome": "error",
+      "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+      "message": "before occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": true
+    },
+    {
+      "role": "before",
+      "position": 5,
+      "outcome": "passed",
+      "label": "tests/test_ok.py::ok",
+      "message": "before occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": false
+    },
+    {
+      "role": "before",
+      "position": 6,
+      "outcome": "failed",
+      "label": "tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+      "message": "before occurrence 6: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": true
+    },
+    {
+      "role": "after",
+      "position": 1,
+      "outcome": "error",
+      "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+      "message": "after occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": true
+    },
+    {
+      "role": "after",
+      "position": 2,
+      "outcome": "failed",
+      "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+      "message": "after occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": true
+    },
+    {
+      "role": "after",
+      "position": 3,
+      "outcome": "passed",
+      "label": "tests/test_ok.py::ok",
+      "message": "after occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": false
+    },
+    {
+      "role": "after",
+      "position": 4,
+      "outcome": "skipped",
+      "label": "tests/test_skip.py::skip",
+      "message": "after occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": false
+    },
+    {
+      "role": "after",
+      "position": 5,
+      "outcome": "failed",
+      "label": "tests/test_separator.py::line\\u2028separator",
+      "message": "after occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+      "open": true
+    }
+  ],
+  "index_occurrences": [
+    [
+      "before",
+      2
+    ],
+    [
+      "before",
+      4
+    ],
+    [
+      "before",
+      6
+    ],
+    [
+      "after",
+      1
+    ],
+    [
+      "after",
+      2
+    ],
+    [
+      "after",
+      5
+    ]
+  ],
+  "original_index_count": 0,
+  "candidate_index_count": 6,
+  "contract": [
+    "Use the ordinary maintained compare CLI on these exact independent saved bytes.",
+    "Original has no per-case links; candidate index links each failed/error occurrence in role and retained array order.",
+    "Every link resolves to exactly one diagnostic details element with a fixed role/position identity, exact label and diagnostic text.",
+    "Duplicate labels remain separate occurrences. No passed or skipped occurrence enters the index.",
+    "JUnit unavailable does not turn recorded outcomes into complete-suite claims.",
+    "Default failed/error open states remain; manual disclosure changes persist through native hash navigation.",
+    "Keyboard activation navigates to the same retained occurrence with JavaScript disabled.",
+    "Both actual downloaded JSON files preserve all original bytes, including BOM, CRLF and extra fields.",
+    "At 390px the document fits its viewport and long index labels wrap; inspect actual narrow and desktop screenshots.",
+    "No external request, storage write or browser page error; exact source, fixtures, criteria and original receipt remain conserved."
+  ]
+}

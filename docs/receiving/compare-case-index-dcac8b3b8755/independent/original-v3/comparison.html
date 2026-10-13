@@ -1,0 +1,138 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Compare saved TestPilot runs</title><style>
+:root{color-scheme:light;--ink:#1c2d3b;--muted:#536573;--line:#cbd7dc;--paper:#fff;--wash:#f3f6f7;--accent:#17616b}
+*{box-sizing:border-box}html{scroll-padding-top:1.5rem}body{margin:0;background:var(--wash);color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:var(--accent);text-underline-offset:.18em}a:hover{text-decoration-thickness:2px}:focus-visible{outline:3px solid #a45100;outline-offset:4px}
+.shell{width:min(1160px,100%);margin:auto;padding:2.5rem 1.5rem 4rem}.eyebrow{font-size:.76rem;letter-spacing:.15em;font-weight:750;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.1;letter-spacing:-.03em;margin:.8rem 0 1rem}h2{font-size:1.35rem;margin:0 0 1rem}h3{font-size:1.03rem;overflow-wrap:anywhere}
+p{margin:.65rem 0}.lead{font-size:1.1rem;max-width:74ch}.note,.meta{font-size:.88rem;color:var(--muted)}.meta{overflow-wrap:anywhere}
+.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}.columns>*{min-width:0}.panel,section{background:var(--paper);border:1px solid var(--line);border-radius:.55rem;min-width:0;padding:1.3rem}
+section{margin:1.25rem 0}.panel .role{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:750}
+.outcome{display:inline-block;font-size:1.15rem;font-weight:700;margin:.7rem 0 .2rem;padding:.2rem .6rem;background:#eaf2f3;border-radius:.25rem}
+.context{border-left:4px solid var(--accent);background:#e9f3f2;padding:1rem 1.2rem;margin:1.2rem 0}.context strong{display:block}
+nav,.actions{display:flex;gap:.7rem 1rem;flex-wrap:wrap;margin:1.4rem 0}nav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0}
+.button{padding:.6rem .85rem;border:1px solid var(--accent);border-radius:.35rem;text-decoration:none;font-weight:650;background:white}
+.skip{position:absolute;top:-120px;left:1rem;background:white;padding:.8rem}.skip:focus{top:1rem;z-index:1}
+.scroll{overflow:auto;max-width:100%}table{border-collapse:collapse;width:100%;min-width:28rem;font-size:.9rem;text-align:left}
+th,td{border-bottom:1px solid var(--line);padding:.6rem .7rem;vertical-align:top;overflow-wrap:anywhere}th{color:var(--muted);font-weight:650}th:first-child{width:32%}caption{text-align:left;color:var(--muted);font-size:.86rem;padding:0 0 .5rem}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}code{overflow-wrap:anywhere}
+pre{background:#f7f9fa;border:1px solid var(--line);padding:.85rem;font-size:.83rem;line-height:1.5;overflow:auto;max-width:100%;tab-size:4;white-space:pre;margin:.7rem 0}
+details{border:1px solid var(--line);border-radius:.35rem;margin:.8rem 0;min-width:0}summary{padding:.8rem;cursor:pointer;font-weight:650;overflow-wrap:anywhere}
+details[open]>summary{border-bottom:1px solid var(--line);background:#f1f5f6}.detail{padding:.2rem .85rem .8rem;min-width:0}.pill{display:inline-block;padding:.08rem .4rem;margin-right:.4rem;border:1px solid var(--line);border-radius:.2rem;font-size:.75rem;font-weight:650}
+.prose{white-space:pre-wrap;overflow-wrap:anywhere}ul,ol{padding-left:1.3rem}.empty{padding:.8rem;background:var(--wash)}footer{color:var(--muted);font-size:.84rem;margin-top:2rem}
+@media(max-width:650px){.shell{padding:1.5rem .8rem 2.5rem}.columns{grid-template-columns:minmax(0,1fr)}.panel,section{padding:1rem}nav{font-size:.9rem}.actions .button{flex:1;text-align:center}th:first-child{width:30%}}
+@media print{body{background:white;font-size:10pt}.shell{padding:0;width:100%}nav,.actions,.skip{display:none}.columns{display:block}.panel{margin:.7rem 0}section,.panel,details{border-color:#aaa}h2,h3,summary{break-after:avoid}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;overflow:visible}.scroll{overflow:visible}table{min-width:0;font-size:8pt}details::details-content{content-visibility:visible}details>:not(summary){display:block!important}}
+</style></head><body>
+<a class="skip" href="#results">Skip to recorded results</a><main class="shell">
+<p class="eyebrow">TestPilot / Saved results</p><h1>Compare saved runs.</h1>
+<p class="lead">Review the recorded outcomes, selected source, and generated-test changes in two saved reports.</p>
+<p class="note">Before and After are the labels supplied to this comparison. The inputs do not establish chronology or measured improvement.</p>
+<div class="columns" aria-label="Selected reports">
+<div class="panel"><p class="role">Before</p><span class="outcome">Needs review</span><p class="meta">Recorded status: failed</p><p class="meta">before.json · 3089 bytes</p></div>
+<div class="panel"><p class="role">After</p><span class="outcome">Needs review</span><p class="meta">Recorded status: failed</p><p class="meta">after.json · 2498 bytes</p></div>
+</div><div class="context"><strong>Neither report contains selected targets</strong><span class="note">Inspect the selected-source records before comparing the result figures.</span></div>
+<nav aria-label="Report sections"><a href="#results">Results</a><a href="#source">Selected source</a><a href="#files">Generated files</a><a href="#diagnostics">Diagnostics</a><a href="#coverage">Coverage</a><a href="#usage">Usage</a><a href="#rounds">Rounds</a><a href="#originals">Original reports</a></nav>
+<section id="results" tabindex="-1"><h2>Recorded results</h2><div class="scroll" tabindex="0" role="region" aria-label="Values retained from each saved run"><table><caption>Values retained from each saved run</caption><thead><tr><th scope="col">Field</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Recorded status</td><td>failed</td><td>failed</td></tr><tr><td>Selected targets</td><td>0</td><td>0</td></tr><tr><td>Retained generated files</td><td>0</td><td>0</td></tr><tr><td>Tests written (reported)</td><td>0</td><td>0</td></tr><tr><td>Repair rounds used / allowed</td><td>0 / 2</td><td>0 / 2</td></tr><tr><td>JUnit availability</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Complete-suite recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr><tr><td>Generated-case recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr></tbody></table></div><p class="note">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p></section>
+<section id="source"><h2>Selected-source context</h2><p class="note">Targets are grouped by their recorded path and qualified name. Repeated labels stay as separate records. These reports do not establish a full repository, commit, test configuration, or execution-environment identity.</p><p class="empty">No selected targets are recorded.</p></section>
+<section id="files"><h2>Generated-file changes</h2><p class="note">File labels are exact saved paths. “Unchanged” means the two saved source strings are equal. A changed filename stays an addition/removal; no rename or test-equivalence inference is made.</p><p class="empty">Neither report retained generated files.</p></section>
+<section id="diagnostics"><h2>Final diagnostics</h2><div class="columns"><div><h3>Before</h3><p class="prose">Independent receiving fixture before</p><p class="note">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class="prose">Synthetic recorded before outcomes</p><details><summary><span class="pill">passed</span>tests/test_value.py::test_value[α &quot;quoted&quot; &amp; &lt;angle&gt;]</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>before occurrence 1: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details open><summary><span class="pill">failed</span>tests/test_value.py::test_value[α &quot;quoted&quot; &amp; &lt;angle&gt;]</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>before occurrence 2: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details><summary><span class="pill">skipped</span>tests/test_skip.py::skip</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>before occurrence 3: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details open><summary><span class="pill">error</span>tests/test_value.py::test_value[α &quot;quoted&quot; &amp; &lt;angle&gt;]</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>before occurrence 4: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details><summary><span class="pill">passed</span>tests/test_ok.py::ok</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>before occurrence 5: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details open><summary><span class="pill">failed</span>tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>before occurrence 6: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details><summary>Recorded pytest output · last 3,000 characters</summary><div class="detail"><pre tabindex="0" aria-label="Recorded pytest output tail"><code>Retained before output; not executed by this review.
+</code></pre></div></details></div><div><h3>After</h3><p class="prose">Independent receiving fixture after</p><p class="note">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class="prose">Synthetic recorded after outcomes</p><details open><summary><span class="pill">error</span>tests/test_value.py::test_value[α &quot;quoted&quot; &amp; &lt;angle&gt;]</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>after occurrence 1: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details open><summary><span class="pill">failed</span>tests/test_value.py::test_value[α &quot;quoted&quot; &amp; &lt;angle&gt;]</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>after occurrence 2: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details><summary><span class="pill">passed</span>tests/test_ok.py::ok</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>after occurrence 3: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details><summary><span class="pill">skipped</span>tests/test_skip.py::skip</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>after occurrence 4: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details open><summary><span class="pill">failed</span>tests/test_separator.py::line\u2028separator</summary><div class="detail"><p class="meta">Generated file: Not attributed to a generated file</p><pre tabindex="0" aria-label="Recorded test diagnostic"><code>after occurrence 5: retained diagnostic
+context line
+context line
+context line
+context line
+context line
+context line
+context line
+</code></pre></div></details><details><summary>Recorded pytest output · last 3,000 characters</summary><div class="detail"><pre tabindex="0" aria-label="Recorded pytest output tail"><code>Retained after output; not executed by this review.
+</code></pre></div></details></div></div></section>
+<section id="coverage"><h2>Recorded coverage</h2><p class="note">Each column retains its own source and selection denominators. The reported change is within that original run.</p><div class="scroll" tabindex="0" role="region" aria-label="Original within-run measurements"><table><caption>Original within-run measurements</caption><thead><tr><th scope="col">Measurement</th><th scope="col">Before report</th><th scope="col">After report</th></tr></thead><tbody><tr><td>Total before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Total after generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Within-run total change</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Executable changed lines</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines after generation</td><td>Unavailable</td><td>Unavailable</td></tr></tbody></table></div></section>
+<section id="usage"><h2>Recorded usage</h2><div class="scroll" tabindex="0" role="region" aria-label="Original totals and completeness flags"><table><caption>Original totals and completeness flags</caption><thead><tr><th scope="col">Field</th><th scope="col">Before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Recorded total tokens</td><td>0</td><td>0</td></tr><tr><td>Token basis</td><td>Provider-reported</td><td>Provider-reported</td></tr><tr><td>Recorded total cost</td><td>Unpriced / incomplete</td><td>Unpriced / incomplete</td></tr></tbody></table></div><p class="note">Prices and currency amounts retain the original run’s configuration. Incomplete cost stays unpriced.</p><div class="columns"><div><h3>Before</h3><p class="empty">No model calls are recorded.</p></div><div><h3>After</h3><p class="empty">No model calls are recorded.</p></div></div></section>
+<section id="rounds"><h2>Saved generation and repair rounds</h2><div class="columns"><div><h3>Before</h3><p class="empty">No generation or repair rounds are recorded.</p></div><div><h3>After</h3><p class="empty">No generation or repair rounds are recorded.</p></div></div></section>
+<section id="originals"><h2>Original reports</h2><div class="scroll" tabindex="0" role="region" aria-label="Exact input byte identities"><table><caption>Exact input byte identities</caption><thead><tr><th scope="col">Label</th><th scope="col">Source filename</th><th scope="col">Bytes</th><th scope="col">SHA256</th></tr></thead><tbody><tr><td>Before</td><td>before.json</td><td>3089</td><td>56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3</td></tr><tr><td>After</td><td>after.json</td><td>2498</td><td>d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74</td></tr></tbody></table></div><div class="actions">
+<a class="button" id="download-before" download="before-report.json" href="data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFtdLA0KICAidGVzdF9maWxlcyI6IHt9LA0KICAidGVzdHNfd3JpdHRlbiI6IDAsDQogICJyZXBhaXJfcm91bmRzX3VzZWQiOiAwLA0KICAibWF4X3JlcGFpcl9yb3VuZHMiOiAyLA0KICAiZmluYWwiOiB7DQogICAgInJldHVybmNvZGUiOiAxLA0KICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwNCiAgICAib2siOiBmYWxzZSwNCiAgICAiZHVyYXRpb25fcyI6IDAuMjUsDQogICAgIm91dHB1dCI6ICJSZXRhaW5lZCBiZWZvcmUgb3V0cHV0OyBub3QgZXhlY3V0ZWQgYnkgdGhpcyByZXZpZXcuXG4iLA0KICAgICJzdW1tYXJ5IjogIlN5bnRoZXRpYyByZWNvcmRlZCBiZWZvcmUgb3V0Y29tZXMiLA0KICAgICJwYXNzZWQiOiAyLA0KICAgICJmYWlsZWQiOiAyLA0KICAgICJlcnJvcnMiOiAxLA0KICAgICJza2lwcGVkIjogMSwNCiAgICAianVuaXRfYXZhaWxhYmxlIjogZmFsc2UsDQogICAgImNhc2VzIjogWw0KICAgICAgew0KICAgICAgICAibm9kZWlkIjogInRlc3RzL3Rlc3RfdmFsdWUucHk6OnRlc3RfdmFsdWVbzrEgXCJxdW90ZWRcIiAmIDxhbmdsZT5dIiwNCiAgICAgICAgIm91dGNvbWUiOiAicGFzc2VkIiwNCiAgICAgICAgIm1lc3NhZ2UiOiAiYmVmb3JlIG9jY3VycmVuY2UgMTogcmV0YWluZWQgZGlhZ25vc3RpY1xuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG4iLA0KICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiBudWxsDQogICAgICB9LA0KICAgICAgew0KICAgICAgICAibm9kZWlkIjogInRlc3RzL3Rlc3RfdmFsdWUucHk6OnRlc3RfdmFsdWVbzrEgXCJxdW90ZWRcIiAmIDxhbmdsZT5dIiwNCiAgICAgICAgIm91dGNvbWUiOiAiZmFpbGVkIiwNCiAgICAgICAgIm1lc3NhZ2UiOiAiYmVmb3JlIG9jY3VycmVuY2UgMjogcmV0YWluZWQgZGlhZ25vc3RpY1xuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG4iLA0KICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiBudWxsDQogICAgICB9LA0KICAgICAgew0KICAgICAgICAibm9kZWlkIjogInRlc3RzL3Rlc3Rfc2tpcC5weTo6c2tpcCIsDQogICAgICAgICJvdXRjb21lIjogInNraXBwZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJiZWZvcmUgb2NjdXJyZW5jZSAzOiByZXRhaW5lZCBkaWFnbm9zdGljXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbiIsDQogICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6IG51bGwNCiAgICAgIH0sDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAidGVzdHMvdGVzdF92YWx1ZS5weTo6dGVzdF92YWx1ZVvOsSBcInF1b3RlZFwiICYgPGFuZ2xlPl0iLA0KICAgICAgICAib3V0Y29tZSI6ICJlcnJvciIsDQogICAgICAgICJtZXNzYWdlIjogImJlZm9yZSBvY2N1cnJlbmNlIDQ6IHJldGFpbmVkIGRpYWdub3N0aWNcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogbnVsbA0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy90ZXN0X29rLnB5OjpvayIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogImJlZm9yZSBvY2N1cnJlbmNlIDU6IHJldGFpbmVkIGRpYWdub3N0aWNcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogbnVsbA0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy92ZXJ5X2xvbmdfbGl0ZXJhbF9uYW1lX3ZlcnlfbG9uZ19saXRlcmFsX25hbWVfdmVyeV9sb25nX2xpdGVyYWxfbmFtZV92ZXJ5X2xvbmdfbGl0ZXJhbF9uYW1lX3ZlcnlfbG9uZ19saXRlcmFsX25hbWVfdmVyeV9sb25nX2xpdGVyYWxfbmFtZV92ZXJ5X2xvbmdfbGl0ZXJhbF9uYW1lX3ZlcnlfbG9uZ19saXRlcmFsX25hbWVfdmVyeV9sb25nX2xpdGVyYWxfbmFtZV92ZXJ5X2xvbmdfbGl0ZXJhbF9uYW1lX3ZlcnlfbG9uZ19saXRlcmFsX25hbWVfdmVyeV9sb25nX2xpdGVyYWxfbmFtZV8ucHk6OnRlc3RfdmFsdWUiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJiZWZvcmUgb2NjdXJyZW5jZSA2OiByZXRhaW5lZCBkaWFnbm9zdGljXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbiIsDQogICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6IG51bGwNCiAgICAgIH0NCiAgICBdDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIiIsDQogICJtZXNzYWdlIjogIkluZGVwZW5kZW50IHJlY2VpdmluZyBmaXh0dXJlIGJlZm9yZSIsDQogICJwYXRjaCI6ICIiLA0KICAiZXh0cmFfcmV0YWluZWQiOiB7DQogICAgImxpdGVyYWwiOiAizrEgJiA8YW5nbGU+IFwicXVvdGVkXCIiLA0KICAgICJub3RlIjogImV4dHJhIGZpZWxkcyBhbmQgcGh5c2ljYWwgZm9ybWF0dGluZyBzdGF5IGluIGRvd25sb2FkZWQgb3JpZ2luYWxzIg0KICB9DQp9DQo=">Download before JSON</a>
+<a class="button" id="download-after" download="after-report.json" href="data:application/json;base64,ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFtdLA0KICAidGVzdF9maWxlcyI6IHt9LA0KICAidGVzdHNfd3JpdHRlbiI6IDAsDQogICJyZXBhaXJfcm91bmRzX3VzZWQiOiAwLA0KICAibWF4X3JlcGFpcl9yb3VuZHMiOiAyLA0KICAiZmluYWwiOiB7DQogICAgInJldHVybmNvZGUiOiAxLA0KICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwNCiAgICAib2siOiBmYWxzZSwNCiAgICAiZHVyYXRpb25fcyI6IDAuMjUsDQogICAgIm91dHB1dCI6ICJSZXRhaW5lZCBhZnRlciBvdXRwdXQ7IG5vdCBleGVjdXRlZCBieSB0aGlzIHJldmlldy5cbiIsDQogICAgInN1bW1hcnkiOiAiU3ludGhldGljIHJlY29yZGVkIGFmdGVyIG91dGNvbWVzIiwNCiAgICAicGFzc2VkIjogMSwNCiAgICAiZmFpbGVkIjogMiwNCiAgICAiZXJyb3JzIjogMSwNCiAgICAic2tpcHBlZCI6IDEsDQogICAgImp1bml0X2F2YWlsYWJsZSI6IGZhbHNlLA0KICAgICJjYXNlcyI6IFsNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy90ZXN0X3ZhbHVlLnB5Ojp0ZXN0X3ZhbHVlW86xIFwicXVvdGVkXCIgJiA8YW5nbGU+XSIsDQogICAgICAgICJvdXRjb21lIjogImVycm9yIiwNCiAgICAgICAgIm1lc3NhZ2UiOiAiYWZ0ZXIgb2NjdXJyZW5jZSAxOiByZXRhaW5lZCBkaWFnbm9zdGljXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbiIsDQogICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6IG51bGwNCiAgICAgIH0sDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAidGVzdHMvdGVzdF92YWx1ZS5weTo6dGVzdF92YWx1ZVvOsSBcInF1b3RlZFwiICYgPGFuZ2xlPl0iLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJhZnRlciBvY2N1cnJlbmNlIDI6IHJldGFpbmVkIGRpYWdub3N0aWNcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogbnVsbA0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy90ZXN0X29rLnB5OjpvayIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogImFmdGVyIG9jY3VycmVuY2UgMzogcmV0YWluZWQgZGlhZ25vc3RpY1xuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG4iLA0KICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiBudWxsDQogICAgICB9LA0KICAgICAgew0KICAgICAgICAibm9kZWlkIjogInRlc3RzL3Rlc3Rfc2tpcC5weTo6c2tpcCIsDQogICAgICAgICJvdXRjb21lIjogInNraXBwZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJhZnRlciBvY2N1cnJlbmNlIDQ6IHJldGFpbmVkIGRpYWdub3N0aWNcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogbnVsbA0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy90ZXN0X3NlcGFyYXRvci5weTo6bGluZeKAqHNlcGFyYXRvciIsDQogICAgICAgICJvdXRjb21lIjogImZhaWxlZCIsDQogICAgICAgICJtZXNzYWdlIjogImFmdGVyIG9jY3VycmVuY2UgNTogcmV0YWluZWQgZGlhZ25vc3RpY1xuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG5jb250ZXh0IGxpbmVcbmNvbnRleHQgbGluZVxuY29udGV4dCBsaW5lXG4iLA0KICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiBudWxsDQogICAgICB9DQogICAgXQ0KICB9LA0KICAiY292ZXJhZ2UiOiBudWxsLA0KICAibGVkZ2VyIjogew0KICAgICJ0b3RhbF90b2tlbnMiOiAwLA0KICAgICJ0b3RhbF9jb3N0X3VzZCI6IDAsDQogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwNCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLA0KICAgICJieV9tb2RlbCI6IHt9LA0KICAgICJlbnRyaWVzIjogW10NCiAgfSwNCiAgInJvdW5kcyI6IFtdLA0KICAicGxhbiI6ICIiLA0KICAibWVzc2FnZSI6ICJJbmRlcGVuZGVudCByZWNlaXZpbmcgZml4dHVyZSBhZnRlciIsDQogICJwYXRjaCI6ICIiLA0KICAiZXh0cmFfcmV0YWluZWQiOiB7DQogICAgImxpdGVyYWwiOiAizrEgJiA8YW5nbGU+IFwicXVvdGVkXCIiLA0KICAgICJub3RlIjogImV4dHJhIGZpZWxkcyBhbmQgcGh5c2ljYWwgZm9ybWF0dGluZyBzdGF5IGluIGRvd25sb2FkZWQgb3JpZ2luYWxzIg0KICB9DQp9DQo=">Download after JSON</a>
+</div><p class="note">The downloads keep the complete original input bytes, including extra fields and formatting.</p></section><footer>Open this file offline or use your browser’s Print command. Control, separator and surrogate characters appear with visible escapes; original downloads are unchanged. No report content is executed.</footer></main></body></html>

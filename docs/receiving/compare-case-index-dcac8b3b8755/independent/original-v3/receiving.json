@@ -1,0 +1,2985 @@
+{
+  "schema": "hamon.testpilot-failure-index-browser/1",
+  "phase": "original",
+  "started": "2026-10-13T23:27:33.929132+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "selected device account",
+      "actual": [
+        "nt",
+        "Veria"
+      ],
+      "expected": [
+        "nt",
+        "Veria"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/__init__.py",
+      "actual": [
+        390,
+        "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+      ],
+      "expected": [
+        390,
+        "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/__main__.py",
+      "actual": [
+        11341,
+        "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+        "454dfac45e7e5127a4a504b9fa4f30693e65ccb1"
+      ],
+      "expected": [
+        11341,
+        "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+        "454dfac45e7e5127a4a504b9fa4f30693e65ccb1"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/_pytest_generated.py",
+      "actual": [
+        2943,
+        "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+      ],
+      "expected": [
+        2943,
+        "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/compare.py",
+      "actual": [
+        14624,
+        "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+        "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+      ],
+      "expected": [
+        14624,
+        "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+        "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/compare_html.py",
+      "actual": [
+        21260,
+        "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+        "6893d082285e6963b3761c886330185c286e38b8"
+      ],
+      "expected": [
+        21260,
+        "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+        "6893d082285e6963b3761c886330185c286e38b8"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/diff.py",
+      "actual": [
+        13252,
+        "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+        "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+      ],
+      "expected": [
+        13252,
+        "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+        "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/html_report.py",
+      "actual": [
+        21739,
+        "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+        "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+      ],
+      "expected": [
+        21739,
+        "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+        "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/loop.py",
+      "actual": [
+        30070,
+        "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+        "69dc4ea2df567133e64ed5ea9d37ace26475d091"
+      ],
+      "expected": [
+        30070,
+        "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+        "69dc4ea2df567133e64ed5ea9d37ace26475d091"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/model.py",
+      "actual": [
+        10454,
+        "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+        "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+      ],
+      "expected": [
+        10454,
+        "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+        "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/recheck.py",
+      "actual": [
+        12770,
+        "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+        "04c9154468db209e6c29d2edc392c4e8e109910b"
+      ],
+      "expected": [
+        12770,
+        "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+        "04c9154468db209e6c29d2edc392c4e8e109910b"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/recheck_html.py",
+      "actual": [
+        10184,
+        "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+        "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+      ],
+      "expected": [
+        10184,
+        "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+        "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/regression.py",
+      "actual": [
+        16329,
+        "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+        "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+      ],
+      "expected": [
+        16329,
+        "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+        "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/sandbox.py",
+      "actual": [
+        13628,
+        "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+        "6dc325b68ee9de568e93c45666e3da845d6237de"
+      ],
+      "expected": [
+        13628,
+        "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+        "6dc325b68ee9de568e93c45666e3da845d6237de"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/saved_report.py",
+      "actual": [
+        9808,
+        "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+        "4a591bc80c8eb5d9f38d66598ca0843091b29c50"
+      ],
+      "expected": [
+        9808,
+        "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+        "4a591bc80c8eb5d9f38d66598ca0843091b29c50"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted testpilot/targets.py",
+      "actual": [
+        5410,
+        "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+        "2da1600eca93edbe47605e6ca2a9e715663fa370"
+      ],
+      "expected": [
+        5410,
+        "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+        "2da1600eca93edbe47605e6ca2a9e715663fa370"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted before.json",
+      "actual": [
+        3089,
+        "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+        "c8bf796d47241773dcf6c915a9baa57548e407de"
+      ],
+      "expected": [
+        3089,
+        "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+        "c8bf796d47241773dcf6c915a9baa57548e407de"
+      ],
+      "passed": true
+    },
+    {
+      "name": "admitted after.json",
+      "actual": [
+        2498,
+        "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+        "5d315ab56ec853e9d20acebeaefc0440c97bb565"
+      ],
+      "expected": [
+        2498,
+        "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+        "5d315ab56ec853e9d20acebeaefc0440c97bb565"
+      ],
+      "passed": true
+    },
+    {
+      "name": "ordinary compare CLI exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary compare CLI stderr",
+      "actual": "",
+      "expected": "",
+      "passed": true
+    },
+    {
+      "name": "no document scripts",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "all retained diagnostic occurrences",
+      "actual": [
+        {
+          "role": "before",
+          "position": 1,
+          "outcome": "passed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "before",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "before",
+          "position": 3,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "before occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "before",
+          "position": 4,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "before",
+          "position": 5,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "before occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "before",
+          "position": 6,
+          "outcome": "failed",
+          "label": "tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+          "message": "before occurrence 6: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "after",
+          "position": 1,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "after",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "after",
+          "position": 3,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "after occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "after",
+          "position": 4,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "after occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "after",
+          "position": 5,
+          "outcome": "failed",
+          "label": "tests/test_separator.py::line\\u2028separator",
+          "message": "after occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        }
+      ],
+      "expected": [
+        {
+          "role": "before",
+          "position": 1,
+          "outcome": "passed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "before",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "before",
+          "position": 3,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "before occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "before",
+          "position": 4,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "before",
+          "position": 5,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "before occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "before",
+          "position": 6,
+          "outcome": "failed",
+          "label": "tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+          "message": "before occurrence 6: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "after",
+          "position": 1,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "after",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        },
+        {
+          "role": "after",
+          "position": 3,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "after occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "after",
+          "position": 4,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "after occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": false
+        },
+        {
+          "role": "after",
+          "position": 5,
+          "outcome": "failed",
+          "label": "tests/test_separator.py::line\\u2028separator",
+          "message": "after occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+          "open": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "incomplete JUnit retained",
+      "actual": 4,
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "name": "failure index size",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "original case identities absent",
+      "actual": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "expected": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "passed": true
+    },
+    {
+      "name": "before original download name",
+      "actual": "before-report.json",
+      "expected": "before-report.json",
+      "passed": true
+    },
+    {
+      "name": "before actual download bytes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "after original download name",
+      "actual": "after-report.json",
+      "expected": "after-report.json",
+      "passed": true
+    },
+    {
+      "name": "after actual download bytes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "390px document fits",
+      "actual": 390,
+      "expected": 390,
+      "passed": true
+    },
+    {
+      "name": "print media retains every diagnostic",
+      "actual": [
+        {
+          "role": "before",
+          "position": 1,
+          "outcome": "passed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 3,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "before occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 4,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 5,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "before occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 6,
+          "outcome": "failed",
+          "label": "tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+          "message": "before occurrence 6: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 1,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 3,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "after occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 4,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "after occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 5,
+          "outcome": "failed",
+          "label": "tests/test_separator.py::line\\u2028separator",
+          "message": "after occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        }
+      ],
+      "expected": [
+        {
+          "role": "before",
+          "position": 1,
+          "outcome": "passed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 3,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "before occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 4,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "before occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 5,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "before occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "before",
+          "position": 6,
+          "outcome": "failed",
+          "label": "tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+          "message": "before occurrence 6: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 1,
+          "outcome": "error",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 2,
+          "outcome": "failed",
+          "label": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+          "message": "after occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 3,
+          "outcome": "passed",
+          "label": "tests/test_ok.py::ok",
+          "message": "after occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 4,
+          "outcome": "skipped",
+          "label": "tests/test_skip.py::skip",
+          "message": "after occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        },
+        {
+          "role": "after",
+          "position": 5,
+          "outcome": "failed",
+          "label": "tests/test_separator.py::line\\u2028separator",
+          "message": "after occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "print media exposes all diagnostic bodies",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "external requests",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "browser errors",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "browser storage empty",
+      "actual": {
+        "cookies": [],
+        "origins": []
+      },
+      "expected": {
+        "cookies": [],
+        "origins": []
+      },
+      "passed": true
+    },
+    {
+      "name": "managed browser disconnected",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "source conservation",
+      "actual": {
+        "testpilot/__init__.py": {
+          "bytes": 390,
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "mode": "33206",
+          "mtime_ns": "1791934053929132600",
+          "inode": "281474978289806"
+        },
+        "testpilot/__main__.py": {
+          "bytes": 11341,
+          "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+          "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+          "mode": "33206",
+          "mtime_ns": "1791934054060765200",
+          "inode": "281474978289807"
+        },
+        "testpilot/_pytest_generated.py": {
+          "bytes": 2943,
+          "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+          "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+          "mode": "33206",
+          "mtime_ns": "1791934054213880400",
+          "inode": "281474978289808"
+        },
+        "testpilot/compare.py": {
+          "bytes": 14624,
+          "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+          "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+          "mode": "33206",
+          "mtime_ns": "1791934054412994200",
+          "inode": "281474978289809"
+        },
+        "testpilot/compare_html.py": {
+          "bytes": 21260,
+          "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+          "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+          "mode": "33206",
+          "mtime_ns": "1791934054566897400",
+          "inode": "281474978289810"
+        },
+        "testpilot/diff.py": {
+          "bytes": 13252,
+          "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+          "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+          "mode": "33206",
+          "mtime_ns": "1791934054733388900",
+          "inode": "281474978289811"
+        },
+        "testpilot/html_report.py": {
+          "bytes": 21739,
+          "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+          "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+          "mode": "33206",
+          "mtime_ns": "1791934054890647800",
+          "inode": "281474978289812"
+        },
+        "testpilot/loop.py": {
+          "bytes": 30070,
+          "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+          "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+          "mode": "33206",
+          "mtime_ns": "1791934054984788700",
+          "inode": "281474978289813"
+        },
+        "testpilot/model.py": {
+          "bytes": 10454,
+          "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+          "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+          "mode": "33206",
+          "mtime_ns": "1791934055206405100",
+          "inode": "281474978289814"
+        },
+        "testpilot/recheck.py": {
+          "bytes": 12770,
+          "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+          "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+          "mode": "33206",
+          "mtime_ns": "1791934055421322100",
+          "inode": "281474978289815"
+        },
+        "testpilot/recheck_html.py": {
+          "bytes": 10184,
+          "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+          "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+          "mode": "33206",
+          "mtime_ns": "1791934055630500200",
+          "inode": "281474978289816"
+        },
+        "testpilot/regression.py": {
+          "bytes": 16329,
+          "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+          "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+          "mode": "33206",
+          "mtime_ns": "1791934055821171100",
+          "inode": "281474978289817"
+        },
+        "testpilot/sandbox.py": {
+          "bytes": 13628,
+          "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+          "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+          "mode": "33206",
+          "mtime_ns": "1791934055973314800",
+          "inode": "281474978289818"
+        },
+        "testpilot/saved_report.py": {
+          "bytes": 9808,
+          "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+          "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+          "mode": "33206",
+          "mtime_ns": "1791934056124330100",
+          "inode": "281474978289819"
+        },
+        "testpilot/targets.py": {
+          "bytes": 5410,
+          "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+          "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+          "mode": "33206",
+          "mtime_ns": "1791934056271805900",
+          "inode": "281474978289820"
+        }
+      },
+      "expected": {
+        "testpilot/__init__.py": {
+          "bytes": 390,
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "mode": "33206",
+          "mtime_ns": "1791934053929132600",
+          "inode": "281474978289806"
+        },
+        "testpilot/__main__.py": {
+          "bytes": 11341,
+          "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+          "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+          "mode": "33206",
+          "mtime_ns": "1791934054060765200",
+          "inode": "281474978289807"
+        },
+        "testpilot/_pytest_generated.py": {
+          "bytes": 2943,
+          "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+          "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+          "mode": "33206",
+          "mtime_ns": "1791934054213880400",
+          "inode": "281474978289808"
+        },
+        "testpilot/compare.py": {
+          "bytes": 14624,
+          "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+          "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+          "mode": "33206",
+          "mtime_ns": "1791934054412994200",
+          "inode": "281474978289809"
+        },
+        "testpilot/compare_html.py": {
+          "bytes": 21260,
+          "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+          "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+          "mode": "33206",
+          "mtime_ns": "1791934054566897400",
+          "inode": "281474978289810"
+        },
+        "testpilot/diff.py": {
+          "bytes": 13252,
+          "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+          "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+          "mode": "33206",
+          "mtime_ns": "1791934054733388900",
+          "inode": "281474978289811"
+        },
+        "testpilot/html_report.py": {
+          "bytes": 21739,
+          "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+          "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+          "mode": "33206",
+          "mtime_ns": "1791934054890647800",
+          "inode": "281474978289812"
+        },
+        "testpilot/loop.py": {
+          "bytes": 30070,
+          "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+          "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+          "mode": "33206",
+          "mtime_ns": "1791934054984788700",
+          "inode": "281474978289813"
+        },
+        "testpilot/model.py": {
+          "bytes": 10454,
+          "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+          "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+          "mode": "33206",
+          "mtime_ns": "1791934055206405100",
+          "inode": "281474978289814"
+        },
+        "testpilot/recheck.py": {
+          "bytes": 12770,
+          "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+          "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+          "mode": "33206",
+          "mtime_ns": "1791934055421322100",
+          "inode": "281474978289815"
+        },
+        "testpilot/recheck_html.py": {
+          "bytes": 10184,
+          "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+          "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+          "mode": "33206",
+          "mtime_ns": "1791934055630500200",
+          "inode": "281474978289816"
+        },
+        "testpilot/regression.py": {
+          "bytes": 16329,
+          "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+          "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+          "mode": "33206",
+          "mtime_ns": "1791934055821171100",
+          "inode": "281474978289817"
+        },
+        "testpilot/sandbox.py": {
+          "bytes": 13628,
+          "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+          "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+          "mode": "33206",
+          "mtime_ns": "1791934055973314800",
+          "inode": "281474978289818"
+        },
+        "testpilot/saved_report.py": {
+          "bytes": 9808,
+          "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+          "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+          "mode": "33206",
+          "mtime_ns": "1791934056124330100",
+          "inode": "281474978289819"
+        },
+        "testpilot/targets.py": {
+          "bytes": 5410,
+          "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+          "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+          "mode": "33206",
+          "mtime_ns": "1791934056271805900",
+          "inode": "281474978289820"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "fixtures conservation",
+      "actual": {
+        "after.json": {
+          "bytes": 2498,
+          "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+          "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+          "mode": "33206",
+          "mtime_ns": "1791934056597709300",
+          "inode": "281474978289822"
+        },
+        "before.json": {
+          "bytes": 3089,
+          "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+          "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+          "mode": "33206",
+          "mtime_ns": "1791934056399978900",
+          "inode": "281474978289821"
+        }
+      },
+      "expected": {
+        "after.json": {
+          "bytes": 2498,
+          "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+          "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+          "mode": "33206",
+          "mtime_ns": "1791934056597709300",
+          "inode": "281474978289822"
+        },
+        "before.json": {
+          "bytes": 3089,
+          "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+          "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+          "mode": "33206",
+          "mtime_ns": "1791934056399978900",
+          "inode": "281474978289821"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "witness conservation",
+      "actual": {
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\intake-original.json": {
+          "bytes": 222285,
+          "sha256": "7f90cf5f19d9ec864113dcffb5797e64b9000c393f7aa0fe6069a468f433814b",
+          "git_blob": "a5ebaf44c9ad904d4a13ee498feb0e5177c485f2",
+          "mode": "33206",
+          "mtime_ns": "1791932944974436300",
+          "inode": "281474978286297"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\criteria.json": {
+          "bytes": 5482,
+          "sha256": "d157c051e4977916be2617594281d7d47142effc38d4abcf8aa426ef2ee25a6f",
+          "git_blob": "3a53360db280b992e5827eda88205840f3daf8ac",
+          "mode": "33206",
+          "mtime_ns": "1791932884525590600",
+          "inode": "281474978286118"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v3.py": {
+          "bytes": 13902,
+          "sha256": "512d2f0f8767d2fcfea30bfa4d754ff4925dc85066778610042ed96689d800aa",
+          "git_blob": "3206962ae468a1d240d0057012e4eee1cc74953d",
+          "mode": "33206",
+          "mtime_ns": "1791933978878640000",
+          "inode": "281474978289792"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser.py": {
+          "bytes": 13005,
+          "sha256": "126ae0fe3ea4910764f6f1ef20e082038977f27db453fc42cb5bfa6b4b42bd42",
+          "git_blob": "dcf04cf522d03fc7c54f2c61f4477a95e7329134",
+          "mode": "33206",
+          "mtime_ns": "1791932814486406200",
+          "inode": "844424931706007"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v2.py": {
+          "bytes": 13424,
+          "sha256": "ab826f2d62ca6b91b3346e1e66eb134f496410c2a8d405992a38b516613a2d4d",
+          "git_blob": "e571ffed8a12d60044aeacd49b338f6b2bf0ae97",
+          "mode": "33206",
+          "mtime_ns": "1791933650155330000",
+          "inode": "281474978288559"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\comparison.html": {
+          "bytes": 24491,
+          "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+          "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+          "mode": "33206",
+          "mtime_ns": "1791933119332372600",
+          "inode": "1688849861838075"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\initial-diagnostics.json": {
+          "bytes": 4795,
+          "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+          "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+          "mode": "33206",
+          "mtime_ns": "1791933130985547800",
+          "inode": "562949954996742"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "mode": "33206",
+          "mtime_ns": "1791933120654265800",
+          "inode": "1407374885127428"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stdout": {
+          "bytes": 88,
+          "sha256": "5f3d1960548a5850502b6c04d620fd3a7047e1e10dfda84eb09ef1be36c302c5",
+          "git_blob": "a48baea87c393957f3c8301985e374cb56ea0dc8",
+          "mode": "33206",
+          "mtime_ns": "1791933120653759900",
+          "inode": "1125899908416770"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\receiving.json": {
+          "bytes": 26631,
+          "sha256": "995d09205efce3825207b7332ec166138f121b963974d8bca71aa837e78a1eaf",
+          "git_blob": "c7d91335b2ec8a0330722870998a31c55c5440d9",
+          "mode": "33206",
+          "mtime_ns": "1791933170849966800",
+          "inode": "281474978287232"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\after.json": {
+          "bytes": 2498,
+          "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+          "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+          "mode": "33206",
+          "mtime_ns": "1791933106912567200",
+          "inode": "1125899908416741"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\before.json": {
+          "bytes": 3089,
+          "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+          "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+          "mode": "33206",
+          "mtime_ns": "1791933106762766600",
+          "inode": "1125899908416730"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare.py": {
+          "bytes": 14624,
+          "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+          "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+          "mode": "33206",
+          "mtime_ns": "1791933104225677600",
+          "inode": "1125899908416700"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare_html.py": {
+          "bytes": 21260,
+          "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+          "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+          "mode": "33206",
+          "mtime_ns": "1791933104634231100",
+          "inode": "1407374885127366"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\diff.py": {
+          "bytes": 13252,
+          "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+          "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+          "mode": "33206",
+          "mtime_ns": "1791933104798526500",
+          "inode": "1407374885127370"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\html_report.py": {
+          "bytes": 21739,
+          "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+          "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+          "mode": "33206",
+          "mtime_ns": "1791933105039510100",
+          "inode": "1407374885127373"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\loop.py": {
+          "bytes": 30070,
+          "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+          "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+          "mode": "33206",
+          "mtime_ns": "1791933105137551500",
+          "inode": "1407374885127375"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\model.py": {
+          "bytes": 10454,
+          "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+          "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+          "mode": "33206",
+          "mtime_ns": "1791933105359816600",
+          "inode": "1125899908416722"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck.py": {
+          "bytes": 12770,
+          "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+          "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+          "mode": "33206",
+          "mtime_ns": "1791933105510905000",
+          "inode": "1407374885127379"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck_html.py": {
+          "bytes": 10184,
+          "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+          "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+          "mode": "33206",
+          "mtime_ns": "1791933105726291600",
+          "inode": "1125899908416724"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\regression.py": {
+          "bytes": 16329,
+          "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+          "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+          "mode": "33206",
+          "mtime_ns": "1791933105953001100",
+          "inode": "1125899908416726"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\sandbox.py": {
+          "bytes": 13628,
+          "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+          "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+          "mode": "33206",
+          "mtime_ns": "1791933106119687600",
+          "inode": "1125899908416727"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\saved_report.py": {
+          "bytes": 9808,
+          "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+          "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+          "mode": "33206",
+          "mtime_ns": "1791933106332524400",
+          "inode": "1125899908416728"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\targets.py": {
+          "bytes": 5410,
+          "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+          "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+          "mode": "33206",
+          "mtime_ns": "1791933106539455900",
+          "inode": "1125899908416729"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\_pytest_generated.py": {
+          "bytes": 2943,
+          "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+          "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+          "mode": "33206",
+          "mtime_ns": "1791933104068009800",
+          "inode": "1125899908416698"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__init__.py": {
+          "bytes": 390,
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "mode": "33206",
+          "mtime_ns": "1791933103799856200",
+          "inode": "2251799815259317"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__main__.py": {
+          "bytes": 11341,
+          "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+          "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+          "mode": "33206",
+          "mtime_ns": "1791933103819037700",
+          "inode": "1125899908416696"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\comparison.html": {
+          "bytes": 24491,
+          "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+          "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+          "mode": "33206",
+          "mtime_ns": "1791933732355147700",
+          "inode": "281474978288823"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\initial-diagnostics.json": {
+          "bytes": 4795,
+          "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+          "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+          "mode": "33206",
+          "mtime_ns": "1791933743119747500",
+          "inode": "281474978289013"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "mode": "33206",
+          "mtime_ns": "1791933733613134100",
+          "inode": "281474978288826"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stdout": {
+          "bytes": 91,
+          "sha256": "bf4efaca8a229956c0570d1d616396ab71b329d09e7d63ebd8bb75644e71bd86",
+          "git_blob": "c03f5c14a57b8840a3db1b0a6fd41b34b540a68e",
+          "mode": "33206",
+          "mtime_ns": "1791933733612131600",
+          "inode": "281474978288825"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\receiving.json": {
+          "bytes": 35552,
+          "sha256": "14be5655fb0074880b3ff8b2aeb63cfccb2f4e89413f23a9e9454f48581e59d2",
+          "git_blob": "8c55b6b2998f4050dddd301cbcf65f4fa018ed6c",
+          "mode": "33206",
+          "mtime_ns": "1791933779186367500",
+          "inode": "844424931710141"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\after.json": {
+          "bytes": 2498,
+          "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+          "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+          "mode": "33206",
+          "mtime_ns": "1791933723537052500",
+          "inode": "281474978288822"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\before.json": {
+          "bytes": 3089,
+          "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+          "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+          "mode": "33206",
+          "mtime_ns": "1791933723450495900",
+          "inode": "281474978288821"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare.py": {
+          "bytes": 14624,
+          "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+          "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+          "mode": "33206",
+          "mtime_ns": "1791933721641367700",
+          "inode": "281474978288809"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare_html.py": {
+          "bytes": 21260,
+          "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+          "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+          "mode": "33206",
+          "mtime_ns": "1791933721793768900",
+          "inode": "281474978288810"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\diff.py": {
+          "bytes": 13252,
+          "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+          "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+          "mode": "33206",
+          "mtime_ns": "1791933721990070600",
+          "inode": "281474978288811"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\html_report.py": {
+          "bytes": 21739,
+          "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+          "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+          "mode": "33206",
+          "mtime_ns": "1791933722207495600",
+          "inode": "281474978288812"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\loop.py": {
+          "bytes": 30070,
+          "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+          "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+          "mode": "33206",
+          "mtime_ns": "1791933722303537400",
+          "inode": "281474978288813"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\model.py": {
+          "bytes": 10454,
+          "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+          "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+          "mode": "33206",
+          "mtime_ns": "1791933722456348000",
+          "inode": "281474978288814"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck.py": {
+          "bytes": 12770,
+          "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+          "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+          "mode": "33206",
+          "mtime_ns": "1791933722613147000",
+          "inode": "281474978288815"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck_html.py": {
+          "bytes": 10184,
+          "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+          "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+          "mode": "33206",
+          "mtime_ns": "1791933722697135100",
+          "inode": "281474978288816"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\regression.py": {
+          "bytes": 16329,
+          "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+          "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+          "mode": "33206",
+          "mtime_ns": "1791933722858862600",
+          "inode": "281474978288817"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\sandbox.py": {
+          "bytes": 13628,
+          "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+          "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+          "mode": "33206",
+          "mtime_ns": "1791933723020318300",
+          "inode": "281474978288818"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\saved_report.py": {
+          "bytes": 9808,
+          "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+          "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+          "mode": "33206",
+          "mtime_ns": "1791933723165729100",
+          "inode": "281474978288819"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\targets.py": {
+          "bytes": 5410,
+          "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+          "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+          "mode": "33206",
+          "mtime_ns": "1791933723317031300",
+          "inode": "281474978288820"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\_pytest_generated.py": {
+          "bytes": 2943,
+          "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+          "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+          "mode": "33206",
+          "mtime_ns": "1791933721380072900",
+          "inode": "281474978288808"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__init__.py": {
+          "bytes": 390,
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "mode": "33206",
+          "mtime_ns": "1791933721065595200",
+          "inode": "281474978288806"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__main__.py": {
+          "bytes": 11341,
+          "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+          "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+          "mode": "33206",
+          "mtime_ns": "1791933721219855500",
+          "inode": "281474978288807"
+        }
+      },
+      "expected": {
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\intake-original.json": {
+          "bytes": 222285,
+          "sha256": "7f90cf5f19d9ec864113dcffb5797e64b9000c393f7aa0fe6069a468f433814b",
+          "git_blob": "a5ebaf44c9ad904d4a13ee498feb0e5177c485f2",
+          "mode": "33206",
+          "mtime_ns": "1791932944974436300",
+          "inode": "281474978286297"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\criteria.json": {
+          "bytes": 5482,
+          "sha256": "d157c051e4977916be2617594281d7d47142effc38d4abcf8aa426ef2ee25a6f",
+          "git_blob": "3a53360db280b992e5827eda88205840f3daf8ac",
+          "mode": "33206",
+          "mtime_ns": "1791932884525590600",
+          "inode": "281474978286118"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v3.py": {
+          "bytes": 13902,
+          "sha256": "512d2f0f8767d2fcfea30bfa4d754ff4925dc85066778610042ed96689d800aa",
+          "git_blob": "3206962ae468a1d240d0057012e4eee1cc74953d",
+          "mode": "33206",
+          "mtime_ns": "1791933978878640000",
+          "inode": "281474978289792"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser.py": {
+          "bytes": 13005,
+          "sha256": "126ae0fe3ea4910764f6f1ef20e082038977f27db453fc42cb5bfa6b4b42bd42",
+          "git_blob": "dcf04cf522d03fc7c54f2c61f4477a95e7329134",
+          "mode": "33206",
+          "mtime_ns": "1791932814486406200",
+          "inode": "844424931706007"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v2.py": {
+          "bytes": 13424,
+          "sha256": "ab826f2d62ca6b91b3346e1e66eb134f496410c2a8d405992a38b516613a2d4d",
+          "git_blob": "e571ffed8a12d60044aeacd49b338f6b2bf0ae97",
+          "mode": "33206",
+          "mtime_ns": "1791933650155330000",
+          "inode": "281474978288559"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\comparison.html": {
+          "bytes": 24491,
+          "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+          "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+          "mode": "33206",
+          "mtime_ns": "1791933119332372600",
+          "inode": "1688849861838075"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\initial-diagnostics.json": {
+          "bytes": 4795,
+          "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+          "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+          "mode": "33206",
+          "mtime_ns": "1791933130985547800",
+          "inode": "562949954996742"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "mode": "33206",
+          "mtime_ns": "1791933120654265800",
+          "inode": "1407374885127428"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stdout": {
+          "bytes": 88,
+          "sha256": "5f3d1960548a5850502b6c04d620fd3a7047e1e10dfda84eb09ef1be36c302c5",
+          "git_blob": "a48baea87c393957f3c8301985e374cb56ea0dc8",
+          "mode": "33206",
+          "mtime_ns": "1791933120653759900",
+          "inode": "1125899908416770"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\receiving.json": {
+          "bytes": 26631,
+          "sha256": "995d09205efce3825207b7332ec166138f121b963974d8bca71aa837e78a1eaf",
+          "git_blob": "c7d91335b2ec8a0330722870998a31c55c5440d9",
+          "mode": "33206",
+          "mtime_ns": "1791933170849966800",
+          "inode": "281474978287232"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\after.json": {
+          "bytes": 2498,
+          "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+          "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+          "mode": "33206",
+          "mtime_ns": "1791933106912567200",
+          "inode": "1125899908416741"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\before.json": {
+          "bytes": 3089,
+          "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+          "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+          "mode": "33206",
+          "mtime_ns": "1791933106762766600",
+          "inode": "1125899908416730"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare.py": {
+          "bytes": 14624,
+          "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+          "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+          "mode": "33206",
+          "mtime_ns": "1791933104225677600",
+          "inode": "1125899908416700"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare_html.py": {
+          "bytes": 21260,
+          "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+          "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+          "mode": "33206",
+          "mtime_ns": "1791933104634231100",
+          "inode": "1407374885127366"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\diff.py": {
+          "bytes": 13252,
+          "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+          "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+          "mode": "33206",
+          "mtime_ns": "1791933104798526500",
+          "inode": "1407374885127370"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\html_report.py": {
+          "bytes": 21739,
+          "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+          "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+          "mode": "33206",
+          "mtime_ns": "1791933105039510100",
+          "inode": "1407374885127373"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\loop.py": {
+          "bytes": 30070,
+          "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+          "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+          "mode": "33206",
+          "mtime_ns": "1791933105137551500",
+          "inode": "1407374885127375"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\model.py": {
+          "bytes": 10454,
+          "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+          "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+          "mode": "33206",
+          "mtime_ns": "1791933105359816600",
+          "inode": "1125899908416722"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck.py": {
+          "bytes": 12770,
+          "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+          "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+          "mode": "33206",
+          "mtime_ns": "1791933105510905000",
+          "inode": "1407374885127379"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck_html.py": {
+          "bytes": 10184,
+          "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+          "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+          "mode": "33206",
+          "mtime_ns": "1791933105726291600",
+          "inode": "1125899908416724"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\regression.py": {
+          "bytes": 16329,
+          "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+          "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+          "mode": "33206",
+          "mtime_ns": "1791933105953001100",
+          "inode": "1125899908416726"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\sandbox.py": {
+          "bytes": 13628,
+          "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+          "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+          "mode": "33206",
+          "mtime_ns": "1791933106119687600",
+          "inode": "1125899908416727"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\saved_report.py": {
+          "bytes": 9808,
+          "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+          "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+          "mode": "33206",
+          "mtime_ns": "1791933106332524400",
+          "inode": "1125899908416728"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\targets.py": {
+          "bytes": 5410,
+          "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+          "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+          "mode": "33206",
+          "mtime_ns": "1791933106539455900",
+          "inode": "1125899908416729"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\_pytest_generated.py": {
+          "bytes": 2943,
+          "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+          "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+          "mode": "33206",
+          "mtime_ns": "1791933104068009800",
+          "inode": "1125899908416698"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__init__.py": {
+          "bytes": 390,
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "mode": "33206",
+          "mtime_ns": "1791933103799856200",
+          "inode": "2251799815259317"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__main__.py": {
+          "bytes": 11341,
+          "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+          "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+          "mode": "33206",
+          "mtime_ns": "1791933103819037700",
+          "inode": "1125899908416696"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\comparison.html": {
+          "bytes": 24491,
+          "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+          "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+          "mode": "33206",
+          "mtime_ns": "1791933732355147700",
+          "inode": "281474978288823"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\initial-diagnostics.json": {
+          "bytes": 4795,
+          "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+          "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+          "mode": "33206",
+          "mtime_ns": "1791933743119747500",
+          "inode": "281474978289013"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "mode": "33206",
+          "mtime_ns": "1791933733613134100",
+          "inode": "281474978288826"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stdout": {
+          "bytes": 91,
+          "sha256": "bf4efaca8a229956c0570d1d616396ab71b329d09e7d63ebd8bb75644e71bd86",
+          "git_blob": "c03f5c14a57b8840a3db1b0a6fd41b34b540a68e",
+          "mode": "33206",
+          "mtime_ns": "1791933733612131600",
+          "inode": "281474978288825"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\receiving.json": {
+          "bytes": 35552,
+          "sha256": "14be5655fb0074880b3ff8b2aeb63cfccb2f4e89413f23a9e9454f48581e59d2",
+          "git_blob": "8c55b6b2998f4050dddd301cbcf65f4fa018ed6c",
+          "mode": "33206",
+          "mtime_ns": "1791933779186367500",
+          "inode": "844424931710141"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\after.json": {
+          "bytes": 2498,
+          "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+          "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+          "mode": "33206",
+          "mtime_ns": "1791933723537052500",
+          "inode": "281474978288822"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\before.json": {
+          "bytes": 3089,
+          "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+          "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+          "mode": "33206",
+          "mtime_ns": "1791933723450495900",
+          "inode": "281474978288821"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare.py": {
+          "bytes": 14624,
+          "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+          "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+          "mode": "33206",
+          "mtime_ns": "1791933721641367700",
+          "inode": "281474978288809"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare_html.py": {
+          "bytes": 21260,
+          "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+          "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+          "mode": "33206",
+          "mtime_ns": "1791933721793768900",
+          "inode": "281474978288810"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\diff.py": {
+          "bytes": 13252,
+          "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+          "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+          "mode": "33206",
+          "mtime_ns": "1791933721990070600",
+          "inode": "281474978288811"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\html_report.py": {
+          "bytes": 21739,
+          "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+          "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+          "mode": "33206",
+          "mtime_ns": "1791933722207495600",
+          "inode": "281474978288812"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\loop.py": {
+          "bytes": 30070,
+          "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+          "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+          "mode": "33206",
+          "mtime_ns": "1791933722303537400",
+          "inode": "281474978288813"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\model.py": {
+          "bytes": 10454,
+          "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+          "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+          "mode": "33206",
+          "mtime_ns": "1791933722456348000",
+          "inode": "281474978288814"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck.py": {
+          "bytes": 12770,
+          "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+          "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+          "mode": "33206",
+          "mtime_ns": "1791933722613147000",
+          "inode": "281474978288815"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck_html.py": {
+          "bytes": 10184,
+          "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+          "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+          "mode": "33206",
+          "mtime_ns": "1791933722697135100",
+          "inode": "281474978288816"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\regression.py": {
+          "bytes": 16329,
+          "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+          "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+          "mode": "33206",
+          "mtime_ns": "1791933722858862600",
+          "inode": "281474978288817"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\sandbox.py": {
+          "bytes": 13628,
+          "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+          "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+          "mode": "33206",
+          "mtime_ns": "1791933723020318300",
+          "inode": "281474978288818"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\saved_report.py": {
+          "bytes": 9808,
+          "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+          "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+          "mode": "33206",
+          "mtime_ns": "1791933723165729100",
+          "inode": "281474978288819"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\targets.py": {
+          "bytes": 5410,
+          "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+          "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+          "mode": "33206",
+          "mtime_ns": "1791933723317031300",
+          "inode": "281474978288820"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\_pytest_generated.py": {
+          "bytes": 2943,
+          "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+          "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+          "mode": "33206",
+          "mtime_ns": "1791933721380072900",
+          "inode": "281474978288808"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__init__.py": {
+          "bytes": 390,
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "mode": "33206",
+          "mtime_ns": "1791933721065595200",
+          "inode": "281474978288806"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__main__.py": {
+          "bytes": 11341,
+          "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+          "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+          "mode": "33206",
+          "mtime_ns": "1791933721219855500",
+          "inode": "281474978288807"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "html conservation",
+      "actual": {
+        "bytes": 24491,
+        "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+        "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+        "mode": "33206",
+        "mtime_ns": "1791934070676592800",
+        "inode": "281474978289824"
+      },
+      "expected": {
+        "bytes": 24491,
+        "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+        "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+        "mode": "33206",
+        "mtime_ns": "1791934070676592800",
+        "inode": "281474978289824"
+      },
+      "passed": true
+    }
+  ],
+  "requests": [
+    {
+      "url": "file:///D:/hamon-dcac8b3b8755-testpilot-failure-index-v1/original-course-v3/comparison.html",
+      "method": "GET"
+    }
+  ],
+  "errors": [],
+  "downloads": [
+    {
+      "role": "before",
+      "name": "before-report.json",
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33206",
+      "mtime_ns": "1791934089510524400",
+      "inode": "281474978290022"
+    },
+    {
+      "role": "after",
+      "name": "after-report.json",
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33206",
+      "mtime_ns": "1791934091298698600",
+      "inode": "281474978290024"
+    }
+  ],
+  "source_before": {
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33206",
+      "mtime_ns": "1791934053929132600",
+      "inode": "281474978289806"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+      "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+      "mode": "33206",
+      "mtime_ns": "1791934054060765200",
+      "inode": "281474978289807"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33206",
+      "mtime_ns": "1791934054213880400",
+      "inode": "281474978289808"
+    },
+    "testpilot/compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33206",
+      "mtime_ns": "1791934054412994200",
+      "inode": "281474978289809"
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "mode": "33206",
+      "mtime_ns": "1791934054566897400",
+      "inode": "281474978289810"
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33206",
+      "mtime_ns": "1791934054733388900",
+      "inode": "281474978289811"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33206",
+      "mtime_ns": "1791934054890647800",
+      "inode": "281474978289812"
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33206",
+      "mtime_ns": "1791934054984788700",
+      "inode": "281474978289813"
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33206",
+      "mtime_ns": "1791934055206405100",
+      "inode": "281474978289814"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33206",
+      "mtime_ns": "1791934055421322100",
+      "inode": "281474978289815"
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33206",
+      "mtime_ns": "1791934055630500200",
+      "inode": "281474978289816"
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33206",
+      "mtime_ns": "1791934055821171100",
+      "inode": "281474978289817"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33206",
+      "mtime_ns": "1791934055973314800",
+      "inode": "281474978289818"
+    },
+    "testpilot/saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33206",
+      "mtime_ns": "1791934056124330100",
+      "inode": "281474978289819"
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33206",
+      "mtime_ns": "1791934056271805900",
+      "inode": "281474978289820"
+    }
+  },
+  "fixtures_before": {
+    "after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33206",
+      "mtime_ns": "1791934056597709300",
+      "inode": "281474978289822"
+    },
+    "before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33206",
+      "mtime_ns": "1791934056399978900",
+      "inode": "281474978289821"
+    }
+  },
+  "witness_before": {
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\intake-original.json": {
+      "bytes": 222285,
+      "sha256": "7f90cf5f19d9ec864113dcffb5797e64b9000c393f7aa0fe6069a468f433814b",
+      "git_blob": "a5ebaf44c9ad904d4a13ee498feb0e5177c485f2",
+      "mode": "33206",
+      "mtime_ns": "1791932944974436300",
+      "inode": "281474978286297"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\criteria.json": {
+      "bytes": 5482,
+      "sha256": "d157c051e4977916be2617594281d7d47142effc38d4abcf8aa426ef2ee25a6f",
+      "git_blob": "3a53360db280b992e5827eda88205840f3daf8ac",
+      "mode": "33206",
+      "mtime_ns": "1791932884525590600",
+      "inode": "281474978286118"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v3.py": {
+      "bytes": 13902,
+      "sha256": "512d2f0f8767d2fcfea30bfa4d754ff4925dc85066778610042ed96689d800aa",
+      "git_blob": "3206962ae468a1d240d0057012e4eee1cc74953d",
+      "mode": "33206",
+      "mtime_ns": "1791933978878640000",
+      "inode": "281474978289792"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser.py": {
+      "bytes": 13005,
+      "sha256": "126ae0fe3ea4910764f6f1ef20e082038977f27db453fc42cb5bfa6b4b42bd42",
+      "git_blob": "dcf04cf522d03fc7c54f2c61f4477a95e7329134",
+      "mode": "33206",
+      "mtime_ns": "1791932814486406200",
+      "inode": "844424931706007"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v2.py": {
+      "bytes": 13424,
+      "sha256": "ab826f2d62ca6b91b3346e1e66eb134f496410c2a8d405992a38b516613a2d4d",
+      "git_blob": "e571ffed8a12d60044aeacd49b338f6b2bf0ae97",
+      "mode": "33206",
+      "mtime_ns": "1791933650155330000",
+      "inode": "281474978288559"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\comparison.html": {
+      "bytes": 24491,
+      "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+      "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+      "mode": "33206",
+      "mtime_ns": "1791933119332372600",
+      "inode": "1688849861838075"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\initial-diagnostics.json": {
+      "bytes": 4795,
+      "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+      "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+      "mode": "33206",
+      "mtime_ns": "1791933130985547800",
+      "inode": "562949954996742"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "33206",
+      "mtime_ns": "1791933120654265800",
+      "inode": "1407374885127428"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stdout": {
+      "bytes": 88,
+      "sha256": "5f3d1960548a5850502b6c04d620fd3a7047e1e10dfda84eb09ef1be36c302c5",
+      "git_blob": "a48baea87c393957f3c8301985e374cb56ea0dc8",
+      "mode": "33206",
+      "mtime_ns": "1791933120653759900",
+      "inode": "1125899908416770"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\receiving.json": {
+      "bytes": 26631,
+      "sha256": "995d09205efce3825207b7332ec166138f121b963974d8bca71aa837e78a1eaf",
+      "git_blob": "c7d91335b2ec8a0330722870998a31c55c5440d9",
+      "mode": "33206",
+      "mtime_ns": "1791933170849966800",
+      "inode": "281474978287232"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33206",
+      "mtime_ns": "1791933106912567200",
+      "inode": "1125899908416741"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33206",
+      "mtime_ns": "1791933106762766600",
+      "inode": "1125899908416730"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33206",
+      "mtime_ns": "1791933104225677600",
+      "inode": "1125899908416700"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare_html.py": {
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "mode": "33206",
+      "mtime_ns": "1791933104634231100",
+      "inode": "1407374885127366"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33206",
+      "mtime_ns": "1791933104798526500",
+      "inode": "1407374885127370"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33206",
+      "mtime_ns": "1791933105039510100",
+      "inode": "1407374885127373"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33206",
+      "mtime_ns": "1791933105137551500",
+      "inode": "1407374885127375"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33206",
+      "mtime_ns": "1791933105359816600",
+      "inode": "1125899908416722"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33206",
+      "mtime_ns": "1791933105510905000",
+      "inode": "1407374885127379"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33206",
+      "mtime_ns": "1791933105726291600",
+      "inode": "1125899908416724"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33206",
+      "mtime_ns": "1791933105953001100",
+      "inode": "1125899908416726"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33206",
+      "mtime_ns": "1791933106119687600",
+      "inode": "1125899908416727"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33206",
+      "mtime_ns": "1791933106332524400",
+      "inode": "1125899908416728"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33206",
+      "mtime_ns": "1791933106539455900",
+      "inode": "1125899908416729"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33206",
+      "mtime_ns": "1791933104068009800",
+      "inode": "1125899908416698"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33206",
+      "mtime_ns": "1791933103799856200",
+      "inode": "2251799815259317"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__main__.py": {
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+      "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+      "mode": "33206",
+      "mtime_ns": "1791933103819037700",
+      "inode": "1125899908416696"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\comparison.html": {
+      "bytes": 24491,
+      "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+      "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+      "mode": "33206",
+      "mtime_ns": "1791933732355147700",
+      "inode": "281474978288823"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\initial-diagnostics.json": {
+      "bytes": 4795,
+      "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+      "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+      "mode": "33206",
+      "mtime_ns": "1791933743119747500",
+      "inode": "281474978289013"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "33206",
+      "mtime_ns": "1791933733613134100",
+      "inode": "281474978288826"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stdout": {
+      "bytes": 91,
+      "sha256": "bf4efaca8a229956c0570d1d616396ab71b329d09e7d63ebd8bb75644e71bd86",
+      "git_blob": "c03f5c14a57b8840a3db1b0a6fd41b34b540a68e",
+      "mode": "33206",
+      "mtime_ns": "1791933733612131600",
+      "inode": "281474978288825"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\receiving.json": {
+      "bytes": 35552,
+      "sha256": "14be5655fb0074880b3ff8b2aeb63cfccb2f4e89413f23a9e9454f48581e59d2",
+      "git_blob": "8c55b6b2998f4050dddd301cbcf65f4fa018ed6c",
+      "mode": "33206",
+      "mtime_ns": "1791933779186367500",
+      "inode": "844424931710141"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33206",
+      "mtime_ns": "1791933723537052500",
+      "inode": "281474978288822"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33206",
+      "mtime_ns": "1791933723450495900",
+      "inode": "281474978288821"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33206",
+      "mtime_ns": "1791933721641367700",
+      "inode": "281474978288809"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare_html.py": {
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "mode": "33206",
+      "mtime_ns": "1791933721793768900",
+      "inode": "281474978288810"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33206",
+      "mtime_ns": "1791933721990070600",
+      "inode": "281474978288811"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33206",
+      "mtime_ns": "1791933722207495600",
+      "inode": "281474978288812"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33206",
+      "mtime_ns": "1791933722303537400",
+      "inode": "281474978288813"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33206",
+      "mtime_ns": "1791933722456348000",
+      "inode": "281474978288814"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33206",
+      "mtime_ns": "1791933722613147000",
+      "inode": "281474978288815"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33206",
+      "mtime_ns": "1791933722697135100",
+      "inode": "281474978288816"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33206",
+      "mtime_ns": "1791933722858862600",
+      "inode": "281474978288817"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33206",
+      "mtime_ns": "1791933723020318300",
+      "inode": "281474978288818"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33206",
+      "mtime_ns": "1791933723165729100",
+      "inode": "281474978288819"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33206",
+      "mtime_ns": "1791933723317031300",
+      "inode": "281474978288820"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33206",
+      "mtime_ns": "1791933721380072900",
+      "inode": "281474978288808"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33206",
+      "mtime_ns": "1791933721065595200",
+      "inode": "281474978288806"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__main__.py": {
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+      "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+      "mode": "33206",
+      "mtime_ns": "1791933721219855500",
+      "inode": "281474978288807"
+    }
+  },
+  "producer": {
+    "argv": [
+      "C:\\Users\\Veria\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "testpilot",
+      "compare",
+      "--before",
+      "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v3\\fixtures\\before.json",
+      "--after",
+      "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v3\\fixtures\\after.json",
+      "--out",
+      "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v3\\comparison.html"
+    ],
+    "pid": 33332,
+    "exit": 0,
+    "cwd": "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v3\\source",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+  },
+  "html_before": {
+    "bytes": 24491,
+    "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+    "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+    "mode": "33206",
+    "mtime_ns": "1791934070676592800",
+    "inode": "281474978289824"
+  },
+  "browser_scratch": {
+    "downloads_path": "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v3\\browser-downloads",
+    "context": "nonpersistent",
+    "browser_os_exit": "not measured"
+  },
+  "browser": {
+    "version": "154.0.8037.97",
+    "javascript_enabled": false,
+    "executable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "download_events": [
+    {
+      "role": "before",
+      "suggested_filename": "before-report.json",
+      "failure": null
+    },
+    {
+      "role": "after",
+      "suggested_filename": "after-report.json",
+      "failure": null
+    }
+  ],
+  "source_after": {
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33206",
+      "mtime_ns": "1791934053929132600",
+      "inode": "281474978289806"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+      "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+      "mode": "33206",
+      "mtime_ns": "1791934054060765200",
+      "inode": "281474978289807"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33206",
+      "mtime_ns": "1791934054213880400",
+      "inode": "281474978289808"
+    },
+    "testpilot/compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33206",
+      "mtime_ns": "1791934054412994200",
+      "inode": "281474978289809"
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "mode": "33206",
+      "mtime_ns": "1791934054566897400",
+      "inode": "281474978289810"
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33206",
+      "mtime_ns": "1791934054733388900",
+      "inode": "281474978289811"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33206",
+      "mtime_ns": "1791934054890647800",
+      "inode": "281474978289812"
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33206",
+      "mtime_ns": "1791934054984788700",
+      "inode": "281474978289813"
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33206",
+      "mtime_ns": "1791934055206405100",
+      "inode": "281474978289814"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33206",
+      "mtime_ns": "1791934055421322100",
+      "inode": "281474978289815"
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33206",
+      "mtime_ns": "1791934055630500200",
+      "inode": "281474978289816"
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33206",
+      "mtime_ns": "1791934055821171100",
+      "inode": "281474978289817"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33206",
+      "mtime_ns": "1791934055973314800",
+      "inode": "281474978289818"
+    },
+    "testpilot/saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33206",
+      "mtime_ns": "1791934056124330100",
+      "inode": "281474978289819"
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33206",
+      "mtime_ns": "1791934056271805900",
+      "inode": "281474978289820"
+    }
+  },
+  "fixtures_after": {
+    "after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33206",
+      "mtime_ns": "1791934056597709300",
+      "inode": "281474978289822"
+    },
+    "before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33206",
+      "mtime_ns": "1791934056399978900",
+      "inode": "281474978289821"
+    }
+  },
+  "witness_after": {
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\intake-original.json": {
+      "bytes": 222285,
+      "sha256": "7f90cf5f19d9ec864113dcffb5797e64b9000c393f7aa0fe6069a468f433814b",
+      "git_blob": "a5ebaf44c9ad904d4a13ee498feb0e5177c485f2",
+      "mode": "33206",
+      "mtime_ns": "1791932944974436300",
+      "inode": "281474978286297"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\criteria.json": {
+      "bytes": 5482,
+      "sha256": "d157c051e4977916be2617594281d7d47142effc38d4abcf8aa426ef2ee25a6f",
+      "git_blob": "3a53360db280b992e5827eda88205840f3daf8ac",
+      "mode": "33206",
+      "mtime_ns": "1791932884525590600",
+      "inode": "281474978286118"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v3.py": {
+      "bytes": 13902,
+      "sha256": "512d2f0f8767d2fcfea30bfa4d754ff4925dc85066778610042ed96689d800aa",
+      "git_blob": "3206962ae468a1d240d0057012e4eee1cc74953d",
+      "mode": "33206",
+      "mtime_ns": "1791933978878640000",
+      "inode": "281474978289792"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser.py": {
+      "bytes": 13005,
+      "sha256": "126ae0fe3ea4910764f6f1ef20e082038977f27db453fc42cb5bfa6b4b42bd42",
+      "git_blob": "dcf04cf522d03fc7c54f2c61f4477a95e7329134",
+      "mode": "33206",
+      "mtime_ns": "1791932814486406200",
+      "inode": "844424931706007"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\receive_browser_v2.py": {
+      "bytes": 13424,
+      "sha256": "ab826f2d62ca6b91b3346e1e66eb134f496410c2a8d405992a38b516613a2d4d",
+      "git_blob": "e571ffed8a12d60044aeacd49b338f6b2bf0ae97",
+      "mode": "33206",
+      "mtime_ns": "1791933650155330000",
+      "inode": "281474978288559"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\comparison.html": {
+      "bytes": 24491,
+      "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+      "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+      "mode": "33206",
+      "mtime_ns": "1791933119332372600",
+      "inode": "1688849861838075"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\initial-diagnostics.json": {
+      "bytes": 4795,
+      "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+      "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+      "mode": "33206",
+      "mtime_ns": "1791933130985547800",
+      "inode": "562949954996742"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "33206",
+      "mtime_ns": "1791933120654265800",
+      "inode": "1407374885127428"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\producer.stdout": {
+      "bytes": 88,
+      "sha256": "5f3d1960548a5850502b6c04d620fd3a7047e1e10dfda84eb09ef1be36c302c5",
+      "git_blob": "a48baea87c393957f3c8301985e374cb56ea0dc8",
+      "mode": "33206",
+      "mtime_ns": "1791933120653759900",
+      "inode": "1125899908416770"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\receiving.json": {
+      "bytes": 26631,
+      "sha256": "995d09205efce3825207b7332ec166138f121b963974d8bca71aa837e78a1eaf",
+      "git_blob": "c7d91335b2ec8a0330722870998a31c55c5440d9",
+      "mode": "33206",
+      "mtime_ns": "1791933170849966800",
+      "inode": "281474978287232"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33206",
+      "mtime_ns": "1791933106912567200",
+      "inode": "1125899908416741"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\fixtures\\before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33206",
+      "mtime_ns": "1791933106762766600",
+      "inode": "1125899908416730"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33206",
+      "mtime_ns": "1791933104225677600",
+      "inode": "1125899908416700"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\compare_html.py": {
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "mode": "33206",
+      "mtime_ns": "1791933104634231100",
+      "inode": "1407374885127366"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33206",
+      "mtime_ns": "1791933104798526500",
+      "inode": "1407374885127370"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33206",
+      "mtime_ns": "1791933105039510100",
+      "inode": "1407374885127373"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33206",
+      "mtime_ns": "1791933105137551500",
+      "inode": "1407374885127375"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33206",
+      "mtime_ns": "1791933105359816600",
+      "inode": "1125899908416722"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33206",
+      "mtime_ns": "1791933105510905000",
+      "inode": "1407374885127379"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33206",
+      "mtime_ns": "1791933105726291600",
+      "inode": "1125899908416724"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33206",
+      "mtime_ns": "1791933105953001100",
+      "inode": "1125899908416726"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33206",
+      "mtime_ns": "1791933106119687600",
+      "inode": "1125899908416727"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33206",
+      "mtime_ns": "1791933106332524400",
+      "inode": "1125899908416728"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33206",
+      "mtime_ns": "1791933106539455900",
+      "inode": "1125899908416729"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33206",
+      "mtime_ns": "1791933104068009800",
+      "inode": "1125899908416698"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33206",
+      "mtime_ns": "1791933103799856200",
+      "inode": "2251799815259317"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course\\source\\testpilot\\__main__.py": {
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+      "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+      "mode": "33206",
+      "mtime_ns": "1791933103819037700",
+      "inode": "1125899908416696"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\comparison.html": {
+      "bytes": 24491,
+      "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+      "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+      "mode": "33206",
+      "mtime_ns": "1791933732355147700",
+      "inode": "281474978288823"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\initial-diagnostics.json": {
+      "bytes": 4795,
+      "sha256": "0058fac4fb1d05c4a1da09b250fcf7b2f04222cb4f9dbdf1239be73b24e061b7",
+      "git_blob": "aad96b20107ffc010cea2098bad8d59159c605bc",
+      "mode": "33206",
+      "mtime_ns": "1791933743119747500",
+      "inode": "281474978289013"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "33206",
+      "mtime_ns": "1791933733613134100",
+      "inode": "281474978288826"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\producer.stdout": {
+      "bytes": 91,
+      "sha256": "bf4efaca8a229956c0570d1d616396ab71b329d09e7d63ebd8bb75644e71bd86",
+      "git_blob": "c03f5c14a57b8840a3db1b0a6fd41b34b540a68e",
+      "mode": "33206",
+      "mtime_ns": "1791933733612131600",
+      "inode": "281474978288825"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\receiving.json": {
+      "bytes": 35552,
+      "sha256": "14be5655fb0074880b3ff8b2aeb63cfccb2f4e89413f23a9e9454f48581e59d2",
+      "git_blob": "8c55b6b2998f4050dddd301cbcf65f4fa018ed6c",
+      "mode": "33206",
+      "mtime_ns": "1791933779186367500",
+      "inode": "844424931710141"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33206",
+      "mtime_ns": "1791933723537052500",
+      "inode": "281474978288822"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\fixtures\\before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33206",
+      "mtime_ns": "1791933723450495900",
+      "inode": "281474978288821"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33206",
+      "mtime_ns": "1791933721641367700",
+      "inode": "281474978288809"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\compare_html.py": {
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "mode": "33206",
+      "mtime_ns": "1791933721793768900",
+      "inode": "281474978288810"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33206",
+      "mtime_ns": "1791933721990070600",
+      "inode": "281474978288811"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33206",
+      "mtime_ns": "1791933722207495600",
+      "inode": "281474978288812"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33206",
+      "mtime_ns": "1791933722303537400",
+      "inode": "281474978288813"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33206",
+      "mtime_ns": "1791933722456348000",
+      "inode": "281474978288814"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33206",
+      "mtime_ns": "1791933722613147000",
+      "inode": "281474978288815"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33206",
+      "mtime_ns": "1791933722697135100",
+      "inode": "281474978288816"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33206",
+      "mtime_ns": "1791933722858862600",
+      "inode": "281474978288817"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33206",
+      "mtime_ns": "1791933723020318300",
+      "inode": "281474978288818"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33206",
+      "mtime_ns": "1791933723165729100",
+      "inode": "281474978288819"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33206",
+      "mtime_ns": "1791933723317031300",
+      "inode": "281474978288820"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33206",
+      "mtime_ns": "1791933721380072900",
+      "inode": "281474978288808"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33206",
+      "mtime_ns": "1791933721065595200",
+      "inode": "281474978288806"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-failure-index-v1\\original-course-v2\\source\\testpilot\\__main__.py": {
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+      "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+      "mode": "33206",
+      "mtime_ns": "1791933721219855500",
+      "inode": "281474978288807"
+    }
+  },
+  "html_after": {
+    "bytes": 24491,
+    "sha256": "06eef33b45cee5ec0f271de57af34b34f3acd62abcf545cd3ea4d23d4313d38b",
+    "git_blob": "5e7a76cd484f008778c3cc87f8b94bf4298cba5f",
+    "mode": "33206",
+    "mtime_ns": "1791934070676592800",
+    "inode": "281474978289824"
+  },
+  "finished": "2026-10-13T23:28:42.255191+00:00"
+}
