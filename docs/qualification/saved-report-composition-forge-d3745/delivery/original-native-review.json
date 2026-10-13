@@ -1,0 +1,76 @@
+{
+  "schema": "hamon.anvil.testpilot-saved-report-receiving-review.v1",
+  "reviewer": "Anvil / d3745ea0f44f",
+  "utc": "2026-10-13T12:43:26.083223+00:00",
+  "accepted": true,
+  "scope": "Read-only source-custody, complete driver/contract/receipt and raw-stream/saved-artifact review; no product replay or browser operation. Root retains full production-source review.",
+  "source_base": "247ad1ae8e873fcd52935633015158a1060091af",
+  "donor": "17643838400fa85149e474622e677008cdcc3f79",
+  "reviewed_receipt": {
+    "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/composition-receipt.json",
+    "bytes": 47385,
+    "sha256": "567769f42c4fcf43550e7f502fcf0253a71d204341c6783716e802f13948cc96",
+    "mode": 436
+  },
+  "driver": {
+    "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/receive-current-composition.py",
+    "bytes": 7413,
+    "sha256": "964be341d29a94e849047202f7460a73d7069f0b96cdbcdbd27efe11d705d38a",
+    "mode": 436
+  },
+  "contract": {
+    "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/receiving-contract.json",
+    "bytes": 1896,
+    "sha256": "78c9dfb953e9a164d7742b777e10dd6f92b457ee1553b824b6868cbe163af7fc",
+    "mode": 436
+  },
+  "source_admission": {
+    "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/source-admission.json",
+    "bytes": 22947,
+    "sha256": "bc8f33308f7e08091a6245d009f6dfb40811d8e1c05271841c2b85a266a4d77e",
+    "mode": 436
+  },
+  "findings": {
+    "commands": 5,
+    "checks": 32,
+    "actual_returncodes": [
+      1,
+      0,
+      2,
+      0,
+      2
+    ],
+    "raw_streams_verified": 10,
+    "native_source_bodies_recomputed_against_independently_fetched_complete_Git_trees": 49,
+    "source_and_control_files_unchanged": 54,
+    "identical_refusal_corrected_retry_and_occupied_argv": true,
+    "two_embedded_downloads_equal_original_archived_bytes": true,
+    "passive_saved_html_static_scan": {
+      "external_urls": [],
+      "event_attributes": [],
+      "active_tags": []
+    },
+    "recorded_status": "suspected_code_bug",
+    "page": {
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html",
+      "bytes": 39385,
+      "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674",
+      "mode": 384
+    },
+    "processes_closed": {
+      "3860172": true,
+      "3860240": true,
+      "3860241": true,
+      "3860450": true,
+      "3860451": true,
+      "3860453": true
+    }
+  },
+  "limits": [
+    "Source-aware composition receiving, not candidate-blind or full repository execution.",
+    "Eight maintained donor methods ran in one command; their optimized child controls remain nested evidence, not a second independent suite.",
+    "Saved consumer did not rerun archived tests or request a model; maintained test command is separately attributed.",
+    "No actual browser/visual/manual receiving, Windows, service installation or new integration claim."
+  ],
+  "peer_stage_unchanged": true
+}
