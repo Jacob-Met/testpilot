@@ -1,0 +1,792 @@
+{
+  "source_commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "source_tree": "3b6d270f655310fa2f98cab9bccffca23ec146cf",
+  "kit_sha256": "8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d",
+  "device": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+  "hostname": "hamon-thinkpad",
+  "uid": 1000,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "controller_pid": 3138406,
+  "scope": "Isolated ordinary installed-wheel qualification; no installed-project adoption, providers or dependency downloads",
+  "calls": [
+    {
+      "name": "venv",
+      "pid": 3138477,
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "venv",
+        "--system-site-packages",
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "duration_s": 1.52506383205764,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "pytest-version",
+      "pid": 3138503,
+      "command": [
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review/bin/python",
+        "-I",
+        "-m",
+        "pytest",
+        "--version"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "duration_s": 0.10291842790320516,
+      "stdout": {
+        "bytes": 13,
+        "sha256": "bb8b35aa5007305d449c04bda5b273b74c780820c632678e27f4aa264c84b123"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "install",
+      "pid": 3138574,
+      "command": [
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/kit/testpilot-0.1.0-py3-none-any.whl"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "duration_s": 0.28822277998551726,
+      "stdout": {
+        "bytes": 126,
+        "sha256": "1649f08dbdc56d19128f02ac337732746088d2b412d3ab19e7ce5c21786038b0"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "installed-identity",
+      "pid": 3138593,
+      "command": [
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review/bin/python",
+        "-I",
+        "-B",
+        "-c",
+        "from pathlib import Path;import hashlib,json,sys,testpilot,pytest; p=Path(testpilot.__file__).parent; print(json.dumps({'python':sys.version,'prefix':sys.prefix,'package':str(p),'pytest':pytest.__version__,'files':{str(f.relative_to(p.parent)):{'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'bytes':f.stat().st_size} for f in p.rglob('*.py')}}))"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "duration_s": 0.12151286704465747,
+      "stdout": {
+        "bytes": 1989,
+        "sha256": "2de8e2fadf0227180ac09af752b99450eb0c81bbca5ea378e3be6927e0a3d256"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "help",
+      "pid": 3138599,
+      "command": [
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "--help"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "duration_s": 0.06069198600016534,
+      "stdout": {
+        "bytes": 660,
+        "sha256": "a443e0c54f0487f7ff76f6fbaa70379bfa9084bd87264fbb93095d44724cf556"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "targets",
+      "pid": 3138600,
+      "command": [
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "sample/repo",
+        "--diff",
+        "sample/change.diff",
+        "--json"
+      ],
+      "expected_exit": 0,
+      "exit_code": 0,
+      "duration_s": 0.05975375208072364,
+      "stdout": {
+        "bytes": 478,
+        "sha256": "7aeba5d4143e95349c1233f2ad42dc9366c20ba5a93e5ec7234ea55efd49cb8f"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "scripted",
+      "pid": 3138601,
+      "command": [
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "sample/repo",
+        "--diff",
+        "sample/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "sample/script",
+        "--out",
+        "/home/jacob/hamon-testpilot-package-1caa1d8e028a/independent/sample-result",
+        "--no-coverage"
+      ],
+      "expected_exit": 1,
+      "exit_code": 1,
+      "duration_s": 0.4356867622118443,
+      "stdout": {
+        "bytes": 1086,
+        "sha256": "44a01fae9e223b9e5e6963972cec84f4d5fd65a852b85ce84080c0d0d8195faf"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "checks": [
+    {
+      "name": "14 exact installed source modules",
+      "pass": true
+    },
+    {
+      "name": "suspected_code_bug",
+      "pass": true
+    },
+    {
+      "name": "four_generated",
+      "pass": true
+    },
+    {
+      "name": "three_failed_three_passed",
+      "pass": true
+    },
+    {
+      "name": "only_clamp_changed",
+      "pass": true
+    },
+    {
+      "name": "four_outputs",
+      "pass": true
+    },
+    {
+      "name": "entire kit bytes and metadata unchanged",
+      "pass": true
+    }
+  ],
+  "input_before": {
+    "LICENSE": {
+      "bytes": 11350,
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5",
+      "mtime_ns": 1791867297831553938,
+      "mode": 33204,
+      "inode": 832517
+    },
+    "SOURCE_MANIFEST.json": {
+      "bytes": 5617,
+      "sha256": "f1f59d1e616eb9f7763158094aeb1f159041bbc7158eb79ab14f649d9813674e",
+      "mtime_ns": 1791867297831712580,
+      "mode": 33204,
+      "inode": 832520
+    },
+    "START_HERE.md": {
+      "bytes": 4550,
+      "sha256": "058aae70d3e5b022d6e607057bb9d178d9087446d6cd9fc613115abcd0ba0adf",
+      "mtime_ns": 1791867297831781127,
+      "mode": 33204,
+      "inode": 832522
+    },
+    "testpilot-0.1.0-py3-none-any.whl": {
+      "bytes": 75206,
+      "sha256": "c471d961e1b26051209b2d8bdcf0629b1f0185b25ae6c0d0d733bacca344d246",
+      "mtime_ns": 1791867297833572415,
+      "mode": 33204,
+      "inode": 832557
+    },
+    "MANIFEST.json": {
+      "bytes": 4908,
+      "sha256": "e10673958f32c3d0361b31339127820bab58a072c4aca650a5bd812ef8d032c2",
+      "mtime_ns": 1791867297831639059,
+      "mode": 33204,
+      "inode": 832519
+    },
+    "recorded-result/testpilot.patch": {
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+      "mtime_ns": 1791867297832816965,
+      "mode": 33204,
+      "inode": 832543
+    },
+    "recorded-result/report.md": {
+      "bytes": 1310,
+      "sha256": "cd90f2b2dddc7b4170b84a0ec9cdefde388e2e5ab5a93f85a49278589e1ec1ec",
+      "mtime_ns": 1791867297832767714,
+      "mode": 33204,
+      "inode": 832542
+    },
+    "recorded-result/report.html": {
+      "bytes": 38791,
+      "sha256": "7be7c3b9c54c8487a053723ffe753c4180536afffaa0f91f5ce8d4a3a065db5c",
+      "mtime_ns": 1791867297832623651,
+      "mode": 33204,
+      "inode": 832540
+    },
+    "recorded-result/report.json": {
+      "bytes": 11574,
+      "sha256": "002b7b4f70005a1baff57b22afe0c29b40268c8874639cc48ce2da9a5641eddc",
+      "mtime_ns": 1791867297832709823,
+      "mode": 33204,
+      "inode": 832541
+    },
+    "receiving/scripted.stdout.txt": {
+      "bytes": 814,
+      "sha256": "84f27e80fc600ed90d99801c3359fc8f6537ec9849be5daa370f99bb967e24dc",
+      "mtime_ns": 1791867297832354919,
+      "mode": 33204,
+      "inode": 832535
+    },
+    "receiving/build.stdout.txt": {
+      "bytes": 698,
+      "sha256": "23e4b38b12004359aebf68ce7dd988bb9d4942f28d1e630603712bbb800b0e37",
+      "mtime_ns": 1791867297831927629,
+      "mode": 33204,
+      "inode": 832526
+    },
+    "receiving/install-receipt.json": {
+      "bytes": 693,
+      "sha256": "0df747e1aed486a967dea7e20a6591225d6e72352782cf6441473fe286e4555c",
+      "mtime_ns": 1791867297832135685,
+      "mode": 33204,
+      "inode": 832530
+    },
+    "receiving/targets.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297832354919,
+      "mode": 33204,
+      "inode": 832536
+    },
+    "receiving/scripted.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297832272294,
+      "mode": 33204,
+      "inode": 832534
+    },
+    "receiving/install.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297832135685,
+      "mode": 33204,
+      "inode": 832531
+    },
+    "receiving/build-receipt.json": {
+      "bytes": 506,
+      "sha256": "4bf4b98ac6ae556fce56764824fff6480cdad8410352a0c09709634761257505",
+      "mtime_ns": 1791867297831845222,
+      "mode": 33204,
+      "inode": 832524
+    },
+    "receiving/install.stdout.txt": {
+      "bytes": 166,
+      "sha256": "07165655bef905cad623967b87319945b42559f0d164e86e0f5fa250130f7a06",
+      "mtime_ns": 1791867297832216219,
+      "mode": 33204,
+      "inode": 832532
+    },
+    "receiving/targets.stdout.txt": {
+      "bytes": 478,
+      "sha256": "7aeba5d4143e95349c1233f2ad42dc9366c20ba5a93e5ec7234ea55efd49cb8f",
+      "mtime_ns": 1791867297832436482,
+      "mode": 33204,
+      "inode": 832537
+    },
+    "receiving/consumer-receipt.json": {
+      "bytes": 12095,
+      "sha256": "d684bcf569bd370fcfea70309016318f9778af8f0f9bae467a55d0fc9749df40",
+      "mtime_ns": 1791867297831999276,
+      "mode": 33204,
+      "inode": 832527
+    },
+    "receiving/help.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297831999276,
+      "mode": 33204,
+      "inode": 832528
+    },
+    "receiving/help.stdout.txt": {
+      "bytes": 660,
+      "sha256": "a443e0c54f0487f7ff76f6fbaa70379bfa9084bd87264fbb93095d44724cf556",
+      "mtime_ns": 1791867297832088842,
+      "mode": 33204,
+      "inode": 832529
+    },
+    "receiving/receive_installed.py": {
+      "bytes": 3340,
+      "sha256": "5cc1edaad5e669cded0361871df2cb7a3cd6f811f932a751d9c04c742f1d8520",
+      "mtime_ns": 1791867297832272294,
+      "mode": 33204,
+      "inode": 832533
+    },
+    "receiving/build.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297831845222,
+      "mode": 33204,
+      "inode": 832525
+    },
+    "sample/case.json": {
+      "bytes": 179,
+      "sha256": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+      "mtime_ns": 1791867297832878425,
+      "mode": 33204,
+      "inode": 832545
+    },
+    "sample/change.diff": {
+      "bytes": 410,
+      "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+      "mtime_ns": 1791867297832929699,
+      "mode": 33204,
+      "inode": 832546
+    },
+    "sample/script/01_plan.md": {
+      "bytes": 204,
+      "sha256": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+      "mtime_ns": 1791867297833159910,
+      "mode": 33204,
+      "inode": 832554
+    },
+    "sample/script/02_tests.md": {
+      "bytes": 435,
+      "sha256": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+      "mtime_ns": 1791867297833209736,
+      "mode": 33204,
+      "inode": 832555
+    },
+    "sample/script/03_repair.md": {
+      "bytes": 265,
+      "sha256": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+      "mtime_ns": 1791867297833258965,
+      "mode": 33204,
+      "inode": 832556
+    },
+    "sample/repo/calc.py": {
+      "bytes": 361,
+      "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+      "mtime_ns": 1791867297833044774,
+      "mode": 33204,
+      "inode": 832550
+    },
+    "sample/fix/calc.py": {
+      "bytes": 361,
+      "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+      "mtime_ns": 1791867297832986886,
+      "mode": 33204,
+      "inode": 832548
+    },
+    "sample/repo/tests/test_existing.py": {
+      "bytes": 122,
+      "sha256": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d",
+      "mtime_ns": 1791867297833098711,
+      "mode": 33204,
+      "inode": 832552
+    }
+  },
+  "installed": {
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "prefix": "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review",
+    "package": "/home/jacob/hamon-testpilot-package-1caa1d8e028a/testpilot-review/lib/python3.14/site-packages/testpilot",
+    "pytest": "9.0.2",
+    "files": {
+      "testpilot/recheck.py": {
+        "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+        "bytes": 12115
+      },
+      "testpilot/diff.py": {
+        "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+        "bytes": 13252
+      },
+      "testpilot/compare.py": {
+        "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+        "bytes": 14624
+      },
+      "testpilot/__init__.py": {
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "bytes": 390
+      },
+      "testpilot/_pytest_generated.py": {
+        "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "bytes": 2943
+      },
+      "testpilot/html_report.py": {
+        "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+        "bytes": 21739
+      },
+      "testpilot/__main__.py": {
+        "sha256": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+        "bytes": 11229
+      },
+      "testpilot/model.py": {
+        "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+        "bytes": 10454
+      },
+      "testpilot/regression.py": {
+        "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+        "bytes": 16329
+      },
+      "testpilot/recheck_html.py": {
+        "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+        "bytes": 10184
+      },
+      "testpilot/sandbox.py": {
+        "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+        "bytes": 13628
+      },
+      "testpilot/targets.py": {
+        "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+        "bytes": 5410
+      },
+      "testpilot/loop.py": {
+        "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+        "bytes": 30070
+      },
+      "testpilot/compare_html.py": {
+        "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+        "bytes": 21213
+      }
+    }
+  },
+  "target_preview": {
+    "changed_functions": [
+      {
+        "path": "calc.py",
+        "module": "calc",
+        "qualname": "clamp",
+        "lineno": 8,
+        "end_lineno": 12,
+        "changed_lines": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "source": "def clamp(x, lo, hi):\n    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n    if lo > hi:\n        raise ValueError(\"lo must be <= hi\")\n    return max(hi, min(lo, x))",
+        "is_method": false
+      }
+    ]
+  },
+  "observed": {
+    "status": "suspected_code_bug",
+    "tests_written": 4,
+    "final": {
+      "returncode": 1,
+      "timed_out": false,
+      "passed": 3,
+      "failed": 3,
+      "errors": 0,
+      "skipped": 0,
+      "generated": {
+        "collected": 4,
+        "passed": 1,
+        "failed": 3,
+        "error": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "reports": {
+    "testpilot.patch": {
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+      "mtime_ns": 1791867527317700381,
+      "mode": 33204,
+      "inode": 834236
+    },
+    "report.md": {
+      "bytes": 1310,
+      "sha256": "e0ef2c652b46d3cebed7412377de84d3e761f59618b73c774f887ae17a74345b",
+      "mtime_ns": 1791867527317758634,
+      "mode": 33204,
+      "inode": 834239
+    },
+    "report.html": {
+      "bytes": 38791,
+      "sha256": "4c074ce616bd5d2de5063054cdf0de657ffc329e50dfe30d2cf4356c1234634e",
+      "mtime_ns": 1791867527317778721,
+      "mode": 33204,
+      "inode": 834240
+    },
+    "report.json": {
+      "bytes": 11574,
+      "sha256": "5ac9e52632c040994191850f5967dc0ec220fe7666f1e4ccf6ad80ccef855453",
+      "mtime_ns": 1791867527317731407,
+      "mode": 33204,
+      "inode": 834238
+    }
+  },
+  "input_after": {
+    "LICENSE": {
+      "bytes": 11350,
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5",
+      "mtime_ns": 1791867297831553938,
+      "mode": 33204,
+      "inode": 832517
+    },
+    "SOURCE_MANIFEST.json": {
+      "bytes": 5617,
+      "sha256": "f1f59d1e616eb9f7763158094aeb1f159041bbc7158eb79ab14f649d9813674e",
+      "mtime_ns": 1791867297831712580,
+      "mode": 33204,
+      "inode": 832520
+    },
+    "START_HERE.md": {
+      "bytes": 4550,
+      "sha256": "058aae70d3e5b022d6e607057bb9d178d9087446d6cd9fc613115abcd0ba0adf",
+      "mtime_ns": 1791867297831781127,
+      "mode": 33204,
+      "inode": 832522
+    },
+    "testpilot-0.1.0-py3-none-any.whl": {
+      "bytes": 75206,
+      "sha256": "c471d961e1b26051209b2d8bdcf0629b1f0185b25ae6c0d0d733bacca344d246",
+      "mtime_ns": 1791867297833572415,
+      "mode": 33204,
+      "inode": 832557
+    },
+    "MANIFEST.json": {
+      "bytes": 4908,
+      "sha256": "e10673958f32c3d0361b31339127820bab58a072c4aca650a5bd812ef8d032c2",
+      "mtime_ns": 1791867297831639059,
+      "mode": 33204,
+      "inode": 832519
+    },
+    "recorded-result/testpilot.patch": {
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+      "mtime_ns": 1791867297832816965,
+      "mode": 33204,
+      "inode": 832543
+    },
+    "recorded-result/report.md": {
+      "bytes": 1310,
+      "sha256": "cd90f2b2dddc7b4170b84a0ec9cdefde388e2e5ab5a93f85a49278589e1ec1ec",
+      "mtime_ns": 1791867297832767714,
+      "mode": 33204,
+      "inode": 832542
+    },
+    "recorded-result/report.html": {
+      "bytes": 38791,
+      "sha256": "7be7c3b9c54c8487a053723ffe753c4180536afffaa0f91f5ce8d4a3a065db5c",
+      "mtime_ns": 1791867297832623651,
+      "mode": 33204,
+      "inode": 832540
+    },
+    "recorded-result/report.json": {
+      "bytes": 11574,
+      "sha256": "002b7b4f70005a1baff57b22afe0c29b40268c8874639cc48ce2da9a5641eddc",
+      "mtime_ns": 1791867297832709823,
+      "mode": 33204,
+      "inode": 832541
+    },
+    "receiving/scripted.stdout.txt": {
+      "bytes": 814,
+      "sha256": "84f27e80fc600ed90d99801c3359fc8f6537ec9849be5daa370f99bb967e24dc",
+      "mtime_ns": 1791867297832354919,
+      "mode": 33204,
+      "inode": 832535
+    },
+    "receiving/build.stdout.txt": {
+      "bytes": 698,
+      "sha256": "23e4b38b12004359aebf68ce7dd988bb9d4942f28d1e630603712bbb800b0e37",
+      "mtime_ns": 1791867297831927629,
+      "mode": 33204,
+      "inode": 832526
+    },
+    "receiving/install-receipt.json": {
+      "bytes": 693,
+      "sha256": "0df747e1aed486a967dea7e20a6591225d6e72352782cf6441473fe286e4555c",
+      "mtime_ns": 1791867297832135685,
+      "mode": 33204,
+      "inode": 832530
+    },
+    "receiving/targets.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297832354919,
+      "mode": 33204,
+      "inode": 832536
+    },
+    "receiving/scripted.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297832272294,
+      "mode": 33204,
+      "inode": 832534
+    },
+    "receiving/install.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297832135685,
+      "mode": 33204,
+      "inode": 832531
+    },
+    "receiving/build-receipt.json": {
+      "bytes": 506,
+      "sha256": "4bf4b98ac6ae556fce56764824fff6480cdad8410352a0c09709634761257505",
+      "mtime_ns": 1791867297831845222,
+      "mode": 33204,
+      "inode": 832524
+    },
+    "receiving/install.stdout.txt": {
+      "bytes": 166,
+      "sha256": "07165655bef905cad623967b87319945b42559f0d164e86e0f5fa250130f7a06",
+      "mtime_ns": 1791867297832216219,
+      "mode": 33204,
+      "inode": 832532
+    },
+    "receiving/targets.stdout.txt": {
+      "bytes": 478,
+      "sha256": "7aeba5d4143e95349c1233f2ad42dc9366c20ba5a93e5ec7234ea55efd49cb8f",
+      "mtime_ns": 1791867297832436482,
+      "mode": 33204,
+      "inode": 832537
+    },
+    "receiving/consumer-receipt.json": {
+      "bytes": 12095,
+      "sha256": "d684bcf569bd370fcfea70309016318f9778af8f0f9bae467a55d0fc9749df40",
+      "mtime_ns": 1791867297831999276,
+      "mode": 33204,
+      "inode": 832527
+    },
+    "receiving/help.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297831999276,
+      "mode": 33204,
+      "inode": 832528
+    },
+    "receiving/help.stdout.txt": {
+      "bytes": 660,
+      "sha256": "a443e0c54f0487f7ff76f6fbaa70379bfa9084bd87264fbb93095d44724cf556",
+      "mtime_ns": 1791867297832088842,
+      "mode": 33204,
+      "inode": 832529
+    },
+    "receiving/receive_installed.py": {
+      "bytes": 3340,
+      "sha256": "5cc1edaad5e669cded0361871df2cb7a3cd6f811f932a751d9c04c742f1d8520",
+      "mtime_ns": 1791867297832272294,
+      "mode": 33204,
+      "inode": 832533
+    },
+    "receiving/build.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1791867297831845222,
+      "mode": 33204,
+      "inode": 832525
+    },
+    "sample/case.json": {
+      "bytes": 179,
+      "sha256": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+      "mtime_ns": 1791867297832878425,
+      "mode": 33204,
+      "inode": 832545
+    },
+    "sample/change.diff": {
+      "bytes": 410,
+      "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+      "mtime_ns": 1791867297832929699,
+      "mode": 33204,
+      "inode": 832546
+    },
+    "sample/script/01_plan.md": {
+      "bytes": 204,
+      "sha256": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+      "mtime_ns": 1791867297833159910,
+      "mode": 33204,
+      "inode": 832554
+    },
+    "sample/script/02_tests.md": {
+      "bytes": 435,
+      "sha256": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+      "mtime_ns": 1791867297833209736,
+      "mode": 33204,
+      "inode": 832555
+    },
+    "sample/script/03_repair.md": {
+      "bytes": 265,
+      "sha256": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+      "mtime_ns": 1791867297833258965,
+      "mode": 33204,
+      "inode": 832556
+    },
+    "sample/repo/calc.py": {
+      "bytes": 361,
+      "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+      "mtime_ns": 1791867297833044774,
+      "mode": 33204,
+      "inode": 832550
+    },
+    "sample/fix/calc.py": {
+      "bytes": 361,
+      "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+      "mtime_ns": 1791867297832986886,
+      "mode": 33204,
+      "inode": 832548
+    },
+    "sample/repo/tests/test_existing.py": {
+      "bytes": 122,
+      "sha256": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d",
+      "mtime_ns": 1791867297833098711,
+      "mode": 33204,
+      "inode": 832552
+    }
+  },
+  "pass": true
+}

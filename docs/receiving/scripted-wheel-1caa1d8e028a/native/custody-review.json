@@ -1,0 +1,22 @@
+{
+  "schema": "testpilot.native-custody-review.v1",
+  "verdict": "PASS",
+  "reviewer": "1caa1d8e028a/project_delivery",
+  "source_commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "source_tree": "3b6d270f655310fa2f98cab9bccffca23ec146cf",
+  "kit_sha256": "8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d",
+  "native_archive_sha256": "7abfc681176fbba84c70395d67941b5a6bec2453c7c4fa03a075ade8a261eadb",
+  "native_receipt_sha256": "198b0697dcf56df48823614286b98285115d4edadc64df3b5be89bd98e17db94",
+  "raw_custody_sha256": "0218001efe808999f9a70f345a7be5db17dd8e5f562069d9079ae7cadfebc8da",
+  "members": 23,
+  "manifest_payloads": 22,
+  "all31_kit_files_match_recorded_guard": true,
+  "all14_installed_module_identities_match_published_source": true,
+  "all7_checks_and7_recorded_process_exits_match_raw_outputs": true,
+  "four_report_hashes_and_actual_failed_case_counts_verified": true,
+  "exact_target_preview_and_generated_patch_match_cloud": true,
+  "controller_and_routed_start_completion_inspected": true,
+  "first_native_export_correction_only_metadata": true,
+  "native_controller_pid": 3138406,
+  "qualification": "Review of exact retained native source/controller/custody/outputs; no native or author test rerun. Isolated native Linux installed wheel, not installed estate adoption or live model/browser qualification."
+}

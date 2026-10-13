@@ -1,0 +1,29 @@
+{
+  "consumer": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/dev/shm/hamon-1caa-testpilot-wheel/installed-env/bin/python",
+    "packages": {
+      "testpilot": "0.1.0",
+      "pytest": "9.1.1",
+      "setuptools": null,
+      "wheel": null
+    },
+    "testpilot_file": "/dev/shm/hamon-1caa-testpilot-wheel/installed-env/lib/python3.12/site-packages/testpilot/__init__.py",
+    "pytest_file": "/dev/shm/hamon-source-delivery-f0f66340f637/venv/lib/python3.12/site-packages/pytest/__init__.py"
+  },
+  "builder": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "executable": "/dev/shm/hamon-source-delivery-f0f66340f637/venv/bin/python",
+    "packages": {
+      "testpilot": null,
+      "pytest": "9.1.1",
+      "setuptools": "84.0.0",
+      "wheel": "0.48.0"
+    },
+    "pytest_file": "/dev/shm/hamon-source-delivery-f0f66340f637/venv/lib/python3.12/site-packages/pytest/__init__.py"
+  },
+  "earlier_inventory_attempt": {
+    "result": "metadata lookup stopped at absent consumer setuptools metadata",
+    "meaning": "The runtime-only receiving environment does not contain build tools. Earlier command did not alter product or rerun consumer qualification."
+  }
+}

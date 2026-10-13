@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/dev/shm/hamon-source-delivery-f0f66340f637/venv/bin/python",
+    "-B",
+    "-m",
+    "pip",
+    "--python",
+    "/dev/shm/hamon-1caa-testpilot-wheel/installed-env/bin/python",
+    "install",
+    "--no-index",
+    "--no-deps",
+    "--no-compile",
+    "/dev/shm/hamon-1caa-testpilot-wheel/wheel/testpilot-0.1.0-py3-none-any.whl"
+  ],
+  "exit_code": 0,
+  "wheel_bytes": 75206,
+  "wheel_sha256": "c471d961e1b26051209b2d8bdcf0629b1f0185b25ae6c0d0d733bacca344d246",
+  "source_module_count": 14,
+  "qualification_dependency_provider": "Existing read-only pytest environment added via .pth only in temporary receiving environment; no dependencies installed or redistributed."
+}

@@ -1,0 +1,9 @@
+Processing /dev/shm/hamon-1caa-testpilot-wheel/source
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: testpilot
+  Building wheel for testpilot (pyproject.toml): started
+  Building wheel for testpilot (pyproject.toml): finished with status 'done'
+  Created wheel for testpilot: filename=testpilot-0.1.0-py3-none-any.whl size=75206 sha256=c471d961e1b26051209b2d8bdcf0629b1f0185b25ae6c0d0d733bacca344d246
+  Stored in directory: /dev/shm/hamon-1caa-testpilot-wheel/tmp/pip-ephem-wheel-cache-6wuff2nz/wheels/33/4d/73/a0d3b7fe05efc020d75f8c9718baa41fe8e121ff7bda8d66bd
+Successfully built testpilot

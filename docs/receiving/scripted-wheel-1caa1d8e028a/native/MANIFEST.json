@@ -1,0 +1,123 @@
+{
+  "schema": "testpilot-native-receiving.v1",
+  "exported_utc": "2026-10-13T05:09:00.241868+00:00",
+  "source_commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "kit_sha256": "8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d",
+  "metadata_correction": {
+    "reason": "Initial staging and export metadata ended with literal backslash-n instead of LF; corrected only metadata serialization; no application run repeated",
+    "first_export_sha256": "69c4c87241661b38a57ecb800465798fd65daaaa48ebc5e5d183431e1471956e",
+    "initial_staging_preserved": "staging-first-write.txt"
+  },
+  "files": [
+    {
+      "path": "receive_native.py",
+      "bytes": 5943,
+      "sha256": "d5a2c1c564bc80192ae1af5280589feb14d045a173daa2aa812982453c1a951a"
+    },
+    {
+      "path": "staging.json",
+      "bytes": 286,
+      "sha256": "a824ee1ba8296c71647fa397c1b7219a8bcd70bcd3c3ee92ead15bc12ddd0ef4"
+    },
+    {
+      "path": "staging-first-write.txt",
+      "bytes": 287,
+      "sha256": "8e7b7801fb553de226890e1e5f479e93b9fe98d29ff66abe8cf2f5054b6a3310"
+    },
+    {
+      "path": "independent/help.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/help.stdout",
+      "bytes": 660,
+      "sha256": "a443e0c54f0487f7ff76f6fbaa70379bfa9084bd87264fbb93095d44724cf556"
+    },
+    {
+      "path": "independent/install.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/install.stdout",
+      "bytes": 126,
+      "sha256": "1649f08dbdc56d19128f02ac337732746088d2b412d3ab19e7ce5c21786038b0"
+    },
+    {
+      "path": "independent/installed-identity.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/installed-identity.stdout",
+      "bytes": 1989,
+      "sha256": "2de8e2fadf0227180ac09af752b99450eb0c81bbca5ea378e3be6927e0a3d256"
+    },
+    {
+      "path": "independent/pytest-version.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/pytest-version.stdout",
+      "bytes": 13,
+      "sha256": "bb8b35aa5007305d449c04bda5b273b74c780820c632678e27f4aa264c84b123"
+    },
+    {
+      "path": "independent/receipt.json",
+      "bytes": 24636,
+      "sha256": "198b0697dcf56df48823614286b98285115d4edadc64df3b5be89bd98e17db94"
+    },
+    {
+      "path": "independent/sample-result/report.html",
+      "bytes": 38791,
+      "sha256": "4c074ce616bd5d2de5063054cdf0de657ffc329e50dfe30d2cf4356c1234634e"
+    },
+    {
+      "path": "independent/sample-result/report.json",
+      "bytes": 11574,
+      "sha256": "5ac9e52632c040994191850f5967dc0ec220fe7666f1e4ccf6ad80ccef855453"
+    },
+    {
+      "path": "independent/sample-result/report.md",
+      "bytes": 1310,
+      "sha256": "e0ef2c652b46d3cebed7412377de84d3e761f59618b73c774f887ae17a74345b"
+    },
+    {
+      "path": "independent/sample-result/testpilot.patch",
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "path": "independent/scripted.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/scripted.stdout",
+      "bytes": 1086,
+      "sha256": "44a01fae9e223b9e5e6963972cec84f4d5fd65a852b85ce84080c0d0d8195faf"
+    },
+    {
+      "path": "independent/targets.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/targets.stdout",
+      "bytes": 478,
+      "sha256": "7aeba5d4143e95349c1233f2ad42dc9366c20ba5a93e5ec7234ea55efd49cb8f"
+    },
+    {
+      "path": "independent/venv.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "independent/venv.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}
