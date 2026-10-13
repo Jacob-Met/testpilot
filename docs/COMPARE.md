@@ -40,6 +40,8 @@ When a report lacks complete JUnit evidence, suite and generated execution count
 
 Section links, native expandable panels, keyboard focus, horizontally scrollable source/table regions, and download links work without JavaScript. At narrow widths the two report panels stack. Use the browser's Print command for a paper or PDF view.
 
+Recorded failed and error cases start expanded in each report's Final diagnostics panel, including cases with no diagnostic text. Passed and skipped cases and the saved pytest output tail start collapsed. Use each native disclosure to collapse or reopen it with a pointer or keyboard. This reading state does not change the recorded outcome or make missing JUnit evidence complete.
+
 Both JSON downloads preserve all original bytes, including a UTF-8 byte-order mark, whitespace, line endings, additional fields, and original number spellings. The page does not regenerate downloaded JSON from its parsed view. Role-specific download filenames are before-report.json and after-report.json.
 
 Report text is rendered literally. HTML markup cannot create page elements or request external content. Control characters, Unicode line/paragraph separators, and unpaired surrogate characters use visible escapes in the review view. Downloads preserve their original JSON bytes. The self-contained page has no executable scripts, external assets, or browser storage.
@@ -68,7 +70,7 @@ Above the inline-diff threshold, the page explicitly omits only that diff; compl
 The focused tests exercise exact original bytes, deeply immutable parsed inputs, missing evidence, Decimal precision, differing/duplicate target labels, added empty files, source-line edge cases, malformed and bounded admission, no-overwrite publication, staged-write failures, special-file refusal, and a consumer-only CLI path:
 
 ~~~bash
-python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py tests/test_compare_console.py
+python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py tests/test_compare_console.py tests/test_compare_diagnostics.py
 ~~~
 
 Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.

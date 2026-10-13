@@ -189,7 +189,7 @@ def _diagnostics(report: SavedReport, role: str) -> str:
         title = '<span class="pill">' + _text(case["outcome"]) + "</span>" + _text(case["nodeid"])
         detail = '<p class="meta">Generated file: ' + _text(case.get("generated_file") or "Not attributed to a generated file") + "</p>"
         detail += _pre(case["message"], "Recorded test diagnostic") if case["message"] else "<p>No diagnostic text recorded.</p>"
-        body += _details(title, detail)
+        body += _details(title, detail, opened=case["outcome"] in {"failed", "error"})
     if not final["cases"]:
         body += '<p class="empty">No individual test cases are recorded.</p>'
     body += _details("Recorded pytest output · last 3,000 characters", _pre(final["output"], "Recorded pytest output tail"))
