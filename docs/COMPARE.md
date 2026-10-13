@@ -74,7 +74,7 @@ Above the inline-diff threshold, the page explicitly omits only that diff; compl
 The focused tests exercise exact original bytes, deeply immutable parsed inputs, missing evidence, Decimal precision, differing/duplicate target labels, added empty files, source-line edge cases, malformed and bounded admission, no-overwrite publication, staged-write failures, special-file refusal, and a consumer-only CLI path:
 
 ~~~bash
-python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py tests/test_compare_console.py tests/test_compare_diagnostics.py
+python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py tests/test_compare_console.py tests/test_compare_diagnostics.py tests/test_compare_case_index.py
 ~~~
 
 Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.
