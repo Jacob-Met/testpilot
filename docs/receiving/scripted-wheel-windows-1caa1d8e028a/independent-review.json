@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "scope": "Independent read-only artifact/source/receipt/guide review; no product execution, installation or tests repeated",
+  "accepted_source": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "accepted_tree": "3b6d270f655310fa2f98cab9bccffca23ec146cf",
+  "archive": {
+    "bytes": 41361,
+    "sha256": "306534cd2d94ecf32dca64013da75f54868bb7868a79720e1b1afd14c73fedee",
+    "members": 27,
+    "payloads": 26
+  },
+  "receipt_sha256": "a7689119f24ffdf3d69777fdedad0859577ee5ae2747b4f19cfc0555c1fd95b0",
+  "kit_sha256": "8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d",
+  "verified": {
+    "fresh_canonical_pins": 25,
+    "exact_kit_members": 31,
+    "unchanged_native_input_guards": 36,
+    "exact_unchanged_installed_modules": 14,
+    "raw_operation_pairs": 7,
+    "exits": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "case_outcomes": {
+      "passed": 3,
+      "failed": 3,
+      "generated": 4
+    },
+    "target_and_generated_source_equal_cloud": true,
+    "patch_equal_after_CRLF_normalization": true
+  },
+  "guide_review": "The actual ordinary user-site-aware venv route omits -I, uses only existing pytest and a local wheel, distinguishes argument-list execution from CMD examples, and states historical-source, no browser and no maintained-suite limits. No blockers found.",
+  "qualification_limits": [
+    "Native Windows original MSI edc endpoint only; no existing estate installation replaced.",
+    "Full raw reports differ from cloud due platform diagnostics, timings and native newlines.",
+    "No live model/provider, current-main compatibility, full test suite, interruption or browser claim.",
+    "Routing retains the isolated capability start response but no separate completion for that preliminary capability probe; actual consumer, export and archive readback completions are retained."
+  ],
+  "verification_script_sha256": "c7dbfa22bc5e6f86b464c5570d5d9c68b484fa468c72dc91e3dbc245fcb90cc7"
+}

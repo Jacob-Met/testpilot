@@ -1,0 +1,157 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "tree": "3b6d270f655310fa2f98cab9bccffca23ec146cf",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha": "c28355a11a7165add54220eb1d692ecb2951e5e9",
+      "size": 11350,
+      "mode": "100644"
+    },
+    {
+      "path": "README.md",
+      "sha": "8e30389f708ff3904f166591429cdf9f815e3320",
+      "size": 16972,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/case.json",
+      "sha": "9ed811d8a2b40d8ed14f0f67630d698942249e73",
+      "size": 179,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/change.diff",
+      "sha": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4",
+      "size": 410,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/fix/calc.py",
+      "sha": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c",
+      "size": 361,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/calc.py",
+      "sha": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2",
+      "size": 361,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/repo/tests/test_existing.py",
+      "sha": "1113fca65a126c34c76e140a36970eaacc9ae1a7",
+      "size": 122,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/01_plan.md",
+      "sha": "78f8e6088effdc1ea4d9e8bafe1c6a3ff687306a",
+      "size": 204,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/02_tests.md",
+      "sha": "70616f283909d2165c9fe12a9501966b9d32804a",
+      "size": 435,
+      "mode": "100644"
+    },
+    {
+      "path": "eval/cases/calc_clamp/script/03_repair.md",
+      "sha": "eb417bdba41ede38cbfe1dec31f851db9707b9f0",
+      "size": 265,
+      "mode": "100644"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "size": 676,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "sha": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "size": 390,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "sha": "76b09d5a1e55780efc78a2b48f0b3fae162da196",
+      "size": 11229,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "sha": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "size": 2943,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/compare.py",
+      "sha": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "size": 14624,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/compare_html.py",
+      "sha": "40da0f674798583bd25a177021759aa38b3c5b7b",
+      "size": 21213,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "sha": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "size": 13252,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "sha": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "size": 21739,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "sha": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "size": 30070,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/model.py",
+      "sha": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "size": 10454,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "sha": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+      "size": 12115,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/recheck_html.py",
+      "sha": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "size": 10184,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/regression.py",
+      "sha": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "size": 16329,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "sha": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "size": 13628,
+      "mode": "100644"
+    },
+    {
+      "path": "testpilot/targets.py",
+      "sha": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "size": 5410,
+      "mode": "100644"
+    }
+  ]
+}
