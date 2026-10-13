@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_compare.py",
+    "tests/test_compare_cli.py",
+    "tests/test_compare_cleanup.py",
+    "tests/test_compare_console.py"
+  ],
+  "returncode": 0,
+  "stdout": ".........................................................                [100%]\n57 passed in 1.61s\n",
+  "stderr": "",
+  "stdout_sha256": "966802398d3595a68dbfe756b36995aff44eb70094cc4ba068edeacc877e7609",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
