@@ -1,0 +1,15 @@
+usage: testpilot [-h] {run,targets,recheck,regression,compare} ...
+
+positional arguments:
+  {run,targets,recheck,regression,compare}
+    run                 generate, run and repair tests for a diff
+    targets             inspect changed functions without generating or
+                        running tests
+    recheck             rerun exact tests from a saved report without model
+                        calls
+    regression          check retained tests on two committed revisions
+    compare             compare two saved reports without running tests or a
+                        model
+
+options:
+  -h, --help            show this help message and exit

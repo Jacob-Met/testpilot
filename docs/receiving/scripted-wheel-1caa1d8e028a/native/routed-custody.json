@@ -1,0 +1,191 @@
+{
+  "schema": "testpilot.native-routed-custody.v1",
+  "device": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+  "root": "/home/jacob/hamon-testpilot-package-1caa1d8e028a",
+  "source_commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "source_tree": "3b6d270f655310fa2f98cab9bccffca23ec146cf",
+  "kit_sha256": "8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d",
+  "preflight": {
+    "script": "import os,sys,json,socket,pathlib,importlib.util,importlib.metadata\nh=pathlib.Path('/home/jacob')\nmods={}\nfor name in ['pytest','setuptools','wheel','build']:\n spec=importlib.util.find_spec(name)\n try:version=importlib.metadata.version(name)\n except importlib.metadata.PackageNotFoundError:version=None\n mods[name]={'available':spec is not None,'origin':None if spec is None else spec.origin,'version':version}\nprint(json.dumps({'hostname':socket.gethostname(),'uid':os.getuid(),'python':sys.version,'executable':sys.executable,'home':{'path':str(h),'symlink':h.is_symlink(),'uid':h.stat().st_uid,'writable':os.access(h,os.W_OK|os.X_OK),'free':os.statvfs(h).f_bavail*os.statvfs(h).f_frsize},'parent_instructions':{str(p):p.exists() for p in [pathlib.Path('/AGENTS.md'),pathlib.Path('/home/AGENTS.md'),h/'AGENTS.md']},'new_paths':{str(h/n):(h/n).exists() for n in ['hamon-utility-console-1caa1d8e028a','hamon-testpilot-package-1caa1d8e028a']},'modules':mods}))",
+    "start": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Process started with PID 3030396 (shell: /bin/bash)\nInitial output:\n{\"hostname\": \"hamon-thinkpad\", \"uid\": 1000, \"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\", \"executable\": \"/usr/bin/python3\", \"home\": {\"path\": \"/home/jacob\", \"symlink\": false, \"uid\": 1000, \"writable\": true, \"free\": 1897484288}, \"parent_instructions\": {\"/AGENTS.md\": false, \"/home/AGENTS.md\": false, \"/home/jacob/AGENTS.md\": false}, \"new_paths\": {\"/home/jacob/hamon-utility-console-1caa1d8e028a\": false, \"/home/jacob/hamon-testpilot-package-1caa1d8e028a\": false}, \"modules\": {\"pytest\": {\"available\": true, \"origin\": \"/usr/lib/python3/dist-packages/pytest/__init__.py\", \"version\": \"9.0.2\"}, \"setuptools\": {\"available\": true, \"origin\": \"/usr/lib/python3/dist-packages/setuptools/__init__.py\", \"version\": \"78.1.1\"}, \"wheel\": {\"available\": false, \"origin\": null, \"version\": null}, \"build\": {\"available\": false, \"origin\": null, \"version\": null}}}\n"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "completion": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"hostname\": \"hamon-thinkpad\", \"uid\": 1000, \"python\": \"3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]\", \"executable\": \"/usr/bin/python3\", \"home\": {\"path\": \"/home/jacob\", \"symlink\": false, \"uid\": 1000, \"writable\": true, \"free\": 1897484288}, \"parent_instructions\": {\"/AGENTS.md\": false, \"/home/AGENTS.md\": false, \"/home/jacob/AGENTS.md\": false}, \"new_paths\": {\"/home/jacob/hamon-utility-console-1caa1d8e028a\": false, \"/home/jacob/hamon-testpilot-package-1caa1d8e028a\": false}, \"modules\": {\"pytest\": {\"available\": true, \"origin\": \"/usr/lib/python3/dist-packages/pytest/__init__.py\", \"version\": \"9.0.2\"}, \"setuptools\": {\"available\": true, \"origin\": \"/usr/lib/python3/dist-packages/setuptools/__init__.py\", \"version\": \"78.1.1\"}, \"wheel\": {\"available\": false, \"origin\": null, \"version\": null}, \"build\": {\"available\": false, \"origin\": null, \"version\": null}}}\n\n\u2705 Process completed with exit code 0 (runtime: 0.16s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "staging": {
+    "start": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Process started with PID 3124788 (shell: /bin/bash)\nInitial output:\n{\"root\": \"/home/jacob/hamon-testpilot-package-1caa1d8e028a\", \"initial_base64_chars\": 70000, \"pid\": 3124788}\n"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "completion": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"root\": \"/home/jacob/hamon-testpilot-package-1caa1d8e028a\", \"initial_base64_chars\": 70000, \"pid\": 3124788}\n\n\u2705 Process completed with exit code 0 (runtime: 0.07s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "extract_start": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Process started with PID 3132372 (shell: /bin/bash)\nInitial output:\n{\"kit_sha256\": \"8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d\", \"bytes\": 107866, \"members\": 31, \"all_payload_hashes_verified\": true, \"source_commit\": \"d2596c1a4be11072344c4ea98752cce789865ec4\", \"source_tree\": \"3b6d270f655310fa2f98cab9bccffca23ec146cf\"}\n"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "extract_completion": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading last 2 lines (total: 2 lines)]\n\n{\"kit_sha256\": \"8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d\", \"bytes\": 107866, \"members\": 31, \"all_payload_hashes_verified\": true, \"source_commit\": \"d2596c1a4be11072344c4ea98752cce789865ec4\", \"source_tree\": \"3b6d270f655310fa2f98cab9bccffca23ec146cf\"}\n\n\u2705 Process completed with exit code 0 (runtime: 0.08s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "controller": {
+    "command": "python3 -B /home/jacob/hamon-testpilot-package-1caa1d8e028a/receive_native.py",
+    "write": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Successfully wrote to /home/jacob/hamon-testpilot-package-1caa1d8e028a/receive_native.py (71 lines) "
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "start": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Process started with PID 3138406 (shell: /bin/bash)\nInitial output:\n{\"receipt\": \"/home/jacob/hamon-testpilot-package-1caa1d8e028a/independent/receipt.json\", \"pass\": true, \"checks\": [{\"name\": \"14 exact installed source modules\", \"pass\": true}, {\"name\": \"suspected_code_bug\", \"pass\": true}, {\"name\": \"four_generated\", \"pass\": true}, {\"name\": \"three_failed_three_passed\", \"pass\": true}, {\"name\": \"only_clamp_changed\", \"pass\": true}, {\"name\": \"four_outputs\", \"pass\": true}, {\"name\": \"entire kit bytes and metadata unchanged\", \"pass\": true}], \"error\": null, \"calls\": [{\"name\": \"venv\", \"pid\": 3138477, \"exit_code\": 0}, {\"name\": \"pytest-version\", \"pid\": 3138503, \"exit_code\": 0}, {\"name\": \"install\", \"pid\": 3138574, \"exit_code\": 0}, {\"name\": \"installed-identity\", \"pid\": 3138593, \"exit_code\": 0}, {\"name\": \"help\", \"pid\": 3138599, \"exit_code\": 0}, {\"name\": \"targets\", \"pid\": 3138600, \"exit_code\": 0}, {\"name\": \"scripted\", \"pid\": 3138601, \"exit_code\": 1}]}\n"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "completion": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"receipt\": \"/home/jacob/hamon-testpilot-package-1caa1d8e028a/independent/receipt.json\", \"pass\": true, \"checks\": [{\"name\": \"14 exact installed source modules\", \"pass\": true}, {\"name\": \"suspected_code_bug\", \"pass\": true}, {\"name\": \"four_generated\", \"pass\": true}, {\"name\": \"three_failed_three_passed\", \"pass\": true}, {\"name\": \"only_clamp_changed\", \"pass\": true}, {\"name\": \"four_outputs\", \"pass\": true}, {\"name\": \"entire kit bytes and metadata unchanged\", \"pass\": true}], \"error\": null, \"calls\": [{\"name\": \"venv\", \"pid\": 3138477, \"exit_code\": 0}, {\"name\": \"pytest-version\", \"pid\": 3138503, \"exit_code\": 0}, {\"name\": \"install\", \"pid\": 3138574, \"exit_code\": 0}, {\"name\": \"installed-identity\", \"pid\": 3138593, \"exit_code\": 0}, {\"name\": \"help\", \"pid\": 3138599, \"exit_code\": 0}, {\"name\": \"targets\", \"pid\": 3138600, \"exit_code\": 0}, {\"name\": \"scripted\", \"pid\": 3138601, \"exit_code\": 1}]}\n\n\u2705 Process completed with exit code 0 (runtime: 2.69s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "initial_export": {
+    "start": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Process started with PID 3150029 (shell: /bin/bash)\nInitial output:\n{\"zip_bytes\": 25568, \"zip_sha256\": \"69c4c87241661b38a57ecb800465798fd65daaaa48ebc5e5d183431e1471956e\", \"members\": 22, \"base64_chars\": 34092, \"manifest_sha256\": \"c82beaeac3e57d2b99dfafbd3e987a83e7852fd10de8b929786bafb8dac55b7c\", \"receipt_sha256\": \"198b0697dcf56df48823614286b98285115d4edadc64df3b5be89bd98e17db94\"}\n"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "completion": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"zip_bytes\": 25568, \"zip_sha256\": \"69c4c87241661b38a57ecb800465798fd65daaaa48ebc5e5d183431e1471956e\", \"members\": 22, \"base64_chars\": 34092, \"manifest_sha256\": \"c82beaeac3e57d2b99dfafbd3e987a83e7852fd10de8b929786bafb8dac55b7c\", \"receipt_sha256\": \"198b0697dcf56df48823614286b98285115d4edadc64df3b5be89bd98e17db94\"}\n\n\u2705 Process completed with exit code 0 (runtime: 0.08s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "finding": "Two metadata files ended with a literal backslash-n; raw initial export retained. Application receipt and process qualification were valid and unchanged."
+  },
+  "corrected_export": {
+    "start": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Process started with PID 3158046 (shell: /bin/bash)\nInitial output:\n{\"zip_bytes\": 26147, \"zip_sha256\": \"7abfc681176fbba84c70395d67941b5a6bec2453c7c4fa03a075ade8a261eadb\", \"members\": 23, \"base64_chars\": 34864, \"manifest_sha256\": \"d000be4cf8a71758c9e3d53e7ba90b6b32f6dc9897eb9082561682618c2cbf28\", \"receipt_sha256\": \"198b0697dcf56df48823614286b98285115d4edadc64df3b5be89bd98e17db94\"}\n"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    },
+    "completion": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"zip_bytes\": 26147, \"zip_sha256\": \"7abfc681176fbba84c70395d67941b5a6bec2453c7c4fa03a075ade8a261eadb\", \"members\": 23, \"base64_chars\": 34864, \"manifest_sha256\": \"d000be4cf8a71758c9e3d53e7ba90b6b32f6dc9897eb9082561682618c2cbf28\", \"receipt_sha256\": \"198b0697dcf56df48823614286b98285115d4edadc64df3b5be89bd98e17db94\"}\n\n\u2705 Process completed with exit code 0 (runtime: 0.13s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "scope": "Isolated native Linux installed-wheel qualification only. No native existing-project adoption, dependency download or provider call."
+}

@@ -1,0 +1,20 @@
+{
+  "changed_functions": [
+    {
+      "path": "calc.py",
+      "module": "calc",
+      "qualname": "clamp",
+      "lineno": 8,
+      "end_lineno": 12,
+      "changed_lines": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "source": "def clamp(x, lo, hi):\n    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n    if lo > hi:\n        raise ValueError(\"lo must be <= hi\")\n    return max(hi, min(lo, x))",
+      "is_method": false
+    }
+  ]
+}

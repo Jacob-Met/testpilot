@@ -1,0 +1,276 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><title>TestPilot run review · suspected_code_bug</title><style>
+:root { color-scheme: light; --ink:#192d3b; --muted:#50616d; --line:#cbd5dc;
+  --paper:#fff; --wash:#f3f6f7; --accent:#155d68; --soft:#e8f2f1; }
+* { box-sizing:border-box; }
+html { scroll-padding-top:1.5rem; }
+body { margin:0; color:var(--ink); background:var(--wash);
+  font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+a { color:var(--accent); text-underline-offset:.2em; }
+a:hover { text-decoration-thickness:2px; }
+:focus-visible { outline:3px solid #aa5e00; outline-offset:4px; }
+.skip { position:absolute; top:-100px; left:1rem; background:white; padding:.6rem; }
+.skip:focus { top:1rem; z-index:1; }
+.shell { width:min(1120px,100%); margin:auto; padding:2.5rem 2rem 3.5rem; }
+.eyebrow { margin:0 0 .7rem; color:var(--accent); font-size:.8rem;
+  font-weight:750; letter-spacing:.15em; text-transform:uppercase; }
+h1 { font-size:clamp(2rem,5vw,3.25rem); line-height:1.1; margin:.2rem 0 1rem; }
+h2 { font-size:1.4rem; line-height:1.3; margin:0 0 1rem; }
+h3 { font-size:1.08rem; margin:1.4rem 0 .7rem; }
+p { margin:.7rem 0; }
+.lead { font-size:1.1rem; max-width:78ch; }
+.muted,.note { color:var(--muted); }
+.note { font-size:.9rem; }
+.status { display:inline-block; padding:.18rem .7rem; margin-bottom:.5rem;
+  border:1px solid var(--line); border-radius:999px; font-weight:700; }
+.passed { background:#e7f3ed; color:#175137; }
+.failed,.error { background:#fceeed; color:#882e24; }
+.suspected_code_bug,.budget_exhausted,.model_error,.no_tests { background:#fff0d6; color:#6c4509; }
+.actions { display:flex; gap:.7rem; flex-wrap:wrap; margin:1.4rem 0 .6rem; }
+.button { display:inline-block; padding:.65rem 1rem; border:1px solid var(--accent);
+  border-radius:.35rem; background:var(--paper); font-weight:650; text-decoration:none; }
+.button.primary { background:var(--accent); color:white; }
+nav { display:flex; gap:.6rem 1.2rem; flex-wrap:wrap; padding:1rem 0;
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin:1.8rem 0; }
+.metrics { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin:1.4rem 0; }
+.metric { background:var(--paper); border:1px solid var(--line); border-radius:.4rem; padding:1rem; }
+.metric dt { font-size:.85rem; color:var(--muted); }
+.metric dd { margin:0; font-weight:700; font-size:1.35rem; overflow-wrap:anywhere; }
+section { background:var(--paper); border:1px solid var(--line); border-radius:.5rem;
+  padding:1.5rem; margin:1.2rem 0; min-width:0; }
+.notice { border-left:4px solid var(--accent); background:var(--soft); padding:.7rem 1rem; }
+details { border:1px solid var(--line); border-radius:.35rem; margin:.65rem 0; min-width:0; }
+summary { padding:.75rem 1rem; cursor:pointer; font-weight:600; overflow-wrap:anywhere; }
+details[open] > summary { border-bottom:1px solid var(--line); background:var(--wash); }
+.detail-body { padding:.25rem 1rem .8rem; min-width:0; }
+.badge { display:inline-block; font-size:.76rem; margin-right:.4rem; padding:.05rem .4rem;
+  border:1px solid var(--line); border-radius:.2rem; font-weight:650; }
+code,pre { font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace; }
+code { overflow-wrap:anywhere; }
+pre { margin:.6rem 0; padding:1rem; border:1px solid var(--line); border-radius:.3rem;
+  background:#f7f9fa; line-height:1.5; font-size:.86rem; overflow:auto; max-width:100%;
+  tab-size:4; white-space:pre; }
+.prose { white-space:pre-wrap; overflow-wrap:anywhere; }
+.table-scroll { overflow-x:auto; max-width:100%; }
+table { width:100%; min-width:24rem; border-collapse:collapse; text-align:left; font-size:.9rem; }
+table.wide { min-width:46rem; }
+th,td { border-bottom:1px solid var(--line); padding:.6rem .7rem; vertical-align:top; overflow-wrap:anywhere; }
+th { color:var(--muted); font-weight:650; white-space:nowrap; }
+caption { text-align:left; padding:.3rem 0 .7rem; color:var(--muted); }
+.table-hint { display:none; }
+ol,ul { padding-left:1.4rem; }
+.cases { list-style:none; padding:0; }
+.case-label { color:var(--muted); font-size:.8rem; font-weight:400; }
+.rounds { padding-left:1.4rem; }
+.rounds > li { padding-left:.3rem; margin:1rem 0; }
+footer { margin-top:2rem; font-size:.9rem; color:var(--muted); }
+@media(max-width:620px) {
+  .shell { padding:1.5rem .8rem 2rem; }
+  section { padding:1rem; }
+  .metrics { grid-template-columns:1fr; gap:.5rem; }
+  .metric { display:flex; align-items:baseline; justify-content:space-between; gap:1rem; padding:.65rem .8rem; }
+  .metric dd { font-size:1.1rem; }
+  summary { padding:.65rem .7rem; }
+  .detail-body { padding:.2rem .7rem .6rem; }
+  .table-hint { display:block; margin:.3rem 0 .7rem; }
+}
+@media print {
+  body { background:white; font-size:10pt; }
+  .shell { width:100%; padding:0; }
+  nav,.actions,.skip,.download-note { display:none; }
+  section,details,.metric { border-color:#aaa; box-shadow:none; }
+  section { break-inside:auto; }
+  h2,h3,summary { break-after:avoid; }
+  pre { white-space:pre-wrap; overflow-wrap:anywhere; overflow:visible; }
+  .table-scroll { overflow:visible; }
+  table,table.wide { min-width:0; font-size:8pt; }
+  th { white-space:normal; }
+  .table-hint { display:none; }
+  details::details-content { content-visibility:visible; }
+  details > :not(summary) { display:block !important; }
+  .metrics { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+</style></head><body><a class="skip" href="#result">Skip to test results</a><main class="shell"><header><p class="eyebrow">TestPilot / Run review</p><h1>Possible code bug</h1><span class="status suspected_code_bug">suspected_code_bug</span><p class="lead">The model flagged a possible code bug. Review its explanation and the retained failing tests.</p><div class="notice"><p class="prose">clamp(5, 0, 10) returns 10 and clamp(-3, 0, 10) returns 10: the expression `max(hi, min(lo, x))` has lo and hi swapped, so it always returns hi. The tests encode the documented contract (&quot;clamp x into [lo, hi]&quot;); the fix is `max(lo, min(hi, x))`.</p></div><div class="actions"><a class="button primary" download="testpilot.patch" href="data:text/plain;charset=utf-8;base64,ZGlmZiAtLWdpdCBhL3Rlc3RzL3Rlc3RfY2FsY19jbGFtcC5weSBiL3Rlc3RzL3Rlc3RfY2FsY19jbGFtcC5weQpuZXcgZmlsZSBtb2RlIDEwMDY0NAotLS0gL2Rldi9udWxsCisrKyBiL3Rlc3RzL3Rlc3RfY2FsY19jbGFtcC5weQpAQCAtMCwwICsxLDIyIEBACitpbXBvcnQgcHl0ZXN0CisKK2Zyb20gY2FsYyBpbXBvcnQgY2xhbXAKKworCitkZWYgdGVzdF9pbnNpZGVfcmFuZ2VfdW5jaGFuZ2VkKCk6CisgICAgYXNzZXJ0IGNsYW1wKDUsIDAsIDEwKSA9PSA1CisKKworZGVmIHRlc3RfYmVsb3dfYW5kX2Fib3ZlKCk6CisgICAgYXNzZXJ0IGNsYW1wKC0zLCAwLCAxMCkgPT0gMAorICAgIGFzc2VydCBjbGFtcCg0MiwgMCwgMTApID09IDEwCisKKworZGVmIHRlc3RfYm91bmRhcmllcygpOgorICAgIGFzc2VydCBjbGFtcCgwLCAwLCAxMCkgPT0gMAorICAgIGFzc2VydCBjbGFtcCgxMCwgMCwgMTApID09IDEwCisKKworZGVmIHRlc3RfaW52ZXJ0ZWRfYm91bmRzX3JhaXNlKCk6CisgICAgd2l0aCBweXRlc3QucmFpc2VzKFZhbHVlRXJyb3IpOgorICAgICAgICBjbGFtcCgxLCAxMCwgMCkK">Download exact patch</a><a class="button" download="report.json" href="data:application/json;base64,ewogICJzdGF0dXMiOiAic3VzcGVjdGVkX2NvZGVfYnVnIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogImNhbGMucHkiLAogICAgICAibW9kdWxlIjogImNhbGMiLAogICAgICAicXVhbG5hbWUiOiAiY2xhbXAiLAogICAgICAibGluZW5vIjogOCwKICAgICAgImVuZF9saW5lbm8iOiAxMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgOCwKICAgICAgICA5LAogICAgICAgIDEwLAogICAgICAgIDExLAogICAgICAgIDEyCiAgICAgIF0sCiAgICAgICJzb3VyY2UiOiAiZGVmIGNsYW1wKHgsIGxvLCBoaSk6XG4gICAgXCJcIlwiQ2xhbXAgeCBpbnRvIHRoZSBjbG9zZWQgaW50ZXJ2YWwgW2xvLCBoaV0uXCJcIlwiXG4gICAgaWYgbG8gPiBoaTpcbiAgICAgICAgcmFpc2UgVmFsdWVFcnJvcihcImxvIG11c3QgYmUgPD0gaGlcIilcbiAgICByZXR1cm4gbWF4KGhpLCBtaW4obG8sIHgpKSIsCiAgICAgICJpc19tZXRob2QiOiBmYWxzZQogICAgfQogIF0sCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDEsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMywKICAidGVzdF9maWxlcyI6IHsKICAgICJ0ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHkiOiAiaW1wb3J0IHB5dGVzdFxuXG5mcm9tIGNhbGMgaW1wb3J0IGNsYW1wXG5cblxuZGVmIHRlc3RfaW5zaWRlX3JhbmdlX3VuY2hhbmdlZCgpOlxuICAgIGFzc2VydCBjbGFtcCg1LCAwLCAxMCkgPT0gNVxuXG5cbmRlZiB0ZXN0X2JlbG93X2FuZF9hYm92ZSgpOlxuICAgIGFzc2VydCBjbGFtcCgtMywgMCwgMTApID09IDBcbiAgICBhc3NlcnQgY2xhbXAoNDIsIDAsIDEwKSA9PSAxMFxuXG5cbmRlZiB0ZXN0X2JvdW5kYXJpZXMoKTpcbiAgICBhc3NlcnQgY2xhbXAoMCwgMCwgMTApID09IDBcbiAgICBhc3NlcnQgY2xhbXAoMTAsIDAsIDEwKSA9PSAxMFxuXG5cbmRlZiB0ZXN0X2ludmVydGVkX2JvdW5kc19yYWlzZSgpOlxuICAgIHdpdGggcHl0ZXN0LnJhaXNlcyhWYWx1ZUVycm9yKTpcbiAgICAgICAgY2xhbXAoMSwgMTAsIDApXG4iCiAgfSwKICAidGVzdHNfd3JpdHRlbiI6IDQsCiAgImZpbmFsIjogewogICAgInJldHVybmNvZGUiOiAxLAogICAgInRpbWVkX291dCI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjE4OCwKICAgICJ0aW1lb3V0X3MiOiA2MC4wLAogICAgIm91dHB1dCI6ICJGRkYuLi4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgWzEwMCVdXG49PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PSBGQUlMVVJFUyA9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuX19fX19fX19fX19fX19fX19fX19fX19fXyB0ZXN0X2luc2lkZV9yYW5nZV91bmNoYW5nZWQgX19fX19fX19fX19fX19fX19fX19fX19fX19cblxuICAgIGRlZiB0ZXN0X2luc2lkZV9yYW5nZV91bmNoYW5nZWQoKTpcbj4gICAgICAgYXNzZXJ0IGNsYW1wKDUsIDAsIDEwKSA9PSA1XG5FICAgICAgIGFzc2VydCAxMCA9PSA1XG5FICAgICAgICArICB3aGVyZSAxMCA9IGNsYW1wKDUsIDAsIDEwKVxuXG50ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHk6NzogQXNzZXJ0aW9uRXJyb3Jcbl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fIHRlc3RfYmVsb3dfYW5kX2Fib3ZlIF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fXG5cbiAgICBkZWYgdGVzdF9iZWxvd19hbmRfYWJvdmUoKTpcbj4gICAgICAgYXNzZXJ0IGNsYW1wKC0zLCAwLCAxMCkgPT0gMFxuRSAgICAgICBhc3NlcnQgMTAgPT0gMFxuRSAgICAgICAgKyAgd2hlcmUgMTAgPSBjbGFtcCgtMywgMCwgMTApXG5cbnRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weToxMTogQXNzZXJ0aW9uRXJyb3Jcbl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18gdGVzdF9ib3VuZGFyaWVzIF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXG5cbiAgICBkZWYgdGVzdF9ib3VuZGFyaWVzKCk6XG4+ICAgICAgIGFzc2VydCBjbGFtcCgwLCAwLCAxMCkgPT0gMFxuRSAgICAgICBhc3NlcnQgMTAgPT0gMFxuRSAgICAgICAgKyAgd2hlcmUgMTAgPSBjbGFtcCgwLCAwLCAxMClcblxudGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5OjE2OiBBc3NlcnRpb25FcnJvclxuPT09PT09PT09PT09PT09PT09PT09PT09PT09IHNob3J0IHRlc3Qgc3VtbWFyeSBpbmZvID09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbkZBSUxFRCB0ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHk6OnRlc3RfaW5zaWRlX3JhbmdlX3VuY2hhbmdlZCAtIGFzc2VydCAxMCA9PSA1XG5GQUlMRUQgdGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5Ojp0ZXN0X2JlbG93X2FuZF9hYm92ZSAtIGFzc2VydCAxMCA9PSAwXG5GQUlMRUQgdGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5Ojp0ZXN0X2JvdW5kYXJpZXMgLSBhc3NlcnQgMTAgPT0gMFxuMyBmYWlsZWQsIDMgcGFzc2VkIGluIDAuMDFzXG4iLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy50ZXN0X2NhbGNfY2xhbXA6OnRlc3RfaW5zaWRlX3JhbmdlX3VuY2hhbmdlZCIsCiAgICAgICAgIm91dGNvbWUiOiAiZmFpbGVkIiwKICAgICAgICAibWVzc2FnZSI6ICJhc3NlcnQgMTAgPT0gNVxuICsgIHdoZXJlIDEwID0gY2xhbXAoNSwgMCwgMTApXG5kZWYgdGVzdF9pbnNpZGVfcmFuZ2VfdW5jaGFuZ2VkKCk6XG4+ICAgICAgIGFzc2VydCBjbGFtcCg1LCAwLCAxMCkgPT0gNVxuRSAgICAgICBhc3NlcnQgMTAgPT0gNVxuRSAgICAgICAgKyAgd2hlcmUgMTAgPSBjbGFtcCg1LCAwLCAxMClcblxudGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5Ojc6IEFzc2VydGlvbkVycm9yIiwKICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiAidGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5IgogICAgICB9LAogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy50ZXN0X2NhbGNfY2xhbXA6OnRlc3RfYmVsb3dfYW5kX2Fib3ZlIiwKICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLAogICAgICAgICJtZXNzYWdlIjogImFzc2VydCAxMCA9PSAwXG4gKyAgd2hlcmUgMTAgPSBjbGFtcCgtMywgMCwgMTApXG5kZWYgdGVzdF9iZWxvd19hbmRfYWJvdmUoKTpcbj4gICAgICAgYXNzZXJ0IGNsYW1wKC0zLCAwLCAxMCkgPT0gMFxuRSAgICAgICBhc3NlcnQgMTAgPT0gMFxuRSAgICAgICAgKyAgd2hlcmUgMTAgPSBjbGFtcCgtMywgMCwgMTApXG5cbnRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weToxMTogQXNzZXJ0aW9uRXJyb3IiLAogICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6ICJ0ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHkiCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibm9kZWlkIjogInRlc3RzLnRlc3RfY2FsY19jbGFtcDo6dGVzdF9ib3VuZGFyaWVzIiwKICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLAogICAgICAgICJtZXNzYWdlIjogImFzc2VydCAxMCA9PSAwXG4gKyAgd2hlcmUgMTAgPSBjbGFtcCgwLCAwLCAxMClcbmRlZiB0ZXN0X2JvdW5kYXJpZXMoKTpcbj4gICAgICAgYXNzZXJ0IGNsYW1wKDAsIDAsIDEwKSA9PSAwXG5FICAgICAgIGFzc2VydCAxMCA9PSAwXG5FICAgICAgICArICB3aGVyZSAxMCA9IGNsYW1wKDAsIDAsIDEwKVxuXG50ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHk6MTY6IEFzc2VydGlvbkVycm9yIiwKICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiAidGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5IgogICAgICB9LAogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy50ZXN0X2NhbGNfY2xhbXA6OnRlc3RfaW52ZXJ0ZWRfYm91bmRzX3JhaXNlIiwKICAgICAgICAib3V0Y29tZSI6ICJwYXNzZWQiLAogICAgICAgICJtZXNzYWdlIjogIiIsCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogInRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weSIKICAgICAgfSwKICAgICAgewogICAgICAgICJub2RlaWQiOiAidGVzdHMudGVzdF9leGlzdGluZzo6dGVzdF9hZGQiLAogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsCiAgICAgICAgIm1lc3NhZ2UiOiAiIiwKICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiBudWxsCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAibm9kZWlkIjogInRlc3RzLnRlc3RfZXhpc3Rpbmc6OnRlc3RfbWVhbiIsCiAgICAgICAgIm91dGNvbWUiOiAicGFzc2VkIiwKICAgICAgICAibWVzc2FnZSI6ICIiLAogICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6IG51bGwKICAgICAgfQogICAgXSwKICAgICJjb3ZlcmFnZSI6IG51bGwsCiAgICAiZ2VuZXJhdGVkX2ZpbGVzIjogWwogICAgICAidGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5IgogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiB0cnVlLAogICAgInBhc3NlZCI6IDMsCiAgICAiZmFpbGVkIjogMywKICAgICJlcnJvcnMiOiAwLAogICAgInNraXBwZWQiOiAwLAogICAgIm9rIjogZmFsc2UsCiAgICAic3VtbWFyeSI6ICIzIHBhc3NlZCwgMyBmYWlsZWQsIDAgZXJyb3JzLCAwIHNraXBwZWQgKHJjPTEpOyBnZW5lcmF0ZWQ6IDEgcGFzc2VkIG9mIDQgY29sbGVjdGVkIiwKICAgICJnZW5lcmF0ZWQiOiB7CiAgICAgICJjb2xsZWN0ZWQiOiA0LAogICAgICAicGFzc2VkIjogMSwKICAgICAgImZhaWxlZCI6IDMsCiAgICAgICJlcnJvciI6IDAsCiAgICAgICJza2lwcGVkIjogMAogICAgfQogIH0sCiAgInBhdGNoIjogImRpZmYgLS1naXQgYS90ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHkgYi90ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHlcbm5ldyBmaWxlIG1vZGUgMTAwNjQ0XG4tLS0gL2Rldi9udWxsXG4rKysgYi90ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHlcbkBAIC0wLDAgKzEsMjIgQEBcbitpbXBvcnQgcHl0ZXN0XG4rXG4rZnJvbSBjYWxjIGltcG9ydCBjbGFtcFxuK1xuK1xuK2RlZiB0ZXN0X2luc2lkZV9yYW5nZV91bmNoYW5nZWQoKTpcbisgICAgYXNzZXJ0IGNsYW1wKDUsIDAsIDEwKSA9PSA1XG4rXG4rXG4rZGVmIHRlc3RfYmVsb3dfYW5kX2Fib3ZlKCk6XG4rICAgIGFzc2VydCBjbGFtcCgtMywgMCwgMTApID09IDBcbisgICAgYXNzZXJ0IGNsYW1wKDQyLCAwLCAxMCkgPT0gMTBcbitcbitcbitkZWYgdGVzdF9ib3VuZGFyaWVzKCk6XG4rICAgIGFzc2VydCBjbGFtcCgwLCAwLCAxMCkgPT0gMFxuKyAgICBhc3NlcnQgY2xhbXAoMTAsIDAsIDEwKSA9PSAxMFxuK1xuK1xuK2RlZiB0ZXN0X2ludmVydGVkX2JvdW5kc19yYWlzZSgpOlxuKyAgICB3aXRoIHB5dGVzdC5yYWlzZXMoVmFsdWVFcnJvcik6XG4rICAgICAgICBjbGFtcCgxLCAxMCwgMClcbiIsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDExMjQsCiAgICAidG90YWxfY29zdF91c2QiOiAwLjAsCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLAogICAgInRva2Vuc19lc3RpbWF0ZWQiOiB0cnVlLAogICAgImJ5X21vZGVsIjogewogICAgICAibnZpZGlhL25lbW90cm9uLTMtc3VwZXItMTIwYi1hMTJiIjogewogICAgICAgICJjYWxscyI6IDEsCiAgICAgICAgInByb21wdF90b2tlbnMiOiAxMjUsCiAgICAgICAgImNvbXBsZXRpb25fdG9rZW5zIjogNTEsCiAgICAgICAgImNvc3RfdXNkIjogMC4wCiAgICAgIH0sCiAgICAgICJudmlkaWEvTmVtb3Ryb24tM181LUxpZ2h0bmluZyI6IHsKICAgICAgICAiY2FsbHMiOiAyLAogICAgICAgICJwcm9tcHRfdG9rZW5zIjogNzcyLAogICAgICAgICJjb21wbGV0aW9uX3Rva2VucyI6IDE3NiwKICAgICAgICAiY29zdF91c2QiOiAwLjAKICAgICAgfQogICAgfSwKICAgICJlbnRyaWVzIjogWwogICAgICB7CiAgICAgICAgInJvbGUiOiAicGxhbm5lciIsCiAgICAgICAgIm1vZGVsIjogIm52aWRpYS9uZW1vdHJvbi0zLXN1cGVyLTEyMGItYTEyYiIsCiAgICAgICAgInByb21wdF90b2tlbnMiOiAxMjUsCiAgICAgICAgImNvbXBsZXRpb25fdG9rZW5zIjogNTEsCiAgICAgICAgImVzdGltYXRlZCI6IHRydWUsCiAgICAgICAgImNvc3RfdXNkIjogMC4wCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAicm9sZSI6ICJlZGl0b3IiLAogICAgICAgICJtb2RlbCI6ICJudmlkaWEvTmVtb3Ryb24tM181LUxpZ2h0bmluZyIsCiAgICAgICAgInByb21wdF90b2tlbnMiOiAyMjgsCiAgICAgICAgImNvbXBsZXRpb25fdG9rZW5zIjogMTA5LAogICAgICAgICJlc3RpbWF0ZWQiOiB0cnVlLAogICAgICAgICJjb3N0X3VzZCI6IDAuMAogICAgICB9LAogICAgICB7CiAgICAgICAgInJvbGUiOiAicmVwYWlyIiwKICAgICAgICAibW9kZWwiOiAibnZpZGlhL05lbW90cm9uLTNfNS1MaWdodG5pbmciLAogICAgICAgICJwcm9tcHRfdG9rZW5zIjogNTQ0LAogICAgICAgICJjb21wbGV0aW9uX3Rva2VucyI6IDY3LAogICAgICAgICJlc3RpbWF0ZWQiOiB0cnVlLAogICAgICAgICJjb3N0X3VzZCI6IDAuMAogICAgICB9CiAgICBdCiAgfSwKICAicm91bmRzIjogWwogICAgewogICAgICAicm91bmQiOiAwLAogICAgICAia2luZCI6ICJnZW5lcmF0ZSIsCiAgICAgICJmaWxlcyI6IFsKICAgICAgICAidGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5IgogICAgICBdLAogICAgICAicmVzdWx0IjogewogICAgICAgICJyZXR1cm5jb2RlIjogMSwKICAgICAgICAidGltZWRfb3V0IjogZmFsc2UsCiAgICAgICAgImR1cmF0aW9uX3MiOiAwLjE4OCwKICAgICAgICAidGltZW91dF9zIjogNjAuMCwKICAgICAgICAib3V0cHV0IjogIkZGRi4uLiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBbMTAwJV1cbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09IEZBSUxVUkVTID09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5fX19fX19fX19fX19fX19fX19fX19fX19fIHRlc3RfaW5zaWRlX3JhbmdlX3VuY2hhbmdlZCBfX19fX19fX19fX19fX19fX19fX19fX19fX1xuXG4gICAgZGVmIHRlc3RfaW5zaWRlX3JhbmdlX3VuY2hhbmdlZCgpOlxuPiAgICAgICBhc3NlcnQgY2xhbXAoNSwgMCwgMTApID09IDVcbkUgICAgICAgYXNzZXJ0IDEwID09IDVcbkUgICAgICAgICsgIHdoZXJlIDEwID0gY2xhbXAoNSwgMCwgMTApXG5cbnRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weTo3OiBBc3NlcnRpb25FcnJvclxuX19fX19fX19fX19fX19fX19fX19fX19fX19fX18gdGVzdF9iZWxvd19hbmRfYWJvdmUgX19fX19fX19fX19fX19fX19fX19fX19fX19fX19cblxuICAgIGRlZiB0ZXN0X2JlbG93X2FuZF9hYm92ZSgpOlxuPiAgICAgICBhc3NlcnQgY2xhbXAoLTMsIDAsIDEwKSA9PSAwXG5FICAgICAgIGFzc2VydCAxMCA9PSAwXG5FICAgICAgICArICB3aGVyZSAxMCA9IGNsYW1wKC0zLCAwLCAxMClcblxudGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5OjExOiBBc3NlcnRpb25FcnJvclxuX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXyB0ZXN0X2JvdW5kYXJpZXMgX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19cblxuICAgIGRlZiB0ZXN0X2JvdW5kYXJpZXMoKTpcbj4gICAgICAgYXNzZXJ0IGNsYW1wKDAsIDAsIDEwKSA9PSAwXG5FICAgICAgIGFzc2VydCAxMCA9PSAwXG5FICAgICAgICArICB3aGVyZSAxMCA9IGNsYW1wKDAsIDAsIDEwKVxuXG50ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHk6MTY6IEFzc2VydGlvbkVycm9yXG49PT09PT09PT09PT09PT09PT09PT09PT09PT0gc2hvcnQgdGVzdCBzdW1tYXJ5IGluZm8gPT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuRkFJTEVEIHRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weTo6dGVzdF9pbnNpZGVfcmFuZ2VfdW5jaGFuZ2VkIC0gYXNzZXJ0IDEwID09IDVcbkZBSUxFRCB0ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHk6OnRlc3RfYmVsb3dfYW5kX2Fib3ZlIC0gYXNzZXJ0IDEwID09IDBcbkZBSUxFRCB0ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHk6OnRlc3RfYm91bmRhcmllcyAtIGFzc2VydCAxMCA9PSAwXG4zIGZhaWxlZCwgMyBwYXNzZWQgaW4gMC4wMXNcbiIsCiAgICAgICAgImNhc2VzIjogWwogICAgICAgICAgewogICAgICAgICAgICAibm9kZWlkIjogInRlc3RzLnRlc3RfY2FsY19jbGFtcDo6dGVzdF9pbnNpZGVfcmFuZ2VfdW5jaGFuZ2VkIiwKICAgICAgICAgICAgIm91dGNvbWUiOiAiZmFpbGVkIiwKICAgICAgICAgICAgIm1lc3NhZ2UiOiAiYXNzZXJ0IDEwID09IDVcbiArICB3aGVyZSAxMCA9IGNsYW1wKDUsIDAsIDEwKVxuZGVmIHRlc3RfaW5zaWRlX3JhbmdlX3VuY2hhbmdlZCgpOlxuPiAgICAgICBhc3NlcnQgY2xhbXAoNSwgMCwgMTApID09IDVcbkUgICAgICAgYXNzZXJ0IDEwID09IDVcbkUgICAgICAgICsgIHdoZXJlIDEwID0gY2xhbXAoNSwgMCwgMTApXG5cbnRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weTo3OiBBc3NlcnRpb25FcnJvciIsCiAgICAgICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6ICJ0ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHkiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAibm9kZWlkIjogInRlc3RzLnRlc3RfY2FsY19jbGFtcDo6dGVzdF9iZWxvd19hbmRfYWJvdmUiLAogICAgICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLAogICAgICAgICAgICAibWVzc2FnZSI6ICJhc3NlcnQgMTAgPT0gMFxuICsgIHdoZXJlIDEwID0gY2xhbXAoLTMsIDAsIDEwKVxuZGVmIHRlc3RfYmVsb3dfYW5kX2Fib3ZlKCk6XG4+ICAgICAgIGFzc2VydCBjbGFtcCgtMywgMCwgMTApID09IDBcbkUgICAgICAgYXNzZXJ0IDEwID09IDBcbkUgICAgICAgICsgIHdoZXJlIDEwID0gY2xhbXAoLTMsIDAsIDEwKVxuXG50ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHk6MTE6IEFzc2VydGlvbkVycm9yIiwKICAgICAgICAgICAgImdlbmVyYXRlZF9maWxlIjogInRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJub2RlaWQiOiAidGVzdHMudGVzdF9jYWxjX2NsYW1wOjp0ZXN0X2JvdW5kYXJpZXMiLAogICAgICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLAogICAgICAgICAgICAibWVzc2FnZSI6ICJhc3NlcnQgMTAgPT0gMFxuICsgIHdoZXJlIDEwID0gY2xhbXAoMCwgMCwgMTApXG5kZWYgdGVzdF9ib3VuZGFyaWVzKCk6XG4+ICAgICAgIGFzc2VydCBjbGFtcCgwLCAwLCAxMCkgPT0gMFxuRSAgICAgICBhc3NlcnQgMTAgPT0gMFxuRSAgICAgICAgKyAgd2hlcmUgMTAgPSBjbGFtcCgwLCAwLCAxMClcblxudGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5OjE2OiBBc3NlcnRpb25FcnJvciIsCiAgICAgICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6ICJ0ZXN0cy90ZXN0X2NhbGNfY2xhbXAucHkiCiAgICAgICAgICB9LAogICAgICAgICAgewogICAgICAgICAgICAibm9kZWlkIjogInRlc3RzLnRlc3RfY2FsY19jbGFtcDo6dGVzdF9pbnZlcnRlZF9ib3VuZHNfcmFpc2UiLAogICAgICAgICAgICAib3V0Y29tZSI6ICJwYXNzZWQiLAogICAgICAgICAgICAibWVzc2FnZSI6ICIiLAogICAgICAgICAgICAiZ2VuZXJhdGVkX2ZpbGUiOiAidGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5IgogICAgICAgICAgfSwKICAgICAgICAgIHsKICAgICAgICAgICAgIm5vZGVpZCI6ICJ0ZXN0cy50ZXN0X2V4aXN0aW5nOjp0ZXN0X2FkZCIsCiAgICAgICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsCiAgICAgICAgICAgICJtZXNzYWdlIjogIiIsCiAgICAgICAgICAgICJnZW5lcmF0ZWRfZmlsZSI6IG51bGwKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJub2RlaWQiOiAidGVzdHMudGVzdF9leGlzdGluZzo6dGVzdF9tZWFuIiwKICAgICAgICAgICAgIm91dGNvbWUiOiAicGFzc2VkIiwKICAgICAgICAgICAgIm1lc3NhZ2UiOiAiIiwKICAgICAgICAgICAgImdlbmVyYXRlZF9maWxlIjogbnVsbAogICAgICAgICAgfQogICAgICAgIF0sCiAgICAgICAgImNvdmVyYWdlIjogbnVsbCwKICAgICAgICAiZ2VuZXJhdGVkX2ZpbGVzIjogWwogICAgICAgICAgInRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weSIKICAgICAgICBdLAogICAgICAgICJqdW5pdF9hdmFpbGFibGUiOiB0cnVlLAogICAgICAgICJwYXNzZWQiOiAzLAogICAgICAgICJmYWlsZWQiOiAzLAogICAgICAgICJlcnJvcnMiOiAwLAogICAgICAgICJza2lwcGVkIjogMCwKICAgICAgICAib2siOiBmYWxzZSwKICAgICAgICAic3VtbWFyeSI6ICIzIHBhc3NlZCwgMyBmYWlsZWQsIDAgZXJyb3JzLCAwIHNraXBwZWQgKHJjPTEpOyBnZW5lcmF0ZWQ6IDEgcGFzc2VkIG9mIDQgY29sbGVjdGVkIiwKICAgICAgICAiZ2VuZXJhdGVkIjogewogICAgICAgICAgImNvbGxlY3RlZCI6IDQsCiAgICAgICAgICAicGFzc2VkIjogMSwKICAgICAgICAgICJmYWlsZWQiOiAzLAogICAgICAgICAgImVycm9yIjogMCwKICAgICAgICAgICJza2lwcGVkIjogMAogICAgICAgIH0KICAgICAgfSwKICAgICAgIndhcm5pbmdzIjogW10sCiAgICAgICJjb250ZW50cyI6IHsKICAgICAgICAidGVzdHMvdGVzdF9jYWxjX2NsYW1wLnB5IjogImltcG9ydCBweXRlc3RcblxuZnJvbSBjYWxjIGltcG9ydCBjbGFtcFxuXG5cbmRlZiB0ZXN0X2luc2lkZV9yYW5nZV91bmNoYW5nZWQoKTpcbiAgICBhc3NlcnQgY2xhbXAoNSwgMCwgMTApID09IDVcblxuXG5kZWYgdGVzdF9iZWxvd19hbmRfYWJvdmUoKTpcbiAgICBhc3NlcnQgY2xhbXAoLTMsIDAsIDEwKSA9PSAwXG4gICAgYXNzZXJ0IGNsYW1wKDQyLCAwLCAxMCkgPT0gMTBcblxuXG5kZWYgdGVzdF9ib3VuZGFyaWVzKCk6XG4gICAgYXNzZXJ0IGNsYW1wKDAsIDAsIDEwKSA9PSAwXG4gICAgYXNzZXJ0IGNsYW1wKDEwLCAwLCAxMCkgPT0gMTBcblxuXG5kZWYgdGVzdF9pbnZlcnRlZF9ib3VuZHNfcmFpc2UoKTpcbiAgICB3aXRoIHB5dGVzdC5yYWlzZXMoVmFsdWVFcnJvcik6XG4gICAgICAgIGNsYW1wKDEsIDEwLCAwKVxuIgogICAgICB9CiAgICB9LAogICAgewogICAgICAicm91bmQiOiAxLAogICAgICAia2luZCI6ICJyZXBhaXIiLAogICAgICAiZmlsZXMiOiBbCiAgICAgICAgInRlc3RzL3Rlc3RfY2FsY19jbGFtcC5weSIKICAgICAgXSwKICAgICAgInJlc3VsdCI6IG51bGwsCiAgICAgICJ3YXJuaW5ncyI6IFtdLAogICAgICAiY29udGVudHMiOiB7fQogICAgfQogIF0sCiAgInBsYW4iOiAiUGxhbiBmb3IgY2FsYy5jbGFtcDpcbjEuIFZhbHVlIGluc2lkZSBbbG8sIGhpXSBpcyByZXR1cm5lZCB1bmNoYW5nZWQuXG4yLiBWYWx1ZSBiZWxvdyBsbyByZXR1cm5zIGxvOyB2YWx1ZSBhYm92ZSBoaSByZXR1cm5zIGhpLlxuMy4gQm91bmRhcmllcyBsbyBhbmQgaGkgYXJlIHJldHVybmVkIHVuY2hhbmdlZC5cbjQuIGxvID4gaGkgcmFpc2VzIFZhbHVlRXJyb3IuXG4iLAogICJtZXNzYWdlIjogImNsYW1wKDUsIDAsIDEwKSByZXR1cm5zIDEwIGFuZCBjbGFtcCgtMywgMCwgMTApIHJldHVybnMgMTA6IHRoZSBleHByZXNzaW9uIGBtYXgoaGksIG1pbihsbywgeCkpYCBoYXMgbG8gYW5kIGhpIHN3YXBwZWQsIHNvIGl0IGFsd2F5cyByZXR1cm5zIGhpLiBUaGUgdGVzdHMgZW5jb2RlIHRoZSBkb2N1bWVudGVkIGNvbnRyYWN0IChcImNsYW1wIHggaW50byBbbG8sIGhpXVwiKTsgdGhlIGZpeCBpcyBgbWF4KGxvLCBtaW4oaGksIHgpKWAuIiwKICAib2siOiBmYWxzZQp9">Download report JSON</a></div><p class="note download-note">Both downloads are embedded in this file. Opening, reviewing or downloading does not run tests or apply the patch.</p></header><dl class="metrics"><div class="metric"><dt>Generated cases passed / collected</dt><dd>1 / 4</dd></div><div class="metric"><dt>Repair rounds used / limit</dt><dd>1 / 3</dd></div><div class="metric"><dt>Tokens · estimated</dt><dd>1124</dd></div></dl><nav aria-label="Report sections"><a href="#result">Test results</a><a href="#tests">Generated files</a><a href="#rounds">Repair history</a><a href="#scope">Plan and scope</a><a href="#coverage">Coverage</a><a href="#ledger">Model ledger</a><a href="#patch">Patch</a></nav><section id="result" aria-labelledby="result-heading"><h2 id="result-heading">Final recorded result</h2><p class="prose"><strong>3 passed, 3 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 4 collected</strong></p><p class="note">Return code: 1 · Duration: 0.188 s · Timeout: no</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded selected-suite case counts"><table><caption>Recorded selected-suite case counts</caption><thead><tr><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>3</td><td>3</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded generated-case counts"><table><caption>Recorded generated-case counts</caption><thead><tr><th scope="col">Collected</th><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>4</td><td>1</td><td>3</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><h3>Recorded test cases</h3><ol class="cases"><li><details open><summary><span class="badge failed">failed</span> <code>tests.test_calc_clamp::test_inside_range_unchanged</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><pre tabindex="0"><code>assert 10 == 5
+ +  where 10 = clamp(5, 0, 10)
+def test_inside_range_unchanged():
+&gt;       assert clamp(5, 0, 10) == 5
+E       assert 10 == 5
+E        +  where 10 = clamp(5, 0, 10)
+
+tests/test_calc_clamp.py:7: AssertionError</code></pre></div></details></li><li><details open><summary><span class="badge failed">failed</span> <code>tests.test_calc_clamp::test_below_and_above</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><pre tabindex="0"><code>assert 10 == 0
+ +  where 10 = clamp(-3, 0, 10)
+def test_below_and_above():
+&gt;       assert clamp(-3, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(-3, 0, 10)
+
+tests/test_calc_clamp.py:11: AssertionError</code></pre></div></details></li><li><details open><summary><span class="badge failed">failed</span> <code>tests.test_calc_clamp::test_boundaries</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><pre tabindex="0"><code>assert 10 == 0
+ +  where 10 = clamp(0, 0, 10)
+def test_boundaries():
+&gt;       assert clamp(0, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(0, 0, 10)
+
+tests/test_calc_clamp.py:16: AssertionError</code></pre></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>tests.test_calc_clamp::test_inverted_bounds_raise</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>tests.test_existing::test_add</code> <span class="case-label">Other selected test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>tests.test_existing::test_mean</code> <span class="case-label">Other selected test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li></ol><details><summary>Recorded pytest output</summary><div class="detail-body"><p class="note">The runner retains the last 3,000 characters in its report. This is the recorded tail, not a complete process log.</p><pre tabindex="0"><code>FFF...                                                                   [100%]
+=================================== FAILURES ===================================
+_________________________ test_inside_range_unchanged __________________________
+
+    def test_inside_range_unchanged():
+&gt;       assert clamp(5, 0, 10) == 5
+E       assert 10 == 5
+E        +  where 10 = clamp(5, 0, 10)
+
+tests/test_calc_clamp.py:7: AssertionError
+_____________________________ test_below_and_above _____________________________
+
+    def test_below_and_above():
+&gt;       assert clamp(-3, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(-3, 0, 10)
+
+tests/test_calc_clamp.py:11: AssertionError
+_______________________________ test_boundaries ________________________________
+
+    def test_boundaries():
+&gt;       assert clamp(0, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(0, 0, 10)
+
+tests/test_calc_clamp.py:16: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5
+FAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0
+FAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0
+3 failed, 3 passed in 0.01s
+</code></pre></div></details></section><section id="tests" aria-labelledby="tests-heading"><h2 id="tests-heading">Final generated files</h2><p class="note">Reported authored-test count: 4. This count is separate from verified generated-case execution above.</p><details><summary><code>tests/test_calc_clamp.py</code></summary><div class="detail-body"><pre tabindex="0"><code>import pytest
+
+from calc import clamp
+
+
+def test_inside_range_unchanged():
+    assert clamp(5, 0, 10) == 5
+
+
+def test_below_and_above():
+    assert clamp(-3, 0, 10) == 0
+    assert clamp(42, 0, 10) == 10
+
+
+def test_boundaries():
+    assert clamp(0, 0, 10) == 0
+    assert clamp(10, 0, 10) == 10
+
+
+def test_inverted_bounds_raise():
+    with pytest.raises(ValueError):
+        clamp(1, 10, 0)
+</code></pre></div></details></section><section id="rounds" aria-labelledby="rounds-heading"><h2 id="rounds-heading">Repair history</h2><p class="note">Each round keeps its recorded source snapshot and result. A model response without a new run does not add an execution.</p><ol class="rounds"><li><details><summary>Round 0 · generate</summary><div class="detail-body"><h3>Tests at this round</h3><details><summary><code>tests/test_calc_clamp.py</code></summary><div class="detail-body"><pre tabindex="0"><code>import pytest
+
+from calc import clamp
+
+
+def test_inside_range_unchanged():
+    assert clamp(5, 0, 10) == 5
+
+
+def test_below_and_above():
+    assert clamp(-3, 0, 10) == 0
+    assert clamp(42, 0, 10) == 10
+
+
+def test_boundaries():
+    assert clamp(0, 0, 10) == 0
+    assert clamp(10, 0, 10) == 10
+
+
+def test_inverted_bounds_raise():
+    with pytest.raises(ValueError):
+        clamp(1, 10, 0)
+</code></pre></div></details><p class="prose"><strong>3 passed, 3 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 4 collected</strong></p><p class="note">Return code: 1 · Duration: 0.188 s · Timeout: no</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded selected-suite case counts"><table><caption>Recorded selected-suite case counts</caption><thead><tr><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>3</td><td>3</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Recorded generated-case counts"><table><caption>Recorded generated-case counts</caption><thead><tr><th scope="col">Collected</th><th scope="col">Passed</th><th scope="col">Failed</th><th scope="col">Errors</th><th scope="col">Skipped</th></tr></thead><tbody><tr><td>4</td><td>1</td><td>3</td><td>0</td><td>0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p><h3>Recorded test cases</h3><ol class="cases"><li><details open><summary><span class="badge failed">failed</span> <code>tests.test_calc_clamp::test_inside_range_unchanged</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><pre tabindex="0"><code>assert 10 == 5
+ +  where 10 = clamp(5, 0, 10)
+def test_inside_range_unchanged():
+&gt;       assert clamp(5, 0, 10) == 5
+E       assert 10 == 5
+E        +  where 10 = clamp(5, 0, 10)
+
+tests/test_calc_clamp.py:7: AssertionError</code></pre></div></details></li><li><details open><summary><span class="badge failed">failed</span> <code>tests.test_calc_clamp::test_below_and_above</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><pre tabindex="0"><code>assert 10 == 0
+ +  where 10 = clamp(-3, 0, 10)
+def test_below_and_above():
+&gt;       assert clamp(-3, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(-3, 0, 10)
+
+tests/test_calc_clamp.py:11: AssertionError</code></pre></div></details></li><li><details open><summary><span class="badge failed">failed</span> <code>tests.test_calc_clamp::test_boundaries</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><pre tabindex="0"><code>assert 10 == 0
+ +  where 10 = clamp(0, 0, 10)
+def test_boundaries():
+&gt;       assert clamp(0, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(0, 0, 10)
+
+tests/test_calc_clamp.py:16: AssertionError</code></pre></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>tests.test_calc_clamp::test_inverted_bounds_raise</code> <span class="case-label">Generated test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>tests.test_existing::test_add</code> <span class="case-label">Other selected test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li><li><details><summary><span class="badge passed">passed</span> <code>tests.test_existing::test_mean</code> <span class="case-label">Other selected test</span></summary><div class="detail-body"><p class="note">No diagnostic message recorded.</p></div></details></li></ol><details><summary>Recorded pytest output</summary><div class="detail-body"><p class="note">The runner retains the last 3,000 characters in its report. This is the recorded tail, not a complete process log.</p><pre tabindex="0"><code>FFF...                                                                   [100%]
+=================================== FAILURES ===================================
+_________________________ test_inside_range_unchanged __________________________
+
+    def test_inside_range_unchanged():
+&gt;       assert clamp(5, 0, 10) == 5
+E       assert 10 == 5
+E        +  where 10 = clamp(5, 0, 10)
+
+tests/test_calc_clamp.py:7: AssertionError
+_____________________________ test_below_and_above _____________________________
+
+    def test_below_and_above():
+&gt;       assert clamp(-3, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(-3, 0, 10)
+
+tests/test_calc_clamp.py:11: AssertionError
+_______________________________ test_boundaries ________________________________
+
+    def test_boundaries():
+&gt;       assert clamp(0, 0, 10) == 0
+E       assert 10 == 0
+E        +  where 10 = clamp(0, 0, 10)
+
+tests/test_calc_clamp.py:16: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5
+FAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0
+FAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0
+3 failed, 3 passed in 0.01s
+</code></pre></div></details></div></details></li><li><details><summary>Round 1 · repair</summary><div class="detail-body"><p class="note">No new test-source snapshot was recorded for this round.</p><p>Retained file names: <code>tests/test_calc_clamp.py</code></p><p class="notice">No test run was recorded for this round.</p></div></details></li></ol></section><section id="scope" aria-labelledby="scope-heading"><h2 id="scope-heading">Plan and selected source</h2><h3>Model test plan</h3><pre tabindex="0"><code>Plan for calc.clamp:
+1. Value inside [lo, hi] is returned unchanged.
+2. Value below lo returns lo; value above hi returns hi.
+3. Boundaries lo and hi are returned unchanged.
+4. lo &gt; hi raises ValueError.
+</code></pre><details><summary><code>calc.py::clamp</code> <span class="case-label">lines 8–12</span></summary><div class="detail-body"><pre tabindex="0"><code>def clamp(x, lo, hi):
+    &quot;&quot;&quot;Clamp x into the closed interval [lo, hi].&quot;&quot;&quot;
+    if lo &gt; hi:
+        raise ValueError(&quot;lo must be &lt;= hi&quot;)
+    return max(hi, min(lo, x))</code></pre></div></details></section><section id="coverage" aria-labelledby="coverage-heading"><h2 id="coverage-heading">Coverage</h2><p class="notice">Coverage unavailable. This report contains no comparable before/after measurement.</p></section><section id="ledger" aria-labelledby="ledger-heading"><h2 id="ledger-heading">Model and token ledger</h2><p>Token counts are estimated from text length.</p><p class="notice">Cost is unpriced or incomplete. The recorded subtotal ($0.0 USD) does not establish the full cost.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Calls in recorded order"><table class="wide"><caption>Calls in recorded order</caption><thead><tr><th scope="col">Call</th><th scope="col">Role</th><th scope="col">Model</th><th scope="col">Prompt tokens</th><th scope="col">Completion tokens</th><th scope="col">Token source</th><th scope="col">Recorded cost (USD)</th></tr></thead><tbody><tr><td>1</td><td>planner</td><td>nvidia/nemotron-3-super-120b-a12b</td><td>125</td><td>51</td><td>estimated</td><td>0.0</td></tr><tr><td>2</td><td>editor</td><td>nvidia/Nemotron-3_5-Lightning</td><td>228</td><td>109</td><td>estimated</td><td>0.0</td></tr><tr><td>3</td><td>repair</td><td>nvidia/Nemotron-3_5-Lightning</td><td>544</td><td>67</td><td>estimated</td><td>0.0</td></tr></tbody></table></div><p class="note table-hint">Scroll the table horizontally to read all columns.</p></section><section id="patch" aria-labelledby="patch-heading"><h2 id="patch-heading">Exact recorded patch</h2><pre tabindex="0"><code>diff --git a/tests/test_calc_clamp.py b/tests/test_calc_clamp.py
+new file mode 100644
+--- /dev/null
++++ b/tests/test_calc_clamp.py
+@@ -0,0 +1,22 @@
++import pytest
++
++from calc import clamp
++
++
++def test_inside_range_unchanged():
++    assert clamp(5, 0, 10) == 5
++
++
++def test_below_and_above():
++    assert clamp(-3, 0, 10) == 0
++    assert clamp(42, 0, 10) == 10
++
++
++def test_boundaries():
++    assert clamp(0, 0, 10) == 0
++    assert clamp(10, 0, 10) == 10
++
++
++def test_inverted_bounds_raise():
++    with pytest.raises(ValueError):
++        clamp(1, 10, 0)
+</code></pre></section><footer><p>This file reviews the recorded TestPilot result. It does not rerun the repository, verify a model diagnosis, or change any source. Text is displayed literally; HTML-incompatible controls and surrogate characters use visible escapes. Embedded downloads retain the original artifact bytes.</p><p>Use your browser’s Print command to print the report. No scripts, remote resources, storage or account are required.</p></footer></main></body></html>

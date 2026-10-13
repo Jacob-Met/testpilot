@@ -1,0 +1,14 @@
+{
+  "zip": "/dev/shm/hamon-1caa-testpilot-wheel/TestPilot-Scripted-Review-d2596c1a-20261013-v2.zip",
+  "bytes": 107866,
+  "sha256": "8b3c856751ae9bd24b74474b68624e38e97d9157429aafc6c9d671676be00a4d",
+  "members": 31,
+  "manifest_payloads": 30,
+  "changed_members": [
+    "MANIFEST.json",
+    "SOURCE_MANIFEST.json"
+  ],
+  "source_tree": "3b6d270f655310fa2f98cab9bccffca23ec146cf",
+  "historical_v1_sha256": "79c7742c134f3046cf5bc85681c113c60c04b94afc775baa433dfacb142d9471",
+  "correction": "Independent receiver found commit ID mislabeled as source tree. Connected Git commit metadata verifies actual tree. No wheel, source, example, output, guide or receiving byte changed."
+}

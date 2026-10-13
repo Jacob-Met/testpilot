@@ -1,0 +1,281 @@
+{
+  "schema": "testpilot.wheel-scripted-consumer.v1",
+  "result": "PASS",
+  "source_commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "wheel_sha256": "c471d961e1b26051209b2d8bdcf0629b1f0185b25ae6c0d0d733bacca344d246",
+  "installed14modules_exact": true,
+  "sample_before": {
+    "sample/case.json": {
+      "bytes": 179,
+      "sha256": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+      "mtime_ns": 1791865193982702003,
+      "mode": 33188,
+      "inode": 1105708
+    },
+    "sample/change.diff": {
+      "bytes": 410,
+      "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+      "mtime_ns": 1791865193982727962,
+      "mode": 33188,
+      "inode": 1105707
+    },
+    "sample/fix/calc.py": {
+      "bytes": 361,
+      "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+      "mtime_ns": 1791865193982750305,
+      "mode": 33188,
+      "inode": 1105706
+    },
+    "sample/repo/calc.py": {
+      "bytes": 361,
+      "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+      "mtime_ns": 1791865193982771417,
+      "mode": 33188,
+      "inode": 1105704
+    },
+    "sample/script/01_plan.md": {
+      "bytes": 204,
+      "sha256": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+      "mtime_ns": 1791865193982810015,
+      "mode": 33188,
+      "inode": 1105700
+    },
+    "sample/script/02_tests.md": {
+      "bytes": 435,
+      "sha256": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+      "mtime_ns": 1791865193982831117,
+      "mode": 33188,
+      "inode": 1105699
+    },
+    "sample/script/03_repair.md": {
+      "bytes": 265,
+      "sha256": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+      "mtime_ns": 1791865193982850366,
+      "mode": 33188,
+      "inode": 1105698
+    },
+    "sample/repo/tests/test_existing.py": {
+      "bytes": 122,
+      "sha256": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d",
+      "mtime_ns": 1791865193982790846,
+      "mode": 33188,
+      "inode": 1105703
+    }
+  },
+  "sample_after": {
+    "sample/case.json": {
+      "bytes": 179,
+      "sha256": "9e997cb92c4c15437f44c11a42fbf3d3a325d6d456e5ae80aaafdf8b2582fea4",
+      "mtime_ns": 1791865193982702003,
+      "mode": 33188,
+      "inode": 1105708
+    },
+    "sample/change.diff": {
+      "bytes": 410,
+      "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+      "mtime_ns": 1791865193982727962,
+      "mode": 33188,
+      "inode": 1105707
+    },
+    "sample/fix/calc.py": {
+      "bytes": 361,
+      "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+      "mtime_ns": 1791865193982750305,
+      "mode": 33188,
+      "inode": 1105706
+    },
+    "sample/repo/calc.py": {
+      "bytes": 361,
+      "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+      "mtime_ns": 1791865193982771417,
+      "mode": 33188,
+      "inode": 1105704
+    },
+    "sample/script/01_plan.md": {
+      "bytes": 204,
+      "sha256": "9204691f94b5bfadce3da3d8c2590cf3c60518f6890439004b8d80ac6f0c29bf",
+      "mtime_ns": 1791865193982810015,
+      "mode": 33188,
+      "inode": 1105700
+    },
+    "sample/script/02_tests.md": {
+      "bytes": 435,
+      "sha256": "7d9b403d6dac6e2280d44ea7b7d4a3c2ab83b75d62f479c44a53b6e34e1efcd6",
+      "mtime_ns": 1791865193982831117,
+      "mode": 33188,
+      "inode": 1105699
+    },
+    "sample/script/03_repair.md": {
+      "bytes": 265,
+      "sha256": "81d17160bf1cafc05b69d7db223ffffcee47bc58d8519344c9bfc318ebfb5809",
+      "mtime_ns": 1791865193982850366,
+      "mode": 33188,
+      "inode": 1105698
+    },
+    "sample/repo/tests/test_existing.py": {
+      "bytes": 122,
+      "sha256": "47b2ebb38283eb3cc54a9e6bfe63f93ad9b73e797d89deef92215daa0063903d",
+      "mtime_ns": 1791865193982790846,
+      "mode": 33188,
+      "inode": 1105703
+    }
+  },
+  "sample_unchanged": true,
+  "commands": [
+    {
+      "name": "help",
+      "command": [
+        "/dev/shm/hamon-1caa-testpilot-wheel/installed-env/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "--help"
+      ],
+      "exit_code": 0,
+      "stdout": "usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\n\npositional arguments:\n  {run,targets,recheck,regression,compare}\n    run                 generate, run and repair tests for a diff\n    targets             inspect changed functions without generating or\n                        running tests\n    recheck             rerun exact tests from a saved report without model\n                        calls\n    regression          check retained tests on two committed revisions\n    compare             compare two saved reports without running tests or a\n                        model\n\noptions:\n  -h, --help            show this help message and exit\n",
+      "stderr": ""
+    },
+    {
+      "name": "targets",
+      "command": [
+        "/dev/shm/hamon-1caa-testpilot-wheel/installed-env/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "targets",
+        "--repo",
+        "sample/repo",
+        "--diff",
+        "sample/change.diff",
+        "--json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"changed_functions\": [\n    {\n      \"path\": \"calc.py\",\n      \"module\": \"calc\",\n      \"qualname\": \"clamp\",\n      \"lineno\": 8,\n      \"end_lineno\": 12,\n      \"changed_lines\": [\n        8,\n        9,\n        10,\n        11,\n        12\n      ],\n      \"source\": \"def clamp(x, lo, hi):\\n    \\\"\\\"\\\"Clamp x into the closed interval [lo, hi].\\\"\\\"\\\"\\n    if lo > hi:\\n        raise ValueError(\\\"lo must be <= hi\\\")\\n    return max(hi, min(lo, x))\",\n      \"is_method\": false\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "scripted",
+      "command": [
+        "/dev/shm/hamon-1caa-testpilot-wheel/installed-env/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "sample/repo",
+        "--diff",
+        "sample/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "sample/script",
+        "--out",
+        "result",
+        "--no-coverage",
+        "--python",
+        "/dev/shm/hamon-1caa-testpilot-wheel/installed-env/bin/python"
+      ],
+      "exit_code": 1,
+      "stdout": "# TestPilot report: **suspected_code_bug**\n\nclamp(5, 0, 10) returns 10 and clamp(-3, 0, 10) returns 10: the expression `max(hi, min(lo, x))` has lo and hi swapped, so it always returns hi. The tests encode the documented contract (\"clamp x into [lo, hi]\"); the fix is `max(lo, min(hi, x))`.\n\n- Changed functions: calc.py::clamp\n- Tests written: 4 in tests/test_calc_clamp.py\n- Repair rounds used: 1/3\n- Final run: 3 passed, 3 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 4 collected in 0.176s\n- Coverage: unavailable\n- Tokens: 1124 (estimated); cost: unpriced (set TESTPILOT_PRICES)\n  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 125 in / 51 out\n  - `nvidia/Nemotron-3_5-Lightning`: 2 calls, 772 in / 176 out\n\nwrote result/testpilot.patch, result/report.json, result/report.md, result/report.html\n",
+      "stderr": ""
+    }
+  ],
+  "report_status": "suspected_code_bug",
+  "recorded_final": {
+    "returncode": 1,
+    "timed_out": false,
+    "duration_s": 0.176,
+    "timeout_s": 60.0,
+    "output": "FFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5\nFAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0\nFAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0\n3 failed, 3 passed in 0.02s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_calc_clamp::test_inside_range_unchanged",
+        "outcome": "failed",
+        "message": "assert 10 == 5\n +  where 10 = clamp(5, 0, 10)\ndef test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_below_and_above",
+        "outcome": "failed",
+        "message": "assert 10 == 0\n +  where 10 = clamp(-3, 0, 10)\ndef test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_boundaries",
+        "outcome": "failed",
+        "message": "assert 10 == 0\n +  where 10 = clamp(0, 0, 10)\ndef test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_calc_clamp::test_inverted_bounds_raise",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": "tests/test_calc_clamp.py"
+      },
+      {
+        "nodeid": "tests.test_existing::test_add",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests.test_existing::test_mean",
+        "outcome": "passed",
+        "message": "",
+        "generated_file": null
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "tests/test_calc_clamp.py"
+    ],
+    "junit_available": true,
+    "passed": 3,
+    "failed": 3,
+    "errors": 0,
+    "skipped": 0,
+    "ok": false,
+    "summary": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 4 collected",
+    "generated": {
+      "collected": 4,
+      "passed": 1,
+      "failed": 3,
+      "error": 0,
+      "skipped": 0
+    }
+  },
+  "outputs": {
+    "report.html": {
+      "bytes": 38791,
+      "sha256": "7be7c3b9c54c8487a053723ffe753c4180536afffaa0f91f5ce8d4a3a065db5c",
+      "mtime_ns": 1791865380757019435,
+      "mode": 33188,
+      "inode": 1105741
+    },
+    "report.md": {
+      "bytes": 1310,
+      "sha256": "cd90f2b2dddc7b4170b84a0ec9cdefde388e2e5ab5a93f85a49278589e1ec1ec",
+      "mtime_ns": 1791865380757008659,
+      "mode": 33188,
+      "inode": 1105740
+    },
+    "report.json": {
+      "bytes": 11574,
+      "sha256": "002b7b4f70005a1baff57b22afe0c29b40268c8874639cc48ce2da9a5641eddc",
+      "mtime_ns": 1791865380756991603,
+      "mode": 33188,
+      "inode": 1105739
+    },
+    "testpilot.patch": {
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+      "mtime_ns": 1791865380756965213,
+      "mode": 33188,
+      "inode": 1105738
+    }
+  },
+  "limits": "Cloud Linux installed wheel outside source with existing read-only pytest dependency provider. No live model/provider, native machine, browser visual or installed-estate adoption. Expected sample exit1 preserves suspected_code_bug and failing tests."
+}

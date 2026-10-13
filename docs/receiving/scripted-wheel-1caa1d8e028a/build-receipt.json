@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/dev/shm/hamon-source-delivery-f0f66340f637/venv/bin/python",
+    "-B",
+    "-m",
+    "pip",
+    "wheel",
+    "--no-deps",
+    "--no-build-isolation",
+    "--no-index",
+    "--wheel-dir",
+    "/dev/shm/hamon-1caa-testpilot-wheel/wheel",
+    "/dev/shm/hamon-1caa-testpilot-wheel/source"
+  ],
+  "exit_code": 0,
+  "stdout_sha256": "23e4b38b12004359aebf68ce7dd988bb9d4942f28d1e630603712bbb800b0e37",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
