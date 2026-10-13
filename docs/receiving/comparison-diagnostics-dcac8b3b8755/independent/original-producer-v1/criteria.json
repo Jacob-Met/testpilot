@@ -1,0 +1,189 @@
+{
+  "schema": "hamon.testpilot-diagnostics-browser-contract/1",
+  "frozen_before_candidate_exposure": true,
+  "original_commit": "8cd5cdb79923100072b228ae1a92f9d4cda806dc",
+  "original_renderer": "40da0f674798583bd25a177021759aa38b3c5b7b",
+  "reader": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+  "scope": "Saved fictional report comparison only. Never run report-listed tests, generate tests, call providers, or infer improvement.",
+  "pages": [
+    {
+      "name": "mixed",
+      "before": "mixed-before.json",
+      "after": "mixed-after.json",
+      "cases": [
+        [
+          {
+            "nodeid": "dup::case",
+            "outcome": "failed",
+            "message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "pass::case",
+            "outcome": "passed",
+            "message": "Passed diagnostic retained",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "empty::failed",
+            "outcome": "failed",
+            "message": "",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "skip::case",
+            "outcome": "skipped",
+            "message": "Skipped diagnostic retained",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "dup::case",
+            "outcome": "error",
+            "message": "Second duplicate occurrence — error Ω",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "null-attribution::error",
+            "outcome": "error",
+            "message": "No attributed file",
+            "generated_file": null
+          }
+        ],
+        [
+          {
+            "nodeid": "after::error",
+            "outcome": "error",
+            "message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "dup::case",
+            "outcome": "passed",
+            "message": "First duplicate is passed",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "dup::case",
+            "outcome": "failed",
+            "message": "Second duplicate is failed",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "after::skipped",
+            "outcome": "skipped",
+            "message": "",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "after::empty-error",
+            "outcome": "error",
+            "message": "",
+            "generated_file": "fictional/tests/test_saved.py"
+          }
+        ]
+      ],
+      "initial_original": [
+        [
+          false,
+          false,
+          false,
+          false,
+          false,
+          false
+        ],
+        [
+          false,
+          false,
+          false,
+          false,
+          false
+        ]
+      ],
+      "initial_candidate": [
+        [
+          true,
+          false,
+          true,
+          false,
+          true,
+          true
+        ],
+        [
+          true,
+          false,
+          true,
+          false,
+          true
+        ]
+      ],
+      "junit": [
+        "Available",
+        "Unavailable"
+      ]
+    },
+    {
+      "name": "incomplete",
+      "before": "incomplete-before.json",
+      "after": "none-after.json",
+      "cases": [
+        [
+          {
+            "nodeid": "incomplete::failed",
+            "outcome": "failed",
+            "message": "JUnit flag absent; case remains recorded",
+            "generated_file": "fictional/tests/test_saved.py"
+          },
+          {
+            "nodeid": "incomplete::passed",
+            "outcome": "passed",
+            "message": "",
+            "generated_file": "fictional/tests/test_saved.py"
+          }
+        ],
+        []
+      ],
+      "initial_original": [
+        [
+          false,
+          false
+        ],
+        []
+      ],
+      "initial_candidate": [
+        [
+          true,
+          false
+        ],
+        []
+      ],
+      "junit": [
+        "Availability was not recorded",
+        "No test result recorded"
+      ]
+    }
+  ],
+  "literal_message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+  "visible_literal_message": "first line\nCRLF\\r\nbare\\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">\\x80\\u2028\\u2029",
+  "expected_print": "All recorded case content visible in print media regardless screen disclosure; returning to screen preserves manually toggled states. No physical print claim.",
+  "browser": {
+    "javascript_enabled": false,
+    "desktop": [
+      1280,
+      900
+    ],
+    "narrow": [
+      390,
+      844
+    ],
+    "actual_downloads": [
+      "before-report.json",
+      "after-report.json"
+    ],
+    "download_source_page": "mixed",
+    "requests": "file navigation and data downloads only; block/record HTTP(S), no external requests expected",
+    "storage": "Fresh isolated profile; inspect accessible local/session storage and storage_state; no broad forensic claim",
+    "keyboard": "Actual Tab navigation to a diagnostic summary, Enter collapse/reopen. Native click controls retained.",
+    "literal": "No script/img/b nodes from diagnostic text; visible controls escaped, original JSON bytes exact"
+  },
+  "custody": "Exact source/fixture/HTML inventories plus bytes/mode/mtime/inode before/after; source and report data remain unchanged; collect child/process exits and distinguish managed disconnect from unobserved browser OS exit."
+}

@@ -1,0 +1,53 @@
+{
+  "schema": "hamon.testpilot-process-collection-tool-capture/1",
+  "captures": [
+    {
+      "label": "original-producer",
+      "source": "Actual RDC read_process_output tool return, captured without changing its text",
+      "text": [
+        "[Reading 3 new lines (total: 3 lines)]\n\n{\"passed\": true, \"commands\": [{\"name\": \"mixed\", \"args\": [\"/usr/bin/python3\", \"-B\", \"-m\", \"testpilot\", \"compare\", \"--before\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/original-producer-v1/fixtures/mixed-before.json\", \"--after\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/original-producer-v1/fixtures/mixed-after.json\", \"--out\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/original-producer-v1/pages/mixed.html\"], \"pid\": 253638, \"returncode\": 0, \"stdout\": {\"bytes\": 104, \"sha256\": \"806bf6c51b777697fb42c4291ce5a2091d0d49a2a71167982a38e2501cabb0c2\", \"git\": \"e15240da6b7cc0d7f42d855e0570872bd856fa54\", \"mode\": 33204, \"mtime_ns\": \"1791922372889096925\", \"inode\": \"2295960\"}, \"stderr\": {\"bytes\": 0, \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"git\": \"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\", \"mode\": 33204, \"mtime_ns\": \"1791922372889096925\", \"inode\": \"2295961\"}}, {\"name\": \"incomplete\", \"args\": [\"/usr/bin/python3\", \"-B\", \"-m\", \"testpilot\", \"compare\", \"--before\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/original-producer-v1/fixtures/incomplete-before.json\", \"--after\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/original-producer-v1/fixtures/none-after.json\", \"--out\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/original-producer-v1/pages/incomplete.html\"], \"pid\": 253639, \"returncode\": 0, \"stdout\": {\"bytes\": 109, \"sha256\": \"7204e8f72a4d46bf4a97dc6572fe3f79feae0a0bf57987b0b886026ad355a004\", \"git\": \"f373bf93b9e93e7780d984ebbc2fd09969ed4dcf\", \"mode\": 33204, \"mtime_ns\": \"1791922372976429890\", \"inode\": \"2295963\"}, \"stderr\": {\"bytes\": 0, \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"git\": \"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\", \"mode\": 33204, \"mtime_ns\": \"1791922372976429890\", \"inode\": \"2295964\"}}], \"receipt\": {\"bytes\": 15945, \"sha256\": \"a47e57753c2d97137842021e30086f2fd0e9edeaa6e43f2d9e38c97dd222f78e\", \"git\": \"5a25498403a83993c6e29595729f4704768e37df\", \"mode\": 33204, \"mtime_ns\": \"1791922372978067448\", \"inode\": \"2295965\"}, \"error\": null}\n{\"browser_packet\": {\"bytes\": 97757, \"sha256\": \"7c7c52522249b1fbe86829fa88fc78a10508ccfcbfb039025175bd549941ee37\", \"git\": \"a4f8c85c604e21575533295c207c5b4a31f1d7cc\", \"mode\": 33204, \"mtime_ns\": \"1791922372978967639\", \"inode\": \"2295966\"}}\n\n✅ Process completed with exit code 0 (runtime: 0.26s)",
+        "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      ]
+    },
+    {
+      "label": "candidate-producer",
+      "source": "Actual RDC read_process_output tool return, captured without changing its text",
+      "text": [
+        "[Reading 3 new lines (total: 3 lines)]\n\n{\"passed\": true, \"commands\": [{\"name\": \"mixed\", \"args\": [\"/usr/bin/python3\", \"-B\", \"-m\", \"testpilot\", \"compare\", \"--before\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/candidate-producer-v1/fixtures/mixed-before.json\", \"--after\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/candidate-producer-v1/fixtures/mixed-after.json\", \"--out\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/candidate-producer-v1/pages/mixed.html\"], \"pid\": 282919, \"returncode\": 0, \"stdout\": {\"bytes\": 105, \"sha256\": \"84a43b2ca46e963735ed6a4c1335121ea45891bc90e9471dcf37d43400aa35a2\", \"git\": \"39f6ca7de9a4e2d22afc3a66018ef33759098526\", \"mode\": 33204, \"mtime_ns\": \"1791923779506019559\", \"inode\": \"2296120\"}, \"stderr\": {\"bytes\": 0, \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"git\": \"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\", \"mode\": 33204, \"mtime_ns\": \"1791923779506019559\", \"inode\": \"2296121\"}}, {\"name\": \"incomplete\", \"args\": [\"/usr/bin/python3\", \"-B\", \"-m\", \"testpilot\", \"compare\", \"--before\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/candidate-producer-v1/fixtures/incomplete-before.json\", \"--after\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/candidate-producer-v1/fixtures/none-after.json\", \"--out\", \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-review/candidate-producer-v1/pages/incomplete.html\"], \"pid\": 282920, \"returncode\": 0, \"stdout\": {\"bytes\": 110, \"sha256\": \"128fa45ff625779369205d0a84ee55505ee91371ad1143718c6f7e22bacb1b8f\", \"git\": \"7c808e184627d6e24114a05462423ee7fa1f336f\", \"mode\": 33204, \"mtime_ns\": \"1791923779592859563\", \"inode\": \"2296123\"}, \"stderr\": {\"bytes\": 0, \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"git\": \"e69de29bb2d1d6434b8b29ae775ad8c2e48c5391\", \"mode\": 33204, \"mtime_ns\": \"1791923779592859563\", \"inode\": \"2296124\"}}], \"receipt\": {\"bytes\": 15956, \"sha256\": \"d2623ae24b410ff6971e93f359dcd8b2ec5aba56ec1bbb73045eafbaf3270ac2\", \"git\": \"8ce47514efe2357fc11eb4abfb4b2c8feef3aa66\", \"mode\": 33204, \"mtime_ns\": \"1791923779594385768\", \"inode\": \"2296125\"}, \"error\": null}\n{\"browser_packet\": {\"bytes\": 97830, \"sha256\": \"2dd9675ccf1b70b78a690607fc45fe1d905847da35c97d691468cfa01baeb2d0\", \"git\": \"14fd0ac1b3df35a17a031c1217dabee6cc4c1dcc\", \"mode\": 33204, \"mtime_ns\": \"1791923779595346234\", \"inode\": \"2296126\"}}\n\n✅ Process completed with exit code 0 (runtime: 0.26s)",
+        "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      ]
+    },
+    {
+      "label": "original-browser-v1",
+      "source": "Actual RDC read_process_output tool return, captured without changing its text",
+      "text": [
+        "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": false, \"checks\": 17, \"downloads\": 0, \"receipt\": {\"bytes\": 18768, \"sha256\": \"5a982141a7a340bb76e51c1fd0ac89445eabfbd93d258e45fa1be481ad379ceb\", \"git\": \"95d15bddb43dade8728667895a14a80e4d99e31a\", \"mode\": 33206, \"mtime_ns\": \"1791923069132390700\", \"inode\": \"844424931697100\"}, \"error\": \"RuntimeError: mixed count 0\", \"managed_disconnect\": true}\r\n\n✅ Process completed with exit code 1 (runtime: 17.74s)",
+        "\n[executed on device: MSI (9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e)]"
+      ]
+    },
+    {
+      "label": "original-browser-v2",
+      "source": "Actual RDC read_process_output tool return, captured without changing its text",
+      "text": [
+        "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": false, \"checks\": 23, \"downloads\": 0, \"receipt\": {\"bytes\": 20377, \"sha256\": \"65b266b9e1eace300625a0054445e7d510c952599401aa53fdc4808b5e639502\", \"git\": \"8e9cd2e50812ea8848c922be0459d6af4a50ecd7\", \"mode\": 33206, \"mtime_ns\": \"1791923476570376500\", \"inode\": \"562949954986805\"}, \"error\": \"RuntimeError: mixed empty 0/2\", \"managed_disconnect\": true}\r\n\n✅ Process completed with exit code 1 (runtime: 19.98s)",
+        "\n[executed on device: MSI (9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e)]"
+      ]
+    },
+    {
+      "label": "original-browser-v3",
+      "source": "Actual RDC read_process_output tool return, captured without changing its text",
+      "text": [
+        "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"checks\": 87, \"downloads\": 2, \"receipt\": {\"bytes\": 33994, \"sha256\": \"3c0060477e47c6c9e32d32ac6cd607448def9f7235591c427fbbf6fb997fb018\", \"git\": \"9e20a17fc434aa19dece3835ca69dab09d1d4fa1\", \"mode\": 33206, \"mtime_ns\": \"1791923642613228200\", \"inode\": \"1125899908408246\"}, \"error\": null, \"managed_disconnect\": true}\r\n\n✅ Process completed with exit code 0 (runtime: 29.68s)",
+        "\n[executed on device: MSI (9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e)]"
+      ]
+    },
+    {
+      "label": "candidate-browser-v1",
+      "source": "Actual RDC read_process_output tool return, captured without changing its text",
+      "text": [
+        "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"checks\": 87, \"downloads\": 2, \"receipt\": {\"bytes\": 33969, \"sha256\": \"edd9eaa624df8c921e22c27956e04ed89501911a9545ca5297dd5298fc4494cd\", \"git\": \"f893ef7e172745133b08ea684e7124b21e9730f5\", \"mode\": 33206, \"mtime_ns\": \"1791923849984935600\", \"inode\": \"844424931697819\"}, \"error\": null, \"managed_disconnect\": true}\r\n\n✅ Process completed with exit code 0 (runtime: 37.18s)",
+        "\n[executed on device: MSI (9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e)]"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1187 @@
+{
+  "schema": "hamon.testpilot-diagnostics-browser/1",
+  "utc": "2026-10-13T20:33:34.782632+00:00",
+  "mode": "original",
+  "host": "MSI",
+  "user": "Veria",
+  "python": "3.11.9",
+  "playwright": "1.62.0",
+  "passed": true,
+  "checks": [
+    {
+      "name": "packet identity",
+      "actual": "a4f8c85c604e21575533295c207c5b4a31f1d7cc",
+      "expected": "a4f8c85c604e21575533295c207c5b4a31f1d7cc",
+      "passed": true
+    },
+    {
+      "name": "member criteria.json",
+      "actual": [
+        5995,
+        "4476ba2f1a2059b37710200176306d87acc6d3f79a2ee845ca9b7ebd5ed4d1b4",
+        "cc79df7e6fb29c8f187f394d51fb9cb69e94dbab"
+      ],
+      "expected": [
+        5995,
+        "4476ba2f1a2059b37710200176306d87acc6d3f79a2ee845ca9b7ebd5ed4d1b4",
+        "cc79df7e6fb29c8f187f394d51fb9cb69e94dbab"
+      ],
+      "passed": true
+    },
+    {
+      "name": "member receiving.json",
+      "actual": [
+        15945,
+        "a47e57753c2d97137842021e30086f2fd0e9edeaa6e43f2d9e38c97dd222f78e",
+        "5a25498403a83993c6e29595729f4704768e37df"
+      ],
+      "expected": [
+        15945,
+        "a47e57753c2d97137842021e30086f2fd0e9edeaa6e43f2d9e38c97dd222f78e",
+        "5a25498403a83993c6e29595729f4704768e37df"
+      ],
+      "passed": true
+    },
+    {
+      "name": "member fixtures/incomplete-before.json",
+      "actual": [
+        1841,
+        "6ebd42f2ddb53ab755689da10f8fd661797f51fffef7cafb2e8601b1d52cf1c7",
+        "d452809f2845641ed1f8cf6c81e3503514287e40"
+      ],
+      "expected": [
+        1841,
+        "6ebd42f2ddb53ab755689da10f8fd661797f51fffef7cafb2e8601b1d52cf1c7",
+        "d452809f2845641ed1f8cf6c81e3503514287e40"
+      ],
+      "passed": true
+    },
+    {
+      "name": "member fixtures/mixed-after.json",
+      "actual": [
+        2460,
+        "e8dd8f2fd8c864dcb51d4c6e80b07508d25b09b59d346f3e17c66b4b5ac0edec",
+        "71e57474dd7ca99e8ba5360507d84e0dc2e49aab"
+      ],
+      "expected": [
+        2460,
+        "e8dd8f2fd8c864dcb51d4c6e80b07508d25b09b59d346f3e17c66b4b5ac0edec",
+        "71e57474dd7ca99e8ba5360507d84e0dc2e49aab"
+      ],
+      "passed": true
+    },
+    {
+      "name": "member fixtures/mixed-before.json",
+      "actual": [
+        2886,
+        "2710231746834ad37be8d7042b34f10c624d9ea9b1049ddd4dced93cdcf3ea35",
+        "505b1ec1431f0f9787667cf2f8b6a009a21053c2"
+      ],
+      "expected": [
+        2886,
+        "2710231746834ad37be8d7042b34f10c624d9ea9b1049ddd4dced93cdcf3ea35",
+        "505b1ec1431f0f9787667cf2f8b6a009a21053c2"
+      ],
+      "passed": true
+    },
+    {
+      "name": "member fixtures/none-after.json",
+      "actual": [
+        1075,
+        "1d5ab05bb0c8dd09f631af0c3afb5c1183e5a83b087c26b31cd50bc42a95dfb1",
+        "7358688fca6d26c074b26f694325a21ec2f88d60"
+      ],
+      "expected": [
+        1075,
+        "1d5ab05bb0c8dd09f631af0c3afb5c1183e5a83b087c26b31cd50bc42a95dfb1",
+        "7358688fca6d26c074b26f694325a21ec2f88d60"
+      ],
+      "passed": true
+    },
+    {
+      "name": "member pages/incomplete.html",
+      "actual": [
+        17321,
+        "253cdb4f64926a878c8430643660deceb79dbe0e0a5fbe39f5a1240f834620dd",
+        "7b46e5c10c2d1e91ca0a1dd763d75b3bf59367b2"
+      ],
+      "expected": [
+        17321,
+        "253cdb4f64926a878c8430643660deceb79dbe0e0a5fbe39f5a1240f834620dd",
+        "7b46e5c10c2d1e91ca0a1dd763d75b3bf59367b2"
+      ],
+      "passed": true
+    },
+    {
+      "name": "member pages/mixed.html",
+      "actual": [
+        23417,
+        "b31fb223a82eb7fed91494b85dd71e0d9db0be5956d3bbda50a580fb111b9528",
+        "9a7edf17f2a55416b96484a591ef99fd42b6fb39"
+      ],
+      "expected": [
+        23417,
+        "b31fb223a82eb7fed91494b85dd71e0d9db0be5956d3bbda50a580fb111b9528",
+        "9a7edf17f2a55416b96484a591ef99fd42b6fb39"
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed no script",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "mixed inert markup",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "mixed CSP",
+      "actual": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "expected": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "passed": true
+    },
+    {
+      "name": "mixed columns",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "mixed count 0",
+      "actual": 6,
+      "expected": 6,
+      "passed": true
+    },
+    {
+      "name": "mixed initial disclosure 0",
+      "actual": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed literal 0/0",
+      "actual": "first line\nCRLF\\r\nbare\\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">\\x80\\u2028\\u2029",
+      "expected": "first line\nCRLF\\r\nbare\\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">\\x80\\u2028\\u2029",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 0/0",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed literal 0/1",
+      "actual": "Passed diagnostic retained",
+      "expected": "Passed diagnostic retained",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 0/1",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed empty 0/2",
+      "actual": "No diagnostic text recorded.",
+      "expected": "No diagnostic text recorded.",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 0/2",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed literal 0/3",
+      "actual": "Skipped diagnostic retained",
+      "expected": "Skipped diagnostic retained",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 0/3",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed literal 0/4",
+      "actual": "Second duplicate occurrence — error Ω",
+      "expected": "Second duplicate occurrence — error Ω",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 0/4",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed literal 0/5",
+      "actual": "No attributed file",
+      "expected": "No attributed file",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 0/5",
+      "actual": "Generated file: Not attributed to a generated file",
+      "expected": "Generated file: Not attributed to a generated file",
+      "passed": true
+    },
+    {
+      "name": "mixed ordered occurrences 0",
+      "actual": [
+        [
+          "failed",
+          "dup::case"
+        ],
+        [
+          "passed",
+          "pass::case"
+        ],
+        [
+          "failed",
+          "empty::failed"
+        ],
+        [
+          "skipped",
+          "skip::case"
+        ],
+        [
+          "error",
+          "dup::case"
+        ],
+        [
+          "error",
+          "null-attribution::error"
+        ]
+      ],
+      "expected": [
+        [
+          "failed",
+          "dup::case"
+        ],
+        [
+          "passed",
+          "pass::case"
+        ],
+        [
+          "failed",
+          "empty::failed"
+        ],
+        [
+          "skipped",
+          "skip::case"
+        ],
+        [
+          "error",
+          "dup::case"
+        ],
+        [
+          "error",
+          "null-attribution::error"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed count 1",
+      "actual": 5,
+      "expected": 5,
+      "passed": true
+    },
+    {
+      "name": "mixed initial disclosure 1",
+      "actual": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed literal 1/0",
+      "actual": "first line\nCRLF\\r\nbare\\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">\\x80\\u2028\\u2029",
+      "expected": "first line\nCRLF\\r\nbare\\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">\\x80\\u2028\\u2029",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 1/0",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed literal 1/1",
+      "actual": "First duplicate is passed",
+      "expected": "First duplicate is passed",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 1/1",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed literal 1/2",
+      "actual": "Second duplicate is failed",
+      "expected": "Second duplicate is failed",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 1/2",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed empty 1/3",
+      "actual": "No diagnostic text recorded.",
+      "expected": "No diagnostic text recorded.",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 1/3",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed empty 1/4",
+      "actual": "No diagnostic text recorded.",
+      "expected": "No diagnostic text recorded.",
+      "passed": true
+    },
+    {
+      "name": "mixed attribution 1/4",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "mixed ordered occurrences 1",
+      "actual": [
+        [
+          "error",
+          "after::error"
+        ],
+        [
+          "passed",
+          "dup::case"
+        ],
+        [
+          "failed",
+          "dup::case"
+        ],
+        [
+          "skipped",
+          "after::skipped"
+        ],
+        [
+          "error",
+          "after::empty-error"
+        ]
+      ],
+      "expected": [
+        [
+          "error",
+          "after::error"
+        ],
+        [
+          "passed",
+          "dup::case"
+        ],
+        [
+          "failed",
+          "dup::case"
+        ],
+        [
+          "skipped",
+          "after::skipped"
+        ],
+        [
+          "error",
+          "after::empty-error"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed JUnit labels",
+      "actual": [
+        "Available",
+        "Unavailable"
+      ],
+      "expected": [
+        "Available",
+        "Unavailable"
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed unavailable Complete-suite recorded counts/1",
+      "actual": "Unavailable as complete execution evidence",
+      "expected": "Unavailable as complete execution evidence",
+      "passed": true
+    },
+    {
+      "name": "mixed unavailable Generated-case recorded counts/1",
+      "actual": "Unavailable as complete execution evidence",
+      "expected": "Unavailable as complete execution evidence",
+      "passed": true
+    },
+    {
+      "name": "native Tab reaches first diagnostic",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "native Enter toggles",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "native Enter restores",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "native summary click",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "native summary click restore",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "390px document width",
+      "actual": 390,
+      "expected": 390,
+      "passed": true
+    },
+    {
+      "name": "before download filename",
+      "actual": "before-report.json",
+      "expected": "before-report.json",
+      "passed": true
+    },
+    {
+      "name": "before exact download",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "after download filename",
+      "actual": "after-report.json",
+      "expected": "after-report.json",
+      "passed": true
+    },
+    {
+      "name": "after exact download",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mixed full print contents",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mixed print restores disclosure",
+      "actual": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed empty local/session storage",
+      "actual": {
+        "local": 0,
+        "session": 0
+      },
+      "expected": {
+        "local": 0,
+        "session": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "incomplete no script",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "incomplete inert markup",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "incomplete CSP",
+      "actual": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "expected": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "passed": true
+    },
+    {
+      "name": "incomplete columns",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "incomplete count 0",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "incomplete initial disclosure 0",
+      "actual": [
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false
+      ],
+      "passed": true
+    },
+    {
+      "name": "incomplete literal 0/0",
+      "actual": "JUnit flag absent; case remains recorded",
+      "expected": "JUnit flag absent; case remains recorded",
+      "passed": true
+    },
+    {
+      "name": "incomplete attribution 0/0",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "incomplete empty 0/1",
+      "actual": "No diagnostic text recorded.",
+      "expected": "No diagnostic text recorded.",
+      "passed": true
+    },
+    {
+      "name": "incomplete attribution 0/1",
+      "actual": "Generated file: fictional/tests/test_saved.py",
+      "expected": "Generated file: fictional/tests/test_saved.py",
+      "passed": true
+    },
+    {
+      "name": "incomplete ordered occurrences 0",
+      "actual": [
+        [
+          "failed",
+          "incomplete::failed"
+        ],
+        [
+          "passed",
+          "incomplete::passed"
+        ]
+      ],
+      "expected": [
+        [
+          "failed",
+          "incomplete::failed"
+        ],
+        [
+          "passed",
+          "incomplete::passed"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "incomplete count 1",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "incomplete initial disclosure 1",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "incomplete ordered occurrences 1",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "incomplete JUnit labels",
+      "actual": [
+        "Availability was not recorded",
+        "No test result recorded"
+      ],
+      "expected": [
+        "Availability was not recorded",
+        "No test result recorded"
+      ],
+      "passed": true
+    },
+    {
+      "name": "final None placeholder",
+      "actual": "No final test result is recorded.",
+      "expected": "No final test result is recorded.",
+      "passed": true
+    },
+    {
+      "name": "incomplete unavailable Complete-suite recorded counts/0",
+      "actual": "Unavailable as complete execution evidence",
+      "expected": "Unavailable as complete execution evidence",
+      "passed": true
+    },
+    {
+      "name": "incomplete unavailable Generated-case recorded counts/0",
+      "actual": "Unavailable as complete execution evidence",
+      "expected": "Unavailable as complete execution evidence",
+      "passed": true
+    },
+    {
+      "name": "incomplete unavailable Complete-suite recorded counts/1",
+      "actual": "Unavailable as complete execution evidence",
+      "expected": "Unavailable as complete execution evidence",
+      "passed": true
+    },
+    {
+      "name": "incomplete unavailable Generated-case recorded counts/1",
+      "actual": "Unavailable as complete execution evidence",
+      "expected": "Unavailable as complete execution evidence",
+      "passed": true
+    },
+    {
+      "name": "incomplete full print contents",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "incomplete print restores disclosure",
+      "actual": [
+        false,
+        false,
+        false
+      ],
+      "expected": [
+        false,
+        false,
+        false
+      ],
+      "passed": true
+    },
+    {
+      "name": "incomplete empty local/session storage",
+      "actual": {
+        "local": 0,
+        "session": 0
+      },
+      "expected": {
+        "local": 0,
+        "session": 0
+      },
+      "passed": true
+    },
+    {
+      "name": "no external requests",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "no page errors",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "no console errors",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "empty context storage",
+      "actual": {
+        "cookies": [],
+        "origins": []
+      },
+      "expected": {
+        "cookies": [],
+        "origins": []
+      },
+      "passed": true
+    },
+    {
+      "name": "complete intake conservation",
+      "actual": {
+        "criteria.json": {
+          "bytes": 5995,
+          "sha256": "4476ba2f1a2059b37710200176306d87acc6d3f79a2ee845ca9b7ebd5ed4d1b4",
+          "git": "cc79df7e6fb29c8f187f394d51fb9cb69e94dbab",
+          "mode": 33206,
+          "mtime_ns": "1791923614855850600",
+          "inode": "844424931697542"
+        },
+        "fixtures/incomplete-before.json": {
+          "bytes": 1841,
+          "sha256": "6ebd42f2ddb53ab755689da10f8fd661797f51fffef7cafb2e8601b1d52cf1c7",
+          "git": "d452809f2845641ed1f8cf6c81e3503514287e40",
+          "mode": 33206,
+          "mtime_ns": "1791923614856848400",
+          "inode": "844424931697579"
+        },
+        "fixtures/mixed-after.json": {
+          "bytes": 2460,
+          "sha256": "e8dd8f2fd8c864dcb51d4c6e80b07508d25b09b59d346f3e17c66b4b5ac0edec",
+          "git": "71e57474dd7ca99e8ba5360507d84e0dc2e49aab",
+          "mode": 33206,
+          "mtime_ns": "1791923614857850000",
+          "inode": "844424931697580"
+        },
+        "fixtures/mixed-before.json": {
+          "bytes": 2886,
+          "sha256": "2710231746834ad37be8d7042b34f10c624d9ea9b1049ddd4dced93cdcf3ea35",
+          "git": "505b1ec1431f0f9787667cf2f8b6a009a21053c2",
+          "mode": 33206,
+          "mtime_ns": "1791923614857850000",
+          "inode": "844424931697581"
+        },
+        "fixtures/none-after.json": {
+          "bytes": 1075,
+          "sha256": "1d5ab05bb0c8dd09f631af0c3afb5c1183e5a83b087c26b31cd50bc42a95dfb1",
+          "git": "7358688fca6d26c074b26f694325a21ec2f88d60",
+          "mode": 33206,
+          "mtime_ns": "1791923614858848100",
+          "inode": "844424931697583"
+        },
+        "pages/incomplete.html": {
+          "bytes": 17321,
+          "sha256": "253cdb4f64926a878c8430643660deceb79dbe0e0a5fbe39f5a1240f834620dd",
+          "git": "7b46e5c10c2d1e91ca0a1dd763d75b3bf59367b2",
+          "mode": 33206,
+          "mtime_ns": "1791923614859853400",
+          "inode": "1407374885118898"
+        },
+        "pages/mixed.html": {
+          "bytes": 23417,
+          "sha256": "b31fb223a82eb7fed91494b85dd71e0d9db0be5956d3bbda50a580fb111b9528",
+          "git": "9a7edf17f2a55416b96484a591ef99fd42b6fb39",
+          "mode": 33206,
+          "mtime_ns": "1791923614860847500",
+          "inode": "844424931697587"
+        },
+        "receiving.json": {
+          "bytes": 15945,
+          "sha256": "a47e57753c2d97137842021e30086f2fd0e9edeaa6e43f2d9e38c97dd222f78e",
+          "git": "5a25498403a83993c6e29595729f4704768e37df",
+          "mode": 33206,
+          "mtime_ns": "1791923614856848400",
+          "inode": "844424931697543"
+        }
+      },
+      "expected": {
+        "criteria.json": {
+          "bytes": 5995,
+          "sha256": "4476ba2f1a2059b37710200176306d87acc6d3f79a2ee845ca9b7ebd5ed4d1b4",
+          "git": "cc79df7e6fb29c8f187f394d51fb9cb69e94dbab",
+          "mode": 33206,
+          "mtime_ns": "1791923614855850600",
+          "inode": "844424931697542"
+        },
+        "fixtures/incomplete-before.json": {
+          "bytes": 1841,
+          "sha256": "6ebd42f2ddb53ab755689da10f8fd661797f51fffef7cafb2e8601b1d52cf1c7",
+          "git": "d452809f2845641ed1f8cf6c81e3503514287e40",
+          "mode": 33206,
+          "mtime_ns": "1791923614856848400",
+          "inode": "844424931697579"
+        },
+        "fixtures/mixed-after.json": {
+          "bytes": 2460,
+          "sha256": "e8dd8f2fd8c864dcb51d4c6e80b07508d25b09b59d346f3e17c66b4b5ac0edec",
+          "git": "71e57474dd7ca99e8ba5360507d84e0dc2e49aab",
+          "mode": 33206,
+          "mtime_ns": "1791923614857850000",
+          "inode": "844424931697580"
+        },
+        "fixtures/mixed-before.json": {
+          "bytes": 2886,
+          "sha256": "2710231746834ad37be8d7042b34f10c624d9ea9b1049ddd4dced93cdcf3ea35",
+          "git": "505b1ec1431f0f9787667cf2f8b6a009a21053c2",
+          "mode": 33206,
+          "mtime_ns": "1791923614857850000",
+          "inode": "844424931697581"
+        },
+        "fixtures/none-after.json": {
+          "bytes": 1075,
+          "sha256": "1d5ab05bb0c8dd09f631af0c3afb5c1183e5a83b087c26b31cd50bc42a95dfb1",
+          "git": "7358688fca6d26c074b26f694325a21ec2f88d60",
+          "mode": 33206,
+          "mtime_ns": "1791923614858848100",
+          "inode": "844424931697583"
+        },
+        "pages/incomplete.html": {
+          "bytes": 17321,
+          "sha256": "253cdb4f64926a878c8430643660deceb79dbe0e0a5fbe39f5a1240f834620dd",
+          "git": "7b46e5c10c2d1e91ca0a1dd763d75b3bf59367b2",
+          "mode": 33206,
+          "mtime_ns": "1791923614859853400",
+          "inode": "1407374885118898"
+        },
+        "pages/mixed.html": {
+          "bytes": 23417,
+          "sha256": "b31fb223a82eb7fed91494b85dd71e0d9db0be5956d3bbda50a580fb111b9528",
+          "git": "9a7edf17f2a55416b96484a591ef99fd42b6fb39",
+          "mode": 33206,
+          "mtime_ns": "1791923614860847500",
+          "inode": "844424931697587"
+        },
+        "receiving.json": {
+          "bytes": 15945,
+          "sha256": "a47e57753c2d97137842021e30086f2fd0e9edeaa6e43f2d9e38c97dd222f78e",
+          "git": "5a25498403a83993c6e29595729f4704768e37df",
+          "mode": 33206,
+          "mtime_ns": "1791923614856848400",
+          "inode": "844424931697543"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "driver/packet conservation",
+      "actual": {
+        "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\original-intake-packet.json": {
+          "bytes": 97757,
+          "sha256": "7c7c52522249b1fbe86829fa88fc78a10508ccfcbfb039025175bd549941ee37",
+          "git": "a4f8c85c604e21575533295c207c5b4a31f1d7cc",
+          "mode": 33206,
+          "mtime_ns": "1791922625563577800",
+          "inode": "281474978275191"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\receive_browser_v3.py": {
+          "bytes": 10379,
+          "sha256": "28a4ffc66a9188c2817b46114185ca74a772890e814c60349a5a4f0a52443391",
+          "git": "509b30b360ab427dbca07f713501cc71a18fba32",
+          "mode": 33206,
+          "mtime_ns": "1791923586105887900",
+          "inode": "562949954986873"
+        }
+      },
+      "expected": {
+        "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\original-intake-packet.json": {
+          "bytes": 97757,
+          "sha256": "7c7c52522249b1fbe86829fa88fc78a10508ccfcbfb039025175bd549941ee37",
+          "git": "a4f8c85c604e21575533295c207c5b4a31f1d7cc",
+          "mode": 33206,
+          "mtime_ns": "1791922625563577800",
+          "inode": "281474978275191"
+        },
+        "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\receive_browser_v3.py": {
+          "bytes": 10379,
+          "sha256": "28a4ffc66a9188c2817b46114185ca74a772890e814c60349a5a4f0a52443391",
+          "git": "509b30b360ab427dbca07f713501cc71a18fba32",
+          "mode": 33206,
+          "mtime_ns": "1791923586105887900",
+          "inode": "562949954986873"
+        }
+      },
+      "passed": true
+    },
+    {
+      "name": "managed browser disconnected",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "requests": [
+    {
+      "url": "file:///D:/hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1/original-browser-v3/intake/pages/mixed.html",
+      "method": "GET"
+    },
+    {
+      "url": "file:///D:/hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1/original-browser-v3/intake/pages/incomplete.html",
+      "method": "GET"
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "downloads": [
+    {
+      "role": "before",
+      "identity": {
+        "bytes": 2886,
+        "sha256": "2710231746834ad37be8d7042b34f10c624d9ea9b1049ddd4dced93cdcf3ea35",
+        "git": "505b1ec1431f0f9787667cf2f8b6a009a21053c2",
+        "mode": 33206,
+        "mtime_ns": "1791923622585058500",
+        "inode": "281474978276635"
+      }
+    },
+    {
+      "role": "after",
+      "identity": {
+        "bytes": 2460,
+        "sha256": "e8dd8f2fd8c864dcb51d4c6e80b07508d25b09b59d346f3e17c66b4b5ac0edec",
+        "git": "71e57474dd7ca99e8ba5360507d84e0dc2e49aab",
+        "mode": 33206,
+        "mtime_ns": "1791923623803547000",
+        "inode": "281474978276646"
+      }
+    }
+  ],
+  "managed_disconnect": true,
+  "browser_os_exit": "not measured",
+  "intake_before": {
+    "criteria.json": {
+      "bytes": 5995,
+      "sha256": "4476ba2f1a2059b37710200176306d87acc6d3f79a2ee845ca9b7ebd5ed4d1b4",
+      "git": "cc79df7e6fb29c8f187f394d51fb9cb69e94dbab",
+      "mode": 33206,
+      "mtime_ns": "1791923614855850600",
+      "inode": "844424931697542"
+    },
+    "fixtures/incomplete-before.json": {
+      "bytes": 1841,
+      "sha256": "6ebd42f2ddb53ab755689da10f8fd661797f51fffef7cafb2e8601b1d52cf1c7",
+      "git": "d452809f2845641ed1f8cf6c81e3503514287e40",
+      "mode": 33206,
+      "mtime_ns": "1791923614856848400",
+      "inode": "844424931697579"
+    },
+    "fixtures/mixed-after.json": {
+      "bytes": 2460,
+      "sha256": "e8dd8f2fd8c864dcb51d4c6e80b07508d25b09b59d346f3e17c66b4b5ac0edec",
+      "git": "71e57474dd7ca99e8ba5360507d84e0dc2e49aab",
+      "mode": 33206,
+      "mtime_ns": "1791923614857850000",
+      "inode": "844424931697580"
+    },
+    "fixtures/mixed-before.json": {
+      "bytes": 2886,
+      "sha256": "2710231746834ad37be8d7042b34f10c624d9ea9b1049ddd4dced93cdcf3ea35",
+      "git": "505b1ec1431f0f9787667cf2f8b6a009a21053c2",
+      "mode": 33206,
+      "mtime_ns": "1791923614857850000",
+      "inode": "844424931697581"
+    },
+    "fixtures/none-after.json": {
+      "bytes": 1075,
+      "sha256": "1d5ab05bb0c8dd09f631af0c3afb5c1183e5a83b087c26b31cd50bc42a95dfb1",
+      "git": "7358688fca6d26c074b26f694325a21ec2f88d60",
+      "mode": 33206,
+      "mtime_ns": "1791923614858848100",
+      "inode": "844424931697583"
+    },
+    "pages/incomplete.html": {
+      "bytes": 17321,
+      "sha256": "253cdb4f64926a878c8430643660deceb79dbe0e0a5fbe39f5a1240f834620dd",
+      "git": "7b46e5c10c2d1e91ca0a1dd763d75b3bf59367b2",
+      "mode": 33206,
+      "mtime_ns": "1791923614859853400",
+      "inode": "1407374885118898"
+    },
+    "pages/mixed.html": {
+      "bytes": 23417,
+      "sha256": "b31fb223a82eb7fed91494b85dd71e0d9db0be5956d3bbda50a580fb111b9528",
+      "git": "9a7edf17f2a55416b96484a591ef99fd42b6fb39",
+      "mode": 33206,
+      "mtime_ns": "1791923614860847500",
+      "inode": "844424931697587"
+    },
+    "receiving.json": {
+      "bytes": 15945,
+      "sha256": "a47e57753c2d97137842021e30086f2fd0e9edeaa6e43f2d9e38c97dd222f78e",
+      "git": "5a25498403a83993c6e29595729f4704768e37df",
+      "mode": 33206,
+      "mtime_ns": "1791923614856848400",
+      "inode": "844424931697543"
+    }
+  },
+  "watched_before": {
+    "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\original-intake-packet.json": {
+      "bytes": 97757,
+      "sha256": "7c7c52522249b1fbe86829fa88fc78a10508ccfcbfb039025175bd549941ee37",
+      "git": "a4f8c85c604e21575533295c207c5b4a31f1d7cc",
+      "mode": 33206,
+      "mtime_ns": "1791922625563577800",
+      "inode": "281474978275191"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\receive_browser_v3.py": {
+      "bytes": 10379,
+      "sha256": "28a4ffc66a9188c2817b46114185ca74a772890e814c60349a5a4f0a52443391",
+      "git": "509b30b360ab427dbca07f713501cc71a18fba32",
+      "mode": 33206,
+      "mtime_ns": "1791923586105887900",
+      "inode": "562949954986873"
+    }
+  },
+  "chrome": "154.0.8037.97",
+  "storage_observations": [
+    {
+      "local": 0,
+      "session": 0
+    },
+    {
+      "local": 0,
+      "session": 0
+    }
+  ],
+  "intake_after": {
+    "criteria.json": {
+      "bytes": 5995,
+      "sha256": "4476ba2f1a2059b37710200176306d87acc6d3f79a2ee845ca9b7ebd5ed4d1b4",
+      "git": "cc79df7e6fb29c8f187f394d51fb9cb69e94dbab",
+      "mode": 33206,
+      "mtime_ns": "1791923614855850600",
+      "inode": "844424931697542"
+    },
+    "fixtures/incomplete-before.json": {
+      "bytes": 1841,
+      "sha256": "6ebd42f2ddb53ab755689da10f8fd661797f51fffef7cafb2e8601b1d52cf1c7",
+      "git": "d452809f2845641ed1f8cf6c81e3503514287e40",
+      "mode": 33206,
+      "mtime_ns": "1791923614856848400",
+      "inode": "844424931697579"
+    },
+    "fixtures/mixed-after.json": {
+      "bytes": 2460,
+      "sha256": "e8dd8f2fd8c864dcb51d4c6e80b07508d25b09b59d346f3e17c66b4b5ac0edec",
+      "git": "71e57474dd7ca99e8ba5360507d84e0dc2e49aab",
+      "mode": 33206,
+      "mtime_ns": "1791923614857850000",
+      "inode": "844424931697580"
+    },
+    "fixtures/mixed-before.json": {
+      "bytes": 2886,
+      "sha256": "2710231746834ad37be8d7042b34f10c624d9ea9b1049ddd4dced93cdcf3ea35",
+      "git": "505b1ec1431f0f9787667cf2f8b6a009a21053c2",
+      "mode": 33206,
+      "mtime_ns": "1791923614857850000",
+      "inode": "844424931697581"
+    },
+    "fixtures/none-after.json": {
+      "bytes": 1075,
+      "sha256": "1d5ab05bb0c8dd09f631af0c3afb5c1183e5a83b087c26b31cd50bc42a95dfb1",
+      "git": "7358688fca6d26c074b26f694325a21ec2f88d60",
+      "mode": 33206,
+      "mtime_ns": "1791923614858848100",
+      "inode": "844424931697583"
+    },
+    "pages/incomplete.html": {
+      "bytes": 17321,
+      "sha256": "253cdb4f64926a878c8430643660deceb79dbe0e0a5fbe39f5a1240f834620dd",
+      "git": "7b46e5c10c2d1e91ca0a1dd763d75b3bf59367b2",
+      "mode": 33206,
+      "mtime_ns": "1791923614859853400",
+      "inode": "1407374885118898"
+    },
+    "pages/mixed.html": {
+      "bytes": 23417,
+      "sha256": "b31fb223a82eb7fed91494b85dd71e0d9db0be5956d3bbda50a580fb111b9528",
+      "git": "9a7edf17f2a55416b96484a591ef99fd42b6fb39",
+      "mode": 33206,
+      "mtime_ns": "1791923614860847500",
+      "inode": "844424931697587"
+    },
+    "receiving.json": {
+      "bytes": 15945,
+      "sha256": "a47e57753c2d97137842021e30086f2fd0e9edeaa6e43f2d9e38c97dd222f78e",
+      "git": "5a25498403a83993c6e29595729f4704768e37df",
+      "mode": 33206,
+      "mtime_ns": "1791923614856848400",
+      "inode": "844424931697543"
+    }
+  },
+  "watched_after": {
+    "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\original-intake-packet.json": {
+      "bytes": 97757,
+      "sha256": "7c7c52522249b1fbe86829fa88fc78a10508ccfcbfb039025175bd549941ee37",
+      "git": "a4f8c85c604e21575533295c207c5b4a31f1d7cc",
+      "mode": 33206,
+      "mtime_ns": "1791922625563577800",
+      "inode": "281474978275191"
+    },
+    "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\receive_browser_v3.py": {
+      "bytes": 10379,
+      "sha256": "28a4ffc66a9188c2817b46114185ca74a772890e814c60349a5a4f0a52443391",
+      "git": "509b30b360ab427dbca07f713501cc71a18fba32",
+      "mode": 33206,
+      "mtime_ns": "1791923586105887900",
+      "inode": "562949954986873"
+    }
+  }
+}

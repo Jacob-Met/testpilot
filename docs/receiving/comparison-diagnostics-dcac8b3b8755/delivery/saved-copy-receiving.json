@@ -1,0 +1,33 @@
+{
+  "utc": "2026-10-13T20:42:52.492697+00:00",
+  "device_id": "9ea77fe9-bb87-46e0-a5a8-8b3e25f6ff7e",
+  "host": "MSI",
+  "user": "Veria",
+  "python": "3.11.9",
+  "reference": "notion-file-block://856993d6-1537-4dd2-8efe-61b5dee7e87a/43851931-91f7-499f-ba57-0c908f4d95bb?space_id=847aedcd-f4a5-8159-99ed-0003ba2ee75a&name=TestPilot-Fictional-Diagnostics-Comparison-4524553d.html",
+  "source": "D:\\hamon-dcac8b3b8755-testpilot-diagnostics-browser-v1\\candidate-browser-v1\\intake\\pages\\mixed.html",
+  "passed": true,
+  "drive_free": 341182615552,
+  "source_before": {
+    "bytes": 23452,
+    "sha256": "ea3a17013a8aab2a2033100b1ab3169b19a3ca72635584311e3ff598d2339936",
+    "mode": 33206,
+    "mtime_ns": "1791923814692328000",
+    "inode": "844424931697817"
+  },
+  "http_status": 200,
+  "saved": {
+    "bytes": 23452,
+    "sha256": "ea3a17013a8aab2a2033100b1ab3169b19a3ca72635584311e3ff598d2339936",
+    "mode": 33206,
+    "mtime_ns": "1791924173609685500",
+    "inode": "844424931696220"
+  },
+  "source_after": {
+    "bytes": 23452,
+    "sha256": "ea3a17013a8aab2a2033100b1ab3169b19a3ca72635584311e3ff598d2339936",
+    "mode": 33206,
+    "mtime_ns": "1791923814692328000",
+    "inode": "844424931697817"
+  }
+}

@@ -74,3 +74,5 @@ python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_c
 ~~~
 
 Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.
+
+The initial diagnostic disclosure change has separate [original-first source and browser receiving](receiving/comparison-diagnostics-dcac8b3b8755/README.md), including preserved observer failures and exact fictional reading copies.
