@@ -311,6 +311,9 @@ def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, t
     use_cov = coverage_available(python) if coverage is None else coverage
     with tempfile.TemporaryDirectory(prefix="testpilot-") as td:
         tdp = Path(td)
+        # Stop native configuration discovery before unrelated TMPDIR ancestors.
+        # The selected interpreter anchors this fallback in the copied root.
+        (tdp / "pytest.ini").write_text("[pytest]\n", encoding="utf-8")
         work = tdp / "repo"
         shutil.copytree(repo, work, ignore=IGNORE)
         for rel, content in (extra_files or {}).items():
@@ -341,6 +344,9 @@ def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, t
             manifest.write_text(json.dumps({str(_safe_join(work, rel)): rel for rel in generated_files}),
                                 encoding="utf-8")
             pt = [str(runner), str(manifest), *options]
+        config_runner = tdp / "configured_pytest.py"
+        shutil.copyfile(Path(__file__).with_name("_pytest_configuration.py"), config_runner)
+        pt = [str(config_runner), str(tdp / "pytest.ini"), *pt]
         data_file = tdp / ".coverage"
         if use_cov:
             cmd = [python, "-m", "coverage", "run", f"--data-file={data_file}", f"--source={work}",
