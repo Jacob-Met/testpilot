@@ -1,0 +1,36 @@
+--- a/testpilot/recheck.py
++++ b/testpilot/recheck.py
+@@ -14,6 +14,7 @@
+ import re
+ import stat
+ import sys
++import tempfile
+ import xml.etree.ElementTree as ET
+ from dataclasses import dataclass
+ from datetime import datetime, timezone
+@@ -235,11 +236,21 @@
+             stream.flush()
+             json_bytes = raw.getvalue()
+     page = render_recheck_html(json_bytes)
+-    out.mkdir(parents=True, exist_ok=False)
++    markdown = render_recheck(result)
+     paths = {"md": out / "recheck.md", "json": out / "recheck.json", "html": out / "recheck.html"}
+-    paths["md"].write_text(render_recheck(result), encoding="utf-8")
+-    paths["json"].write_bytes(json_bytes)
+-    paths["html"].write_text(page, encoding="utf-8")
++    out.parent.mkdir(parents=True, exist_ok=True)
++    # Complete every write before claiming the final destination. A staging
++    # failure leaves it available for the caller's explicit corrected retry.
++    with tempfile.TemporaryDirectory(prefix=".testpilot-recheck-", dir=out.parent) as folder:
++        staged = {key: Path(folder) / path.name for key, path in paths.items()}
++        staged["md"].write_text(markdown, encoding="utf-8")
++        staged["json"].write_bytes(json_bytes)
++        staged["html"].write_text(page, encoding="utf-8")
++        out.mkdir(exist_ok=False)
++        # Publication remains individual: a later move failure may leave a
++        # partial final directory. Never replace an already occupied directory.
++        for key, path in paths.items():
++            staged[key].replace(path)
+     return paths
+ 
+ 

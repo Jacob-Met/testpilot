@@ -109,11 +109,19 @@ The `no_tests` status means that no retained case passed without a recorded
 test failure; a passing existing suite is insufficient. It is a non-success
 result and uses exit 1. A malformed test or collection error uses `failed`.
 
-Result creation is exclusive but is not a directory transaction: an output
-error can leave a new partial result directory. A console write/flush failure
-uses exit 2 even when result files were already written. Inspect those files
-and select a fresh output path for another command. No power-loss durability
-or concurrent pathname-substitution guarantee is made.
+All three reports are prepared and written to temporary files on the output
+filesystem before the final directory is created. An ordinary preparation or
+staging failure leaves that final path absent, so you can explicitly retry
+with the same output path after correcting the problem. Temporary staged files
+are cleaned up; newly created parent directories may remain.
+
+Final directory creation is exclusive, and the complete staged files are then
+moved individually. This is not a directory transaction: a later move failure
+can leave a new partial result directory. A console write/flush failure uses
+exit 2 even when result files were already written. Inspect those files and
+select a fresh output path for another command if the final directory exists.
+No automatic retry, power-loss durability or concurrent pathname-substitution
+guarantee is made.
 
 A `recheck.json` can be supplied to a later recheck because it retains the
 same exact test contents. Each new result identifies its immediate source

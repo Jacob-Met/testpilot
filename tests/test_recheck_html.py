@@ -154,7 +154,7 @@ def test_actual_cli_writes_matching_json_and_md_plus_passive_page(tmp_path, fixe
 
 
 @pytest.mark.skipif(__import__("os").name != "posix", reason="POSIX authored file-size limit")
-def test_actual_html_write_failure_is_delivery_failure_not_test_success(tmp_path):
+def test_actual_html_staging_failure_is_retryable_after_delivery_error(tmp_path):
     import os
     from pathlib import Path
     import subprocess
@@ -179,6 +179,21 @@ def test_actual_html_write_failure_is_delivery_failure_not_test_success(tmp_path
     assert result.returncode == 2
     assert b"cannot recheck saved tests" in result.stderr
     assert result.stdout == b""
-    assert json.loads((out / "recheck.json").read_text())["ok"] is True
-    assert (out / "recheck.html").stat().st_size == 8192
-    assert not (out / "recheck.html").read_bytes().endswith(b"</html>\n")
+    assert not out.exists()
+    assert not list(tmp_path.glob(".testpilot-recheck-*"))
+    saved_bytes = saved.read_bytes()
+
+    # A separate, explicitly requested command can reuse the same destination
+    # after the child-only output limit is removed.
+    retry = subprocess.run(
+        [sys.executable, "-m", "testpilot", "recheck", "--repo", str(project),
+         "--report", str(saved), "--out", str(out)],
+        env=env, capture_output=True, timeout=20,
+    )
+    assert retry.returncode == 0, retry.stderr
+    raw = (out / "recheck.json").read_bytes()
+    assert json.loads(raw)["ok"] is True
+    assert Page((out / "recheck.html").read_text()).download() == raw
+    assert sorted(p.name for p in out.iterdir()) == ["recheck.html", "recheck.json", "recheck.md"]
+    assert saved.read_bytes() == saved_bytes
+    assert not list(project.iterdir())
