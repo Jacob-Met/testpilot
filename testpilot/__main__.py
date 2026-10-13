@@ -13,6 +13,7 @@ from pathlib import Path
 from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_unified_diff
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
+from .progress import ProgressTestPilot
 from .recheck import run_recheck_command
 from .regression import run_regression_command
 from .targets import TargetSelectionError, resolve_targets, selection_record
@@ -118,6 +119,7 @@ def main(argv: list[str] | None = None) -> int:
                    help="native pytest keyword expression for baseline, generation and every repair")
     r.add_argument("--pytest-m", metavar="EXPR",
                    help="native pytest marker expression for baseline, generation and every repair")
+    r.add_argument("--progress", action="store_true", help="show live phase notices on stderr")
     r.add_argument("--out", default="testpilot-out")
     r.add_argument("--target", action="append", metavar="PATH.py::QUALNAME",
                    help="select this function explicitly; repeat for caller order, instead of automatic diff selection")
@@ -189,7 +191,7 @@ def main(argv: list[str] | None = None) -> int:
     except ModelError as e:
         print(f"testpilot: {e}", file=sys.stderr)
         return 2
-    pilot = TestPilot(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
+    pilot = (ProgressTestPilot if a.progress else TestPilot)(client, RoutingConfig.from_env(), max_repair_rounds=a.rounds, timeout_s=a.timeout,
                       max_total_tokens=a.max_tokens, coverage=a.coverage, python=a.python,
                       pytest_k=a.pytest_k, pytest_m=a.pytest_m)
     try:
