@@ -328,6 +328,8 @@ def changed_functions(repo: str | Path, diff_text: str, include_tests: bool = Fa
         if not include_tests and is_test_path(fc.path):
             continue
         f = _source_path(repo, fc.path)
+        if not include_tests and is_test_path(f.relative_to(repo).as_posix()):
+            continue
         if not f.is_file():
             continue
         with tokenize.open(f) as source_file:

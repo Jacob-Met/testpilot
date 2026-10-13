@@ -19,6 +19,14 @@ repository root itself may be a symlink. Existing exclusions still apply:
 deleted files, non-Python paths, test paths unless `include_tests=True`, and
 missing files within the repository do not become selected functions.
 
+Unless `include_tests=True`, test-path exclusion applies both to the original
+diff label and to the resolved destination relative to the repository. For
+example, `alias.py` pointing to `tests/helper.py` does not select that test
+source, and the test file is not opened. Repository confinement is checked
+before this resolved-path exclusion, so an alias that leaves the repository
+still raises the existing error. Ordinary source aliases keep their original
+diff labels, including an alias to Python source with a non-`.py` suffix.
+
 The check validates paths against the filesystem state observed during source
 selection. It is not a filesystem sandbox and does not protect against another
 process replacing directories between validation and a read. TestPilot's
