@@ -1,0 +1,38 @@
+{
+  "status": "ACCEPT",
+  "reviewer": "team7cb7e049e2c0/source_products",
+  "reviewed_utc": "2026-10-13T11:10:35.869339+00:00",
+  "native_evidence_sha256": "fcfb977026deee6ddae7fc8649428aad146e20f6c4a21523be65e6674c46a8e6",
+  "native_evidence_bytes": 44824,
+  "manifest_payloads_verified": 51,
+  "wheel_sha256": "cdb743f38fc17fd4caee4f3d0d98761cf8495f8992e2cbb5703444674578f54d",
+  "product_source_commit": "f27ad21fa1f130e74defdda4403028d3ed11806e",
+  "source_provenance_semantically_exact": true,
+  "exact_modules": 16,
+  "unchanged_primary_receiver_sha256": "5bf842a5bb5d9707e2bc61237e82b8f3a686d10b90179382ffa48939686d81c7",
+  "native_environment": {
+    "executable": "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/bin/python",
+    "prefix": "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv",
+    "purelib": "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/lib/python3.14/site-packages",
+    "pytest_version": "9.0.2",
+    "pytest_file": "/usr/lib/python3/dist-packages/pytest/__init__.py"
+  },
+  "reviewed_outcomes": [
+    "Offline wheel install and isolated module identity",
+    "Module and generated console entrypoint version success",
+    "Actual generation with one initially failing generated test and one repair",
+    "Three native passes, including legacy input under ancestor configuration trap",
+    "Saved patch adoption and three native recheck passes, generated subset one, zero recheck model calls",
+    "3000-character saved tails retain final diagnostic after sixteen MiB fixture output",
+    "Original and adopted pre-existing bytes match; installed module identities preserved",
+    "Base pytest9.0.2 read-only and no new base distributions",
+    "Initial incorrect version-string assertion preserved; existing environment resumed without reinstall"
+  ],
+  "source_review": "Both exact native runners reviewed. First install uses a new owned venv with offline no-deps pip and system-site-packages; second verifies prior successful install fingerprints and resumes only previously unexecuted console/course. START_HERE gives the exact isolated venv and fresh fictional replay path. No product edits.",
+  "limits": [
+    "Independent evidence/source/guide review; native execution performed by runtime_consumer, not repeated by reviewer.",
+    "System pytest reused read-only; not an independently resolved dependency environment.",
+    "Three total test passes include the one generated test; not four tests.",
+    "No coverage, live provider, global/default installation, Windows, or operational safety claim."
+  ]
+}

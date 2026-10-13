@@ -1,0 +1,76 @@
+{
+  "owner": "team-7cb7e049e2c0/runtime-consumer",
+  "source_commit": "f27ad21fa1f130e74defdda4403028d3ed11806e",
+  "wheel_sha256": "cdb743f38fc17fd4caee4f3d0d98761cf8495f8992e2cbb5703444674578f54d",
+  "base_python": "/usr/bin/python3",
+  "base_version": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "dependency_mode": "New venv with system-site-packages; existing pytest9.0.2 read-only, no downloads",
+  "environment": {
+    "executable": "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/bin/python",
+    "prefix": "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv",
+    "purelib": "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/lib/python3.14/site-packages",
+    "pytest_version": "9.0.2",
+    "pytest_file": "/usr/lib/python3/dist-packages/pytest/__init__.py"
+  },
+  "installed_module_sha256": {
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f",
+    "testpilot/_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+    "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+    "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+    "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+    "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "testpilot/progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+    "testpilot/recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+    "testpilot/sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "status": "qualified_isolated_native_install",
+  "started_utc": "2026-10-13T10:49:35.175809+00:00",
+  "commands": [
+    {
+      "name": "console-version",
+      "args": [
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/bin/testpilot",
+        "--version"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "installed-consumer",
+      "args": [
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/bin/python",
+        "-I",
+        "-B",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/receive_installed_toolkit.py",
+        "--source",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/lib/python3.14/site-packages",
+        "--out",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "prior_receipt": "native_receiving.json",
+  "harness_correction": "Initial receiver expected bare 0.1.0; the actual correct CLI version is testpilot 0.1.0. Installation and module fingerprints already passed; no product/reinstallation change.",
+  "module_entry_version": "testpilot 0.1.0",
+  "console_entry_version": "testpilot 0.1.0",
+  "base_distributions_preserved": {
+    "pytest": "9.0.2",
+    "coverage": null,
+    "pip": null,
+    "testpilot": null
+  },
+  "consumer_receipt": "course-v1/receiving.json",
+  "limits": [
+    "New owned review installation only; no existing project/global package mutation.",
+    "Existing system pytest is reused read-only; not an independently resolved clean dependency environment.",
+    "No coverage, live provider, GitHub Actions, Windows or hardware claim."
+  ],
+  "completed_utc": "2026-10-13T10:49:36.417720+00:00"
+}

@@ -1,0 +1,152 @@
+{
+  "status": "ACCEPT",
+  "sandbox_sha256": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+  "composed_source_sha256": {
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/__main__.py": "e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f",
+    "testpilot/_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+    "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+    "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+    "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+    "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "testpilot/progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+    "testpilot/recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+    "testpilot/sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "unrelated_ancestor_testpaths": "selected",
+  "legacy_case_admitted": true,
+  "progress_phase_notices_received": true,
+  "consumer": "actual TestPilot CLI using ScriptedModel, native pytest, saved git patch and exact-test recheck",
+  "raw_noise_bytes_per_existing_test": 16777216,
+  "generated_status": "passed",
+  "repair_rounds_used": 1,
+  "failed_generated_round": 1,
+  "final_cases": {
+    "passed": 3,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "junit_available": true
+  },
+  "saved_output_characters": 3000,
+  "final_diagnostic_retained": true,
+  "original_project_unchanged": true,
+  "adopted_originals_unchanged": true,
+  "recheck_status": "passed",
+  "recheck_model_calls": 0,
+  "retained_tests": [
+    {
+      "path": "tests/test_generated.py",
+      "bytes": 86,
+      "sha256": "d1fdb994946045a16f868f2931d65768c71e1d3c908e6863486b922eae0c7c46",
+      "placement": "already_present"
+    }
+  ],
+  "commands": [
+    {
+      "name": "generate-and-repair",
+      "argv": [
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--repo",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/project",
+        "--diff",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/change.diff",
+        "--backend",
+        "scripted",
+        "--script",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/responses",
+        "--rounds",
+        "1",
+        "--timeout",
+        "10",
+        "--no-coverage",
+        "--progress",
+        "--out",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/generated"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.715294
+    },
+    {
+      "name": "initialize-receiving-worktree",
+      "argv": [
+        "git",
+        "init",
+        "-q"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.003775
+    },
+    {
+      "name": "check-saved-patch",
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/generated/testpilot.patch"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.003518
+    },
+    {
+      "name": "apply-saved-patch",
+      "argv": [
+        "git",
+        "apply",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/generated/testpilot.patch"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.001631
+    },
+    {
+      "name": "recheck-adopted-tests",
+      "argv": [
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "recheck",
+        "--repo",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/adopted-project",
+        "--report",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/generated/report.json",
+        "--timeout",
+        "10",
+        "--out",
+        "/home/jacob/TestPilot-receiving-7cb7e049e2c0/course-v1/recheck"
+      ],
+      "returncode": 0,
+      "elapsed_s": 0.315182
+    }
+  ],
+  "artifacts": {
+    "generated/report.json": {
+      "bytes": 15472,
+      "sha256": "ec50cefd35cfbcf9733264c4a808220e4c541e2486930fc1444ef547b273cb1a"
+    },
+    "generated/testpilot.patch": {
+      "bytes": 234,
+      "sha256": "02bfdb2bca0333730bc6ed5d8f0f7795219120024ef2670391d1631a6108d85b"
+    },
+    "recheck/recheck.json": {
+      "bytes": 5159,
+      "sha256": "9c05596b0c64c75247d44543acf22b15a03ab8b8ef1cf42fb6d5ada762089d29"
+    }
+  },
+  "limits": [
+    "Local POSIX consumer receiving; no installed-estate or Windows claim.",
+    "The scripted backend uses fixed responses; no provider request is made."
+  ]
+}
