@@ -1,0 +1,13 @@
+test_actual_archived_fixtures_and_optimized_mode (test_saved_report.SavedReportTests.test_actual_archived_fixtures_and_optimized_mode) ... ok
+test_existing_destinations_and_publication_race_preserve_bytes (test_saved_report.SavedReportTests.test_existing_destinations_and_publication_race_preserve_bytes) ... ok
+test_file_limits_and_fifo_refuse_without_output (test_saved_report.SavedReportTests.test_file_limits_and_fifo_refuse_without_output) ... ok
+test_literal_text_and_unavailable_result_remain_native (test_saved_report.SavedReportTests.test_literal_text_and_unavailable_result_remain_native) ... ok
+test_mismatched_pair_and_malformed_json_refuse (test_saved_report.SavedReportTests.test_mismatched_pair_and_malformed_json_refuse) ... ok
+test_native_newline_forms_and_empty_patch (test_saved_report.SavedReportTests.test_native_newline_forms_and_empty_patch) ... ok
+test_no_runner_or_model_and_cleanup_warning_after_publication (test_saved_report.SavedReportTests.test_no_runner_or_model_and_cleanup_warning_after_publication) ... ok
+test_unsupported_rendering_layout_refuses (test_saved_report.SavedReportTests.test_unsupported_rendering_layout_refuses) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 4.087s
+
+OK

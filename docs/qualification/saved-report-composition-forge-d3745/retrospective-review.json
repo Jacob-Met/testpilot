@@ -1,0 +1,66 @@
+{
+  "schema": "hamon.anvil.testpilot-saved-report-retrospective-review.v1",
+  "reviewer": "Anvil / d3745ea0f44f",
+  "created_utc": "2026-10-13 13:01:08 UTC",
+  "accepted": true,
+  "scope": "Retrospective record of the already completed independent read-only audit; no new product execution, source mutation, browser operation, or replacement of the original native review.",
+  "original_native_review": {
+    "path": "/home/jacob/hamon/receiving/anvil-d3745-testpilot-saved-review/independent-receiving-review.json",
+    "bytes": 3019,
+    "sha256": "d3b41a5a7dee878b51984d91b27c1e5eb217aab46c99c1ab87b0eb5583f8e6cf",
+    "audit_pid": 3874844,
+    "audit_exit_code": 0,
+    "body_retrieval": "Pending native route recovery. This record does not reconstruct its timestamp or bytes."
+  },
+  "source_base": "247ad1ae8e873fcd52935633015158a1060091af",
+  "donor": "17643838400fa85149e474622e677008cdcc3f79",
+  "reviewed_receipt": {
+    "path": "evidence/composition-receipt.json",
+    "bytes": 47385,
+    "sha256": "567769f42c4fcf43550e7f502fcf0253a71d204341c6783716e802f13948cc96"
+  },
+  "findings": {
+    "commands": 5,
+    "checks": 32,
+    "returncodes": [
+      1,
+      0,
+      2,
+      0,
+      2
+    ],
+    "raw_streams_rehashed_and_equal_to_inline_receipt": 10,
+    "native_source_files_matched_to_independently_fetched_complete_Git_trees": 49,
+    "source_and_control_files_before_after_exact": 54,
+    "course": "Current missing-module refusal; one exact donor eight-method maintained test command; mismatched saved patch/report refusal; caller corrects only the owned patch and repeats identical argv/output successfully; occupied-output refusal preserves the saved page.",
+    "saved_page": {
+      "bytes": 39385,
+      "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674",
+      "mode": "0600",
+      "status": "suspected_code_bug"
+    },
+    "embedded_downloads": "Exactly report.json and testpilot.patch; decoded bytes equal the original archived pair.",
+    "passive_html_scan": "No external URLs, event attributes, script/iframe/object/img elements, or CSS url() found in the saved HTML.",
+    "closed_processes": [
+      3860172,
+      3860240,
+      3860241,
+      3860450,
+      3860451,
+      3860453
+    ]
+  },
+  "independently_preserved_native_texts": {
+    "source-admission.json": "840d98ca536c421a567cfbee535a245177f4712c",
+    "receive-current-composition.py": "298d8fef37480ff7e9e24677b7fb2e44646e939d",
+    "receiving-contract.json": "f2327d6af237f089e22e54da0d9148e53f0451a0"
+  },
+  "limits": [
+    "Root retains full production-source and integration review; this record does not approve an uninspected proposed tree.",
+    "The receiving course was source-aware. It was not a candidate-blind or full-repository run.",
+    "Eight maintained donor methods ran in one command; optimized child controls remain nested evidence, not a second independent suite.",
+    "The saved-report consumer did not rerun archived tests or call a model; the maintained test command is separately attributed.",
+    "No actual browser, visual/manual receiving, Windows, installed service, or post-integration execution claim.",
+    "No native review was repeated during the outage. Previously observed read-only audit results and retained tool output support this retrospective record."
+  ]
+}
