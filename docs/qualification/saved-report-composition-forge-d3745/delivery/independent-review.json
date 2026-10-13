@@ -1,0 +1,46 @@
+{
+  "schema": "hamon.loom.testpilot-reconstructed-html-review.v1",
+  "accepted": true,
+  "reviewed_at": "2026-10-13T13:47:50.034999+00:00",
+  "scope": "Read-only source, custody, passive HTML and receipt review. No renderer, test, model, browser, source operation or native replay.",
+  "artifact": {
+    "path": "/dev/shm/root-d3745-testpilot-delivery/testpilot-saved-report-current-example.html",
+    "bytes": 39385,
+    "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674",
+    "git_blob": "293d6950c9cc52760a30c8261745241640c91f33",
+    "mode": 384
+  },
+  "source_packet": {
+    "path": "/dev/shm/root-d3745-testpilot-delivery/input-packet.json",
+    "bytes": 286528,
+    "sha256": "2f0be575c1885efd93a70e88eeba544b5da591b1dfcfde7bfc08b0dec00170f2",
+    "git_blob": "ea6eea8aa1365cba5ecca94babc7437d858864cc",
+    "mode": 420
+  },
+  "reconstruction_receipt": {
+    "path": "/dev/shm/root-d3745-testpilot-delivery/reconstruction-receipt.json",
+    "bytes": 11379,
+    "sha256": "47e4f68d214aa41c919e1a747dc031b295c30022bcd400ab1ee6df61a1908591",
+    "git_blob": "984116b19850dfa0b28838e9b1ad2a58f16b8cfe",
+    "mode": 420
+  },
+  "source_commit": "7cbef6964dbb32518c189ad1498a031da33037ba",
+  "prior_native_receipt_git_blob": "9e10aa5b1305ce24e92e2cc5272f2634a94431ef",
+  "findings": [
+    "All26 local source bodies, sizes and modes reproduce the exact input packet and independently fetched complete published source tree.",
+    "All26 source names and identities remain exact relative to the reconstruction receipt.",
+    "The HTML matches the separately fetched native receipt output size/SHA256/mode; it is a new cloud reconstruction, not retrieval of the native HTML.",
+    "Two data-URL downloads decode exactly to selected archived report11467B and patch561B; report patch text and source body are preserved.",
+    "HTML is passive: no script, event attributes, frames, forms, external asset tags or external links; all internal fragment links resolve.",
+    "Opening prose states saved historical observations were not reverified; suspected_code_bug, unavailable generated-case counts, recorded3passed/3failed and unpriced estimated ledger are preserved.",
+    "Complete source use guide and reconstruction driver read; actual cloud course is one successful CLI with empty stderr, not a repeat of native original/refusal/retry qualification."
+  ],
+  "limits": [
+    "No browser visual rendering or download click replay.",
+    "Source readback is selected26 leaves of full published tree, not a new complete-checkout execution."
+  ],
+  "review_attempt_notes": [
+    "One read-only orchestration attempt exceeded shell argument-size limit before process creation; retried with selected26 tree rows only.",
+    "One read-only metadata formatter expected size on donor rows; corrected to derive actual lengths, no peer changes."
+  ]
+}
