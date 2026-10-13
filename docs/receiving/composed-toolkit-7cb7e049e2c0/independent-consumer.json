@@ -1,0 +1,360 @@
+{
+  "status": "ACCEPT",
+  "observed_at_utc": "2026-10-13T04:42:42.547035+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "cases": [
+    {
+      "label": "separate_false_pass",
+      "progress": true,
+      "legacy_pass": false,
+      "returncode": 0,
+      "live_held_stderr": "[testpilot] Baseline pytest: running\n",
+      "native_barrier_acknowledged": true,
+      "semantics": {
+        "status": "passed",
+        "ok": true,
+        "repair_rounds_used": 1,
+        "patch": "diff --git a/tests/test_generated.py b/tests/test_generated.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated.py\n@@ -0,0 +1,3 @@\n+from calculator import double\n+def test_generated():\n+    assert double(3)==6\n",
+        "ledger": {
+          "total_tokens": 671,
+          "total_cost_usd": 0.0,
+          "cost_is_complete": false,
+          "tokens_estimated": true,
+          "by_model": {
+            "nvidia/nemotron-3-super-120b-a12b": {
+              "calls": 1,
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "cost_usd": 0.0
+            },
+            "nvidia/Nemotron-3_5-Lightning": {
+              "calls": 2,
+              "prompt_tokens": 498,
+              "completion_tokens": 60,
+              "cost_usd": 0.0
+            }
+          },
+          "entries": [
+            {
+              "role": "planner",
+              "model": "nvidia/nemotron-3-super-120b-a12b",
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "editor",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 165,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "repair",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 333,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            }
+          ]
+        },
+        "test_files": {
+          "tests/test_generated.py": "from calculator import double\ndef test_generated():\n    assert double(3)==6\n"
+        },
+        "plan": "PRIVATE-CONTENT: check double while preserving all existing tests.",
+        "final": {
+          "returncode": 0,
+          "passed": 2,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "generated": {
+            "collected": 1,
+            "passed": 1,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          },
+          "junit_available": true,
+          "timed_out": false
+        }
+      },
+      "final_saved_output_chars": 3000,
+      "elapsed_s": 1.082535726003698
+    },
+    {
+      "label": "combined_detects_failure",
+      "progress": true,
+      "legacy_pass": false,
+      "returncode": 1,
+      "live_held_stderr": "[testpilot] Baseline pytest: running\n",
+      "native_barrier_acknowledged": true,
+      "semantics": {
+        "status": "failed",
+        "ok": false,
+        "repair_rounds_used": 1,
+        "patch": "diff --git a/tests/test_generated.py b/tests/test_generated.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated.py\n@@ -0,0 +1,3 @@\n+from calculator import double\n+def test_generated():\n+    assert double(3)==6\n",
+        "ledger": {
+          "total_tokens": 770,
+          "total_cost_usd": 0.0,
+          "cost_is_complete": false,
+          "tokens_estimated": true,
+          "by_model": {
+            "nvidia/nemotron-3-super-120b-a12b": {
+              "calls": 1,
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "cost_usd": 0.0
+            },
+            "nvidia/Nemotron-3_5-Lightning": {
+              "calls": 2,
+              "prompt_tokens": 597,
+              "completion_tokens": 60,
+              "cost_usd": 0.0
+            }
+          },
+          "entries": [
+            {
+              "role": "planner",
+              "model": "nvidia/nemotron-3-super-120b-a12b",
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "editor",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 165,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "repair",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 432,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            }
+          ]
+        },
+        "test_files": {
+          "tests/test_generated.py": "from calculator import double\ndef test_generated():\n    assert double(3)==6\n"
+        },
+        "plan": "PRIVATE-CONTENT: check double while preserving all existing tests.",
+        "final": {
+          "returncode": 1,
+          "passed": 2,
+          "failed": 1,
+          "errors": 0,
+          "skipped": 0,
+          "generated": {
+            "collected": 1,
+            "passed": 1,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          },
+          "junit_available": true,
+          "timed_out": false
+        }
+      },
+      "final_saved_output_chars": 3000,
+      "elapsed_s": 0.7912080169917317
+    },
+    {
+      "label": "combined_quiet",
+      "progress": false,
+      "legacy_pass": true,
+      "returncode": 0,
+      "live_held_stderr": "",
+      "native_barrier_acknowledged": true,
+      "semantics": {
+        "status": "passed",
+        "ok": true,
+        "repair_rounds_used": 1,
+        "patch": "diff --git a/tests/test_generated.py b/tests/test_generated.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated.py\n@@ -0,0 +1,3 @@\n+from calculator import double\n+def test_generated():\n+    assert double(3)==6\n",
+        "ledger": {
+          "total_tokens": 671,
+          "total_cost_usd": 0.0,
+          "cost_is_complete": false,
+          "tokens_estimated": true,
+          "by_model": {
+            "nvidia/nemotron-3-super-120b-a12b": {
+              "calls": 1,
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "cost_usd": 0.0
+            },
+            "nvidia/Nemotron-3_5-Lightning": {
+              "calls": 2,
+              "prompt_tokens": 498,
+              "completion_tokens": 60,
+              "cost_usd": 0.0
+            }
+          },
+          "entries": [
+            {
+              "role": "planner",
+              "model": "nvidia/nemotron-3-super-120b-a12b",
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "editor",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 165,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "repair",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 333,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            }
+          ]
+        },
+        "test_files": {
+          "tests/test_generated.py": "from calculator import double\ndef test_generated():\n    assert double(3)==6\n"
+        },
+        "plan": "PRIVATE-CONTENT: check double while preserving all existing tests.",
+        "final": {
+          "returncode": 0,
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "generated": {
+            "collected": 1,
+            "passed": 1,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          },
+          "junit_available": true,
+          "timed_out": false
+        }
+      },
+      "final_saved_output_chars": 3000,
+      "elapsed_s": 0.7702932490064995
+    },
+    {
+      "label": "combined_progress",
+      "progress": true,
+      "legacy_pass": true,
+      "returncode": 0,
+      "live_held_stderr": "[testpilot] Baseline pytest: running\n",
+      "native_barrier_acknowledged": true,
+      "semantics": {
+        "status": "passed",
+        "ok": true,
+        "repair_rounds_used": 1,
+        "patch": "diff --git a/tests/test_generated.py b/tests/test_generated.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_generated.py\n@@ -0,0 +1,3 @@\n+from calculator import double\n+def test_generated():\n+    assert double(3)==6\n",
+        "ledger": {
+          "total_tokens": 671,
+          "total_cost_usd": 0.0,
+          "cost_is_complete": false,
+          "tokens_estimated": true,
+          "by_model": {
+            "nvidia/nemotron-3-super-120b-a12b": {
+              "calls": 1,
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "cost_usd": 0.0
+            },
+            "nvidia/Nemotron-3_5-Lightning": {
+              "calls": 2,
+              "prompt_tokens": 498,
+              "completion_tokens": 60,
+              "cost_usd": 0.0
+            }
+          },
+          "entries": [
+            {
+              "role": "planner",
+              "model": "nvidia/nemotron-3-super-120b-a12b",
+              "prompt_tokens": 96,
+              "completion_tokens": 17,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "editor",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 165,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            },
+            {
+              "role": "repair",
+              "model": "nvidia/Nemotron-3_5-Lightning",
+              "prompt_tokens": 333,
+              "completion_tokens": 30,
+              "estimated": true,
+              "cost_usd": 0.0
+            }
+          ]
+        },
+        "test_files": {
+          "tests/test_generated.py": "from calculator import double\ndef test_generated():\n    assert double(3)==6\n"
+        },
+        "plan": "PRIVATE-CONTENT: check double while preserving all existing tests.",
+        "final": {
+          "returncode": 0,
+          "passed": 3,
+          "failed": 0,
+          "errors": 0,
+          "skipped": 0,
+          "generated": {
+            "collected": 1,
+            "passed": 1,
+            "failed": 0,
+            "error": 0,
+            "skipped": 0
+          },
+          "junit_available": true,
+          "timed_out": false
+        }
+      },
+      "final_saved_output_chars": 3000,
+      "elapsed_s": 0.8529082160093822
+    }
+  ],
+  "source_sha256": {
+    "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "__main__.py": "4ca37129d930445cfbca8bc5f47d28cfd2c11152e3ceb5c2389f013424b924b5",
+    "_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+    "_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+    "compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+    "diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+    "loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+    "model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+    "recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+    "recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+    "sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+    "targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "source_and_inputs_preserved": true,
+  "quiet_progress_results_patch_and_accounting_equal": true,
+  "native_output_bytes_per_existing_test": 16777216,
+  "limits": [
+    "Actual POSIX scripted CLI. No new memory-peak, Windows, installed-estate or adoption claim.",
+    "Source composition is local until exact published branch is independently read back."
+  ]
+}

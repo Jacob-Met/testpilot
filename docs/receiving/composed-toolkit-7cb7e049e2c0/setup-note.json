@@ -1,0 +1,6 @@
+{
+  "initial_selected_test_collection": "ModuleNotFoundError: test_compare",
+  "cause": "The newly received maintained comparison-console tests import the unchanged raw fixture from tests/test_compare.py; initial portable test subset omitted that dependency.",
+  "correction": "Included the exact current-parent test_compare.py before executing the selected tests.",
+  "source_change": false
+}
