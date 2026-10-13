@@ -1,0 +1,19 @@
+{
+  "scope": "native temporary /dev owned within this process only",
+  "source_sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+  "test_sha256": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+  "results": [
+    {
+      "optimized": false,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_destination_occupied_after_staging_is_never_replaced (__main__.RecheckOutputStagingTests.test_destination_occupied_after_staging_is_never_replaced) ... ok\ntest_late_publication_failure_retains_honest_partial_result (__main__.RecheckOutputStagingTests.test_late_publication_failure_retains_honest_partial_result) ... ok\ntest_occupied_destination_is_preserved_before_rendering (__main__.RecheckOutputStagingTests.test_occupied_destination_is_preserved_before_rendering) ... ok\ntest_preparation_failures_do_not_create_final_directory (__main__.RecheckOutputStagingTests.test_preparation_failures_do_not_create_final_directory) ... ok\ntest_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) ... ok\ntest_success_preserves_native_bytes_mapping_modes_and_json_download (__main__.RecheckOutputStagingTests.test_success_preserves_native_bytes_mapping_modes_and_json_download) ... ok\ntest_unencodable_markdown_leaves_destination_available_for_corrected_input (__main__.RecheckOutputStagingTests.test_unencodable_markdown_leaves_destination_available_for_corrected_input) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.364s\n\nOK\n"
+    },
+    {
+      "optimized": true,
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_destination_occupied_after_staging_is_never_replaced (__main__.RecheckOutputStagingTests.test_destination_occupied_after_staging_is_never_replaced) ... ok\ntest_late_publication_failure_retains_honest_partial_result (__main__.RecheckOutputStagingTests.test_late_publication_failure_retains_honest_partial_result) ... ok\ntest_occupied_destination_is_preserved_before_rendering (__main__.RecheckOutputStagingTests.test_occupied_destination_is_preserved_before_rendering) ... ok\ntest_preparation_failures_do_not_create_final_directory (__main__.RecheckOutputStagingTests.test_preparation_failures_do_not_create_final_directory) ... ok\ntest_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) ... ok\ntest_success_preserves_native_bytes_mapping_modes_and_json_download (__main__.RecheckOutputStagingTests.test_success_preserves_native_bytes_mapping_modes_and_json_download) ... ok\ntest_unencodable_markdown_leaves_destination_available_for_corrected_input (__main__.RecheckOutputStagingTests.test_unencodable_markdown_leaves_destination_available_for_corrected_input) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 1.200s\n\nOK\n"
+    }
+  ]
+}

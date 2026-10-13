@@ -1,0 +1,259 @@
+{
+  "scope": "native ThinkPad local authored projects and exact retained tests; no model/provider or installed project change",
+  "pid": 2950091,
+  "user": "jacob",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "base_commit": "ffc2590682f30c3ff23084aacb79a8f50111f273",
+  "original_pins": [
+    {
+      "path": "testpilot/__init__.py",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "git_blob": "6c1f799a830abc759ba4489251f58095b47d36ad",
+      "sha256": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "path": "testpilot/compare.py",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+    },
+    {
+      "path": "testpilot/compare_html.py",
+      "git_blob": "40da0f674798583bd25a177021759aa38b3c5b7b",
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12"
+    },
+    {
+      "path": "testpilot/model.py",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "git_blob": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+      "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6"
+    },
+    {
+      "path": "testpilot/recheck_html.py",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "path": "testpilot/regression.py",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34"
+    },
+    {
+      "path": "testpilot/targets.py",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "git_blob": "426085b7824979a764056c528d2ca2ccfc647d77",
+      "sha256": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753"
+    },
+    {
+      "path": "tests/test_recheck_html.py",
+      "git_blob": "416ebc35d8c5bd6b9900abd9f4a9f07b08b3e438",
+      "sha256": "d14f0186aee3eef85dba24e6407232e276364ed97c94e40dbabed4b0e728f974"
+    },
+    {
+      "path": "pyproject.toml",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    }
+  ],
+  "source_before": {
+    "baseline": {
+      "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "tests/test_recheck.py": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+      "tests/test_recheck_html.py": "d14f0186aee3eef85dba24e6407232e276364ed97c94e40dbabed4b0e728f974",
+      "tests/test_recheck_output_staging.py": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+      "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "testpilot/__main__.py": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db",
+      "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "testpilot/sandbox.py": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    },
+    "candidate": {
+      "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "tests/test_recheck.py": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+      "tests/test_recheck_html.py": "d14f0186aee3eef85dba24e6407232e276364ed97c94e40dbabed4b0e728f974",
+      "tests/test_recheck_output_staging.py": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+      "testpilot/recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "testpilot/__main__.py": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db",
+      "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "testpilot/sandbox.py": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    }
+  },
+  "courses": [
+    {
+      "name": "baseline_inherited",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_recheck.py",
+        "tests/test_recheck_html.py"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline",
+      "returncode": 0,
+      "duration_s": 2.856152824126184,
+      "stdout": "............................................                             [100%]\n44 passed in 2.68s\n",
+      "stderr": ""
+    },
+    {
+      "name": "baseline_focused",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tests/test_recheck_output_staging.py"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline",
+      "returncode": 1,
+      "duration_s": 0.31552229006774724,
+      "stdout": "",
+      "stderr": "test_destination_occupied_after_staging_is_never_replaced (__main__.RecheckOutputStagingTests.test_destination_occupied_after_staging_is_never_replaced) ... ok\ntest_late_publication_failure_retains_honest_partial_result (__main__.RecheckOutputStagingTests.test_late_publication_failure_retains_honest_partial_result) ... FAIL\ntest_occupied_destination_is_preserved_before_rendering (__main__.RecheckOutputStagingTests.test_occupied_destination_is_preserved_before_rendering) ... ok\ntest_preparation_failures_do_not_create_final_directory (__main__.RecheckOutputStagingTests.test_preparation_failures_do_not_create_final_directory) ... FAIL\ntest_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) ... \n  test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) (artifact='md') ... FAIL\n  test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) (artifact='json') ... FAIL\n  test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) (artifact='html') ... FAIL\ntest_success_preserves_native_bytes_mapping_modes_and_json_download (__main__.RecheckOutputStagingTests.test_success_preserves_native_bytes_mapping_modes_and_json_download) ... ok\ntest_unencodable_markdown_leaves_destination_available_for_corrected_input (__main__.RecheckOutputStagingTests.test_unencodable_markdown_leaves_destination_available_for_corrected_input) ... FAIL\n\n======================================================================\nFAIL: test_late_publication_failure_retains_honest_partial_result (__main__.RecheckOutputStagingTests.test_late_publication_failure_retains_honest_partial_result)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline/tests/test_recheck_output_staging.py\", line 225, in test_late_publication_failure_retains_honest_partial_result\n    with self.assertRaises(OSError) as raised:\n         ~~~~~~~~~~~~~~~~~^^^^^^^^^\nAssertionError: OSError not raised\n\n======================================================================\nFAIL: test_preparation_failures_do_not_create_final_directory (__main__.RecheckOutputStagingTests.test_preparation_failures_do_not_create_final_directory)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline/tests/test_recheck_output_staging.py\", line 152, in test_preparation_failures_do_not_create_final_directory\n    self.assertFalse(out.exists())\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: True is not false\n\n======================================================================\nFAIL: test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) (artifact='md')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline/tests/test_recheck_output_staging.py\", line 137, in test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds\n    self.assertFalse(out.exists())\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: True is not false\n\n======================================================================\nFAIL: test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) (artifact='json')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline/tests/test_recheck_output_staging.py\", line 137, in test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds\n    self.assertFalse(out.exists())\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: True is not false\n\n======================================================================\nFAIL: test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) (artifact='html')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline/tests/test_recheck_output_staging.py\", line 137, in test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds\n    self.assertFalse(out.exists())\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: True is not false\n\n======================================================================\nFAIL: test_unencodable_markdown_leaves_destination_available_for_corrected_input (__main__.RecheckOutputStagingTests.test_unencodable_markdown_leaves_destination_available_for_corrected_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/baseline/tests/test_recheck_output_staging.py\", line 161, in test_unencodable_markdown_leaves_destination_available_for_corrected_input\n    self.assertFalse(out.exists())\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 7 tests in 0.220s\n\nFAILED (failures=6)\n"
+    },
+    {
+      "name": "candidate_inherited",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-m",
+        "pytest",
+        "-q",
+        "-p",
+        "no:cacheprovider",
+        "tests/test_recheck.py",
+        "tests/test_recheck_html.py"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/candidate",
+      "returncode": 1,
+      "duration_s": 2.8287521440070122,
+      "stdout": "...........................................F                             [100%]\n=================================== FAILURES ===================================\n_____ test_actual_html_write_failure_is_delivery_failure_not_test_success ______\n\ntmp_path = PosixPath('/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/tmp/pytest-of-jacob/pytest-1/test_actual_html_write_failure0')\n\n    @pytest.mark.skipif(__import__(\"os\").name != \"posix\", reason=\"POSIX authored file-size limit\")\n    def test_actual_html_write_failure_is_delivery_failure_not_test_success(tmp_path):\n        import os\n        from pathlib import Path\n        import subprocess\n        import sys\n    \n        project = tmp_path / \"project\"\n        project.mkdir()\n        saved = tmp_path / \"saved.json\"\n        saved.write_text(json.dumps({\"test_files\": {\"tests/test_retained.py\": \"def test_ok():\\n    assert True\\n\"}}))\n        out = tmp_path / \"out\"\n        # Bound this owned child only. Native JSON/Markdown fit; the newly rendered\n        # page exceeds the limit, exercising a real writer failure after pytest.\n        command = (\n            \"import resource,signal;\"\n            \"resource.setrlimit(resource.RLIMIT_FSIZE,(8192,8192));\"\n            \"signal.signal(signal.SIGXFSZ,signal.SIG_IGN);\"\n            \"from testpilot.__main__ import main;\"\n            \"raise SystemExit(main())\"\n        )\n        env = dict(os.environ, PYTHONDONTWRITEBYTECODE=\"1\", PYTHONPATH=str(Path(__file__).resolve().parents[1]))\n        result = subprocess.run([sys.executable, \"-c\", command, \"recheck\", \"--repo\", str(project), \"--report\", str(saved), \"--out\", str(out)], env=env, capture_output=True, timeout=20)\n        assert result.returncode == 2\n        assert b\"cannot recheck saved tests\" in result.stderr\n        assert result.stdout == b\"\"\n>       assert json.loads((out / \"recheck.json\").read_text())[\"ok\"] is True\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n\ntests/test_recheck_html.py:182: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n/usr/lib/python3.14/pathlib/__init__.py:788: in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = PosixPath('/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/tmp/pytest-of-jacob/pytest-1/test_actual_html_write_failure0/out/recheck.json')\nmode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None\n\n    def open(self, mode='r', buffering=-1, encoding=None,\n             errors=None, newline=None):\n        \"\"\"\n        Open the file pointed to by this path and return a file object, as\n        the built-in open() function does.\n        \"\"\"\n        if \"b\" not in mode:\n            encoding = io.text_encoding(encoding)\n>       return io.open(self, mode, buffering, encoding, errors, newline)\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/tmp/pytest-of-jacob/pytest-1/test_actual_html_write_failure0/out/recheck.json'\n\n/usr/lib/python3.14/pathlib/__init__.py:772: FileNotFoundError\n=========================== short test summary info ============================\nFAILED tests/test_recheck_html.py::test_actual_html_write_failure_is_delivery_failure_not_test_success\n1 failed, 43 passed in 2.67s\n",
+      "stderr": ""
+    },
+    {
+      "name": "candidate_focused",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "tests/test_recheck_output_staging.py"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/candidate",
+      "returncode": 0,
+      "duration_s": 0.3224707772023976,
+      "stdout": "",
+      "stderr": "test_destination_occupied_after_staging_is_never_replaced (__main__.RecheckOutputStagingTests.test_destination_occupied_after_staging_is_never_replaced) ... ok\ntest_late_publication_failure_retains_honest_partial_result (__main__.RecheckOutputStagingTests.test_late_publication_failure_retains_honest_partial_result) ... ok\ntest_occupied_destination_is_preserved_before_rendering (__main__.RecheckOutputStagingTests.test_occupied_destination_is_preserved_before_rendering) ... ok\ntest_preparation_failures_do_not_create_final_directory (__main__.RecheckOutputStagingTests.test_preparation_failures_do_not_create_final_directory) ... ok\ntest_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) ... ok\ntest_success_preserves_native_bytes_mapping_modes_and_json_download (__main__.RecheckOutputStagingTests.test_success_preserves_native_bytes_mapping_modes_and_json_download) ... ok\ntest_unencodable_markdown_leaves_destination_available_for_corrected_input (__main__.RecheckOutputStagingTests.test_unencodable_markdown_leaves_destination_available_for_corrected_input) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.231s\n\nOK\n"
+    },
+    {
+      "name": "candidate_optimized",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "-O",
+        "tests/test_recheck_output_staging.py"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/candidate",
+      "returncode": 0,
+      "duration_s": 1.310487536014989,
+      "stdout": "",
+      "stderr": "test_destination_occupied_after_staging_is_never_replaced (__main__.RecheckOutputStagingTests.test_destination_occupied_after_staging_is_never_replaced) ... ok\ntest_late_publication_failure_retains_honest_partial_result (__main__.RecheckOutputStagingTests.test_late_publication_failure_retains_honest_partial_result) ... ok\ntest_occupied_destination_is_preserved_before_rendering (__main__.RecheckOutputStagingTests.test_occupied_destination_is_preserved_before_rendering) ... ok\ntest_preparation_failures_do_not_create_final_directory (__main__.RecheckOutputStagingTests.test_preparation_failures_do_not_create_final_directory) ... ok\ntest_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds (__main__.RecheckOutputStagingTests.test_real_write_failures_leave_destination_absent_and_explicit_retry_succeeds) ... ok\ntest_success_preserves_native_bytes_mapping_modes_and_json_download (__main__.RecheckOutputStagingTests.test_success_preserves_native_bytes_mapping_modes_and_json_download) ... ok\ntest_unencodable_markdown_leaves_destination_available_for_corrected_input (__main__.RecheckOutputStagingTests.test_unencodable_markdown_leaves_destination_available_for_corrected_input) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.900s\n\nOK\n"
+    }
+  ],
+  "source_after": {
+    "baseline": {
+      "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "tests/test_recheck.py": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+      "tests/test_recheck_html.py": "d14f0186aee3eef85dba24e6407232e276364ed97c94e40dbabed4b0e728f974",
+      "tests/test_recheck_output_staging.py": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+      "testpilot/recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "testpilot/__main__.py": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db",
+      "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "testpilot/sandbox.py": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    },
+    "candidate": {
+      "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "tests/test_recheck.py": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+      "tests/test_recheck_html.py": "d14f0186aee3eef85dba24e6407232e276364ed97c94e40dbabed4b0e728f974",
+      "tests/test_recheck_output_staging.py": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+      "testpilot/recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "testpilot/__main__.py": "56660f789de182892573647c44d2cd7737a1e8d90ff515801a09aecb098cd9db",
+      "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "testpilot/sandbox.py": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    }
+  },
+  "source_unchanged": true
+}

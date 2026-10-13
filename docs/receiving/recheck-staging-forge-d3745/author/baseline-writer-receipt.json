@@ -1,0 +1,50 @@
+{
+  "scope": "Authored writer fixture only; no pytest or provider executed.",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+  "unlimited_artifacts": {
+    "md": {
+      "bytes": 714,
+      "sha256": "043e708c11755c17cdf97337b4e20b86511efe3ef3dfc0d4f78899c0ffb83d04"
+    },
+    "json": {
+      "bytes": 1696,
+      "sha256": "ba493b31b42ae269bf379d7dcc72be22f3af07eacb60f343bcca621887c840f6"
+    },
+    "html": {
+      "bytes": 9362,
+      "sha256": "069190c195e1a1429e14819ca0d4a2bf392919a42722b3ea16f29c3ec4045433"
+    }
+  },
+  "limited": {
+    "returncode": 72,
+    "stdout": "{\"type\": \"OSError\", \"errno\": 27, \"filename\": null}\n",
+    "stderr": "",
+    "final_directory_exists": true,
+    "artifacts": {
+      "recheck.html": {
+        "bytes": 4096,
+        "sha256": "67509deb8355b5db23d918ee95151011808deeb3b29bdac4df57027213ebc058"
+      },
+      "recheck.json": {
+        "bytes": 1696,
+        "sha256": "ba493b31b42ae269bf379d7dcc72be22f3af07eacb60f343bcca621887c840f6"
+      },
+      "recheck.md": {
+        "bytes": 714,
+        "sha256": "043e708c11755c17cdf97337b4e20b86511efe3ef3dfc0d4f78899c0ffb83d04"
+      }
+    }
+  },
+  "explicit_unlimited_retry": {
+    "status": "refused",
+    "error": "recheck output path already exists; choose a new --out directory"
+  },
+  "project_preserved": true,
+  "remaining_paths": [
+    "project",
+    "request.json",
+    "retry-target",
+    "unlimited"
+  ]
+}

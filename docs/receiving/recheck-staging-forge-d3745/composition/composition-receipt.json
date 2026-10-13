@@ -1,0 +1,82 @@
+{
+  "scope": "incoming current-main comparison console boundary plus actual recheck staging-failure and explicit retry consumer; no broader rerun",
+  "main_commit": "d2596c1a4be11072344c4ea98752cce789865ec4",
+  "recovery_commit": "6f4c1cf4ed1f26dd9ceff18a4f8c6be3322cfe85",
+  "pid": 3081069,
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "incoming": [
+    {
+      "path": "testpilot/__main__.py",
+      "git_blob": "76b09d5a1e55780efc78a2b48f0b3fae162da196"
+    },
+    {
+      "path": "tests/test_compare_console.py",
+      "git_blob": "5555f2073d480d3fb46227550442f2d0ecca3673"
+    },
+    {
+      "path": "tests/test_compare.py",
+      "git_blob": "894c6cc09bcac88c64748828ca7230c11f0289e1"
+    }
+  ],
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_compare_console.py",
+    "tests/test_recheck_html.py::test_actual_html_staging_failure_is_retryable_after_delivery_error"
+  ],
+  "cwd": "/home/jacob/hamon/receiving/forge-d3745ea0f44f-testpilot-recheck/composition",
+  "returncode": 0,
+  "duration_s": 1.7024880561511964,
+  "stdout": "........                                                                 [100%]\n8 passed in 1.47s\n",
+  "stderr": "",
+  "source_before": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "tests/test_recheck.py": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+    "tests/test_recheck_html.py": "612564571dc0a63d7666bdee4feb07c22bf081585000567d3e70a44327b142d9",
+    "tests/test_compare_console.py": "95ff8029ee44eaaff9101702384fc1ce1ec8da5dff634a7f74e2d7b8723bfd16",
+    "tests/test_recheck_output_staging.py": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+    "tests/test_compare.py": "dba0946a6964d916e986b185b23ff27ba0903bf7b6e8910b3a1f7bdc49b332c8",
+    "testpilot/recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+    "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+    "testpilot/__main__.py": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+    "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/sandbox.py": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+    "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+    "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+  },
+  "source_after": {
+    "pyproject.toml": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+    "tests/test_recheck.py": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+    "tests/test_recheck_html.py": "612564571dc0a63d7666bdee4feb07c22bf081585000567d3e70a44327b142d9",
+    "tests/test_compare_console.py": "95ff8029ee44eaaff9101702384fc1ce1ec8da5dff634a7f74e2d7b8723bfd16",
+    "tests/test_recheck_output_staging.py": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+    "tests/test_compare.py": "dba0946a6964d916e986b185b23ff27ba0903bf7b6e8910b3a1f7bdc49b332c8",
+    "testpilot/recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+    "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+    "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+    "testpilot/__main__.py": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+    "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+    "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "testpilot/sandbox.py": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+    "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+    "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+    "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+  },
+  "source_unchanged": true
+}

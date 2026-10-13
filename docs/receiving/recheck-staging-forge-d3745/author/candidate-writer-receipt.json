@@ -1,0 +1,41 @@
+{
+  "scope": "Authored writer fixture only; no pytest or provider executed.",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+  "unlimited_artifacts": {
+    "md": {
+      "bytes": 714,
+      "sha256": "043e708c11755c17cdf97337b4e20b86511efe3ef3dfc0d4f78899c0ffb83d04"
+    },
+    "json": {
+      "bytes": 1697,
+      "sha256": "8212c8f3330d1c58c57731c5cfeb8b0cc02c83c5d05017b0be9c9d7bdbe6ce51"
+    },
+    "html": {
+      "bytes": 9363,
+      "sha256": "5cc1d8d620bc3e2bb28c6386a787068bbc9a135f9472eb32fefc00f36fced89e"
+    }
+  },
+  "limited": {
+    "returncode": 72,
+    "stdout": "{\"type\": \"OSError\", \"errno\": 27, \"filename\": null}\n",
+    "stderr": "",
+    "final_directory_exists": false,
+    "artifacts": {}
+  },
+  "explicit_unlimited_retry": {
+    "status": "succeeded",
+    "files": [
+      "recheck.html",
+      "recheck.json",
+      "recheck.md"
+    ]
+  },
+  "project_preserved": true,
+  "remaining_paths": [
+    "project",
+    "request.json",
+    "retry-target",
+    "unlimited"
+  ]
+}

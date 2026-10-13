@@ -1,0 +1,132 @@
+{
+  "repository": "Jacob-Met/testpilot",
+  "issue": 103,
+  "base_commit": "ffc2590682f30c3ff23084aacb79a8f50111f273",
+  "base_tree": "06621982a9dd96ab7efe2587a5c2f7e5561733b6",
+  "baseline_recheck_git_blob": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+  "baseline_recheck_sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+  "scope": "Only recheck writer staging, 7 focused tests, intentional historical HTML assertion update, documentation and inert receiving evidence.",
+  "native_final": "51 passed plus12 subtests; Python3.14.4; PID2985058; source unchanged",
+  "files": [
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/author/baseline-writer-receipt.json",
+      "bytes": 1526,
+      "sha256": "ed37cf0ea3a2ffcebfbea7630116f36fb4dcaf573eadb613802aab2bb4825abc",
+      "git_blob": "d2532d494d29640c46c4e8daa6b56cb415d31196"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/author/candidate-writer-receipt.json",
+      "bytes": 1109,
+      "sha256": "a5233ef96cd138d812854b4f07da939d7ebb34921705149a97d9695b0b22a351",
+      "git_blob": "6592a01206e4a8f37fce9593b844779d68103fc3"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/author/focused-cloud-receipt.json",
+      "bytes": 3102,
+      "sha256": "956b243db3f95f2dc25baf44ab0321bcc01eaef06935a6019798df8aa55e0216",
+      "git_blob": "6bf8853f598d50d4058664ee88a10389804e51f2"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/author/html-test-policy.patch",
+      "bytes": 1651,
+      "sha256": "a69025a051696ac81cd2749103d19c390b358aa164aa7b9354281c3ae877de52",
+      "git_blob": "b962f1c7a4f773bffffc031aadfed0eea941b94d"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/author/receive_writer.py",
+      "bytes": 3394,
+      "sha256": "210b3b272cf36b03908ddb743daa1933e3fb412560efa44e13c355f39e26eb93",
+      "git_blob": "a573933a9d6bacbbbc80bf32c072763c00fcaec3"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/author/source.patch",
+      "bytes": 1567,
+      "sha256": "7523fbcf81d729e3410d97fdba59bc316ff41bf58f6a92da8b0a72142cd43658",
+      "git_blob": "badd12d31769081f69ffc9891cc3339be36e9711"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/independent/receive-testpilot-admission-retry.py",
+      "bytes": 10329,
+      "sha256": "cc891b00dc648b4866a1c30d6cad47ea5585f19b10b1a81fe6625707b1769a25",
+      "git_blob": "a0372f5e5cb97eed73af35447f18163bceccc2a3"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/independent/testpilot-baseline-admission-retry-receipt.json",
+      "bytes": 12334,
+      "sha256": "93efc76ac7cca17c24745560eeb095913691ebadf44791ff9fdd413800c88e75",
+      "git_blob": "fa97075b00ef2ed5ba63ea8e34b617861fa7f817"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/independent/testpilot-candidate-admission-retry-receipt.json",
+      "bytes": 12351,
+      "sha256": "346efcc338d1e24b5050710caec7ea2bca5754b374c27d175ee2bedb7173d0db",
+      "git_blob": "712ba7952b0e4be650b710d3424e8751d2c3ece1"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/independent/testpilot-independent-cli-receiving.md",
+      "bytes": 6092,
+      "sha256": "ed1ee663e8e204d27e2117f4b669dbe58bea4cced6acad907a0847267fda9ee8",
+      "git_blob": "79fd66355b682aff46185329ae933e517bb5054e"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/native/final-receipt.json",
+      "bytes": 4336,
+      "sha256": "c743c61899abfd44caaf4bd7909445be05dc798545989e3cc43418ece6ee8d8c",
+      "git_blob": "1d81e342876f2aa1043995b79a2a8a64b372ed6d"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/native/incoming.json",
+      "bytes": 243084,
+      "sha256": "69b1ba65306afac50d5146d9c85fabeee5628427014bec3a37c07805c75ea41b",
+      "git_blob": "76861bf050527e17f330ff27a17f73f386375379"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/native/initial-receipt.json",
+      "bytes": 25700,
+      "sha256": "39af20240343d90c4b4a1d14e1915bca11155e844d025ec3e2211e13109f8631",
+      "git_blob": "303a8c8e086b85fd9acd7fab8872311317a2616a"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/native/receive_final.py",
+      "bytes": 1653,
+      "sha256": "37e03eb3a33d9652a2e60024b0fd17eecd9fdbfc373fe501969b746399290cff",
+      "git_blob": "1b427c29ef9959e7a46ce38fdc314c25ca79a0f6"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/native/receive.py",
+      "bytes": 3785,
+      "sha256": "e21c570544844b7bc22b034dd1881f2f9e0b078bcf8d01b27c12d789d9929c1a",
+      "git_blob": "e9372c4a9d4be73af478c633f98c04948dca34ce"
+    },
+    {
+      "path": "docs/receiving/recheck-staging-forge-d3745/README.md",
+      "bytes": 8516,
+      "sha256": "841e6acd3cd3f47b40ef357f3df437ef70ee94a880a9fdbbc1616cc952ad1861",
+      "git_blob": "6ceb5d62f23abdc563bba60d25ef7c2fb9ca9c28"
+    },
+    {
+      "path": "docs/RECHECK.md",
+      "bytes": 7616,
+      "sha256": "6e702df3d755f01415a867c61eef763453b4d1e75f7f8ffb99c32ad17d3c17a4",
+      "git_blob": "108155c51b3829dad33ff661720a3fd317102905"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b"
+    },
+    {
+      "path": "tests/test_recheck_html.py",
+      "bytes": 9339,
+      "sha256": "612564571dc0a63d7666bdee4feb07c22bf081585000567d3e70a44327b142d9",
+      "git_blob": "23cbe3dcba9c8b2e0849cfc525401378c3243f1b"
+    },
+    {
+      "path": "tests/test_recheck_output_staging.py",
+      "bytes": 11247,
+      "sha256": "aeb39a670ed23f9cb4d31196887022118f94fd46aa51e497f9c7c981772c1cac",
+      "git_blob": "1fc1f474b985a23b3d85280078b79382c10e3972"
+    }
+  ]
+}
