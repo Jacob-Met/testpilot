@@ -333,5 +333,9 @@ def write_comparison(before_path: str | Path, after_path: str | Path, output: st
             os.fsync(stream.fileno())
         os.link(temporary, output)
     finally:
-        Path(temporary).unlink(missing_ok=True)
+        try:
+            Path(temporary).unlink(missing_ok=True)
+        except OSError:
+            # Cleanup must not replace a publication result or its original error.
+            pass
     return output

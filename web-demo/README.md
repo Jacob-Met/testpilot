@@ -139,6 +139,29 @@ received source/data file remained byte-identical after execution.
 
 The [native receipt](../docs/receiving/replay-run-consistency-719c8e1b4e10/receipt.json)
 retains source identities, commands, complete test output and timing. This is
-Node application qualification with an authored DOM; it does not claim an
-independent review, fresh browser acceptance, full Python-suite run or deployed
-site adoption.
+Node application qualification with an authored DOM. The browser receipts below
+qualify the same application blob separately.
+
+### Native browser qualification
+
+The repaired application is Git blob
+`3a1b379e62df5d4c14c76479dc81db6d0e66f0e1`. Its bundled runtime files
+remain exact across these receiving courses:
+
+| Course | Source and environment | Received behavior |
+| --- | --- | --- |
+| [Focused author browser course](../docs/receiving/replay-run-consistency-719c8e1b4e10/README.md#focused-native-browser-result) | Candidate `bfb5cc28`; Node 22.22.1 / Chromium 153 on Linux, 2026-10-13 | 21 checks: original contradiction witness, 16 healthy desktop/narrow views and four malformed-record refusals |
+| [Independent browser course](../docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/README.md) | Candidate `bfb5cc28`; Node 26.11.0 / Chrome 154 on macOS, 2026-10-12 | 69 checks: native pointer/keyboard navigation, deep links, malformed-record refusal and recovery; 12 actual browser downloads matched the recorded filenames, byte counts and SHA-256 |
+
+The independent receipt binds all 28 runtime inputs to their Git blob identities.
+It uses native DevTools input, and its 390px viewport is a desktop browser
+configuration. Both courses retain their original source pins, raw results,
+receivers and captures. The [illustrated review](https://docs.google.com/document/d/1TtzuRd92ZZ2kB6BEyo93qX3DrjyuiC9q5gnonKNlUA0/edit)
+shows the independently received interface.
+
+The [consolidation record](../docs/receiving/replay-run-consistency-719c8e1b4e10/consolidation.json)
+preserves the independent evidence and the unrelated comparison cleanup from
+main without changing any replay runtime file or maintained regression test.
+These receipts cover recorded replay behavior. Independent source review,
+the full Python suite, physical devices, and deployed-site adoption remain
+separate qualifications.

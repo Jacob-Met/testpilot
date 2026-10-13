@@ -1,0 +1,1806 @@
+{
+  "schema": "hamon.testpilot.actual-browser-receiving.v1",
+  "started_utc": "2026-10-12T23:39:36.865Z",
+  "host": "Mac.lan",
+  "platform": "darwin",
+  "node": "v26.11.0",
+  "candidate": "bfb5cc2830fbe535d705ac2649503e3ae7647224",
+  "baseline": "478f68adf01658a94a3ede22526da00f580785bd",
+  "source": [
+    {
+      "path": "web-demo/app.mjs",
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115",
+      "git_blob": "3a1b379e62df5d4c14c76479dc81db6d0e66f0e1"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/baseline.log",
+      "bytes": 179,
+      "sha256": "5dbd60f07032d4cd6459f707d01be1c6a03ba0044548c3e03adde0967bfc9e99",
+      "git_blob": "9883a9b803a061f2a80441efc2426fca2cb5eeb8"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/change.diff",
+      "bytes": 410,
+      "sha256": "524dd8551c7043beb01153c54c90beda78e2f2b4a7ae3807533f0bfe24af1f3f",
+      "git_blob": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/fixed.log",
+      "bytes": 179,
+      "sha256": "1563f81563209f398dc09570c7dea95a533afc41ab170f5985eef050fc7e5d30",
+      "git_blob": "6404237d11069bf4571070427eba75414f100f3f"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/generated.log",
+      "bytes": 1340,
+      "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae",
+      "git_blob": "107d68b61d619f858322806659c5ea65fa64b6a0"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/oracle.py",
+      "bytes": 361,
+      "sha256": "d8e853f3e9de197268cbef9422cea093804b0d4e8b2ebe05829f41901a56f004",
+      "git_blob": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/pipeline.json",
+      "bytes": 10601,
+      "sha256": "2a1783e032538ccaef4ae080800f381168688bd4794ed14d4c015a310bb8fe28",
+      "git_blob": "2068cd4edb9f57e20d2092cf9c24df3570b71078"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/record.json",
+      "bytes": 13090,
+      "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3",
+      "git_blob": "1a8d8be9f09bdb0902bd15e8b88d371cde1ca090"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/source.py",
+      "bytes": 361,
+      "sha256": "1ef33b0ae046ffc6a81683a141651f8cb64902ecaaa3c7fde8d012f0c37b40e3",
+      "git_blob": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/testpilot.patch",
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+      "git_blob": "13267ab82cd6ed27a2d08d69c8b5c9ce91e68dd0"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness.py",
+      "bytes": 86,
+      "sha256": "94a9ba7b275f086fbac137ed53fa39c1776920ceb7af43fa52bac9e8e1e35c8f",
+      "git_blob": "3564190aafd99c7b7c432ac6c4a7eec664efcb3a"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness_buggy.log",
+      "bytes": 702,
+      "sha256": "43413615418d53d78d31491b838dcd72fffb486b6804a8de39adc8d6f5c6445a",
+      "git_blob": "24829e935749496c2391970d8154f459d41292d5"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness_fixed.log",
+      "bytes": 179,
+      "sha256": "1ba2d4249aa49bb1992b01e64cede66af236206ceff3c810c7408cae8762230a",
+      "git_blob": "1306d56836bb073470347a30f7fd5d852d9847a6"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/baseline.log",
+      "bytes": 179,
+      "sha256": "03a905d23d573e0af682bff95fb2fc594c2028194c2340b2f91b7e77783bf980",
+      "git_blob": "57bbb7ea0a51414f1216e01b25f537a839f450b0"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/change.diff",
+      "bytes": 404,
+      "sha256": "bdfe8d3e68d25aa16ce75e9d8c1ad0613f6a52a90ffa34832430cd536dada2c3",
+      "git_blob": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/fixed.log",
+      "bytes": 179,
+      "sha256": "00ff26c8d983e871337c72d4cf7644f31387852dbf6ba2eb54656e243720253f",
+      "git_blob": "1536e8e81a91a3a657d87c58c14dec88359fe548"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/generated.log",
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b",
+      "git_blob": "eb400ca6182e5ac1f7f4f3edac6f88439f3817ed"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/oracle.py",
+      "bytes": 375,
+      "sha256": "ca479b01a87b61238c2724cdc781c6e4a4443998930bcf8dae78e6a7a3070212",
+      "git_blob": "bceee10026f020ec7901ff7bdd491fdb244ba1ab"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/pipeline.json",
+      "bytes": 5084,
+      "sha256": "ef86468a9ac51cefab5e200eed5ff6d38c9bb873440444dde1f1d9801ba5ef86",
+      "git_blob": "f4502acce9bc97631fa0a3b5bed2243d2de63f77"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/record.json",
+      "bytes": 9763,
+      "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d",
+      "git_blob": "0714ad89649222b75f7645da14bd2dd90fffb6b3"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/source.py",
+      "bytes": 315,
+      "sha256": "c06007181d71cee213650703be0f7cc139007a8f9c8838ec507f8de4c446a1ff",
+      "git_blob": "a851be68344da385d18845063dbec48dbcd03894"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/testpilot.patch",
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378",
+      "git_blob": "d1ba39803e1e25a51767b0e79bdb9f39ada6a645"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness.py",
+      "bytes": 96,
+      "sha256": "b0ca3c50db158ad2342c0dd611edccb683514072ea462c482307672dd71db98f",
+      "git_blob": "e8957999a94a998287de547fd5800f1f9663c9d4"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness_buggy.log",
+      "bytes": 716,
+      "sha256": "48bba5eb381472553cf0682c363aae149c8a040c5d4f5e6ebc235ac197a5a5d5",
+      "git_blob": "4a1c2ce3537a7731e35e98e784a8b039b2ddb66f"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness_fixed.log",
+      "bytes": 179,
+      "sha256": "9b024b17e97477bfe82b38110cd34d28fa79635d1f7381a8dc7650f507489b2d",
+      "git_blob": "53ce0e968bd1a4e6be05a7ec553cd6332765d34c"
+    },
+    {
+      "path": "web-demo/data/replays.json",
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319",
+      "git_blob": "dbc4d8144b926eeec94089d1e5c01c037a2ffcf0"
+    },
+    {
+      "path": "web-demo/index.html",
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0",
+      "git_blob": "ab128030cae84f967813469439321e80ac3d47e5"
+    },
+    {
+      "path": "web-demo/styles.css",
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb",
+      "git_blob": "e6658a43e7404d15de28c1b79e78be4bd2210514"
+    }
+  ],
+  "checks": [
+    {
+      "label": "28 candidate runtime files match GitHub blobs",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "baseline app matches its published blob",
+      "passed": true,
+      "actual": "5795114a641ffb83dff466b359424fb78502d7e5"
+    },
+    {
+      "label": "desktop: honest recorded-evidence disclosure",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop: keyboard skip link receives focus",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop: skip link reaches replay",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop/calc_clamp: fixture starts at diff with focus",
+      "passed": true,
+      "actual": {
+        "ready": "false",
+        "hidden": false,
+        "error": null,
+        "caseId": "calc_clamp",
+        "stage": 0,
+        "focus": "",
+        "focusCase": "calc_clamp",
+        "text": "A small change to clamp().\nRECORDED EVIDENCE\n\nclamp() swaps lo/hi in max/min, so every in-range value returns hi\n\nEXISTING SUITE\n2pass\nGENERATED TESTS\n4new\nFIXTURE\n1of 2\ncalc.py\nINPUT DIFF\ndiff --git a/calc.py b/calc.py\nindex 9f221a6..cfe4453 100644\n--- a/calc.py\n+++ b/calc.py\n@@ -5,6 +5,13 @@ def add(a, b):\n     return a + b\n \n \n+def clamp(x, lo, hi):\n+    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n+    if lo > hi:\n+        raise ValueError(\"lo must be <= hi\")\n+    return max(hi, min(lo, x))\n+\n+\n def mean(values):\n     if not values:\n         raise ValueError(\"mean of empty sequence\")\n \n\nThe existing suite passes on this changed implementation. The next stage shows the authored planner reply and the tests produced by the recorded pipeline.",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=calc_clamp&stage=1#stage-content",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/calc_clamp/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/calc_clamp/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/calc_clamp/generated.log",
+            "disabled": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "desktop/calc_clamp: stage 1 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 0,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/calc_clamp: stage 2 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 1,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/calc_clamp: stage 3 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 2,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/calc_clamp: actual recorded result is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop/calc_clamp: stage 4 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 3,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/calc_clamp: separate oracle witness is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop/calc_clamp: exact native testpilot.patch download",
+      "passed": true,
+      "actual": {
+        "view": "desktop",
+        "case": "calc_clamp",
+        "filename": "testpilot.patch",
+        "suggested": "calc_clamp-testpilot.patch",
+        "guid": "5abbdd7c-7d0b-4f0f-83bf-c35d4d5cf72c",
+        "bytes": 561,
+        "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "desktop/calc_clamp: exact native record.json download",
+      "passed": true,
+      "actual": {
+        "view": "desktop",
+        "case": "calc_clamp",
+        "filename": "record.json",
+        "suggested": "calc_clamp-record.json",
+        "guid": "a79ee585-d436-430f-ade8-c17f963d6947",
+        "bytes": 13090,
+        "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "desktop/calc_clamp: exact native generated.log download",
+      "passed": true,
+      "actual": {
+        "view": "desktop",
+        "case": "calc_clamp",
+        "filename": "generated.log",
+        "suggested": "calc_clamp-generated.log",
+        "guid": "0c29d987-6a62-40d1-b2ab-f138ab1a394a",
+        "bytes": 1340,
+        "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "desktop/stats_median: fixture starts at diff with focus",
+      "passed": true,
+      "actual": {
+        "ready": "false",
+        "hidden": false,
+        "error": null,
+        "caseId": "stats_median",
+        "stage": 0,
+        "focus": "",
+        "focusCase": "stats_median",
+        "text": "A small change to median().\nRECORDED EVIDENCE\n\nmedian() returns the upper middle element for even-length input instead of the mean of the two middles\n\nEXISTING SUITE\n1pass\nGENERATED TESTS\n3new\nFIXTURE\n2of 2\nstats.py\nINPUT DIFF\ndiff --git a/stats.py b/stats.py\nindex 1031c7b..a851be6 100644\n--- a/stats.py\n+++ b/stats.py\n@@ -3,3 +3,12 @@\n \n def total(values):\n     return sum(values)\n+\n+\n+def median(values):\n+    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n+    if not values:\n+        raise ValueError(\"median of empty sequence\")\n+    s = sorted(values)\n+    mid = len(s) // 2\n+    return s[mid]\n \n\nThe existing suite passes on this changed implementation. The next stage shows the authored planner reply and the tests produced by the recorded pipeline.",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=stats_median&stage=1#stage-content",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/stats_median/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/stats_median/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/stats_median/generated.log",
+            "disabled": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "desktop/stats_median: stage 1 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 0,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/stats_median: stage 2 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 1,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/stats_median: stage 3 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 2,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/stats_median: actual recorded result is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop/stats_median: stage 4 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 3,
+        "scroll": 1440,
+        "width": 1440
+      }
+    },
+    {
+      "label": "desktop/stats_median: separate oracle witness is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop/stats_median: exact native testpilot.patch download",
+      "passed": true,
+      "actual": {
+        "view": "desktop",
+        "case": "stats_median",
+        "filename": "testpilot.patch",
+        "suggested": "stats_median-testpilot.patch",
+        "guid": "793d391d-a5fb-4859-989e-5054502cdd61",
+        "bytes": 384,
+        "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "desktop/stats_median: exact native record.json download",
+      "passed": true,
+      "actual": {
+        "view": "desktop",
+        "case": "stats_median",
+        "filename": "record.json",
+        "suggested": "stats_median-record.json",
+        "guid": "87f4c292-9a66-4303-b265-656259c2d8c7",
+        "bytes": 9763,
+        "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "desktop/stats_median: exact native generated.log download",
+      "passed": true,
+      "actual": {
+        "view": "desktop",
+        "case": "stats_median",
+        "filename": "generated.log",
+        "suggested": "stats_median-generated.log",
+        "guid": "6ef5359f-ea8d-468a-b17e-42df63ddc838",
+        "bytes": 179,
+        "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "desktop: arrow key switches and focuses stage",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop: End reaches oracle",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop: Home returns to diff",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop: saved fixture/stage URL reopens exactly",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "desktop: invalid deep link uses stable initial view",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px: honest recorded-evidence disclosure",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px: keyboard skip link receives focus",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px: skip link reaches replay",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px/calc_clamp: fixture starts at diff with focus",
+      "passed": true,
+      "actual": {
+        "ready": "false",
+        "hidden": false,
+        "error": null,
+        "caseId": "calc_clamp",
+        "stage": 0,
+        "focus": "",
+        "focusCase": "calc_clamp",
+        "text": "A small change to clamp().\nRECORDED EVIDENCE\n\nclamp() swaps lo/hi in max/min, so every in-range value returns hi\n\nEXISTING SUITE\n2pass\nGENERATED TESTS\n4new\nFIXTURE\n1of 2\ncalc.py\nINPUT DIFF\ndiff --git a/calc.py b/calc.py\nindex 9f221a6..cfe4453 100644\n--- a/calc.py\n+++ b/calc.py\n@@ -5,6 +5,13 @@ def add(a, b):\n     return a + b\n \n \n+def clamp(x, lo, hi):\n+    \"\"\"Clamp x into the closed interval [lo, hi].\"\"\"\n+    if lo > hi:\n+        raise ValueError(\"lo must be <= hi\")\n+    return max(hi, min(lo, x))\n+\n+\n def mean(values):\n     if not values:\n         raise ValueError(\"mean of empty sequence\")\n \n\nThe existing suite passes on this changed implementation. The next stage shows the authored planner reply and the tests produced by the recorded pipeline.",
+        "width": 390,
+        "scroll": 390,
+        "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=calc_clamp&stage=1#stage-content",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/calc_clamp/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/calc_clamp/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/calc_clamp/generated.log",
+            "disabled": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "390px/calc_clamp: stage 1 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 0,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/calc_clamp: stage 2 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 1,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/calc_clamp: stage 3 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 2,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/calc_clamp: actual recorded result is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px/calc_clamp: stage 4 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 3,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/calc_clamp: separate oracle witness is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px/calc_clamp: exact native testpilot.patch download",
+      "passed": true,
+      "actual": {
+        "view": "390px",
+        "case": "calc_clamp",
+        "filename": "testpilot.patch",
+        "suggested": "calc_clamp-testpilot.patch",
+        "guid": "68e27bd9-46b4-4657-9c35-c06093da2004",
+        "bytes": 561,
+        "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "390px/calc_clamp: exact native record.json download",
+      "passed": true,
+      "actual": {
+        "view": "390px",
+        "case": "calc_clamp",
+        "filename": "record.json",
+        "suggested": "calc_clamp-record.json",
+        "guid": "4a2e17bb-5f97-4e6e-a573-9492eff349ec",
+        "bytes": 13090,
+        "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "390px/calc_clamp: exact native generated.log download",
+      "passed": true,
+      "actual": {
+        "view": "390px",
+        "case": "calc_clamp",
+        "filename": "generated.log",
+        "suggested": "calc_clamp-generated.log",
+        "guid": "95d0c088-35be-4ad1-b341-1686731c7b90",
+        "bytes": 1340,
+        "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "390px/stats_median: fixture starts at diff with focus",
+      "passed": true,
+      "actual": {
+        "ready": "false",
+        "hidden": false,
+        "error": null,
+        "caseId": "stats_median",
+        "stage": 0,
+        "focus": "",
+        "focusCase": "stats_median",
+        "text": "A small change to median().\nRECORDED EVIDENCE\n\nmedian() returns the upper middle element for even-length input instead of the mean of the two middles\n\nEXISTING SUITE\n1pass\nGENERATED TESTS\n3new\nFIXTURE\n2of 2\nstats.py\nINPUT DIFF\ndiff --git a/stats.py b/stats.py\nindex 1031c7b..a851be6 100644\n--- a/stats.py\n+++ b/stats.py\n@@ -3,3 +3,12 @@\n \n def total(values):\n     return sum(values)\n+\n+\n+def median(values):\n+    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n+    if not values:\n+        raise ValueError(\"median of empty sequence\")\n+    s = sorted(values)\n+    mid = len(s) // 2\n+    return s[mid]\n \n\nThe existing suite passes on this changed implementation. The next stage shows the authored planner reply and the tests produced by the recorded pipeline.",
+        "width": 390,
+        "scroll": 390,
+        "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=stats_median&stage=1#stage-content",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/stats_median/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/stats_median/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/stats_median/generated.log",
+            "disabled": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "390px/stats_median: stage 1 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 0,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/stats_median: stage 2 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 1,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/stats_median: stage 3 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 2,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/stats_median: actual recorded result is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px/stats_median: stage 4 ready and fits",
+      "passed": true,
+      "actual": {
+        "stage": 3,
+        "scroll": 390,
+        "width": 390
+      }
+    },
+    {
+      "label": "390px/stats_median: separate oracle witness is visible",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px/stats_median: exact native testpilot.patch download",
+      "passed": true,
+      "actual": {
+        "view": "390px",
+        "case": "stats_median",
+        "filename": "testpilot.patch",
+        "suggested": "stats_median-testpilot.patch",
+        "guid": "e8bc9e27-f878-47aa-adfd-f04fb3cce2b3",
+        "bytes": 384,
+        "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "390px/stats_median: exact native record.json download",
+      "passed": true,
+      "actual": {
+        "view": "390px",
+        "case": "stats_median",
+        "filename": "record.json",
+        "suggested": "stats_median-record.json",
+        "guid": "59849fd8-9a72-4440-9d42-30918c095b7c",
+        "bytes": 9763,
+        "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "390px/stats_median: exact native generated.log download",
+      "passed": true,
+      "actual": {
+        "view": "390px",
+        "case": "stats_median",
+        "filename": "generated.log",
+        "suggested": "stats_median-generated.log",
+        "guid": "413d5c76-05c5-4126-9de9-cfe445a107ff",
+        "bytes": 179,
+        "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b",
+        "browser_state": "completed"
+      }
+    },
+    {
+      "label": "390px: arrow key switches and focuses stage",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px: End reaches oracle",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px: Home returns to diff",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px: saved fixture/stage URL reopens exactly",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "390px: invalid deep link uses stable initial view",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "baseline reproduction admits wrong-exit",
+      "passed": true,
+      "actual": {
+        "ready": "false",
+        "hidden": false,
+        "error": null,
+        "caseId": "calc_clamp",
+        "stage": 2,
+        "focus": "",
+        "text": "Read the actual test result.\nRECORDED EVIDENCE\n\nThe recorded tests expose the changed implementation. A failing assertion is useful evidence: TestPilot keeps it when the authored repair reply identifies a code bug.\n\nCode bug suspected — failing assertions retained\n\nclamp(5, 0, 10) returns 10 and clamp(-3, 0, 10) returns 10: the expression `max(hi, min(lo, x))` has lo and hi swapped, so it always returns hi. The tests encode the documented contract (\"clamp x into [lo, hi]\"); the fix is `max(lo, min(hi, x))`.\n\nPASSED\n3tests\nFAILED\n3tests\nPROCESS EXIT\n1recorded\npytest / generated tests\nOUTPUT EXCERPT\nFFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n------------ generated xml file: /tmp/testpilot-kk6oq088/junit.xml -------------\n=========================== short test summary info ============================\nFAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5\nFAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0\nFAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0\n3 failed, 3 passed in 0.03s\n",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/baseline/wrong-exit/index.html?case=calc_clamp&stage=3",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/calc_clamp/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/calc_clamp/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/calc_clamp/generated.log",
+            "disabled": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate refuses wrong-exit before verdict or downloads",
+      "passed": true,
+      "actual": {
+        "ready": "true",
+        "hidden": true,
+        "error": "A required fixture run has inconsistent results. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files.",
+        "caseId": "Recorded fixture",
+        "stage": 0,
+        "focus": "",
+        "text": "Loading recorded evidence…",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/candidate/wrong-exit/index.html?case=calc_clamp&stage=3",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": null,
+            "disabled": "true"
+          },
+          {
+            "id": "download-record",
+            "href": null,
+            "disabled": "true"
+          },
+          {
+            "id": "download-log",
+            "href": null,
+            "disabled": "true"
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline reproduction admits missing-cases",
+      "passed": true,
+      "actual": {
+        "ready": "false",
+        "hidden": false,
+        "error": null,
+        "caseId": "calc_clamp",
+        "stage": 2,
+        "focus": "",
+        "text": "Read the actual test result.\nRECORDED EVIDENCE\n\nThe recorded tests expose the changed implementation. A failing assertion is useful evidence: TestPilot keeps it when the authored repair reply identifies a code bug.\n\nCode bug suspected — failing assertions retained\n\nclamp(5, 0, 10) returns 10 and clamp(-3, 0, 10) returns 10: the expression `max(hi, min(lo, x))` has lo and hi swapped, so it always returns hi. The tests encode the documented contract (\"clamp x into [lo, hi]\"); the fix is `max(lo, min(hi, x))`.\n\nPASSED\n3tests\nFAILED\n3tests\nPROCESS EXIT\n1recorded\npytest / generated tests\nOUTPUT EXCERPT\nFFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n------------ generated xml file: /tmp/testpilot-kk6oq088/junit.xml -------------\n=========================== short test summary info ============================\nFAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5\nFAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0\nFAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0\n3 failed, 3 passed in 0.03s\n",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/baseline/missing-cases/index.html?case=calc_clamp&stage=3",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/calc_clamp/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/calc_clamp/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/calc_clamp/generated.log",
+            "disabled": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate refuses missing-cases before verdict or downloads",
+      "passed": true,
+      "actual": {
+        "ready": "true",
+        "hidden": true,
+        "error": "A required fixture run is incomplete. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files.",
+        "caseId": "Recorded fixture",
+        "stage": 0,
+        "focus": "",
+        "text": "Loading recorded evidence…",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/candidate/missing-cases/index.html?case=calc_clamp&stage=3",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": null,
+            "disabled": "true"
+          },
+          {
+            "id": "download-record",
+            "href": null,
+            "disabled": "true"
+          },
+          {
+            "id": "download-log",
+            "href": null,
+            "disabled": "true"
+          }
+        ]
+      }
+    },
+    {
+      "label": "baseline reproduction admits no-failure-witness",
+      "passed": true,
+      "actual": {
+        "ready": "false",
+        "hidden": false,
+        "error": null,
+        "caseId": "calc_clamp",
+        "stage": 2,
+        "focus": "",
+        "text": "Read the actual test result.\nRECORDED EVIDENCE\n\nThe recorded tests expose the changed implementation. A failing assertion is useful evidence: TestPilot keeps it when the authored repair reply identifies a code bug.\n\nCode bug suspected — failing assertions retained\n\nclamp(5, 0, 10) returns 10 and clamp(-3, 0, 10) returns 10: the expression `max(hi, min(lo, x))` has lo and hi swapped, so it always returns hi. The tests encode the documented contract (\"clamp x into [lo, hi]\"); the fix is `max(lo, min(hi, x))`.\n\nPASSED\n6tests\nFAILED\n0tests\nPROCESS EXIT\n1recorded\npytest / generated tests\nOUTPUT EXCERPT\nFFF...                                                                   [100%]\n=================================== FAILURES ===================================\n_________________________ test_inside_range_unchanged __________________________\n\n    def test_inside_range_unchanged():\n>       assert clamp(5, 0, 10) == 5\nE       assert 10 == 5\nE        +  where 10 = clamp(5, 0, 10)\n\ntests/test_calc_clamp.py:7: AssertionError\n_____________________________ test_below_and_above _____________________________\n\n    def test_below_and_above():\n>       assert clamp(-3, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(-3, 0, 10)\n\ntests/test_calc_clamp.py:11: AssertionError\n_______________________________ test_boundaries ________________________________\n\n    def test_boundaries():\n>       assert clamp(0, 0, 10) == 0\nE       assert 10 == 0\nE        +  where 10 = clamp(0, 0, 10)\n\ntests/test_calc_clamp.py:16: AssertionError\n------------ generated xml file: /tmp/testpilot-kk6oq088/junit.xml -------------\n=========================== short test summary info ============================\nFAILED tests/test_calc_clamp.py::test_inside_range_unchanged - assert 10 == 5\nFAILED tests/test_calc_clamp.py::test_below_and_above - assert 10 == 0\nFAILED tests/test_calc_clamp.py::test_boundaries - assert 10 == 0\n3 failed, 3 passed in 0.03s\n",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/baseline/no-failure-witness/index.html?case=calc_clamp&stage=3",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/calc_clamp/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/calc_clamp/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/calc_clamp/generated.log",
+            "disabled": null
+          }
+        ]
+      }
+    },
+    {
+      "label": "candidate refuses no-failure-witness before verdict or downloads",
+      "passed": true,
+      "actual": {
+        "ready": "true",
+        "hidden": true,
+        "error": "A required fixture run has inconsistent results. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files.",
+        "caseId": "Recorded fixture",
+        "stage": 0,
+        "focus": "",
+        "text": "Loading recorded evidence…",
+        "width": 1440,
+        "scroll": 1440,
+        "url": "http://127.0.0.1:59387/candidate/no-failure-witness/index.html?case=calc_clamp&stage=3",
+        "downloads": [
+          {
+            "id": "download-patch",
+            "href": null,
+            "disabled": "true"
+          },
+          {
+            "id": "download-record",
+            "href": null,
+            "disabled": "true"
+          },
+          {
+            "id": "download-log",
+            "href": null,
+            "disabled": "true"
+          }
+        ]
+      }
+    },
+    {
+      "label": "fresh healthy reload recovers after refusal",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "no external page request attempted",
+      "passed": true,
+      "actual": []
+    },
+    {
+      "label": "no page exception",
+      "passed": true,
+      "actual": []
+    },
+    {
+      "label": "all candidate runtime files unchanged after receiving",
+      "passed": true,
+      "actual": null
+    },
+    {
+      "label": "baseline source unchanged after receiving",
+      "passed": true,
+      "actual": null
+    }
+  ],
+  "downloads": [
+    {
+      "view": "desktop",
+      "case": "calc_clamp",
+      "filename": "testpilot.patch",
+      "suggested": "calc_clamp-testpilot.patch",
+      "guid": "5abbdd7c-7d0b-4f0f-83bf-c35d4d5cf72c",
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+      "browser_state": "completed"
+    },
+    {
+      "view": "desktop",
+      "case": "calc_clamp",
+      "filename": "record.json",
+      "suggested": "calc_clamp-record.json",
+      "guid": "a79ee585-d436-430f-ade8-c17f963d6947",
+      "bytes": 13090,
+      "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3",
+      "browser_state": "completed"
+    },
+    {
+      "view": "desktop",
+      "case": "calc_clamp",
+      "filename": "generated.log",
+      "suggested": "calc_clamp-generated.log",
+      "guid": "0c29d987-6a62-40d1-b2ab-f138ab1a394a",
+      "bytes": 1340,
+      "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae",
+      "browser_state": "completed"
+    },
+    {
+      "view": "desktop",
+      "case": "stats_median",
+      "filename": "testpilot.patch",
+      "suggested": "stats_median-testpilot.patch",
+      "guid": "793d391d-a5fb-4859-989e-5054502cdd61",
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378",
+      "browser_state": "completed"
+    },
+    {
+      "view": "desktop",
+      "case": "stats_median",
+      "filename": "record.json",
+      "suggested": "stats_median-record.json",
+      "guid": "87f4c292-9a66-4303-b265-656259c2d8c7",
+      "bytes": 9763,
+      "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d",
+      "browser_state": "completed"
+    },
+    {
+      "view": "desktop",
+      "case": "stats_median",
+      "filename": "generated.log",
+      "suggested": "stats_median-generated.log",
+      "guid": "6ef5359f-ea8d-468a-b17e-42df63ddc838",
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b",
+      "browser_state": "completed"
+    },
+    {
+      "view": "390px",
+      "case": "calc_clamp",
+      "filename": "testpilot.patch",
+      "suggested": "calc_clamp-testpilot.patch",
+      "guid": "68e27bd9-46b4-4657-9c35-c06093da2004",
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc",
+      "browser_state": "completed"
+    },
+    {
+      "view": "390px",
+      "case": "calc_clamp",
+      "filename": "record.json",
+      "suggested": "calc_clamp-record.json",
+      "guid": "4a2e17bb-5f97-4e6e-a573-9492eff349ec",
+      "bytes": 13090,
+      "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3",
+      "browser_state": "completed"
+    },
+    {
+      "view": "390px",
+      "case": "calc_clamp",
+      "filename": "generated.log",
+      "suggested": "calc_clamp-generated.log",
+      "guid": "95d0c088-35be-4ad1-b341-1686731c7b90",
+      "bytes": 1340,
+      "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae",
+      "browser_state": "completed"
+    },
+    {
+      "view": "390px",
+      "case": "stats_median",
+      "filename": "testpilot.patch",
+      "suggested": "stats_median-testpilot.patch",
+      "guid": "e8bc9e27-f878-47aa-adfd-f04fb3cce2b3",
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378",
+      "browser_state": "completed"
+    },
+    {
+      "view": "390px",
+      "case": "stats_median",
+      "filename": "record.json",
+      "suggested": "stats_median-record.json",
+      "guid": "59849fd8-9a72-4440-9d42-30918c095b7c",
+      "bytes": 9763,
+      "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d",
+      "browser_state": "completed"
+    },
+    {
+      "view": "390px",
+      "case": "stats_median",
+      "filename": "generated.log",
+      "suggested": "stats_median-generated.log",
+      "guid": "413d5c76-05c5-4126-9de9-cfe445a107ff",
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b",
+      "browser_state": "completed"
+    }
+  ],
+  "captures": [
+    {
+      "file": "desktop-oracle.png",
+      "bytes": 177586,
+      "sha256": "b115e7fdd638908225a5ffe3e9c108efe1a685d609a74a444d5ca809eac887a2",
+      "width": 1440,
+      "height": 1268
+    },
+    {
+      "file": "narrow-oracle.png",
+      "bytes": 140798,
+      "sha256": "e2833e255c5106e206608dbc0141a69c65d288f747ba0fbaf44cfe0b94b0a8f0",
+      "width": 390,
+      "height": 1998
+    }
+  ],
+  "page_requests": [
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/index.html",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=stats_median&stage=4",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=missing&stage=99",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/index.html",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=stats_median&stage=4",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/index.html?case=missing&stage=99",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/wrong-exit/index.html?case=calc_clamp&stage=3",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/wrong-exit/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/wrong-exit/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/wrong-exit/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/wrong-exit/index.html?case=calc_clamp&stage=3",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/wrong-exit/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/wrong-exit/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/wrong-exit/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/missing-cases/index.html?case=calc_clamp&stage=3",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/missing-cases/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/missing-cases/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/missing-cases/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/missing-cases/index.html?case=calc_clamp&stage=3",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/missing-cases/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/missing-cases/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/missing-cases/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/no-failure-witness/index.html?case=calc_clamp&stage=3",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/no-failure-witness/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/no-failure-witness/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/baseline/no-failure-witness/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/no-failure-witness/index.html?case=calc_clamp&stage=3",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/no-failure-witness/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/no-failure-witness/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/no-failure-witness/data/replays.json",
+      "type": "Fetch"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/index.html",
+      "type": "Document"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/styles.css",
+      "type": "Stylesheet"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/app.mjs",
+      "type": "Script"
+    },
+    {
+      "url": "http://127.0.0.1:59387/candidate/healthy/data/replays.json",
+      "type": "Fetch"
+    }
+  ],
+  "server_requests": [
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/replays.json",
+      "status": 200,
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/calc_clamp/testpilot.patch",
+      "status": 200,
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/calc_clamp/record.json",
+      "status": 200,
+      "bytes": 13090,
+      "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/calc_clamp/generated.log",
+      "status": 200,
+      "bytes": 1340,
+      "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/stats_median/testpilot.patch",
+      "status": 200,
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/stats_median/record.json",
+      "status": 200,
+      "bytes": 9763,
+      "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/stats_median/generated.log",
+      "status": 200,
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/replays.json",
+      "status": 200,
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/replays.json",
+      "status": 200,
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/replays.json",
+      "status": 200,
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/calc_clamp/testpilot.patch",
+      "status": 200,
+      "bytes": 561,
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/calc_clamp/record.json",
+      "status": 200,
+      "bytes": 13090,
+      "sha256": "e98d13710dd8ddad164e2313e714ba2ec1fd64862d81ca6861a47d010a67bca3"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/calc_clamp/generated.log",
+      "status": 200,
+      "bytes": 1340,
+      "sha256": "f2781f234bd17049751ae0ef9ddc2b9b145073dda9403c6a80f07f609d39a6ae"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/stats_median/testpilot.patch",
+      "status": 200,
+      "bytes": 384,
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/stats_median/record.json",
+      "status": 200,
+      "bytes": 9763,
+      "sha256": "71a03b675999e61159c13c9acf000a453c20e29db8595366bdeab2b592d6eb8d"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/cases/stats_median/generated.log",
+      "status": 200,
+      "bytes": 179,
+      "sha256": "8acae6574d55dba329b9227119b6de0eb99edc4bfbd59085893c9afaccc6680b"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/replays.json",
+      "status": 200,
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/replays.json",
+      "status": 200,
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/wrong-exit/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/wrong-exit/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/wrong-exit/app.mjs",
+      "status": 200,
+      "bytes": 11802,
+      "sha256": "103eab1f846d98f275ff82156d9d1600a8f32ce5b8b9fb43b2c1749b97426830"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/wrong-exit/data/replays.json",
+      "status": 200,
+      "bytes": 21751,
+      "sha256": "2d9c8357f9e2995f48665c3873587e6fdda6098b8125cf5eabe763a5a290ba7d"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/wrong-exit/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/wrong-exit/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/wrong-exit/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/wrong-exit/data/replays.json",
+      "status": 200,
+      "bytes": 21751,
+      "sha256": "2d9c8357f9e2995f48665c3873587e6fdda6098b8125cf5eabe763a5a290ba7d"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/missing-cases/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/missing-cases/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/missing-cases/app.mjs",
+      "status": 200,
+      "bytes": 11802,
+      "sha256": "103eab1f846d98f275ff82156d9d1600a8f32ce5b8b9fb43b2c1749b97426830"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/missing-cases/data/replays.json",
+      "status": 200,
+      "bytes": 21424,
+      "sha256": "16df4823a28a09f03d1b8810d01cd22060833c721f85d4b8a641e17d959e2bae"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/missing-cases/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/missing-cases/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/missing-cases/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/missing-cases/data/replays.json",
+      "status": 200,
+      "bytes": 21424,
+      "sha256": "16df4823a28a09f03d1b8810d01cd22060833c721f85d4b8a641e17d959e2bae"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/no-failure-witness/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/no-failure-witness/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/no-failure-witness/app.mjs",
+      "status": 200,
+      "bytes": 11802,
+      "sha256": "103eab1f846d98f275ff82156d9d1600a8f32ce5b8b9fb43b2c1749b97426830"
+    },
+    {
+      "method": "GET",
+      "path": "/baseline/no-failure-witness/data/replays.json",
+      "status": 200,
+      "bytes": 21751,
+      "sha256": "ad01bc18e27b609402a0a944deb173c9e86d75cdb54b509d5a06cc4781bdd918"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/no-failure-witness/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/no-failure-witness/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/no-failure-witness/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/no-failure-witness/data/replays.json",
+      "status": 200,
+      "bytes": 21751,
+      "sha256": "ad01bc18e27b609402a0a944deb173c9e86d75cdb54b509d5a06cc4781bdd918"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/index.html",
+      "status": 200,
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/styles.css",
+      "status": 200,
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/app.mjs",
+      "status": 200,
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "method": "GET",
+      "path": "/candidate/healthy/data/replays.json",
+      "status": 200,
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    }
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "limits": [
+    "The static browser replays existing Python results; it does not execute a fresh Python pipeline or live model.",
+    "Native input is Chrome DevTools dispatch, not physical human/device input.",
+    "A narrow desktop Chrome viewport does not qualify a physical phone, a screen reader, or every browser.",
+    "Source owner retains integration and site adoption; this receiver does not create a PR, push main, or trigger Actions."
+  ],
+  "origin": "http://127.0.0.1:59387",
+  "chrome_pid": 84427,
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/154.0.8037.99",
+    "revision": "@45889d77830582727fe00dbfd614bcb7aac35caa",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "jsVersion": "15.4.80.20"
+  },
+  "chrome_exit": {
+    "code": 0,
+    "signal": null
+  },
+  "server_closed": true,
+  "finished_utc": "2026-10-12T23:39:40.797Z",
+  "passed": 69,
+  "failed": 0,
+  "success": true
+}

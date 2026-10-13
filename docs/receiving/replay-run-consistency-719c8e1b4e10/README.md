@@ -1,6 +1,6 @@
 # Recorded-run consistency receiving
 
-This directory retains the Node and focused native-browser qualification for the isolated TestPilot recorded-run consistency repair.
+This directory retains the Node, focused author browser, and independent browser qualification for the TestPilot recorded-run consistency repair.
 
 ## Source repair
 
@@ -42,4 +42,24 @@ git show 478f68adf01658a94a3ede22526da00f580785bd:web-demo/app.mjs > /tmp/testpi
 node docs/receiving/replay-run-consistency-719c8e1b4e10/check-browser.mjs --browser /path/to/chrome --root web-demo --original-app /tmp/testpilot-original-app.mjs --output /new/browser-receipt-directory
 ```
 
-The output directory must be new. This is author qualification of native rendering and evidence refusal. It does not replace independent source review or the broader existing Playwright course that checks physical downloads, keyboard flows and other interactions. Main, installed services and site adoption remain separate.
+The output directory must be new. This focused course qualifies native rendering and evidence refusal. Its own receipt does not include physical downloads or the full keyboard journey.
+
+## Independent browser receiving
+
+The separate delivery worker `ccd6f8d65954` received the exact repaired runtime at `bfb5cc2830fbe535d705ac2649503e3ae7647224` on macOS with Node 26.11.0 and Chrome 154 on 2026-10-12. The unchanged [independent receiving directory](independent-browser-ccd6f8d65954/README.md) includes its frozen contract, source payload, as-run receiver, full receipt, native publication inventory, browser logs and two captures.
+
+That course passed **69 checks** and completed **12 actual browser downloads**. It covered both fixtures and every stage at desktop and 390px, native pointer and keyboard navigation, deep links, malformed-record refusal and healthy-data recovery. Each downloaded patch, case record and full log matched its filename, byte count and SHA-256. All 28 runtime source identities match this branch; the raw independent receipt remains SHA-256 `bece35948294667529b1f6f1283ded3edab9b5b4a16a982c2294eeeaa488e619`.
+
+[Open the illustrated independent review](https://docs.google.com/document/d/1TtzuRd92ZZ2kB6BEyo93qX3DrjyuiC9q5gnonKNlUA0/edit).
+
+## Consolidated source and evidence
+
+The [consolidation record](consolidation.json) describes the exact tree union:
+
+- Owner candidate `9c361b954f606ae8d1b2fe9109cdaf403935f340`, retaining the repaired application, maintained tests, Node receipt and focused browser evidence.
+- Independent receiving commit `8c9246c84b02631110fed748b837da579e87e91a`, retained as a second merge parent with all ten added evidence files unchanged.
+- Main commit `b751e1cff2b7902bbebd6e7040f764d49bcb1a46`, retained as a third merge parent with its eight disjoint comparison-cleanup changes unchanged.
+
+Only the two guides and the new consolidation record are authored in this follow-up. All 28 replay runtime files, the maintained run-evidence test, all prior raw receipts and all received captures remain exact. No browser or Python suite was rerun for this documentation and evidence union.
+
+The original receipt dates and source pins describe the executions actually performed. Independent browser receiving is available; independent source review, the full Python suite, physical-device qualification, main integration and site adoption remain separate.

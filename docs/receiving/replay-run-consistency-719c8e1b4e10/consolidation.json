@@ -1,0 +1,285 @@
+{
+  "schema": "hamon.testpilot.replay-evidence-consolidation.v1",
+  "prepared_utc": "2026-10-13T01:03:09.590Z",
+  "repository": "Jacob-Met/testpilot",
+  "owner": "719c8e1b4e10/source_product",
+  "branch": "fix/replay-run-consistency-719c8e1b4e10",
+  "purpose": "Keep the recorded-run consistency repair and both native browser receipts in one source-preserving review branch.",
+  "parents": [
+    {
+      "role": "owner candidate",
+      "commit": "9c361b954f606ae8d1b2fe9109cdaf403935f340",
+      "tree": "ac9e142c82ed4878080c9412780b6ba0056198f0"
+    },
+    {
+      "role": "independent browser receiver",
+      "commit": "8c9246c84b02631110fed748b837da579e87e91a",
+      "tree": "19ab25e4a321a0d2800d27f5bf3237b1371b19be"
+    },
+    {
+      "role": "current main comparison cleanup",
+      "commit": "b751e1cff2b7902bbebd6e7040f764d49bcb1a46",
+      "tree": "2057c593b281f4bf7624df41081b57f104697b05"
+    }
+  ],
+  "inherited_main_changes": [
+    {
+      "path": "docs/COMPARE.md",
+      "before": "6b8bc429d143587f3eb2269030744e2666b38aaa",
+      "after": "9e9023131fb5615264243cb314432f4eacaf7c15"
+    },
+    {
+      "path": "testpilot/compare.py",
+      "before": "b0e5c794eea23c4ea088acaafb03cba9faa5c7cf",
+      "after": "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+    },
+    {
+      "path": "docs/qualification/comparison-cleanup-dc06b3a12de5/README.md",
+      "before": null,
+      "after": "a21f7de6bd69e677448b5f76b4d2a8e3934835d1"
+    },
+    {
+      "path": "docs/qualification/comparison-cleanup-dc06b3a12de5/native-baseline.json",
+      "before": null,
+      "after": "b252fa778ff131501c6720c0bd817e00e5831818"
+    },
+    {
+      "path": "docs/qualification/comparison-cleanup-dc06b3a12de5/native-candidate.json",
+      "before": null,
+      "after": "5714f0a9557a430a14becab16fcd9b8894d04a6e"
+    },
+    {
+      "path": "docs/qualification/comparison-cleanup-dc06b3a12de5/native-review.json",
+      "before": null,
+      "after": "585051aac82627712c00fb4270f1a0717399b919"
+    },
+    {
+      "path": "docs/qualification/comparison-cleanup-dc06b3a12de5/receiving.json",
+      "before": null,
+      "after": "be6df807ecb48c1708d5e905481a98e4905027e6"
+    },
+    {
+      "path": "tests/test_compare_cleanup.py",
+      "before": null,
+      "after": "13847e35de97f5242d8d7da56cdb916ea3476757"
+    }
+  ],
+  "inherited_independent_files": [
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/README.md",
+      "git_blob": "ac81a933d8cacbf04f62fff907d52ad224719aa1"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/artifact-inventory.json",
+      "git_blob": "0c497e9e95088b169b9859dc0925e75fe5193450"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/captures/desktop-oracle.png",
+      "git_blob": "fe342190553f93d1b9106f6a5fab41afa0772811"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/captures/narrow-oracle.png",
+      "git_blob": "c189f72f1c5bac41a5180c76de44f33bac443aa8"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/chrome.stderr.log",
+      "git_blob": "97521576be640425552c54f93a3dcc36086d3b8b"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/chrome.stdout.log",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/receipt.json",
+      "git_blob": "df4ed0fa98851ac5c21db8b572e9a92a292371f5"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/receive-browser.mjs",
+      "git_blob": "636e8d993049782f0e66e5af1983ff4929ebc928"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/receiving-contract.json",
+      "git_blob": "86e1d00c46a8ea66040383e0ad88aca709738ca7"
+    },
+    {
+      "path": "docs/receiving/replay-run-consistency-719c8e1b4e10/independent-browser-ccd6f8d65954/source-payload.json",
+      "git_blob": "5a38daa4c6a3134e5462838e2aff254c86bca521"
+    }
+  ],
+  "newly_authored_paths": [
+    "web-demo/README.md",
+    "docs/receiving/replay-run-consistency-719c8e1b4e10/README.md",
+    "docs/receiving/replay-run-consistency-719c8e1b4e10/consolidation.json"
+  ],
+  "replay_source_identities": [
+    {
+      "path": "web-demo/app.mjs",
+      "git_blob": "3a1b379e62df5d4c14c76479dc81db6d0e66f0e1"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/baseline.log",
+      "git_blob": "9883a9b803a061f2a80441efc2426fca2cb5eeb8"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/change.diff",
+      "git_blob": "be9a973b68fb4e9c09769862af8ecaba17bbbdc4"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/fixed.log",
+      "git_blob": "6404237d11069bf4571070427eba75414f100f3f"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/generated.log",
+      "git_blob": "107d68b61d619f858322806659c5ea65fa64b6a0"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/oracle.py",
+      "git_blob": "4f34612600cef89c4b12ddfcecf04f9950ad6c0c"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/pipeline.json",
+      "git_blob": "2068cd4edb9f57e20d2092cf9c24df3570b71078"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/record.json",
+      "git_blob": "1a8d8be9f09bdb0902bd15e8b88d371cde1ca090"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/source.py",
+      "git_blob": "cfe44537bf7f7807eeff511deda0fd1656d0a6d2"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/testpilot.patch",
+      "git_blob": "13267ab82cd6ed27a2d08d69c8b5c9ce91e68dd0"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness.py",
+      "git_blob": "3564190aafd99c7b7c432ac6c4a7eec664efcb3a"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness_buggy.log",
+      "git_blob": "24829e935749496c2391970d8154f459d41292d5"
+    },
+    {
+      "path": "web-demo/data/cases/calc_clamp/witness_fixed.log",
+      "git_blob": "1306d56836bb073470347a30f7fd5d852d9847a6"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/baseline.log",
+      "git_blob": "57bbb7ea0a51414f1216e01b25f537a839f450b0"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/change.diff",
+      "git_blob": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/fixed.log",
+      "git_blob": "1536e8e81a91a3a657d87c58c14dec88359fe548"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/generated.log",
+      "git_blob": "eb400ca6182e5ac1f7f4f3edac6f88439f3817ed"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/oracle.py",
+      "git_blob": "bceee10026f020ec7901ff7bdd491fdb244ba1ab"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/pipeline.json",
+      "git_blob": "f4502acce9bc97631fa0a3b5bed2243d2de63f77"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/record.json",
+      "git_blob": "0714ad89649222b75f7645da14bd2dd90fffb6b3"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/source.py",
+      "git_blob": "a851be68344da385d18845063dbec48dbcd03894"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/testpilot.patch",
+      "git_blob": "d1ba39803e1e25a51767b0e79bdb9f39ada6a645"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness.py",
+      "git_blob": "e8957999a94a998287de547fd5800f1f9663c9d4"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness_buggy.log",
+      "git_blob": "4a1c2ce3537a7731e35e98e784a8b039b2ddb66f"
+    },
+    {
+      "path": "web-demo/data/cases/stats_median/witness_fixed.log",
+      "git_blob": "53ce0e968bd1a4e6be05a7ec553cd6332765d34c"
+    },
+    {
+      "path": "web-demo/data/replays.json",
+      "git_blob": "dbc4d8144b926eeec94089d1e5c01c037a2ffcf0"
+    },
+    {
+      "path": "web-demo/index.html",
+      "git_blob": "ab128030cae84f967813469439321e80ac3d47e5"
+    },
+    {
+      "path": "web-demo/styles.css",
+      "git_blob": "e6658a43e7404d15de28c1b79e78be4bd2210514"
+    }
+  ],
+  "maintained_test": {
+    "path": "web-demo/tests/run-evidence.test.mjs",
+    "git_blob": "5abcc4aff5bd2f7b93430cfd93ae88cb5b849622"
+  },
+  "receiving": {
+    "node": {
+      "receipt": "receipt.json",
+      "original": {
+        "passed": 2,
+        "failed": 2
+      },
+      "candidate": {
+        "passed": 4,
+        "failed": 0
+      },
+      "malformed_controls": 160,
+      "healthy_views": 8
+    },
+    "author_browser": {
+      "receipt": "browser-receipt.json",
+      "git_blob": "bbd8ad68888c2d2188049c65860501f5d6ec0e02",
+      "sha256": "25657369eb1dd5aece48a2db9f6fae558e3f9dd5432dfb38971b4b0810d22256",
+      "passed": 21,
+      "failed": 0
+    },
+    "independent_browser": {
+      "receipt": "independent-browser-ccd6f8d65954/receipt.json",
+      "git_blob": "df4ed0fa98851ac5c21db8b572e9a92a292371f5",
+      "sha256": "bece35948294667529b1f6f1283ded3edab9b5b4a16a982c2294eeeaa488e619",
+      "passed": 69,
+      "failed": 0,
+      "completed_downloads": 12,
+      "source_input_count": 28,
+      "receiver": "HAMON delivery_work / ccd6f8d65954"
+    }
+  },
+  "prepublication_verification": {
+    "complete_recursive_trees": true,
+    "no_ownership_instruction_files_found": true,
+    "main_and_owner_changed_path_conflicts": [],
+    "main_replay_runtime_changes": [],
+    "independent_runtime_identity_mismatches": [],
+    "independent_inventory_blob_mismatches": [],
+    "independent_delta_is_ten_added_evidence_files": true,
+    "replay_runtime_and_maintained_test_unchanged": true
+  },
+  "workflow": {
+    "path": ".github/workflows/ci.yml",
+    "git_blob": "86a3236e38155506b5fe6077322d508f7f676649",
+    "triggers": "push to main and pull_request",
+    "planned_mutation": "compare-and-swap fast-forward of the existing non-main owner branch; no PR"
+  },
+  "validation_boundary": "Exact Git tree/blob comparison validates this source-preserving union. Existing native runs retain their original dates and source pins; this follow-up does not rerun or relabel them.",
+  "limits": [
+    "Independent source review of the validator is separate from independent browser receiving.",
+    "No main/reviewer ref mutation, Actions dispatch, deployed-site change, installed service or live-model execution is performed."
+  ]
+}

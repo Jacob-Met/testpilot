@@ -1,0 +1,104 @@
+{
+  "schema": "hamon.testpilot.browser-publication-custody.v1",
+  "verified_utc": "2026-10-12T23:41:11.738274+00:00",
+  "files": [
+    {
+      "file": "receive-browser.mjs",
+      "bytes": 16633,
+      "sha256": "f8e0f24d4558ba0bfada731b6e0379cae29c8514cb5452da13b8659e03fe09e0",
+      "git_blob": "636e8d993049782f0e66e5af1983ff4929ebc928"
+    },
+    {
+      "file": "source-payload.json",
+      "bytes": 129708,
+      "sha256": "318934634ad0a11f5c2fabc53f848f89c6d5bc7bd7de45596c36400c0733c861",
+      "git_blob": "5a38daa4c6a3134e5462838e2aff254c86bca521"
+    },
+    {
+      "file": "receiving-contract.json",
+      "bytes": 5943,
+      "sha256": "f7976f198b3c7e709ca611798a7143fdfa0279d0837c514b375256b42e526ff3",
+      "git_blob": "86e1d00c46a8ea66040383e0ad88aca709738ca7"
+    },
+    {
+      "file": "receipt.json",
+      "bytes": 63903,
+      "sha256": "bece35948294667529b1f6f1283ded3edab9b5b4a16a982c2294eeeaa488e619",
+      "git_blob": "df4ed0fa98851ac5c21db8b572e9a92a292371f5"
+    },
+    {
+      "file": "chrome.stderr.log",
+      "bytes": 2973,
+      "sha256": "e60c3fa6f915a5c8c1041bcbe435b2fb11fd875639b2c338c5666500e95bbb36",
+      "git_blob": "97521576be640425552c54f93a3dcc36086d3b8b"
+    },
+    {
+      "file": "chrome.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "file": "captures/desktop-oracle.png",
+      "bytes": 177586,
+      "sha256": "b115e7fdd638908225a5ffe3e9c108efe1a685d609a74a444d5ca809eac887a2",
+      "git_blob": "fe342190553f93d1b9106f6a5fab41afa0772811"
+    },
+    {
+      "file": "captures/narrow-oracle.png",
+      "bytes": 140798,
+      "sha256": "e2833e255c5106e206608dbc0141a69c65d288f747ba0fbaf44cfe0b94b0a8f0",
+      "git_blob": "c189f72f1c5bac41a5180c76de44f33bac443aa8"
+    }
+  ],
+  "download_custody": [
+    {
+      "guid": "5abbdd7c-7d0b-4f0f-83bf-c35d4d5cf72c",
+      "matches_receipt": true
+    },
+    {
+      "guid": "a79ee585-d436-430f-ade8-c17f963d6947",
+      "matches_receipt": true
+    },
+    {
+      "guid": "0c29d987-6a62-40d1-b2ab-f138ab1a394a",
+      "matches_receipt": true
+    },
+    {
+      "guid": "793d391d-a5fb-4859-989e-5054502cdd61",
+      "matches_receipt": true
+    },
+    {
+      "guid": "87f4c292-9a66-4303-b265-656259c2d8c7",
+      "matches_receipt": true
+    },
+    {
+      "guid": "6ef5359f-ea8d-468a-b17e-42df63ddc838",
+      "matches_receipt": true
+    },
+    {
+      "guid": "68e27bd9-46b4-4657-9c35-c06093da2004",
+      "matches_receipt": true
+    },
+    {
+      "guid": "4a2e17bb-5f97-4e6e-a573-9492eff349ec",
+      "matches_receipt": true
+    },
+    {
+      "guid": "95d0c088-35be-4ad1-b341-1686731c7b90",
+      "matches_receipt": true
+    },
+    {
+      "guid": "e8bc9e27-f878-47aa-adfd-f04fb3cce2b3",
+      "matches_receipt": true
+    },
+    {
+      "guid": "59849fd8-9a72-4440-9d42-30918c095b7c",
+      "matches_receipt": true
+    },
+    {
+      "guid": "413d5c76-05c5-4126-9de9-cfe445a107ff",
+      "matches_receipt": true
+    }
+  ]
+}

@@ -13,6 +13,8 @@ Open the HTML directly in a browser. The command consumes saved reports and writ
 
 The output path must be new, and its parent directory must already exist. Existing output files and aliases of either input are refused. TestPilot first reads and validates both reports, renders the complete page, and stages it beside the requested output. It then publishes the completed bytes without replacing an existing path. A filesystem that cannot create a hard link in that directory refuses publication. Exit code 0 means the page was written; 2 means the inputs, arguments, or output destination were refused. The original inputs are never rewritten.
 
+Cleanup of the private `.testpilot-compare-*.html` stage is best effort. A filesystem error removing that stage does not undo successful publication or replace an earlier write/publication error. The private stage may remain beside the output when removal fails; an already-published page still has its complete bytes. Other cleanup exceptions, including interruption, remain visible.
+
 ## What the page shows
 
 | Section | Meaning |
@@ -64,7 +66,7 @@ Above the inline-diff threshold, the page explicitly omits only that diff; compl
 The focused tests exercise exact original bytes, deeply immutable parsed inputs, missing evidence, Decimal precision, differing/duplicate target labels, added empty files, source-line edge cases, malformed and bounded admission, no-overwrite publication, staged-write failures, special-file refusal, and a consumer-only CLI path:
 
 ~~~bash
-python -m pytest -q tests/test_compare.py tests/test_compare_cli.py
+python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py
 ~~~
 
 Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.
