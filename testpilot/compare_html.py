@@ -24,6 +24,7 @@ section{margin:1.25rem 0}.panel .role{font-size:.8rem;letter-spacing:.08em;text-
 .outcome{display:inline-block;font-size:1.15rem;font-weight:700;margin:.7rem 0 .2rem;padding:.2rem .6rem;background:#eaf2f3;border-radius:.25rem}
 .context{border-left:4px solid var(--accent);background:#e9f3f2;padding:1rem 1.2rem;margin:1.2rem 0}.context strong{display:block}
 nav,.actions{display:flex;gap:.7rem 1rem;flex-wrap:wrap;margin:1.4rem 0}nav{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0}
+.case-index{display:block}.case-index a{overflow-wrap:anywhere}details[id^="diagnostic-"]:target{outline:3px solid #a45100;outline-offset:3px}
 .button{padding:.6rem .85rem;border:1px solid var(--accent);border-radius:.35rem;text-decoration:none;font-weight:650;background:white}
 .skip{position:absolute;top:-120px;left:1rem;background:white;padding:.8rem}.skip:focus{top:1rem;z-index:1}
 .scroll{overflow:auto;max-width:100%}table{border-collapse:collapse;width:100%;min-width:28rem;font-size:.9rem;text-align:left}
@@ -178,6 +179,26 @@ def _files(before: SavedReport, after: SavedReport) -> str:
     return body
 
 
+def _diagnostic_index(before: SavedReport, after: SavedReport) -> str:
+    links = []
+    for role, report in (("Before", before), ("After", after)):
+        final = report.data["final"]
+        if final is None:
+            continue
+        for position, case in enumerate(final["cases"], 1):
+            if case["outcome"] not in {"failed", "error"}:
+                continue
+            identity = "diagnostic-" + role.lower() + "-case-" + str(position)
+            label = role + " case " + str(position) + " · " + case["outcome"] + " · " + case["nodeid"]
+            links.append('<li><a href="#' + identity + '">' + _text(label) + "</a></li>")
+    if not links:
+        return ""
+    return ('<nav class="case-index" aria-label="Recorded failed and error cases">'
+            '<p><strong>Failed and error cases</strong> · ' + str(len(links)) + ' retained rows</p><ul>'
+            + "".join(links) + '</ul><p class="note">Case positions refer to each report\'s retained array. '
+            'Repeated labels stay separate; these links do not establish identical tests or complete execution.</p></nav>')
+
+
 def _diagnostics(report: SavedReport, role: str) -> str:
     data, final = report.data, report.data["final"]
     body = "<h3>" + role + "</h3><p class=\"prose\">" + _text(data["message"] or "No run-level message recorded.") + "</p>"
@@ -185,11 +206,12 @@ def _diagnostics(report: SavedReport, role: str) -> str:
         return body + '<p class="empty">No final test result is recorded.</p>'
     body += '<p class="note">JUnit: ' + _text(_junit(report)) + ". Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p>"
     body += '<p class="prose">' + _text(final["summary"]) + "</p>"
-    for case in final["cases"]:
+    for position, case in enumerate(final["cases"], 1):
         title = '<span class="pill">' + _text(case["outcome"]) + "</span>" + _text(case["nodeid"])
         detail = '<p class="meta">Generated file: ' + _text(case.get("generated_file") or "Not attributed to a generated file") + "</p>"
         detail += _pre(case["message"], "Recorded test diagnostic") if case["message"] else "<p>No diagnostic text recorded.</p>"
-        body += _details(title, detail, opened=case["outcome"] in {"failed", "error"})
+        body += _details(title, detail, opened=case["outcome"] in {"failed", "error"},
+                         identity="diagnostic-" + role.lower() + "-case-" + str(position))
     if not final["cases"]:
         body += '<p class="empty">No individual test cases are recorded.</p>'
     body += _details("Recorded pytest output · last 3,000 characters", _pre(final["output"], "Recorded pytest output tail"))
@@ -278,7 +300,8 @@ def render_comparison(before: SavedReport, after: SavedReport) -> str:
                   + '<p class="note">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p></section>')
     result.append('<section id="source"><h2>Selected-source context</h2>' + _targets(before, after) + "</section>")
     result.append('<section id="files"><h2>Generated-file changes</h2>' + _files(before, after) + "</section>")
-    result.append('<section id="diagnostics"><h2>Final diagnostics</h2><div class="columns"><div>'
+    result.append('<section id="diagnostics"><h2>Final diagnostics</h2>' + _diagnostic_index(before, after)
+                  + '<div class="columns"><div>'
                   + _diagnostics(before, "Before") + "</div><div>" + _diagnostics(after, "After") + "</div></div></section>")
     result.append('<section id="coverage"><h2>Recorded coverage</h2>'
                   + '<p class="note">Each column retains its own source and selection denominators. The reported change is within that original run.</p>'
