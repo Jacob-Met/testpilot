@@ -1,0 +1,398 @@
+{
+  "schema": "testpilot-run-evidence-browser-history-v1",
+  "original_commit": "478f68adf01658a94a3ede22526da00f580785bd",
+  "candidate_commit": "bfb5cc2830fbe535d705ac2649503e3ae7647224",
+  "candidate_app_git_blob": "3a1b379e62df5d4c14c76479dc81db6d0e66f0e1",
+  "final_command": {
+    "command": [
+      "node",
+      "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/check-browser-v3.mjs",
+      "--browser",
+      "/snap/bin/chromium",
+      "--root",
+      "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/candidate",
+      "--original-app",
+      "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/original/app.mjs",
+      "--output",
+      "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/receiving-v3"
+    ],
+    "exit_code": 0,
+    "seconds": 4.17,
+    "stdout": "{\"status\":\"passed\",\"checks\":21,\"screenshots\":[{\"path\":\"desktop.png\",\"bytes\":171769,\"sha256\":\"d806e06d916cef2dedb9d43f21f5f38e48780d5571fd58d7b8998910493f52f4\"},{\"path\":\"phone.png\",\"bytes\":137451,\"sha256\":\"058d6de1eab9b83dd9c553d39f440dd736f5e87d57dc63cf5e0694f6b497c514\"}],\"sourceUnchanged\":true,\"browserExited\":true,\"error\":null}\n",
+    "stderr": ""
+  },
+  "first_receiver_attempt": {
+    "qualification": "Receiver expectation error only: it required an explicit aria-disabled=false, while the actual application correctly removes that attribute when enabling links. Product files were unchanged.",
+    "receipt": {
+      "schema": "testpilot.run_evidence.browser.v1",
+      "startedAt": "2026-10-13T00:02:09.419Z",
+      "node": "v22.22.1",
+      "root": "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/candidate",
+      "originalApp": "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/original/app.mjs",
+      "scope": "Native rendered healthy views and evidence refusal; no physical-download or independent-review claim.",
+      "sourcePins": [
+        {
+          "path": "index.html",
+          "bytes": 4684,
+          "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+        },
+        {
+          "path": "styles.css",
+          "bytes": 12133,
+          "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+        },
+        {
+          "path": "app.mjs",
+          "bytes": 12509,
+          "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+        },
+        {
+          "path": "data/replays.json",
+          "bytes": 28129,
+          "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+        }
+      ],
+      "originalAppSha256": "103eab1f846d98f275ff82156d9d1600a8f32ce5b8b9fb43b2c1749b97426830",
+      "checks": [],
+      "externalPageRequests": [],
+      "pageErrors": [],
+      "screenshots": [],
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.47",
+        "revision": "@73934a44f61e6b3878d1943064c141a5a820f5f7",
+        "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(original.links.every(link => link.href && link.disabled === 'false'))\n\n    at file:///home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/check-browser.mjs:140:14\n    at check (file:///home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/check-browser.mjs:101:5)\n    at main (file:///home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/check-browser.mjs:137:5)",
+      "browserLog": "[2418010:2418149:1013/000210.738405:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[2418010:2418149:1013/000210.771706:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[2418010:2418149:1013/000210.902267:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n\nDevTools listening on ws://127.0.0.1:44913/devtools/browser/cee0e950-37f3-401f-84f8-7f302aa94927\n[2418010:2418010:1013/000211.092986:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[2418010:2418010:1013/000211.093379:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[2418010:2418149:1013/000211.093554:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[2418010:2418010:1013/000211.101237:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[2418010:2418149:1013/000211.103343:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[2418010:2418010:1013/000211.121283:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[2418010:2418149:1013/000211.121341:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[2418010:2418010:1013/000211.122789:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[2418010:2418010:1013/000211.136097:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[2418010:2418149:1013/000211.136160:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[2418010:2418010:1013/000211.140636:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n[2418010:2418149:1013/000211.140686:ERROR:dbus/bus.cc:405] Failed to connect to the bus: Could not parse server address: Unknown address type (examples of valid types are \"tcp\" and on UNIX \"unix\")\n[2418010:2418010:1013/000211.146505:ERROR:dbus/object_proxy.cc:572] Failed to call method: org.freedesktop.DBus.NameHasOwner: object_path= /org/freedesktop/DBus: unknown error type: \n",
+      "originalAppUnchanged": true,
+      "sourceUnchanged": true,
+      "browserExited": true,
+      "finishedAt": "2026-10-13T00:02:11.631Z",
+      "receiverSha256": "3d2417b693bcb2437acfb0b8524696bfbcbfa35ab7ea0c7ebc2a91364cdbca98"
+    }
+  },
+  "second_receiver_attempt": {
+    "qualification": "Passed 21 checks. The final receiver additionally binds each result to its exact complete document URL and records the 21 served dataset responses.",
+    "receipt": {
+      "schema": "testpilot.run_evidence.browser.v1",
+      "startedAt": "2026-10-13T00:02:56.649Z",
+      "node": "v22.22.1",
+      "root": "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/candidate",
+      "originalApp": "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/original/app.mjs",
+      "scope": "Native rendered healthy views and evidence refusal; no physical-download or independent-review claim.",
+      "sourcePins": [
+        {
+          "path": "index.html",
+          "bytes": 4684,
+          "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+        },
+        {
+          "path": "styles.css",
+          "bytes": 12133,
+          "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+        },
+        {
+          "path": "app.mjs",
+          "bytes": 12509,
+          "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+        },
+        {
+          "path": "data/replays.json",
+          "bytes": 28129,
+          "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+        }
+      ],
+      "originalAppSha256": "103eab1f846d98f275ff82156d9d1600a8f32ce5b8b9fb43b2c1749b97426830",
+      "checks": [
+        {
+          "label": "original app renders a contradictory successful run and enables artifact links",
+          "passed": true,
+          "details": {
+            "ready": true,
+            "replayHidden": false,
+            "errorHidden": true,
+            "errorText": "",
+            "case": "calc_clamp",
+            "stage": "3",
+            "rendered": "Does the fix satisfy the tests?\nORACLE CHECK\n\nThe generated boundary tests fail on the changed implementation. The authored repair reply identifies a code bug and keeps the failing assertions. The same tests pass with the fixture's ground-truth fix.\n\nGenerated tests · changed code\n3 pass / 3 fail\n\nProcess exit 1. Same generated assertions.\n\nGenerated tests · oracle fix\n6 pass / 0 fail\n\nProcess exit 0. Ground-truth source substituted.\n\nThe regression distinguishes the buggy and fixed code.\n\nThe tests fail before the ground-truth fix and pass after it. The fixture oracle was never shown to ScriptedModel.\n\nBoundary witness · changed code\n2 pass / 1 fail\n\nProcess exit 1. Independent authored control.\n\nBoundary witness · oracle fix\n3 pass / 0 fail\n\nProcess exit 0. Identical boundary assertion.\n\nindependent boundary witness\nAUTHORED CONTROL\nfrom calc import clamp\n\ndef test_recorded_boundary():\n    assert clamp(5, 0, 10) == 5\n\nInspect the ground-truth source and passing output",
+            "links": [
+              {
+                "id": "download-patch",
+                "href": "data/cases/calc_clamp/testpilot.patch",
+                "disabled": null
+              },
+              {
+                "id": "download-record",
+                "href": "data/cases/calc_clamp/record.json",
+                "disabled": null
+              },
+              {
+                "id": "download-log",
+                "href": "data/cases/calc_clamp/generated.log",
+                "disabled": null
+              }
+            ],
+            "fits": true,
+            "sourceHref": "https://github.com/Jacob-Met/testpilot/commit/ca2e6c72743c5d3866f3f14189f1d4c3405f60bf"
+          }
+        },
+        {
+          "label": "desktop/calc_clamp/stage-1: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 1,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "desktop/calc_clamp/stage-2: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 2,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "desktop/calc_clamp/stage-3: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 3,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "desktop/calc_clamp/stage-4: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 4,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "desktop/stats_median/stage-1: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 1,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "desktop/stats_median/stage-2: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 2,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "desktop/stats_median/stage-3: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 3,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "desktop/stats_median/stage-4: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 4,
+            "viewport": "desktop"
+          }
+        },
+        {
+          "label": "phone/calc_clamp/stage-1: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 1,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "phone/calc_clamp/stage-2: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 2,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "phone/calc_clamp/stage-3: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 3,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "phone/calc_clamp/stage-4: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "calc_clamp",
+            "stage": 4,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "phone/stats_median/stage-1: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 1,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "phone/stats_median/stage-2: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 2,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "phone/stats_median/stage-3: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 3,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "phone/stats_median/stage-4: healthy rendered replay and exact evidence links",
+          "passed": true,
+          "details": {
+            "case": "stats_median",
+            "stage": 4,
+            "viewport": "phone"
+          }
+        },
+        {
+          "label": "contradictory-exit: native browser refuses evidence before rendering or enabling downloads",
+          "passed": true,
+          "details": {
+            "scenario": "contradictory-exit",
+            "errorText": "A required fixture run has inconsistent results. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+          }
+        },
+        {
+          "label": "absent-cases: native browser refuses evidence before rendering or enabling downloads",
+          "passed": true,
+          "details": {
+            "scenario": "absent-cases",
+            "errorText": "A required fixture run is incomplete. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+          }
+        },
+        {
+          "label": "inconsistent-failure-count: native browser refuses evidence before rendering or enabling downloads",
+          "passed": true,
+          "details": {
+            "scenario": "inconsistent-failure-count",
+            "errorText": "A required fixture run has inconsistent results. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+          }
+        },
+        {
+          "label": "missing-timeout-result: native browser refuses evidence before rendering or enabling downloads",
+          "passed": true,
+          "details": {
+            "scenario": "missing-timeout-result",
+            "errorText": "A required fixture run is incomplete. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+          }
+        }
+      ],
+      "externalPageRequests": [],
+      "pageErrors": [],
+      "screenshots": [
+        {
+          "path": "desktop.png",
+          "bytes": 171769,
+          "sha256": "d806e06d916cef2dedb9d43f21f5f38e48780d5571fd58d7b8998910493f52f4"
+        },
+        {
+          "path": "phone.png",
+          "bytes": 137451,
+          "sha256": "058d6de1eab9b83dd9c553d39f440dd736f5e87d57dc63cf5e0694f6b497c514"
+        }
+      ],
+      "browser": {
+        "protocolVersion": "1.3",
+        "product": "Chrome/153.0.8010.47",
+        "revision": "@73934a44f61e6b3878d1943064c141a5a820f5f7",
+        "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+        "jsVersion": "15.3.76.12"
+      },
+      "status": "passed",
+      "originalAppUnchanged": true,
+      "sourceUnchanged": true,
+      "browserExited": true,
+      "finishedAt": "2026-10-13T00:03:00.057Z",
+      "receiverSha256": "aa5a64be172727482045d86e97d2550e80bc3579b75e250f3a421163985dbeab"
+    }
+  },
+  "final_preservation": {
+    "files": [
+      {
+        "path": "check-browser-v3.mjs",
+        "bytes": 14505,
+        "sha256": "f319092d64a5dcd2f21bbd972ea0af6b06a9b5de3beebf992f28cb2e1c26fb66",
+        "git_blob": "44af8a1b59b42ab284cbf0e1296551565a027f8e"
+      },
+      {
+        "path": "receiving-v3/receipt.json",
+        "bytes": 12927,
+        "sha256": "25657369eb1dd5aece48a2db9f6fae558e3f9dd5432dfb38971b4b0810d22256",
+        "git_blob": "bbd8ad68888c2d2188049c65860501f5d6ec0e02"
+      },
+      {
+        "path": "receiving-v3/desktop.png",
+        "bytes": 171769,
+        "sha256": "d806e06d916cef2dedb9d43f21f5f38e48780d5571fd58d7b8998910493f52f4",
+        "git_blob": "701516067072cdf0ef2c627c36d0d4aca2ebfbd2",
+        "dimensions": [
+          1425,
+          1266
+        ]
+      },
+      {
+        "path": "receiving-v3/phone.png",
+        "bytes": 137451,
+        "sha256": "058d6de1eab9b83dd9c553d39f440dd736f5e87d57dc63cf5e0694f6b497c514",
+        "git_blob": "f2a1456e4af5ba5166b44c641fdcaf9305bd91c7",
+        "dimensions": [
+          390,
+          1973
+        ]
+      },
+      {
+        "path": "native-command-v3.json",
+        "bytes": 861,
+        "sha256": "0f22555db179c3726fbad18b30115dbae3ac53fc7d2e6810ff475b99a9f8cabd",
+        "git_blob": "83fc4f47b5c75a539b1c7419e6f904ba01c8999a"
+      }
+    ],
+    "all_source_files_unchanged": true,
+    "owned_browser_processes": []
+  },
+  "visual_review": "Both final native screenshots were inspected: desktop content and phone layout remain legible, with no observed overlap or horizontal clipping. These are existing product layouts, not a visual redesign.",
+  "limits": [
+    "Author receiving, not independent source review",
+    "No physical artifact-download qualification",
+    "No full Python-suite or installed/main/site adoption claim"
+  ]
+}

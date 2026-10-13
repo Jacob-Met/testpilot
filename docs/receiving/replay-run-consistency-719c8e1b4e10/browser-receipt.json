@@ -1,0 +1,377 @@
+{
+  "schema": "testpilot.run_evidence.browser.v1",
+  "startedAt": "2026-10-13T00:04:52.748Z",
+  "node": "v22.22.1",
+  "root": "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/candidate",
+  "originalApp": "/home/jacob/testpilot-browser-719c8e1b4e10-vfzcrop1/original/app.mjs",
+  "scope": "Native rendered healthy views and evidence refusal; no physical-download or independent-review claim.",
+  "sourcePins": [
+    {
+      "path": "index.html",
+      "bytes": 4684,
+      "sha256": "8e7a82afb3d75fe5ed221d153528ced4b446d2009b412bd1d071348a7c2eade0"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 12133,
+      "sha256": "86443fa71a34e30e500587217de6169d81a304043586de334755e1c658475fcb"
+    },
+    {
+      "path": "app.mjs",
+      "bytes": 12509,
+      "sha256": "51dbebe82f25e9ca06b76ddee7381d445153d5701e453c3ca4f12f186644f115"
+    },
+    {
+      "path": "data/replays.json",
+      "bytes": 28129,
+      "sha256": "f8d672f1d4f721ab79c1415afdafa760e79e4281cd43a978a641891a10f95319"
+    }
+  ],
+  "originalAppSha256": "103eab1f846d98f275ff82156d9d1600a8f32ce5b8b9fb43b2c1749b97426830",
+  "checks": [
+    {
+      "label": "original app renders a contradictory successful run and enables artifact links",
+      "passed": true,
+      "details": {
+        "url": "http://127.0.0.1:36815/original/contradictory-exit/index.html?case=calc_clamp&stage=4",
+        "documentComplete": true,
+        "ready": true,
+        "replayHidden": false,
+        "errorHidden": true,
+        "errorText": "",
+        "case": "calc_clamp",
+        "stage": "3",
+        "rendered": "Does the fix satisfy the tests?\nORACLE CHECK\n\nThe generated boundary tests fail on the changed implementation. The authored repair reply identifies a code bug and keeps the failing assertions. The same tests pass with the fixture's ground-truth fix.\n\nGenerated tests · changed code\n3 pass / 3 fail\n\nProcess exit 1. Same generated assertions.\n\nGenerated tests · oracle fix\n6 pass / 0 fail\n\nProcess exit 0. Ground-truth source substituted.\n\nThe regression distinguishes the buggy and fixed code.\n\nThe tests fail before the ground-truth fix and pass after it. The fixture oracle was never shown to ScriptedModel.\n\nBoundary witness · changed code\n2 pass / 1 fail\n\nProcess exit 1. Independent authored control.\n\nBoundary witness · oracle fix\n3 pass / 0 fail\n\nProcess exit 0. Identical boundary assertion.\n\nindependent boundary witness\nAUTHORED CONTROL\nfrom calc import clamp\n\ndef test_recorded_boundary():\n    assert clamp(5, 0, 10) == 5\n\nInspect the ground-truth source and passing output",
+        "links": [
+          {
+            "id": "download-patch",
+            "href": "data/cases/calc_clamp/testpilot.patch",
+            "disabled": null
+          },
+          {
+            "id": "download-record",
+            "href": "data/cases/calc_clamp/record.json",
+            "disabled": null
+          },
+          {
+            "id": "download-log",
+            "href": "data/cases/calc_clamp/generated.log",
+            "disabled": null
+          }
+        ],
+        "fits": true,
+        "sourceHref": "https://github.com/Jacob-Met/testpilot/commit/ca2e6c72743c5d3866f3f14189f1d4c3405f60bf"
+      }
+    },
+    {
+      "label": "desktop/calc_clamp/stage-1: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 1,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "desktop/calc_clamp/stage-2: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 2,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "desktop/calc_clamp/stage-3: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 3,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "desktop/calc_clamp/stage-4: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 4,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "desktop/stats_median/stage-1: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 1,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "desktop/stats_median/stage-2: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 2,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "desktop/stats_median/stage-3: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 3,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "desktop/stats_median/stage-4: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 4,
+        "viewport": "desktop"
+      }
+    },
+    {
+      "label": "phone/calc_clamp/stage-1: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 1,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "phone/calc_clamp/stage-2: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 2,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "phone/calc_clamp/stage-3: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 3,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "phone/calc_clamp/stage-4: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "calc_clamp",
+        "stage": 4,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "phone/stats_median/stage-1: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 1,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "phone/stats_median/stage-2: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 2,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "phone/stats_median/stage-3: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 3,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "phone/stats_median/stage-4: healthy rendered replay and exact evidence links",
+      "passed": true,
+      "details": {
+        "case": "stats_median",
+        "stage": 4,
+        "viewport": "phone"
+      }
+    },
+    {
+      "label": "contradictory-exit: native browser refuses evidence before rendering or enabling downloads",
+      "passed": true,
+      "details": {
+        "scenario": "contradictory-exit",
+        "errorText": "A required fixture run has inconsistent results. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+      }
+    },
+    {
+      "label": "absent-cases: native browser refuses evidence before rendering or enabling downloads",
+      "passed": true,
+      "details": {
+        "scenario": "absent-cases",
+        "errorText": "A required fixture run is incomplete. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+      }
+    },
+    {
+      "label": "inconsistent-failure-count: native browser refuses evidence before rendering or enabling downloads",
+      "passed": true,
+      "details": {
+        "scenario": "inconsistent-failure-count",
+        "errorText": "A required fixture run has inconsistent results. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+      }
+    },
+    {
+      "label": "missing-timeout-result: native browser refuses evidence before rendering or enabling downloads",
+      "passed": true,
+      "details": {
+        "scenario": "missing-timeout-result",
+        "errorText": "A required fixture run is incomplete. Serve the web-demo directory with “python3 -m http.server 8000” and open http://localhost:8000. This page requires its recorded data files."
+      }
+    }
+  ],
+  "externalPageRequests": [],
+  "pageErrors": [],
+  "screenshots": [
+    {
+      "path": "desktop.png",
+      "bytes": 171769,
+      "sha256": "d806e06d916cef2dedb9d43f21f5f38e48780d5571fd58d7b8998910493f52f4"
+    },
+    {
+      "path": "phone.png",
+      "bytes": 137451,
+      "sha256": "058d6de1eab9b83dd9c553d39f440dd736f5e87d57dc63cf5e0694f6b497c514"
+    }
+  ],
+  "servedDatasets": [
+    {
+      "side": "original",
+      "scenario": "contradictory-exit",
+      "sha256": "2d9c8357f9e2995f48665c3873587e6fdda6098b8125cf5eabe763a5a290ba7d"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "healthy",
+      "sha256": "95fcec5018639ab87425a5d1228c110c1b9a2c0ef9b09aafda59440a8a867cc4"
+    },
+    {
+      "side": "candidate",
+      "scenario": "contradictory-exit",
+      "sha256": "2d9c8357f9e2995f48665c3873587e6fdda6098b8125cf5eabe763a5a290ba7d"
+    },
+    {
+      "side": "candidate",
+      "scenario": "absent-cases",
+      "sha256": "0839a09e6bcd4b44e257edd70205e143bc00cef9d9c5d720f46aa815b9913c1e"
+    },
+    {
+      "side": "candidate",
+      "scenario": "inconsistent-failure-count",
+      "sha256": "19fb5b0a42c7d04a0d001fbe89166ef023ef29d37f88719acce61ef240cab3dc"
+    },
+    {
+      "side": "candidate",
+      "scenario": "missing-timeout-result",
+      "sha256": "ebe2abccf28f6c09081981cac8762db3b1b840bf70dbc6fe75425c9779ebba4a"
+    }
+  ],
+  "browser": {
+    "protocolVersion": "1.3",
+    "product": "Chrome/153.0.8010.47",
+    "revision": "@73934a44f61e6b3878d1943064c141a5a820f5f7",
+    "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+    "jsVersion": "15.3.76.12"
+  },
+  "status": "passed",
+  "originalAppUnchanged": true,
+  "sourceUnchanged": true,
+  "browserExited": true,
+  "finishedAt": "2026-10-13T00:04:56.782Z",
+  "receiverSha256": "f319092d64a5dcd2f21bbd972ea0af6b06a9b5de3beebf992f28cb2e1c26fb66"
+}
