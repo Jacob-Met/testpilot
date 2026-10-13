@@ -1,0 +1,35 @@
+{
+  "schema": "hamon.root.testpilot-saved-review-source-composition.v1",
+  "accepted": true,
+  "reviewer": "root",
+  "source_owner_commit": "17643838400fa85149e474622e677008cdcc3f79",
+  "current_base_commit": "247ad1ae8e873fcd52935633015158a1060091af",
+  "source_files": [
+    "testpilot/saved_report.py",
+    "tests/test_saved_report.py",
+    "docs/SAVED_REPORT_REVIEW.md"
+  ],
+  "full_reads": [
+    "All three exact donor files from immutable GitHub source.",
+    "Current testpilot/html_report.py and testpilot/__init__.py from the exact integration base."
+  ],
+  "findings": [
+    "New saved-report entry imports the existing renderer and adds a provenance section at its unchanged single container marker. It does not dispatch a model, runner or patch application; package imports remain those of current TestPilot.",
+    "Bounded file-descriptor reads require regular files; POSIX nonblocking admission avoids waiting on a FIFO. Strict report decoding rejects duplicate and nonfinite values before rendering.",
+    "Patch matching is exact recorded UTF-8 or the explicitly documented native Windows LF-expansion form. The selected raw report and patch bytes are passed to the unchanged renderer and remain the embedded downloads.",
+    "Current renderer escapes literal content, uses static local CSS and data-URI downloads, and its container marker remains compatible. Supported layout failures are controlled without widening the report into an execution input.",
+    "New output uses a completed/fsynced temporary file and exclusive hard link; occupied destinations, cleanup failure after publication and hard-link support limits are documented without claiming durable atomic source snapshots.",
+    "Eight maintained methods meaningfully cover actual archived pairs and optimized child calls, passive renderer equivalence, malformed/mismatched inputs, literal data, destination races and ordinary recovery. No redundant runtime was run during this review.",
+    "Only the three donor additions belong in the product overlay. Existing current renderer, package init, generation writer, README, workflow and all unrelated source stay exact."
+  ],
+  "evidence_attribution": {
+    "actual_composition_course": "Forge: five commands and32 checks; eight maintained methods including three optimized archived-pair children; current missing-module control, wrong pair then corrected identical-argv destination and occupied-output refusal.",
+    "independent_receiving": "Anvil independently checked full source/stream/custody and exact page/download data; that review remains separate.",
+    "root_scope": "Read-only source/design/current-dependency compatibility review, not a runtime replay."
+  },
+  "limits": [
+    "This is a passive review of historical observations, not verification that the archived tests passed or model diagnosis is true.",
+    "Current imports and rendered bytes were qualified by the recorded selected closure; no live provider, deployment, native installed application or Windows-runtime claim.",
+    "Final publication still requires exact donor ancestry, complete current-parent preservation and ordinary expected-head integration with standing no-GitHub-Actions markers."
+  ]
+}

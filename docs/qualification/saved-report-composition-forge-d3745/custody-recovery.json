@@ -1,0 +1,155 @@
+{
+  "schema": "hamon.forge.testpilot-saved-review-custody-recovery.v1",
+  "scope": "Exact retained evidence transport after completed native receiving and independent custody review; no runtime repeated.",
+  "native_course": {
+    "pid": 3860172,
+    "exit_code": 0,
+    "receipt_sha256": "567769f42c4fcf43550e7f502fcf0253a71d204341c6783716e802f13948cc96"
+  },
+  "transport_failure": {
+    "device": "hamon-thinkpad",
+    "original_route": "cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90",
+    "alternate_route": "d55b2499-5e82-4805-819a-d0d7ddea1efe",
+    "closed_calls": [
+      "d7db8006-1fc4-466c-9092-d39b5af0fba2",
+      "f7a4fa94-f6a5-4c96-a711-e094069e9bca",
+      "51fa84b0-c2c9-4db1-9c55-4b73fd57e634"
+    ],
+    "result": "Timeout with no device response, after native receiving and review completed."
+  },
+  "method": [
+    "Exact stage/receiver/criteria/input-packet bodies retained in tool memory were re-encoded and matched to original native receipt byte lengths and SHA256 digests.",
+    "The complete receipt was previously read as native text. Its stripped final LF was restored; the resulting 47385 bytes match the native SHA256 pin exactly.",
+    "Ten raw stream bodies were recovered from that unchanged receipt's stdout_text/stderr_text fields. Each matches its original raw file byte length and SHA256; Anvil had separately compared the native stream files before the outage.",
+    "The complete admission body was independently retrieved by Anvil and checkpointed to a detached Git blob, then read in full and matched to its original native SHA256.",
+    "New README/source-binding/selection records are publication metadata; no native execution claim attaches to them.",
+    "Native original review body and saved consumer HTML remain retained on the device. Their known sizes/digests are preserved; neither body was invented or regenerated."
+  ],
+  "native_mode_note": "Git mode 100644 is selected for regular published text files. Native file permission values remain in the exact receipts.",
+  "recovered_files": [
+    {
+      "path": "input-packet.json",
+      "bytes": 286528,
+      "sha256": "2f0be575c1885efd93a70e88eeba544b5da591b1dfcfde7bfc08b0dec00170f2",
+      "git_blob": "ea6eea8aa1365cba5ecca94babc7437d858864cc",
+      "mode": "100644"
+    },
+    {
+      "path": "stage-source.py",
+      "bytes": 1835,
+      "sha256": "0b8c5c4c380ad824e5383ac5fcd163a6d4a7a80413f8e9cd2aefb4084fefccb7",
+      "git_blob": "6d0535afb81d72c2ed3e8cf50b9d7a34f9d6fd8a",
+      "mode": "100644"
+    },
+    {
+      "path": "source-admission.json",
+      "bytes": 22947,
+      "sha256": "bc8f33308f7e08091a6245d009f6dfb40811d8e1c05271841c2b85a266a4d77e",
+      "git_blob": "840d98ca536c421a567cfbee535a245177f4712c",
+      "mode": "100644"
+    },
+    {
+      "path": "receiving-contract.json",
+      "bytes": 1896,
+      "sha256": "78c9dfb953e9a164d7742b777e10dd6f92b457ee1553b824b6868cbe163af7fc",
+      "git_blob": "f2327d6af237f089e22e54da0d9148e53f0451a0",
+      "mode": "100644"
+    },
+    {
+      "path": "receive-current-composition.py",
+      "bytes": 7413,
+      "sha256": "964be341d29a94e849047202f7460a73d7069f0b96cdbcdbd27efe11d705d38a",
+      "git_blob": "298d8fef37480ff7e9e24677b7fb2e44646e939d",
+      "mode": "100644"
+    },
+    {
+      "path": "composition-receipt.json",
+      "bytes": 47385,
+      "sha256": "567769f42c4fcf43550e7f502fcf0253a71d204341c6783716e802f13948cc96",
+      "git_blob": "9e10aa5b1305ce24e92e2cc5272f2634a94431ef",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/01-current-absent.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/01-current-absent.stderr",
+      "bytes": 57,
+      "sha256": "895c1381186a65347a29fa065d72934f6e7b286b4e36ff0825119c6b4d54cb2a",
+      "git_blob": "5d0596f6289c1bb953aec1d6c968b04b26a88e87",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/02-maintained-eight.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/02-maintained-eight.stderr",
+      "bytes": 1266,
+      "sha256": "0a5e742b373d64a1f078a6687bc66e22986f0ddb2581ba7ab1c8c43eb9738a0f",
+      "git_blob": "4bbec96f5e89f6b8475af800297b792d18ff73cc",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/03-pair-refusal.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/03-pair-refusal.stderr",
+      "bytes": 101,
+      "sha256": "119b1d44ab05867c989bf53d386825b0a370be49d2a63442121efca87fcb3253",
+      "git_blob": "75eef534f355948fa642f7065823c816830b71f1",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/04-caller-corrected-retry.stdout",
+      "bytes": 527,
+      "sha256": "a7b2620dfc1301be1bfcf485cbee18d0144f53ee83474bba5c8f4c04fdc42ba8",
+      "git_blob": "e068ac8959d1a78658b6f827c5dd212b32e9a230",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/04-caller-corrected-retry.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/05-occupied-output.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "100644"
+    },
+    {
+      "path": "streams/05-occupied-output.stderr",
+      "bytes": 85,
+      "sha256": "09afa3c3cabda7d4e9e5df19381cbdffc1538e58a36db86b0712a619fd9e180d",
+      "git_blob": "10c8d683b606987f2aa6e6b64e05f22f8cad0feb",
+      "mode": "100644"
+    }
+  ],
+  "pending_originals": [
+    {
+      "path": "/home/jacob/hamon/receiving/anvil-d3745-testpilot-saved-review/independent-receiving-review.json",
+      "bytes": 3019,
+      "sha256": "d3b41a5a7dee878b51984d91b27c1e5eb217aab46c99c1ab87b0eb5583f8e6cf"
+    },
+    {
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html",
+      "bytes": 39385,
+      "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674"
+    }
+  ]
+}

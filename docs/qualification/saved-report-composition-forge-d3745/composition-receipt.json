@@ -1,0 +1,1201 @@
+{
+  "accepted": true,
+  "checks": [
+    {
+      "actual": 1,
+      "expected": 1,
+      "label": "current main module absent exit",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "current absence diagnostic",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "label": "current absence has no stdout",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "current absence creates no output",
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "label": "donor maintained methods exit",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "all eight donor methods ran",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "donor maintained result OK",
+      "pass": true
+    },
+    {
+      "actual": 2,
+      "expected": 2,
+      "label": "mismatched pair exit",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "mismatched pair diagnostic",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "label": "mismatched pair no stdout",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "mismatched pair creates no output",
+      "pass": true
+    },
+    {
+      "actual": [],
+      "expected": [],
+      "label": "mismatched pair no staging files",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 11467,
+        "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+      },
+      "expected": {
+        "bytes": 11467,
+        "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+      },
+      "label": "refusal retains report",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 384,
+        "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+      },
+      "expected": {
+        "bytes": 384,
+        "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+      },
+      "label": "refusal retains wrong selected patch",
+      "pass": true
+    },
+    {
+      "actual": [
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "-m",
+        "testpilot.saved_report",
+        "--report",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/report.json",
+        "--patch",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/selected.patch",
+        "--out",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html"
+      ],
+      "expected": [
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "-m",
+        "testpilot.saved_report",
+        "--report",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/report.json",
+        "--patch",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/selected.patch",
+        "--out",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html"
+      ],
+      "label": "identical argv on explicit retry",
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "label": "corrected pair exit",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "label": "corrected pair empty stderr",
+      "pass": true
+    },
+    {
+      "actual": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674",
+      "expected": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674",
+      "label": "saved output digest",
+      "pass": true
+    },
+    {
+      "actual": 39385,
+      "expected": 39385,
+      "label": "saved output length",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 11467,
+        "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+      },
+      "expected": {
+        "bytes": 11467,
+        "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+      },
+      "label": "exact original report download",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 561,
+        "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+      },
+      "expected": {
+        "bytes": 561,
+        "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+      },
+      "label": "exact original patch download",
+      "pass": true
+    },
+    {
+      "actual": [
+        "report.json",
+        "testpilot.patch"
+      ],
+      "expected": [
+        "report.json",
+        "testpilot.patch"
+      ],
+      "label": "only original artifact downloads",
+      "pass": true
+    },
+    {
+      "actual": "suspected_code_bug",
+      "expected": "suspected_code_bug",
+      "label": "historical status preserved",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "passive tags only",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "historical provenance notice",
+      "pass": true
+    },
+    {
+      "actual": [],
+      "expected": [],
+      "label": "successful publish leaves no staging files",
+      "pass": true
+    },
+    {
+      "actual": 2,
+      "expected": 2,
+      "label": "occupied output refusal exit",
+      "pass": true
+    },
+    {
+      "actual": true,
+      "expected": true,
+      "label": "occupied output diagnostic",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expected": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "label": "occupied output no stdout",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 39385,
+        "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674"
+      },
+      "expected": {
+        "bytes": 39385,
+        "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674"
+      },
+      "label": "prior successful page preserved",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 11467,
+        "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+      },
+      "expected": {
+        "bytes": 11467,
+        "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+      },
+      "label": "final selected report preserved",
+      "pass": true
+    },
+    {
+      "actual": {
+        "bytes": 561,
+        "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+      },
+      "expected": {
+        "bytes": 561,
+        "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+      },
+      "label": "final corrected patch preserved",
+      "pass": true
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "-m",
+        "testpilot.saved_report",
+        "--report",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/calc_clamp/report.json",
+        "--patch",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/calc_clamp/testpilot.patch",
+        "--out",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/baseline-absent.html"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline",
+      "label": "01-current-absent",
+      "pid": 3860240,
+      "returncode": 1,
+      "stderr": {
+        "bytes": 57,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/01-current-absent.stderr",
+        "sha256": "895c1381186a65347a29fa065d72934f6e7b286b4e36ff0825119c6b4d54cb2a"
+      },
+      "stderr_text": "/usr/bin/python3: No module named testpilot.saved_report\n",
+      "stdout": {
+        "bytes": 0,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/01-current-absent.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout_text": "",
+      "timeout_s": 90
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-v",
+        "-s",
+        "tests",
+        "-p",
+        "test_saved_report.py"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined",
+      "label": "02-maintained-eight",
+      "pid": 3860241,
+      "returncode": 0,
+      "stderr": {
+        "bytes": 1266,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/02-maintained-eight.stderr",
+        "sha256": "0a5e742b373d64a1f078a6687bc66e22986f0ddb2581ba7ab1c8c43eb9738a0f"
+      },
+      "stderr_text": "test_actual_archived_fixtures_and_optimized_mode (test_saved_report.SavedReportTests.test_actual_archived_fixtures_and_optimized_mode) ... ok\ntest_existing_destinations_and_publication_race_preserve_bytes (test_saved_report.SavedReportTests.test_existing_destinations_and_publication_race_preserve_bytes) ... ok\ntest_file_limits_and_fifo_refuse_without_output (test_saved_report.SavedReportTests.test_file_limits_and_fifo_refuse_without_output) ... ok\ntest_literal_text_and_unavailable_result_remain_native (test_saved_report.SavedReportTests.test_literal_text_and_unavailable_result_remain_native) ... ok\ntest_mismatched_pair_and_malformed_json_refuse (test_saved_report.SavedReportTests.test_mismatched_pair_and_malformed_json_refuse) ... ok\ntest_native_newline_forms_and_empty_patch (test_saved_report.SavedReportTests.test_native_newline_forms_and_empty_patch) ... ok\ntest_no_runner_or_model_and_cleanup_warning_after_publication (test_saved_report.SavedReportTests.test_no_runner_or_model_and_cleanup_warning_after_publication) ... ok\ntest_unsupported_rendering_layout_refuses (test_saved_report.SavedReportTests.test_unsupported_rendering_layout_refuses) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 4.087s\n\nOK\n",
+      "stdout": {
+        "bytes": 0,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/02-maintained-eight.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout_text": "",
+      "timeout_s": 90
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "-m",
+        "testpilot.saved_report",
+        "--report",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/report.json",
+        "--patch",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/selected.patch",
+        "--out",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined",
+      "label": "03-pair-refusal",
+      "pid": 3860450,
+      "returncode": 2,
+      "stderr": {
+        "bytes": 101,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/03-pair-refusal.stderr",
+        "sha256": "119b1d44ab05867c989bf53d386825b0a370be49d2a63442121efca87fcb3253"
+      },
+      "stderr_text": "testpilot: cannot reopen saved report: selected patch bytes do not match the report's recorded patch\n",
+      "stdout": {
+        "bytes": 0,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/03-pair-refusal.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout_text": "",
+      "timeout_s": 90
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "-m",
+        "testpilot.saved_report",
+        "--report",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/report.json",
+        "--patch",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/selected.patch",
+        "--out",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined",
+      "label": "04-caller-corrected-retry",
+      "pid": 3860451,
+      "returncode": 0,
+      "stderr": {
+        "bytes": 0,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/04-caller-corrected-retry.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_text": "",
+      "stdout": {
+        "bytes": 527,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/04-caller-corrected-retry.stdout",
+        "sha256": "a7b2620dfc1301be1bfcf485cbee18d0144f53ee83474bba5c8f4c04fdc42ba8"
+      },
+      "stdout_text": "{\"bytes\": 39385, \"output\": \"/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html\", \"recorded_status\": \"suspected_code_bug\", \"schema\": \"testpilot.saved_review/1\", \"sha256\": \"b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674\", \"sources\": {\"patch\": {\"bytes\": 561, \"newline_form\": \"recorded UTF-8\", \"sha256\": \"271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc\"}, \"report\": {\"bytes\": 11467, \"sha256\": \"00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac\"}}}\n",
+      "timeout_s": 90
+    },
+    {
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "-S",
+        "-m",
+        "testpilot.saved_report",
+        "--report",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/report.json",
+        "--patch",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/selected.patch",
+        "--out",
+        "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html"
+      ],
+      "cwd": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined",
+      "label": "05-occupied-output",
+      "pid": 3860453,
+      "returncode": 2,
+      "stderr": {
+        "bytes": 85,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/05-occupied-output.stderr",
+        "sha256": "09afa3c3cabda7d4e9e5df19381cbdffc1538e58a36db86b0712a619fd9e180d"
+      },
+      "stderr_text": "testpilot: cannot reopen saved report: output already exists; choose a new HTML file\n",
+      "stdout": {
+        "bytes": 0,
+        "mode": 436,
+        "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/evidence/05-occupied-output.stdout",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout_text": "",
+      "timeout_s": 90
+    }
+  ],
+  "criteria": {
+    "base_commit": "247ad1ae8e873fcd52935633015158a1060091af",
+    "base_tree": "90e4dc3e36a8575cbad2778dc4d6b7fd109b2e64",
+    "courses": [
+      "Actual current-source module invocation refuses as absent, leaves new output absent; no composed source invoked for this control.",
+      "Exact existing-owner eight maintained unittest methods pass on the additive current-source composition; retain full output and actual process PID, including donor's explicit optimized child controls.",
+      "A wrong archived patch paired with calc_clamp report refuses before output; caller explicitly replaces only the owned patch input with the exact matching archived patch, then repeats identical argv/output and receives a passive page with exact embedded source bytes.",
+      "Repeat the successful command with the existing page path; refusal retains the complete prior output and exact input pair.",
+      "The admitted source/control identities retain exact bytes and native modes; all launched child processes have bounded timeout cleanup. No model/provider, saved-code/native-test execution or browser campaign is introduced by the saved consumer."
+    ],
+    "donor_commit": "17643838400fa85149e474622e677008cdcc3f79",
+    "limits": [
+      "Actual Linux/Python3.14.4 composition qualification, not Windows or manual/browser usability.",
+      "Only selected module closure and three archived fixture pairs are staged; no claim that a full repository checkout was executed.",
+      "Default stderr/stdout delivery only; adjacent console-failure issues keep their ownership.",
+      "No source edits to original donor or inherited current production files. Main integration remains independently reviewed."
+    ],
+    "schema": "hamon.forge.testpilot-saved-review-composition-criteria.v1",
+    "timing": "Source-aware composition receiving after reading existing published donor implementation/tests; no candidate-blind claim."
+  },
+  "explicit_corrected_inputs": [
+    {
+      "bytes": 11467,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/report.json",
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "bytes": 561,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/selected.patch",
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    }
+  ],
+  "finished_utc": "2026-10-13T12:31:45.785822+00:00",
+  "inputs_after": [
+    {
+      "bytes": 11350,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/LICENSE",
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5"
+    },
+    {
+      "bytes": 17163,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/README.md",
+      "sha256": "1ea9378f4ba1815d4ca405e47802083ebac65691667715841cd686d889c7bba0"
+    },
+    {
+      "bytes": 11467,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/calc_clamp/report.json",
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "bytes": 561,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/calc_clamp/testpilot.patch",
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "bytes": 5389,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/durations_parse/report.json",
+      "sha256": "008bdd76a69495b0a6ff6a0d7ae91a5bcbb002e9a1109de50cf5e9c0b021cf72"
+    },
+    {
+      "bytes": 555,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/durations_parse/testpilot.patch",
+      "sha256": "10580aade2fb0b9ab927ed0f5de7489d109a5cd726389b9f9b6427cbf5f32152"
+    },
+    {
+      "bytes": 5721,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/stats_median/report.json",
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0"
+    },
+    {
+      "bytes": 384,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/stats_median/testpilot.patch",
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "bytes": 676,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "bytes": 390,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "bytes": 11341,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/__main__.py",
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd"
+    },
+    {
+      "bytes": 2943,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "bytes": 14624,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/compare.py",
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+    },
+    {
+      "bytes": 21213,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/compare_html.py",
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    },
+    {
+      "bytes": 13252,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/diff.py",
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff"
+    },
+    {
+      "bytes": 21739,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/html_report.py",
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0"
+    },
+    {
+      "bytes": 30070,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/loop.py",
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12"
+    },
+    {
+      "bytes": 10454,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/model.py",
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    },
+    {
+      "bytes": 12770,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/recheck.py",
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6"
+    },
+    {
+      "bytes": 10184,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/recheck_html.py",
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "bytes": 16329,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/regression.py",
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "bytes": 13628,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/sandbox.py",
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34"
+    },
+    {
+      "bytes": 5410,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/targets.py",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "bytes": 11350,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/LICENSE",
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5"
+    },
+    {
+      "bytes": 17163,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/README.md",
+      "sha256": "1ea9378f4ba1815d4ca405e47802083ebac65691667715841cd686d889c7bba0"
+    },
+    {
+      "bytes": 11467,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/calc_clamp/report.json",
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "bytes": 561,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/calc_clamp/testpilot.patch",
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "bytes": 5389,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/durations_parse/report.json",
+      "sha256": "008bdd76a69495b0a6ff6a0d7ae91a5bcbb002e9a1109de50cf5e9c0b021cf72"
+    },
+    {
+      "bytes": 555,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/durations_parse/testpilot.patch",
+      "sha256": "10580aade2fb0b9ab927ed0f5de7489d109a5cd726389b9f9b6427cbf5f32152"
+    },
+    {
+      "bytes": 5721,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/stats_median/report.json",
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0"
+    },
+    {
+      "bytes": 384,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/stats_median/testpilot.patch",
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "bytes": 676,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "bytes": 390,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "bytes": 11341,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/__main__.py",
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd"
+    },
+    {
+      "bytes": 2943,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "bytes": 14624,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/compare.py",
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+    },
+    {
+      "bytes": 21213,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/compare_html.py",
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    },
+    {
+      "bytes": 13252,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/diff.py",
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff"
+    },
+    {
+      "bytes": 21739,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/html_report.py",
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0"
+    },
+    {
+      "bytes": 30070,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/loop.py",
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12"
+    },
+    {
+      "bytes": 10454,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/model.py",
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    },
+    {
+      "bytes": 12770,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/recheck.py",
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6"
+    },
+    {
+      "bytes": 10184,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/recheck_html.py",
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "bytes": 16329,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/regression.py",
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "bytes": 13628,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/sandbox.py",
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34"
+    },
+    {
+      "bytes": 5410,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/targets.py",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "bytes": 9808,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/saved_report.py",
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b"
+    },
+    {
+      "bytes": 11498,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/tests/test_saved_report.py",
+      "sha256": "c69cf71a0f1581f4bff8e716b7c24df0b052c76afd16a1d36e9cb4fdf42a65b0"
+    },
+    {
+      "bytes": 5793,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/docs/SAVED_REPORT_REVIEW.md",
+      "sha256": "6ed7bbbd856807adf64edf5e4f72a4b61e32b231a3cad9d8eba6ebfa0a225356"
+    },
+    {
+      "bytes": 286528,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/input-packet.json",
+      "sha256": "2f0be575c1885efd93a70e88eeba544b5da591b1dfcfde7bfc08b0dec00170f2"
+    },
+    {
+      "bytes": 1896,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/receiving-contract.json",
+      "sha256": "78c9dfb953e9a164d7742b777e10dd6f92b457ee1553b824b6868cbe163af7fc"
+    },
+    {
+      "bytes": 1835,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/stage-source.py",
+      "sha256": "0b8c5c4c380ad824e5383ac5fcd163a6d4a7a80413f8e9cd2aefb4084fefccb7"
+    },
+    {
+      "bytes": 22947,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/source-admission.json",
+      "sha256": "bc8f33308f7e08091a6245d009f6dfb40811d8e1c05271841c2b85a266a4d77e"
+    },
+    {
+      "bytes": 7413,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/receive-current-composition.py",
+      "sha256": "964be341d29a94e849047202f7460a73d7069f0b96cdbcdbd27efe11d705d38a"
+    }
+  ],
+  "inputs_before": [
+    {
+      "bytes": 11350,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/LICENSE",
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5"
+    },
+    {
+      "bytes": 17163,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/README.md",
+      "sha256": "1ea9378f4ba1815d4ca405e47802083ebac65691667715841cd686d889c7bba0"
+    },
+    {
+      "bytes": 11467,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/calc_clamp/report.json",
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "bytes": 561,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/calc_clamp/testpilot.patch",
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "bytes": 5389,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/durations_parse/report.json",
+      "sha256": "008bdd76a69495b0a6ff6a0d7ae91a5bcbb002e9a1109de50cf5e9c0b021cf72"
+    },
+    {
+      "bytes": 555,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/durations_parse/testpilot.patch",
+      "sha256": "10580aade2fb0b9ab927ed0f5de7489d109a5cd726389b9f9b6427cbf5f32152"
+    },
+    {
+      "bytes": 5721,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/stats_median/report.json",
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0"
+    },
+    {
+      "bytes": 384,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/eval/results/stats_median/testpilot.patch",
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "bytes": 676,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "bytes": 390,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "bytes": 11341,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/__main__.py",
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd"
+    },
+    {
+      "bytes": 2943,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "bytes": 14624,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/compare.py",
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+    },
+    {
+      "bytes": 21213,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/compare_html.py",
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    },
+    {
+      "bytes": 13252,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/diff.py",
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff"
+    },
+    {
+      "bytes": 21739,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/html_report.py",
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0"
+    },
+    {
+      "bytes": 30070,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/loop.py",
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12"
+    },
+    {
+      "bytes": 10454,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/model.py",
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    },
+    {
+      "bytes": 12770,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/recheck.py",
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6"
+    },
+    {
+      "bytes": 10184,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/recheck_html.py",
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "bytes": 16329,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/regression.py",
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "bytes": 13628,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/sandbox.py",
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34"
+    },
+    {
+      "bytes": 5410,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/baseline/testpilot/targets.py",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "bytes": 11350,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/LICENSE",
+      "sha256": "bd6ce0dba75b72f0a6827701d7a4b8e8f1e7eaf45b20c21270739fa4f48dfac5"
+    },
+    {
+      "bytes": 17163,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/README.md",
+      "sha256": "1ea9378f4ba1815d4ca405e47802083ebac65691667715841cd686d889c7bba0"
+    },
+    {
+      "bytes": 11467,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/calc_clamp/report.json",
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "bytes": 561,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/calc_clamp/testpilot.patch",
+      "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+    },
+    {
+      "bytes": 5389,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/durations_parse/report.json",
+      "sha256": "008bdd76a69495b0a6ff6a0d7ae91a5bcbb002e9a1109de50cf5e9c0b021cf72"
+    },
+    {
+      "bytes": 555,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/durations_parse/testpilot.patch",
+      "sha256": "10580aade2fb0b9ab927ed0f5de7489d109a5cd726389b9f9b6427cbf5f32152"
+    },
+    {
+      "bytes": 5721,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/stats_median/report.json",
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0"
+    },
+    {
+      "bytes": 384,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/eval/results/stats_median/testpilot.patch",
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    },
+    {
+      "bytes": 676,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/pyproject.toml",
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "bytes": 390,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "bytes": 11341,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/__main__.py",
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd"
+    },
+    {
+      "bytes": 2943,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "bytes": 14624,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/compare.py",
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+    },
+    {
+      "bytes": 21213,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/compare_html.py",
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc"
+    },
+    {
+      "bytes": 13252,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/diff.py",
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff"
+    },
+    {
+      "bytes": 21739,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/html_report.py",
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0"
+    },
+    {
+      "bytes": 30070,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/loop.py",
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12"
+    },
+    {
+      "bytes": 10454,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/model.py",
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    },
+    {
+      "bytes": 12770,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/recheck.py",
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6"
+    },
+    {
+      "bytes": 10184,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/recheck_html.py",
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "bytes": 16329,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/regression.py",
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "bytes": 13628,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/sandbox.py",
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34"
+    },
+    {
+      "bytes": 5410,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/targets.py",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "bytes": 9808,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/testpilot/saved_report.py",
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b"
+    },
+    {
+      "bytes": 11498,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/tests/test_saved_report.py",
+      "sha256": "c69cf71a0f1581f4bff8e716b7c24df0b052c76afd16a1d36e9cb4fdf42a65b0"
+    },
+    {
+      "bytes": 5793,
+      "mode": 420,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/combined/docs/SAVED_REPORT_REVIEW.md",
+      "sha256": "6ed7bbbd856807adf64edf5e4f72a4b61e32b231a3cad9d8eba6ebfa0a225356"
+    },
+    {
+      "bytes": 286528,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/input-packet.json",
+      "sha256": "2f0be575c1885efd93a70e88eeba544b5da591b1dfcfde7bfc08b0dec00170f2"
+    },
+    {
+      "bytes": 1896,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/receiving-contract.json",
+      "sha256": "78c9dfb953e9a164d7742b777e10dd6f92b457ee1553b824b6868cbe163af7fc"
+    },
+    {
+      "bytes": 1835,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/stage-source.py",
+      "sha256": "0b8c5c4c380ad824e5383ac5fcd163a6d4a7a80413f8e9cd2aefb4084fefccb7"
+    },
+    {
+      "bytes": 22947,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/source-admission.json",
+      "sha256": "bc8f33308f7e08091a6245d009f6dfb40811d8e1c05271841c2b85a266a4d77e"
+    },
+    {
+      "bytes": 7413,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/receive-current-composition.py",
+      "sha256": "964be341d29a94e849047202f7460a73d7069f0b96cdbcdbd27efe11d705d38a"
+    }
+  ],
+  "mismatched_inputs": [
+    {
+      "bytes": 11467,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/report.json",
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "bytes": 384,
+      "mode": 436,
+      "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/selected.patch",
+      "sha256": "91bde2e853eebe86b17388db81d656365d01f14cba6e8919905067cb20d98378"
+    }
+  ],
+  "pid": 3860172,
+  "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "receipt": {
+    "bytes": 39385,
+    "output": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html",
+    "recorded_status": "suspected_code_bug",
+    "schema": "testpilot.saved_review/1",
+    "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674",
+    "sources": {
+      "patch": {
+        "bytes": 561,
+        "newline_form": "recorded UTF-8",
+        "sha256": "271ea1507ff20439503261e59984ce8d8e04cbf72a6d85c0e2dca7a05b9bf4bc"
+      },
+      "report": {
+        "bytes": 11467,
+        "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+      }
+    }
+  },
+  "received_page": {
+    "bytes": 39385,
+    "mode": 384,
+    "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/consumer/review.html",
+    "sha256": "b70d5a30d79b56fab426ed230ff47be2b375b6f448cf8482dd0e37ea0905f674"
+  },
+  "schema": "hamon.forge.testpilot-saved-review-composition-receiving.v1",
+  "source_admission": {
+    "bytes": 22947,
+    "mode": 436,
+    "path": "/home/jacob/hamon/receiving/forge-d3745-testpilot-saved-review/source-admission.json",
+    "sha256": "bc8f33308f7e08091a6245d009f6dfb40811d8e1c05271841c2b85a266a4d77e"
+  },
+  "started_utc": "2026-10-13T12:31:41.302517+00:00"
+}

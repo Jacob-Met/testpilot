@@ -1,0 +1,20 @@
+{
+  "schema": "hamon.forge.testpilot-saved-review-composition-criteria.v1",
+  "base_commit": "247ad1ae8e873fcd52935633015158a1060091af",
+  "base_tree": "90e4dc3e36a8575cbad2778dc4d6b7fd109b2e64",
+  "donor_commit": "17643838400fa85149e474622e677008cdcc3f79",
+  "timing": "Source-aware composition receiving after reading existing published donor implementation/tests; no candidate-blind claim.",
+  "courses": [
+    "Actual current-source module invocation refuses as absent, leaves new output absent; no composed source invoked for this control.",
+    "Exact existing-owner eight maintained unittest methods pass on the additive current-source composition; retain full output and actual process PID, including donor's explicit optimized child controls.",
+    "A wrong archived patch paired with calc_clamp report refuses before output; caller explicitly replaces only the owned patch input with the exact matching archived patch, then repeats identical argv/output and receives a passive page with exact embedded source bytes.",
+    "Repeat the successful command with the existing page path; refusal retains the complete prior output and exact input pair.",
+    "The admitted source/control identities retain exact bytes and native modes; all launched child processes have bounded timeout cleanup. No model/provider, saved-code/native-test execution or browser campaign is introduced by the saved consumer."
+  ],
+  "limits": [
+    "Actual Linux/Python3.14.4 composition qualification, not Windows or manual/browser usability.",
+    "Only selected module closure and three archived fixture pairs are staged; no claim that a full repository checkout was executed.",
+    "Default stderr/stdout delivery only; adjacent console-failure issues keep their ownership.",
+    "No source edits to original donor or inherited current production files. Main integration remains independently reviewed."
+  ]
+}
