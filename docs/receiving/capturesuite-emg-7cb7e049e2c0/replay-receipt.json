@@ -1,0 +1,21 @@
+{
+  "status": "ACCEPT",
+  "observed_at_utc": "2026-10-13T05:37:52.976323+00:00",
+  "source_package_bytes_verified": 80,
+  "exact_toolkit_modules_verified": 16,
+  "local_fixture_commits": {
+    "before": "968723943b234fee81b1d2ee644fa95038313c64",
+    "after": "a95c709541755cefbcad2b462b9284692b33436a"
+  },
+  "regression_status": "verified_regression",
+  "regression_model_calls": 0,
+  "witnesses": [
+    {
+      "generated_file": "tests/test_emg_retained.py",
+      "nodeid": "tests.test_emg_retained::test_recorded_disconnect_does_not_invent_transition",
+      "before": "failed",
+      "after": "passed"
+    }
+  ],
+  "packet_and_clone_worktree_preserved": true
+}

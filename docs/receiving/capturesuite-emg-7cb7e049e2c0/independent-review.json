@@ -1,0 +1,45 @@
+{
+  "status": "ACCEPT",
+  "upstream_git_blob_maps_exact": {
+    "before": 80,
+    "after": 80
+  },
+  "excluded_upstream_python_files": {
+    "before": [
+      "libs/python/capture_worker/capture_worker/__init__.py",
+      "libs/python/capture_worker/capture_worker/__main__.py",
+      "libs/python/capture_worker/capture_worker/cli.py",
+      "libs/python/capture_worker/capture_worker/preview.py",
+      "libs/python/capture_worker/capture_worker/transport.py",
+      "libs/python/capture_worker/capture_worker/worker.py",
+      "libs/python/capture_worker/capture_worker/writer.py"
+    ],
+    "after": [
+      "libs/python/capture_worker/capture_worker/__init__.py",
+      "libs/python/capture_worker/capture_worker/__main__.py",
+      "libs/python/capture_worker/capture_worker/cli.py",
+      "libs/python/capture_worker/capture_worker/preview.py",
+      "libs/python/capture_worker/capture_worker/transport.py",
+      "libs/python/capture_worker/capture_worker/worker.py",
+      "libs/python/capture_worker/capture_worker/writer.py"
+    ]
+  },
+  "source_pins": {
+    "before_source_commit": "3960c0c756cd4e9facbde0d76eaaa3c31ab7c167",
+    "after_source_commit": "95ae1955dcff15c7cc4df77ebe66817dbc9b8094",
+    "toolkit_source_commit": "a5c292bc9f9f3e05b88bb3feee94cfb7159e4a15"
+  },
+  "generation_total_passes": 3,
+  "generation_retained_passes": 2,
+  "regression_status": "verified_regression",
+  "regression_model_calls": 0,
+  "witnesses": [
+    {
+      "generated_file": "tests/test_emg_retained.py",
+      "nodeid": "tests.test_emg_retained::test_recorded_disconnect_does_not_invent_transition",
+      "before": "failed",
+      "after": "passed"
+    }
+  ],
+  "review": "Reviewed complete receiver, replay helper, retained test semantics, actual reports and all80-file subset Git blobs against exact upstream trees. Initial whole-repository count87 differs from explicit subset80, not a source mismatch. No independent native rerun; source and saved-result review."
+}
