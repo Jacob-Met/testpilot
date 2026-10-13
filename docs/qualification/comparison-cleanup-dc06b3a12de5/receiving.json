@@ -1,0 +1,298 @@
+{
+  "schema": "hamon.testpilot-comparison-cleanup-qualification.v1",
+  "source_commit": "ac0dc717b854d38401c450a855ea2fdb5b6b0d49",
+  "source_freeze": {
+    "base_commit": "478f68adf01658a94a3ede22526da00f580785bd",
+    "base_tree": "ca0756e20da9c87c90ebd24c45ab494bfa31d47b",
+    "changed_files": [
+      {
+        "path": "testpilot/compare.py",
+        "mode": "100644",
+        "bytes": 14624,
+        "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+        "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+      },
+      {
+        "path": "tests/test_compare_cleanup.py",
+        "mode": "100644",
+        "bytes": 7054,
+        "git_blob": "13847e35de97f5242d8d7da56cdb916ea3476757",
+        "sha256": "32e894257ab8c7b458d9161ee5727dbdc830d69ec694ee902bb7fab6567fec00"
+      },
+      {
+        "path": "docs/COMPARE.md",
+        "mode": "100644",
+        "bytes": 7476,
+        "git_blob": "9e9023131fb5615264243cb314432f4eacaf7c15",
+        "sha256": "aa63dc81c5ffc7dc0016d3b8af9e08de347f8d4f94feed1fa9328df1e43d69a2"
+      }
+    ],
+    "runtime_delta_bytes": 141,
+    "base_projection_files": 22,
+    "candidate_projection_files": 23,
+    "unowned_projection_files_conserved": 20
+  },
+  "tree_conservation": {
+    "base_leaves": 1545,
+    "candidate_leaves": 1546,
+    "changed": [
+      {
+        "path": "docs/COMPARE.md",
+        "sha": "9e9023131fb5615264243cb314432f4eacaf7c15",
+        "mode": "100644"
+      },
+      {
+        "path": "testpilot/compare.py",
+        "sha": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+        "mode": "100644"
+      },
+      {
+        "path": "tests/test_compare_cleanup.py",
+        "sha": "13847e35de97f5242d8d7da56cdb916ea3476757",
+        "mode": "100644"
+      }
+    ],
+    "removed": [],
+    "unowned_leaves_conserved": 1543,
+    "tree": "88feab3d499e3cba547a37e4b24de6417525d899"
+  },
+  "author_test_courses": {
+    "python": "3.12.14",
+    "courses": [
+      {
+        "course": "baseline_focused",
+        "exit_code": 1,
+        "expected_exit_code": 1,
+        "source_diagnostic": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/baseline-with-new-tests/testpilot/compare.py df3fe0c0c035498facc20317d1d4663c89563b35286cf30666b8ca1c729f8983 optimize=0 pytest=9.1.1",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/baseline_focused-tmp",
+          "tests/test_compare_cleanup.py"
+        ],
+        "cwd": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/baseline-with-new-tests",
+        "optimized": false,
+        "log": "evidence/baseline_focused.txt",
+        "sha256": "0a8797331dcb4c9faba9e58d62c821d0aef892a0e04ef6c64b864c40b54040b2",
+        "summary": [
+          "7 failed, 5 passed in 0.20s"
+        ]
+      },
+      {
+        "course": "candidate_focused",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "source_diagnostic": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate/testpilot/compare.py 7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62 optimize=0 pytest=9.1.1",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate_focused-tmp",
+          "tests/test_compare_cleanup.py"
+        ],
+        "cwd": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate",
+        "optimized": false,
+        "log": "evidence/candidate_focused.txt",
+        "sha256": "b3033bf67f2689e4fee2a6eb39c0f5abdb5d118e2c9b962a1ce8619679988a1b",
+        "summary": [
+          "12 passed in 0.10s"
+        ]
+      },
+      {
+        "course": "candidate_focused_optimized",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "source_diagnostic": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate/testpilot/compare.py 7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62 optimize=1 pytest=9.1.1",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "-O",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate_focused_optimized-tmp",
+          "tests/test_compare_cleanup.py"
+        ],
+        "cwd": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate",
+        "optimized": true,
+        "log": "evidence/candidate_focused_optimized.txt",
+        "sha256": "fee0d39ec6c178384fa3d4dfd7f43c2db132f461f6764648049ae1fad429f5c1",
+        "summary": [
+          "12 passed, 1 warning in 0.12s"
+        ]
+      },
+      {
+        "course": "baseline_comparison",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "source_diagnostic": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/baseline/testpilot/compare.py df3fe0c0c035498facc20317d1d4663c89563b35286cf30666b8ca1c729f8983 optimize=0 pytest=9.1.1",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/baseline_comparison-tmp",
+          "tests/test_compare.py",
+          "tests/test_compare_cli.py"
+        ],
+        "cwd": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/baseline",
+        "optimized": false,
+        "log": "evidence/baseline_comparison.txt",
+        "sha256": "3b00fc7c40d763e0d9203c8dbed6a089310ceebb698d2f8b007a96d7daa4365d",
+        "summary": [
+          "38 passed in 0.68s"
+        ]
+      },
+      {
+        "course": "candidate_comparison",
+        "exit_code": 0,
+        "expected_exit_code": 0,
+        "source_diagnostic": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate/testpilot/compare.py 7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62 optimize=0 pytest=9.1.1",
+        "command": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate_comparison-tmp",
+          "tests/test_compare.py",
+          "tests/test_compare_cli.py",
+          "tests/test_compare_cleanup.py"
+        ],
+        "cwd": "/dev/shm/source_improvement-testpilot-cleanup-dc06b3a12de5/candidate",
+        "optimized": false,
+        "log": "evidence/candidate_comparison.txt",
+        "sha256": "4674cae47a4c30f8bd5fd9d752e17e94ca08ac40aa06a9b8bb926f02de1e8423",
+        "summary": [
+          "50 passed in 0.75s"
+        ]
+      }
+    ]
+  },
+  "author_saved_report_witnesses": [
+    {
+      "role": "original",
+      "receipt_bytes": 8503,
+      "receipt_sha256": "977fa464f64127baf0bd22dfb0b68b720c4c544b8d48fcb728cf90c9ecd7ccc2",
+      "contract_pattern": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "expected_html_bytes": 45291,
+      "expected_html_sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+      "source_and_input_state_unchanged": true
+    },
+    {
+      "role": "candidate",
+      "receipt_bytes": 8809,
+      "receipt_sha256": "f07181a944871319c670c2664f53e60433c0166b0c71c108f5d6d09a90361ae6",
+      "contract_pattern": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected_html_bytes": 45291,
+      "expected_html_sha256": "da933629cf557783466923150546d9e186aa6d1459bc93e0faa6711760f74253",
+      "source_and_input_state_unchanged": true
+    }
+  ],
+  "author_evidence": [
+    {
+      "path": "source-input.json",
+      "bytes": 6003,
+      "sha256": "19e47d166d4c7f92834846ee661b8bb4533532e6ac5fce79fdff73be9f065c33"
+    },
+    {
+      "path": "source-freeze.json",
+      "bytes": 1017,
+      "sha256": "593ec58f242c50ab4440095ca06b6330faf7e52d95515683ebd49ff4fa975121"
+    },
+    {
+      "path": "test-dependencies.json",
+      "bytes": 50534,
+      "sha256": "ac8cf0a644fd8128152f09885465750daa417660164b26e04b44eda03c1bd479"
+    },
+    {
+      "path": "run_tests.py",
+      "bytes": 4079,
+      "sha256": "d650530857bc72901a6256e01af32cbf98e77ef241eaf00aa8be2a1c53d7299d"
+    },
+    {
+      "path": "reproduce_cleanup.py",
+      "bytes": 5711,
+      "sha256": "69714a4145f7cfda7b53ec6106529d1cb69c31da38df7d8d8a54f7c59168d9b7"
+    },
+    {
+      "path": "evidence/baseline_comparison.txt",
+      "bytes": 540,
+      "sha256": "3b00fc7c40d763e0d9203c8dbed6a089310ceebb698d2f8b007a96d7daa4365d"
+    },
+    {
+      "path": "evidence/baseline_focused.txt",
+      "bytes": 15914,
+      "sha256": "0a8797331dcb4c9faba9e58d62c821d0aef892a0e04ef6c64b864c40b54040b2"
+    },
+    {
+      "path": "evidence/candidate_comparison.txt",
+      "bytes": 572,
+      "sha256": "4674cae47a4c30f8bd5fd9d752e17e94ca08ac40aa06a9b8bb926f02de1e8423"
+    },
+    {
+      "path": "evidence/candidate_focused.txt",
+      "bytes": 521,
+      "sha256": "b3033bf67f2689e4fee2a6eb39c0f5abdb5d118e2c9b962a1ce8619679988a1b"
+    },
+    {
+      "path": "evidence/candidate_focused_optimized.txt",
+      "bytes": 1082,
+      "sha256": "fee0d39ec6c178384fa3d4dfd7f43c2db132f461f6764648049ae1fad429f5c1"
+    },
+    {
+      "path": "evidence/test-courses.json",
+      "bytes": 5135,
+      "sha256": "b608510dd057e8def07c3509a62c539a2f611a32ad0b81fdcaa71b9332414e9f"
+    }
+  ],
+  "independent_original_files": [
+    {
+      "path": "native-baseline.json",
+      "bytes": 23820,
+      "sha256": "67783c401cb5e8fd3fe37d4aaa986c7e310c95fafbe863c175e35234f6c094af"
+    },
+    {
+      "path": "native-candidate.json",
+      "bytes": 23769,
+      "sha256": "64a5fa10f456e858f10006e8d0e03eb4a21d9e5a4233ac8ee00fd5d8d1d90f0e"
+    },
+    {
+      "path": "native-review.json",
+      "bytes": 7132,
+      "sha256": "b5af090693d664ad3d0bcceca47cbeece22a4b6b3200bdb60bc6db9bd497ee28"
+    }
+  ],
+  "limits": "Bounded comparison test projection and separately authored native API receiving; not the full repository suite. Initial missing-pytest launch is rejected environment evidence."
+}
