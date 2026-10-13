@@ -1,0 +1,14 @@
+{
+  "original": "/dev/shm/7cb7e049e2c0-source-products/receive_composed_testpilot.py",
+  "original_sha256": "fcc3d14f8e08b0c4b07bcde23190873cccd0f65465b6592811587f300455fd64",
+  "candidate_sha256": "5bf842a5bb5d9707e2bc61237e82b8f3a686d10b90179382ffa48939686d81c7",
+  "changes": [
+    "Receiver description",
+    "Remove inherited and explicit PYTHONPATH for CLI",
+    "Use -I for both actual TestPilot CLI executions"
+  ],
+  "module_source_argument": "installed site-packages directory, for exact module identity only",
+  "original_source_commit": "f27ad21fa1f130e74defdda4403028d3ed11806e",
+  "original_source_path": "docs/receiving/composed-toolkit-7cb7e049e2c0/receive_composed_testpilot.py",
+  "original_git_blob": "de835c1d3fa538ff399dc89e5e4c22d7e48ef437"
+}

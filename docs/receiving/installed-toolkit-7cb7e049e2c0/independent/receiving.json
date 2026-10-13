@@ -1,0 +1,218 @@
+{
+  "status": "ACCEPT",
+  "source_commit": "f27ad21fa1f130e74defdda4403028d3ed11806e",
+  "wheel_sha256": "cdb743f38fc17fd4caee4f3d0d98761cf8495f8992e2cbb5703444674578f54d",
+  "wheel_bytes": 78834,
+  "wheel_record_entries_verified": 23,
+  "exact_source_wheel_installed_modules": {
+    "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+    "__main__.py": "e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f",
+    "_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+    "_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+    "compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+    "compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+    "diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+    "loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+    "model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+    "progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+    "recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+    "recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+    "regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+    "sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+    "targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+  },
+  "fresh_install": true,
+  "installed_identity": {
+    "path": "/dev/testpilot-wheel-independent-0sqa_xkh/venv/lib/python3.12/site-packages/testpilot/__init__.py",
+    "version": "0.1.0",
+    "pytest": "9.1.1"
+  },
+  "read_only_pytest_provider": "/workspace/scratch/4c431341ea9a/source_products/venv/lib/python3.12/site-packages",
+  "commands": [
+    {
+      "label": "fresh-owned-venv",
+      "argv": [
+        "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "venv",
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "offline-wheel-install",
+      "argv": [
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--no-cache-dir",
+        "/dev/shm/7cb7e049e2c0-source-products/TestPilot-installed-refresh-v1/testpilot-0.1.0-py3-none-any.whl"
+      ],
+      "exit": 0,
+      "stdout": "Processing /dev/shm/7cb7e049e2c0-source-products/TestPilot-installed-refresh-v1/testpilot-0.1.0-py3-none-any.whl\nInstalling collected packages: testpilot\nSuccessfully installed testpilot-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "isolated-installed-identity",
+      "argv": [
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/python",
+        "-I",
+        "-B",
+        "-c",
+        "import json,testpilot,pytest; print(json.dumps({\"path\":testpilot.__file__,\"version\":testpilot.__version__,\"pytest\":pytest.__version__}))"
+      ],
+      "exit": 0,
+      "stdout": "{\"path\": \"/dev/testpilot-wheel-independent-0sqa_xkh/venv/lib/python3.12/site-packages/testpilot/__init__.py\", \"version\": \"0.1.0\", \"pytest\": \"9.1.1\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "isolated-version",
+      "argv": [
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "testpilot 0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-console-entrypoint",
+      "argv": [
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/testpilot",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "testpilot 0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "isolated-run-help",
+      "argv": [
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "run",
+        "--help"
+      ],
+      "exit": 0,
+      "stdout": "usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)\n                     [--backend {scripted,tokenfactory,openai}]\n                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]\n                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]\n                     [--max-tokens MAX_TOKENS] [--pytest-k EXPR]\n                     [--pytest-m EXPR] [--progress] [--out OUT]\n                     [--target PATH.py::QUALNAME]\n\noptions:\n  -h, --help            show this help message and exit\n  --repo REPO\n  --diff DIFF           unified diff file ('-' for stdin)\n  --git-base GIT_BASE   diff the working tree against this git ref\n  --backend {scripted,tokenfactory,openai}\n                        default: $TESTPILOT_BACKEND or scripted\n  --script SCRIPT       dir of canned responses for the scripted backend\n  --base-url BASE_URL   override OpenAI-compatible base URL\n  --rounds ROUNDS       max repair rounds (default 3)\n  --timeout TIMEOUT     positive finite pytest timeout per run, seconds\n  --no-coverage         run pytest without optional coverage measurement\n                        (default: automatic when installed)\n  --python EXECUTABLE   project Python for all test runs; path or PATH command\n                        (default: this interpreter)\n  --max-tokens MAX_TOKENS\n                        total token budget for the run\n  --pytest-k EXPR       native pytest keyword expression for baseline,\n                        generation and every repair\n  --pytest-m EXPR       native pytest marker expression for baseline,\n                        generation and every repair\n  --progress            show live phase notices on stderr\n  --out OUT\n  --target PATH.py::QUALNAME\n                        select this function explicitly; repeat for caller\n                        order, instead of automatic diff selection\n",
+      "stderr": ""
+    },
+    {
+      "label": "actual-isolated-installed-recheck",
+      "argv": [
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "recheck",
+        "--repo",
+        "/dev/testpilot-wheel-independent-0sqa_xkh/project",
+        "--report",
+        "/dev/testpilot-wheel-independent-0sqa_xkh/saved.json",
+        "--out",
+        "/dev/testpilot-wheel-independent-0sqa_xkh/recheck",
+        "--python",
+        "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/python",
+        "--timeout",
+        "20"
+      ],
+      "exit": 0,
+      "stdout": "TestPilot recheck: passed\n1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected\nNew model calls: 0\nwrote /dev/testpilot-wheel-independent-0sqa_xkh/recheck/recheck.md, /dev/testpilot-wheel-independent-0sqa_xkh/recheck/recheck.json, /dev/testpilot-wheel-independent-0sqa_xkh/recheck/recheck.html\n",
+      "stderr": ""
+    }
+  ],
+  "native_recheck": {
+    "schema": "testpilot.recheck/1",
+    "status": "passed",
+    "ok": true,
+    "repo": "/dev/testpilot-wheel-independent-0sqa_xkh/project",
+    "python": "/dev/testpilot-wheel-independent-0sqa_xkh/venv/bin/python",
+    "started_at": "2026-10-13T10:23:15.113684+00:00",
+    "finished_at": "2026-10-13T10:23:15.300077+00:00",
+    "source_report": {
+      "path": "/dev/testpilot-wheel-independent-0sqa_xkh/saved.json",
+      "sha256": "a0ae5944e3a53b4fed1329e503a903f0d8c5f7fa471e29c32f846730fafb08bd",
+      "recorded_status": "historical"
+    },
+    "test_files": {
+      "tests/test_retained.py": "from compute import square\ndef test_retained():\n    assert square(9) == 81\n"
+    },
+    "retained_tests": [
+      {
+        "path": "tests/test_retained.py",
+        "bytes": 75,
+        "sha256": "20735fedbf5ebf8d0d7fe3da27c6af275d59642adc452f64d4debaa2b13071af",
+        "placement": "temporary"
+      }
+    ],
+    "final": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.185,
+      "timeout_s": 20.0,
+      "output": ".                                                                        [100%]\n1 passed in 0.01s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_retained::test_retained",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_retained.py"
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_retained.py"
+      ],
+      "junit_available": true,
+      "passed": 1,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected",
+      "generated": {
+        "collected": 1,
+        "passed": 1,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    },
+    "model_calls": 0,
+    "scope": "Current selected-suite execution of exact retained tests; no new model calls or historical coverage comparison."
+  },
+  "outputs": {
+    "recheck.html": {
+      "bytes": 9756,
+      "sha256": "3d640caea06c77e9adff535168cf343e4bdc18810524b5e00d184255ba6793dc"
+    },
+    "recheck.json": {
+      "bytes": 1868,
+      "sha256": "c3f7b3b9a9a9f5f288e4a86134c78a97554bf73ffb942243ba7811e91781b3e1"
+    },
+    "recheck.md": {
+      "bytes": 698,
+      "sha256": "c98591dc321bd5c94c6abfae8d3b4aad76eb790cf3ad38d33c0a5b82684d2f90"
+    }
+  },
+  "source_report_project_and_modules_preserved": true,
+  "limits": "Fresh disposable POSIX venv, local wheel with no dependency downloads; pytest comes from explicit read-only qualified provider. Isolated -I module execution outside source/no PYTHONPATH plus console entrypoint. One retained-test recheck; no repeated generation flood, Windows or existing-estate installation claim."
+}

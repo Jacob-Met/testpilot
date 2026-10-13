@@ -1,0 +1,7 @@
+{
+  "status": "RECEIVER_ASSERTION_ERROR",
+  "receiver_sha256": "d4d4ca5c49c0b68bcf34c026933c87c01710ecb274d2f5ec45b3fc28e8f20372",
+  "observed": "Fresh venv install, RECORD/source/install module equality, -I identity/version, generated console entrypoint, run help and actual retained-test recheck all returned exit0. Recheck status passed/model_calls0/passed1 were observed before KeyError generated_passed.",
+  "cause": "Receiver incorrectly expected final.generated_passed instead of final.generated.passed. Private temp context was disposed on error, so final report retention/source-after assertions were not completed.",
+  "product_change": false
+}

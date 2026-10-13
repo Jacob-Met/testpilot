@@ -1,0 +1,310 @@
+{
+  "disposition": "ACCEPT",
+  "source_commit": "f27ad21fa1f130e74defdda4403028d3ed11806e",
+  "wheel": {
+    "name": "testpilot-0.1.0-py3-none-any.whl",
+    "bytes": 78834,
+    "sha256": "cdb743f38fc17fd4caee4f3d0d98761cf8495f8992e2cbb5703444674578f54d",
+    "exact_python_modules": 16
+  },
+  "builder": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "setuptools": "84.0.0",
+    "wheel": "0.48.0"
+  },
+  "installed": {
+    "package": "/dev/testpilot-installed-g1c9b6lj/venv/lib/python3.12/site-packages/testpilot",
+    "pytest": "9.1.1",
+    "coverage": "7.16.2",
+    "modules": {
+      "targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+      "regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+      "model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+      "__main__.py": "e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f",
+      "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    }
+  },
+  "provider": "/workspace/scratch/4c431341ea9a/source_products/venv/lib/python3.12/site-packages",
+  "dependency_downloads": false,
+  "isolated_cli_no_pythonpath": true,
+  "module_and_original_source_bytes_preserved": true,
+  "actual_consumer": {
+    "status": "ACCEPT",
+    "sandbox_sha256": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+    "composed_source_sha256": {
+      "testpilot/__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "testpilot/__main__.py": "e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f",
+      "testpilot/_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+      "testpilot/_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "testpilot/compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "testpilot/compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "testpilot/diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "testpilot/html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "testpilot/loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "testpilot/model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "testpilot/progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+      "testpilot/recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "testpilot/recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "testpilot/regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "testpilot/sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+      "testpilot/targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    "unrelated_ancestor_testpaths": "selected",
+    "legacy_case_admitted": true,
+    "progress_phase_notices_received": true,
+    "consumer": "actual TestPilot CLI using ScriptedModel, native pytest, saved git patch and exact-test recheck",
+    "raw_noise_bytes_per_existing_test": 16777216,
+    "generated_status": "passed",
+    "repair_rounds_used": 1,
+    "failed_generated_round": 1,
+    "final_cases": {
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "junit_available": true
+    },
+    "saved_output_characters": 3000,
+    "final_diagnostic_retained": true,
+    "original_project_unchanged": true,
+    "adopted_originals_unchanged": true,
+    "recheck_status": "passed",
+    "recheck_model_calls": 0,
+    "retained_tests": [
+      {
+        "path": "tests/test_generated.py",
+        "bytes": 86,
+        "sha256": "d1fdb994946045a16f868f2931d65768c71e1d3c908e6863486b922eae0c7c46",
+        "placement": "already_present"
+      }
+    ],
+    "commands": [
+      {
+        "name": "generate-and-repair",
+        "argv": [
+          "/dev/testpilot-installed-g1c9b6lj/venv/bin/python",
+          "-I",
+          "-B",
+          "-m",
+          "testpilot",
+          "run",
+          "--repo",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/project",
+          "--diff",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/change.diff",
+          "--backend",
+          "scripted",
+          "--script",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/responses",
+          "--rounds",
+          "1",
+          "--timeout",
+          "10",
+          "--no-coverage",
+          "--progress",
+          "--out",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/generated"
+        ],
+        "returncode": 0,
+        "elapsed_s": 0.92085
+      },
+      {
+        "name": "initialize-receiving-worktree",
+        "argv": [
+          "git",
+          "init",
+          "-q"
+        ],
+        "returncode": 0,
+        "elapsed_s": 0.004657
+      },
+      {
+        "name": "check-saved-patch",
+        "argv": [
+          "git",
+          "apply",
+          "--check",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/generated/testpilot.patch"
+        ],
+        "returncode": 0,
+        "elapsed_s": 0.003638
+      },
+      {
+        "name": "apply-saved-patch",
+        "argv": [
+          "git",
+          "apply",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/generated/testpilot.patch"
+        ],
+        "returncode": 0,
+        "elapsed_s": 0.003543
+      },
+      {
+        "name": "recheck-adopted-tests",
+        "argv": [
+          "/dev/testpilot-installed-g1c9b6lj/venv/bin/python",
+          "-I",
+          "-B",
+          "-m",
+          "testpilot",
+          "recheck",
+          "--repo",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/adopted-project",
+          "--report",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/generated/report.json",
+          "--timeout",
+          "10",
+          "--out",
+          "/dev/testpilot-installed-g1c9b6lj/consumer/recheck"
+        ],
+        "returncode": 0,
+        "elapsed_s": 0.367494
+      }
+    ],
+    "artifacts": {
+      "generated/report.json": {
+        "bytes": 15472,
+        "sha256": "b0aa95e9f5406997524b7451a4b466439a6c194e141078ead9814f0ce624a6f0"
+      },
+      "generated/testpilot.patch": {
+        "bytes": 234,
+        "sha256": "02bfdb2bca0333730bc6ed5d8f0f7795219120024ef2670391d1631a6108d85b"
+      },
+      "recheck/recheck.json": {
+        "bytes": 5124,
+        "sha256": "108286a312b64dce71d31870cfb3c2f8f75922b921a27c52947f378da8460ac3"
+      }
+    },
+    "limits": [
+      "Local POSIX consumer receiving; no installed-estate or Windows claim.",
+      "The scripted backend uses fixed responses; no provider request is made."
+    ]
+  },
+  "commands": [
+    {
+      "label": "build-wheel",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-index",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-cache-dir",
+        "--wheel-dir",
+        "/dev/testpilot-installed-g1c9b6lj/dist",
+        "/dev/testpilot-installed-g1c9b6lj/build-source"
+      ],
+      "returncode": 0,
+      "stdout": "Processing ./build-source\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: testpilot\n  Building wheel for testpilot (pyproject.toml): started\n  Building wheel for testpilot (pyproject.toml): finished with status 'done'\n  Created wheel for testpilot: filename=testpilot-0.1.0-py3-none-any.whl size=78834 sha256=cdb743f38fc17fd4caee4f3d0d98761cf8495f8992e2cbb5703444674578f54d\n  Stored in directory: /dev/testpilot-installed-g1c9b6lj/pip-ephem-wheel-cache-9ulqv4cf/wheels/4e/7d/0c/583b2909ef0d17b016e5a2b220844db50407855a26cbca786a\nSuccessfully built testpilot\n",
+      "stderr": ""
+    },
+    {
+      "label": "create-isolated-venv",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "venv",
+        "/dev/testpilot-installed-g1c9b6lj/venv"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "install-exact-wheel",
+      "argv": [
+        "/dev/testpilot-installed-g1c9b6lj/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--no-compile",
+        "/dev/testpilot-installed-g1c9b6lj/dist/testpilot-0.1.0-py3-none-any.whl"
+      ],
+      "returncode": 0,
+      "stdout": "Processing ./dist/testpilot-0.1.0-py3-none-any.whl\nInstalling collected packages: testpilot\nSuccessfully installed testpilot-0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-site-location",
+      "argv": [
+        "/dev/testpilot-installed-g1c9b6lj/venv/bin/python",
+        "-I",
+        "-B",
+        "-c",
+        "import sysconfig; print(sysconfig.get_path(\"purelib\"))"
+      ],
+      "returncode": 0,
+      "stdout": "/dev/testpilot-installed-g1c9b6lj/venv/lib/python3.12/site-packages\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-identity",
+      "argv": [
+        "/dev/testpilot-installed-g1c9b6lj/venv/bin/python",
+        "-I",
+        "-B",
+        "-c",
+        "import json,pathlib,hashlib,testpilot,pytest,coverage; p=pathlib.Path(testpilot.__file__).parent; print(json.dumps({\"package\":str(p),\"pytest\":pytest.__version__,\"coverage\":coverage.__version__,\"modules\":{x.name:hashlib.sha256(x.read_bytes()).hexdigest() for x in p.glob(\"*.py\")}}))"
+      ],
+      "returncode": 0,
+      "stdout": "{\"package\": \"/dev/testpilot-installed-g1c9b6lj/venv/lib/python3.12/site-packages/testpilot\", \"pytest\": \"9.1.1\", \"coverage\": \"7.16.2\", \"modules\": {\"targets.py\": \"35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0\", \"sandbox.py\": \"f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151\", \"regression.py\": \"a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89\", \"recheck_html.py\": \"6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633\", \"recheck.py\": \"1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6\", \"progress.py\": \"3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac\", \"model.py\": \"65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b\", \"loop.py\": \"efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12\", \"html_report.py\": \"91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0\", \"diff.py\": \"33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff\", \"compare_html.py\": \"41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc\", \"compare.py\": \"7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62\", \"_pytest_generated.py\": \"d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768\", \"_pytest_configuration.py\": \"889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31\", \"__main__.py\": \"e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f\", \"__init__.py\": \"65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f\"}}\n",
+      "stderr": ""
+    },
+    {
+      "label": "isolated-version",
+      "argv": [
+        "/dev/testpilot-installed-g1c9b6lj/venv/bin/python",
+        "-I",
+        "-B",
+        "-m",
+        "testpilot",
+        "--version"
+      ],
+      "returncode": 0,
+      "stdout": "testpilot 0.1.0\n",
+      "stderr": ""
+    },
+    {
+      "label": "installed-full-consumer",
+      "argv": [
+        "/dev/testpilot-installed-g1c9b6lj/venv/bin/python",
+        "-I",
+        "-B",
+        "/dev/shm/7cb7e049e2c0-source-products/TestPilot-installed-refresh-v1/receive_installed_toolkit.py",
+        "--source",
+        "/dev/testpilot-installed-g1c9b6lj/venv/lib/python3.12/site-packages",
+        "--out",
+        "/dev/testpilot-installed-g1c9b6lj/consumer"
+      ],
+      "returncode": 0,
+      "stdout": "{\n  \"status\": \"ACCEPT\",\n  \"sandbox_sha256\": \"f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151\",\n  \"composed_source_sha256\": {\n    \"testpilot/__init__.py\": \"65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f\",\n    \"testpilot/__main__.py\": \"e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f\",\n    \"testpilot/_pytest_configuration.py\": \"889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31\",\n    \"testpilot/_pytest_generated.py\": \"d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768\",\n    \"testpilot/compare.py\": \"7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62\",\n    \"testpilot/compare_html.py\": \"41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc\",\n    \"testpilot/diff.py\": \"33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff\",\n    \"testpilot/html_report.py\": \"91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0\",\n    \"testpilot/loop.py\": \"efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12\",\n    \"testpilot/model.py\": \"65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b\",\n    \"testpilot/progress.py\": \"3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac\",\n    \"testpilot/recheck.py\": \"1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6\",\n    \"testpilot/recheck_html.py\": \"6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633\",\n    \"testpilot/regression.py\": \"a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89\",\n    \"testpilot/sandbox.py\": \"f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151\",\n    \"testpilot/targets.py\": \"35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0\"\n  },\n  \"unrelated_ancestor_testpaths\": \"selected\",\n  \"legacy_case_admitted\": true,\n  \"progress_phase_notices_received\": true,\n  \"consumer\": \"actual TestPilot CLI using ScriptedModel, native pytest, saved git patch and exact-test recheck\",\n  \"raw_noise_bytes_per_existing_test\": 16777216,\n  \"generated_status\": \"passed\",\n  \"repair_rounds_used\": 1,\n  \"failed_generated_round\": 1,\n  \"final_cases\": {\n    \"passed\": 3,\n    \"failed\": 0,\n    \"errors\": 0,\n    \"skipped\": 0,\n    \"junit_available\": true\n  },\n  \"saved_output_characters\": 3000,\n  \"final_diagnostic_retained\": true,\n  \"original_project_unchanged\": true,\n  \"adopted_originals_unchanged\": true,\n  \"recheck_status\": \"passed\",\n  \"recheck_model_calls\": 0,\n  \"retained_tests\": [\n    {\n      \"path\": \"tests/test_generated.py\",\n      \"bytes\": 86,\n      \"sha256\": \"d1fdb994946045a16f868f2931d65768c71e1d3c908e6863486b922eae0c7c46\",\n      \"placement\": \"already_present\"\n    }\n  ],\n  \"commands\": [\n    {\n      \"name\": \"generate-and-repair\",\n      \"argv\": [\n        \"/dev/testpilot-installed-g1c9b6lj/venv/bin/python\",\n        \"-I\",\n        \"-B\",\n        \"-m\",\n        \"testpilot\",\n        \"run\",\n        \"--repo\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/project\",\n        \"--diff\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/change.diff\",\n        \"--backend\",\n        \"scripted\",\n        \"--script\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/responses\",\n        \"--rounds\",\n        \"1\",\n        \"--timeout\",\n        \"10\",\n        \"--no-coverage\",\n        \"--progress\",\n        \"--out\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/generated\"\n      ],\n      \"returncode\": 0,\n      \"elapsed_s\": 0.92085\n    },\n    {\n      \"name\": \"initialize-receiving-worktree\",\n      \"argv\": [\n        \"git\",\n        \"init\",\n        \"-q\"\n      ],\n      \"returncode\": 0,\n      \"elapsed_s\": 0.004657\n    },\n    {\n      \"name\": \"check-saved-patch\",\n      \"argv\": [\n        \"git\",\n        \"apply\",\n        \"--check\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/generated/testpilot.patch\"\n      ],\n      \"returncode\": 0,\n      \"elapsed_s\": 0.003638\n    },\n    {\n      \"name\": \"apply-saved-patch\",\n      \"argv\": [\n        \"git\",\n        \"apply\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/generated/testpilot.patch\"\n      ],\n      \"returncode\": 0,\n      \"elapsed_s\": 0.003543\n    },\n    {\n      \"name\": \"recheck-adopted-tests\",\n      \"argv\": [\n        \"/dev/testpilot-installed-g1c9b6lj/venv/bin/python\",\n        \"-I\",\n        \"-B\",\n        \"-m\",\n        \"testpilot\",\n        \"recheck\",\n        \"--repo\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/adopted-project\",\n        \"--report\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/generated/report.json\",\n        \"--timeout\",\n        \"10\",\n        \"--out\",\n        \"/dev/testpilot-installed-g1c9b6lj/consumer/recheck\"\n      ],\n      \"returncode\": 0,\n      \"elapsed_s\": 0.367494\n    }\n  ],\n  \"artifacts\": {\n    \"generated/report.json\": {\n      \"bytes\": 15472,\n      \"sha256\": \"b0aa95e9f5406997524b7451a4b466439a6c194e141078ead9814f0ce624a6f0\"\n    },\n    \"generated/testpilot.patch\": {\n      \"bytes\": 234,\n      \"sha256\": \"02bfdb2bca0333730bc6ed5d8f0f7795219120024ef2670391d1631a6108d85b\"\n    },\n    \"recheck/recheck.json\": {\n      \"bytes\": 5124,\n      \"sha256\": \"108286a312b64dce71d31870cfb3c2f8f75922b921a27c52947f378da8460ac3\"\n    }\n  },\n  \"limits\": [\n    \"Local POSIX consumer receiving; no installed-estate or Windows claim.\",\n    \"The scripted backend uses fixed responses; no provider request is made.\"\n  ]\n}\n",
+      "stderr": ""
+    }
+  ],
+  "consumer_archive": {
+    "bytes": 23251,
+    "sha256": "46891b46f1a6a51353a6b75df81b5d336ef51bfaddd901e903a8e9d91b9482f6",
+    "files": 30
+  },
+  "prior_setup_outcome": "Earlier wheel build completed but its shared-filesystem copy failed ENOSPC before installation; no consumer result from that attempt.",
+  "limits": "Owned ephemeral POSIX installation with existing read-only pytest/coverage dependency provider; no installed estate, Windows or public package-index release."
+}

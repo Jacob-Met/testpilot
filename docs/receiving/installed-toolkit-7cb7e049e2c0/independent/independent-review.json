@@ -1,0 +1,22 @@
+{
+  "status": "ACCEPT",
+  "wheel_sha256": "cdb743f38fc17fd4caee4f3d0d98761cf8495f8992e2cbb5703444674578f54d",
+  "source_commit": "f27ad21fa1f130e74defdda4403028d3ed11806e",
+  "receiving_sha256": "bcf67447881061db61648143fffdfc3c8370a389f70cbb83454409cef46b4da1",
+  "receiver_sha256": "3b33490053ca170b6f411021467e5733fa0d917ecbce6612d04d254ba0377a4a",
+  "source_build_inputs_verified": 20,
+  "wheel_source_installed_modules_verified": 16,
+  "record_hashes_verified": true,
+  "independent_native_checks": [
+    "Fresh owned offline no-deps installation",
+    "Isolated package path points into fresh venv",
+    "-I module --version with bogus provider configuration",
+    "Generated venv/bin/testpilot console entrypoint --version",
+    "Isolated run help retains --progress",
+    "One actual saved-test recheck: one native pass and one generated pass, zero model calls",
+    "Input project, source report, source and installed modules unchanged"
+  ],
+  "guide_review": "README correctly distinguishes f27ad21f source commit/tree from distribution0.1.0, dependency requirements and offline provider, gives concrete isolated CLI receiving, preserves historical older wheel/ENOSPC qualification. Reusable owner receiver delegates actual CLI and verifies real native reports, patch adoption and identity without inherited PYTHONPATH.",
+  "receiver_correction": "First independent receiver asked for final.generated_passed instead of the actual final.generated.passed; preserved rejected receiver and failure note. Final receiving uses corrected schema assertion; product bytes unchanged.",
+  "limits": "Independent POSIX installation plus narrow retained-test recheck only. Owner complete generation/repair/flood/patch course separately retained. No Windows, existing installation, public-index or live model claim."
+}
