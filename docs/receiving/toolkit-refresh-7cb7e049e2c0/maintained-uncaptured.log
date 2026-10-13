@@ -1,0 +1,10 @@
+.....uuuu.uu.uuu.uuu..........TestPilot recheck: failed
+0 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 0 passed of 1 collected
+New model calls: 0
+wrote /dev/testpilot-refresh-p1ky94ol/pytest/test_actual_cli_writes_matchin0/out/recheck.md, /dev/testpilot-refresh-p1ky94ol/pytest/test_actual_cli_writes_matchin0/out/recheck.json, /dev/testpilot-refresh-p1ky94ol/pytest/test_actual_cli_writes_matchin0/out/recheck.html
+.TestPilot recheck: passed
+1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected
+New model calls: 0
+wrote /dev/testpilot-refresh-p1ky94ol/pytest/test_actual_cli_writes_matchin1/out/recheck.md, /dev/testpilot-refresh-p1ky94ol/pytest/test_actual_cli_writes_matchin1/out/recheck.json, /dev/testpilot-refresh-p1ky94ol/pytest/test_actual_cli_writes_matchin1/out/recheck.html
+.....
+24 passed, 12 subtests passed in 3.54s

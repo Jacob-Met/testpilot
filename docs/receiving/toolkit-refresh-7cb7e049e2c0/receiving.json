@@ -1,0 +1,82 @@
+{
+  "status": "ACCEPT",
+  "source_pins": {
+    "baseline": {
+      "targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+      "regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "recheck.py": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+      "model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+      "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "__main__.py": "4ca37129d930445cfbca8bc5f47d28cfd2c11152e3ceb5c2389f013424b924b5"
+    },
+    "candidate": {
+      "__main__.py": "e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f",
+      "__init__.py": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "_pytest_configuration.py": "889a72c8ccbd15096865fdde8a81619043f2c1d121cc3c8b78180c61baa3ca31",
+      "_pytest_generated.py": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "compare.py": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "compare_html.py": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "diff.py": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "html_report.py": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "loop.py": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "model.py": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "progress.py": "3dc10ff6fff4c956c58250958ece09060184008f2ef52789049e3f694c5175ac",
+      "recheck.py": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "recheck_html.py": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "regression.py": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "sandbox.py": "f711324667a9ea2bef45a66fee9ccf93cdc695104a87898df5cf17f0a65cd151",
+      "targets.py": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    }
+  },
+  "cases": [
+    {
+      "label": "baseline",
+      "fault_exit": 2,
+      "fault_stdout": "",
+      "fault_stderr": "testpilot: cannot recheck saved tests: [Errno 28] No space left on device\n",
+      "destination_after_fault": true,
+      "files_after_fault": [
+        "recheck.md"
+      ],
+      "retry_exit": 2,
+      "retry_stdout": "",
+      "retry_stderr": "testpilot: cannot recheck saved tests: recheck output path already exists; choose a new --out directory\n",
+      "native_completions": 1,
+      "version_exit": 2,
+      "version_stdout": "",
+      "progress_help_available": true,
+      "source_report_and_project_unchanged": true
+    },
+    {
+      "label": "candidate",
+      "fault_exit": 2,
+      "fault_stdout": "",
+      "fault_stderr": "testpilot: cannot recheck saved tests: [Errno 28] No space left on device\n",
+      "destination_after_fault": false,
+      "files_after_fault": [],
+      "retry_exit": 0,
+      "retry_stdout": "TestPilot recheck: passed\n1 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 1 passed of 1 collected\nNew model calls: 0\nwrote /dev/testpilot-refresh-independent-l2wora93/candidate/final/recheck.md, /dev/testpilot-refresh-independent-l2wora93/candidate/final/recheck.json, /dev/testpilot-refresh-independent-l2wora93/candidate/final/recheck.html\n",
+      "retry_stderr": "",
+      "native_completions": 2,
+      "version_exit": 0,
+      "version_stdout": "testpilot 0.1.0\n",
+      "progress_help_available": true,
+      "source_report_and_project_unchanged": true
+    }
+  ],
+  "source_unchanged": true,
+  "final_native_recheck_passed": 1,
+  "final_model_calls": 0,
+  "fault": "Actual /dev/full write injected only at report JSON write; native pytest and all other product execution unchanged.",
+  "limits": "Portable native CLI composition receiving. No new generation, installed adoption, Windows or post-publication move-failure guarantee."
+}

@@ -1,0 +1,9 @@
+{
+  "baseline": "published #100 source without #90/#91 composition",
+  "baseline_reported_status": "passed",
+  "baseline_final_passed": 2,
+  "baseline_legacy_present": false,
+  "candidate_final_passed": 3,
+  "candidate_legacy_present": true,
+  "initial_candidate_receiver_note": "Generation already passed3, but the author receiver initially expected a filesystem spelling for native JUnit nodeid. Corrected expectation to native classname legacy.test_legacy::test_legacy, then completed the reusable full consumer in a new directory. No production source change."
+}

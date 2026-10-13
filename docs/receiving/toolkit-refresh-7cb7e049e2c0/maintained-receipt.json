@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/workspace/scratch/4c431341ea9a/source_products/venv/bin/python",
+    "-B",
+    "-m",
+    "pytest",
+    "-p",
+    "no:cacheprovider",
+    "-q",
+    "-s",
+    "tests/test_cli_version.py",
+    "tests/test_recheck_output_staging.py",
+    "tests/test_recheck_html.py",
+    "tests/test_progress_cli.py",
+    "--basetemp",
+    "/dev/testpilot-refresh-p1ky94ol/pytest"
+  ],
+  "returncode": 0,
+  "prior_attempt": {
+    "returncode": 120,
+    "output_bytes": 0,
+    "valid_test_receipt": false
+  },
+  "scope": "Changed-main version/staging/html cases and retained progress CLI interactions; no broad suite claim"
+}

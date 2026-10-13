@@ -1,0 +1,17 @@
+{
+  "status": "ACCEPT",
+  "candidate_cli_sha256": "e8a0516b1d8bb62df62ef64d829000414f6ccf48f4bd2641e5ebf422200be86f",
+  "candidate_recheck_sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+  "main_commit": "cea306b8ccdf4ff060d1dc617daf26ebd5c05257",
+  "remote_main_recheck_exact": true,
+  "all_other_python_modules_equal_to_accepted_toolkit": true,
+  "composition_review": "CLI delta exactly current-main version import+argparse option; recheck delta exactly staged report writes+tempfile import. Sandbox/config/progress preserve accepted hashes.",
+  "actual_native_pytest_executions": 3,
+  "original": "JSON write raises actual ENOSPC; partially claimed final destination remains and explicit retry refuses.",
+  "candidate": "Same actual write fault leaves final destination absent and cleans staging; explicit corrected retry to same destination passes1 exact retained test with0modelcalls.",
+  "version": "--version exits0 with0.1.0 under unusable backend/baseURL configuration; baseline exits2.",
+  "progress": "run --help exposes --progress on both; progress implementation unchanged, prior native course remains attributed separately.",
+  "source_and_inputs_unchanged": true,
+  "receiver_sha256": "5ec1b2b5a9a3fc61da67c10185674c49789c5857b3771cbed86f0ba46bd54fdb",
+  "limits": "No broad generation rerun, no Windows/install claim. Per-file publication can still leave partial final directory after a later move failure; no all-or-nothing publication guarantee."
+}

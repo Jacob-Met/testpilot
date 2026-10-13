@@ -1,0 +1,6 @@
+{
+  "status": "ACCEPT",
+  "cli_sha256": "4ca37129d930445cfbca8bc5f47d28cfd2c11152e3ceb5c2389f013424b924b5",
+  "cli_exact_three_spans_on_current_main": true,
+  "accepted_progress_sandbox_and_configuration_bytes_exact": true
+}
