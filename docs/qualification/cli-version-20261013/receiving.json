@@ -1,0 +1,668 @@
+{
+  "schema": "testpilot-cli-version-receiving-v1",
+  "qualification_source_commit": "11f4d6c42621bb6b26159726641a19bbd7aa086b",
+  "original_cli": {
+    "source_commit": "11f4d6c42621bb6b26159726641a19bbd7aa086b",
+    "timestamp": "2026-10-13T06:25:57.573522+00:00",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "uid": 1000,
+    "root": "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8",
+    "courses": [
+      {
+        "label": "version",
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "--version"
+        ],
+        "exit": 2,
+        "stdout": "",
+        "stderr": "usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\ntestpilot: error: the following arguments are required: cmd\n"
+      },
+      {
+        "label": "help",
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot",
+          "--help"
+        ],
+        "exit": 0,
+        "stdout": "usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\n\npositional arguments:\n  {run,targets,recheck,regression,compare}\n    run                 generate, run and repair tests for a diff\n    targets             inspect changed functions without generating or\n                        running tests\n    recheck             rerun exact tests from a saved report without model\n                        calls\n    regression          check retained tests on two committed revisions\n    compare             compare two saved reports without running tests or a\n                        model\n\noptions:\n  -h, --help            show this help message and exit\n",
+        "stderr": ""
+      },
+      {
+        "label": "missing-command",
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "testpilot"
+        ],
+        "exit": 2,
+        "stdout": "",
+        "stderr": "usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\ntestpilot: error: the following arguments are required: cmd\n"
+      }
+    ],
+    "source_preserved": true
+  },
+  "native_qualification": {
+    "source_commit": "11f4d6c42621bb6b26159726641a19bbd7aa086b",
+    "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+    "uid": 1000,
+    "frozen": {
+      "test": {
+        "bytes": 2579,
+        "sha256": "b56deb4801efc7111fba9f7ce94ddabbca0e009ae9943a6be10c866610076168",
+        "git_blob": "cff34e430f0fa38c83b57f093f3cd3f67c4b85a4"
+      },
+      "candidate": {
+        "bytes": 11341,
+        "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+        "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1"
+      },
+      "original": {
+        "bytes": 11229,
+        "sha256": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+        "git_blob": "76b09d5a1e55780efc78a2b48f0b3fae162da196"
+      },
+      "timestamp": "2026-10-13T06:32:40.105150+00:00",
+      "input_manifest": {
+        "pyproject.toml": {
+          "bytes": 676,
+          "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+          "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+          "mode": "100644"
+        },
+        "testpilot/__init__.py": {
+          "bytes": 390,
+          "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+          "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+          "mode": "100644"
+        },
+        "testpilot/__main__.py": {
+          "bytes": 11229,
+          "sha256": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+          "git_blob": "76b09d5a1e55780efc78a2b48f0b3fae162da196",
+          "mode": "100644"
+        },
+        "testpilot/_pytest_generated.py": {
+          "bytes": 2943,
+          "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+          "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+          "mode": "100644"
+        },
+        "testpilot/compare.py": {
+          "bytes": 14624,
+          "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+          "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+          "mode": "100644"
+        },
+        "testpilot/compare_html.py": {
+          "bytes": 21213,
+          "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+          "git_blob": "40da0f674798583bd25a177021759aa38b3c5b7b",
+          "mode": "100644"
+        },
+        "testpilot/diff.py": {
+          "bytes": 13252,
+          "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+          "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+          "mode": "100644"
+        },
+        "testpilot/html_report.py": {
+          "bytes": 21739,
+          "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+          "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+          "mode": "100644"
+        },
+        "testpilot/loop.py": {
+          "bytes": 30070,
+          "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+          "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+          "mode": "100644"
+        },
+        "testpilot/model.py": {
+          "bytes": 10454,
+          "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+          "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+          "mode": "100644"
+        },
+        "testpilot/recheck.py": {
+          "bytes": 12770,
+          "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+          "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+          "mode": "100644"
+        },
+        "testpilot/recheck_html.py": {
+          "bytes": 10184,
+          "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+          "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+          "mode": "100644"
+        },
+        "testpilot/regression.py": {
+          "bytes": 16329,
+          "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+          "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+          "mode": "100644"
+        },
+        "testpilot/sandbox.py": {
+          "bytes": 13628,
+          "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+          "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+          "mode": "100644"
+        },
+        "testpilot/targets.py": {
+          "bytes": 5410,
+          "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+          "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+          "mode": "100644"
+        },
+        "tests/conftest.py": {
+          "bytes": 144,
+          "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+          "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c",
+          "mode": "100644"
+        },
+        "tests/test_cli_coverage.py": {
+          "bytes": 9296,
+          "sha256": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b",
+          "git_blob": "c4dae25bacbd15b030de5cb34c8c37ec4c07d29f",
+          "mode": "100644"
+        },
+        "tests/test_cli_python.py": {
+          "bytes": 7941,
+          "sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+          "git_blob": "2aef9a0af0f5a115f647e1af0b4a218592eb274e",
+          "mode": "100644"
+        },
+        "tests/test_cli_targets.py": {
+          "bytes": 10853,
+          "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+          "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e",
+          "mode": "100644"
+        },
+        "tests/test_cli_timeout.py": {
+          "bytes": 3392,
+          "sha256": "c7e749e9888926588f0462d49027ec67bda0012dc00c1ea51edf712c5d0e0251",
+          "git_blob": "548453f148df0f0f0179e931dafda0d60e008ac8",
+          "mode": "100644"
+        },
+        "eval/cases/stats_median/case.json": {
+          "bytes": 292,
+          "sha256": "78dcab4d61bdc621ae29a94a1b8d0e4427f7d4d1227f11b3b1153a02f988bdac",
+          "git_blob": "402ef8747a370510ce05216b73094be6b7de45f2",
+          "mode": "100644"
+        },
+        "eval/cases/stats_median/change.diff": {
+          "bytes": 404,
+          "sha256": "bdfe8d3e68d25aa16ce75e9d8c1ad0613f6a52a90ffa34832430cd536dada2c3",
+          "git_blob": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f",
+          "mode": "100644"
+        },
+        "eval/cases/stats_median/fix/stats.py": {
+          "bytes": 375,
+          "sha256": "ca479b01a87b61238c2724cdc781c6e4a4443998930bcf8dae78e6a7a3070212",
+          "git_blob": "bceee10026f020ec7901ff7bdd491fdb244ba1ab",
+          "mode": "100644"
+        },
+        "eval/cases/stats_median/repo/stats.py": {
+          "bytes": 315,
+          "sha256": "c06007181d71cee213650703be0f7cc139007a8f9c8838ec507f8de4c446a1ff",
+          "git_blob": "a851be68344da385d18845063dbec48dbcd03894",
+          "mode": "100644"
+        },
+        "eval/cases/stats_median/repo/tests/test_existing.py": {
+          "bytes": 77,
+          "sha256": "c696c91ceab9ea29fb4c54281e79197f26cd66063bce1e2e935288d5dc7a0405",
+          "git_blob": "936573d9a8b3acec05f24c75a2834521b5214246",
+          "mode": "100644"
+        },
+        "eval/cases/stats_median/script/01_plan.md": {
+          "bytes": 106,
+          "sha256": "1aa952f3bc37dc3814f7abd7fa6845c52e830eb67c9b134c4201988d53f7bef0",
+          "git_blob": "25590e1b7f8558603fe686c6dfdc9511709217a0",
+          "mode": "100644"
+        },
+        "eval/cases/stats_median/script/02_tests.md": {
+          "bytes": 272,
+          "sha256": "be1e9485c5cb6dfff50150cfc037591ae9bd853a327cbfc7e031c358920e181f",
+          "git_blob": "cc7f01d3d45089bc09b00db9d20047982b29e767",
+          "mode": "100644"
+        }
+      }
+    },
+    "courses": [
+      {
+        "label": "original-version",
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/original-version/temporary",
+          "--junitxml",
+          "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/original-version/junit.xml",
+          "tests/test_cli_version.py"
+        ],
+        "cwd": "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/original-course",
+        "started": "2026-10-13T06:32:40.105680+00:00",
+        "ended": "2026-10-13T06:32:40.397637+00:00",
+        "elapsed_seconds": 0.29196562990546227,
+        "exit": 1,
+        "counts": {
+          "tests": 3,
+          "failures": 3,
+          "errors": 0,
+          "skipped": 0
+        },
+        "stdout": {
+          "bytes": 4553,
+          "sha256": "be41315481df3fe616c73c4dd7588e421a1cf124086639c98c5ca0b20606f7ea",
+          "git_blob": "f05f9fded9129dcfa0e19ca2616eb43e3aa6bbd3"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "junit": {
+          "bytes": 5676,
+          "sha256": "f0af482922c6326cab0bf3306381a4b23efa416acf881251911f57a6add4b92f",
+          "git_blob": "58727b2e5a18b98e89a021f77968ad8b57d546e5"
+        }
+      },
+      {
+        "label": "candidate-focused",
+        "command": [
+          "/usr/bin/python3",
+          "-B",
+          "-m",
+          "pytest",
+          "-q",
+          "-p",
+          "no:cacheprovider",
+          "--basetemp",
+          "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/candidate-focused/temporary",
+          "--junitxml",
+          "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/candidate-focused/junit.xml",
+          "tests/test_cli_version.py",
+          "tests/test_cli_targets.py",
+          "tests/test_cli_timeout.py"
+        ],
+        "cwd": "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/candidate",
+        "started": "2026-10-13T06:32:40.397864+00:00",
+        "ended": "2026-10-13T06:32:43.706616+00:00",
+        "elapsed_seconds": 3.3087564220186323,
+        "exit": 0,
+        "counts": {
+          "tests": 31,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "stdout": {
+          "bytes": 112,
+          "sha256": "7c528c5ecb7fe6d15149551c9ebf09336513a7aee7f046bef994e76d8a077599",
+          "git_blob": "3be23e0ae189112cf45214cf1b40a09aee15f614"
+        },
+        "stderr": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+        },
+        "junit": {
+          "bytes": 3670,
+          "sha256": "cdc7f49483be138406f008e88ea8e91db398aed5387aa5f2a1ebc6e44077c273",
+          "git_blob": "efa5b990fcd58bb074c44ceda1027374b33342b0"
+        }
+      }
+    ],
+    "preservation": {
+      "original": {
+        "exact": true,
+        "manifest": {
+          "pyproject.toml": {
+            "bytes": 676,
+            "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+            "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+          },
+          "testpilot/__init__.py": {
+            "bytes": 390,
+            "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+            "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+          },
+          "testpilot/__main__.py": {
+            "bytes": 11229,
+            "sha256": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+            "git_blob": "76b09d5a1e55780efc78a2b48f0b3fae162da196"
+          },
+          "testpilot/_pytest_generated.py": {
+            "bytes": 2943,
+            "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+            "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+          },
+          "testpilot/compare.py": {
+            "bytes": 14624,
+            "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+            "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+          },
+          "testpilot/compare_html.py": {
+            "bytes": 21213,
+            "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+            "git_blob": "40da0f674798583bd25a177021759aa38b3c5b7b"
+          },
+          "testpilot/diff.py": {
+            "bytes": 13252,
+            "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+            "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+          },
+          "testpilot/html_report.py": {
+            "bytes": 21739,
+            "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+            "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+          },
+          "testpilot/loop.py": {
+            "bytes": 30070,
+            "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+            "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091"
+          },
+          "testpilot/model.py": {
+            "bytes": 10454,
+            "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+            "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+          },
+          "testpilot/recheck.py": {
+            "bytes": 12770,
+            "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+            "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b"
+          },
+          "testpilot/recheck_html.py": {
+            "bytes": 10184,
+            "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+            "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+          },
+          "testpilot/regression.py": {
+            "bytes": 16329,
+            "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+            "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+          },
+          "testpilot/sandbox.py": {
+            "bytes": 13628,
+            "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+            "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de"
+          },
+          "testpilot/targets.py": {
+            "bytes": 5410,
+            "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+            "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370"
+          },
+          "tests/conftest.py": {
+            "bytes": 144,
+            "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+            "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c"
+          },
+          "tests/test_cli_coverage.py": {
+            "bytes": 9296,
+            "sha256": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b",
+            "git_blob": "c4dae25bacbd15b030de5cb34c8c37ec4c07d29f"
+          },
+          "tests/test_cli_python.py": {
+            "bytes": 7941,
+            "sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+            "git_blob": "2aef9a0af0f5a115f647e1af0b4a218592eb274e"
+          },
+          "tests/test_cli_targets.py": {
+            "bytes": 10853,
+            "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+            "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e"
+          },
+          "tests/test_cli_timeout.py": {
+            "bytes": 3392,
+            "sha256": "c7e749e9888926588f0462d49027ec67bda0012dc00c1ea51edf712c5d0e0251",
+            "git_blob": "548453f148df0f0f0179e931dafda0d60e008ac8"
+          },
+          "eval/cases/stats_median/case.json": {
+            "bytes": 292,
+            "sha256": "78dcab4d61bdc621ae29a94a1b8d0e4427f7d4d1227f11b3b1153a02f988bdac",
+            "git_blob": "402ef8747a370510ce05216b73094be6b7de45f2"
+          },
+          "eval/cases/stats_median/change.diff": {
+            "bytes": 404,
+            "sha256": "bdfe8d3e68d25aa16ce75e9d8c1ad0613f6a52a90ffa34832430cd536dada2c3",
+            "git_blob": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f"
+          },
+          "eval/cases/stats_median/fix/stats.py": {
+            "bytes": 375,
+            "sha256": "ca479b01a87b61238c2724cdc781c6e4a4443998930bcf8dae78e6a7a3070212",
+            "git_blob": "bceee10026f020ec7901ff7bdd491fdb244ba1ab"
+          },
+          "eval/cases/stats_median/repo/stats.py": {
+            "bytes": 315,
+            "sha256": "c06007181d71cee213650703be0f7cc139007a8f9c8838ec507f8de4c446a1ff",
+            "git_blob": "a851be68344da385d18845063dbec48dbcd03894"
+          },
+          "eval/cases/stats_median/repo/tests/test_existing.py": {
+            "bytes": 77,
+            "sha256": "c696c91ceab9ea29fb4c54281e79197f26cd66063bce1e2e935288d5dc7a0405",
+            "git_blob": "936573d9a8b3acec05f24c75a2834521b5214246"
+          },
+          "eval/cases/stats_median/script/01_plan.md": {
+            "bytes": 106,
+            "sha256": "1aa952f3bc37dc3814f7abd7fa6845c52e830eb67c9b134c4201988d53f7bef0",
+            "git_blob": "25590e1b7f8558603fe686c6dfdc9511709217a0"
+          },
+          "eval/cases/stats_median/script/02_tests.md": {
+            "bytes": 272,
+            "sha256": "be1e9485c5cb6dfff50150cfc037591ae9bd853a327cbfc7e031c358920e181f",
+            "git_blob": "cc7f01d3d45089bc09b00db9d20047982b29e767"
+          },
+          "tests/test_cli_version.py": {
+            "bytes": 2579,
+            "sha256": "b56deb4801efc7111fba9f7ce94ddabbca0e009ae9943a6be10c866610076168",
+            "git_blob": "cff34e430f0fa38c83b57f093f3cd3f67c4b85a4"
+          }
+        }
+      },
+      "candidate": {
+        "exact": true,
+        "manifest": {
+          "pyproject.toml": {
+            "bytes": 676,
+            "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+            "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05"
+          },
+          "testpilot/__init__.py": {
+            "bytes": 390,
+            "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+            "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+          },
+          "testpilot/__main__.py": {
+            "bytes": 11341,
+            "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+            "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1"
+          },
+          "testpilot/_pytest_generated.py": {
+            "bytes": 2943,
+            "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+            "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+          },
+          "testpilot/compare.py": {
+            "bytes": 14624,
+            "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+            "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+          },
+          "testpilot/compare_html.py": {
+            "bytes": 21213,
+            "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+            "git_blob": "40da0f674798583bd25a177021759aa38b3c5b7b"
+          },
+          "testpilot/diff.py": {
+            "bytes": 13252,
+            "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+            "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+          },
+          "testpilot/html_report.py": {
+            "bytes": 21739,
+            "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+            "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+          },
+          "testpilot/loop.py": {
+            "bytes": 30070,
+            "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+            "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091"
+          },
+          "testpilot/model.py": {
+            "bytes": 10454,
+            "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+            "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+          },
+          "testpilot/recheck.py": {
+            "bytes": 12770,
+            "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+            "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b"
+          },
+          "testpilot/recheck_html.py": {
+            "bytes": 10184,
+            "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+            "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+          },
+          "testpilot/regression.py": {
+            "bytes": 16329,
+            "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+            "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+          },
+          "testpilot/sandbox.py": {
+            "bytes": 13628,
+            "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+            "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de"
+          },
+          "testpilot/targets.py": {
+            "bytes": 5410,
+            "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+            "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370"
+          },
+          "tests/conftest.py": {
+            "bytes": 144,
+            "sha256": "0cb67ba91674c07e557440292720aa3c3c111f4c41b7db1f4d219a7c68dc6f52",
+            "git_blob": "2a855d9fdb8debae0b082088580a4c41e499e33c"
+          },
+          "tests/test_cli_coverage.py": {
+            "bytes": 9296,
+            "sha256": "d8ebf61e1eacdd51915cfeea1c925bc144ef0481da0ac6d8ffbcc8d4b10e765b",
+            "git_blob": "c4dae25bacbd15b030de5cb34c8c37ec4c07d29f"
+          },
+          "tests/test_cli_python.py": {
+            "bytes": 7941,
+            "sha256": "75317617d7644388d9a6964f80ef82dcf52a4256600ec7c366eb9c25ead93718",
+            "git_blob": "2aef9a0af0f5a115f647e1af0b4a218592eb274e"
+          },
+          "tests/test_cli_targets.py": {
+            "bytes": 10853,
+            "sha256": "f53a8a7ed6ac752e5bfc1e32a92c88d5985e1da2a8296f317df2ea5b11f5c082",
+            "git_blob": "281550909a8cce1067983199c5122e1bc5c0b78e"
+          },
+          "tests/test_cli_timeout.py": {
+            "bytes": 3392,
+            "sha256": "c7e749e9888926588f0462d49027ec67bda0012dc00c1ea51edf712c5d0e0251",
+            "git_blob": "548453f148df0f0f0179e931dafda0d60e008ac8"
+          },
+          "eval/cases/stats_median/case.json": {
+            "bytes": 292,
+            "sha256": "78dcab4d61bdc621ae29a94a1b8d0e4427f7d4d1227f11b3b1153a02f988bdac",
+            "git_blob": "402ef8747a370510ce05216b73094be6b7de45f2"
+          },
+          "eval/cases/stats_median/change.diff": {
+            "bytes": 404,
+            "sha256": "bdfe8d3e68d25aa16ce75e9d8c1ad0613f6a52a90ffa34832430cd536dada2c3",
+            "git_blob": "49bfe597d0a5ab537fbdcc458341d4aeb3ea657f"
+          },
+          "eval/cases/stats_median/fix/stats.py": {
+            "bytes": 375,
+            "sha256": "ca479b01a87b61238c2724cdc781c6e4a4443998930bcf8dae78e6a7a3070212",
+            "git_blob": "bceee10026f020ec7901ff7bdd491fdb244ba1ab"
+          },
+          "eval/cases/stats_median/repo/stats.py": {
+            "bytes": 315,
+            "sha256": "c06007181d71cee213650703be0f7cc139007a8f9c8838ec507f8de4c446a1ff",
+            "git_blob": "a851be68344da385d18845063dbec48dbcd03894"
+          },
+          "eval/cases/stats_median/repo/tests/test_existing.py": {
+            "bytes": 77,
+            "sha256": "c696c91ceab9ea29fb4c54281e79197f26cd66063bce1e2e935288d5dc7a0405",
+            "git_blob": "936573d9a8b3acec05f24c75a2834521b5214246"
+          },
+          "eval/cases/stats_median/script/01_plan.md": {
+            "bytes": 106,
+            "sha256": "1aa952f3bc37dc3814f7abd7fa6845c52e830eb67c9b134c4201988d53f7bef0",
+            "git_blob": "25590e1b7f8558603fe686c6dfdc9511709217a0"
+          },
+          "eval/cases/stats_median/script/02_tests.md": {
+            "bytes": 272,
+            "sha256": "be1e9485c5cb6dfff50150cfc037591ae9bd853a327cbfc7e031c358920e181f",
+            "git_blob": "cc7f01d3d45089bc09b00db9d20047982b29e767"
+          },
+          "tests/test_cli_version.py": {
+            "bytes": 2579,
+            "sha256": "b56deb4801efc7111fba9f7ce94ddabbca0e009ae9943a6be10c866610076168",
+            "git_blob": "cff34e430f0fa38c83b57f093f3cd3f67c4b85a4"
+          }
+        }
+      }
+    },
+    "actual_current_cli": {
+      "exit": 0,
+      "stdout": "testpilot 0.1.0\n",
+      "stderr": ""
+    },
+    "failed_attempts": [
+      {
+        "kind": "source staging command",
+        "result": "spawn E2BIG before execution; source then transferred with supported write_file"
+      }
+    ],
+    "claims": {
+      "external_provider_requests": 0,
+      "installed_package_replacement": false,
+      "full_repository_suite": false
+    }
+  },
+  "result_count_note": "The focused pytest stdout reports 25 passed, 6 subtests passed. Its JUnit tests attribute is 31 including subtests; 25 testcase elements correspond to the 25 collected tests.",
+  "raw_streams": {
+    "candidate-focused/stdout.log": ".........................                                          [100%]\n25 passed, 6 subtests passed in 3.14s\n",
+    "candidate-focused/junit.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"0\" skipped=\"0\" tests=\"31\" time=\"3.144\" timestamp=\"2026-10-13T06:32:40.497734+00:00\" hostname=\"hamon-thinkpad\"><testcase classname=\"tests.test_cli_version\" name=\"test_version_exits_before_command_work\" time=\"0.001\" /><testcase classname=\"tests.test_cli_version\" name=\"test_module_version_from_an_unrelated_directory_preserves_files\" time=\"0.079\" /><testcase classname=\"tests.test_cli_version\" name=\"test_help_and_required_command_remain_available\" time=\"0.002\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_default_human_preview_names_the_exact_location\" time=\"0.096\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_empty_diff_is_a_successful_empty_preview\" time=\"0.168\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_existing_run_retains_native_no_changes_reports\" time=\"0.092\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_file_and_stdin_preview_have_identical_target_records\" time=\"0.167\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_git_preview_selects_native_target_without_executing_project\" time=\"0.092\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_help_and_source_options_do_not_accept_generation_options\" time=\"0.324\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_input_and_native_selector_failures_have_no_success_output\" time=\"0.328\" /><testcase classname=\"tests.test_cli_targets.TargetPreviewTests\" name=\"test_saved_diff_preview_never_constructs_model_or_test_runner\" time=\"0.012\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[nan]\" time=\"0.080\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[NaN]\" time=\"0.078\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[inf]\" time=\"0.079\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[+inf]\" time=\"0.079\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-inf]\" time=\"0.078\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[1e309]\" time=\"0.078\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[0]\" time=\"0.078\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-0.0]\" time=\"0.079\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_refuses_invalid_timeout_before_touching_inputs_or_outputs[-1]\" time=\"0.078\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_accepts_finite_positive_timeout_without_changes[0.125]\" time=\"0.081\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_accepts_finite_positive_timeout_without_changes[6e1]\" time=\"0.081\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_accepts_finite_positive_timeout_without_changes[60]\" time=\"0.079\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_default_and_explicit_timeout_execute_real_scripted_pytest[None]\" time=\"0.387\" /><testcase classname=\"tests.test_cli_timeout\" name=\"test_run_default_and_explicit_timeout_execute_real_scripted_pytest[60]\" time=\"0.387\" /></testsuite></testsuites>",
+    "original-version/stdout.log": "FFF                                                                      [100%]\n=================================== FAILURES ===================================\n____________________ test_version_exits_before_command_work ____________________\n\ncapsys = <_pytest.capture.CaptureFixture object at 0x7853c074fa10>\n\n    def test_version_exits_before_command_work(capsys):\n        tripwire = AssertionError(\"version query entered command work\")\n        with (\n            patch.object(cli, \"_read_diff\", side_effect=tripwire),\n            patch.object(cli, \"make_client\", side_effect=tripwire),\n            patch.object(cli.RoutingConfig, \"from_env\", side_effect=tripwire),\n            patch.object(cli, \"TestPilot\", side_effect=tripwire),\n            patch.object(cli, \"write_outputs\", side_effect=tripwire),\n            pytest.raises(SystemExit) as result,\n        ):\n            cli.main([\"--version\"])\n>       assert result.value.code == 0\nE       assert 2 == 0\nE        +  where 2 = SystemExit(2).code\nE        +    where SystemExit(2) = <ExceptionInfo SystemExit(2) tblen=7>.value\n\ntests/test_cli_version.py:27: AssertionError\n----------------------------- Captured stderr call -----------------------------\nusage: testpilot [-h] {run,targets,recheck,regression,compare} ...\ntestpilot: error: the following arguments are required: cmd\n_______ test_module_version_from_an_unrelated_directory_preserves_files ________\n\ntmp_path = PosixPath('/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/original-version/temporary/test_module_version_from_an_un0')\n\n    def test_module_version_from_an_unrelated_directory_preserves_files(tmp_path):\n        sentinel = tmp_path / \"conftest.py\"\n        sentinel.write_bytes(b\"raise AssertionError('project tests must not be loaded')\\n\")\n        before = {p.name: p.read_bytes() for p in tmp_path.iterdir()}\n        env = {\n            \"PATH\": os.defpath,\n            \"PYTHONPATH\": str(Path(testpilot.__file__).resolve().parent.parent),\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"TESTPILOT_BACKEND\": \"version-must-not-construct-a-client\",\n            \"TESTPILOT_PRICES\": \"deliberately invalid JSON\",\n        }\n        result = subprocess.run(\n            [sys.executable, \"-B\", \"-m\", \"testpilot\", \"--version\"],\n            cwd=tmp_path, env=env, capture_output=True, text=True, timeout=15,\n        )\n>       assert result.returncode == 0, result.stderr\nE       AssertionError: usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\nE         testpilot: error: the following arguments are required: cmd\nE         \nE       assert 2 == 0\nE        +  where 2 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', '--version'], returncode=2, stdout='', stderr='usa...ilot [-h] {run,targets,recheck,regression,compare} ...\\ntestpilot: error: the following arguments are required: cmd\\n').returncode\n\ntests/test_cli_version.py:48: AssertionError\n_______________ test_help_and_required_command_remain_available ________________\n\ncapsys = <_pytest.capture.CaptureFixture object at 0x7853c06e2c10>\n\n    def test_help_and_required_command_remain_available(capsys):\n        with pytest.raises(SystemExit) as help_result:\n            cli.main([\"--help\"])\n        assert help_result.value.code == 0\n        help_text = capsys.readouterr()\n>       assert \"--version\" in help_text.out\nE       AssertionError: assert '--version' in 'usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run,targets,recheck,r...nning tests or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n'\nE        +  where 'usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run,targets,recheck,r...nning tests or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n' = CaptureResult(out='usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run...ts or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n', err='').out\n\ntests/test_cli_version.py:59: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_cli_version.py::test_version_exits_before_command_work - as...\nFAILED tests/test_cli_version.py::test_module_version_from_an_unrelated_directory_preserves_files\nFAILED tests/test_cli_version.py::test_help_and_required_command_remain_available\n3 failed in 0.13s\n",
+    "original-version/junit.xml": "<?xml version=\"1.0\" encoding=\"utf-8\"?><testsuites name=\"pytest tests\"><testsuite name=\"pytest\" errors=\"0\" failures=\"3\" skipped=\"0\" tests=\"3\" time=\"0.132\" timestamp=\"2026-10-13T06:32:40.205686+00:00\" hostname=\"hamon-thinkpad\"><testcase classname=\"tests.test_cli_version\" name=\"test_version_exits_before_command_work\" time=\"0.002\"><failure message=\"assert 2 == 0&#10; +  where 2 = SystemExit(2).code&#10; +    where SystemExit(2) = &lt;ExceptionInfo SystemExit(2) tblen=7&gt;.value\">capsys = &lt;_pytest.capture.CaptureFixture object at 0x7853c074fa10&gt;\n\n    def test_version_exits_before_command_work(capsys):\n        tripwire = AssertionError(\"version query entered command work\")\n        with (\n            patch.object(cli, \"_read_diff\", side_effect=tripwire),\n            patch.object(cli, \"make_client\", side_effect=tripwire),\n            patch.object(cli.RoutingConfig, \"from_env\", side_effect=tripwire),\n            patch.object(cli, \"TestPilot\", side_effect=tripwire),\n            patch.object(cli, \"write_outputs\", side_effect=tripwire),\n            pytest.raises(SystemExit) as result,\n        ):\n            cli.main([\"--version\"])\n&gt;       assert result.value.code == 0\nE       assert 2 == 0\nE        +  where 2 = SystemExit(2).code\nE        +    where SystemExit(2) = &lt;ExceptionInfo SystemExit(2) tblen=7&gt;.value\n\ntests/test_cli_version.py:27: AssertionError</failure></testcase><testcase classname=\"tests.test_cli_version\" name=\"test_module_version_from_an_unrelated_directory_preserves_files\" time=\"0.078\"><failure message=\"AssertionError: usage: testpilot [-h] {run,targets,recheck,regression,compare} ...&#10;  testpilot: error: the following arguments are required: cmd&#10;  &#10;assert 2 == 0&#10; +  where 2 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', '--version'], returncode=2, stdout='', stderr='usa...ilot [-h] {run,targets,recheck,regression,compare} ...\\ntestpilot: error: the following arguments are required: cmd\\n').returncode\">tmp_path = PosixPath('/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/original-version/temporary/test_module_version_from_an_un0')\n\n    def test_module_version_from_an_unrelated_directory_preserves_files(tmp_path):\n        sentinel = tmp_path / \"conftest.py\"\n        sentinel.write_bytes(b\"raise AssertionError('project tests must not be loaded')\\n\")\n        before = {p.name: p.read_bytes() for p in tmp_path.iterdir()}\n        env = {\n            \"PATH\": os.defpath,\n            \"PYTHONPATH\": str(Path(testpilot.__file__).resolve().parent.parent),\n            \"PYTHONDONTWRITEBYTECODE\": \"1\",\n            \"TESTPILOT_BACKEND\": \"version-must-not-construct-a-client\",\n            \"TESTPILOT_PRICES\": \"deliberately invalid JSON\",\n        }\n        result = subprocess.run(\n            [sys.executable, \"-B\", \"-m\", \"testpilot\", \"--version\"],\n            cwd=tmp_path, env=env, capture_output=True, text=True, timeout=15,\n        )\n&gt;       assert result.returncode == 0, result.stderr\nE       AssertionError: usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\nE         testpilot: error: the following arguments are required: cmd\nE         \nE       assert 2 == 0\nE        +  where 2 = CompletedProcess(args=['/usr/bin/python3', '-B', '-m', 'testpilot', '--version'], returncode=2, stdout='', stderr='usa...ilot [-h] {run,targets,recheck,regression,compare} ...\\ntestpilot: error: the following arguments are required: cmd\\n').returncode\n\ntests/test_cli_version.py:48: AssertionError</failure></testcase><testcase classname=\"tests.test_cli_version\" name=\"test_help_and_required_command_remain_available\" time=\"0.001\"><failure message=\"AssertionError: assert '--version' in 'usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run,targets,recheck,r...nning tests or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n'&#10; +  where 'usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run,targets,recheck,r...nning tests or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n' = CaptureResult(out='usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run...ts or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n', err='').out\">capsys = &lt;_pytest.capture.CaptureFixture object at 0x7853c06e2c10&gt;\n\n    def test_help_and_required_command_remain_available(capsys):\n        with pytest.raises(SystemExit) as help_result:\n            cli.main([\"--help\"])\n        assert help_result.value.code == 0\n        help_text = capsys.readouterr()\n&gt;       assert \"--version\" in help_text.out\nE       AssertionError: assert '--version' in 'usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run,targets,recheck,r...nning tests or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n'\nE        +  where 'usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run,targets,recheck,r...nning tests or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n' = CaptureResult(out='usage: testpilot [-h] {run,targets,recheck,regression,compare} ...\\n\\npositional arguments:\\n  {run...ts or a\\n                        model\\n\\noptions:\\n  -h, --help            show this help message and exit\\n', err='').out\n\ntests/test_cli_version.py:59: AssertionError</failure></testcase></testsuite></testsuites>"
+  },
+  "native_receipt_identity": {
+    "path": "/home/jacob/hamon-source-testpilot-version-20261013-ckzzc1s8/qualification.json",
+    "bytes": 23841,
+    "sha256": "f6cbb3c1464b07c0f27902c3910d7b97ac07268bea111bae3fe856274bffe678"
+  },
+  "scope": {
+    "production_changes": "Two additive lines in testpilot/__main__.py; existing package __version__ and metadata unchanged.",
+    "package_version_is_commit_identity": false,
+    "external_provider_requests": 0,
+    "installed_or_hosted_deployment": false,
+    "full_repository_test_suite": false
+  },
+  "publication_composition": {
+    "base_commit": "ef519fe6e302259f5bed0032427c5cd27eace0e4",
+    "base_tree": "45dfe796fb76fef20b936714aa9921bf2a654a58",
+    "qualified_base": "11f4d6c42621bb6b26159726641a19bbd7aa086b",
+    "accepted_intervening_delta": {
+      "path": "README.md",
+      "blob": "fdbc0def21450efa782bce39844ee9509859a574",
+      "pull_request": 113,
+      "scope": "Two documentation substitutions qualifying existing platform behavior."
+    },
+    "preservation": "Full tree comparison confirms only README changed between qualification and publication bases. Every production, test, fixture, configuration and workflow input is identical. The accepted README is preserved."
+  }
+}
