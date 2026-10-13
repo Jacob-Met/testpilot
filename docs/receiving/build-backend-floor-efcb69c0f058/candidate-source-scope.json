@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-10-13T00:58:43.679205+00:00",
+  "parent": "478f68adf01658a94a3ede22526da00f580785bd",
+  "parent_tree": "ca0756e20da9c87c90ebd24c45ab494bfa31d47b",
+  "inherited_leaves": 1545,
+  "unchanged_inherited_leaves": 1544,
+  "changed": [
+    {
+      "path": "pyproject.toml",
+      "original_git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "candidate_git_blob": "9228b2ba8975f07ab59bf5a7b4cb802a81c7fc03",
+      "sha256": "4f1ae62c2646a81bda26187e500b1194a1f07a7212a74552f796b248b5b55d0e",
+      "bytes": 680
+    }
+  ],
+  "only_build_system_requires_changed": true,
+  "all_new_main_comparison_modules_docs_and_cli_preserved": true,
+  "original_complete_build_accepted_before_candidate_creation": "2026-10-13T00:56:06.425373+00:00"
+}

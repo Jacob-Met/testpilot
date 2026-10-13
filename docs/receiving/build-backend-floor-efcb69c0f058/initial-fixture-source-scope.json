@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-10-12T22:55:31.275230+00:00",
+  "baseline_commit": "e222894c095e16aff19413e6e3f8a2b6201a059a",
+  "baseline_tree": "d1a59e55e6930387eb466b632d198de3b7084a4a",
+  "inherited_leaves": 1524,
+  "unchanged_inherited_leaves": 1523,
+  "changed": [
+    {
+      "path": "pyproject.toml",
+      "original_git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "candidate_git_blob": "9228b2ba8975f07ab59bf5a7b4cb802a81c7fc03",
+      "candidate_sha256": "4f1ae62c2646a81bda26187e500b1194a1f07a7212a74552f796b248b5b55d0e",
+      "bytes": 680
+    }
+  ],
+  "exact_one_line_delta": true,
+  "new_scope": [
+    "docs/PACKAGE_BUILD.md",
+    "docs/receiving/build-backend-floor-efcb69c0f058/"
+  ],
+  "source_execution": "the four retained isolated build outcomes only; no test suite or native runtime replay"
+}

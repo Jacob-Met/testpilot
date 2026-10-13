@@ -1,0 +1,54 @@
+{
+  "schema": "testpilot.build-floor.independent-review/1",
+  "reviewer": "runtime_consumer",
+  "reviewed_at": "2026-10-12T23:35:01.388089+00:00",
+  "source": {
+    "parent": "e222894c095e16aff19413e6e3f8a2b6201a059a",
+    "tree": "d1a59e55e6930387eb466b632d198de3b7084a4a",
+    "inherited_leaves": 1524,
+    "unchanged_leaves": 1523,
+    "changed_paths": [
+      "pyproject.toml"
+    ],
+    "pyproject_sha256": "4f1ae62c2646a81bda26187e500b1194a1f07a7212a74552f796b248b5b55d0e",
+    "pyproject_bytes": 680,
+    "exact_one_line_change": true,
+    "all_other_toml_values_preserved": true,
+    "new_paths_scoped": true
+  },
+  "evidence": {
+    "archive_bytes": 185368,
+    "archive_sha256": "8ee8402375d4a7f99abfdd3237bfaed941901c129c9da368a7c3dd8626a633b8",
+    "all_56_members_exact": true,
+    "both_receipts_and_four_raw_log_pairs_exact": true,
+    "qualified_wheel_bytes": 63303,
+    "qualified_wheel_sha256": "ec42deae354c7cb30e38c8929590815a62c7f5b511dac9b71de9ede79f268886",
+    "both_receipts_match_all_wheel_members": true,
+    "receiver_sha256": "e2c456eb9ea09e4ed17632896ed89f5836cf7fb47fa34f0affd0cf2d2f7aaa8b",
+    "execution_by_reviewer": false
+  },
+  "decision": "production one-line correction accepted; qualification record needs correction for omitted NOTICE input",
+  "finding": {
+    "path": "docs/receiving/build-backend-floor-efcb69c0f058/receive_build.py::inputs",
+    "notice_bytes": 124,
+    "notice_sha256": "4564e24959bca812ed0fa34d42786012dddbed523c02dd1bb5bdf424262be344",
+    "omitted_from_both_15_input_courses": true,
+    "absent_from_qualified_wheel": true,
+    "impact": "The four build outcomes substantiate the dependency-admission correction on their reduced input set, but the claimed complete package input/metadata preservation omits an existing default-included license notice. The separate exact a1 CLI wheel does contain NOTICE and is unaffected.",
+    "requested_resolution": "Preserve the original four-build history; qualify original/candidate with the existing NOTICE included, or explicitly narrow the evidence claim. Keep the production one-line change and frozen Windows packets unchanged."
+  },
+  "primary_sources": [
+    {
+      "url": "https://packaging.python.org/en/latest/guides/writing-pyproject-toml/",
+      "supports": "setuptools >=77.0.3 example and PEP 639 support table"
+    },
+    {
+      "url": "https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html",
+      "supports": "default license-files patterns include NOTICE*"
+    },
+    {
+      "url": "https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html",
+      "supports": "implicit inclusion of matching license files"
+    }
+  ]
+}

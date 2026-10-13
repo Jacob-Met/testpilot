@@ -1,0 +1,27 @@
+{
+  "frozen_before_baseline_execution": true,
+  "cases": [
+    {
+      "source": "original",
+      "available_backend": "69.0.0",
+      "expected": "build fails while validating project.license as a string; no wheel"
+    },
+    {
+      "source": "candidate",
+      "available_backend": "69.0.0",
+      "expected": "build dependency resolution rejects unavailable >=77.0.3 before backend execution; no wheel"
+    },
+    {
+      "source": "original",
+      "available_backend": "77.0.3",
+      "expected": "wheel builds successfully; all package source bytes exact"
+    },
+    {
+      "source": "candidate",
+      "available_backend": "77.0.3",
+      "expected": "wheel builds successfully; wheel members and bytes identical to original built with same backend"
+    }
+  ],
+  "network": "ordinary official PyPI backend wheel acquisition only; all original/candidate builds use --no-index and isolated build environments",
+  "source_change": "one declared backend minimum; preserve license, runtime requirements, entry point and all product source"
+}

@@ -1,0 +1,89 @@
+{
+  "schema": "testpilot.complete-source-build-floor-independent-review/1",
+  "reviewer": "runtime_consumer",
+  "reviewed_at_utc": "2026-10-13T01:07:54.803259+00:00",
+  "accepted": true,
+  "decision": "The unchanged one-line production correction remains accepted; the new complete-source evidence closes the omitted-NOTICE qualification finding.",
+  "parent": "478f68adf01658a94a3ede22526da00f580785bd",
+  "parent_tree": "ca0756e20da9c87c90ebd24c45ab494bfa31d47b",
+  "candidate_source_tree": "21a7dc49a1f62e48dda05c05f5e906bed69545ab",
+  "complete_leaves_per_source": 1545,
+  "unchanged_inherited_leaves": 1544,
+  "changed_paths": [
+    "pyproject.toml"
+  ],
+  "exact_one_line_change": true,
+  "all_other_toml_values_preserved": true,
+  "candidate_pyproject": {
+    "bytes": 680,
+    "sha256": "4f1ae62c2646a81bda26187e500b1194a1f07a7212a74552f796b248b5b55d0e"
+  },
+  "candidate_pyproject_git_blob": "9228b2ba8975f07ab59bf5a7b4cb802a81c7fc03",
+  "full_receiver": {
+    "bytes": 10778,
+    "sha256": "9d8ee0b592ffa1ad6beb848c4e2c87735796b741599fac6f2b3dd8c0a8db67a5"
+  },
+  "receiver_review": "Read complete source and parsed without executing; checks full Git leaves/modes before and after, copies all leaves, enforces isolated pinned backend logs, both license files/metadata, all 14 module bytes and wheel equality.",
+  "actual_recorded_builds": {
+    "original": {
+      "receipt": {
+        "bytes": 7866,
+        "sha256": "fe9a844969b45c7ea41596f340702ac631882278f97e6b9dba2894665cf2005c"
+      },
+      "returncode": 0,
+      "started_at": "2026-10-13T00:56:04.191601+00:00",
+      "finished_at": "2026-10-13T00:56:06.425373+00:00",
+      "backend": "77.0.3",
+      "source_leaves": 1545
+    },
+    "candidate": {
+      "receipt": {
+        "bytes": 7923,
+        "sha256": "d6295f53f3f2ba81e3cd093b94c2961a195e5d48334ccbb90d8a5e89f6255269"
+      },
+      "returncode": 0,
+      "started_at": "2026-10-13T00:58:43.922189+00:00",
+      "finished_at": "2026-10-13T00:58:46.163493+00:00",
+      "backend": "77.0.3",
+      "source_leaves": 1545
+    }
+  },
+  "complete_source_and_build_copy_bytes_joined": true,
+  "input_manifests_and_all_four_process_streams_exact": true,
+  "both_wheels_byte_identical": true,
+  "wheel": {
+    "bytes": 75408,
+    "sha256": "3c349ebcbaa48f644bb1b8a6a04efc89da3b1e21105d93581ca6c6a2f5e6c90c",
+    "members": 21,
+    "python_modules": 14,
+    "license_files": [
+      "LICENSE",
+      "NOTICE"
+    ],
+    "all_record_hashes_and_sizes_received": true
+  },
+  "new_main_comparison_modules_cli_and_docs_preserved": true,
+  "original_build_finished_before_candidate_created": true,
+  "prior_evidence": {
+    "archive": {
+      "bytes": 185368,
+      "sha256": "8ee8402375d4a7f99abfdd3237bfaed941901c129c9da368a7c3dd8626a633b8"
+    },
+    "members": 56,
+    "both_receiver_copies_exact": true,
+    "receiver_sha256": "e2c456eb9ea09e4ed17632896ed89f5836cf7fb47fa34f0affd0cf2d2f7aaa8b",
+    "notice_finding": {
+      "bytes": 2671,
+      "sha256": "09284c423b71529b362d2e072c4068784b6644db27d2003e62703f4d84cef4a7"
+    }
+  },
+  "all_reviewed_input_bytes_and_mtimes_unchanged": true,
+  "reviewed_file_count": 6198,
+  "qualification": "Independent read-only source and artifact receiving. No build, package install, runtime suite, product import, native-device command or GitHub operation by this reviewer.",
+  "limits": [
+    "The first four backend admission builds retain their reduced original input scope and are not relabeled as complete-source builds.",
+    "The new complete-source qualification covers two isolated 77.0.3 builds on the recorded Python 3.12.14 environment.",
+    "The already-installed native Windows a1fb8acc wheel and its 12-source receiving identity remain separate and unchanged."
+  ],
+  "review_script_sha256": "4f9f0141fbd02510d752083ba8d591c6d28a3424a3dcda0588391c4110959bdf"
+}

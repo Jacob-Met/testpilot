@@ -1,0 +1,15 @@
+{
+  "frozen_at_utc": "2026-10-13T00:56:04.018783+00:00",
+  "receiver": {
+    "bytes": 10778,
+    "sha256": "9d8ee0b592ffa1ad6beb848c4e2c87735796b741599fac6f2b3dd8c0a8db67a5"
+  },
+  "parent": "478f68adf01658a94a3ede22526da00f580785bd",
+  "expected": [
+    "complete 1545 Git leaves match before/after",
+    "77.0.3 isolated backend produces exactly 14 modules and both LICENSE/NOTICE",
+    "original and one-line candidate complete wheel bytes identical"
+  ],
+  "prior_campaign": "First four frozen selected-input builds are retained; omitted NOTICE is separately disclosed",
+  "compile_only_before_first_full_build": true
+}

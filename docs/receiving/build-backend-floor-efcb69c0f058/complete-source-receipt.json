@@ -1,0 +1,13 @@
+{
+  "checked_at_utc": "2026-10-13T00:53:40.755205+00:00",
+  "commit": "478f68adf01658a94a3ede22526da00f580785bd",
+  "tree": "ca0756e20da9c87c90ebd24c45ab494bfa31d47b",
+  "complete_leaves": 1545,
+  "inherited_exact_from_prior_source": 1522,
+  "changed_or_added_complete_connected_bodies": 23,
+  "all_file_bytes_and_modes_match": true,
+  "method": "Complete connected Git tree reconstructed from exact prior-source leaves plus full current GitHub bodies; equivalent full leaf inventory, not a selected packaging fixture",
+  "original_source": "/dev/shm/testpilot-build-floor-efcb69c0f058-exd1t0w5/full-source-composition/original",
+  "prior_raw_git_fetch": "Settled timeout without received objects; no repeated fetch",
+  "ram_available": 606158848
+}

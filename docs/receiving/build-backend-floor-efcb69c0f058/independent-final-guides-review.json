@@ -1,0 +1,41 @@
+{
+  "schema": "testpilot.packaging.final_guide_review.v1",
+  "reviewer": "runtime_consumer",
+  "reviewed_at": "2026-10-13T01:20:04.856718+00:00",
+  "disposition": "accepted",
+  "scope": "Read-only final guide review of the frozen complete-source packaging offer, following the already accepted source and actual build-record review.",
+  "files": [
+    {
+      "path": "docs/PACKAGE_BUILD.md",
+      "bytes": 3273,
+      "sha256": "b6c15bf8bf5b4a4d7d3d709f1573eef2cb503be2fd580848a3b932ab0a051720",
+      "mtime_ns": 1791853873558040869,
+      "input_unchanged": true
+    },
+    {
+      "path": "docs/receiving/build-backend-floor-efcb69c0f058/README.md",
+      "bytes": 8120,
+      "sha256": "edc37f0cc5aae09138cbe9de5752395ce98dd7602e9411ab68d2ddcdf1285207",
+      "mtime_ns": 1791853873558068781,
+      "input_unchanged": true
+    }
+  ],
+  "reviewed_source_parent": "478f68adf01658a94a3ede22526da00f580785bd",
+  "reviewed_candidate_source_tree": "21a7dc49a1f62e48dda05c05f5e906bed69545ab",
+  "prior_independent_full_source_review_sha256": "c8a6647b56453f053c95d255f2ac417d597bff719171446c777b3b6b65d35d22",
+  "checks": [
+    "Both complete guide texts identify the sole production requirement-line change and tested setuptools 77.0.3 floor without claiming other backend releases were exercised.",
+    "The guides join the exact 1545-leaf source identity, preserved 1544 other leaves, two actual complete-source isolated builds, fourteen modules and both exact LICENSE and NOTICE files.",
+    "The 75408-byte full wheel and original/candidate receipt hashes agree with the previously accepted independent review.",
+    "Both raw complete-source stderr logs independently name pip 26.2.1; the actual receipts identify Python 3.12.14 and backend 77.0.3.",
+    "The initial four-build selected-input fixture and omitted NOTICE remain explicitly qualified as historical reduced-fixture evidence; the original receiver, archive and negative finding are not relabeled.",
+    "Compact evidence archives and small inspection copies are distinguished from the complete source inventory actually used for both final builds.",
+    "Normal and offline installation guidance and complete-source reproduction instructions preserve build-isolation responsibility and source identity.",
+    "The separately pinned Windows 067cf459 API and a1fb8acc installed CLI results retain their own source and native qualification scope."
+  ],
+  "limits": [
+    "No additional build, import, test suite, installation, native device operation or source edit was performed for this guide review.",
+    "The newly packaged 60-member archive container was not independently reopened by this reviewer; its underlying source and build records were received in the prior independent full-source review.",
+    "Later default-branch comparison work is outside this frozen 478-based offer; this review does not claim integration into a later main commit."
+  ]
+}
