@@ -1,0 +1,11 @@
+usage: testpilot recheck [-h] --repo REPO --report REPORT --out OUT
+                         [--timeout TIMEOUT] [--python EXECUTABLE]
+
+options:
+  -h, --help           show this help message and exit
+  --repo REPO          current project checkout
+  --report REPORT      saved report.json or recheck.json
+  --out OUT            new result directory outside the checked repository
+  --timeout TIMEOUT    pytest timeout, seconds (default 60)
+  --python EXECUTABLE  project Python; path or PATH command (default: this
+                       interpreter)

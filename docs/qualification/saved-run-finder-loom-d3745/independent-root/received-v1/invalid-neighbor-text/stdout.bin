@@ -1,0 +1,14 @@
+TestPilot saved-run history
+Root: "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/malformed"
+Complete within selected scope: false
+Counts: {"admitted": 2, "bytes_read": 932, "candidate_files": 10, "entries_seen": 20, "matched": 0, "problems": 8}
+Filters: {"kind": null, "query": null, "statuses": ["passed"]}
+Problem: "c-json/report.json" [invalid_json] Not supported finite UTF-8 JSON.
+Problem: "d-schema/report.json" [unsupported_schema] Unsupported saved-report schema.
+Problem: "e-duplicate/report.json" [invalid_json] Not supported finite UTF-8 JSON.
+Problem: "f-nonfinite/report.json" [invalid_json] Not supported finite UTF-8 JSON.
+Problem: "g-overflow/report.json" [invalid_json] Not supported finite UTF-8 JSON.
+Problem: "h-core-bool/report.json" [invalid_report] Not a supported generation or recheck core record.
+Problem: "i-nonobject/report.json" [invalid_report] Not a supported generation or recheck core record.
+Problem: "j-utf8/report.json" [invalid_json] Not supported finite UTF-8 JSON.
+Saved records only. Reported outcomes are historical; no tests or model calls were run. Results are complete only within the selected root, depth and stated budgets; paths are not chronology.

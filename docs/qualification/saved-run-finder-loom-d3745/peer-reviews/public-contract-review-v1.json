@@ -1,0 +1,23 @@
+{
+  "clarifications_sent_to_owner": [
+    "Only candidate_limit overflow should be excluded from candidate_files; general wording excluding an overflow candidate that terminates scanning can otherwise include total_bytes_limit contrary to root clarification.",
+    "Priority should be explicit when recorded file size exceeds both per-report maximum and global remainder: per-file refusal/continued siblings versus total-budget stop. The promised per-report oversized continuation suggests per-file metadata admission first."
+  ],
+  "coherent": [
+    "Root-depth0 and selected deeper scope remain distinct from partial scans.",
+    "Whole-directory entry-overflow discard prevents a platform-dependent admitted prefix; errors and discarded entry counts remain explicit.",
+    "Full structural admission precedes filters, so malformed unselected neighbors preserve partial status.",
+    "bytes_read includes rejected captured bodies, candidate count includes considered metadata problems, and deterministic final sorting does not claim chronological order.",
+    "Symlink/type/read refusal and saved-metadata limits avoid executing stored paths; structural admission does not imply execution consistency."
+  ],
+  "execution_performed": false,
+  "schema": "forge.testpilot-history-public-contract-review.v1",
+  "scope": "Complete public contract only; no candidate body exposure, filesystem scan/CLI execution or author suite. Root separately owns independent receiving.",
+  "source": {
+    "bytes": 12827,
+    "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/preparation/public-contract-v1.md",
+    "sha256": "cea5d41473ac1aa7ad9d5d22afa1d53f1eec555d18e59c517b9fdec1d01fe0ac"
+  },
+  "utc": "2026-10-13T22:59:28.994143+00:00",
+  "verdict": "No fundamental contract blocker. These two bounded priority/count sentences need owner clarification; this receipt does not assert which unpublished implementation currently does."
+}

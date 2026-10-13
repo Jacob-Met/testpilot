@@ -1,0 +1,28 @@
+--- original/testpilot/__main__.py
++++ candidate/testpilot/__main__.py
+@@ -12,6 +12,7 @@
+ 
+ from . import __version__
+ from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_unified_diff
++from .history import run_history_command
+ from .loop import TestPilot, render_report, write_outputs
+ from .model import ModelError, RoutingConfig, make_client
+ from .recheck import run_recheck_command
+@@ -152,7 +153,17 @@
+     comparison.add_argument("--before", required=True, help="saved report JSON labeled Before")
+     comparison.add_argument("--after", required=True, help="saved report JSON labeled After")
+     comparison.add_argument("--out", required=True, help="new self-contained HTML file; existing files are preserved")
++    history = sub.add_parser("history", help="find saved generation/recheck reports without executing them")
++    history.add_argument("--root", required=True, help="explicit saved-report directory")
++    history.add_argument("--max-depth", type=int, default=1, help="subdirectory depth from 0 through 8 (default 1)")
++    history.add_argument("--status", action="append", metavar="VALUE", help="literal recorded status; repeat for alternatives")
++    history.add_argument("--query", help="case-insensitive literal report/target/test path substring")
++    history.add_argument("--kind", choices=["generation", "recheck"])
++    history.add_argument("--json", action="store_true", help="print complete structured history and problem rows")
+     a = ap.parse_args(argv)
++
++    if a.cmd == "history":
++        return run_history_command(a)
+ 
+     if a.cmd == "regression":
+         return run_regression_command(a)

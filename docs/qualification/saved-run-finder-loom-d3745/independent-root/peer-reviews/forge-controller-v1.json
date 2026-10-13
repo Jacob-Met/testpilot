@@ -1,0 +1,40 @@
+{
+  "findings": [
+    "The controller imports no TestPilot code and invokes only 34 explicitly admitted history CLI commands with -S -B, an empty PATH and a minimal environment.",
+    "All 45 frozen control identities were independently rehashed; all 34 literal expected stdout files and the complete case specification are among those preserved controls. Expected stdout admission is length/SHA-bound and result comparison is exact bytes.",
+    "Input/source namespace admission uses lstat, records directories, symlinks, regular files and FIFO without opening FIFO bodies, and binds declared hardlinks. Complete before/after namespace and control comparisons cover bytes, modes, mtimes, inode/device/link identities and link targets.",
+    "Prospective stdout/stderr files and separately owned process groups are used. A timeout, TERM/KILL cleanup, surviving process group, exit/output mismatch, preservation failure or controller exception cannot be relabeled accepted. Later independent cases continue after an ordinary failed case.",
+    "All case specification names and argv are admitted before execution, expected case count is 34, and full expected source leaf membership is checked."
+  ],
+  "inputs": [
+    {
+      "bytes": 13034,
+      "git_blob": "8d1de0bd1bb268a4b5ef557b83f0b1ae0b211447",
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/receive-history-v1.py",
+      "sha256": "b7cc09399fd6df06fbe0a52652f380bcc0b50262212f584f4f90824642fb5fd4"
+    },
+    {
+      "bytes": 3351,
+      "git_blob": "d5b5f38d66128062db3e941d6170f85669fa1256",
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/receiving-criteria-v1.md",
+      "sha256": "5f9292b62474690d99f9f1a7f46285e7d1eda032ad459785a8707b9931cf2895"
+    },
+    {
+      "bytes": 13206,
+      "git_blob": "f98a67edeaa39d15dfa0f94db9d7f108745f3aa2",
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/freeze-v1.json",
+      "sha256": "6aeb8b38576df51fc2773491b53d79c69a3b6afebe700b629466b95d06802115"
+    }
+  ],
+  "limits": [
+    "This review does not independently derive every literal expected report or claim their semantic correctness beyond the previously reviewed public contract; Anvil owns oracle authorship.",
+    "No candidate implementation body was read and no product or receiver command was run for this review.",
+    "The controlled owned filesystem is not treated as hostile or concurrently replaced; this is not a global network/process audit or power-loss/process-race guarantee.",
+    "Final preservation is an end-of-course observation; transient mutation restored byte-and-identity-exact is outside that observation."
+  ],
+  "observed_utc": "2026-10-13T23:18:29.486037+00:00",
+  "reviewer": "Forge",
+  "schema": "hamon.forge.testpilot-history-controller-review.v1",
+  "scope": "Complete read-only review of the independent CLI controller and criteria before candidate-body exposure; no execution of controller, fixtures or product.",
+  "status": "accepted"
+}

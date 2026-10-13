@@ -1,0 +1,7 @@
+{
+  "schema": "hamon.loom.testpilot-history.public-contract-addendum.v1",
+  "created_at": "2026-10-13T22:56:54.799599+00:00",
+  "base_contract_sha256": "cea5d41473ac1aa7ad9d5d22afa1d53f1eec555d18e59c517b9fdec1d01fe0ac",
+  "clarification": "The candidate that produces total_bytes_limit is included in candidate_files: its candidate/type/size admission occurred. Only the next candidate_limit overflow candidate is excluded, because that refusal precedes metadata admission. No limits, reads, result shape or exit semantics changed.",
+  "timing": "Root requested and accepted this interpretation before candidate budget implementation; no scanner code exists at this checkpoint."
+}

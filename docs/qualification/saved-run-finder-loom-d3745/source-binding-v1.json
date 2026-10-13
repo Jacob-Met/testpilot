@@ -1,0 +1,211 @@
+{
+  "author_descriptor": {
+    "bytes": 19279,
+    "git_blob": "5cf4a10619c43589cb5f04062bfc4833f4e5fa10",
+    "mode": "100644",
+    "native_mode": 420,
+    "sha256": "73c621841501906959d187416cf4e1470819e28d1d05f7d3ce0007fd389be282",
+    "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/publication/author-publication-inputs-v1.json"
+  },
+  "base_tree": "6aec92096d7786defc448dc2e5adba838771bcfd",
+  "final_candidate_freeze": {
+    "bytes": 11288,
+    "git_blob": "f0a72b247a10b7d2ee2d208c5211505f365075cf",
+    "mode": "100644",
+    "native_mode": 420,
+    "sha256": "039a16a48e0674e45e67c6b29165bacf1bd494a5d5794c47053cf3641bd20b68",
+    "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-freeze-v2.json"
+  },
+  "history": "V1 author21+6 and five help pairs remain original. V2 changes only buffering=0 and has four focused controls. Independent34-command course consumes V2. No consumer dataset execution at publication preparation.",
+  "independent_descriptor": {
+    "bytes": 54055,
+    "git_blob": "adf67bb51939c0929b8041286e6c09a756079a9a",
+    "mode": "100644",
+    "native_mode": 420,
+    "sha256": "a1586aad097e35c0ca6d49014fe82156964eb39d6201f4bb98b0c13bba0b9fe5",
+    "source_path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/independent-publication-inputs-v1.json"
+  },
+  "original_base": "f9ba2d2260f7aa93b3958661aa178ad418df9af6",
+  "parent_leaf_count": 1739,
+  "repository": "Jacob-Met/testpilot",
+  "runtime_projection": [
+    {
+      "bytes": 390,
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": 420,
+      "path": "testpilot/__init__.py",
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/__init__.py"
+    },
+    {
+      "bytes": 12180,
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "mode": 420,
+      "path": "testpilot/__main__.py",
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/__main__.py"
+    },
+    {
+      "bytes": 2943,
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": 420,
+      "path": "testpilot/_pytest_generated.py",
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/_pytest_generated.py"
+    },
+    {
+      "bytes": 14624,
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": 420,
+      "path": "testpilot/compare.py",
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/compare.py"
+    },
+    {
+      "bytes": 21260,
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "mode": 420,
+      "path": "testpilot/compare_html.py",
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/compare_html.py"
+    },
+    {
+      "bytes": 13252,
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": 420,
+      "path": "testpilot/diff.py",
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/diff.py"
+    },
+    {
+      "bytes": 16078,
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "mode": 420,
+      "path": "testpilot/history.py",
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/history.py"
+    },
+    {
+      "bytes": 21739,
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": 420,
+      "path": "testpilot/html_report.py",
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/html_report.py"
+    },
+    {
+      "bytes": 30070,
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": 420,
+      "path": "testpilot/loop.py",
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/loop.py"
+    },
+    {
+      "bytes": 10454,
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": 420,
+      "path": "testpilot/model.py",
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/model.py"
+    },
+    {
+      "bytes": 12770,
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": 420,
+      "path": "testpilot/recheck.py",
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/recheck.py"
+    },
+    {
+      "bytes": 10184,
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": 420,
+      "path": "testpilot/recheck_html.py",
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/recheck_html.py"
+    },
+    {
+      "bytes": 16329,
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": 420,
+      "path": "testpilot/regression.py",
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/regression.py"
+    },
+    {
+      "bytes": 13628,
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": 420,
+      "path": "testpilot/sandbox.py",
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/sandbox.py"
+    },
+    {
+      "bytes": 9808,
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": 420,
+      "path": "testpilot/saved_report.py",
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/saved_report.py"
+    },
+    {
+      "bytes": 5410,
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": 420,
+      "path": "testpilot/targets.py",
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/targets.py"
+    }
+  ],
+  "schema": "hamon.loom.testpilot-history.source-binding.v1",
+  "source_files": [
+    {
+      "bytes": 16078,
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "mode": 420,
+      "path": "testpilot/history.py",
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/history.py"
+    },
+    {
+      "bytes": 12180,
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "mode": 420,
+      "path": "testpilot/__main__.py",
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/__main__.py"
+    },
+    {
+      "bytes": 18949,
+      "git_blob": "0093347b825c8b892a48dd984caf3d28e879ac91",
+      "mode": 420,
+      "path": "tests/test_history.py",
+      "sha256": "ac0b83edafe7f33cd68ccbf82f6c2132bfa2912e48159808afc31ca51e1da242",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/tests/test_history.py"
+    },
+    {
+      "bytes": 7786,
+      "git_blob": "6382294a22b56c5312eeb6a701857cc071c76603",
+      "mode": 420,
+      "path": "docs/HISTORY.md",
+      "sha256": "c0d690ec767217f790609aacfcbb11e7e6abf5f6d8239f9b7e5aa85b3ea84f45",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/docs/HISTORY.md"
+    },
+    {
+      "bytes": 17867,
+      "git_blob": "24858cf69c6cd089355902a8e3f3b56b1e421d2f",
+      "mode": 420,
+      "path": "README.md",
+      "sha256": "926f32aee860f21a7e9ee25ffca930ffc38b4641a377569aa3b28595842159d1",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/README.md"
+    }
+  ],
+  "source_scope": "Three new files and two additive existing files; all other current-parent leaves are preserved by full-tree admission.",
+  "workflow": {
+    "mode": "100644",
+    "path": ".github/workflows/ci.yml",
+    "sha": "86a3236e38155506b5fe6077322d508f7f676649",
+    "size": 586
+  }
+}

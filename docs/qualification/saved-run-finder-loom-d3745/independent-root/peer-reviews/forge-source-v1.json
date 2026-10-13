@@ -1,0 +1,77 @@
+{
+  "candidate_freeze": {
+    "bytes": 11288,
+    "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-freeze-v2.json",
+    "sha256": "039a16a48e0674e45e67c6b29165bacf1bd494a5d5794c47053cf3641bd20b68"
+  },
+  "evidence_read": {
+    "attribution": "Retained author stdout/stderr/receipts were read; these are author results, not executions by Forge. Root separate 34-command receiving is not reissued or included as this review.",
+    "old_help_pairs": 5,
+    "v1_normal_methods": 21,
+    "v1_optimized_direct_methods": 6,
+    "v2_focused_raw_read_methods": 4,
+    "v2_raw_opens": 5
+  },
+  "findings": [
+    "All five final bodies and 16 runtime-projection rows independently match frozen length/SHA256/Git blob/mode. Full original projection comparison identifies exactly README.md and testpilot/__main__.py modified, 19 inherited files unchanged, and exactly history.py, test_history.py and HISTORY.md added. Both complete modified-file diffs equal retained additive patches.",
+    "The history dispatch returns before existing execution paths. New scanner imports only stdlib and treats saved paths, source, code, timestamps and outcomes as recorded values; it does not open recorded paths or invoke tests/models. Other CLI bodies remain byte-exact after removing the reviewed additive import/parser/dispatch blocks.",
+    "Option admission precedes path access. Explicit root symlink resolution is separate from skipped internal symlinks. Entry collection completes before sorted depth-first traversal; an overflowing or interrupted local enumeration cannot leak its arbitrary partial listing into selected rows.",
+    "Candidate counting, per-file type/size admission, remaining total allowance and captured-byte accounting follow both public addenda. Global stopping conditions are explicit; per-file errors preserve later healthy siblings. Every candidate is admitted before row filters, so filters cannot conceal neighbor problems or reduce scan work.",
+    "Descriptor reads are unbuffered in v2 and individually limited to remaining byte allowance. Complete source comparison proves exactly one fdopen buffering argument changed from preserved v1. Descriptor type/size checks and acquired-size comparison are coherent within the documented non-concurrent, non-hostile scope.",
+    "Finite UTF-8/BOM JSON decoding rejects duplicate keys and nonfinite decoded numbers at all nesting levels; typed core validation excludes booleans from integer fields. Literal path, target and test-name query/filter semantics are separated from unsearched source/diagnostic bodies.",
+    "Text and JSON use ASCII-safe encoding for recorded values; output flush failure returns 2 without a rescan or automatic writer retry. The guide accurately distinguishes selected-scope completeness, partial results, saved claims and output failures."
+  ],
+  "limits": [
+    "No full repository remote tree, publication ancestry or current-head adoption audit is claimed here; those remain publication gates.",
+    "The scanner does not provide a hostile-path boundary, writer snapshot, recorded-outcome authentication or chronology inference.",
+    "The bounded raw-read correction prevents Python buffered read-ahead; this is not an OS page-cache/disk-I/O limit claim.",
+    "The current receiver review was completed before this candidate exposure and remains a separate sealed artifact."
+  ],
+  "observed_utc": "2026-10-13T23:21:34.501259+00:00",
+  "reviewer": "Forge",
+  "schema": "hamon.forge.testpilot-history-source-review.v1",
+  "scope": "Full read-only review of the five final candidate source/test/doc bodies, original-to-candidate source fence, preserved v1-to-v2 correction and relevant author evidence. No product or test execution.",
+  "source_files": [
+    {
+      "bytes": 16078,
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "mode": 420,
+      "path": "testpilot/history.py",
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/history.py"
+    },
+    {
+      "bytes": 12180,
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "mode": 420,
+      "path": "testpilot/__main__.py",
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/__main__.py"
+    },
+    {
+      "bytes": 18949,
+      "git_blob": "0093347b825c8b892a48dd984caf3d28e879ac91",
+      "mode": 420,
+      "path": "tests/test_history.py",
+      "sha256": "ac0b83edafe7f33cd68ccbf82f6c2132bfa2912e48159808afc31ca51e1da242",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/tests/test_history.py"
+    },
+    {
+      "bytes": 7786,
+      "git_blob": "6382294a22b56c5312eeb6a701857cc071c76603",
+      "mode": 420,
+      "path": "docs/HISTORY.md",
+      "sha256": "c0d690ec767217f790609aacfcbb11e7e6abf5f6d8239f9b7e5aa85b3ea84f45",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/docs/HISTORY.md"
+    },
+    {
+      "bytes": 17867,
+      "git_blob": "24858cf69c6cd089355902a8e3f3b56b1e421d2f",
+      "mode": 420,
+      "path": "README.md",
+      "sha256": "926f32aee860f21a7e9ee25ffca930ffc38b4641a377569aa3b28595842159d1",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/README.md"
+    }
+  ],
+  "status": "accepted"
+}

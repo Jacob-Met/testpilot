@@ -1,0 +1,433 @@
+{
+  "schema": "hamon.loom.testpilot-history.original-command-observation.v1",
+  "started": "2026-10-13T22:47:45.216114+00:00",
+  "finished": "2026-10-13T22:47:45.540693+00:00",
+  "accepted_original_witness": true,
+  "candidate_exists": false,
+  "source_commit": "f9ba2d2260f7aa93b3958661aa178ad418df9af6",
+  "source_tree": "6aec92096d7786defc448dc2e5adba838771bcfd",
+  "python": {
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+  },
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-B",
+    "-m",
+    "testpilot",
+    "history",
+    "--root",
+    "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/original/eval/results"
+  ],
+  "cwd": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/original",
+  "exit_code": 2,
+  "stdout": {
+    "path": "stdout.bin",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "path": "stderr.bin",
+    "bytes": 194,
+    "sha256": "5a57b71905da583d912522b4e21171e18b3a67202dfdbc8394f1ab2cf9ac5e9a",
+    "text": "usage: testpilot [-h] [--version] {run,targets,recheck,regression,compare} ...\ntestpilot: error: argument cmd: invalid choice: 'history' (choose from run, targets, recheck, regression, compare)\n"
+  },
+  "checks": [
+    {
+      "name": "original missing history command",
+      "passed": true
+    },
+    {
+      "name": "original stdout empty",
+      "passed": true
+    },
+    {
+      "name": "argparse explicitly refuses history",
+      "passed": true
+    },
+    {
+      "name": "all original files and namespaces unchanged",
+      "passed": true
+    }
+  ],
+  "before": [
+    {
+      "path": ".github",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 586,
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+    },
+    {
+      "path": "README.md",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 17163,
+      "sha256": "1ea9378f4ba1815d4ca405e47802083ebac65691667715841cd686d889c7bba0"
+    },
+    {
+      "path": "eval",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results/calc_clamp",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results/calc_clamp/report.json",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 11467,
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "path": "eval/results/stats_median",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results/stats_median/report.json",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 5721,
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "path": "testpilot",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "path": "testpilot/compare.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+    },
+    {
+      "path": "testpilot/compare_html.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12"
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6"
+    },
+    {
+      "path": "testpilot/recheck_html.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "path": "testpilot/regression.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34"
+    },
+    {
+      "path": "testpilot/saved_report.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b"
+    },
+    {
+      "path": "testpilot/targets.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "path": "tests",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 13668,
+      "sha256": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753"
+    }
+  ],
+  "after": [
+    {
+      "path": ".github",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 586,
+      "sha256": "236fd600bea41471b373b91d8e389aa12c58cba79c83efa071f6ab805f1ebf59"
+    },
+    {
+      "path": "README.md",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 17163,
+      "sha256": "1ea9378f4ba1815d4ca405e47802083ebac65691667715841cd686d889c7bba0"
+    },
+    {
+      "path": "eval",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results/calc_clamp",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results/calc_clamp/report.json",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 11467,
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "path": "eval/results/stats_median",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "eval/results/stats_median/report.json",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 5721,
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0"
+    },
+    {
+      "path": "pyproject.toml",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 676,
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb"
+    },
+    {
+      "path": "testpilot",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "testpilot/__init__.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768"
+    },
+    {
+      "path": "testpilot/compare.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62"
+    },
+    {
+      "path": "testpilot/compare_html.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12"
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6"
+    },
+    {
+      "path": "testpilot/recheck_html.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633"
+    },
+    {
+      "path": "testpilot/regression.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34"
+    },
+    {
+      "path": "testpilot/saved_report.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b"
+    },
+    {
+      "path": "testpilot/targets.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+    },
+    {
+      "path": "tests",
+      "mode": "0o755",
+      "type": "directory"
+    },
+    {
+      "path": "tests/test_recheck.py",
+      "mode": "0o644",
+      "type": "file",
+      "bytes": 13668,
+      "sha256": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753"
+    }
+  ],
+  "scope": "One actual unchanged CLI admission refusal. No tests, generation, model, report execution or historical Mac course was run. Original producer-retained calc_clamp/stats_median reports were not changed."
+}

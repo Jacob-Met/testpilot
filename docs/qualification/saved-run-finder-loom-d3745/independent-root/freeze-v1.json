@@ -1,0 +1,327 @@
+{
+  "schema": "hamon.root.testpilot-history.independent-freeze.v1",
+  "created": "2026-10-13T23:17:48.103524+00:00",
+  "case_spec_path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/case-spec-v1.json",
+  "controls": [
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/receive-history-v1.py",
+      "kind": "regular",
+      "bytes": 13034,
+      "sha256": "b7cc09399fd6df06fbe0a52652f380bcc0b50262212f584f4f90824642fb5fd4",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/receiving-criteria-v1.md",
+      "kind": "regular",
+      "bytes": 3351,
+      "sha256": "5f9292b62474690d99f9f1a7f46285e7d1eda032ad459785a8707b9931cf2895",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/case-spec-v1.json",
+      "kind": "regular",
+      "bytes": 7352312,
+      "sha256": "6793d9d1466011524f7541c321231f3be78a20addd3170cca257bfd93c07cdbf",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/provenance-v1.json",
+      "kind": "regular",
+      "bytes": 2296,
+      "sha256": "4fc63cdaa403112a30688709ae90b48ad007a75443587dcde0ac3758ff236b00",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/case-summary-v1.json",
+      "kind": "regular",
+      "bytes": 22836,
+      "sha256": "4b9018607e119a21450e3ef36ac941afe76990cd9b70bd15fd45ef5a08477679",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/public-clarification-v1.json",
+      "kind": "regular",
+      "bytes": 575,
+      "sha256": "f7ebf42e9170a9a28df21679918f268c15770b8d917da00f90e53ffaa0deb4d2",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/anvil/build-history-oracles-v1.py",
+      "kind": "regular",
+      "bytes": 20399,
+      "sha256": "50ec83bac95e5bfef2ee3029fd3442a7792dce69b16a7f622a5ae8881d3a999f",
+      "mode": 420
+    },
+    {
+      "path": "/dev/shm/loom-d3745-reviews/testpilot-history-receiver-review-v1.json",
+      "kind": "regular",
+      "bytes": 2475,
+      "sha256": "22e320d750665bf4c8991514769b2c07f76c4a44cb3292328ff90b3e27ab291c",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/preparation/public-contract-v1.md",
+      "kind": "regular",
+      "bytes": 12827,
+      "sha256": "cea5d41473ac1aa7ad9d5d22afa1d53f1eec555d18e59c517b9fdec1d01fe0ac",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/preparation/public-contract-v1-addendum.json",
+      "kind": "regular",
+      "bytes": 681,
+      "sha256": "0919692f1839fef2a5eebbc4b0b8e0885cf90ad4d9c0d8d8247c83886b7834b4",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/preparation/public-contract-v1-addendum-v2.json",
+      "kind": "regular",
+      "bytes": 1188,
+      "sha256": "902d928f2973224e6b6968a6b1b01f6de826175653de0d792be953a4b22ce29d",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/mixed-default-json.stdout",
+      "kind": "regular",
+      "bytes": 3640,
+      "sha256": "1eccea6d20d392d92c3d7e8fa894a82c6fa6b98d556792ae1c6757ca5b7e57a5",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/mixed-default-text.stdout",
+      "kind": "regular",
+      "bytes": 2503,
+      "sha256": "5e631bde0718f621b43303386fd53cbc17ec528118de6a7688184b17c7ab42b0",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/mixed-root-only.stdout",
+      "kind": "regular",
+      "bytes": 1450,
+      "sha256": "6d1819f57df2a3d4118425d881373825dea4e0f490c75216b83e6499c2a6064a",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/mixed-depth-two.stdout",
+      "kind": "regular",
+      "bytes": 3952,
+      "sha256": "fc2989173460b716dabd9e28b7a172eeed24ad7de3429fc41945687e1c99ad12",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/statuses-or-kind-query-and.stdout",
+      "kind": "regular",
+      "bytes": 1745,
+      "sha256": "f4a986c14049c83ee3cdb13f9d8ae9326473499feeeca4bbfe57b46f42f41539",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/literal-casefold-source-path.stdout",
+      "kind": "regular",
+      "bytes": 1383,
+      "sha256": "9b906a7d6b606764dbc911379d26292e3319a96b074a1e1625e1b8d418b76372",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/literal-casefold-qualname.stdout",
+      "kind": "regular",
+      "bytes": 1372,
+      "sha256": "2795601bb3d238e08f4726712619c39bfaa66963cf2c227dbcd589f4890dec64",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/literal-relative-path.stdout",
+      "kind": "regular",
+      "bytes": 1377,
+      "sha256": "959274cc783eb0b34316e4f034f79216fcc713cabc7992696c1c39fc5decc5e0",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/literal-test-path.stdout",
+      "kind": "regular",
+      "bytes": 2298,
+      "sha256": "c55da70a1a71ab72cc76285acd35967afb811be936cf0070ebd3e5050d465264",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/source-body-not-searched.stdout",
+      "kind": "regular",
+      "bytes": 791,
+      "sha256": "0d48ee7363f310026f1cfd238657867db1ae6e3b030344a967eb059951fbedf6",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/recorded-source-path-not-searched.stdout",
+      "kind": "regular",
+      "bytes": 783,
+      "sha256": "486ca0782bcb16b0743257b3905ce9568f5d6e72611f45df17731d8e3e8ad9ef",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/diagnostic-body-not-searched.stdout",
+      "kind": "regular",
+      "bytes": 781,
+      "sha256": "7f96a3bffe390e8b04c99c619356ef0691b0e4c253a1f17123ba1e8e14ccb3b4",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/status-not-searched.stdout",
+      "kind": "regular",
+      "bytes": 783,
+      "sha256": "69796599a526838d9f4e816e0f779f26f6a7dd26f6550b9df1f0ce508bbfabde",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/empty-query.stdout",
+      "kind": "regular",
+      "bytes": 3638,
+      "sha256": "86dac4d1df65632c685d870286e80bea81bc5ee91464a1d27514737847132a15",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/unknown-empty-status.stdout",
+      "kind": "regular",
+      "bytes": 798,
+      "sha256": "c636b5088a80b1447c43fec6666f363afdc2797e38cfdf0f8fe2be179e111611",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/empty-root.stdout",
+      "kind": "regular",
+      "bytes": 762,
+      "sha256": "583dc585f0eebb9cdf07bbe4a89bf68ddc1e3ee256cfedcc219cb636367ef1df",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/invalid-neighbors-survive-filter.stdout",
+      "kind": "regular",
+      "bytes": 1913,
+      "sha256": "295a46d65213c58d5e42241fbc7a9a91ec8566ae42661fbe562d44a3c075fa9d",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/invalid-neighbor-text.stdout",
+      "kind": "regular",
+      "bytes": 1220,
+      "sha256": "1ff26643c4767d5850249fadd093cd4d93c2d3cd87e3ddc28f97b5d0467b06cd",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/internal-symlinks-and-candidate-named-directory.stdout",
+      "kind": "regular",
+      "bytes": 1075,
+      "sha256": "a3e933419c9926d106ea1e63a082ef09a702cd11b0ed76fb3af6c47911f1f235",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/explicit-root-symlink-resolves.stdout",
+      "kind": "regular",
+      "bytes": 3640,
+      "sha256": "1eccea6d20d392d92c3d7e8fa894a82c6fa6b98d556792ae1c6757ca5b7e57a5",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/named-fifo-no-read.stdout",
+      "kind": "regular",
+      "bytes": 1211,
+      "sha256": "0a8c524a7adca31b05f9acbcd997387d8060af8c0f54f7dc7bcc9af09b2c15ce",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/hardlinks-distinct-records.stdout",
+      "kind": "regular",
+      "bytes": 1380,
+      "sha256": "9be1ea25811a44e1475f8edb8e88f9dcc99ae09f80db958c97f4f718fc98dcb3",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/actual-1001-candidate-limit.stdout",
+      "kind": "regular",
+      "bytes": 942,
+      "sha256": "78e0a5b5571f0b97d237d5c7f5e46c2141974e94d62d4b7ab088734c23aaeda5",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/actual-20001-entry-limit.stdout",
+      "kind": "regular",
+      "bytes": 888,
+      "sha256": "cd22f22fc966e08e997ea74f98ec8be48ee95498bba462a39baefb5d7a0e3eb6",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/exact-16MiB-admitted.stdout",
+      "kind": "regular",
+      "bytes": 1092,
+      "sha256": "400a7522036a0e193e244118170cd0b4ba133f631ec1ba406f7dde69d3e8de7f",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/per-file-oversize-continues.stdout",
+      "kind": "regular",
+      "bytes": 1229,
+      "sha256": "2629352af1276a72d36adfc5125bc5ea22556f8edd19f8cca27ba525ae84b5c1",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/64MiB-exact-then-fifth-counted.stdout",
+      "kind": "regular",
+      "bytes": 2142,
+      "sha256": "cd78840f02c575e7854c51186b4fb0013da5d44f008aa1030c5c3cbcace996be",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/exact-64MiB-complete.stdout",
+      "kind": "regular",
+      "bytes": 2014,
+      "sha256": "c31d54466c7f814b49dfb9f1e87e2a6fbb93989184c3f90287d0320b78c52d98",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/per-file-precedes-global-budget.stdout",
+      "kind": "regular",
+      "bytes": 2291,
+      "sha256": "1518bf91708db5b602dd453b5c771e48ff3ca06e0a72ed37bb9535ef136dd31e",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/missing-root.stdout",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/file-root.stdout",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/invalid-depth.stdout",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/argparse-invalid-kind.stdout",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/expected/argparse-missing-root.stdout",
+      "kind": "regular",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mode": 420
+    }
+  ],
+  "case_count": 34,
+  "candidate_exposed": false,
+  "candidate_executed": false,
+  "review": "Loom public-contract/mechanics review accepted; Forge independent review in progress before candidate release. No output, count or receipt comes from candidate execution.",
+  "limits": "The pure generator preparation was executed, not the product. Root read its full source and exact public contract before freezing; valid non-object JSON classification and budget precedence are documented addenda. All 34 expected stdout bodies and complete input spec are frozen controls."
+}

@@ -1,0 +1,198 @@
+{
+  "status": "passed",
+  "changed_functions": [
+    {
+      "path": "stats.py",
+      "module": "stats",
+      "qualname": "median",
+      "lineno": 8,
+      "end_lineno": 14,
+      "changed_lines": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "source": "def median(values):\n    \"\"\"Median of a non-empty sequence (mean of the two middle values if even).\"\"\"\n    if not values:\n        raise ValueError(\"median of empty sequence\")\n    s = sorted(values)\n    mid = len(s) // 2\n    return s[mid]",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 3,
+  "test_files": {
+    "tests/test_median.py": "import pytest\n\nfrom stats import median\n\n\ndef test_odd_unsorted():\n    assert median([3, 1, 2]) == 2\n\n\ndef test_single():\n    assert median([7]) == 7\n\n\ndef test_empty_raises():\n    with pytest.raises(ValueError):\n        median([])\n"
+  },
+  "tests_written": 3,
+  "final": {
+    "returncode": 0,
+    "timed_out": false,
+    "duration_s": 0.239,
+    "timeout_s": 10.0,
+    "output": "....                                                                     [100%]\n4 passed in 0.03s\n",
+    "cases": [
+      {
+        "nodeid": "tests.test_existing::test_total",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_median::test_odd_unsorted",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_median::test_single",
+        "outcome": "passed",
+        "message": ""
+      },
+      {
+        "nodeid": "tests.test_median::test_empty_raises",
+        "outcome": "passed",
+        "message": ""
+      }
+    ],
+    "coverage": {
+      "percent_total": 100.0,
+      "files": {
+        "stats.py": {
+          "executed": [
+            4,
+            5,
+            8,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "missing": []
+        }
+      }
+    },
+    "passed": 4,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "ok": true,
+    "summary": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+  },
+  "patch": "diff --git a/tests/test_median.py b/tests/test_median.py\nnew file mode 100644\n--- /dev/null\n+++ b/tests/test_median.py\n@@ -0,0 +1,16 @@\n+import pytest\n+\n+from stats import median\n+\n+\n+def test_odd_unsorted():\n+    assert median([3, 1, 2]) == 2\n+\n+\n+def test_single():\n+    assert median([7]) == 7\n+\n+\n+def test_empty_raises():\n+    with pytest.raises(ValueError):\n+        median([])\n",
+  "coverage": {
+    "total_before": 37.5,
+    "total_after": 100.0,
+    "total_delta": 62.5,
+    "changed_lines_executable": 6,
+    "changed_lines_before": 16.7,
+    "changed_lines_after": 100.0
+  },
+  "ledger": {
+    "total_tokens": 443,
+    "total_cost_usd": 0.0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {
+      "nvidia/nemotron-3-super-120b-a12b": {
+        "calls": 1,
+        "prompt_tokens": 143,
+        "completion_tokens": 27,
+        "cost_usd": 0.0
+      },
+      "nvidia/Nemotron-3_5-Lightning": {
+        "calls": 1,
+        "prompt_tokens": 205,
+        "completion_tokens": 68,
+        "cost_usd": 0.0
+      }
+    },
+    "entries": [
+      {
+        "role": "planner",
+        "model": "nvidia/nemotron-3-super-120b-a12b",
+        "prompt_tokens": 143,
+        "completion_tokens": 27,
+        "estimated": true,
+        "cost_usd": 0.0
+      },
+      {
+        "role": "editor",
+        "model": "nvidia/Nemotron-3_5-Lightning",
+        "prompt_tokens": 205,
+        "completion_tokens": 68,
+        "estimated": true,
+        "cost_usd": 0.0
+      }
+    ]
+  },
+  "rounds": [
+    {
+      "round": 0,
+      "kind": "generate",
+      "files": [
+        "tests/test_median.py"
+      ],
+      "result": {
+        "returncode": 0,
+        "timed_out": false,
+        "duration_s": 0.239,
+        "timeout_s": 10.0,
+        "output": "....                                                                     [100%]\n4 passed in 0.03s\n",
+        "cases": [
+          {
+            "nodeid": "tests.test_existing::test_total",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_median::test_odd_unsorted",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_median::test_single",
+            "outcome": "passed",
+            "message": ""
+          },
+          {
+            "nodeid": "tests.test_median::test_empty_raises",
+            "outcome": "passed",
+            "message": ""
+          }
+        ],
+        "coverage": {
+          "percent_total": 100.0,
+          "files": {
+            "stats.py": {
+              "executed": [
+                4,
+                5,
+                8,
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "missing": []
+            }
+          }
+        },
+        "passed": 4,
+        "failed": 0,
+        "errors": 0,
+        "skipped": 0,
+        "ok": true,
+        "summary": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)"
+      },
+      "warnings": [],
+      "contents": {
+        "tests/test_median.py": "import pytest\n\nfrom stats import median\n\n\ndef test_odd_unsorted():\n    assert median([3, 1, 2]) == 2\n\n\ndef test_single():\n    assert median([7]) == 7\n\n\ndef test_empty_raises():\n    with pytest.raises(ValueError):\n        median([])\n"
+      }
+    }
+  ],
+  "plan": "Plan for stats.median:\n1. Odd-length unsorted input.\n2. Single element.\n3. Empty input raises ValueError.\n",
+  "message": "",
+  "ok": true
+}

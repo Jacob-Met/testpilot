@@ -1,0 +1,28 @@
+{
+  "complete": true,
+  "counts": {
+    "admitted": 4,
+    "bytes_read": 19104,
+    "candidate_files": 4,
+    "entries_seen": 10,
+    "matched": 0,
+    "problems": 0
+  },
+  "filters": {
+    "kind": null,
+    "query": "suspected_code_bug",
+    "statuses": []
+  },
+  "limits": {
+    "candidate_files": 1000,
+    "directory_entries": 20000,
+    "report_bytes": 16777216,
+    "total_bytes": 67108864
+  },
+  "max_depth": 1,
+  "notice": "Saved records only. Reported outcomes are historical; no tests or model calls were run. Results are complete only within the selected root, depth and stated budgets; paths are not chronology.",
+  "problems": [],
+  "root": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+  "runs": [],
+  "schema": "testpilot.history/1"
+}

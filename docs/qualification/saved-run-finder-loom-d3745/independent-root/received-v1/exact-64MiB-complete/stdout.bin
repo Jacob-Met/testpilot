@@ -1,0 +1,73 @@
+{
+  "complete": true,
+  "counts": {
+    "admitted": 4,
+    "bytes_read": 67108864,
+    "candidate_files": 4,
+    "entries_seen": 8,
+    "matched": 4,
+    "problems": 0
+  },
+  "filters": {
+    "kind": null,
+    "query": null,
+    "statuses": []
+  },
+  "limits": {
+    "candidate_files": 1000,
+    "directory_entries": 20000,
+    "report_bytes": 16777216,
+    "total_bytes": 67108864
+  },
+  "max_depth": 1,
+  "notice": "Saved records only. Reported outcomes are historical; no tests or model calls were run. Results are complete only within the selected root, depth and stated budgets; paths are not chronology.",
+  "problems": [],
+  "root": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/exact-total-boundary",
+  "runs": [
+    {
+      "bytes": 16777216,
+      "final": null,
+      "kind": "generation",
+      "path": "a/report.json",
+      "recheck_context": null,
+      "sha256": "dfe164e62d5977a7439d527c4e4723b419e1af5b3f16a9d059e1868253e39d95",
+      "status": "no_changes",
+      "targets": [],
+      "test_paths": []
+    },
+    {
+      "bytes": 16777216,
+      "final": null,
+      "kind": "generation",
+      "path": "b/report.json",
+      "recheck_context": null,
+      "sha256": "dfe164e62d5977a7439d527c4e4723b419e1af5b3f16a9d059e1868253e39d95",
+      "status": "no_changes",
+      "targets": [],
+      "test_paths": []
+    },
+    {
+      "bytes": 16777216,
+      "final": null,
+      "kind": "generation",
+      "path": "c/report.json",
+      "recheck_context": null,
+      "sha256": "dfe164e62d5977a7439d527c4e4723b419e1af5b3f16a9d059e1868253e39d95",
+      "status": "no_changes",
+      "targets": [],
+      "test_paths": []
+    },
+    {
+      "bytes": 16777216,
+      "final": null,
+      "kind": "generation",
+      "path": "d/report.json",
+      "recheck_context": null,
+      "sha256": "dfe164e62d5977a7439d527c4e4723b419e1af5b3f16a9d059e1868253e39d95",
+      "status": "no_changes",
+      "targets": [],
+      "test_paths": []
+    }
+  ],
+  "schema": "testpilot.history/1"
+}

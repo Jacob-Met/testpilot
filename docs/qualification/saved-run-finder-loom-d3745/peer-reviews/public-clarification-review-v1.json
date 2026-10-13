@@ -1,0 +1,12 @@
+{
+  "addendum": {
+    "bytes": 1188,
+    "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/preparation/public-contract-v1-addendum-v2.json",
+    "sha256": "902d928f2973224e6b6968a6b1b01f6de826175653de0d792be953a4b22ce29d"
+  },
+  "prior_review_sha256": "fae093817fa649a5e45beaa2fa62e58ddffa8cf13bdc32aa08ff16fe856850ff",
+  "schema": "forge.testpilot-history-public-contract-clarification-review.v1",
+  "scope": "Read-only prose/contract consistency review, no candidate body or runtime. The author assertion that private scanner already follows this order is not independently verified by this review.",
+  "utc": "2026-10-13T23:02:09.552031+00:00",
+  "verdict": "Accepted: both exact public wording ambiguities resolved. Only candidate_limit overflow is excluded from considered candidate count; per-file/type admission precedes global byte-budget refusal. Original public contract and prior addendum remain unchanged."
+}

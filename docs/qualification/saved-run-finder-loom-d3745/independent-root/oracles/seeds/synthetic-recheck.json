@@ -1,0 +1,46 @@
+{
+  "final": {
+    "cases": [],
+    "coverage": null,
+    "duration_s": 0.5,
+    "errors": 0,
+    "failed": 2,
+    "generated": null,
+    "generated_files": [],
+    "junit_available": false,
+    "ok": false,
+    "output": "OUTPUT_BODY_ONLY",
+    "passed": 1,
+    "returncode": 1,
+    "skipped": 3,
+    "summary": "literal saved failure",
+    "timed_out": false,
+    "timeout_s": null
+  },
+  "finished_at": "not-a-date-a",
+  "model_calls": 0,
+  "ok": false,
+  "python": "/UNOPENED/PYTHON",
+  "repo": "/UNOPENED/REPO",
+  "retained_tests": [
+    {
+      "bytes": 0,
+      "path": "tests/test_\u6771\u4eac[1].py",
+      "placement": "authored",
+      "sha256": "saved-hash"
+    }
+  ],
+  "schema": "testpilot.recheck/1",
+  "scope": "Explicitly synthetic saved recheck, not execution evidence",
+  "source_report": {
+    "path": "/UNOPENED/SOURCE_REPORT_ONLY",
+    "recorded_status": null,
+    "sha256": "literal-hash-not-authenticated"
+  },
+  "started_at": "not-a-date-z",
+  "status": "failed",
+  "test_files": {
+    "tests/a.py": "not opened",
+    "tests/test_\u6771\u4eac[1].py": "not executed"
+  }
+}

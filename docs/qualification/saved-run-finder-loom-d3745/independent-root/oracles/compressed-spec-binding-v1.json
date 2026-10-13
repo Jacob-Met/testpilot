@@ -1,0 +1,16 @@
+{
+  "schema": "hamon.root.testpilot-history.compressed-input-spec.v1",
+  "original": {
+    "bytes": 7352312,
+    "sha256": "6793d9d1466011524f7541c321231f3be78a20addd3170cca257bfd93c07cdbf",
+    "git_blob": "12cfa9cfeb4517b1c367f7ceff017452ea0e839d"
+  },
+  "gzip": {
+    "bytes": 83740,
+    "sha256": "fa99173bd13d0224765a1836ca7fac83439578d9c0ad3ed73f4465762a6d22b9",
+    "git_blob": "7810b108b461abbacdba6b48db31258c88b4cfcd"
+  },
+  "gzip_mtime": 0,
+  "decompressed_byte_equality": true,
+  "scope": "Transport of the original exact spec only; original receiver/input/oracle bodies unchanged. No product execution."
+}

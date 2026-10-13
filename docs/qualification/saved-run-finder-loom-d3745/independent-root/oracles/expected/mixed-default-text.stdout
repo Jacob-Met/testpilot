@@ -1,0 +1,26 @@
+TestPilot saved-run history
+Root: "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed"
+Complete within selected scope: true
+Counts: {"admitted": 4, "bytes_read": 19104, "candidate_files": 4, "entries_seen": 10, "matched": 4, "problems": 0}
+Filters: {"kind": null, "query": null, "statuses": []}
+Run: "alpha/report.json" | generation | "passed" | 5721 bytes | SHA256 42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0
+  Targets: [{"path": "stats.py", "qualname": "median"}]
+  Retained test paths: ["tests/test_median.py"]
+  Recorded final: {"errors": 0, "failed": 0, "junit_available": null, "passed": 4, "returncode": 0, "skipped": 0, "summary": "4 passed, 0 failed, 0 errors, 0 skipped (rc=0)", "timed_out": false}
+  Recheck context: null
+Run: "beta/recheck.json" | recheck | "failed" | 1097 bytes | SHA256 4c75b72b848f867c0ebe96353ad7625b735cac68cf60b42ab3b9ac330b63f3e0
+  Targets: []
+  Retained test paths: ["tests/a.py", "tests/test_\u6771\u4eac[1].py"]
+  Recorded final: {"errors": 0, "failed": 2, "junit_available": false, "passed": 1, "returncode": 1, "skipped": 3, "summary": "literal saved failure", "timed_out": false}
+  Recheck context: {"finished_at": "not-a-date-a", "python": "/UNOPENED/PYTHON", "repo": "/UNOPENED/REPO", "source_report": {"path": "/UNOPENED/SOURCE_REPORT_ONLY", "recorded_status": null, "sha256": "literal-hash-not-authenticated"}, "started_at": "not-a-date-z"}
+Run: "report.json" | generation | "suspected_code_bug" | 11467 bytes | SHA256 00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac
+  Targets: [{"path": "calc.py", "qualname": "clamp"}]
+  Retained test paths: ["tests/test_calc_clamp.py"]
+  Recorded final: {"errors": 0, "failed": 3, "junit_available": null, "passed": 3, "returncode": 1, "skipped": 0, "summary": "3 passed, 3 failed, 0 errors, 0 skipped (rc=1)", "timed_out": false}
+  Recheck context: null
+Run: "\u03b3[Case]/recheck.json" | generation | "model_error" | 819 bytes | SHA256 fcb061c6973acfcfdf96e8c112c80497e36d9303013e419bb3b380400fe16178
+  Targets: [{"path": "Src/\u03a3[bar].py", "qualname": "Stra\u00dfe.handle"}, {"path": "Src/\u03a3[bar].py", "qualname": "Stra\u00dfe.handle"}]
+  Retained test paths: ["tests/a.py", "tests/test_\u6771\u4eac[1].py"]
+  Recorded final: null
+  Recheck context: null
+Saved records only. Reported outcomes are historical; no tests or model calls were run. Results are complete only within the selected root, depth and stated budgets; paths are not chronology.
