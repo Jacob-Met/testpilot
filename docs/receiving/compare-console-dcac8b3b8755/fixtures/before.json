@@ -1,0 +1,22 @@
+{
+  "status": "no_changes",
+  "changed_functions": [],
+  "test_files": {},
+  "tests_written": 0,
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 1,
+  "final": null,
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": false,
+    "tokens_estimated": false,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "Fictional retained comparison \u03a9.",
+  "message": "",
+  "patch": ""
+}

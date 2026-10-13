@@ -1,0 +1,28 @@
+{
+  "changes": [
+    "docs/COMPARE.md",
+    "testpilot/__main__.py",
+    "tests/test_compare_console.py"
+  ],
+  "unchanged_file_count": 17,
+  "all_stream_bytes_retained": true,
+  "files": {
+    "docs/COMPARE.md": {
+      "sha256": "2e9065a1087c4f653aa7c48707e72b3b40b5686040efe6a8486b29850cd5f0bf",
+      "git_blob": "6ba41eced0e47dd81fc6b4565a054fcdd1e66a59",
+      "bytes": 8051
+    },
+    "testpilot/__main__.py": {
+      "sha256": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+      "git_blob": "76b09d5a1e55780efc78a2b48f0b3fae162da196",
+      "bytes": 11229
+    },
+    "tests/test_compare_console.py": {
+      "sha256": "95ff8029ee44eaaff9101702384fc1ce1ec8da5dff634a7f74e2d7b8723bfd16",
+      "git_blob": "5555f2073d480d3fb46227550442f2d0ecca3673",
+      "bytes": 4442
+    }
+  },
+  "predecessor_test_blob": "6bab3aacb08670f957a494d682cecdf9785113c4",
+  "final_test_qualification": "final-windows-tests.json"
+}
