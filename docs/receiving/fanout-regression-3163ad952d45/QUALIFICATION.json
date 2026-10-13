@@ -1,0 +1,140 @@
+{
+  "schema": "testpilot-fanout-regression-qualification/1",
+  "status": "passed_one_native_course",
+  "tool": {
+    "repository": "Jacob-Met/testpilot",
+    "commit": "b751e1cff2b7902bbebd6e7040f764d49bcb1a46",
+    "tree": "2057c593b281f4bf7624df41081b57f104697b05",
+    "selected_source_files": 18,
+    "selected_python_modules": 14,
+    "source_manifest_sha256": "e390357b1e509071bfb9125b6dd595217095140ff29a751e983486b1a8fefdb2"
+  },
+  "target": {
+    "repository": "Jacob-Met/multi-agent-fanout-engine",
+    "after_owner_pr": 15,
+    "before": {
+      "commit": "0317b4bc80638a8e952857aa5966b0e20d1fab72",
+      "tree": "35dc556c1309b394c6f864fd5aaa6f7e7fcc0b22",
+      "source_files": 112,
+      "source_bytes": 1116066,
+      "snapshot_sha256": "7200d08b663c772e28717e6ccf846895ae83b10323c07452820c1fa55a192167"
+    },
+    "after": {
+      "commit": "522c40bd3f40359d598b62cf2947d74b14c20a31",
+      "tree": "cea4779b5b99e576ba6a4b2ab9f959b797c11f87",
+      "source_files": 116,
+      "source_bytes": 1149457,
+      "snapshot_sha256": "61e5d42813f544f3c73876eaa0c9a3b26403d1b8df732c4cc9812ca796fe48f1"
+    }
+  },
+  "retained_input": {
+    "kind": "authored_receiving_fixture",
+    "sha256": "d8f2e5aa28371c92e70d9dba449e290d5681064b79fc7b6aa86ba0889724b03a",
+    "test_source_sha256": "dd35698b41ae63f6d2117849e301bb04fcd3673afae18974160c960d2cb9e3b2",
+    "path": "tests/test_retained_dispatch_3163ad952d45.py",
+    "methods": 3,
+    "origin_commit": "36f51a846353fa9ab1fb367fdcf0392fe38d325c",
+    "origin_path": "tests/test_dispatch_eligibility.py",
+    "attribution": "Accepted indexed dispatch belongs to owner PR15; overlapping PR21 was closed without merge. Retained authored tests are unchanged except for their separate destination path."
+  },
+  "native_environment": {
+    "python": "3.14.4",
+    "pytest": "9.0.2",
+    "git": "2.53.0",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+    "provider_requests": 0,
+    "model_calls_reported": 0,
+    "coverage": null,
+    "runs": 1
+  },
+  "results": {
+    "verdict": "verified_regression",
+    "outer_exit": 0,
+    "receiver_checks": {
+      "command_completed": true,
+      "testpilot_source_preserved": true,
+      "fanout_worktree_and_index_preserved": true,
+      "fixture_preserved": true,
+      "native_verdict": true,
+      "zero_reported_model_calls": true,
+      "exact_retained_bytes": true,
+      "authored_input_identity": true,
+      "exact_comparison": true,
+      "before_source": true,
+      "before_complete_case_identity_and_outcome": true,
+      "before_complete_native_result": true,
+      "before_retained_counts": true,
+      "after_source": true,
+      "after_complete_case_identity_and_outcome": true,
+      "after_complete_native_result": true,
+      "after_retained_counts": true
+    },
+    "before": {
+      "maintained_methods_passed": 69,
+      "retained_passed": 2,
+      "retained_failed": 1,
+      "junit_cases": 72,
+      "total_passed": 71,
+      "total_failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "additional_pytest_subtests_passed": 164
+    },
+    "after": {
+      "maintained_methods_passed": 73,
+      "retained_passed": 3,
+      "retained_failed": 0,
+      "junit_cases": 76,
+      "total_passed": 76,
+      "total_failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "additional_pytest_subtests_passed": 164
+    },
+    "witnesses": [
+      {
+        "generated_file": "tests/test_retained_dispatch_3163ad952d45.py",
+        "nodeid": "tests.test_retained_dispatch_3163ad952d45.DispatchEligibilityTests::test_missing_ready_row_surfaces_existing_ledger_error_without_submission",
+        "before": "failed",
+        "after": "passed"
+      }
+    ],
+    "original_failure_message": "AssertionError: LedgerError not raised",
+    "witness_scope": "Missing-ready-row error contract only. This course makes no dispatch performance or historical-intent claim."
+  },
+  "preservation": {
+    "all_27_input_payloads_and_inventory": true,
+    "tool_source": true,
+    "fanout_worktree_and_index": true,
+    "five_prior_native_artifacts": true
+  },
+  "receiving_source": {
+    "driver_sha256": "ea06f34913b1e93551197faeda6b17e90911037b6a4357fc1bcd49e58a46d028",
+    "expected_inputs_sha256": "15c25f14f6804a7b78f66b2d6a9cf1747303f09510399bd77296609c4c9ca46b",
+    "independent_source_review": "Runtime worker reviewed the actual model-free CLI route, exact source closure and receiver before execution.",
+    "independent_actual_result_review": {
+      "sha256": "d34022fc73cf49ca774335cb9012374be61a56aaa49ed7e7c45288e3b13b2f50",
+      "scope": "Source worker re-derived all69/73 maintained identities directly from Git-object ASTs, checked all three retained identities and every actual case/outcome against the complete native report, then linked report and four executable inputs to the sealed native archive."
+    }
+  },
+  "evidence": {
+    "archive": {
+      "name": "testpilot-b751-native-evidence.tar.gz",
+      "bytes": 493079,
+      "sha256": "91bb6320c6917d7037e583fc2ccc676e906efb9e8d2a2d2da2c94e396c6814e1",
+      "payload_files": 58,
+      "manifest_files": 1
+    },
+    "native_report": {
+      "bytes": 48535,
+      "sha256": "ed97ba544a996bf1657aff19c47a55259c957b986206138b7ddd3aab2e60e11f"
+    },
+    "native_receipt_sha256": "1f50beed7295c68a1f4722643a99669a9aa834d49e708b533b7dd27820ac7837",
+    "native_postflight_sha256": "91323fed8d45ed9f7d78aee28c5a2a000b509d30154694b6dc6c92e76a7960be",
+    "fanout_bundle_sha256": "c018ae94ddb33d6ebaaeac84d82f1af9f5f05db170e60af08a585c3ddea742c0",
+    "shallow_boundary": "0317b4bc80638a8e952857aa5966b0e20d1fab72",
+    "transport_scope": "Complete selected trees and exact raw commits, with original before-commit shallow boundary declared. Earlier history is not included; ordinary clone of the bundle alone fails connectivity."
+  },
+  "ownership_claim": "https://github.com/Jacob-Met/testpilot/pull/51#issuecomment-6136782926",
+  "scope": "Executable receiving example for the existing regression command. No production module, model-generation, provider, service, workflow or current-main qualification claim."
+}
