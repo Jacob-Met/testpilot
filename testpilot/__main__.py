@@ -10,6 +10,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from . import __version__
 from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_unified_diff
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
@@ -97,6 +98,7 @@ def _preview_targets(args) -> int:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="testpilot")
+    ap.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("run", help="generate, run and repair tests for a diff")
     r.add_argument("--repo", required=True)
