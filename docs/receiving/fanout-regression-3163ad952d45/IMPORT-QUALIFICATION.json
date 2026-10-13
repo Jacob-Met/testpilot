@@ -1,0 +1,77 @@
+{
+  "schema": "testpilot-pinned-bundle-import-qualification/1",
+  "scope": "Exact packet, create-only local Git import. No TestPilot or project test replay, provider request, installation, fetch or earlier-history claim.",
+  "related_example": {
+    "pull_request": "https://github.com/Jacob-Met/testpilot/pull/101",
+    "published_commit": "574555c6fa5412811fcf9cf6963f0bfe63b0daa7",
+    "accepted_commit": "ffc2590682f30c3ff23084aacb79a8f50111f273",
+    "all_six_files_preserved": true
+  },
+  "helper": {
+    "path": "import_fanout_bundle.py",
+    "bytes": 8740,
+    "sha256": "8a565da0666f26c0e0a072b092553d759797cc1a0ec70f7befd4f8a101abc554"
+  },
+  "bundle": {
+    "bytes": 353498,
+    "sha256": "c018ae94ddb33d6ebaaeac84d82f1af9f5f05db170e60af08a585c3ddea742c0"
+  },
+  "original_shallow_boundary": "0317b4bc80638a8e952857aa5966b0e20d1fab72",
+  "selected_head": "522c40bd3f40359d598b62cf2947d74b14c20a31",
+  "source_commits": {
+    "0317b4bc80638a8e952857aa5966b0e20d1fab72": {
+      "tree": "35dc556c1309b394c6f864fd5aaa6f7e7fcc0b22",
+      "bytes": 1512,
+      "sha256": "41d9249feac80315a03295004faeafde0b6fc53df70650df9a4f17829f5b8bd0"
+    },
+    "522c40bd3f40359d598b62cf2947d74b14c20a31": {
+      "tree": "cea4779b5b99e576ba6a4b2ab9f959b797c11f87",
+      "bytes": 1005,
+      "sha256": "279d19dc2f3aa70512bba452285d216e697fdb07a0f984556df34c78e88578e1"
+    }
+  },
+  "local_controlled_probes": {
+    "receipt_sha256": "602fa180bb1bba5a0be209c8d91090c6cb3684e1540b05beca8e5babdd9da3ca",
+    "cases": [
+      "wrong_size",
+      "correct_size_wrong_hash",
+      "symbolic_link_input",
+      "missing_output_parent",
+      "existing_output_preserved",
+      "mocked_timeout_preserves_binary_output_and_false_receipt"
+    ],
+    "all_six_passed": true,
+    "actual_git_processes_launched": 0,
+    "timeout_is_controlled_fault_injection": true
+  },
+  "native_import": {
+    "accepted": true,
+    "host": "hamon-thinkpad",
+    "python": "3.14.4",
+    "git": "2.53.0",
+    "platform": "Linux-7.0.0-34-generic-x86_64-with-glibc2.43",
+    "pid": 2897322,
+    "exit_code": 0,
+    "git_operations": 9,
+    "timeouts": 0,
+    "source_files": 116,
+    "source_bytes": 1149457,
+    "independent_full_git_object_map_verified": true,
+    "prior_checkout_and_artifacts_preserved": true,
+    "import_receipt_sha256": "7029ed618098df2b9bfc626827d63eb6dfa6de48e23a9056bf711ab550b842f7",
+    "outer_receipt_sha256": "02fba75943e5014b7d07dd91c029edadde9ce8ab9b129cac3005c5614f319a3e",
+    "archive": {
+      "file": "testpilot-import-helper-native.tar.gz",
+      "bytes": 26309,
+      "sha256": "ed06367c36d9192a62cdc6382b953329f68f00069c9077b710c83451370055c4",
+      "members": 26,
+      "payloads": 25
+    }
+  },
+  "independent_review": {
+    "reviewer": "HAMON team3163ad952d45 source_improvement",
+    "source_accepted": true,
+    "actual_import_result_accepted": true,
+    "method": "Reviewed all8740 source bytes, failure and native receipts; independently re-derived all116 blob/size/SHA/mode entries from original522c Git objects and matched native IMPORT.json; matched both raw commit hashes and helper source."
+  }
+}

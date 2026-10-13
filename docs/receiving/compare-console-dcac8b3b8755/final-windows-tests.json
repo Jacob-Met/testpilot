@@ -1,0 +1,121 @@
+{
+  "command": [
+    "C:\\Python314\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_compare_console.py"
+  ],
+  "returncode": 0,
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "stdout": ".......                                                                  [100%]\r\n7 passed in 2.35s\r\n",
+  "stderr": "",
+  "source_identities": {
+    "docs/COMPARE.md": {
+      "sha256": "2e9065a1087c4f653aa7c48707e72b3b40b5686040efe6a8486b29850cd5f0bf",
+      "git_blob": "6ba41eced0e47dd81fc6b4565a054fcdd1e66a59",
+      "bytes": 8051
+    },
+    "pyproject.toml": {
+      "sha256": "5503eab7b6c145d4de241e5be805a4fb8f30828053cbe39dc05a43c2896642eb",
+      "git_blob": "952255ac87e2c7da57457fdbf3554914f17f6d05",
+      "bytes": 676
+    },
+    "testpilot/__init__.py": {
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "bytes": 390
+    },
+    "testpilot/__main__.py": {
+      "sha256": "da6805dd6397b2b6f079bc6a1b6fec79a04080867b461e3d72445a5c15e140da",
+      "git_blob": "76b09d5a1e55780efc78a2b48f0b3fae162da196",
+      "bytes": 11229
+    },
+    "testpilot/_pytest_generated.py": {
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "bytes": 2943
+    },
+    "testpilot/compare.py": {
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "bytes": 14624
+    },
+    "testpilot/compare_html.py": {
+      "sha256": "41111241fc1e1ebb71c7012c4cd0b0647cb4de99758084875f2f4ad3d3895abc",
+      "git_blob": "40da0f674798583bd25a177021759aa38b3c5b7b",
+      "bytes": 21213
+    },
+    "testpilot/diff.py": {
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "bytes": 13252
+    },
+    "testpilot/html_report.py": {
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "bytes": 21739
+    },
+    "testpilot/loop.py": {
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "bytes": 30070
+    },
+    "testpilot/model.py": {
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "bytes": 10454
+    },
+    "testpilot/recheck.py": {
+      "sha256": "3eab07bd639994f897f76c0cd2b941d5e294c6d7c8132c82deb800e44d7079e6",
+      "git_blob": "b5d0b705c30c03e6b7e7e90b83e8dc83b8f9de52",
+      "bytes": 12115
+    },
+    "testpilot/recheck_html.py": {
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "bytes": 10184
+    },
+    "testpilot/regression.py": {
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "bytes": 16329
+    },
+    "testpilot/sandbox.py": {
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "bytes": 13628
+    },
+    "testpilot/targets.py": {
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "bytes": 5410
+    },
+    "tests/test_compare.py": {
+      "sha256": "dba0946a6964d916e986b185b23ff27ba0903bf7b6e8910b3a1f7bdc49b332c8",
+      "git_blob": "894c6cc09bcac88c64748828ca7230c11f0289e1",
+      "bytes": 9573
+    },
+    "tests/test_compare_cleanup.py": {
+      "sha256": "32e894257ab8c7b458d9161ee5727dbdc830d69ec694ee902bb7fab6567fec00",
+      "git_blob": "13847e35de97f5242d8d7da56cdb916ea3476757",
+      "bytes": 7054
+    },
+    "tests/test_compare_cli.py": {
+      "sha256": "e720a2ffaca4dff936206a04ccc9fd85c90ca6fb871d997210261dab20ead06b",
+      "git_blob": "a65cd89c9e9052e36231e3ed25eeac6d49c2c6ff",
+      "bytes": 2740
+    },
+    "tests/test_compare_console.py": {
+      "sha256": "95ff8029ee44eaaff9101702384fc1ce1ec8da5dff634a7f74e2d7b8723bfd16",
+      "git_blob": "5555f2073d480d3fb46227550442f2d0ecca3673",
+      "bytes": 4442
+    }
+  },
+  "source_unchanged": true,
+  "change": "Only two native subprocess assertions now compare splitlines to admit native CRLF; production source and frozen Linux native course unchanged."
+}

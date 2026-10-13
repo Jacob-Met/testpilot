@@ -160,12 +160,15 @@ def main(argv: list[str] | None = None) -> int:
 
     if a.cmd == "compare":
         from .compare import ComparisonError, write_comparison
+        from .recheck import _write_console
         try:
             output = write_comparison(a.before, a.after, a.out)
         except (ComparisonError, OSError) as exc:
-            print(f"testpilot: cannot compare saved reports: {exc}", file=sys.stderr)
+            _write_console(sys.stderr, f"testpilot: cannot compare saved reports: {exc}\n")
             return 2
-        print(f"wrote {output}")
+        if not _write_console(sys.stdout, f"wrote {output}\n"):
+            _write_console(sys.stderr, "testpilot: comparison was written, but console delivery failed\n")
+            return 2
         return 0
 
     if a.cmd == "targets":
