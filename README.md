@@ -56,7 +56,7 @@ Design choices:
 |---|---|
 | `testpilot/diff.py` | Unified-diff parser and `ast` mapping to changed functions/methods (decorators, async, class methods, pure deletions, new/deleted files, `src/` layout) |
 | `testpilot/model.py` | `ChatClient` protocol, `ScriptedModel` stub, stdlib `OpenAICompatClient` (retries on 429/5xx), `RoutingConfig`, `make_client` |
-| `testpilot/sandbox.py` | `run_pytest`: temp copy, junit parsing, optional `coverage` JSON, process-group kill on timeout, env scrubbed of `*KEY*`/`*TOKEN*`/`*SECRET*` vars |
+| `testpilot/sandbox.py` | `run_pytest`: temp copy, junit parsing, optional `coverage` JSON, POSIX process-group timeout cleanup, env scrubbed of `*KEY*`/`*TOKEN*`/`*SECRET*` vars |
 | `testpilot/loop.py` | `TestPilot.run`: generate → run → repair loop, round limit, token budget, ledger, patch, coverage delta, reports |
 | `testpilot/__main__.py` | CLI |
 | `eval/cases/*` | 5 toy repos with injected bugs, diffs, ground-truth fixes, scripted model replies |
@@ -230,7 +230,7 @@ These numbers are fixed by construction, because the stub replays scripts. `dura
 
 ## Limitations
 
-* The sandbox gives process-level isolation only: a temp copy, a killed process group, and a scrubbed env. Network and filesystem access are **not** blocked. Run untrusted repos inside a container or VM.
+* The sandbox gives process-level isolation only: a temp copy and a scrubbed env. Timeout cleanup targets the launched process group on POSIX and only the direct subprocess on Windows. The [run cancellation guide](docs/run-cancellation.md) describes the separate POSIX interruption behavior. Network and filesystem access are **not** blocked. Run untrusted repos inside a container or VM.
 * Only Python is supported, and imports are resolved from the repo root or `src/`. Repos that need an install step, such as compiled extensions or heavy dependencies, need their environment prepared first (`--python` hook in `run_pytest`).
 * With `coverage`, changed-line coverage counts executable added lines only. Pure deletions affect which functions are selected but not the coverage figure.
 
