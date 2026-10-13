@@ -13,7 +13,7 @@ from pathlib import Path
 from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_unified_diff
 from .loop import TestPilot, render_report, write_outputs
 from .model import ModelError, RoutingConfig, make_client
-from .recheck import run_recheck_command
+from .recheck import _write_console, run_recheck_command
 from .regression import run_regression_command
 from .targets import TargetSelectionError, resolve_targets, selection_record
 
@@ -81,17 +81,21 @@ def _preview_targets(args) -> int:
         payload = {"changed_functions": [f.to_dict() for f in functions]}
         if target_specs is not None:
             payload["selection"] = selection_record(diff_text, target_specs)
-        print(json.dumps(payload, indent=2))
+        preview = json.dumps(payload, indent=2) + "\n"
     else:
         noun = "function" if len(functions) == 1 else "functions"
         qualifier = "changed" if target_specs is None else "caller-selected"
-        print(f"{len(functions)} {qualifier} Python {noun} outside tests")
+        lines = [f"{len(functions)} {qualifier} Python {noun} outside tests"]
         if target_specs is not None:
-            print(selection_record(diff_text, target_specs)["reason"])
+            lines.append(selection_record(diff_text, target_specs)["reason"])
         for function in functions:
             path = json.dumps(function.path)
             name = json.dumps(function.qualname)
-            print(f"{path}:{function.lineno}-{function.end_lineno}  {name}")
+            lines.append(f"{path}:{function.lineno}-{function.end_lineno}  {name}")
+        preview = "\n".join(lines) + "\n"
+    if not _write_console(sys.stdout, preview):
+        _write_console(sys.stderr, "testpilot: cannot write target preview\n")
+        return 2
     return 0
 
 

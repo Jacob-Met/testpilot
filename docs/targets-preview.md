@@ -62,8 +62,10 @@ This command is an inspection interface, not an execution sandbox or a new Git c
 
 ## Exit codes
 
-- `0`: the preview was produced, including an empty selection.
-- `2`: invalid command arguments, unreadable diff input, failed Git diff, or a native source-selection/parse error. There is no partial success output.
+- `0`: the preview was written and flushed, including an empty selection.
+- `2`: invalid command arguments, unreadable diff input, failed Git diff, a native source-selection/parse error, or failed preview delivery. Input and source-selection refusals produce no success output.
+
+If stdout cannot be written or flushed, the command reports `testpilot: cannot write target preview` on stderr and returns `2`. A closed downstream pipe is handled without an interpreter-shutdown traceback. If stderr also fails, the command still returns `2`; it cannot provide a diagnostic through that failed destination. Bytes already received by a destination cannot be withdrawn, so a delivery failure can leave partial output. A successful flush does not establish that a downstream consumer has finished processing the preview.
 
 Generation's existing exit codes remain unchanged. The `--python`, `--script`, backend, repair, timeout, token-budget, and output-directory options belong to `run`, not `targets`.
 
