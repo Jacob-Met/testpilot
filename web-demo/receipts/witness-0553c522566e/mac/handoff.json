@@ -1,0 +1,40 @@
+{
+  "schema": "testpilot-witness-mac-handoff/1",
+  "source": "30a15ce3d9bc089eecb4892574606975b5fc2c3d",
+  "evidence_head": "3d7206666f12b6ef5ae9f20527672e1d39da8e21",
+  "source_owner": "product_increment/0553",
+  "receiving_operator": "consumer_runtime/0553",
+  "state": "Native receiving and independent source/artifact/saved-evidence/visual review PASS; publication with owner",
+  "archive": {
+    "bytes": 399420,
+    "sha256": "a890b4bb96e9a2b564e9ec79aa26cd604a830db51490cbafb972369acbea9906",
+    "drive": "https://drive.google.com/file/d/16K64rMxzSeFAPmRnWCCqeodEylc_lJ7O/view",
+    "full_drive_download_verified": true
+  },
+  "pins": {
+    "evidence/original/native.json": {
+      "bytes": 43791,
+      "sha256": "161727fc3c543b18042c4554811ad2d06f8010a6a101145aa84eaf932a3a5ee1"
+    },
+    "evidence/candidate/native.json": {
+      "bytes": 52919,
+      "sha256": "cc1a5a57c8f49e2f772baa3f5abc8b319cae95f18f60de08d5baa7f5a5e199b9"
+    },
+    "browser.mjs": {
+      "bytes": 8984,
+      "sha256": "242e983e8ccaba3baa6f11bc1a3b820d6e1121c0e116b1cc4baab12daa654e47"
+    },
+    "FROZEN_EXPECTATIONS.json": {
+      "bytes": 1630,
+      "sha256": "0c3411f4fcb46db9142e06550b29cc0e2d5a460f63b351e80c9e7c89eef052a4"
+    }
+  },
+  "limits": "Source-informed static browser course, exact upstream fixtures, witness Python never executed; no current-main adoption, broader author-course or full accessibility qualification.",
+  "review": {
+    "reviewer": "estate_tools/0553",
+    "path": "/dev/shm/hamon-0553c522-estate/testpilot-witness-mac-review.json",
+    "bytes": 3860,
+    "sha256": "13fee753bd421d39025bb0e15310fbed7bc0a3dfb098eb28dd2c552a320adb3c",
+    "scope": "source, saved native/browser/artifact and direct screenshots; no reviewer native/witness execution or integration"
+  }
+}
