@@ -1,0 +1,722 @@
+{
+  "schema": "testpilot.case-index-current-main-integration/1",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "pid": 2,
+  "passed": true,
+  "checks": [
+    {
+      "name": "supported local Python",
+      "actual": [
+        3,
+        12,
+        14
+      ],
+      "expected": [
+        3,
+        12,
+        14
+      ],
+      "passed": true
+    },
+    {
+      "name": "exact independent candidate intake",
+      "actual": "98096bcdde5b0dad71c6e2a8a23ac16552e3db33",
+      "expected": "98096bcdde5b0dad71c6e2a8a23ac16552e3db33",
+      "passed": true
+    },
+    {
+      "name": "candidate phase",
+      "actual": "integration",
+      "expected": "integration",
+      "passed": true
+    },
+    {
+      "name": "full selected runtime count",
+      "actual": 16,
+      "expected": 16,
+      "passed": true
+    },
+    {
+      "name": "source testpilot/__init__.py",
+      "actual": [
+        390,
+        "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+      ],
+      "expected": [
+        390,
+        "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/__main__.py",
+      "actual": [
+        12180,
+        "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+        "fffa528c6e17460e96d76112d41eba4da1184eaa"
+      ],
+      "expected": [
+        12180,
+        "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+        "fffa528c6e17460e96d76112d41eba4da1184eaa"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/_pytest_generated.py",
+      "actual": [
+        2943,
+        "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+      ],
+      "expected": [
+        2943,
+        "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/compare.py",
+      "actual": [
+        14624,
+        "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+        "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+      ],
+      "expected": [
+        14624,
+        "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+        "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/compare_html.py",
+      "actual": [
+        22690,
+        "dd47fbda0c24e58192b50075d2105b45a96b4e0d955e199c14e77b6621fc9c50",
+        "0fd6c65058fd847342633a28fe6c8c8157b8cfc5"
+      ],
+      "expected": [
+        22690,
+        "dd47fbda0c24e58192b50075d2105b45a96b4e0d955e199c14e77b6621fc9c50",
+        "0fd6c65058fd847342633a28fe6c8c8157b8cfc5"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/diff.py",
+      "actual": [
+        13252,
+        "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+        "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+      ],
+      "expected": [
+        13252,
+        "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+        "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/history.py",
+      "actual": [
+        16078,
+        "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+        "b32f19b80241b2744c27991ab60aa500e41c19b9"
+      ],
+      "expected": [
+        16078,
+        "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+        "b32f19b80241b2744c27991ab60aa500e41c19b9"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/html_report.py",
+      "actual": [
+        21739,
+        "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+        "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+      ],
+      "expected": [
+        21739,
+        "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+        "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/loop.py",
+      "actual": [
+        30070,
+        "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+        "69dc4ea2df567133e64ed5ea9d37ace26475d091"
+      ],
+      "expected": [
+        30070,
+        "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+        "69dc4ea2df567133e64ed5ea9d37ace26475d091"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/model.py",
+      "actual": [
+        10454,
+        "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+        "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+      ],
+      "expected": [
+        10454,
+        "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+        "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/recheck.py",
+      "actual": [
+        12770,
+        "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+        "04c9154468db209e6c29d2edc392c4e8e109910b"
+      ],
+      "expected": [
+        12770,
+        "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+        "04c9154468db209e6c29d2edc392c4e8e109910b"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/recheck_html.py",
+      "actual": [
+        10184,
+        "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+        "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+      ],
+      "expected": [
+        10184,
+        "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+        "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/regression.py",
+      "actual": [
+        16329,
+        "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+        "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+      ],
+      "expected": [
+        16329,
+        "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+        "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/sandbox.py",
+      "actual": [
+        13628,
+        "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+        "6dc325b68ee9de568e93c45666e3da845d6237de"
+      ],
+      "expected": [
+        13628,
+        "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+        "6dc325b68ee9de568e93c45666e3da845d6237de"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/saved_report.py",
+      "actual": [
+        9808,
+        "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+        "4a591bc80c8eb5d9f38d66598ca0843091b29c50"
+      ],
+      "expected": [
+        9808,
+        "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+        "4a591bc80c8eb5d9f38d66598ca0843091b29c50"
+      ],
+      "passed": true
+    },
+    {
+      "name": "source testpilot/targets.py",
+      "actual": [
+        5410,
+        "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+        "2da1600eca93edbe47605e6ca2a9e715663fa370"
+      ],
+      "expected": [
+        5410,
+        "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+        "2da1600eca93edbe47605e6ca2a9e715663fa370"
+      ],
+      "passed": true
+    },
+    {
+      "name": "fixture before.json",
+      "actual": [
+        3089,
+        "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+        "c8bf796d47241773dcf6c915a9baa57548e407de"
+      ],
+      "expected": [
+        3089,
+        "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+        "c8bf796d47241773dcf6c915a9baa57548e407de"
+      ],
+      "passed": true
+    },
+    {
+      "name": "fixture after.json",
+      "actual": [
+        2498,
+        "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+        "5d315ab56ec853e9d20acebeaefc0440c97bb565"
+      ],
+      "expected": [
+        2498,
+        "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+        "5d315ab56ec853e9d20acebeaefc0440c97bb565"
+      ],
+      "passed": true
+    },
+    {
+      "name": "ordinary compare CLI exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "ordinary compare CLI stderr",
+      "actual": "",
+      "expected": "",
+      "passed": true
+    },
+    {
+      "name": "composed HTML whole-byte parity",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "scope": "One supported current-main CLI composition. No original, browser, pytest or history command replay. The composed compare output must equal previously browser-received candidate HTML bytes.",
+  "witness_before": {
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/intake-current-main-integration.json": {
+      "bytes": 241967,
+      "sha256": "c5b51ff9b000fac65749620b8562fb35d9bd7b4e36e6aeb31fba48d1517a3002",
+      "git_blob": "98096bcdde5b0dad71c6e2a8a23ac16552e3db33",
+      "mode": "33188",
+      "mtime_ns": "1791935063121601393",
+      "inode": "1230021"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-current-integration/receive_integration.py": {
+      "bytes": 4969,
+      "sha256": "2e1630f23742ec5a2a478b1119fdcc9ab2b5ced80cd05d3f77a08647c8d95ef3",
+      "git_blob": "36172700ef6306ec32418cda23e6fb5281129a1e",
+      "mode": "33188",
+      "mtime_ns": "1791935063124395910",
+      "inode": "1230023"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/candidate-v3-export/comparison.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33188",
+      "mtime_ns": "1791934695870226950",
+      "inode": "1229294"
+    }
+  },
+  "source_before": {
+    "testpilot": {
+      "directory": true
+    },
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33188",
+      "mtime_ns": "1791935089143470710",
+      "inode": "1230035"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 12180,
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "mode": "33188",
+      "mtime_ns": "1791935089144211273",
+      "inode": "1230036"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33188",
+      "mtime_ns": "1791935089144476188",
+      "inode": "1230037"
+    },
+    "testpilot/compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33188",
+      "mtime_ns": "1791935089144696690",
+      "inode": "1230038"
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 22690,
+      "sha256": "dd47fbda0c24e58192b50075d2105b45a96b4e0d955e199c14e77b6621fc9c50",
+      "git_blob": "0fd6c65058fd847342633a28fe6c8c8157b8cfc5",
+      "mode": "33188",
+      "mtime_ns": "1791935089145378873",
+      "inode": "1230039"
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33188",
+      "mtime_ns": "1791935089146149386",
+      "inode": "1230040"
+    },
+    "testpilot/history.py": {
+      "bytes": 16078,
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "mode": "33188",
+      "mtime_ns": "1791935089146455502",
+      "inode": "1230041"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33188",
+      "mtime_ns": "1791935089147313779",
+      "inode": "1230042"
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33188",
+      "mtime_ns": "1791935089148078912",
+      "inode": "1230043"
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33188",
+      "mtime_ns": "1791935089149124499",
+      "inode": "1230044"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33188",
+      "mtime_ns": "1791935089149336011",
+      "inode": "1230045"
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33188",
+      "mtime_ns": "1791935089149722197",
+      "inode": "1230046"
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33188",
+      "mtime_ns": "1791935089150147639",
+      "inode": "1230047"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33188",
+      "mtime_ns": "1791935089150446703",
+      "inode": "1230048"
+    },
+    "testpilot/saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33188",
+      "mtime_ns": "1791935089150945306",
+      "inode": "1230049"
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33188",
+      "mtime_ns": "1791935089151247946",
+      "inode": "1230050"
+    }
+  },
+  "fixtures_before": {
+    "after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33188",
+      "mtime_ns": "1791935089151741241",
+      "inode": "1230052"
+    },
+    "before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33188",
+      "mtime_ns": "1791935089151447096",
+      "inode": "1230051"
+    }
+  },
+  "child": {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "-B",
+      "-m",
+      "testpilot",
+      "compare",
+      "--before",
+      "/workspace/scratch/dcac8b3b8755/testpilot125-current-integration/course/fixtures/before.json",
+      "--after",
+      "/workspace/scratch/dcac8b3b8755/testpilot125-current-integration/course/fixtures/after.json",
+      "--out",
+      "/workspace/scratch/dcac8b3b8755/testpilot125-current-integration/course/comparison.html"
+    ],
+    "cwd": "/workspace/scratch/dcac8b3b8755/testpilot125-current-integration/course/source",
+    "pid": 6,
+    "returncode": 0
+  },
+  "html": {
+    "bytes": 26365,
+    "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+    "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+    "mode": "33152",
+    "mtime_ns": "1791935089480222813",
+    "inode": "1230055"
+  },
+  "accepted_html_identity": {
+    "bytes": 26365,
+    "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+    "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+    "mode": "33188",
+    "mtime_ns": "1791934695870226950",
+    "inode": "1229294"
+  },
+  "source_after": {
+    "testpilot": {
+      "directory": true
+    },
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": "33188",
+      "mtime_ns": "1791935089143470710",
+      "inode": "1230035"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 12180,
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "mode": "33188",
+      "mtime_ns": "1791935089144211273",
+      "inode": "1230036"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": "33188",
+      "mtime_ns": "1791935089144476188",
+      "inode": "1230037"
+    },
+    "testpilot/compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": "33188",
+      "mtime_ns": "1791935089144696690",
+      "inode": "1230038"
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 22690,
+      "sha256": "dd47fbda0c24e58192b50075d2105b45a96b4e0d955e199c14e77b6621fc9c50",
+      "git_blob": "0fd6c65058fd847342633a28fe6c8c8157b8cfc5",
+      "mode": "33188",
+      "mtime_ns": "1791935089145378873",
+      "inode": "1230039"
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": "33188",
+      "mtime_ns": "1791935089146149386",
+      "inode": "1230040"
+    },
+    "testpilot/history.py": {
+      "bytes": 16078,
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "mode": "33188",
+      "mtime_ns": "1791935089146455502",
+      "inode": "1230041"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": "33188",
+      "mtime_ns": "1791935089147313779",
+      "inode": "1230042"
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": "33188",
+      "mtime_ns": "1791935089148078912",
+      "inode": "1230043"
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": "33188",
+      "mtime_ns": "1791935089149124499",
+      "inode": "1230044"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": "33188",
+      "mtime_ns": "1791935089149336011",
+      "inode": "1230045"
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": "33188",
+      "mtime_ns": "1791935089149722197",
+      "inode": "1230046"
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": "33188",
+      "mtime_ns": "1791935089150147639",
+      "inode": "1230047"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": "33188",
+      "mtime_ns": "1791935089150446703",
+      "inode": "1230048"
+    },
+    "testpilot/saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": "33188",
+      "mtime_ns": "1791935089150945306",
+      "inode": "1230049"
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": "33188",
+      "mtime_ns": "1791935089151247946",
+      "inode": "1230050"
+    }
+  },
+  "fixtures_after": {
+    "after.json": {
+      "bytes": 2498,
+      "sha256": "d5af741de50440752d283513c71147fa7ef27c58ba6260ed41ff9f246d64dc74",
+      "git_blob": "5d315ab56ec853e9d20acebeaefc0440c97bb565",
+      "mode": "33188",
+      "mtime_ns": "1791935089151741241",
+      "inode": "1230052"
+    },
+    "before.json": {
+      "bytes": 3089,
+      "sha256": "56b2471a11104f9c1d9f13b85a00b45826bb3a27cc4b9fb96878c25912a872a3",
+      "git_blob": "c8bf796d47241773dcf6c915a9baa57548e407de",
+      "mode": "33188",
+      "mtime_ns": "1791935089151447096",
+      "inode": "1230051"
+    }
+  },
+  "witness_after": {
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/intake-current-main-integration.json": {
+      "bytes": 241967,
+      "sha256": "c5b51ff9b000fac65749620b8562fb35d9bd7b4e36e6aeb31fba48d1517a3002",
+      "git_blob": "98096bcdde5b0dad71c6e2a8a23ac16552e3db33",
+      "mode": "33188",
+      "mtime_ns": "1791935063121601393",
+      "inode": "1230021"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-current-integration/receive_integration.py": {
+      "bytes": 4969,
+      "sha256": "2e1630f23742ec5a2a478b1119fdcc9ab2b5ced80cd05d3f77a08647c8d95ef3",
+      "git_blob": "36172700ef6306ec32418cda23e6fb5281129a1e",
+      "mode": "33188",
+      "mtime_ns": "1791935063124395910",
+      "inode": "1230023"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/candidate-v3-export/comparison.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33188",
+      "mtime_ns": "1791934695870226950",
+      "inode": "1229294"
+    }
+  },
+  "source_preserved": true,
+  "fixtures_preserved": true,
+  "witness_preserved": true,
+  "streams": {
+    "producer.stdout": {
+      "bytes": 94,
+      "sha256": "4497aefe39fccebb928e21d0d9386442c3ea765b1fd28191813aff84ca16b76f",
+      "git_blob": "98cde1497b430b0c4726b5aee3285295cda2dc62",
+      "mode": "33188",
+      "mtime_ns": "1791935089480222813",
+      "inode": "1230053"
+    },
+    "producer.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "mode": "33188",
+      "mtime_ns": "1791935089152238412",
+      "inode": "1230054"
+    }
+  }
+}

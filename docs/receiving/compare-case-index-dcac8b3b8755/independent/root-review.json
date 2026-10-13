@@ -1,0 +1,55 @@
+{
+  "schema": "hamon.root-independent-review/1",
+  "scope": "Derived review record; raw native and producer receipts remain separate.",
+  "base": "f9ba2d2260f7aa93b3958661aa178ad418df9af6",
+  "product": "be59e562020762e593f3dfc5b8dd27408966e739",
+  "source_review": {
+    "old_terminal_entries": 1739,
+    "unchanged": 1737,
+    "changed": [
+      "testpilot/compare_html.py",
+      "docs/COMPARE.md"
+    ],
+    "added": [
+      "tests/test_compare_case_index.py"
+    ],
+    "candidate_terminal_entries": 1740,
+    "all_runtime_packet_files_join_tree": 15
+  },
+  "original_browser": {
+    "observer": "3206962ae468a1d240d0057012e4eee1cc74953d",
+    "raw": "c6cd11cfb1b60d6431b8b540ef4aca276416151a",
+    "checks": 40,
+    "all_actual_expected_equal": true,
+    "actual_screenshots_inspected": [
+      "e347d27aa91a5b1e2bc4c3bf9fa6da45f0a11e26",
+      "5c3233cf89e2696dd1cfe153af1b7ff5d0ad7d1f"
+    ]
+  },
+  "candidate_browser": {
+    "raw": "99c513eea1a89683608f8c850ba0f0cc9bb1df00",
+    "checks": 99,
+    "all_actual_expected_equal": true,
+    "full_source_fixture_witness_html_inventories_equal": true,
+    "actual_downloads_equal_original_fixtures": true,
+    "actual_screenshots_inspected": [
+      "21b0debd9d9997b475c471ee656008f28adc3991",
+      "b7dada70ec2b9b45536c4e15597ab086344583e6"
+    ]
+  },
+  "supported_producer": {
+    "python": "3.12.14",
+    "raw": "7efa4baa3cf074dfc031b863ec1861c120b92298",
+    "admission_cli_checks": 23,
+    "all_actual_expected_equal": true,
+    "whole_byte_equal_to_native_browser_received_html": true,
+    "html": "538668914cb5c489b57cf0e07dbf842e7b540491"
+  },
+  "boundaries": [
+    "Native producer and browser courses used Python3.11.9 on MSI/Veria; supported Python3.12.14 ordinary candidate CLI generated identical HTML bytes.",
+    "Both failed original download captures and cleanup errors remain preserved; explicit D downloads alone did not resolve cancellation.",
+    "Nonpersistent Chromium context and explicit cleanup succeeded; underlying persistent cancellation cause was not established.",
+    "Managed browser disconnect observed; OS browser exit not measured.",
+    "Print media DOM exposure checked; no generated PDF or screen-reader claim."
+  ]
+}

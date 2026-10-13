@@ -1,0 +1,76 @@
+﻿{
+  "status": "failed",
+  "changed_functions": [],
+  "test_files": {},
+  "tests_written": 0,
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 2,
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "ok": false,
+    "duration_s": 0.25,
+    "output": "Retained before output; not executed by this review.\n",
+    "summary": "Synthetic recorded before outcomes",
+    "passed": 2,
+    "failed": 2,
+    "errors": 1,
+    "skipped": 1,
+    "junit_available": false,
+    "cases": [
+      {
+        "nodeid": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+        "outcome": "passed",
+        "message": "before occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+        "outcome": "failed",
+        "message": "before occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_skip.py::skip",
+        "outcome": "skipped",
+        "message": "before occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+        "outcome": "error",
+        "message": "before occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_ok.py::ok",
+        "outcome": "passed",
+        "message": "before occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_very_long_literal_name_.py::test_value",
+        "outcome": "failed",
+        "message": "before occurrence 6: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      }
+    ]
+  },
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": false,
+    "tokens_estimated": false,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "",
+  "message": "Independent receiving fixture before",
+  "patch": "",
+  "extra_retained": {
+    "literal": "α & <angle> \"quoted\"",
+    "note": "extra fields and physical formatting stay in downloaded originals"
+  }
+}

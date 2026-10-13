@@ -1,0 +1,323 @@
+{
+  "schema": "testpilot.case-index-source/1",
+  "base_commit": "f9ba2d2260f7aa93b3958661aa178ad418df9af6",
+  "base_tree": "6aec92096d7786defc448dc2e5adba838771bcfd",
+  "product_commit": "be59e562020762e593f3dfc5b8dd27408966e739",
+  "product_tree": "94016564ebda3e8e738c1b45d861dcef8318388e",
+  "original_runtime_packet": "24a3de441d57e60ded1b21f104809d72feffdb7e",
+  "candidate_runtime_packet": "4200a45632d8a2fa22c1c3b29836ad141c847b76",
+  "original_runtime": [
+    {
+      "path": "testpilot/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 11341,
+      "sha256": "e15f104d99fdccdc7004a284510df62507a085f3e567aef64516a783bff96afd",
+      "git_blob": "454dfac45e7e5127a4a504b9fa4f30693e65ccb1",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/_pytest_generated.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/compare.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/compare_html.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 21260,
+      "sha256": "17a7df415b899cd2cafd15e07af7d2b7d8875dd15029d6defd5c21b93da60a58",
+      "git_blob": "6893d082285e6963b3761c886330185c286e38b8",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/diff.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/html_report.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/loop.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/model.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/recheck.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/recheck_html.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/regression.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/sandbox.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/saved_report.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "encoding": "utf-8"
+    },
+    {
+      "path": "testpilot/targets.py",
+      "mode": "100644",
+      "type": "blob",
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "encoding": "utf-8"
+    }
+  ],
+  "changed": [
+    {
+      "path": "testpilot/compare_html.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fd6c65058fd847342633a28fe6c8c8157b8cfc5"
+    },
+    {
+      "path": "tests/test_compare_case_index.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9e0588f4b92c8f46aa2f410730779bf06399f98"
+    },
+    {
+      "path": "docs/COMPARE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df90ac7329c6acea3e399e31c9f16b69a54e7566"
+    }
+  ],
+  "scope": "The issue125 product changes only comparison navigation, target styling, focused tests and its guide. Publication preserves the separately owned PR126 history entrypoint/module and all other current-main paths.",
+  "author_qualification": {
+    "runtime": "Local CPython3.12.14 with isolated pytest8.4.2",
+    "original": "4 expected new-case failures and 3 no-index controls passing; expected child status1",
+    "candidate": "7 new cases,5 unchanged disclosure cases,2 unchanged original-download/JUnit controls:14 pass",
+    "baseline_receipt": "7e143fecf0ce5c1fb17dd08677ff6296438a8d6e",
+    "candidate_receipt": "4b9cc186d35d3aadd36725e4c2c8d0507deb5e2d",
+    "source_scope": "The final runtime and frozen tests were executed unchanged; guide-only reading instructions and the maintained test-command update followed without runtime change."
+  },
+  "preflight_limits": [
+    "Both available local Python interpreters initially lacked pytest; ordinary pip installed dependencies only into the task-owned directory.",
+    "The attempted ThinkPad preflight was rejected offline before any process or directory creation.",
+    "No tests/providers named inside the fictional saved reports executed."
+  ],
+  "independent_qualification": {
+    "criteria": "3a53360db280b992e5827eda88205840f3daf8ac",
+    "observer": "3206962ae468a1d240d0057012e4eee1cc74953d",
+    "original_receipt": "c6cd11cfb1b60d6431b8b540ef4aca276416151a",
+    "original_checks": 40,
+    "candidate_receipt": "99c513eea1a89683608f8c850ba0f0cc9bb1df00",
+    "candidate_checks": 99,
+    "native_runtime": "MSI/Veria Python3.11.9, Chrome154.0.8037.97, JavaScript disabled",
+    "supported_producer_receipt": "7efa4baa3cf074dfc031b863ec1861c120b92298",
+    "supported_runtime": "CPython3.12.14",
+    "supported_checks": 23,
+    "whole_html_parity": true,
+    "html_git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+    "prior_failed_epochs": [
+      "c7d91335b2ec8a0330722870998a31c55c5440d9",
+      "8c55b6b2998f4050dddd301cbcf65f4fa018ed6c"
+    ],
+    "limits": "Native3.11 is observed supplemental runtime; supported3.12 produces byte-identical browser-received HTML. Managed disconnect only, no OS process-exit claim."
+  },
+  "current_main_composition": {
+    "base_commit": "0595bcf1e5ada54480baf79991bc8946996d63cc",
+    "base_tree": "839cbef78c1a345cdfdb95a223bf046e58fe5e40",
+    "base_leaves": 1929,
+    "unchanged_current_tuples": 1927,
+    "changed_existing": 2,
+    "new_product_files": 1,
+    "owner_delta_preserved": 192,
+    "integration_receipt": {
+      "bytes": 23986,
+      "sha256": "53663b3a29aa6736193f8c29b091b55c30fb1281374a08c39ffc4d9076ab704b",
+      "git_blob": "29eb66af0de5876cee9f93847fd51671ee56ca6e"
+    },
+    "integration_checks": 25,
+    "intake": {
+      "bytes": 241967,
+      "sha256": "c5b51ff9b000fac65749620b8562fb35d9bd7b4e36e6aeb31fba48d1517a3002",
+      "git_blob": "98096bcdde5b0dad71c6e2a8a23ac16552e3db33"
+    },
+    "runtime": [
+      {
+        "path": "testpilot/__init__.py",
+        "bytes": 390,
+        "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+        "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca"
+      },
+      {
+        "path": "testpilot/__main__.py",
+        "bytes": 12180,
+        "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+        "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa"
+      },
+      {
+        "path": "testpilot/_pytest_generated.py",
+        "bytes": 2943,
+        "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+        "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc"
+      },
+      {
+        "path": "testpilot/compare.py",
+        "bytes": 14624,
+        "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+        "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40"
+      },
+      {
+        "path": "testpilot/compare_html.py",
+        "bytes": 22690,
+        "sha256": "dd47fbda0c24e58192b50075d2105b45a96b4e0d955e199c14e77b6621fc9c50",
+        "git_blob": "0fd6c65058fd847342633a28fe6c8c8157b8cfc5"
+      },
+      {
+        "path": "testpilot/diff.py",
+        "bytes": 13252,
+        "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+        "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+      },
+      {
+        "path": "testpilot/history.py",
+        "bytes": 16078,
+        "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+        "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9"
+      },
+      {
+        "path": "testpilot/html_report.py",
+        "bytes": 21739,
+        "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+        "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee"
+      },
+      {
+        "path": "testpilot/loop.py",
+        "bytes": 30070,
+        "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+        "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091"
+      },
+      {
+        "path": "testpilot/model.py",
+        "bytes": 10454,
+        "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+        "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02"
+      },
+      {
+        "path": "testpilot/recheck.py",
+        "bytes": 12770,
+        "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+        "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b"
+      },
+      {
+        "path": "testpilot/recheck_html.py",
+        "bytes": 10184,
+        "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+        "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90"
+      },
+      {
+        "path": "testpilot/regression.py",
+        "bytes": 16329,
+        "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+        "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9"
+      },
+      {
+        "path": "testpilot/sandbox.py",
+        "bytes": 13628,
+        "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+        "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de"
+      },
+      {
+        "path": "testpilot/saved_report.py",
+        "bytes": 9808,
+        "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+        "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50"
+      },
+      {
+        "path": "testpilot/targets.py",
+        "bytes": 5410,
+        "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+        "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370"
+      }
+    ],
+    "whole_html_parity": true
+  },
+  "delivery": {
+    "drive_id": "1bfjnxA9BFBEaCA-r4M7v6ETIrEuoa207",
+    "receipt": "e7727ec478aaa1e126dd184c8561246fe204eeb2",
+    "whole_byte_equal": true
+  }
+}

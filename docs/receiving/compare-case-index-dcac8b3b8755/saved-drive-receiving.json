@@ -1,0 +1,28 @@
+{
+  "schema": "hamon.saved-drive-whole-byte-receiving/1",
+  "utc": "2026-10-13T23:39:09.821023+00:00",
+  "drive_id": "1bfjnxA9BFBEaCA-r4M7v6ETIrEuoa207",
+  "url": "https://drive.google.com/file/d/1bfjnxA9BFBEaCA-r4M7v6ETIrEuoa207/view",
+  "http_status": 200,
+  "bytes": 26365,
+  "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+  "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+  "whole_byte_equal": true,
+  "local_before": {
+    "bytes": 26365,
+    "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+    "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+    "mode": "33188",
+    "mtime_ns": "1791934695870226950",
+    "inode": "1229294"
+  },
+  "local_after": {
+    "bytes": 26365,
+    "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+    "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+    "mode": "33188",
+    "mtime_ns": "1791934695870226950",
+    "inode": "1229294"
+  },
+  "local_custody_equal": true
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "hamon.task-dependency-observation/1",
+  "runtime": "local Python3.12.14",
+  "scope": "Installed only into this task dependencies directory; existing global and native environments unchanged. Metadata inspection after completed maintained courses; no course replay.",
+  "install_command": [
+    "python",
+    "-m",
+    "pip",
+    "install",
+    "--disable-pip-version-check",
+    "--no-input",
+    "--target",
+    "/workspace/scratch/dcac8b3b8755/testpilot125-author/dependencies",
+    "pytest>=8,<9"
+  ],
+  "distributions": [
+    {
+      "name": "Pygments",
+      "version": "2.21.0",
+      "metadata_bytes": 2527,
+      "metadata_sha256": "1dde075570136774c706bf0009183a793fe0ee262e4a5590cc6eff8453eedd43"
+    },
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "metadata_bytes": 2826,
+      "metadata_sha256": "47c2c35d936f5c649d8074c6464719a42966a67b5cebad01e3e5784cf090cfb6"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "metadata_bytes": 3544,
+      "metadata_sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763"
+    },
+    {
+      "name": "pluggy",
+      "version": "1.6.0",
+      "metadata_bytes": 4811,
+      "metadata_sha256": "7438c35ee25a095eb7416f84b461c2d74425c5e734ad54c3912453c65244e01c"
+    },
+    {
+      "name": "pytest",
+      "version": "8.4.2",
+      "metadata_bytes": 7656,
+      "metadata_sha256": "93d6c5ef0a9714d53716243035037b77fa7d5f970596c48433887cf57f7f675a"
+    }
+  ]
+}

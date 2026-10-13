@@ -1,0 +1,136 @@
+{
+  "schema": "testpilot.case-index-author-evidence/1",
+  "source_commit": "be59e562020762e593f3dfc5b8dd27408966e739",
+  "source_tree": "94016564ebda3e8e738c1b45d861dcef8318388e",
+  "scope": "Actual focused author tests on local CPython 3.12.14 with isolated pytest 8.4.2. Independent ordinary-CLI and browser receiving is recorded separately.",
+  "records": [
+    {
+      "path": "author/executed-guide-before-command-update.md",
+      "bytes": 9703,
+      "sha256": "7a0d036543836bfd141670e7e8dc2adab371b011ae0c254bee385a53a15b2c10",
+      "git_blob": "7e752a09bea14c5ed9b418478dc4b1bfdee52b74",
+      "native_path": "candidate/docs/COMPARE.md",
+      "mode": "33188",
+      "mtime_ns": "1791932076659528614",
+      "inode": "1205680"
+    },
+    {
+      "path": "author/receive_author.py",
+      "bytes": 3739,
+      "sha256": "b1fd699e033d4efeb4f0f456fe9c7518de16854fdc2adf59794a3f5a3c06e1b7",
+      "git_blob": "78b7e36bb5fe63200059d8b60a472eb9c6be6bd9",
+      "native_path": "receive_author.py",
+      "mode": "33188",
+      "mtime_ns": "1791931979884149514",
+      "inode": "1205648"
+    },
+    {
+      "path": "author/dependency-observation.json",
+      "bytes": 1479,
+      "sha256": "5c50acf4e196ec49464068ff21a1853126a95cba1c4f302e5cd8777f5122c358",
+      "git_blob": "ca6688a40fe4248ed2127eee258ac9231d419160",
+      "native_path": "dependency-observation.json",
+      "mode": "33188",
+      "mtime_ns": "1791932280019703331",
+      "inode": "1206288"
+    },
+    {
+      "path": "author/original/receiving.json",
+      "bytes": 14325,
+      "sha256": "618f6c43f39b317a009f4987b104c04e3e0d6aacaefa02ad4718b83be840ba2f",
+      "git_blob": "7e143fecf0ce5c1fb17dd08677ff6296438a8d6e",
+      "native_path": "course-original/receiving.json",
+      "mode": "33188",
+      "mtime_ns": "1791931981060550387",
+      "inode": "1205661"
+    },
+    {
+      "path": "author/original/pytest.stdout",
+      "bytes": 4885,
+      "sha256": "bb3c11305bd5772f3c60f18dce26748a9704aa083e9eb090b42463b82d9fec79",
+      "git_blob": "03e3c23d8411d3c9348a61b8185f85d6aa144d52",
+      "native_path": "course-original/pytest.stdout",
+      "mode": "33188",
+      "mtime_ns": "1791931980972097746",
+      "inode": "1205653"
+    },
+    {
+      "path": "author/original/pytest.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "native_path": "course-original/pytest.stderr",
+      "mode": "33188",
+      "mtime_ns": "1791931980296129911",
+      "inode": "1205654"
+    },
+    {
+      "path": "author/candidate/receiving.json",
+      "bytes": 14556,
+      "sha256": "36d962c8ec5849cb5ecab763ee994c8d6c2a3df4adc7c80bf374790c4c9fa1ca",
+      "git_blob": "4b9cc186d35d3aadd36725e4c2c8d0507deb5e2d",
+      "native_path": "course-candidate/receiving.json",
+      "mode": "33188",
+      "mtime_ns": "1791932020286728008",
+      "inode": "1205717"
+    },
+    {
+      "path": "author/candidate/pytest.stdout",
+      "bytes": 99,
+      "sha256": "7ca1357b1585c9070d3286487daabd5a76755cd024e392d053dd3159aa102b37",
+      "git_blob": "d95ee8cbf2d89552980003a0de8879d391168149",
+      "native_path": "course-candidate/pytest.stdout",
+      "mode": "33188",
+      "mtime_ns": "1791932020170232522",
+      "inode": "1205715"
+    },
+    {
+      "path": "author/candidate/pytest.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "native_path": "course-candidate/pytest.stderr",
+      "mode": "33188",
+      "mtime_ns": "1791932019357529007",
+      "inode": "1205716"
+    }
+  ],
+  "production_and_tests": [
+    {
+      "path": "testpilot/compare_html.py",
+      "bytes": 22690,
+      "sha256": "dd47fbda0c24e58192b50075d2105b45a96b4e0d955e199c14e77b6621fc9c50",
+      "git_blob": "0fd6c65058fd847342633a28fe6c8c8157b8cfc5"
+    },
+    {
+      "path": "tests/test_compare_case_index.py",
+      "bytes": 4821,
+      "sha256": "8bb7811787991f3d7164e542f6cd6a32030dee5d6e3d741a7e2c2b275a5a41c0",
+      "git_blob": "d9e0588f4b92c8f46aa2f410730779bf06399f98"
+    }
+  ],
+  "guide_boundary": {
+    "executed_witness": "7e752a09bea14c5ed9b418478dc4b1bfdee52b74",
+    "final_doc_only_successor": "df90ac7329c6acea3e399e31c9f16b69a54e7566",
+    "meaning": "After the passing course, the maintained command was updated to name the new test module. Renderer and tests did not change. The actual old guide witness is retained here."
+  },
+  "results": {
+    "original": {
+      "expected_returncode": 1,
+      "failed_new_cases": 4,
+      "passed_no_index_controls": 3
+    },
+    "candidate": {
+      "returncode": 0,
+      "passed": 14,
+      "new_cases": 7,
+      "existing_disclosure_cases": 5,
+      "existing_download_and_junit_controls": 2
+    }
+  },
+  "limitations": [
+    "No test or provider named in an input saved report was executed.",
+    "ThinkPad preflight failed offline before any process or directory creation.",
+    "This record does not imply independent browser acceptance."
+  ]
+}

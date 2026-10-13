@@ -1,0 +1,84 @@
+{
+  "schema": "testpilot.case-index-supported-native-parity/1",
+  "meaning": "Read-only whole-file comparison after one supported CPython3.12.14 candidate CLI generation and one successful independent Windows browser candidate course. No product/browser/test replay.",
+  "supported_receipt": {
+    "bytes": 21729,
+    "sha256": "8d9fefbf661e6a5cfb050a2663bf2e65d0e8b9dc67bed2479a477cda22ed54a3",
+    "git_blob": "7efa4baa3cf074dfc031b863ec1861c120b92298",
+    "mode": "33188",
+    "mtime_ns": "1791934504999981135",
+    "inode": "1229345"
+  },
+  "native_receipt": {
+    "bytes": 181452,
+    "sha256": "dd6a2348d4c71594b035214e52b1aecc8aa4f0d94f58af1181db14e288203e72",
+    "git_blob": "99c513eea1a89683608f8c850ba0f0cc9bb1df00",
+    "mode": "33188",
+    "mtime_ns": "1791934695869302772",
+    "inode": "1229517"
+  },
+  "saved_drive_receipt": {
+    "bytes": 1014,
+    "sha256": "4f9c6ac4abd23aa6393bbd0182efabfd32416f6f2dfa7136a11de7568b462129",
+    "git_blob": "e7727ec478aaa1e126dd184c8561246fe204eeb2",
+    "mode": "33188",
+    "mtime_ns": "1791934749822825505",
+    "inode": "1229532"
+  },
+  "whole_html_bytes_equal": true,
+  "actual_downloads_equal_exact_fixtures": true,
+  "before": {
+    "/workspace/scratch/dcac8b3b8755/testpilot125-supported/course/comparison.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33152",
+      "mtime_ns": "1791934504918335930",
+      "inode": "1228834"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/candidate-v3-export/comparison.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33188",
+      "mtime_ns": "1791934695870226950",
+      "inode": "1229294"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/saved-drive-copy.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33188",
+      "mtime_ns": "1791934749820727263",
+      "inode": "1229479"
+    }
+  },
+  "after": {
+    "/workspace/scratch/dcac8b3b8755/testpilot125-supported/course/comparison.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33152",
+      "mtime_ns": "1791934504918335930",
+      "inode": "1228834"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/candidate-v3-export/comparison.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33188",
+      "mtime_ns": "1791934695870226950",
+      "inode": "1229294"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot125-receiving/saved-drive-copy.html": {
+      "bytes": 26365,
+      "sha256": "2c122e38faf5a6c03525242fe87cfa61998c8c3358eb4d862e2cb708eed12d4d",
+      "git_blob": "538668914cb5c489b57cf0e07dbf842e7b540491",
+      "mode": "33188",
+      "mtime_ns": "1791934749820727263",
+      "inode": "1229479"
+    }
+  },
+  "custody_preserved": true,
+  "limits": "Native producer was observed on Python3.11.9; supported production qualification is the separate Python3.12.14 ordinary CLI yielding these identical browser-received bytes. Managed browser disconnect was observed; browser OS exit was not measured."
+}

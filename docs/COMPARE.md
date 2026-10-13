@@ -42,6 +42,10 @@ Section links, native expandable panels, keyboard focus, horizontally scrollable
 
 Recorded failed and error cases start expanded in each report's Final diagnostics panel, including cases with no diagnostic text. Passed and skipped cases and the saved pytest output tail start collapsed. Use each native disclosure to collapse or reopen it with a pointer or keyboard. This reading state does not change the recorded outcome or make missing JUnit evidence complete.
 
+When either report retains failed or error cases, **Failed and error cases** at the start of Final diagnostics links directly to each matching occurrence. The link names its Before/After role, one-based position in that report's retained case array, outcome and literal case label. Repeated labels have separate targets; a position is not a cross-report test identity. The count describes retained rows, not unique tests or complete execution. Reports with no matching rows add no index, and missing final/JUnit evidence keeps its existing meaning.
+
+Activate a link with a pointer or native keyboard navigation to move to the corresponding disclosure, which receives a visible target outline. Use its summary to collapse or reopen it. These links do not filter or rewrite the report, and all case rows remain in their original order. The index is hidden in the print view while the existing full diagnostics remain available. The original JSON downloads carry no reading position or disclosure state.
+
 Both JSON downloads preserve all original bytes, including a UTF-8 byte-order mark, whitespace, line endings, additional fields, and original number spellings. The page does not regenerate downloaded JSON from its parsed view. Role-specific download filenames are before-report.json and after-report.json.
 
 Report text is rendered literally. HTML markup cannot create page elements or request external content. Control characters, Unicode line/paragraph separators, and unpaired surrogate characters use visible escapes in the review view. Downloads preserve their original JSON bytes. The self-contained page has no executable scripts, external assets, or browser storage.
@@ -70,7 +74,7 @@ Above the inline-diff threshold, the page explicitly omits only that diff; compl
 The focused tests exercise exact original bytes, deeply immutable parsed inputs, missing evidence, Decimal precision, differing/duplicate target labels, added empty files, source-line edge cases, malformed and bounded admission, no-overwrite publication, staged-write failures, special-file refusal, and a consumer-only CLI path:
 
 ~~~bash
-python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py tests/test_compare_console.py tests/test_compare_diagnostics.py
+python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_compare_cleanup.py tests/test_compare_console.py tests/test_compare_diagnostics.py tests/test_compare_case_index.py
 ~~~
 
 Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.
