@@ -1,0 +1,308 @@
+{
+  "schema": "hamon-bounded-source-qualification/1",
+  "recorded_at": "2026-10-13T01:08:03.187577+00:00",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/93",
+  "owner": "source_delivery",
+  "independent_reviewer": "shared_delivery",
+  "decision": "REVIEWED_SOURCE_PUBLISHED_WITH_BASELINE_FAILURES",
+  "source": {
+    "repository": "Jacob-Met/testpilot",
+    "commit": "e7853b0545b9938d1df14ba81706d1f5ad03f8ab",
+    "tree": "4de23ca65278bf22281ece502eda3e3ea0bc5ee5",
+    "parent": "478f68adf01658a94a3ede22526da00f580785bd",
+    "parent_tree": "ca0756e20da9c87c90ebd24c45ab494bfa31d47b",
+    "branch": "work/hamon-source-delivery/resolved-test-paths-20261013",
+    "files": {
+      "testpilot/diff.py": {
+        "bytes": 13352,
+        "sha256": "965493bf1a38af8f3f75e3dd747acbdb0a8a49572fda56197967f3aaa52adb91",
+        "git_blob": "1e801711d0a6eec002372918dd7bc0a525663c77"
+      },
+      "docs/diff-source-boundary.md": {
+        "bytes": 2967,
+        "sha256": "d2c2f1ecda5490717df56d64811c644988b13203cb48d8926d5e9b3d552ca139",
+        "git_blob": "67857b939bc331c4faea46497dce29b969f390c5"
+      },
+      "tests/test_resolved_test_paths.py": {
+        "bytes": 6787,
+        "sha256": "a99019b7678be5ae24118d34cd36ccbde367779e3c2c550baffbd38e9898f481",
+        "git_blob": "8809e74aaec74291c7b36409e0eaa9b53b10af25"
+      }
+    }
+  },
+  "behavior": "Default automatic target selection excludes test paths identified by either the original diff label or the confined resolved repository-relative destination before reading source.",
+  "preserved": [
+    "lexical exclusion precedence",
+    "repository confinement errors",
+    "include_tests=True",
+    "original diff path and module labels",
+    "ordinary source aliases including Python-coded non-.py targets",
+    "symlinked repository roots",
+    "ordinary repositories beneath a parent directory named tests",
+    "missing, deleted and non-Python diff exclusions"
+  ],
+  "environment": {
+    "device_id": "95471aa0-31a3-4fd9-a2a6-a4a06f09d7cb",
+    "host": "Mac.lan",
+    "os": "Darwin",
+    "versions": {
+      "python": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+      "pytest": "9.1.1",
+      "coverage": "7.16.2"
+    },
+    "dependency_scope": "Isolated venv; declared pytest>=8 and coverage>=7 only; no dependency/workflow source change."
+  },
+  "runs": {
+    "author_original_new_regressions": {
+      "passed": 4,
+      "failed": 9,
+      "pytest_exit": 1,
+      "wrapper_pid": 17363,
+      "observed_wrapper_exit": 0,
+      "log": "author/original-new-regressions.log",
+      "qualification": "Unchanged original production source plus the exact new regression test."
+    },
+    "author_candidate_focused": {
+      "passed": 77,
+      "failed": 1,
+      "pytest_exit": 1,
+      "wrapper_pid": 29412,
+      "observed_wrapper_exit": 0,
+      "log": "author/candidate-focused.log",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_resolved_test_paths.py",
+        "tests/test_diff_source_boundary.py",
+        "tests/test_diff.py",
+        "tests/test_git_quoted_paths.py",
+        "tests/test_explicit_targets.py"
+      ],
+      "new_regressions": {
+        "passed": 13,
+        "failed": 0,
+        "skipped": 0,
+        "qualification": "A subset of this focused command, not a separately reported run."
+      }
+    },
+    "author_candidate_full": {
+      "passed": 648,
+      "failed": 7,
+      "skipped": 1,
+      "subtests_passed": 40,
+      "pytest_exit": 1,
+      "wrapper_pid": 38326,
+      "observed_wrapper_exit": 0,
+      "log": "author/candidate-full.log",
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "--basetemp",
+        "/tmp/hamon-source-delivery-20261012-iqwp13e2/testpilot-final-test-tmp"
+      ]
+    },
+    "author_original_selected_failures": {
+      "passed": 0,
+      "failed": 7,
+      "pytest_exit": 1,
+      "wrapper_pid": 57996,
+      "observed_wrapper_exit": 0,
+      "log": "author/original-seven-maintained-failures.log",
+      "receipt": "author/original-seven-maintained-failures.json",
+      "tests": [
+        "tests/test_generated_collection.py::test_configured_roots_and_project_hooks_are_preserved",
+        "tests/test_generated_collection_compatibility.py::test_native_selection_cannot_certify_unexecuted_generation[deselect]",
+        "tests/test_generated_collection_receiving.py::test_configured_suite_and_only_requested_generated_file_are_kept",
+        "tests/test_git_quoted_paths.py::test_octal_filename_bytes_round_trip_through_the_filesystem",
+        "tests/test_recheck.py::test_configured_suite_and_fixtures_remain_part_of_result",
+        "tests/test_report_text_encoding.py::test_real_pytest_success_writes_complete_outputs_and_an_applicable_patch",
+        "tests/test_report_text_encoding.py::test_real_cli_preserves_runner_failure_and_still_writes_readable_report"
+      ],
+      "original_worktree_clean": true,
+      "qualification": "Only the seven failing candidate tests were rerun on the untouched detached original; this is not an original full-suite run."
+    },
+    "independent_original": {
+      "passed": 17,
+      "failed": 9,
+      "process_pid": 9228,
+      "observed_exit": 1,
+      "receipt": "independent/original-RECEIVING.json"
+    },
+    "independent_candidate": {
+      "passed": 26,
+      "failed": 0,
+      "process_pid": 43008,
+      "observed_exit": 0,
+      "receipt": "independent/candidate-RECEIVING.json",
+      "same_frozen_contract_and_receiver": true
+    }
+  },
+  "remaining_failures": {
+    "full_suite_green": false,
+    "raw_filename_creation": {
+      "count": 3,
+      "observation": "Unchanged fixtures raise OSError errno 92 while creating raw-byte filenames on this Mac filesystem, before product selection."
+    },
+    "collection_and_recheck": {
+      "count": 4,
+      "observation": "The same assertion outcomes recur in untouched original tests under this environment. No new root-cause claim is made."
+    },
+    "no_existing_test_or_skip_modified": true
+  },
+  "reviews": {
+    "bounded_source": "independent/source-review.json",
+    "saved_qualification": "independent/saved-qualification-review.json",
+    "contract_frozen_before_candidate": true
+  },
+  "publication": {
+    "scope": "Reviewed isolated non-main branch",
+    "native_received_commit": "e7853b0545b9938d1df14ba81706d1f5ad03f8ab",
+    "native_received_tree": "4de23ca65278bf22281ece502eda3e3ea0bc5ee5",
+    "source_paths_changed": 3,
+    "source_actions_runs_at_readback": 0,
+    "pr_created": false,
+    "main_moved": false,
+    "workflow_changed": false,
+    "installed_adoption": false
+  },
+  "limits": [
+    "Full maintained suite remains failed with seven original-baseline failures.",
+    "No claim about Windows symlink privileges or Linux receiving.",
+    "No protection against concurrent filesystem replacement beyond the retained source boundary.",
+    "No composition with detached target explanations, indexing, explicit-target Unicode, recheck timeout or other owners.",
+    "No provider, deployed or installed-estate adoption claim.",
+    "No Drive delivery is claimed."
+  ],
+  "evidence": {
+    "author/candidate-focused.log": {
+      "bytes": 2634,
+      "sha256": "c350f9fdd54e0caccae14c2aa78d5272d97139bf43fc26e2d25c79399d98e04a",
+      "git_blob": "de3dcb7e9f71fc5d6fe938a5c1c11d646f327c2c",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/resolved-tests-candidate-focused.log"
+    },
+    "author/candidate-full.log": {
+      "bytes": 15126,
+      "sha256": "195020d6d323f90bab49c7aa3d719a03257ee500bd1c2dbec26d1ee5c5208e82",
+      "git_blob": "c85027378425a6086aeaeac5070259e818e28349",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/resolved-tests-full-suite.log"
+    },
+    "author/original-api-cli-witness.json": {
+      "bytes": 1209,
+      "sha256": "b04a92f4c991dcd97ad61af21ae0b7f92cbe3959859d25ddddd2be443fabe573",
+      "git_blob": "3032d65ccd03c2c14653227115247bd60484bcbd",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/resolved-tests-original-9spn_pto/original-witness.json"
+    },
+    "author/original-new-regressions.log": {
+      "bytes": 15329,
+      "sha256": "0d2186d090b73b7c17e2c5b651a0d25642dfaac0e539159f8eeae6073f582d3f",
+      "git_blob": "5ff748a00368edbc0a633b93efe8ebae58c581ae",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/resolved-tests-original-pytest.log"
+    },
+    "author/original-seven-maintained-failures.json": {
+      "bytes": 4873,
+      "sha256": "5c9e6eabba4cbe4e52b071d425fa48a5474a32917aa5d7740af5aaadbace2022",
+      "git_blob": "1e5e28400b590ce75046c0d4a6a53a228e3132ed",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/resolved-tests-original-maintained-failures.json"
+    },
+    "author/original-seven-maintained-failures.log": {
+      "bytes": 14497,
+      "sha256": "52fb7241ecc1fabb0f5df022d8acda960fbd21b09a4d69d61e1bd48502d1a4b7",
+      "git_blob": "7cef4dcc2ef37f2960524729f81ee3e20e7c736b",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/resolved-tests-original-maintained-failures.log"
+    },
+    "independent/candidate-RECEIVING.json": {
+      "bytes": 16329,
+      "sha256": "c9f50daa35025d4d78df9145f6e12b40e064b95624de2c7b5f6f6443de4026b4",
+      "git_blob": "fc6595235b924ab5dfd41f56323c805a36c3063d",
+      "original_path": "/tmp/hamon-testpilot-resolved-test-candidate-20261013-k179g384/RECEIVING.json"
+    },
+    "independent/contract.json": {
+      "bytes": 8074,
+      "sha256": "8e5e47c337701681b6de34c324dde05f1820e5b0178308a6b01201377151bc3e",
+      "git_blob": "710e703eef4c0c04c9069de3d0ad5950b120e80c",
+      "original_path": "/tmp/hamon-testpilot-resolved-test-independent-20261013-shared.json"
+    },
+    "independent/original-RECEIVING.json": {
+      "bytes": 19231,
+      "sha256": "623f63e6612fe178489a3b43ef131908a258eaffcd1cb4a14a989ecacd757a80",
+      "git_blob": "2c4f28edcd2b834d2f54270353b15de3dc65c4fa",
+      "original_path": "/tmp/hamon-testpilot-resolved-test-original-20261013-lymuzn2y/RECEIVING.json"
+    },
+    "independent/receive.py": {
+      "bytes": 5228,
+      "sha256": "5e7bca2dde1127bf2a7d229bfa3f9c45d43a6c568dd714ba1a1ad2f82d084a8d",
+      "git_blob": "b5bc23dbed0ee58e019f1a084b4359549cd4266c",
+      "original_path": "/tmp/hamon-testpilot-resolved-test-receive-20261013-shared.py"
+    },
+    "independent/saved-qualification-review.json": {
+      "bytes": 4968,
+      "sha256": "4f6fffd7b1a777f58e960e0a4bef91b6be1ac17a7efead2e77c47b2df117b963",
+      "git_blob": "9c01260e0d3e2873a0bded7001af5736658d56ca",
+      "original_path": "/tmp/hamon-testpilot-saved-qualification-review-20261013-shared.json"
+    },
+    "independent/source-review.json": {
+      "bytes": 4611,
+      "sha256": "470d4efdd53081f9f61fc4a0d41ea576bdb5d772467a7fd57557b3195a0069eb",
+      "git_blob": "79d50aadcb31783c8716b82beaa52f4e9c21aafc",
+      "original_path": "/tmp/hamon-testpilot-resolved-test-independent-review-20261013-shared.json"
+    },
+    "source.patch": {
+      "bytes": 8895,
+      "sha256": "42aaf896f63e345555cfbc561aba185564c654d8bc837a2be672551a0bca0270",
+      "git_blob": "661909cbccd4b82a717ecc956aee53435945e1bb",
+      "original_path": null
+    },
+    "source/docs/diff-source-boundary.md": {
+      "bytes": 2967,
+      "sha256": "d2c2f1ecda5490717df56d64811c644988b13203cb48d8926d5e9b3d552ca139",
+      "git_blob": "67857b939bc331c4faea46497dce29b969f390c5",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/testpilot/docs/diff-source-boundary.md"
+    },
+    "source/testpilot/diff.py": {
+      "bytes": 13352,
+      "sha256": "965493bf1a38af8f3f75e3dd747acbdb0a8a49572fda56197967f3aaa52adb91",
+      "git_blob": "1e801711d0a6eec002372918dd7bc0a525663c77",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/testpilot/testpilot/diff.py"
+    },
+    "source/tests/test_resolved_test_paths.py": {
+      "bytes": 6787,
+      "sha256": "a99019b7678be5ae24118d34cd36ccbde367779e3c2c550baffbd38e9898f481",
+      "git_blob": "8809e74aaec74291c7b36409e0eaa9b53b10af25",
+      "original_path": "/tmp/hamon-source-delivery-20261012-iqwp13e2/testpilot/tests/test_resolved_test_paths.py"
+    }
+  },
+  "capsule": {
+    "name": "TestPilot-resolved-test-paths-e7853b05-20261013.zip",
+    "bytes": 42761,
+    "sha256": "86e565287dfdefc4bfebc809544aae1d7a8545af8860c3358006cb120365328e",
+    "git_blob": "facfeb1639f3f61245fb311c971dfd6087fe37c9",
+    "members": 19,
+    "manifest": {
+      "bytes": 4016,
+      "sha256": "b897e0b4fd77b86a7308bbc46ae6f082c7fb095d8da3367f8121679df14091f2",
+      "git_blob": "75166cb2c5529fbe7e05b1e815c0ed6a0007fc49"
+    },
+    "source_patch_admission": {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "-"
+      ],
+      "exit": 0,
+      "against_clean_parent": "478f68adf01658a94a3ede22526da00f580785bd",
+      "original_source_unchanged": true
+    }
+  },
+  "published_source_receiving": {
+    "file": "independent-published-source-receiving.json",
+    "bytes": 2905,
+    "sha256": "308b7f3bb78507e9d3e40f90e220194c5d1966e3de78e072952ea8ee311bd847",
+    "outside_sealed_capsule": true,
+    "reason": "Recorded after the 19-member capsule was sealed; the capsule and its six earlier independent artifacts remain unchanged."
+  }
+}

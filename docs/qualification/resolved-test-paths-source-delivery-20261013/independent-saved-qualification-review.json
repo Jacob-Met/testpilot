@@ -1,0 +1,109 @@
+{
+  "schema": "hamon-independent-saved-qualification-review/1",
+  "date": "2026-10-13",
+  "reviewer": "shared_delivery",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/93",
+  "decision": "QUALIFICATION_RECORD_ACCURATE_WITH_FAILED_FULL_SUITE_PRESERVED",
+  "source": "478f68adf01658a94a3ede22526da00f580785bd",
+  "sourceReview": {
+    "path": "/tmp/hamon-testpilot-resolved-test-independent-review-20261013-shared.json",
+    "bytes": 4611,
+    "sha256": "470d4efdd53081f9f61fc4a0d41ea576bdb5d772467a7fd57557b3195a0069eb",
+    "unchanged": true
+  },
+  "evidence": {
+    "originalHead": "478f68adf01658a94a3ede22526da00f580785bd",
+    "originalWorktreeClean": true,
+    "logs": [
+      {
+        "name": "resolved-tests-candidate-focused.log",
+        "bytes": 2634,
+        "sha256": "c350f9fdd54e0caccae14c2aa78d5272d97139bf43fc26e2d25c79399d98e04a"
+      },
+      {
+        "name": "resolved-tests-full-suite.log",
+        "bytes": 15126,
+        "sha256": "195020d6d323f90bab49c7aa3d719a03257ee500bd1c2dbec26d1ee5c5208e82"
+      },
+      {
+        "name": "resolved-tests-original-maintained-failures.json",
+        "bytes": 4873,
+        "sha256": "5c9e6eabba4cbe4e52b071d425fa48a5474a32917aa5d7740af5aaadbace2022"
+      },
+      {
+        "name": "resolved-tests-original-maintained-failures.log",
+        "bytes": 14497,
+        "sha256": "52fb7241ecc1fabb0f5df022d8acda960fbd21b09a4d69d61e1bd48502d1a4b7"
+      }
+    ],
+    "maintainedTestSources": [
+      {
+        "path": "tests/test_generated_collection.py",
+        "bytes": 10208,
+        "sha256": "19905510581afe3b0b56883ea2268761eda100ce6fe585a58d83ad3f5742914b",
+        "candidateEqualsOriginalHead": true
+      },
+      {
+        "path": "tests/test_generated_collection_compatibility.py",
+        "bytes": 10935,
+        "sha256": "011d5c8746d5606d11817a294dd6d699610068982f84076f2824f2321a38f3a3",
+        "candidateEqualsOriginalHead": true
+      },
+      {
+        "path": "tests/test_generated_collection_receiving.py",
+        "bytes": 9055,
+        "sha256": "2af73df91390e3b44526c5ba1e4d325fb48d99fb668d6d3d565668b8347c9a83",
+        "candidateEqualsOriginalHead": true
+      },
+      {
+        "path": "tests/test_git_quoted_paths.py",
+        "bytes": 5892,
+        "sha256": "57aba89eb29209b80d78b4e0aedcbd3d0d4a90b1a6269110909f09ddb1be1205",
+        "candidateEqualsOriginalHead": true
+      },
+      {
+        "path": "tests/test_recheck.py",
+        "bytes": 13668,
+        "sha256": "a4d67bcdd9b6b386dd3417dc7ffe99da500cb77c87f16c7bb26d4e9cc14d0753",
+        "candidateEqualsOriginalHead": true
+      },
+      {
+        "path": "tests/test_report_text_encoding.py",
+        "bytes": 9330,
+        "sha256": "1dde3e4f3b227918e541e4ffc71099a8f36c235c198169bb1a152302ea635a3e",
+        "candidateEqualsOriginalHead": true
+      }
+    ]
+  },
+  "observedCompletions": [
+    {
+      "pid": 38326,
+      "wrapperExit": 0,
+      "savedPytestExit": 1,
+      "course": "Candidate full suite",
+      "summary": "648 passed, 7 failed, 1 skipped, 40 subtests passed"
+    },
+    {
+      "pid": 57996,
+      "wrapperExit": 0,
+      "savedPytestExit": 1,
+      "course": "Seven exact failed tests on detached original",
+      "summary": "7 failed in 1.79s"
+    },
+    {
+      "pid": 78905,
+      "wrapperExit": 0,
+      "course": "Independent saved-log, original cleanliness and unchanged maintained-test verification"
+    }
+  ],
+  "findings": [
+    "Complete focused, full, original selected-failure logs and original invocation record were read. The four retrieved file bytes were rehashed on the native host and match their exact pins.",
+    "The candidate full suite log retains 648 passes, seven failures, one skip and 40 subtests. Its pytest exit is 1; native wrapper exit 0 only records completion of the harness.",
+    "All seven failure IDs recur on the clean detached original at 478f68ad. The six maintained source files containing those tests are byte-equal between the candidate, original worktree and original Git HEAD.",
+    "The original and candidate logs show the same failed assertions. Timing and scratch path differences are retained in their respective immutable logs.",
+    "Three failures explicitly arise while fixture setup creates raw non-UTF-8 filenames on this Mac filesystem, with OSError 92. The four collection/recheck assertion failures have no new root-cause diagnosis in this review.",
+    "This saved-record comparison does not constitute a full original-suite run, test replay, repair of those seven failures, or a wholly passing maintained gate.",
+    "The separate unchanged 26-case selector receiver and 4,611-byte bounded source review remain exactly preserved. Publication, current-main and installed adoption require their own later receiving."
+  ],
+  "scope": "Read-only saved qualification and source identity review on Mac.lan 95471aa0-31a3-4fd9-a2a6-a4a06f09d7cb. The reviewer executed no additional pytest or product child in this addendum."
+}

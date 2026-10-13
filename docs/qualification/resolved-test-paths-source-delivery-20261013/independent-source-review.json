@@ -1,0 +1,95 @@
+{
+  "schema": "hamon-independent-source-review/1",
+  "recordedAt": "2026-10-13T00:39:09.491987+00:00",
+  "reviewer": "shared_delivery",
+  "owner": "source_delivery",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/93",
+  "decision": "ACCEPTED_BOUNDED_SOURCE_REVIEW",
+  "source": {
+    "repo": "Jacob-Met/testpilot",
+    "parent": "478f68adf01658a94a3ede22526da00f580785bd",
+    "branch": "work/hamon-source-delivery/resolved-test-paths-20261013",
+    "candidateGitBlob": "1e801711d0a6eec002372918dd7bc0a525663c77",
+    "candidateFiles": {
+      "testpilot/diff.py": {
+        "bytes": 13352,
+        "sha256": "965493bf1a38af8f3f75e3dd747acbdb0a8a49572fda56197967f3aaa52adb91"
+      },
+      "testpilot/targets.py": {
+        "bytes": 5410,
+        "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0"
+      },
+      "docs/diff-source-boundary.md": {
+        "bytes": 2967,
+        "sha256": "d2c2f1ecda5490717df56d64811c644988b13203cb48d8926d5e9b3d552ca139"
+      },
+      "tests/test_diff_source_boundary.py": {
+        "bytes": 5521,
+        "sha256": "f8442bb2e26a4cbdfa7b6320627c780a83264675959ddc6339bc88b57a6faec2"
+      },
+      "tests/test_resolved_test_paths.py": {
+        "bytes": 6787,
+        "sha256": "a99019b7678be5ae24118d34cd36ccbde367779e3c2c550baffbd38e9898f481"
+      }
+    },
+    "physicalReview": {
+      "pid": 42097,
+      "exitCode": 0
+    }
+  },
+  "findings": [
+    "Read the actual two-line diff.py insertion, all eight added guide lines, and the complete 170-line authored test module. No source edits were made by the reviewer.",
+    "The candidate checks the resolved destination relative to the resolved repository after confinement and before opening source. Existing lexical exclusions retain their precedence.",
+    "The independent contract was frozen and the original run completed before candidate exposure. The exact same contract and receiver bytes were then used on the candidate.",
+    "All 26 candidate cases match literal expected ChangedFunction fields or exception, exact tokenize.open destinations, and fixture bytes. Reviewed source bytes were conserved throughout.",
+    "Ordinary source aliases, Python-coded source.txt destinations, original diff labels, case-sensitive test classification, symlinked roots, explicit test inclusion, missing/deleted/non-Python paths and outside-path refusal retain the frozen behavior.",
+    "Hidden test source, including invalid syntax, is never opened by default. Explicit inclusion still opens and preserves its existing parse error.",
+    "No blocker found within the stated selector scope."
+  ],
+  "contract": {
+    "path": "/tmp/hamon-testpilot-resolved-test-independent-20261013-shared.json",
+    "bytes": 8074,
+    "sha256": "8e5e47c337701681b6de34c324dde05f1820e5b0178308a6b01201377151bc3e"
+  },
+  "receiver": {
+    "path": "/tmp/hamon-testpilot-resolved-test-receive-20261013-shared.py",
+    "bytes": 5228,
+    "sha256": "5e7bca2dde1127bf2a7d229bfa3f9c45d43a6c568dd714ba1a1ad2f82d084a8d"
+  },
+  "original": {
+    "receipt": "/tmp/hamon-testpilot-resolved-test-original-20261013-lymuzn2y/RECEIVING.json",
+    "bytes": 19231,
+    "sha256": "623f63e6612fe178489a3b43ef131908a258eaffcd1cb4a14a989ecacd757a80",
+    "pid": 9228,
+    "exitCode": 1,
+    "passed": 17,
+    "failed": 9,
+    "classification": "The nine failures were the hidden resolved-test defect; retained without rewriting."
+  },
+  "candidate": {
+    "receipt": "/tmp/hamon-testpilot-resolved-test-candidate-20261013-k179g384/RECEIVING.json",
+    "bytes": 16329,
+    "sha256": "c9f50daa35025d4d78df9145f6e12b40e064b95624de2c7b5f6f6443de4026b4",
+    "pid": 43008,
+    "exitCode": 0,
+    "passed": 26,
+    "failed": 0,
+    "sourceConserved": true
+  },
+  "scope": {
+    "deviceId": "95471aa0-31a3-4fd9-a2a6-a4a06f09d7cb",
+    "host": "Mac.lan",
+    "runtime": "3.13.7 (v3.13.7:bcee1c32211, Aug 14 2025, 19:10:51) [Clang 16.0.0 (clang-1600.0.26.6)]",
+    "evidence": "Actual selector module with fresh synthetic native filesystem fixtures and observed source reads.",
+    "excludedClaims": [
+      "Full maintained suite passes",
+      "Provider or pipeline execution",
+      "Reviewer CLI execution",
+      "Windows symlink privilege",
+      "Protection from concurrent filesystem replacement",
+      "GitHub publication or current-main adoption",
+      "Installed TestPilot adoption"
+    ]
+  },
+  "remaining": "Source owner retains maintained-suite qualification, original-baseline comparison for any platform failures, final source publication and receiving-copy verification. This review does not resolve those gates."
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "hamon.independent-published-source-receiving.v1",
+  "observedAtUtc": "2026-10-13 01:08:28 UTC",
+  "reviewer": "HAMON shared_delivery",
+  "repository": "Jacob-Met/testpilot",
+  "sourceOwner": "HAMON source_delivery",
+  "issue": "https://github.com/Jacob-Met/testpilot/issues/93",
+  "branch": "work/hamon-source-delivery/resolved-test-paths-20261013",
+  "commit": "e7853b0545b9938d1df14ba81706d1f5ad03f8ab",
+  "commitUrl": "https://github.com/Jacob-Met/testpilot/commit/e7853b0545b9938d1df14ba81706d1f5ad03f8ab",
+  "tree": "4de23ca65278bf22281ece502eda3e3ea0bc5ee5",
+  "parents": [
+    "478f68adf01658a94a3ede22526da00f580785bd"
+  ],
+  "receivedFiles": [
+    {
+      "path": "testpilot/diff.py",
+      "bytes": 13352,
+      "sha256": "965493bf1a38af8f3f75e3dd747acbdb0a8a49572fda56197967f3aaa52adb91",
+      "blob": "1e801711d0a6eec002372918dd7bc0a525663c77",
+      "encoding": "base64",
+      "matches": true
+    },
+    {
+      "path": "docs/diff-source-boundary.md",
+      "bytes": 2967,
+      "sha256": "d2c2f1ecda5490717df56d64811c644988b13203cb48d8926d5e9b3d552ca139",
+      "blob": "67857b939bc331c4faea46497dce29b969f390c5",
+      "encoding": "base64",
+      "matches": true
+    },
+    {
+      "path": "tests/test_resolved_test_paths.py",
+      "bytes": 6787,
+      "sha256": "a99019b7678be5ae24118d34cd36ccbde367779e3c2c550baffbd38e9898f481",
+      "blob": "8809e74aaec74291c7b36409e0eaa9b53b10af25",
+      "encoding": "base64",
+      "matches": true
+    }
+  ],
+  "checks": {
+    "publishedBranchResolvesToReceivedCommit": true,
+    "exactlyThreeChangedFiles": true,
+    "expectedSoleOriginalParent": true,
+    "completePublishedFileBytesMatchReviewedNativeBytes": true,
+    "publishedGitBlobIdentitiesMatchReviewedPins": true,
+    "noSourceEditOrTestReplayByThisReceiving": true
+  },
+  "method": "Read the exact published branch ref and commit through connected GitHub GET; receive all three complete files through github_fetch_file with base64 encoding; decode complete content and compute byte length and SHA-256 independently in the receiving V8 environment; compare Git blob identities with previously reviewed native source pins.",
+  "decision": "ACCEPTED_COMPLETE_PUBLISHED_SOURCE_RECEIVING",
+  "qualificationBoundary": "The independent 26-case original/candidate execution and static source review remain in their unchanged earlier artifacts. The later saved-qualification addendum preserves the failed full-suite result and unchanged-original failures. This record proves publication receiving only.",
+  "limits": [
+    "No qualification directory or archive publication is established by this record; those are separate later receiving work.",
+    "No pull request, main integration, Actions execution, installed runtime, Windows behavior, or Drive delivery is established by these reads.",
+    "No product or test process was launched by this publication receiving."
+  ]
+}
