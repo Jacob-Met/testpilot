@@ -1,0 +1,86 @@
+{
+  "schema": "testpilot.git-mail-footer.publication-manifest.v1",
+  "sealed_utc": "2026-10-13T02:31:16.589799+00:00",
+  "qualified_parent": "b751e1cff2b7902bbebd6e7040f764d49bcb1a46",
+  "qualified_parent_tree": "2057c593b281f4bf7624df41081b57f104697b05",
+  "device_id": "cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90",
+  "artifacts": [
+    {
+      "path": "testpilot/diff.py",
+      "bytes": 13511,
+      "sha256": "87a09dd79848b4a6047539f4f845c0434bf05f61f8a538e86a62afd5f62e30c4",
+      "git_blob": "0dd10d6adc5df3e2a80640847c70aac00f1037af"
+    },
+    {
+      "path": "tests/test_diff_mail_eof.py",
+      "bytes": 7419,
+      "sha256": "3d8e26f11af07b6741f258f1d95279fda8efae7ef8a8ef270cdb97769c7737c7",
+      "git_blob": "42d629e9daf5198133ce51bfee6e1a1922886376"
+    },
+    {
+      "path": "docs/DIFF_MAIL_EOF.md",
+      "bytes": 8370,
+      "sha256": "27d9d8acf2c7e2c60725ae2eeb8de38ebf4cb27c16c93853d6f6f91996116b5e",
+      "git_blob": "c9b9722328e012be054e4f830893da04ec8f3f4b"
+    },
+    {
+      "path": "docs/qualification/diff-mail-eof-20261013/receiving.json",
+      "bytes": 676464,
+      "sha256": "65fd6de87d3e459492ea0d6cf6a415fcc3e4c2322491651827ec6cfacf32a803",
+      "git_blob": "3b39d336d852e72341d9f830dbe2b8a05c6e91ba"
+    },
+    {
+      "path": "docs/qualification/diff-mail-eof-20261013/independent-source-review.json",
+      "bytes": 5367,
+      "sha256": "691ed4c571835c9c661e897857f64da73c1409cffbfbb934914f9221c3e6f41f",
+      "git_blob": "c09e9f557690bdb93e32dd425d31d11718f946be"
+    },
+    {
+      "path": "docs/qualification/diff-mail-eof-20261013/independent-receiving.json",
+      "bytes": 168830,
+      "sha256": "76da2803311f2c142babd4c4854c6a9d9e880440300c8b37917dd6d4fc96b935",
+      "git_blob": "331b96ac8067995181702b0803176e0fb33ee444"
+    }
+  ],
+  "producer_records": 38,
+  "independent_records_received_and_rehashed": 96,
+  "source_projections_rehashed_and_preserved": {
+    "original_files": 24,
+    "candidate_files": 24
+  },
+  "driver_exits": [
+    {
+      "name": "original-witness",
+      "pid": 2599081,
+      "exit_code": 0
+    },
+    {
+      "name": "original-course",
+      "pid": 2666714,
+      "exit_code": 0
+    },
+    {
+      "name": "candidate-course",
+      "pid": 2761011,
+      "exit_code": 0
+    }
+  ],
+  "qualification": "128 selected pytest cases normally; new 13 also under explicit -O; not the full repository suite.",
+  "integration": "Separate review branch; no main update, merge, install or service adoption.",
+  "wording_correction": {
+    "description": "Restore the literal initial backslash in exactly two inline EOF annotation examples.",
+    "previous_guide": {
+      "path": "docs/DIFF_MAIL_EOF.md",
+      "bytes": 8368,
+      "sha256": "383875585514971e3cb846c5811ed8d539eda66d942fcc135ccceef5975f707c",
+      "git_blob": "24e22e256da2ceaf95c008d2684368ed036c7885"
+    },
+    "previous_manifest": {
+      "bytes": 2473,
+      "sha256": "f02c9e594b07f04b85e332d7178cf0a07eacd2539aecf1dbed6dbc191f5a3dc4",
+      "git_blob": "499183afc27cafeaa702bc707abd031a7ed340b9"
+    },
+    "source_test_and_receiving_packets_unchanged": true,
+    "additional_test_execution": false
+  }
+}

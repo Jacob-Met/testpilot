@@ -1,0 +1,92 @@
+{
+  "schema": "testpilot.git-mail-footer.independent-source-review.v1",
+  "reviewer": "/root/runtime_quality",
+  "decision": "ACCEPT",
+  "authored_utc": "2026-10-13 02:21:41 UTC",
+  "repository": "Jacob-Met/testpilot",
+  "qualified_base": "b751e1cff2b7902bbebd6e7040f764d49bcb1a46",
+  "source": {
+    "path": "testpilot/diff.py",
+    "bytes": 13511,
+    "sha256": "87a09dd79848b4a6047539f4f845c0434bf05f61f8a538e86a62afd5f62e30c4",
+    "git_blob": "0dd10d6adc5df3e2a80640847c70aac00f1037af"
+  },
+  "test": {
+    "path": "tests/test_diff_mail_eof.py",
+    "bytes": 7419,
+    "sha256": "3d8e26f11af07b6741f258f1d95279fda8efae7ef8a8ef270cdb97769c7737c7",
+    "git_blob": "42d629e9daf5198133ce51bfee6e1a1922886376"
+  },
+  "patch": {
+    "bytes": 824,
+    "sha256": "6bec9f37171efa4980f7d1ee13e649a0cd6d23b53eb76d3d4e3bcac1a290acc0",
+    "git_blob": "6492ba0247db22d00bf9b8da1d4941524092cce9"
+  },
+  "original": {
+    "bytes": 13252,
+    "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+    "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886"
+  },
+  "source_review": {
+    "complete_candidate_test_and_patch_read": true,
+    "original_fetched_from_actual_pinned_github_source": true,
+    "native_identity_audit": {
+      "pid": 2771132,
+      "exit_code": 0
+    },
+    "mechanical_reversal_recovers_every_original_byte": true,
+    "scope": "Three added lines (two comments and marked_deletion) plus one predicate change inside parse_unified_diff's Git mail signature detection.",
+    "findings": [
+      "The exemption requires both pending old-side records and an immediate exact no-newline marker. In that case the delimiter-looking deleted source line reaches existing body accounting, reducing old_left once; the annotation itself consumes no source count.",
+      "The old_left > 0 condition matters: after a completed hunk the same marker text can be an authored mail signature. Those real Git-produced signatures remain footer metadata.",
+      "Outstanding old or new counts still trigger the existing incomplete-hunk refusal after the source annotation; the source-only review also inspected the owner's damaged-count tests and their no-source-read check.",
+      "All header/path decoding, hunk accounting, final completion checks, functions_touching, changed_functions, source admission and alias-related code outside the predicate remain exact original bytes.",
+      "The 13 parametrized owner cases cover unsigned LF/CRLF and terminal-LF transport, real signatures with/without source EOF markers, a later-file body, actual file/stdin CLI routes and missing-count refusal. The new CLI helper explicitly passes -O when its own interpreter is optimized; no child optimization is inferred from a parent-only flag."
+    ]
+  },
+  "independent_execution": {
+    "device_id": "cadafaf3-4d0b-4c4f-a0d3-34a95d2cec90",
+    "hostname": "hamon-thinkpad",
+    "uid": 1000,
+    "python": "3.14.4",
+    "git": "2.53.0",
+    "optimization": 0,
+    "original_driver": {
+      "pid": 2647999,
+      "exit_code": 0,
+      "expected_refusals": 1,
+      "accepted_controls": 5,
+      "receipt": "original-receiving.json"
+    },
+    "candidate_driver": {
+      "pid": 2771444,
+      "exit_code": 0,
+      "accepted_cases": 6,
+      "receipt": "candidate-receiving.json"
+    },
+    "fixtures": "Two independently authored private Git repositories. source_eof changes sample.py and empties a file whose final line is '- ' without LF; signature_eof changes sample.py only. Each supplies unsigned, default-signed and explicit EOF-marker-signed format-patch output.",
+    "unchanged_driver": true,
+    "unchanged_prepared_fixtures": true,
+    "git_command_counts": {
+      "original_preparation_and_receiving": 28,
+      "candidate_receiving": 10
+    },
+    "actual_patch_count": 6,
+    "plain_diff_controls": 2,
+    "results": "All six candidate mail patches pass git apply --reverse --check and produce the same normalized FileChange records and exact sample.py:selected ChangedFunction as their plain-diff controls. Original unsigned source-EOF mail refuses at record24 as a premature signature; its other five controls pass.",
+    "fixture_heads": [
+      "5a283f7fc11780e0504dfcffce5929c9b7dc72fe",
+      "14b3643769d9c4cb3269214e5281b127fa5a774b"
+    ],
+    "receiver": "receive.py",
+    "work_directory": "/var/tmp/testpilot-footer-review-runtime-quality-20261013"
+  },
+  "limits": [
+    "Independent receiving is normal Python only. It is not an independent -O run, actual TestPilot CLI course, maintained pytest suite rerun, or whole-repository qualification.",
+    "Owner-reported pytest/CLI results keep their producer attribution. The source reviewer inspected the tests but does not substitute that reading for their execution.",
+    "The independent fixtures, saved patches and commands are authored local data. No user's repository content or application state was mutated.",
+    "The historical driver embeds its receiver path and source pins. Replay requires deliberate path adaptation, a new harness identity, fresh fixtures/output names and preservation of earlier records.",
+    "This review accepts the exact source/test/patch identities above. Later unrelated source composition requires its own source equivalence or receiving; integration and installed adoption remain with the established owner."
+  ],
+  "request_changes": []
+}

@@ -133,7 +133,10 @@ def parse_unified_diff(text: str) -> list[FileChange]:
         # source line can be "-- "; the footer cannot fill a missing old line.
         if mail_envelope and saw_hunk and line == "-- " and record_number < len(records):
             signature = records[record_number].removesuffix("\r")
-            if signature and all(
+            # An EOF marker annotates a pending source deletion, even when
+            # that deletion has the same text as the mail delimiter.
+            marked_deletion = old_left > 0 and signature == "\\ No newline at end of file"
+            if signature and not marked_deletion and all(
                 not records[index].removesuffix("\r").startswith(("+", "-", " ", "@@", "diff --git "))
                 for index in range(record_number, len(records))
             ):
