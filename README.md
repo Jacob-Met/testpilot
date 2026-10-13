@@ -137,6 +137,25 @@ quality claim. Source, messages and model text are rendered literally, with
 visible escapes for HTML-incompatible controls or surrogate characters. The
 embedded original downloads remain unchanged.
 
+### Reopen a saved run
+
+An older output directory may have `report.json` and `testpilot.patch` without
+an HTML review. From the checkout, reopen an explicitly selected matching pair
+with the standalone saved-report command. For example, the bundled archived pair:
+
+```sh
+python -m testpilot.saved_report \
+  --report eval/results/calc_clamp/report.json \
+  --patch eval/results/calc_clamp/testpilot.patch \
+  --out calc-clamp-review.html
+```
+
+Choose a new output filename in an existing directory, then open the page
+directly in a browser. It retains exact downloads and hashes of both selected
+inputs. Recorded outcomes stay historical: reopening does not run tests, call
+a model or apply the patch. See [Reopen a saved generation report](docs/SAVED_REPORT_REVIEW.md)
+for matching rules, input limits and output refusals.
+
 ## Saving a complete report
 
 Before replacing a saved review, TestPilot prepares all four outputs, checks the
