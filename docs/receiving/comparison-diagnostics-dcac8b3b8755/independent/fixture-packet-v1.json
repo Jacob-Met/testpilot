@@ -1,0 +1,214 @@
+{
+  "schema": "hamon.testpilot-diagnostics-fixtures/1",
+  "criteria": {
+    "schema": "hamon.testpilot-diagnostics-browser-contract/1",
+    "frozen_before_candidate_exposure": true,
+    "original_commit": "8cd5cdb79923100072b228ae1a92f9d4cda806dc",
+    "original_renderer": "40da0f674798583bd25a177021759aa38b3c5b7b",
+    "reader": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+    "scope": "Saved fictional report comparison only. Never run report-listed tests, generate tests, call providers, or infer improvement.",
+    "pages": [
+      {
+        "name": "mixed",
+        "before": "mixed-before.json",
+        "after": "mixed-after.json",
+        "cases": [
+          [
+            {
+              "nodeid": "dup::case",
+              "outcome": "failed",
+              "message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "pass::case",
+              "outcome": "passed",
+              "message": "Passed diagnostic retained",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "empty::failed",
+              "outcome": "failed",
+              "message": "",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "skip::case",
+              "outcome": "skipped",
+              "message": "Skipped diagnostic retained",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "dup::case",
+              "outcome": "error",
+              "message": "Second duplicate occurrence — error Ω",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "null-attribution::error",
+              "outcome": "error",
+              "message": "No attributed file",
+              "generated_file": null
+            }
+          ],
+          [
+            {
+              "nodeid": "after::error",
+              "outcome": "error",
+              "message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "dup::case",
+              "outcome": "passed",
+              "message": "First duplicate is passed",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "dup::case",
+              "outcome": "failed",
+              "message": "Second duplicate is failed",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "after::skipped",
+              "outcome": "skipped",
+              "message": "",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "after::empty-error",
+              "outcome": "error",
+              "message": "",
+              "generated_file": "fictional/tests/test_saved.py"
+            }
+          ]
+        ],
+        "initial_original": [
+          [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          [
+            false,
+            false,
+            false,
+            false,
+            false
+          ]
+        ],
+        "initial_candidate": [
+          [
+            true,
+            false,
+            true,
+            false,
+            true,
+            true
+          ],
+          [
+            true,
+            false,
+            true,
+            false,
+            true
+          ]
+        ],
+        "junit": [
+          "Available",
+          "Unavailable"
+        ]
+      },
+      {
+        "name": "incomplete",
+        "before": "incomplete-before.json",
+        "after": "none-after.json",
+        "cases": [
+          [
+            {
+              "nodeid": "incomplete::failed",
+              "outcome": "failed",
+              "message": "JUnit flag absent; case remains recorded",
+              "generated_file": "fictional/tests/test_saved.py"
+            },
+            {
+              "nodeid": "incomplete::passed",
+              "outcome": "passed",
+              "message": "",
+              "generated_file": "fictional/tests/test_saved.py"
+            }
+          ],
+          []
+        ],
+        "initial_original": [
+          [
+            false,
+            false
+          ],
+          []
+        ],
+        "initial_candidate": [
+          [
+            true,
+            false
+          ],
+          []
+        ],
+        "junit": [
+          "Availability was not recorded",
+          "No test result recorded"
+        ]
+      }
+    ],
+    "literal_message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+    "visible_literal_message": "first line\nCRLF\\r\nbare\\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">\\x80\\u2028\\u2029",
+    "expected_print": "All recorded case content visible in print media regardless screen disclosure; returning to screen preserves manually toggled states. No physical print claim.",
+    "browser": {
+      "javascript_enabled": false,
+      "desktop": [
+        1280,
+        900
+      ],
+      "narrow": [
+        390,
+        844
+      ],
+      "actual_downloads": [
+        "before-report.json",
+        "after-report.json"
+      ],
+      "download_source_page": "mixed",
+      "requests": "file navigation and data downloads only; block/record HTTP(S), no external requests expected",
+      "storage": "Fresh isolated profile; inspect accessible local/session storage and storage_state; no broad forensic claim",
+      "keyboard": "Actual Tab navigation to a diagnostic summary, Enter collapse/reopen. Native click controls retained.",
+      "literal": "No script/img/b nodes from diagnostic text; visible controls escaped, original JSON bytes exact"
+    },
+    "custody": "Exact source/fixture/HTML inventories plus bytes/mode/mtime/inode before/after; source and report data remain unchanged; collect child/process exits and distinguish managed disconnect from unobserved browser OS exit."
+  },
+  "files": [
+    {
+      "path": "mixed-before.json",
+      "encoding": "utf-8",
+      "content": "﻿{\r\n  \"status\": \"failed\",\r\n  \"changed_functions\": [\r\n    {\r\n      \"path\": \"fictional/calc.py\",\r\n      \"qualname\": \"clamp\",\r\n      \"module\": \"fictional\",\r\n      \"lineno\": 1,\r\n      \"end_lineno\": 2,\r\n      \"changed_lines\": [\r\n        2\r\n      ],\r\n      \"source\": \"def clamp(x):\\n    return x\",\r\n      \"is_method\": false\r\n    }\r\n  ],\r\n  \"repair_rounds_used\": 0,\r\n  \"max_repair_rounds\": 1,\r\n  \"tests_written\": 6,\r\n  \"test_files\": {\r\n    \"fictional/tests/test_saved.py\": \"raise RuntimeError('FICTIONAL_REPORT_MUST_NOT_EXECUTE')\\n\"\r\n  },\r\n  \"final\": {\r\n    \"returncode\": 1,\r\n    \"timed_out\": false,\r\n    \"duration_s\": 0.125,\r\n    \"timeout_s\": 15,\r\n    \"output\": \"Before saved output only\\n\",\r\n    \"cases\": [\r\n      {\r\n        \"nodeid\": \"dup::case\",\r\n        \"outcome\": \"failed\",\r\n        \"message\": \"first line\\nCRLF\\r\\nbare\\rtab\\t Ω 中 <b>literal & note</b> <img src=\\\"https://invalid.example/no-request.png\\\">  \",\r\n        \"generated_file\": \"fictional/tests/test_saved.py\"\r\n      },\r\n      {\r\n        \"nodeid\": \"pass::case\",\r\n        \"outcome\": \"passed\",\r\n        \"message\": \"Passed diagnostic retained\",\r\n        \"generated_file\": \"fictional/tests/test_saved.py\"\r\n      },\r\n      {\r\n        \"nodeid\": \"empty::failed\",\r\n        \"outcome\": \"failed\",\r\n        \"message\": \"\",\r\n        \"generated_file\": \"fictional/tests/test_saved.py\"\r\n      },\r\n      {\r\n        \"nodeid\": \"skip::case\",\r\n        \"outcome\": \"skipped\",\r\n        \"message\": \"Skipped diagnostic retained\",\r\n        \"generated_file\": \"fictional/tests/test_saved.py\"\r\n      },\r\n      {\r\n        \"nodeid\": \"dup::case\",\r\n        \"outcome\": \"error\",\r\n        \"message\": \"Second duplicate occurrence — error Ω\",\r\n        \"generated_file\": \"fictional/tests/test_saved.py\"\r\n      },\r\n      {\r\n        \"nodeid\": \"null-attribution::error\",\r\n        \"outcome\": \"error\",\r\n        \"message\": \"No attributed file\",\r\n        \"generated_file\": null\r\n      }\r\n    ],\r\n    \"coverage\": null,\r\n    \"generated_files\": [\r\n      \"fictional/tests/test_saved.py\"\r\n    ],\r\n    \"passed\": 1,\r\n    \"failed\": 2,\r\n    \"errors\": 2,\r\n    \"skipped\": 1,\r\n    \"ok\": false,\r\n    \"summary\": \"Before fictional mixed outcomes\",\r\n    \"junit_available\": true,\r\n    \"generated\": {\r\n      \"collected\": 6,\r\n      \"passed\": 1,\r\n      \"failed\": 2,\r\n      \"error\": 2,\r\n      \"skipped\": 1\r\n    }\r\n  },\r\n  \"patch\": \"\",\r\n  \"coverage\": null,\r\n  \"ledger\": {\r\n    \"total_tokens\": 0,\r\n    \"total_cost_usd\": 0,\r\n    \"cost_is_complete\": false,\r\n    \"tokens_estimated\": true,\r\n    \"by_model\": {},\r\n    \"entries\": []\r\n  },\r\n  \"rounds\": [],\r\n  \"plan\": \"Read only fictional saved records.\",\r\n  \"message\": \"Before fictional report; no retained test is to be executed.\",\r\n  \"ok\": false,\r\n  \"extra\": {\r\n    \"literal\": \"first line\\nCRLF\\r\\nbare\\rtab\\t Ω 中 <b>literal & note</b> <img src=\\\"https://invalid.example/no-request.png\\\">  \",\r\n    \"number_spelling\": 1e-8\r\n  }\r\n}\r\n"
+    },
+    {
+      "path": "mixed-after.json",
+      "encoding": "utf-8",
+      "content": "{\n  \"status\": \"failed\",\n  \"changed_functions\": [\n    {\n      \"path\": \"fictional/calc.py\",\n      \"qualname\": \"clamp\",\n      \"module\": \"fictional\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def clamp(x):\\n    return x\",\n      \"is_method\": false\n    }\n  ],\n  \"repair_rounds_used\": 0,\n  \"max_repair_rounds\": 1,\n  \"tests_written\": 5,\n  \"test_files\": {\n    \"fictional/tests/test_saved.py\": \"raise RuntimeError('FICTIONAL_REPORT_MUST_NOT_EXECUTE')\\n\"\n  },\n  \"final\": {\n    \"returncode\": 1,\n    \"timed_out\": false,\n    \"duration_s\": 0.125,\n    \"timeout_s\": 15,\n    \"output\": \"After saved output only\\n\",\n    \"cases\": [\n      {\n        \"nodeid\": \"after::error\",\n        \"outcome\": \"error\",\n        \"message\": \"first line\\nCRLF\\r\\nbare\\rtab\\t Ω 中 <b>literal & note</b> <img src=\\\"https://invalid.example/no-request.png\\\">  \",\n        \"generated_file\": \"fictional/tests/test_saved.py\"\n      },\n      {\n        \"nodeid\": \"dup::case\",\n        \"outcome\": \"passed\",\n        \"message\": \"First duplicate is passed\",\n        \"generated_file\": \"fictional/tests/test_saved.py\"\n      },\n      {\n        \"nodeid\": \"dup::case\",\n        \"outcome\": \"failed\",\n        \"message\": \"Second duplicate is failed\",\n        \"generated_file\": \"fictional/tests/test_saved.py\"\n      },\n      {\n        \"nodeid\": \"after::skipped\",\n        \"outcome\": \"skipped\",\n        \"message\": \"\",\n        \"generated_file\": \"fictional/tests/test_saved.py\"\n      },\n      {\n        \"nodeid\": \"after::empty-error\",\n        \"outcome\": \"error\",\n        \"message\": \"\",\n        \"generated_file\": \"fictional/tests/test_saved.py\"\n      }\n    ],\n    \"coverage\": null,\n    \"generated_files\": [\n      \"fictional/tests/test_saved.py\"\n    ],\n    \"passed\": 1,\n    \"failed\": 1,\n    \"errors\": 2,\n    \"skipped\": 1,\n    \"ok\": false,\n    \"summary\": \"After fictional mixed outcomes\",\n    \"junit_available\": false\n  },\n  \"patch\": \"\",\n  \"coverage\": null,\n  \"ledger\": {\n    \"total_tokens\": 0,\n    \"total_cost_usd\": 0,\n    \"cost_is_complete\": false,\n    \"tokens_estimated\": true,\n    \"by_model\": {},\n    \"entries\": []\n  },\n  \"rounds\": [],\n  \"plan\": \"Read only fictional saved records.\",\n  \"message\": \"After fictional report; no retained test is to be executed.\",\n  \"ok\": false,\n  \"extra\": {\n    \"literal\": \"first line\\nCRLF\\r\\nbare\\rtab\\t Ω 中 <b>literal & note</b> <img src=\\\"https://invalid.example/no-request.png\\\">  \",\n    \"number_spelling\": 1e-8\n  }\n}\n"
+    },
+    {
+      "path": "incomplete-before.json",
+      "encoding": "utf-8",
+      "content": "{\n  \"status\": \"failed\",\n  \"changed_functions\": [\n    {\n      \"path\": \"fictional/calc.py\",\n      \"qualname\": \"clamp\",\n      \"module\": \"fictional\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def clamp(x):\\n    return x\",\n      \"is_method\": false\n    }\n  ],\n  \"repair_rounds_used\": 0,\n  \"max_repair_rounds\": 1,\n  \"tests_written\": 2,\n  \"test_files\": {\n    \"fictional/tests/test_saved.py\": \"raise RuntimeError('FICTIONAL_REPORT_MUST_NOT_EXECUTE')\\n\"\n  },\n  \"final\": {\n    \"returncode\": 1,\n    \"timed_out\": false,\n    \"duration_s\": 0.125,\n    \"timeout_s\": 15,\n    \"output\": \"Incomplete saved output only\\n\",\n    \"cases\": [\n      {\n        \"nodeid\": \"incomplete::failed\",\n        \"outcome\": \"failed\",\n        \"message\": \"JUnit flag absent; case remains recorded\",\n        \"generated_file\": \"fictional/tests/test_saved.py\"\n      },\n      {\n        \"nodeid\": \"incomplete::passed\",\n        \"outcome\": \"passed\",\n        \"message\": \"\",\n        \"generated_file\": \"fictional/tests/test_saved.py\"\n      }\n    ],\n    \"coverage\": null,\n    \"generated_files\": [\n      \"fictional/tests/test_saved.py\"\n    ],\n    \"passed\": 1,\n    \"failed\": 1,\n    \"errors\": 0,\n    \"skipped\": 0,\n    \"ok\": false,\n    \"summary\": \"Incomplete fictional mixed outcomes\"\n  },\n  \"patch\": \"\",\n  \"coverage\": null,\n  \"ledger\": {\n    \"total_tokens\": 0,\n    \"total_cost_usd\": 0,\n    \"cost_is_complete\": false,\n    \"tokens_estimated\": true,\n    \"by_model\": {},\n    \"entries\": []\n  },\n  \"rounds\": [],\n  \"plan\": \"Read only fictional saved records.\",\n  \"message\": \"Incomplete fictional report; no retained test is to be executed.\",\n  \"ok\": false,\n  \"extra\": {\n    \"literal\": \"first line\\nCRLF\\r\\nbare\\rtab\\t Ω 中 <b>literal & note</b> <img src=\\\"https://invalid.example/no-request.png\\\">  \",\n    \"number_spelling\": 1e-8\n  }\n}\n"
+    },
+    {
+      "path": "none-after.json",
+      "encoding": "utf-8",
+      "content": "{\n  \"status\": \"failed\",\n  \"changed_functions\": [\n    {\n      \"path\": \"fictional/calc.py\",\n      \"qualname\": \"clamp\",\n      \"module\": \"fictional\",\n      \"lineno\": 1,\n      \"end_lineno\": 2,\n      \"changed_lines\": [\n        2\n      ],\n      \"source\": \"def clamp(x):\\n    return x\",\n      \"is_method\": false\n    }\n  ],\n  \"repair_rounds_used\": 0,\n  \"max_repair_rounds\": 1,\n  \"tests_written\": 999,\n  \"test_files\": {\n    \"fictional/tests/test_saved.py\": \"raise RuntimeError('FICTIONAL_REPORT_MUST_NOT_EXECUTE')\\n\"\n  },\n  \"final\": null,\n  \"patch\": \"\",\n  \"coverage\": null,\n  \"ledger\": {\n    \"total_tokens\": 0,\n    \"total_cost_usd\": 0,\n    \"cost_is_complete\": false,\n    \"tokens_estimated\": true,\n    \"by_model\": {},\n    \"entries\": []\n  },\n  \"rounds\": [],\n  \"plan\": \"Read only fictional saved records.\",\n  \"message\": \"No final fictional report; no retained test is to be executed.\",\n  \"ok\": false,\n  \"extra\": {\n    \"literal\": \"first line\\nCRLF\\r\\nbare\\rtab\\t Ω 中 <b>literal & note</b> <img src=\\\"https://invalid.example/no-request.png\\\">  \",\n    \"number_spelling\": 1e-8\n  }\n}\n"
+    }
+  ]
+}

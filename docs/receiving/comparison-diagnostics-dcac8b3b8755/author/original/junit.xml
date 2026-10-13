@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="5" time="0.061" timestamp="2026-10-13T20:12:57.070363+00:00" hostname="hamon-thinkpad"><testcase classname="tests.test_compare_diagnostics" name="test_mixed_occurrences_show_failures_in_both_columns_without_changing_payloads" time="0.002"><failure message="assert [False, False... False, False] == [False, True,..., True, False]&#10;  &#10;  At index 1 diff: False != True&#10;  Use -v to get more diff">def test_mixed_occurrences_show_failures_in_both_columns_without_changing_payloads():
+        before = saved(["passed", "failed", "skipped", "error"])
+        after = saved(["error", "skipped", "failed", "passed"])
+        page = render_comparison(before, after)
+        rows = parse_diagnostics(page)
+&gt;       assert [r["open"] for r in rows["Before"]] == [False, True, False, True, False]
+E       assert [False, False... False, False] == [False, True,..., True, False]
+E         
+E         At index 1 diff: False != True
+E         Use -v to get more diff
+
+tests/test_compare_diagnostics.py:90: AssertionError</failure></testcase><testcase classname="tests.test_compare_diagnostics" name="test_open_diagnostics_do_not_promote_incomplete_execution_evidence[False]" time="0.002"><failure message="assert [False, False, False] == [True, True, False]&#10;  &#10;  At index 0 diff: False != True&#10;  Use -v to get more diff">junit = False
+
+    @pytest.mark.parametrize("junit", [False, None])
+    def test_open_diagnostics_do_not_promote_incomplete_execution_evidence(junit):
+        report = saved(["failed", "error"], junit)
+        page = render_comparison(report, report)
+        rows = parse_diagnostics(page)
+&gt;       assert [r["open"] for r in rows["Before"]] == [True, True, False]
+E       assert [False, False, False] == [True, True, False]
+E         
+E         At index 0 diff: False != True
+E         Use -v to get more diff
+
+tests/test_compare_diagnostics.py:107: AssertionError</failure></testcase><testcase classname="tests.test_compare_diagnostics" name="test_open_diagnostics_do_not_promote_incomplete_execution_evidence[None]" time="0.002"><failure message="assert [False, False, False] == [True, True, False]&#10;  &#10;  At index 0 diff: False != True&#10;  Use -v to get more diff">junit = None
+
+    @pytest.mark.parametrize("junit", [False, None])
+    def test_open_diagnostics_do_not_promote_incomplete_execution_evidence(junit):
+        report = saved(["failed", "error"], junit)
+        page = render_comparison(report, report)
+        rows = parse_diagnostics(page)
+&gt;       assert [r["open"] for r in rows["Before"]] == [True, True, False]
+E       assert [False, False, False] == [True, True, False]
+E         
+E         At index 0 diff: False != True
+E         Use -v to get more diff
+
+tests/test_compare_diagnostics.py:107: AssertionError</failure></testcase><testcase classname="tests.test_compare_diagnostics" name="test_absent_or_empty_final_cases_do_not_add_diagnostic_disclosures[None]" time="0.001" /><testcase classname="tests.test_compare_diagnostics" name="test_absent_or_empty_final_cases_do_not_add_diagnostic_disclosures[empty]" time="0.001" /></testsuite></testsuites>

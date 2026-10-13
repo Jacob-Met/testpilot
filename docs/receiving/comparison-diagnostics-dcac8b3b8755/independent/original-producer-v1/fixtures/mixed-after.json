@@ -1,0 +1,91 @@
+{
+  "status": "failed",
+  "changed_functions": [
+    {
+      "path": "fictional/calc.py",
+      "qualname": "clamp",
+      "module": "fictional",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ],
+      "source": "def clamp(x):\n    return x",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 1,
+  "tests_written": 5,
+  "test_files": {
+    "fictional/tests/test_saved.py": "raise RuntimeError('FICTIONAL_REPORT_MUST_NOT_EXECUTE')\n"
+  },
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "duration_s": 0.125,
+    "timeout_s": 15,
+    "output": "After saved output only\n",
+    "cases": [
+      {
+        "nodeid": "after::error",
+        "outcome": "error",
+        "message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "dup::case",
+        "outcome": "passed",
+        "message": "First duplicate is passed",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "dup::case",
+        "outcome": "failed",
+        "message": "Second duplicate is failed",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "after::skipped",
+        "outcome": "skipped",
+        "message": "",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "after::empty-error",
+        "outcome": "error",
+        "message": "",
+        "generated_file": "fictional/tests/test_saved.py"
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "fictional/tests/test_saved.py"
+    ],
+    "passed": 1,
+    "failed": 1,
+    "errors": 2,
+    "skipped": 1,
+    "ok": false,
+    "summary": "After fictional mixed outcomes",
+    "junit_available": false
+  },
+  "patch": "",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "Read only fictional saved records.",
+  "message": "After fictional report; no retained test is to be executed.",
+  "ok": false,
+  "extra": {
+    "literal": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+    "number_spelling": 1e-8
+  }
+}

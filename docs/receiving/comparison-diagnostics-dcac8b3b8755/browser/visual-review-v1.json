@@ -1,0 +1,34 @@
+{
+  "schema": "hamon.testpilot-diagnostics-visual-review/1",
+  "recorded_at": "2026-10-13T20:40:09.834083+00:00",
+  "reviewer": "context_delivery",
+  "source": "Actual saved screenshots read through RDC image output after the one successful candidate browser course; no screenshot or course replay",
+  "observations": [
+    "390px: focused failed-case summary and literal diagnostic are readable; empty-diagnostic fallback is visible; passed/skipped remain collapsed; no document overflow observed in the independently measured width",
+    "1280px: Before and After are side by side, failed/error panels are visibly open, passed/skipped collapsed; duplicated node labels retain separate occurrence panels",
+    "Literal markup remains text, Unicode is readable, and long code stays in its horizontal scroll region; this is not a font/codepoint or accessibility certification"
+  ],
+  "screenshots": {
+    "diagnostics-390.png": {
+      "bytes": 30665,
+      "sha256": "9d66d0b85afb0cb586218950cd4dde2fb6ee54246fadf15790d226a628c031aa",
+      "git": "853b157ea3152c17c0f9bcd26e9e9a58606cb550",
+      "mode": 33206,
+      "mtime_ns": "1791923820023099900",
+      "inode": "281474978276667"
+    },
+    "diagnostics-desktop.png": {
+      "bytes": 56135,
+      "sha256": "50d2b24b774c7d5ad3af746c38eb7a92bd997253d2737c9a8e8d978f36a770aa",
+      "git": "6a0051bdf5e7ed9d17a138f0e3d73754a15b9930",
+      "mode": 33206,
+      "mtime_ns": "1791923820298514900",
+      "inode": "281474978276669"
+    }
+  },
+  "scope_limits": [
+    "print media visibility only, no physical print",
+    "managed disconnection only, browser OS exit unmeasured",
+    "two original observer failures preserved"
+  ]
+}

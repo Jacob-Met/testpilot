@@ -1,0 +1,104 @@
+﻿{
+  "status": "failed",
+  "changed_functions": [
+    {
+      "path": "fictional/calc.py",
+      "qualname": "clamp",
+      "module": "fictional",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ],
+      "source": "def clamp(x):\n    return x",
+      "is_method": false
+    }
+  ],
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 1,
+  "tests_written": 6,
+  "test_files": {
+    "fictional/tests/test_saved.py": "raise RuntimeError('FICTIONAL_REPORT_MUST_NOT_EXECUTE')\n"
+  },
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "duration_s": 0.125,
+    "timeout_s": 15,
+    "output": "Before saved output only\n",
+    "cases": [
+      {
+        "nodeid": "dup::case",
+        "outcome": "failed",
+        "message": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "pass::case",
+        "outcome": "passed",
+        "message": "Passed diagnostic retained",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "empty::failed",
+        "outcome": "failed",
+        "message": "",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "skip::case",
+        "outcome": "skipped",
+        "message": "Skipped diagnostic retained",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "dup::case",
+        "outcome": "error",
+        "message": "Second duplicate occurrence — error Ω",
+        "generated_file": "fictional/tests/test_saved.py"
+      },
+      {
+        "nodeid": "null-attribution::error",
+        "outcome": "error",
+        "message": "No attributed file",
+        "generated_file": null
+      }
+    ],
+    "coverage": null,
+    "generated_files": [
+      "fictional/tests/test_saved.py"
+    ],
+    "passed": 1,
+    "failed": 2,
+    "errors": 2,
+    "skipped": 1,
+    "ok": false,
+    "summary": "Before fictional mixed outcomes",
+    "junit_available": true,
+    "generated": {
+      "collected": 6,
+      "passed": 1,
+      "failed": 2,
+      "error": 2,
+      "skipped": 1
+    }
+  },
+  "patch": "",
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": false,
+    "tokens_estimated": true,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "Read only fictional saved records.",
+  "message": "Before fictional report; no retained test is to be executed.",
+  "ok": false,
+  "extra": {
+    "literal": "first line\nCRLF\r\nbare\rtab\t Ω 中 <b>literal & note</b> <img src=\"https://invalid.example/no-request.png\">  ",
+    "number_spelling": 1e-8
+  }
+}

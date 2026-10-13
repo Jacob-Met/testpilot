@@ -1,0 +1,53 @@
+FFF..                                                                    [100%]
+=================================== FAILURES ===================================
+_ test_mixed_occurrences_show_failures_in_both_columns_without_changing_payloads _
+
+    def test_mixed_occurrences_show_failures_in_both_columns_without_changing_payloads():
+        before = saved(["passed", "failed", "skipped", "error"])
+        after = saved(["error", "skipped", "failed", "passed"])
+        page = render_comparison(before, after)
+        rows = parse_diagnostics(page)
+>       assert [r["open"] for r in rows["Before"]] == [False, True, False, True, False]
+E       assert [False, False... False, False] == [False, True,..., True, False]
+E         
+E         At index 1 diff: False != True
+E         Use -v to get more diff
+
+tests/test_compare_diagnostics.py:90: AssertionError
+__ test_open_diagnostics_do_not_promote_incomplete_execution_evidence[False] ___
+
+junit = False
+
+    @pytest.mark.parametrize("junit", [False, None])
+    def test_open_diagnostics_do_not_promote_incomplete_execution_evidence(junit):
+        report = saved(["failed", "error"], junit)
+        page = render_comparison(report, report)
+        rows = parse_diagnostics(page)
+>       assert [r["open"] for r in rows["Before"]] == [True, True, False]
+E       assert [False, False, False] == [True, True, False]
+E         
+E         At index 0 diff: False != True
+E         Use -v to get more diff
+
+tests/test_compare_diagnostics.py:107: AssertionError
+___ test_open_diagnostics_do_not_promote_incomplete_execution_evidence[None] ___
+
+junit = None
+
+    @pytest.mark.parametrize("junit", [False, None])
+    def test_open_diagnostics_do_not_promote_incomplete_execution_evidence(junit):
+        report = saved(["failed", "error"], junit)
+        page = render_comparison(report, report)
+        rows = parse_diagnostics(page)
+>       assert [r["open"] for r in rows["Before"]] == [True, True, False]
+E       assert [False, False, False] == [True, True, False]
+E         
+E         At index 0 diff: False != True
+E         Use -v to get more diff
+
+tests/test_compare_diagnostics.py:107: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_compare_diagnostics.py::test_mixed_occurrences_show_failures_in_both_columns_without_changing_payloads
+FAILED tests/test_compare_diagnostics.py::test_open_diagnostics_do_not_promote_incomplete_execution_evidence[False]
+FAILED tests/test_compare_diagnostics.py::test_open_diagnostics_do_not_promote_incomplete_execution_evidence[None]
+3 failed, 2 passed in 0.06s

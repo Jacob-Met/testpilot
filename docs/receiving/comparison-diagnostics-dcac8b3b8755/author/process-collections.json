@@ -1,0 +1,56 @@
+{
+  "schema": "hamon.testpilot-diagnostics-collected-processes/1",
+  "scope": "Exact connector process responses; producer tests and source admission are detailed in paired native receipts",
+  "original_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 253663 (shell: bash)\nInitial output:\n{\"mode\": \"original\", \"passed\": true, \"child_pid\": 253730, \"returncode\": 1, \"counts\": {\"selected\": 5, \"failed\": 3, \"error\": 0, \"skipped\": 0, \"passed\": 2}, \"source_preserved\": true, \"receipt\": \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-author-v1/original/receiving.json\"}\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      }
+    ],
+    "isError": false
+  },
+  "original_collected": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"mode\": \"original\", \"passed\": true, \"child_pid\": 253730, \"returncode\": 1, \"counts\": {\"selected\": 5, \"failed\": 3, \"error\": 0, \"skipped\": 0, \"passed\": 2}, \"source_preserved\": true, \"receipt\": \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-author-v1/original/receiving.json\"}\n\n✅ Process completed with exit code 0 (runtime: 0.41s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      }
+    ],
+    "isError": false
+  },
+  "candidate_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 254925 (shell: bash)\nInitial output:\n{\"mode\": \"candidate\", \"passed\": true, \"child_pid\": 254992, \"returncode\": 0, \"counts\": {\"selected\": 9, \"failed\": 0, \"error\": 0, \"skipped\": 0, \"passed\": 9}, \"source_preserved\": true, \"receipt\": \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-author-v1/candidate/receiving.json\"}\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      }
+    ],
+    "isError": false
+  },
+  "candidate_collected": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"mode\": \"candidate\", \"passed\": true, \"child_pid\": 254992, \"returncode\": 0, \"counts\": {\"selected\": 9, \"failed\": 0, \"error\": 0, \"skipped\": 0, \"passed\": 9}, \"source_preserved\": true, \"receipt\": \"/home/jacob/hamon-dcac8b3b8755-testpilot-diagnostics-author-v1/candidate/receiving.json\"}\n\n✅ Process completed with exit code 0 (runtime: 0.38s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: hamon-thinkpad (d55b2499-5e82-4805-819a-d0d7ddea1efe)]"
+      }
+    ],
+    "isError": false
+  }
+}
