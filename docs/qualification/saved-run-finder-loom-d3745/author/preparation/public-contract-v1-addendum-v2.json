@@ -1,0 +1,11 @@
+{
+  "schema": "hamon.loom.testpilot-history.public-contract-addendum.v2",
+  "created_at": "2026-10-13T23:01:31.655330+00:00",
+  "base_contract_sha256": "cea5d41473ac1aa7ad9d5d22afa1d53f1eec555d18e59c517b9fdec1d01fe0ac",
+  "previous_addendum_sha256": "0919692f1839fef2a5eebbc4b0b8e0885cf90ad4d9c0d8d8247c83886b7834b4",
+  "clarifications": [
+    "The counts sentence excludes only the candidate_limit overflow file. A total_bytes_limit candidate is counted as considered, as already fixed in addendum v1.",
+    "Regular-file/type and per-file size admission precede the remaining total-byte allowance. A report larger than 16MiB produces report_bytes_limit and scanning continues, even when its size also exceeds remaining total bytes. Only an otherwise per-file-size-admissible candidate can terminate scanning with total_bytes_limit."
+  ],
+  "timing": "The original contract and addendum v1 stay unchanged. Forge identified these wording ambiguities in a public-only review after private author implementation began; the existing unexecuted scanner already uses this order. Root and Forge have not received candidate bodies. This record changes no limits, code, reads or result shape."
+}

@@ -1,0 +1,38 @@
+{
+  "changed_functions": [
+    {
+      "changed_lines": [
+        1
+      ],
+      "end_lineno": 1,
+      "lineno": 1,
+      "path": "Src/\u03a3[bar].py",
+      "qualname": "Stra\u00dfe.handle",
+      "source": "PRIVATE_SOURCE_ONLY_\u03a9"
+    },
+    {
+      "changed_lines": [],
+      "end_lineno": 1,
+      "lineno": 1,
+      "path": "Src/\u03a3[bar].py",
+      "qualname": "Stra\u00dfe.handle",
+      "source": "second source body"
+    }
+  ],
+  "coverage": null,
+  "final": null,
+  "ledger": {},
+  "max_repair_rounds": 0,
+  "message": "PRIVATE_MESSAGE_ONLY",
+  "patch": "",
+  "plan": "",
+  "repair_rounds_used": 0,
+  "rounds": [],
+  "schema": null,
+  "status": "model_error",
+  "test_files": {
+    "tests/a.py": "# authored only",
+    "tests/test_\u6771\u4eac[1].py": "PRIVATE_TEST_BODY"
+  },
+  "tests_written": 2
+}

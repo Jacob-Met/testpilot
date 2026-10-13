@@ -1,0 +1,24 @@
+--- original/README.md
++++ candidate/README.md
+@@ -112,6 +112,21 @@
+ See [explicit targets](docs/EXPLICIT_TARGETS.md) for preview, ordering, refusals,
+ saved selection context and unchanged-function coverage semantics.
+ 
++## Find saved generation and recheck reports
++
++```sh
++python -B -m testpilot history --root eval/results
++python -B -m testpilot history --root saved-runs --max-depth 3 --status failed --json
++```
++
++The finder reads bounded native `report.json` and `recheck.json` files, showing
++literal targets, retained test paths, recorded outcomes and report hashes without
++running tests or a model. Filters select rows; malformed neighbors remain visible
++as problems. Exit 0 means a complete selected scan, exit 1 prints partial results,
++and exit 2 means invalid input or failed output. Paths are not chronology. See
++[saved-run history](docs/HISTORY.md) for literal query filters, depth, work limits
++and the Python API.
++
+ ## Review your own run in a browser
+ 
+ Every run also writes **`report.html`** in its output directory. Open that file

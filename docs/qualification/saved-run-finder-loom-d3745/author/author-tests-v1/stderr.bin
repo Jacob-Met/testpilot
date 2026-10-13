@@ -1,0 +1,26 @@
+test_actual_cli_invalid_root_and_depth_do_not_create (test_history.HistoryTests.test_actual_cli_invalid_root_and_depth_do_not_create) ... ok
+test_actual_cli_json_text_partial_and_no_matches (test_history.HistoryTests.test_actual_cli_json_text_partial_and_no_matches) ... ok
+test_byte_limit_exact_boundary_and_global_overflow_count (test_history.HistoryTests.test_byte_limit_exact_boundary_and_global_overflow_count) ... ok
+test_candidate_budget_excludes_only_its_overflow_file (test_history.HistoryTests.test_candidate_budget_excludes_only_its_overflow_file) ... ok
+test_candidate_named_directory_and_other_names (test_history.HistoryTests.test_candidate_named_directory_and_other_names) ... ok
+test_depth_zero_default_and_eight (test_history.HistoryTests.test_depth_zero_default_and_eight) ... ok
+test_directory_error_discards_local_list_and_keeps_siblings (test_history.HistoryTests.test_directory_error_discards_local_list_and_keeps_siblings) ... ok
+test_entry_overflow_discards_the_entire_directory (test_history.HistoryTests.test_entry_overflow_discards_the_entire_directory) ... ok
+test_filters_are_literal_and_do_not_hide_bad_neighbors (test_history.HistoryTests.test_filters_are_literal_and_do_not_hide_bad_neighbors) ... ok
+test_history_dispatch_does_not_construct_a_model_or_run_tests (test_history.HistoryTests.test_history_dispatch_does_not_construct_a_model_or_run_tests) ... ok
+test_internal_links_are_skipped_and_fifo_never_opened (test_history.HistoryTests.test_internal_links_are_skipped_and_fifo_never_opened) ... ok
+test_invalid_bodies_use_global_budget_before_filters (test_history.HistoryTests.test_invalid_bodies_use_global_budget_before_filters) ... ok
+test_native_core_types_exclude_booleans_and_allow_unknown_extra_fields (test_history.HistoryTests.test_native_core_types_exclude_booleans_and_allow_unknown_extra_fields) ... ok
+test_native_generation_and_recheck_are_literal_and_read_only (test_history.HistoryTests.test_native_generation_and_recheck_are_literal_and_read_only) ... ok
+test_option_admission_precedes_filesystem (test_history.HistoryTests.test_option_admission_precedes_filesystem) ... ok
+test_output_failure_returns_two_without_rescan_or_retry (test_history.HistoryTests.test_output_failure_returns_two_without_rescan_or_retry) ... ok
+test_per_file_limit_precedes_global_and_keeps_later_siblings (test_history.HistoryTests.test_per_file_limit_precedes_global_and_keeps_later_siblings) ... ok
+test_schema_decides_kind_and_null_final_is_generation_only (test_history.HistoryTests.test_schema_decides_kind_and_null_final_is_generation_only) ... ok
+test_size_change_is_a_read_problem_and_keeps_acquired_bytes (test_history.HistoryTests.test_size_change_is_a_read_problem_and_keeps_acquired_bytes) ... ok
+test_strict_json_failures_and_unsupported_schema (test_history.HistoryTests.test_strict_json_failures_and_unsupported_schema) ... ok
+test_text_escapes_controls_and_omits_executable_contents (test_history.HistoryTests.test_text_escapes_controls_and_omits_executable_contents) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 3.056s
+
+OK

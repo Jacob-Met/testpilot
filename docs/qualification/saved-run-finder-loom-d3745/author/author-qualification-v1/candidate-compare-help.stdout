@@ -1,0 +1,7 @@
+usage: testpilot compare [-h] --before BEFORE --after AFTER --out OUT
+
+options:
+  -h, --help       show this help message and exit
+  --before BEFORE  saved report JSON labeled Before
+  --after AFTER    saved report JSON labeled After
+  --out OUT        new self-contained HTML file; existing files are preserved

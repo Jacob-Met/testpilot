@@ -1,0 +1,12 @@
+usage: testpilot targets [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)
+                         [--json] [--target PATH.py::QUALNAME]
+
+options:
+  -h, --help            show this help message and exit
+  --repo REPO
+  --diff DIFF           unified diff file ('-' for stdin)
+  --git-base GIT_BASE   diff the working tree against this git ref
+  --json                include full native target records and source
+  --target PATH.py::QUALNAME
+                        inspect this explicit function; repeat instead of
+                        automatic diff selection

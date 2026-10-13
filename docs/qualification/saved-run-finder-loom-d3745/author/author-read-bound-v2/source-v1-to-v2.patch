@@ -1,0 +1,11 @@
+--- candidate-v1/testpilot/history.py
++++ candidate-v2/testpilot/history.py
+@@ -209,7 +209,7 @@
+             return
+         try:
+             flags = os.O_RDONLY | getattr(os, "O_BINARY", 0) | getattr(os, "O_NONBLOCK", 0) | getattr(os, "O_NOFOLLOW", 0)
+-            with os.fdopen(os.open(path, flags), "rb") as stream:
++            with os.fdopen(os.open(path, flags), "rb", buffering=0) as stream:
+                 admitted = os.fstat(stream.fileno())
+                 if not stat.S_ISREG(admitted.st_mode):
+                     problem(relative, "read_error")

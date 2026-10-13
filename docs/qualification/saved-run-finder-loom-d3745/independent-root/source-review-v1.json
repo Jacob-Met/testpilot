@@ -1,0 +1,70 @@
+{
+  "schema": "hamon.root.testpilot-history.source-and-course-review.v1",
+  "created": "2026-10-13T23:23:16.961526+00:00",
+  "accepted": true,
+  "source_files": [
+    {
+      "path": "testpilot/history.py",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/history.py",
+      "bytes": 16078,
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "mode": 420,
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9"
+    },
+    {
+      "path": "testpilot/__main__.py",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/testpilot/__main__.py",
+      "bytes": 12180,
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "mode": 420,
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa"
+    },
+    {
+      "path": "tests/test_history.py",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/tests/test_history.py",
+      "bytes": 18949,
+      "sha256": "ac0b83edafe7f33cd68ccbf82f6c2132bfa2912e48159808afc31ca51e1da242",
+      "mode": 420,
+      "git_blob": "0093347b825c8b892a48dd984caf3d28e879ac91"
+    },
+    {
+      "path": "docs/HISTORY.md",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/docs/HISTORY.md",
+      "bytes": 7786,
+      "sha256": "c0d690ec767217f790609aacfcbb11e7e6abf5f6d8239f9b7e5aa85b3ea84f45",
+      "mode": 420,
+      "git_blob": "6382294a22b56c5312eeb6a701857cc071c76603"
+    },
+    {
+      "path": "README.md",
+      "source_path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/candidate-v2/README.md",
+      "bytes": 17867,
+      "sha256": "926f32aee860f21a7e9ee25ffca930ffc38b4641a377569aa3b28595842159d1",
+      "mode": 420,
+      "git_blob": "24858cf69c6cd089355902a8e3f3b56b1e421d2f"
+    }
+  ],
+  "complete_projection_files": 24,
+  "original_projection_files": 21,
+  "unchanged_inherited_files": 19,
+  "original_base": "f9ba2d2260f7aa93b3958661aa178ad418df9af6",
+  "original_tree": "6aec92096d7786defc448dc2e5adba838771bcfd",
+  "complete_tree_leaves": 1739,
+  "source_review": "Root read complete history implementation, new21-method test file, complete guide, and exact CLI/README additive diffs after independent controls freeze. Existing21 original Git bodies/modes matched the freshly fetched complete remote tree; inverse additions recover original CLI/README. No executable/provider/model/project-code path is introduced by history dispatch.",
+  "author_evidence": "Original v1:21 normal and6 optimized direct methods plus5 byte-identical existing subcommand help pairs; v2:sole buffering=0 correction with4 focused methods and5 observed raw descriptor opens. Saved streams and preservation recomputed without repeating those courses.",
+  "independent_evidence": {
+    "commands": 34,
+    "passed": 34,
+    "receipt": {
+      "bytes": 59509,
+      "sha256": "c7e8e294752e3ff8e54d04495c3fcbda3b21eae65b16e750ae9bb8e9dccf03e2",
+      "git_blob": "14d6097da2148af8d5eb269561cd4f474dd28717"
+    },
+    "execution_session": 58699,
+    "controller_exit": 0,
+    "input_namespace_records": 22104,
+    "source_namespace_records": 34,
+    "control_records": 47
+  },
+  "limits": "Owned source/control/input observations and real history CLI only; no original record regeneration, native installation, global process/network audit, hostile/concurrent snapshot or whole-suite qualification."
+}

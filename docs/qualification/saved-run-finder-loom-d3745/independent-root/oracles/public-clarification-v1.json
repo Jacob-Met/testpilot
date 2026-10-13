@@ -1,0 +1,9 @@
+{
+  "schema": "hamon.anvil.testpilot-history.public-clarification.v1",
+  "candidate_source_read": false,
+  "clarification": "Root independently read the complete public contract and confirmed that valid finite non-object JSON [] lacks native core, so invalid_report is the intended code. The prepared oracle remains unchanged.",
+  "case_spec_sha256": "6793d9d1466011524f7541c321231f3be78a20addd3170cca257bfd93c07cdbf",
+  "generator_sha256": "50ec83bac95e5bfef2ee3029fd3442a7792dce69b16a7f622a5ae8881d3a999f",
+  "product_execution": false,
+  "original_files_changed": false
+}

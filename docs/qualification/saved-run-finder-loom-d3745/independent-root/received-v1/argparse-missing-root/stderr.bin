@@ -1,0 +1,4 @@
+usage: testpilot history [-h] --root ROOT [--max-depth MAX_DEPTH]
+                         [--status VALUE] [--query QUERY]
+                         [--kind {generation,recheck}] [--json]
+testpilot history: error: the following arguments are required: --root

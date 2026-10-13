@@ -1,0 +1,9 @@
+test_byte_limit_exact_boundary_and_global_overflow_count (test_history.HistoryTests.test_byte_limit_exact_boundary_and_global_overflow_count) ... ok
+test_per_file_limit_precedes_global_and_keeps_later_siblings (test_history.HistoryTests.test_per_file_limit_precedes_global_and_keeps_later_siblings) ... ok
+test_invalid_bodies_use_global_budget_before_filters (test_history.HistoryTests.test_invalid_bodies_use_global_budget_before_filters) ... ok
+test_size_change_is_a_read_problem_and_keeps_acquired_bytes (test_history.HistoryTests.test_size_change_is_a_read_problem_and_keeps_acquired_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.037s
+
+OK

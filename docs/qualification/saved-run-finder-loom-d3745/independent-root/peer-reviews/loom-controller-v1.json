@@ -1,0 +1,34 @@
+{
+  "schema": "hamon.loom.testpilot-history.independent-receiver-review.v1",
+  "utc": "2026-10-13T23:12:48.834866+00:00",
+  "reviewer": "Loom, product author; public-contract harness review only",
+  "verdict": "accepted",
+  "inputs": [
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/receiving-criteria-v1.md",
+      "bytes": 3351,
+      "sha256": "5f9292b62474690d99f9f1a7f46285e7d1eda032ad459785a8707b9931cf2895",
+      "mode": 420
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/receive-history-v1.py",
+      "bytes": 13034,
+      "sha256": "b7cc09399fd6df06fbe0a52652f380bcc0b50262212f584f4f90824642fb5fd4",
+      "mode": 420
+    }
+  ],
+  "observations": [
+    "Actual -S -B module CLI is launched with a minimal explicit environment; case args are restricted to history and no TestPilot implementation is imported by the controller.",
+    "The independently prepared 34-case specification is pinned by its full SHA256; expected output size/hash is checked before each literal byte comparison. Complete source-leaf membership and input leaf/directory/link identities are admitted before execution.",
+    "The specified limits are actual CLI fixtures rather than monkeypatched production constants. The public non-object and count/size precedence interpretations agree with the preserved contract/addenda.",
+    "Every case records its own raw stdout/stderr, exact or explicitly substring-scoped stderr oracle, exit, timeout and owned process-group closure. A timeout or cleanup cannot count as ordinary acceptance.",
+    "Whole source/input namespaces and selected controls are captured before/after. Expected-output files and case specification should remain explicit frozen controls for the stated post-course custody scope.",
+    "Failed cases remain failed while later independent cases execute. Launch/admission/controller failures are retained and disqualify the full course."
+  ],
+  "limits": [
+    "No controller or candidate execution by this reviewer.",
+    "The product author necessarily knows the candidate; this review compares only the public contract with the receiving mechanics and changes no oracle. Root receiver construction remains pre-exposure to candidate.",
+    "Anvil owns independent oracle-generation review; this review does not re-derive the multi-megabyte 34-case expected corpus.",
+    "No OS-wide network/process audit or hostile/concurrent filesystem snapshot claim."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "arithmetic_notes": [
+    "Mixed depth0 sees6entries/1candidate; depth1 sees10entries/4candidates; depth2 sees11entries/5candidates.",
+    "Candidate limit admits1000candidate bodies; all1001root directory names plus1001child report entries yield2002entries before refusing overflow candidate.",
+    "Entry overflow refuses the entire20001-entry root list; no candidate body is processed.",
+    "Total-byte overflow candidate is included in candidate_files per681-byte accepted addendum.",
+    "JSON byte padding is allowed trailing whitespace, so exact16MiB core does not fabricate a huge displayed field.",
+    "No case infers timestamp chronology, executes recorded paths or validates authenticity of recorded hashes."
+  ],
+  "candidate_source_read": false,
+  "case_count": 34,
+  "case_spec": {
+    "bytes": 7352312,
+    "path": "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/case-spec-v1.json",
+    "sha256": "6793d9d1466011524f7541c321231f3be78a20addd3170cca257bfd93c07cdbf"
+  },
+  "file_records": 21052,
+  "generator": {
+    "bytes": 20399,
+    "path": "/workspace/scratch/d3745ea0f44f/anvil/build-history-oracles-v1.py",
+    "sha256": "50ec83bac95e5bfef2ee3029fd3442a7792dce69b16a7f622a5ae8881d3a999f"
+  },
+  "preparation_only": true,
+  "product_execution": false,
+  "public_inputs": [
+    {
+      "bytes": 12827,
+      "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/preparation/public-contract-v1.md",
+      "sha256": "cea5d41473ac1aa7ad9d5d22afa1d53f1eec555d18e59c517b9fdec1d01fe0ac"
+    },
+    {
+      "bytes": 681,
+      "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/preparation/public-contract-v1-addendum.json",
+      "sha256": "0919692f1839fef2a5eebbc4b0b8e0885cf90ad4d9c0d8d8247c83886b7834b4"
+    }
+  ],
+  "schema": "hamon.anvil.testpilot-history.oracle-provenance.v1",
+  "source_reports": [
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/original/eval/results/calc_clamp/report.json",
+      "sha256": "00ce7170150b268cf7484de03658cb4af8f61bcdd64f1500dee46dfe004d52ac"
+    },
+    {
+      "path": "/workspace/scratch/d3745ea0f44f/loom-testpilot-history/original/eval/results/stats_median/report.json",
+      "sha256": "42d085ec5c1d204a85684fd4677bf7cf421ca5c1a090a1f95a51f43ff58bc9d0"
+    }
+  ]
+}

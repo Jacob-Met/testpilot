@@ -1,0 +1,869 @@
+{
+  "schema": "hamon.anvil.testpilot-history.oracle-case-summary.v1",
+  "preparation_only": true,
+  "cases": [
+    {
+      "name": "mixed-default-json",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 3640,
+      "stdout_sha256": "1eccea6d20d392d92c3d7e8fa894a82c6fa6b98d556792ae1c6757ca5b7e57a5",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 4,
+        "problems": 0
+      },
+      "paths": [
+        "alpha/report.json",
+        "beta/recheck.json",
+        "report.json",
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "mixed-default-text",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed"
+      ],
+      "exit": 0,
+      "stdout_bytes": 2503,
+      "stdout_sha256": "5e631bde0718f621b43303386fd53cbc17ec528118de6a7688184b17c7ab42b0"
+    },
+    {
+      "name": "mixed-root-only",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--max-depth",
+        "0",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1450,
+      "stdout_sha256": "6d1819f57df2a3d4118425d881373825dea4e0f490c75216b83e6499c2a6064a",
+      "counts": {
+        "admitted": 1,
+        "bytes_read": 11467,
+        "candidate_files": 1,
+        "entries_seen": 6,
+        "matched": 1,
+        "problems": 0
+      },
+      "paths": [
+        "report.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "mixed-depth-two",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--max-depth",
+        "2",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 3952,
+      "stdout_sha256": "fc2989173460b716dabd9e28b7a172eeed24ad7de3429fc41945687e1c99ad12",
+      "counts": {
+        "admitted": 5,
+        "bytes_read": 19388,
+        "candidate_files": 5,
+        "entries_seen": 11,
+        "matched": 5,
+        "problems": 0
+      },
+      "paths": [
+        "alpha/report.json",
+        "beta/recheck.json",
+        "deep/nested/report.json",
+        "report.json",
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "statuses-or-kind-query-and",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--status",
+        "failed",
+        "--status",
+        "passed",
+        "--status",
+        "failed",
+        "--kind",
+        "recheck",
+        "--query",
+        "[1]",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1745,
+      "stdout_sha256": "f4a986c14049c83ee3cdb13f9d8ae9326473499feeeca4bbfe57b46f42f41539",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 1,
+        "problems": 0
+      },
+      "paths": [
+        "beta/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "literal-casefold-source-path",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "src/\u03c2[BAR].PY",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1383,
+      "stdout_sha256": "9b906a7d6b606764dbc911379d26292e3319a96b074a1e1625e1b8d418b76372",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 1,
+        "problems": 0
+      },
+      "paths": [
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "literal-casefold-qualname",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "STRASSE",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1372,
+      "stdout_sha256": "2795601bb3d238e08f4726712619c39bfaa66963cf2c227dbcd589f4890dec64",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 1,
+        "problems": 0
+      },
+      "paths": [
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "literal-relative-path",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "\u0393[case]",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1377,
+      "stdout_sha256": "959274cc783eb0b34316e4f034f79216fcc713cabc7992696c1c39fc5decc5e0",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 1,
+        "problems": 0
+      },
+      "paths": [
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "literal-test-path",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "\u6771\u4eac[1]",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 2298,
+      "stdout_sha256": "c55da70a1a71ab72cc76285acd35967afb811be936cf0070ebd3e5050d465264",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 2,
+        "problems": 0
+      },
+      "paths": [
+        "beta/recheck.json",
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "source-body-not-searched",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "PRIVATE_SOURCE_ONLY_\u03a9",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 791,
+      "stdout_sha256": "0d48ee7363f310026f1cfd238657867db1ae6e3b030344a967eb059951fbedf6",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 0,
+        "problems": 0
+      },
+      "paths": [],
+      "problems": []
+    },
+    {
+      "name": "recorded-source-path-not-searched",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "SOURCE_REPORT_ONLY",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 783,
+      "stdout_sha256": "486ca0782bcb16b0743257b3905ce9568f5d6e72611f45df17731d8e3e8ad9ef",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 0,
+        "problems": 0
+      },
+      "paths": [],
+      "problems": []
+    },
+    {
+      "name": "diagnostic-body-not-searched",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "OUTPUT_BODY_ONLY",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 781,
+      "stdout_sha256": "7f96a3bffe390e8b04c99c619356ef0691b0e4c253a1f17123ba1e8e14ccb3b4",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 0,
+        "problems": 0
+      },
+      "paths": [],
+      "problems": []
+    },
+    {
+      "name": "status-not-searched",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "suspected_code_bug",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 783,
+      "stdout_sha256": "69796599a526838d9f4e816e0f779f26f6a7dd26f6550b9df1f0ce508bbfabde",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 0,
+        "problems": 0
+      },
+      "paths": [],
+      "problems": []
+    },
+    {
+      "name": "empty-query",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--query",
+        "",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 3638,
+      "stdout_sha256": "86dac4d1df65632c685d870286e80bea81bc5ee91464a1d27514737847132a15",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 4,
+        "problems": 0
+      },
+      "paths": [
+        "alpha/report.json",
+        "beta/recheck.json",
+        "report.json",
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "unknown-empty-status",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/mixed",
+        "--status",
+        "",
+        "--status",
+        "unknown",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 798,
+      "stdout_sha256": "c636b5088a80b1447c43fec6666f363afdc2797e38cfdf0f8fe2be179e111611",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 0,
+        "problems": 0
+      },
+      "paths": [],
+      "problems": []
+    },
+    {
+      "name": "empty-root",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/empty",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 762,
+      "stdout_sha256": "583dc585f0eebb9cdf07bbe4a89bf68ddc1e3ee256cfedcc219cb636367ef1df",
+      "counts": {
+        "admitted": 0,
+        "bytes_read": 0,
+        "candidate_files": 0,
+        "entries_seen": 0,
+        "matched": 0,
+        "problems": 0
+      },
+      "paths": [],
+      "problems": []
+    },
+    {
+      "name": "invalid-neighbors-survive-filter",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/malformed",
+        "--status",
+        "passed",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout_bytes": 1913,
+      "stdout_sha256": "295a46d65213c58d5e42241fbc7a9a91ec8566ae42661fbe562d44a3c075fa9d",
+      "counts": {
+        "admitted": 2,
+        "bytes_read": 932,
+        "candidate_files": 10,
+        "entries_seen": 20,
+        "matched": 0,
+        "problems": 8
+      },
+      "paths": [],
+      "problems": [
+        {
+          "code": "invalid_json",
+          "message": "Not supported finite UTF-8 JSON.",
+          "path": "c-json/report.json"
+        },
+        {
+          "code": "unsupported_schema",
+          "message": "Unsupported saved-report schema.",
+          "path": "d-schema/report.json"
+        },
+        {
+          "code": "invalid_json",
+          "message": "Not supported finite UTF-8 JSON.",
+          "path": "e-duplicate/report.json"
+        },
+        {
+          "code": "invalid_json",
+          "message": "Not supported finite UTF-8 JSON.",
+          "path": "f-nonfinite/report.json"
+        },
+        {
+          "code": "invalid_json",
+          "message": "Not supported finite UTF-8 JSON.",
+          "path": "g-overflow/report.json"
+        },
+        {
+          "code": "invalid_report",
+          "message": "Not a supported generation or recheck core record.",
+          "path": "h-core-bool/report.json"
+        },
+        {
+          "code": "invalid_report",
+          "message": "Not a supported generation or recheck core record.",
+          "path": "i-nonobject/report.json"
+        },
+        {
+          "code": "invalid_json",
+          "message": "Not supported finite UTF-8 JSON.",
+          "path": "j-utf8/report.json"
+        }
+      ]
+    },
+    {
+      "name": "invalid-neighbor-text",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/malformed",
+        "--status",
+        "passed"
+      ],
+      "exit": 1,
+      "stdout_bytes": 1220,
+      "stdout_sha256": "1ff26643c4767d5850249fadd093cd4d93c2d3cd87e3ddc28f97b5d0467b06cd"
+    },
+    {
+      "name": "internal-symlinks-and-candidate-named-directory",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/internal-links",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1075,
+      "stdout_sha256": "a3e933419c9926d106ea1e63a082ef09a702cd11b0ed76fb3af6c47911f1f235",
+      "counts": {
+        "admitted": 1,
+        "bytes_read": 284,
+        "candidate_files": 1,
+        "entries_seen": 7,
+        "matched": 1,
+        "problems": 0
+      },
+      "paths": [
+        "report.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "explicit-root-symlink-resolves",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/selected-root-link",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 3640,
+      "stdout_sha256": "1eccea6d20d392d92c3d7e8fa894a82c6fa6b98d556792ae1c6757ca5b7e57a5",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 19104,
+        "candidate_files": 4,
+        "entries_seen": 10,
+        "matched": 4,
+        "problems": 0
+      },
+      "paths": [
+        "alpha/report.json",
+        "beta/recheck.json",
+        "report.json",
+        "\u03b3[Case]/recheck.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "named-fifo-no-read",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/named-fifo",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout_bytes": 1211,
+      "stdout_sha256": "0a8c524a7adca31b05f9acbcd997387d8060af8c0f54f7dc7bcc9af09b2c15ce",
+      "counts": {
+        "admitted": 1,
+        "bytes_read": 284,
+        "candidate_files": 2,
+        "entries_seen": 3,
+        "matched": 1,
+        "problems": 1
+      },
+      "paths": [
+        "safe/recheck.json"
+      ],
+      "problems": [
+        {
+          "code": "read_error",
+          "message": "Could not read a complete regular report.",
+          "path": "report.json"
+        }
+      ]
+    },
+    {
+      "name": "hardlinks-distinct-records",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/hardlinked-records",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1380,
+      "stdout_sha256": "9be1ea25811a44e1475f8edb8e88f9dcc99ae09f80db958c97f4f718fc98dcb3",
+      "counts": {
+        "admitted": 2,
+        "bytes_read": 568,
+        "candidate_files": 2,
+        "entries_seen": 2,
+        "matched": 2,
+        "problems": 0
+      },
+      "paths": [
+        "recheck.json",
+        "report.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "actual-1001-candidate-limit",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/candidate-budget",
+        "--status",
+        "unknown",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout_bytes": 942,
+      "stdout_sha256": "78e0a5b5571f0b97d237d5c7f5e46c2141974e94d62d4b7ab088734c23aaeda5",
+      "counts": {
+        "admitted": 1000,
+        "bytes_read": 284000,
+        "candidate_files": 1000,
+        "entries_seen": 2002,
+        "matched": 0,
+        "problems": 1
+      },
+      "paths": [],
+      "problems": [
+        {
+          "code": "candidate_limit",
+          "message": "Candidate-file budget reached.",
+          "path": "d1000/report.json"
+        }
+      ]
+    },
+    {
+      "name": "actual-20001-entry-limit",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/entry-budget",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout_bytes": 888,
+      "stdout_sha256": "cd22f22fc966e08e997ea74f98ec8be48ee95498bba462a39baefb5d7a0e3eb6",
+      "counts": {
+        "admitted": 0,
+        "bytes_read": 0,
+        "candidate_files": 0,
+        "entries_seen": 20000,
+        "matched": 0,
+        "problems": 1
+      },
+      "paths": [],
+      "problems": [
+        {
+          "code": "entry_limit",
+          "message": "Directory-entry budget reached.",
+          "path": "."
+        }
+      ]
+    },
+    {
+      "name": "exact-16MiB-admitted",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/exact-report-boundary",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 1092,
+      "stdout_sha256": "400a7522036a0e193e244118170cd0b4ba133f631ec1ba406f7dde69d3e8de7f",
+      "counts": {
+        "admitted": 1,
+        "bytes_read": 16777216,
+        "candidate_files": 1,
+        "entries_seen": 1,
+        "matched": 1,
+        "problems": 0
+      },
+      "paths": [
+        "report.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "per-file-oversize-continues",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/oversize-healthy-sibling",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout_bytes": 1229,
+      "stdout_sha256": "2629352af1276a72d36adfc5125bc5ea22556f8edd19f8cca27ba525ae84b5c1",
+      "counts": {
+        "admitted": 1,
+        "bytes_read": 284,
+        "candidate_files": 2,
+        "entries_seen": 4,
+        "matched": 1,
+        "problems": 1
+      },
+      "paths": [
+        "b/report.json"
+      ],
+      "problems": [
+        {
+          "code": "report_bytes_limit",
+          "message": "Report exceeds the per-file byte limit.",
+          "path": "a/report.json"
+        }
+      ]
+    },
+    {
+      "name": "64MiB-exact-then-fifth-counted",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/total-budget",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout_bytes": 2142,
+      "stdout_sha256": "cd78840f02c575e7854c51186b4fb0013da5d44f008aa1030c5c3cbcace996be",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 67108864,
+        "candidate_files": 5,
+        "entries_seen": 10,
+        "matched": 4,
+        "problems": 1
+      },
+      "paths": [
+        "a/report.json",
+        "b/report.json",
+        "c/report.json",
+        "d/report.json"
+      ],
+      "problems": [
+        {
+          "code": "total_bytes_limit",
+          "message": "Total report-byte budget reached.",
+          "path": "e/report.json"
+        }
+      ]
+    },
+    {
+      "name": "exact-64MiB-complete",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/exact-total-boundary",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout_bytes": 2014,
+      "stdout_sha256": "c31d54466c7f814b49dfb9f1e87e2a6fbb93989184c3f90287d0320b78c52d98",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 67108864,
+        "candidate_files": 4,
+        "entries_seen": 8,
+        "matched": 4,
+        "problems": 0
+      },
+      "paths": [
+        "a/report.json",
+        "b/report.json",
+        "c/report.json",
+        "d/report.json"
+      ],
+      "problems": []
+    },
+    {
+      "name": "per-file-precedes-global-budget",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/per-file-before-global",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout_bytes": 2291,
+      "stdout_sha256": "1518bf91708db5b602dd453b5c771e48ff3ca06e0a72ed37bb9535ef136dd31e",
+      "counts": {
+        "admitted": 4,
+        "bytes_read": 67108864,
+        "candidate_files": 6,
+        "entries_seen": 12,
+        "matched": 4,
+        "problems": 2
+      },
+      "paths": [
+        "a/report.json",
+        "b/report.json",
+        "c/report.json",
+        "d/report.json"
+      ],
+      "problems": [
+        {
+          "code": "report_bytes_limit",
+          "message": "Report exceeds the per-file byte limit.",
+          "path": "e/report.json"
+        },
+        {
+          "code": "total_bytes_limit",
+          "message": "Total report-byte budget reached.",
+          "path": "f/report.json"
+        }
+      ]
+    },
+    {
+      "name": "missing-root",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/absent",
+        "--json"
+      ],
+      "exit": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "file-root",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/seeds/synthetic-minimal.json",
+        "--json"
+      ],
+      "exit": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "invalid-depth",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/empty",
+        "--max-depth",
+        "9",
+        "--json"
+      ],
+      "exit": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "argparse-invalid-kind",
+      "args": [
+        "history",
+        "--root",
+        "/workspace/scratch/d3745ea0f44f/root-testpilot-history/oracles/inputs/empty",
+        "--kind",
+        "other"
+      ],
+      "exit": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "argparse-missing-root",
+      "args": [
+        "history",
+        "--json"
+      ],
+      "exit": 2,
+      "stdout_bytes": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "full_spec_sha256": "6793d9d1466011524f7541c321231f3be78a20addd3170cca257bfd93c07cdbf",
+  "file_records": 21052
+}

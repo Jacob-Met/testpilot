@@ -1,0 +1,14 @@
+usage: testpilot regression [-h] --repo REPO --report REPORT --before BEFORE
+                            --after AFTER --out OUT [--timeout TIMEOUT]
+                            [--python EXECUTABLE]
+
+options:
+  -h, --help           show this help message and exit
+  --repo REPO          root of the local Git worktree
+  --report REPORT      saved report.json or recheck.json
+  --before BEFORE      explicit before Git revision
+  --after AFTER        explicit after Git revision
+  --out OUT            new result directory outside the repository
+  --timeout TIMEOUT    pytest timeout per revision
+  --python EXECUTABLE  project Python for both runs (default: this
+                       interpreter)

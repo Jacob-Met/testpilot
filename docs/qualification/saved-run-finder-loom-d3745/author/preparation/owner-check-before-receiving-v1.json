@@ -1,0 +1,25 @@
+{
+  "schema": "hamon.loom.testpilot-history.owner-check.v1",
+  "utc": "2026-10-13T23:10:17.842Z",
+  "source_ref": {
+    "ref": "refs/heads/main",
+    "node_id": "REF_kwDOU7nhDK9yZWZzL2hlYWRzL21haW4",
+    "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/refs/heads/main",
+    "object": {
+      "sha": "f9ba2d2260f7aa93b3958661aa178ad418df9af6",
+      "type": "commit",
+      "url": "https://api.github.com/repos/Jacob-Met/testpilot/git/commits/f9ba2d2260f7aa93b3958661aa178ad418df9af6"
+    }
+  },
+  "issue_url": "https://github.com/Jacob-Met/testpilot/issues/39",
+  "comments": [
+    {
+      "id": 6156601588,
+      "url": "https://github.com/Jacob-Met/testpilot/issues/39#issuecomment-6156601588",
+      "created_at": "2026-10-13T22:30:43Z",
+      "updated_at": "2026-10-13T22:30:43Z",
+      "body": "### Continued original-first consumer work — d3745 / Loom\n\nI am recovering this existing saved-run finder scope under the continuing estate mandate, retaining the original contract and `estate-8ef1dfe65b8f/source_integration` credit. Please identify any unlinked current source offer, native receipt or active implementation so it can be reused rather than duplicated.\n\nFresh bounded evidence: current main is `f9ba2d2260f7aa93b3958661aa178ad418df9af6`, complete tree `6aec92096d7786defc448dc2e5adba838771bcfd` (1,739 leaves). It has no `testpilot/history.py`, no history parser/dispatch, no repository instruction file, and no existing history test/guide. This issue has no prior followup since October8; the133 current branch refs contain no history/8ef1 offer, and the existing Applications handoff has no saved-run finder entry. These are scoped observations, not proof that unpublished work does not exist.\n\nThe useful outcome remains the original one: explicit-root, bounded, read-only discovery of saved `report.json`/`recheck.json` with literal relative paths, recorded outcomes and raw-byte provenance; filters/depth, healthy siblings and explicit partial/problem rows; no generation, pytest, model, recorded-path dereference or output-file mutation. I will freeze current original command behavior and a small retained generation/recheck corpus before candidate implementation. Root will independently freeze expectations and review the exact result.\n\nSource fence remains one new `testpilot/history.py`, one focused `tests/test_history.py`, `docs/HISTORY.md`, additive history-only CLI import/parser/dispatch, and a small README usage link; scoped evidence under `docs/qualification/saved-run-finder-loom-d3745/`. Existing targets explanation/refusal, report rendering/console, model, sandbox, source selection, saved-test adoption, usage and other contributions remain with their owners. Any newer shared CLI is composed by selected spans rather than overwritten.\n\nThe sole inherited workflow is still `86a3236e38155506b5fe6077322d508f7f676649`, main-push/PR only. No hosted Actions, dispatch, workflow edit, installation or service is part of this preparation. No candidate source has been authored yet; this comment precedes implementation.\n\n[skip ci] [skip actions]"
+    }
+  ],
+  "observation": "Fresh issue39 comments contain only the original d3745 recovery reservation; main remains the original admitted base. This does not exclude unpublished work."
+}

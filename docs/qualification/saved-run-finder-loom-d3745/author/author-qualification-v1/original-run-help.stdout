@@ -1,0 +1,33 @@
+usage: testpilot run [-h] --repo REPO (--diff DIFF | --git-base GIT_BASE)
+                     [--backend {scripted,tokenfactory,openai}]
+                     [--script SCRIPT] [--base-url BASE_URL] [--rounds ROUNDS]
+                     [--timeout TIMEOUT] [--no-coverage] [--python EXECUTABLE]
+                     [--max-tokens MAX_TOKENS] [--pytest-k EXPR]
+                     [--pytest-m EXPR] [--out OUT]
+                     [--target PATH.py::QUALNAME]
+
+options:
+  -h, --help            show this help message and exit
+  --repo REPO
+  --diff DIFF           unified diff file ('-' for stdin)
+  --git-base GIT_BASE   diff the working tree against this git ref
+  --backend {scripted,tokenfactory,openai}
+                        default: $TESTPILOT_BACKEND or scripted
+  --script SCRIPT       dir of canned responses for the scripted backend
+  --base-url BASE_URL   override OpenAI-compatible base URL
+  --rounds ROUNDS       max repair rounds (default 3)
+  --timeout TIMEOUT     positive finite pytest timeout per run, seconds
+  --no-coverage         run pytest without optional coverage measurement
+                        (default: automatic when installed)
+  --python EXECUTABLE   project Python for all test runs; path or PATH command
+                        (default: this interpreter)
+  --max-tokens MAX_TOKENS
+                        total token budget for the run
+  --pytest-k EXPR       native pytest keyword expression for baseline,
+                        generation and every repair
+  --pytest-m EXPR       native pytest marker expression for baseline,
+                        generation and every repair
+  --out OUT
+  --target PATH.py::QUALNAME
+                        select this function explicitly; repeat for caller
+                        order, instead of automatic diff selection

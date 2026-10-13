@@ -1,0 +1,11 @@
+test_strict_json_failures_and_unsupported_schema (test_history.HistoryTests.test_strict_json_failures_and_unsupported_schema) ... ok
+test_native_core_types_exclude_booleans_and_allow_unknown_extra_fields (test_history.HistoryTests.test_native_core_types_exclude_booleans_and_allow_unknown_extra_fields) ... ok
+test_option_admission_precedes_filesystem (test_history.HistoryTests.test_option_admission_precedes_filesystem) ... ok
+test_internal_links_are_skipped_and_fifo_never_opened (test_history.HistoryTests.test_internal_links_are_skipped_and_fifo_never_opened) ... ok
+test_per_file_limit_precedes_global_and_keeps_later_siblings (test_history.HistoryTests.test_per_file_limit_precedes_global_and_keeps_later_siblings) ... ok
+test_size_change_is_a_read_problem_and_keeps_acquired_bytes (test_history.HistoryTests.test_size_change_is_a_read_problem_and_keeps_acquired_bytes) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.021s
+
+OK
