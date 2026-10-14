@@ -54,6 +54,10 @@ When either report retains failed or error cases, **Failed and error cases** at 
 
 Activate a link with a pointer or native keyboard navigation to move to the corresponding disclosure, which receives a visible target outline. Use its summary to collapse or reopen it. These links do not filter or rewrite the report, and all case rows remain in their original order. The index is hidden in the print view while the existing full diagnostics remain available. The original JSON downloads carry no reading position or disclosure state.
 
+Each generated-file panel also offers **Download Before source** and **Download After source** for each retained side. These save the complete decoded source string as strict UTF-8, without adding a BOM, trimming, truncating or changing line endings. Empty retained strings produce zero-byte files; an absent side has no source download. Unchanged files still offer the two explicitly labeled roles. A recorded leading U+FEFF is retained as content. If a source contains an unpaired surrogate, only that side gets an unavailable explanation; its escaped display and original report JSON remain available.
+
+Source download names are fixed: `testpilot-before-file-0.txt` and `testpilot-after-file-0.txt`, where the zero-based index follows the existing generated-file comparison order. The original path remains a displayed label and does not choose a download destination or filename. These text files are retained data, not newly generated or qualified tests; saving them does not apply or execute them. The browser controls where they are saved. Source downloads do not change diffs, disclosure state, recorded outcomes or diagnostic links.
+
 Both JSON downloads preserve all original bytes, including a UTF-8 byte-order mark, whitespace, line endings, additional fields, and original number spellings. The page does not regenerate downloaded JSON from its parsed view. Role-specific download filenames are before-report.json and after-report.json.
 
 Report text is rendered literally. HTML markup cannot create page elements or request external content. Control characters, Unicode line/paragraph separators, and unpaired surrogate characters use visible escapes in the review view. Downloads preserve their original JSON bytes. The self-contained page has no executable scripts, external assets, or browser storage.
@@ -88,3 +92,11 @@ python -m pytest -q tests/test_compare.py tests/test_compare_cli.py tests/test_c
 Native receiving evidence for this contribution, including actual scripted runs, the missing-command baseline, literal changed-input checks, offline-browser downloads, phone-layout regression, and source hashes, is recorded in docs/receiving/saved-run-comparison-490fcd7c4056/.
 
 The initial diagnostic disclosure change has separate [original-first source and browser receiving](receiving/comparison-diagnostics-dcac8b3b8755/README.md), including preserved observer failures and exact fictional reading copies.
+
+The focused source-download methods also run with the standard library:
+
+~~~bash
+python -B -m unittest discover -s tests -p test_compare_generated_downloads.py -v
+~~~
+
+They check exact decoded UTF-8 (including leading U+FEFF, controls, CR/LF, long source and empty strings), safe role/index filenames, per-side unavailable text, original JSON bytes and the ordinary passive comparison CLI. They do not execute the retained source. Independent original-first browser receiving is tracked separately in issue #130.
