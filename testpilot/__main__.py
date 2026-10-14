@@ -158,7 +158,10 @@ def main(argv: list[str] | None = None) -> int:
     history.add_argument("--max-depth", type=int, default=1, help="subdirectory depth from 0 through 8 (default 1)")
     history.add_argument("--status", action="append", metavar="VALUE", help="literal recorded status; repeat for alternatives")
     history.add_argument("--query", help="case-insensitive literal report/target/test path substring")
-    history.add_argument("--kind", choices=["generation", "recheck"])
+    history.add_argument("--kind", choices=["generation", "recheck", "regression"],
+                         help="record kind; regression explicitly opts into paired-regression discovery")
+    history.add_argument("--include-regressions", action="store_true",
+                         help="also discover saved regression.json records; no tests or model calls")
     history.add_argument("--json", action="store_true", help="print complete structured history and problem rows")
     a = ap.parse_args(argv)
 

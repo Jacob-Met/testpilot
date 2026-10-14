@@ -112,9 +112,55 @@ def _decode(raw: bytes) -> dict:
     return document
 
 
-def _summarize(raw: bytes, relative: str) -> dict:
+def _regression_summary(d: dict, raw: bytes, relative: str) -> dict:
+    """Retain recorded paired identities and counts without evaluating a verdict."""
+    _require(isinstance(d.get("status"), str))
+    _require(d.get("status") in {"verified_regression", "not_regression", "after_failed", "inconclusive"})
+    _require(type(d.get("ok")) is bool)
+    _require(all(isinstance(d.get(k), str) for k in ("repo", "python", "started_at", "finished_at", "scope")))
+    _require(_text_map(d.get("test_files")) and bool(d["test_files"]))
+    _require(_integer(d.get("model_calls"), 0))
+    source = d.get("source_report")
+    _require(isinstance(source, dict) and all(isinstance(source.get(k), str) for k in ("path", "sha256")))
+    _require("recorded_status" in source and (source["recorded_status"] is None or isinstance(source["recorded_status"], str)))
+    _require(isinstance(d.get("retained_tests"), list))
+    for retained in d["retained_tests"]:
+        _require(isinstance(retained, dict))
+        _require(all(isinstance(retained.get(k), str) for k in ("path", "sha256")))
+        _require(_integer(retained.get("bytes"), 0))
+    context = {k: d[k] for k in ("repo", "python", "started_at", "finished_at", "model_calls")}
+    context["source_report"] = {k: source[k] for k in ("path", "sha256", "recorded_status")}
+    for label in ("before", "after"):
+        phase = d.get(label)
+        _require(isinstance(phase, dict))
+        _require(all(isinstance(phase.get(k), str) for k in ("requested_ref", "commit", "tree", "snapshot_sha256")))
+        _require(all(_integer(phase.get(k), 0) for k in ("source_files", "source_bytes")))
+        context[label] = {k: phase[k] for k in ("requested_ref", "commit", "tree", "snapshot_sha256", "source_files", "source_bytes")}
+        context[label]["result"] = _final(phase.get("result"), nullable=False)
+    comparison = d.get("comparison")
+    _require(isinstance(comparison, dict))
+    _require(type(comparison.get("comparable")) is bool and isinstance(comparison.get("reason"), str))
+    for key in ("case_pairs", "witnesses", "unmatched_before", "unmatched_after"):
+        _require(isinstance(comparison.get(key), list))
+        fields = ("generated_file", "nodeid", "before", "after") if key in ("case_pairs", "witnesses") else ("generated_file", "nodeid")
+        for item in comparison[key]:
+            _require(isinstance(item, dict) and all(isinstance(item.get(k), str) for k in fields))
+    context["comparison"] = {
+        "comparable": comparison["comparable"], "reason": comparison["reason"],
+        "witness_count": len(comparison["witnesses"]), "case_pair_count": len(comparison["case_pairs"]),
+        "unmatched_before_count": len(comparison["unmatched_before"]),
+        "unmatched_after_count": len(comparison["unmatched_after"]),
+    }
+    return {"path": relative, "kind": "regression", "bytes": len(raw), "sha256": hashlib.sha256(raw).hexdigest(),
+            "status": d["status"], "targets": [], "test_paths": sorted(d["test_files"]),
+            "regression_context": context}
+
+
+def _summarize(raw: bytes, relative: str, *, include_regressions=False) -> dict:
     d = _decode(raw)
     schema = d.get("schema")
+    if include_regressions and schema == "testpilot.regression/1":
+        return _regression_summary(d, raw, relative)
     if schema is not None and schema != RECHECK_SCHEMA:
         raise _RecordError("unsupported_schema")
     _require(isinstance(d.get("status"), str))
@@ -162,7 +208,7 @@ def _summarize(raw: bytes, relative: str) -> dict:
             "final": final, "recheck_context": context}
 
 
-def scan_history(root, *, max_depth=1, statuses=(), query=None, kind=None) -> dict:
+def scan_history(root, *, max_depth=1, statuses=(), query=None, kind=None, include_regressions=False) -> dict:
     """Return literal summaries and explicit problems within the selected scope."""
     if type(max_depth) is not int or not 0 <= max_depth <= 8:
         raise HistoryError("max_depth must be an integer from 0 through 8")
@@ -170,8 +216,11 @@ def scan_history(root, *, max_depth=1, statuses=(), query=None, kind=None) -> di
         raise HistoryError("statuses must be a list or tuple of strings")
     if query is not None and not isinstance(query, str):
         raise HistoryError("query must be text or None")
-    if kind not in (None, "generation", "recheck"):
-        raise HistoryError("kind must be generation, recheck, or None")
+    if kind not in (None, "generation", "recheck", "regression"):
+        raise HistoryError("kind must be generation, recheck, regression, or None")
+    if type(include_regressions) is not bool:
+        raise HistoryError("include_regressions must be a boolean")
+    include_regressions = include_regressions or kind == "regression"
     if not isinstance(root, (str, Path)):
         raise HistoryError("root must be a path string or Path")
     try:
@@ -189,11 +238,19 @@ def scan_history(root, *, max_depth=1, statuses=(), query=None, kind=None) -> di
         "runs": [], "problems": [], "notice": NOTICE,
     }
     counts = result["counts"]
+    if include_regressions:
+        result["filters"]["include_regressions"] = True
+    candidate_names = {"report.json", "recheck.json"}
+    if include_regressions:
+        candidate_names.add("regression.json")
     stopped = False
     folded = query.casefold() if query is not None else None
 
     def problem(relative, code):
-        result["problems"].append({"path": relative, "code": code, "message": _MESSAGES[code]})
+        message = _MESSAGES[code]
+        if include_regressions and code == "invalid_report":
+            message = "Not a supported generation, recheck or regression core record."
+        result["problems"].append({"path": relative, "code": code, "message": message})
 
     def read_candidate(path, relative, metadata):
         nonlocal stopped
@@ -240,7 +297,7 @@ def scan_history(root, *, max_depth=1, statuses=(), query=None, kind=None) -> di
             problem(relative, "read_error")
             return
         try:
-            row = _summarize(raw, relative)
+            row = _summarize(raw, relative, include_regressions=include_regressions)
         except _RecordError as exc:
             problem(relative, exc.code)
             return
@@ -279,14 +336,14 @@ def scan_history(root, *, max_depth=1, statuses=(), query=None, kind=None) -> di
             try:
                 metadata = child.lstat()
             except OSError:
-                problem(label, "read_error" if name in {"report.json", "recheck.json"} else "directory_error")
+                problem(label, "read_error" if name in candidate_names else "directory_error")
                 continue
             if stat.S_ISLNK(metadata.st_mode):
                 continue
             if stat.S_ISDIR(metadata.st_mode):
                 if depth < max_depth:
                     visit(child, depth + 1, label)
-            elif name in {"report.json", "recheck.json"}:
+            elif name in candidate_names:
                 if counts["candidate_files"] >= MAX_CANDIDATE_FILES:
                     problem(label, "candidate_limit")
                     stopped = True
@@ -311,6 +368,14 @@ def render_history(result: dict) -> str:
              "Counts: " + encoded(result["counts"]), "Filters: " + encoded(result["filters"])]
     for row in result["runs"]:
         lines.append(f"Run: {encoded(row['path'])} | {row['kind']} | {encoded(row['status'])} | {row['bytes']} bytes | SHA256 {row['sha256']}")
+        if row["kind"] == "regression":
+            context = row["regression_context"]
+            lines.append("  Retained test paths: " + encoded(row["test_paths"]))
+            lines.append("  Recorded regression: " + encoded(context["comparison"]))
+            lines.append("  Before: " + encoded(context["before"]))
+            lines.append("  After: " + encoded(context["after"]))
+            lines.append("  Recorded context: " + encoded({k: v for k, v in context.items() if k not in ("before", "after", "comparison")}))
+            continue
         for label, key in (("Targets", "targets"), ("Retained test paths", "test_paths"),
                            ("Recorded final", "final"), ("Recheck context", "recheck_context")):
             lines.append("  " + label + ": " + encoded(row[key]))
@@ -343,7 +408,8 @@ def _write(stream, text: str) -> bool:
 
 def run_history_command(args) -> int:
     try:
-        result = scan_history(args.root, max_depth=args.max_depth, statuses=args.status or (), query=args.query, kind=args.kind)
+        result = scan_history(args.root, max_depth=args.max_depth, statuses=args.status or (), query=args.query,
+                              kind=args.kind, include_regressions=getattr(args, "include_regressions", False))
     except HistoryError as exc:
         _write(sys.stderr, f"testpilot: cannot scan saved runs: {exc}\n")
         return 2

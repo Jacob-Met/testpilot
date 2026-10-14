@@ -1,0 +1,160 @@
+{
+  "schema": "testpilot.regression/1",
+  "status": "verified_regression",
+  "ok": true,
+  "repo": "/dev/shm/7cb7e049e2c0-delivery-context/cross-packet-replay-v1/source-snapshots",
+  "python": "/workspace/scratch/7cb7e049e2c0/capture-emg/.venv/bin/python",
+  "started_at": "2026-10-13T05:37:50.701926+00:00",
+  "finished_at": "2026-10-13T05:37:52.952396+00:00",
+  "source_report": {
+    "path": "/dev/shm/7cb7e049e2c0-delivery-context/CaptureSuite-TestPilot-EMG-Regressions-v1/generated/report.json",
+    "sha256": "5da6b2e734af9ff5975ad090c358d31f29f72e22cb1f82fc477ea40ba6e6e420",
+    "recorded_status": "passed"
+  },
+  "test_files": {
+    "tests/test_emg_retained.py": "import numpy as np\nfrom capture_analysis.features.emg import extract_emg_features\nfrom capture_analysis.types import GapInterval, GapMask, LoadedEmg, StreamRef, TimeWindow\n\ndef measured(gaps):\n    times=np.array([0,25_000_000,125_000_000,150_000_000],dtype=np.int64)\n    samples=np.array([[1,1,-1,-1]],dtype=np.float32)\n    stream=StreamRef('retained.emg','samples','emg','emg.batch/1',40.0,'mV')\n    mask=GapMask(stream,TimeWindow(0,150_000_000),gaps,'mask')\n    table,_,fraction=extract_emg_features(LoadedEmg(['ch0'],times,samples,40.0,'mV'),mask,window_s=.1,hop_s=.1)\n    np.testing.assert_array_equal(samples,[[1,1,-1,-1]])\n    np.testing.assert_array_equal(times,[0,25_000_000,125_000_000,150_000_000])\n    row=table.iloc[0]\n    assert (row.ch0_rms,row.ch0_mav,row.valid_fraction,fraction)==(1,1,1,1)\n    assert row.t_mid_ns==75_000_000\n    return row\n\ndef test_no_recorded_gap_retains_observed_transition():\n    row=measured([])\n    assert (row.ch0_wl,row.ch0_zc,row.ch0_ssc)==(2,1,0)\n\ndef test_recorded_disconnect_does_not_invent_transition():\n    gap=GapInterval('retained.emg','samples','DISCONNECT',50_000_000,100_000_000,True)\n    row=measured([gap])\n    assert (row.ch0_wl,row.ch0_zc,row.ch0_ssc)==(0,0,0)\n"
+  },
+  "retained_tests": [
+    {
+      "path": "tests/test_emg_retained.py",
+      "bytes": 1219,
+      "sha256": "97472bf17c2254daf829686d21f367dfaf5e561a6bc34584d58c120486b220be"
+    }
+  ],
+  "before": {
+    "requested_ref": "968723943b234fee81b1d2ee644fa95038313c64",
+    "commit": "968723943b234fee81b1d2ee644fa95038313c64",
+    "tree": "a832da87758a033c6d7183eee0d850d41816482e",
+    "source_files": 84,
+    "source_bytes": 399729,
+    "snapshot_sha256": "1c3d97ce2770229bb8c6ab5ee55ebd5a4d4e736e543acea46e25a7cbc06e1443",
+    "result": {
+      "returncode": 1,
+      "timed_out": false,
+      "duration_s": 1.073,
+      "timeout_s": 30.0,
+      "output": ".F.                                                                      [100%]\n=================================== FAILURES ===================================\n_____________ test_recorded_disconnect_does_not_invent_transition ______________\n\n    def test_recorded_disconnect_does_not_invent_transition():\n        gap=GapInterval('retained.emg','samples','DISCONNECT',50_000_000,100_000_000,True)\n        row=measured([gap])\n>       assert (row.ch0_wl,row.ch0_zc,row.ch0_ssc)==(0,0,0)\nE       assert (np.float64(2....float64(0.0)) == (0, 0, 0)\nE         \nE         At index 0 diff: np.float64(2.0) != 0\nE         Use -v to get more diff\n\ntests/test_emg_retained.py:25: AssertionError\n=========================== short test summary info ============================\nFAILED tests/test_emg_retained.py::test_recorded_disconnect_does_not_invent_transition\n1 failed, 2 passed in 0.72s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_emg_retained::test_no_recorded_gap_retains_observed_transition",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_emg_retained.py"
+        },
+        {
+          "nodeid": "tests.test_emg_retained::test_recorded_disconnect_does_not_invent_transition",
+          "outcome": "failed",
+          "message": "assert (np.float64(2....float64(0.0)) == (0, 0, 0)\n  \n  At index 0 diff: np.float64(2.0) != 0\n  Use -v to get more diff\ndef test_recorded_disconnect_does_not_invent_transition():\n        gap=GapInterval('retained.emg','samples','DISCONNECT',50_000_000,100_000_000,True)\n        row=measured([gap])\n>       assert (row.ch0_wl,row.ch0_zc,row.ch0_ssc)==(0,0,0)\nE       assert (np.float64(2....float64(0.0)) == (0, 0, 0)\nE         \nE         At index 0 diff: np.float64(2.0) != 0\nE         Use -v to get more diff\n\ntests/test_emg_retained.py:25: AssertionError",
+          "generated_file": "tests/test_emg_retained.py"
+        },
+        {
+          "nodeid": "tests.test_native_smoke::test_native_smoke",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": null
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_emg_retained.py"
+      ],
+      "junit_available": true,
+      "passed": 2,
+      "failed": 1,
+      "errors": 0,
+      "skipped": 0,
+      "ok": false,
+      "summary": "2 passed, 1 failed, 0 errors, 0 skipped (rc=1); generated: 1 passed of 2 collected",
+      "generated": {
+        "collected": 2,
+        "passed": 1,
+        "failed": 1,
+        "error": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "after": {
+    "requested_ref": "a95c709541755cefbcad2b462b9284692b33436a",
+    "commit": "a95c709541755cefbcad2b462b9284692b33436a",
+    "tree": "e324fb35d07b4010f979340d416b1e4e1068b171",
+    "source_files": 84,
+    "source_bytes": 400939,
+    "snapshot_sha256": "cd264f38f4f3e46e47b4d6bb13c730cd4b795afd3e4204e1133c9ab21cd396aa",
+    "result": {
+      "returncode": 0,
+      "timed_out": false,
+      "duration_s": 0.893,
+      "timeout_s": 30.0,
+      "output": "...                                                                      [100%]\n3 passed in 0.59s\n",
+      "cases": [
+        {
+          "nodeid": "tests.test_emg_retained::test_no_recorded_gap_retains_observed_transition",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_emg_retained.py"
+        },
+        {
+          "nodeid": "tests.test_emg_retained::test_recorded_disconnect_does_not_invent_transition",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": "tests/test_emg_retained.py"
+        },
+        {
+          "nodeid": "tests.test_native_smoke::test_native_smoke",
+          "outcome": "passed",
+          "message": "",
+          "generated_file": null
+        }
+      ],
+      "coverage": null,
+      "generated_files": [
+        "tests/test_emg_retained.py"
+      ],
+      "junit_available": true,
+      "passed": 3,
+      "failed": 0,
+      "errors": 0,
+      "skipped": 0,
+      "ok": true,
+      "summary": "3 passed, 0 failed, 0 errors, 0 skipped (rc=0); generated: 2 passed of 2 collected",
+      "generated": {
+        "collected": 2,
+        "passed": 2,
+        "failed": 0,
+        "error": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "comparison": {
+    "comparable": true,
+    "reason": "failed_before_passed_after",
+    "case_pairs": [
+      {
+        "generated_file": "tests/test_emg_retained.py",
+        "nodeid": "tests.test_emg_retained::test_no_recorded_gap_retains_observed_transition",
+        "before": "passed",
+        "after": "passed"
+      },
+      {
+        "generated_file": "tests/test_emg_retained.py",
+        "nodeid": "tests.test_emg_retained::test_recorded_disconnect_does_not_invent_transition",
+        "before": "failed",
+        "after": "passed"
+      }
+    ],
+    "witnesses": [
+      {
+        "generated_file": "tests/test_emg_retained.py",
+        "nodeid": "tests.test_emg_retained::test_recorded_disconnect_does_not_invent_transition",
+        "before": "failed",
+        "after": "passed"
+      }
+    ],
+    "unmatched_before": [],
+    "unmatched_after": []
+  },
+  "model_calls": 0,
+  "scope": "Two explicit committed trees; exact retained tests; existing local pytest sandbox and collection policy; no model, patch, checkout, or dependency install."
+}
