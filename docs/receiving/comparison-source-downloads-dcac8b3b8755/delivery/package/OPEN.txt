@@ -1,0 +1,23 @@
+TESTPILOT — SAVE EACH RETAINED BEFORE/AFTER SOURCE — 14 October 2026
+
+Extract the whole ZIP, then open mixed.html for the fictional mixed-file example. Open empty.html for the separate example with no generated files. You can also download either standalone HTML attachment and open the saved file directly. No JavaScript, server, Python, account or network is needed to read these pages.
+
+In mixed.html, go to Generated files and expand a file disclosure. Download Before source and Download After source save that side's complete decoded text as strict UTF-8. Fixed filenames such as testpilot-before-file-0.txt use the zero-based sorted file-union index; the displayed original path does not choose a local destination. Empty source strings produce genuine zero-byte files. An absent side has no link. An unpaired surrogate has an explicit unavailable note for that side; its escaped display and complete original JSON remain available. This is a text-saving convenience: do not treat the retained fictional text as executed or validated code.
+
+Download before JSON and Download after JSON preserve each complete original fictional report. The originals/ directory contains all four actually downloaded JSON files, paired by mixed/empty and Before/After role. The text-downloads/ directory contains all ten actually received source-text files from mixed.html, including two empty files. Filenames have the receiving record prefix so both role and saved download name stay unambiguous.
+
+The earlier diagnostic disclosure defaults, native failure/error occurrence links, file statuses/order, diff text and print behavior remain. Native keyboard activation was received at390 pixels. Print-media visibility is qualified; physical printing and PDF fidelity were not measured. Before/After are supplied roles, not proof of chronology, equivalent tests or improvement.
+
+Independent original browser:80 checks and4 original-JSON downloads. Independent candidate browser:218 checks and14 actual downloads (10 source-text+4 JSON), using the unchanged frozen observer and original-first inputs on MSI/jacob, Chrome154, JavaScript disabled, sandbox enabled. All source/input bytes and native metadata were preserved. Only local file documents were requested; no external requests, page errors or storage changes were observed. Context/browser/Playwright cleanup and managed disconnection were observed; no separate OS browser-exit claim.
+
+Supported ordinary CLI production was already received using Python3.12.14, separately from this delivery: original44 checks and candidate42, four child results each0,0,2,2. Two typed null-source-map controls refused. A later attempt against the already occupied candidate output refused before any new producer child; its historical summary-stream limitation remains in the public record. This package performs no renderer, browser, test or model replay.
+
+Exact mixed.html:32938bytes; SHA256 bddca883b7c33b7143ac2d65c6650e2847b8360d2d702803ab73034bdc13fbe0.
+Exact empty.html:14607bytes; SHA256 0494bc0d1cd1db783f7ab4d01e8ba26449cccf17b6f56f9154c14ad376ce47bb.
+Received product source:941c81c710e2742498fa3748a939434420b89fb2.
+Published source/evidence:
+https://github.com/Jacob-Met/testpilot/blob/d143ad3fd2803a7846e8ac1883c94391b81f996c/docs/receiving/comparison-source-downloads-dcac8b3b8755/README.md
+Integration record:
+https://github.com/Jacob-Met/testpilot/pull/131
+
+RECEIVING.md retains the complete qualification narrative. evidence/ contains the exact candidate raw receipt and two inspected mixed-page viewport images. MANIFEST.json lists every other member's size and SHA256. The earlier PR124/125 reading copies and offline walkthrough remain separate unchanged artifacts in the project guide.

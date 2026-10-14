@@ -1,0 +1,11 @@
+{
+  "schema": "hamon.testpilot130-shared-readback/1",
+  "notion_page": "3f4aedcdf4a5812abb24e3faabd70a8e",
+  "notion_task": "task_b8cd0bff01594c31803ebd2f13176cc6",
+  "task_succeeded": true,
+  "notion_addition_exact": true,
+  "notion_prior_preserved_ignoring_retrieval_timestamp": true,
+  "eyes_document": "1zJRklgTVr-mKdfjLm2sSvyGyvQig-S92XktMe9AuIaY",
+  "eyes_exact_prepend_and_older_body_preserved": true,
+  "source_adopted_main": "7e2101c3324b108886edd7859a8602287da16a7b"
+}
