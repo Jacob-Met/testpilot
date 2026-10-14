@@ -1,0 +1,69 @@
+{
+  "complete": true,
+  "counts": {
+    "admitted": 2,
+    "bytes_read": 5482,
+    "candidate_files": 2,
+    "entries_seen": 4,
+    "matched": 2,
+    "problems": 0
+  },
+  "filters": {
+    "kind": "generation",
+    "query": null,
+    "statuses": []
+  },
+  "limits": {
+    "candidate_files": 1000,
+    "directory_entries": 20000,
+    "report_bytes": 16777216,
+    "total_bytes": 67108864
+  },
+  "max_depth": 1,
+  "notice": "Saved records only. Reported outcomes are historical; no tests or model calls were run. Results are complete only within the selected root, depth and stated budgets; paths are not chronology.",
+  "problems": [],
+  "root": "/workspace/scratch/dcac8b3b8755/testpilot-discovery-comparison-example/workflow-v2/saved-runs",
+  "runs": [
+    {
+      "bytes": 2450,
+      "final": {
+        "errors": 1,
+        "failed": 2,
+        "junit_available": false,
+        "passed": 1,
+        "returncode": 1,
+        "skipped": 1,
+        "summary": "Synthetic recorded after outcomes",
+        "timed_out": false
+      },
+      "kind": "generation",
+      "path": "after/report.json",
+      "recheck_context": null,
+      "sha256": "c49d87fe252745da250bde3181f41108e7cebad867f00adf81a963cd37b2d810",
+      "status": "failed",
+      "targets": [],
+      "test_paths": []
+    },
+    {
+      "bytes": 3032,
+      "final": {
+        "errors": 1,
+        "failed": 2,
+        "junit_available": false,
+        "passed": 2,
+        "returncode": 1,
+        "skipped": 1,
+        "summary": "Synthetic recorded before outcomes",
+        "timed_out": false
+      },
+      "kind": "generation",
+      "path": "before/report.json",
+      "recheck_context": null,
+      "sha256": "01e5db1c197daa16b11e8c5a9e50745889d57a4c066488ff4a9d3d151b781373",
+      "status": "failed",
+      "targets": [],
+      "test_paths": []
+    }
+  ],
+  "schema": "testpilot.history/1"
+}

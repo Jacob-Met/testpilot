@@ -1,0 +1,71 @@
+{
+  "status": "failed",
+  "changed_functions": [],
+  "test_files": {},
+  "tests_written": 0,
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 2,
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "ok": false,
+    "duration_s": 0.25,
+    "output": "Retained after output; not executed by this review.\n",
+    "summary": "Synthetic recorded after outcomes",
+    "passed": 1,
+    "failed": 2,
+    "errors": 1,
+    "skipped": 1,
+    "junit_available": false,
+    "cases": [
+      {
+        "nodeid": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+        "outcome": "error",
+        "message": "after occurrence 1: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_value.py::test_value[α \"quoted\" & <angle>]",
+        "outcome": "failed",
+        "message": "after occurrence 2: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_ok.py::ok",
+        "outcome": "passed",
+        "message": "after occurrence 3: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_skip.py::skip",
+        "outcome": "skipped",
+        "message": "after occurrence 4: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      },
+      {
+        "nodeid": "tests/test_separator.py::line separator",
+        "outcome": "failed",
+        "message": "after occurrence 5: retained diagnostic\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\ncontext line\n",
+        "generated_file": null
+      }
+    ],
+    "coverage": null
+  },
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": false,
+    "tokens_estimated": false,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "",
+  "message": "Independent receiving fixture after",
+  "patch": "",
+  "extra_retained": {
+    "literal": "α & <angle> \"quoted\"",
+    "note": "extra fields and physical formatting stay in downloaded originals"
+  }
+}
