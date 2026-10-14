@@ -52,12 +52,14 @@ def _read_diff(args) -> str:
     elif args.diff:
         raw = Path(args.diff).read_bytes()
     else:
+        if args.git_base.startswith("-"):
+            raise ValueError("--git-base must not start with '-'")
         # Target parsing consumes a raw source patch with fixed path prefixes.
         # User display settings and diff helpers must not replace that input.
         raw = subprocess.run(
             ["git", "-C", args.repo, "diff", "--no-ext-diff", "--no-textconv",
              "--no-color", "--src-prefix=a/", "--dst-prefix=b/",
-             args.git_base, "--", "*.py"],
+             "--end-of-options", args.git_base, "--", "*.py"],
             check=True, capture_output=True,
         ).stdout
     if isinstance(raw, str):  # Direct callers may provide a text-only stream.
