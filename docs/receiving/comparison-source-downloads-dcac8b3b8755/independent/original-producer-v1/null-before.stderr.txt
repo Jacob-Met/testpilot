@@ -1,0 +1,1 @@
+testpilot: cannot compare saved reports: report.test_files['same.py']: expected text

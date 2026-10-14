@@ -1,0 +1,918 @@
+{
+  "schema": "hamon.testpilot130.independent-producer/1",
+  "mode": "candidate",
+  "started_at": "2026-10-14T04:05:27.874220+00:00",
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+  },
+  "checks": [
+    {
+      "name": "frozen criteria",
+      "actual": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "expected": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "passed": true
+    },
+    {
+      "name": "packet schema",
+      "actual": "hamon.exact-text-source/1",
+      "expected": "hamon.exact-text-source/1",
+      "passed": true
+    },
+    {
+      "name": "packet repository",
+      "actual": "Jacob-Met/testpilot",
+      "expected": "Jacob-Met/testpilot",
+      "passed": true
+    },
+    {
+      "name": "sixteen ordinary modules",
+      "actual": 16,
+      "expected": 16,
+      "passed": true
+    },
+    {
+      "name": "source testpilot/__init__.py",
+      "actual": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "expected": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/__main__.py",
+      "actual": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "expected": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/_pytest_generated.py",
+      "actual": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "expected": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/compare.py",
+      "actual": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "expected": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/compare_html.py",
+      "actual": "2d347ac7092aab3af165bf6ecb0144f641613a7e",
+      "expected": "2d347ac7092aab3af165bf6ecb0144f641613a7e",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/diff.py",
+      "actual": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "expected": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/history.py",
+      "actual": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "expected": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/html_report.py",
+      "actual": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "expected": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/loop.py",
+      "actual": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "expected": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/model.py",
+      "actual": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "expected": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/recheck.py",
+      "actual": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "expected": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/recheck_html.py",
+      "actual": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "expected": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/regression.py",
+      "actual": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "expected": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/sandbox.py",
+      "actual": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "expected": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/saved_report.py",
+      "actual": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "expected": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "passed": true
+    },
+    {
+      "name": "source testpilot/targets.py",
+      "actual": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "expected": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "passed": true
+    },
+    {
+      "name": "fixture before.json",
+      "actual": {
+        "bytes": 2843,
+        "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+        "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+      },
+      "expected": {
+        "bytes": 2843,
+        "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+        "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture after.json",
+      "actual": {
+        "bytes": 2379,
+        "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+        "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+      },
+      "expected": {
+        "bytes": 2379,
+        "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+        "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture empty-before.json",
+      "actual": {
+        "bytes": 1011,
+        "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+        "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+      },
+      "expected": {
+        "bytes": 1011,
+        "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+        "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture empty-after.json",
+      "actual": {
+        "bytes": 783,
+        "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+        "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+      },
+      "expected": {
+        "bytes": 783,
+        "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+        "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture before-null.json",
+      "actual": {
+        "bytes": 1855,
+        "sha256": "48d9df2beb88716c3fbb6bcdafcef70488715b08c1116b48054b9cb6ad83ff57",
+        "git_blob": "83cbe00bad9acd7370650821fb782c9afb2ad1dc"
+      },
+      "expected": {
+        "bytes": 1855,
+        "sha256": "48d9df2beb88716c3fbb6bcdafcef70488715b08c1116b48054b9cb6ad83ff57",
+        "git_blob": "83cbe00bad9acd7370650821fb782c9afb2ad1dc"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture after-null.json",
+      "actual": {
+        "bytes": 1464,
+        "sha256": "2a29ad3d0a9aa447f51d2c59e1d32f76fbded04ed2ecdc987fd7967e20d75c87",
+        "git_blob": "2b89b95f151af9eb852867b637f8d41b0ba66523"
+      },
+      "expected": {
+        "bytes": 1464,
+        "sha256": "2a29ad3d0a9aa447f51d2c59e1d32f76fbded04ed2ecdc987fd7967e20d75c87",
+        "git_blob": "2b89b95f151af9eb852867b637f8d41b0ba66523"
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "mixed stderr",
+      "actual": "",
+      "expected": "",
+      "passed": true
+    },
+    {
+      "name": "mixed delivered console line",
+      "actual": [
+        "wrote /workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/mixed.html"
+      ],
+      "expected": [
+        "wrote /workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/mixed.html"
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed complete UTF8 HTML",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "empty exit",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "empty stderr",
+      "actual": "",
+      "expected": "",
+      "passed": true
+    },
+    {
+      "name": "empty delivered console line",
+      "actual": [
+        "wrote /workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/empty.html"
+      ],
+      "expected": [
+        "wrote /workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/empty.html"
+      ],
+      "passed": true
+    },
+    {
+      "name": "empty complete UTF8 HTML",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "null-before exit",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "null-before no output publication",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "null-before no success console",
+      "actual": "",
+      "expected": "",
+      "passed": true
+    },
+    {
+      "name": "null-before typed source refusal",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "null-after exit",
+      "actual": 2,
+      "expected": 2,
+      "passed": true
+    },
+    {
+      "name": "null-after no output publication",
+      "actual": false,
+      "expected": false,
+      "passed": true
+    },
+    {
+      "name": "null-after no success console",
+      "actual": "",
+      "expected": "",
+      "passed": true
+    },
+    {
+      "name": "null-after typed source refusal",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "children": [
+    {
+      "case": "mixed",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "compare",
+        "--before",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/before.json",
+        "--after",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/after.json",
+        "--out",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/mixed.html"
+      ],
+      "cwd": "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/source",
+      "pid": 8,
+      "returncode": 0,
+      "stdout": {
+        "bytes": 96,
+        "sha256": "36e83e99fa1e11730ae0ad66595fa5663cfb4b89eaa4fb79b9a0e5166cae080f",
+        "git_blob": "8f369aac1b286930c6396c5ca186aa8498212d58",
+        "mode": 33188,
+        "mtime_ns": "1791950728177302332",
+        "inode": "1340314"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "mode": 33188,
+        "mtime_ns": "1791950728177302332",
+        "inode": "1340315"
+      }
+    },
+    {
+      "case": "empty",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "compare",
+        "--before",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/empty-before.json",
+        "--after",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/empty-after.json",
+        "--out",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/empty.html"
+      ],
+      "cwd": "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/source",
+      "pid": 9,
+      "returncode": 0,
+      "stdout": {
+        "bytes": 96,
+        "sha256": "0a2ed8e1a949568be8555052d5a41e4342fd8689c9b9fcb0fdb662c844929e8c",
+        "git_blob": "fcb91b3d32bb3167765e1b16bf7127d619e14910",
+        "mode": 33188,
+        "mtime_ns": "1791950728538760472",
+        "inode": "1340317"
+      },
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "mode": 33188,
+        "mtime_ns": "1791950728538760472",
+        "inode": "1340318"
+      }
+    },
+    {
+      "case": "null-before",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "compare",
+        "--before",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/before-null.json",
+        "--after",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/after.json",
+        "--out",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/null-before.html"
+      ],
+      "cwd": "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/source",
+      "pid": 10,
+      "returncode": 2,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "mode": 33188,
+        "mtime_ns": "1791950728800401098",
+        "inode": "1340319"
+      },
+      "stderr": {
+        "bytes": 85,
+        "sha256": "3241fdff2084084c10d9ab9bf76be166d2bb45b76f8911ea3eeef5baa5417890",
+        "git_blob": "ac72c37910affd9f801f38e36ff08627ba68b055",
+        "mode": 33188,
+        "mtime_ns": "1791950728804400908",
+        "inode": "1340320"
+      }
+    },
+    {
+      "case": "null-after",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-B",
+        "-m",
+        "testpilot",
+        "compare",
+        "--before",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/before.json",
+        "--after",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/fixtures/after-null.json",
+        "--out",
+        "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/null-after.html"
+      ],
+      "cwd": "/workspace/scratch/dcac8b3b8755/testpilot130-independent/candidate-producer-v1/source",
+      "pid": 11,
+      "returncode": 2,
+      "stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+        "mode": 33188,
+        "mtime_ns": "1791950729072388181",
+        "inode": "1340321"
+      },
+      "stderr": {
+        "bytes": 85,
+        "sha256": "3241fdff2084084c10d9ab9bf76be166d2bb45b76f8911ea3eeef5baa5417890",
+        "git_blob": "ac72c37910affd9f801f38e36ff08627ba68b055",
+        "mode": 33188,
+        "mtime_ns": "1791950729074460328",
+        "inode": "1340322"
+      }
+    }
+  ],
+  "pages": {
+    "mixed": {
+      "filename": "mixed.html",
+      "before": "before.json",
+      "after": "after.json",
+      "bytes": 32938,
+      "sha256": "bddca883b7c33b7143ac2d65c6650e2847b8360d2d702803ab73034bdc13fbe0",
+      "git_blob": "6f69c64a8dea9c7966c76e8b5989ab2873f692cc",
+      "mode": 33152,
+      "mtime_ns": "1791950728154842684",
+      "inode": "1340313"
+    },
+    "empty": {
+      "filename": "empty.html",
+      "before": "empty-before.json",
+      "after": "empty-after.json",
+      "bytes": 14607,
+      "sha256": "0494bc0d1cd1db783f7ab4d01e8ba26449cccf17b6f56f9154c14ad376ce47bb",
+      "git_blob": "58f5af0a1907e0603c92eff557ac2f204b78e46d",
+      "mode": 33152,
+      "mtime_ns": "1791950728496415534",
+      "inode": "1340316"
+    }
+  },
+  "passed": true,
+  "watched_before": {
+    "/workspace/scratch/dcac8b3b8755/testpilot130-author/candidate-source-packet.json": {
+      "bytes": 225943,
+      "sha256": "e8d94074cd53f09fb72fb4a1acb0935f28f8fabca07be4f4eb116e1cd566ca63",
+      "git_blob": "bbf9cdec519681ef03f3a4422ecc0b6b9d9d64d2",
+      "mode": 33188,
+      "mtime_ns": "1791950187884579427",
+      "inode": "1339003"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot130-independent/criteria.json": {
+      "bytes": 12074,
+      "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+      "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "mode": 33188,
+      "mtime_ns": "1791949647042663702",
+      "inode": "1338699"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot130-independent/produce_pages.py": {
+      "bytes": 5700,
+      "sha256": "99791761d170e902d4338e2611c00ef4559afc61b589d4e313e6d81fc8800bd9",
+      "git_blob": "6d44f76717bde7e363f780c0ae236ff2864cce86",
+      "mode": 33188,
+      "mtime_ns": "1791949827631197505",
+      "inode": "1339265"
+    }
+  },
+  "fixtures_before": {
+    "after-null.json": {
+      "bytes": 1464,
+      "sha256": "2a29ad3d0a9aa447f51d2c59e1d32f76fbded04ed2ecdc987fd7967e20d75c87",
+      "git_blob": "2b89b95f151af9eb852867b637f8d41b0ba66523",
+      "mode": 33188,
+      "mtime_ns": "1791949647041855628",
+      "inode": "1338698"
+    },
+    "after.json": {
+      "bytes": 2379,
+      "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+      "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff",
+      "mode": 33188,
+      "mtime_ns": "1791949647039065611",
+      "inode": "1338694"
+    },
+    "before-null.json": {
+      "bytes": 1855,
+      "sha256": "48d9df2beb88716c3fbb6bcdafcef70488715b08c1116b48054b9cb6ad83ff57",
+      "git_blob": "83cbe00bad9acd7370650821fb782c9afb2ad1dc",
+      "mode": 33188,
+      "mtime_ns": "1791949647041074475",
+      "inode": "1338697"
+    },
+    "before.json": {
+      "bytes": 2843,
+      "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+      "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb",
+      "mode": 33188,
+      "mtime_ns": "1791949647038048433",
+      "inode": "1338693"
+    },
+    "empty-after.json": {
+      "bytes": 783,
+      "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+      "git_blob": "3493391692777378d2407a1cd77239586b534f27",
+      "mode": 33188,
+      "mtime_ns": "1791949647040254494",
+      "inode": "1338696"
+    },
+    "empty-before.json": {
+      "bytes": 1011,
+      "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+      "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f",
+      "mode": 33188,
+      "mtime_ns": "1791949647039736336",
+      "inode": "1338695"
+    }
+  },
+  "source_commit": "941c81c710e2742498fa3748a939434420b89fb2",
+  "source_tree": "8b922ca6b3c6f44ff92ff70d44d13da9df6962b4",
+  "packet": {
+    "bytes": 225943,
+    "sha256": "e8d94074cd53f09fb72fb4a1acb0935f28f8fabca07be4f4eb116e1cd566ca63",
+    "git_blob": "bbf9cdec519681ef03f3a4422ecc0b6b9d9d64d2",
+    "mode": 33188,
+    "mtime_ns": "1791950187884579427",
+    "inode": "1339003"
+  },
+  "criteria": {
+    "bytes": 12074,
+    "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+    "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+    "mode": 33188,
+    "mtime_ns": "1791949647042663702",
+    "inode": "1338699"
+  },
+  "source_before": {
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": 33188,
+      "mtime_ns": "1791950727885879621",
+      "inode": "1340297"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 12180,
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "mode": 33188,
+      "mtime_ns": "1791950727886271599",
+      "inode": "1340298"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": 33188,
+      "mtime_ns": "1791950727886670981",
+      "inode": "1340299"
+    },
+    "testpilot/compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": 33188,
+      "mtime_ns": "1791950727886942649",
+      "inode": "1340300"
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 23858,
+      "sha256": "b4bb2f288c17b6d485c91013991d7dcd3c6c5cea3a7d8fd25b920f8e3ed958f7",
+      "git_blob": "2d347ac7092aab3af165bf6ecb0144f641613a7e",
+      "mode": 33188,
+      "mtime_ns": "1791950727887896873",
+      "inode": "1340301"
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": 33188,
+      "mtime_ns": "1791950727888548668",
+      "inode": "1340302"
+    },
+    "testpilot/history.py": {
+      "bytes": 16078,
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "mode": 33188,
+      "mtime_ns": "1791950727888970277",
+      "inode": "1340303"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": 33188,
+      "mtime_ns": "1791950727889286200",
+      "inode": "1340304"
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": 33188,
+      "mtime_ns": "1791950727889897938",
+      "inode": "1340305"
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": 33188,
+      "mtime_ns": "1791950727891154310",
+      "inode": "1340306"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": 33188,
+      "mtime_ns": "1791950727891585029",
+      "inode": "1340307"
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": 33188,
+      "mtime_ns": "1791950727891915921",
+      "inode": "1340308"
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": 33188,
+      "mtime_ns": "1791950727892381130",
+      "inode": "1340309"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": 33188,
+      "mtime_ns": "1791950727892444217",
+      "inode": "1340310"
+    },
+    "testpilot/saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": 33188,
+      "mtime_ns": "1791950727893078295",
+      "inode": "1340311"
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": 33188,
+      "mtime_ns": "1791950727893738282",
+      "inode": "1340312"
+    }
+  },
+  "source_after": {
+    "testpilot/__init__.py": {
+      "bytes": 390,
+      "sha256": "65c63b80d7da34a83a6049a79c24b8335878cd49cc79951fdefc5f1532ae841f",
+      "git_blob": "296210dd0d58703de4a4e4c9ad72a0944c9400ca",
+      "mode": 33188,
+      "mtime_ns": "1791950727885879621",
+      "inode": "1340297"
+    },
+    "testpilot/__main__.py": {
+      "bytes": 12180,
+      "sha256": "ad588d7aa2e1d8029d678c80a2d6a7d9f233a83487ebf8e695caf89bc623755d",
+      "git_blob": "fffa528c6e17460e96d76112d41eba4da1184eaa",
+      "mode": 33188,
+      "mtime_ns": "1791950727886271599",
+      "inode": "1340298"
+    },
+    "testpilot/_pytest_generated.py": {
+      "bytes": 2943,
+      "sha256": "d65352d7bade965d7b9dc73efe5d4d01844fa8c7474a1bdcdb3b708f6decf768",
+      "git_blob": "90b82725bc0eb1ff3d7cb517c4c9dedcfd14bdcc",
+      "mode": 33188,
+      "mtime_ns": "1791950727886670981",
+      "inode": "1340299"
+    },
+    "testpilot/compare.py": {
+      "bytes": 14624,
+      "sha256": "7f8b1d8b7204728a2942ad39efd33e8b7db2a70818addc72b88d61f969b41a62",
+      "git_blob": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+      "mode": 33188,
+      "mtime_ns": "1791950727886942649",
+      "inode": "1340300"
+    },
+    "testpilot/compare_html.py": {
+      "bytes": 23858,
+      "sha256": "b4bb2f288c17b6d485c91013991d7dcd3c6c5cea3a7d8fd25b920f8e3ed958f7",
+      "git_blob": "2d347ac7092aab3af165bf6ecb0144f641613a7e",
+      "mode": 33188,
+      "mtime_ns": "1791950727887896873",
+      "inode": "1340301"
+    },
+    "testpilot/diff.py": {
+      "bytes": 13252,
+      "sha256": "33e97c96d67b263b5dd8116e22f3528ecb717576c6304506c8da728fceb0f0ff",
+      "git_blob": "f9970ed6f2a05b259a4f5de6379eb3c041865886",
+      "mode": 33188,
+      "mtime_ns": "1791950727888548668",
+      "inode": "1340302"
+    },
+    "testpilot/history.py": {
+      "bytes": 16078,
+      "sha256": "775eb3b8afa19a8130b3deda12f940f8d1bfa42a57a0ce2b1e4fab896f84b1c0",
+      "git_blob": "b32f19b80241b2744c27991ab60aa500e41c19b9",
+      "mode": 33188,
+      "mtime_ns": "1791950727888970277",
+      "inode": "1340303"
+    },
+    "testpilot/html_report.py": {
+      "bytes": 21739,
+      "sha256": "91b9a2734a08ea0c57f7fcd469d056dfd37de7beb1963e32ad3b303dc117dca0",
+      "git_blob": "3281bd01b5df5c3122bf95fe4f3bdbc2217642ee",
+      "mode": 33188,
+      "mtime_ns": "1791950727889286200",
+      "inode": "1340304"
+    },
+    "testpilot/loop.py": {
+      "bytes": 30070,
+      "sha256": "efeeb3b42edbf65e187106197d2377a420c1f9cdb468ce34c28cd0c82678fb12",
+      "git_blob": "69dc4ea2df567133e64ed5ea9d37ace26475d091",
+      "mode": 33188,
+      "mtime_ns": "1791950727889897938",
+      "inode": "1340305"
+    },
+    "testpilot/model.py": {
+      "bytes": 10454,
+      "sha256": "65a5567473346a3590959bd69c735ed4c11771bd0909a5af48ccd1f6fbd9d09b",
+      "git_blob": "effb064a91caacc1ca1e8e4c6fbfcaeb786e2e02",
+      "mode": 33188,
+      "mtime_ns": "1791950727891154310",
+      "inode": "1340306"
+    },
+    "testpilot/recheck.py": {
+      "bytes": 12770,
+      "sha256": "1b7d31f49cede49c45fe1fb0613b6e55fac292a7dece9b2645d1b55b141d95f6",
+      "git_blob": "04c9154468db209e6c29d2edc392c4e8e109910b",
+      "mode": 33188,
+      "mtime_ns": "1791950727891585029",
+      "inode": "1340307"
+    },
+    "testpilot/recheck_html.py": {
+      "bytes": 10184,
+      "sha256": "6cc81b1d1e63282708a4cad448224bac5359519c4955d82c6244afa80738e633",
+      "git_blob": "9b16cf829029e1b5d34392bb93f6d3a31e916a90",
+      "mode": 33188,
+      "mtime_ns": "1791950727891915921",
+      "inode": "1340308"
+    },
+    "testpilot/regression.py": {
+      "bytes": 16329,
+      "sha256": "a802c332d4f0adaf8f49306b2686d4f04050325d60a25367af18da3241940b89",
+      "git_blob": "9d877deed683c0e38d61fcf5c7320d8f5dd672c9",
+      "mode": 33188,
+      "mtime_ns": "1791950727892381130",
+      "inode": "1340309"
+    },
+    "testpilot/sandbox.py": {
+      "bytes": 13628,
+      "sha256": "a3bae551058fc6524dc363bfe8a39c0c0c1cf081779a7e3dadd9d5ae8d33ae34",
+      "git_blob": "6dc325b68ee9de568e93c45666e3da845d6237de",
+      "mode": 33188,
+      "mtime_ns": "1791950727892444217",
+      "inode": "1340310"
+    },
+    "testpilot/saved_report.py": {
+      "bytes": 9808,
+      "sha256": "2bd9ead5d0709afbaf97ff92ca352df75d7884eee7d61c3ea178612215b4c53b",
+      "git_blob": "4a591bc80c8eb5d9f38d66598ca0843091b29c50",
+      "mode": 33188,
+      "mtime_ns": "1791950727893078295",
+      "inode": "1340311"
+    },
+    "testpilot/targets.py": {
+      "bytes": 5410,
+      "sha256": "35add23585b0e88246288572f49bd857ebf4af83a221b9129e784e9b456c1ab0",
+      "git_blob": "2da1600eca93edbe47605e6ca2a9e715663fa370",
+      "mode": 33188,
+      "mtime_ns": "1791950727893738282",
+      "inode": "1340312"
+    }
+  },
+  "fixtures_after": {
+    "after-null.json": {
+      "bytes": 1464,
+      "sha256": "2a29ad3d0a9aa447f51d2c59e1d32f76fbded04ed2ecdc987fd7967e20d75c87",
+      "git_blob": "2b89b95f151af9eb852867b637f8d41b0ba66523",
+      "mode": 33188,
+      "mtime_ns": "1791949647041855628",
+      "inode": "1338698"
+    },
+    "after.json": {
+      "bytes": 2379,
+      "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+      "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff",
+      "mode": 33188,
+      "mtime_ns": "1791949647039065611",
+      "inode": "1338694"
+    },
+    "before-null.json": {
+      "bytes": 1855,
+      "sha256": "48d9df2beb88716c3fbb6bcdafcef70488715b08c1116b48054b9cb6ad83ff57",
+      "git_blob": "83cbe00bad9acd7370650821fb782c9afb2ad1dc",
+      "mode": 33188,
+      "mtime_ns": "1791949647041074475",
+      "inode": "1338697"
+    },
+    "before.json": {
+      "bytes": 2843,
+      "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+      "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb",
+      "mode": 33188,
+      "mtime_ns": "1791949647038048433",
+      "inode": "1338693"
+    },
+    "empty-after.json": {
+      "bytes": 783,
+      "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+      "git_blob": "3493391692777378d2407a1cd77239586b534f27",
+      "mode": 33188,
+      "mtime_ns": "1791949647040254494",
+      "inode": "1338696"
+    },
+    "empty-before.json": {
+      "bytes": 1011,
+      "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+      "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f",
+      "mode": 33188,
+      "mtime_ns": "1791949647039736336",
+      "inode": "1338695"
+    }
+  },
+  "watched_after": {
+    "/workspace/scratch/dcac8b3b8755/testpilot130-author/candidate-source-packet.json": {
+      "bytes": 225943,
+      "sha256": "e8d94074cd53f09fb72fb4a1acb0935f28f8fabca07be4f4eb116e1cd566ca63",
+      "git_blob": "bbf9cdec519681ef03f3a4422ecc0b6b9d9d64d2",
+      "mode": 33188,
+      "mtime_ns": "1791950187884579427",
+      "inode": "1339003"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot130-independent/criteria.json": {
+      "bytes": 12074,
+      "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+      "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "mode": 33188,
+      "mtime_ns": "1791949647042663702",
+      "inode": "1338699"
+    },
+    "/workspace/scratch/dcac8b3b8755/testpilot130-independent/produce_pages.py": {
+      "bytes": 5700,
+      "sha256": "99791761d170e902d4338e2611c00ef4559afc61b589d4e313e6d81fc8800bd9",
+      "git_blob": "6d44f76717bde7e363f780c0ae236ff2864cce86",
+      "mode": 33188,
+      "mtime_ns": "1791949827631197505",
+      "inode": "1339265"
+    }
+  },
+  "preserved": true,
+  "finished_at": "2026-10-14T04:05:29.078212+00:00"
+}

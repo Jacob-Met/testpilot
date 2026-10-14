@@ -1,0 +1,68 @@
+{
+  "tp130_candidate_stage_write_v1": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Successfully wrote to C:\\Users\\jacob\\AppData\\Local\\Temp\\hamon-dcac8b3b8755-testpilot130-v1\\stage_candidate.py (32 lines) "
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_candidate_stage_start_v1": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 201576 (shell: powershell.exe)\nInitial output:\n{\"passed\": true, \"files\": 11, \"root\": \"C:\\\\Users\\\\jacob\\\\AppData\\\\Local\\\\Temp\\\\hamon-dcac8b3b8755-testpilot130-v1\", \"original_preserved\": true}\r\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_candidate_stage_collected_v1": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"files\": 11, \"root\": \"C:\\\\Users\\\\jacob\\\\AppData\\\\Local\\\\Temp\\\\hamon-dcac8b3b8755-testpilot130-v1\", \"original_preserved\": true}\r\n\n✅ Process completed with exit code 0 (runtime: 0.84s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_candidate_browser_command_v1": "$p='C:\\Users\\jacob\\AppData\\Local\\Temp\\hamon-dcac8b3b8755-testpilot130-v1\\candidate-inputs\\receive_browser.py'; if ((Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() -ne '5eb8526d466c763c14100f60e3a7cfbf85c92ed0b18bbd43cc0ab784a820eb22') { throw 'observer SHA mismatch' }; & 'C:\\Python314\\python.exe' -B $p --inputs 'C:\\Users\\jacob\\AppData\\Local\\Temp\\hamon-dcac8b3b8755-testpilot130-v1\\candidate-inputs' --output 'C:\\Users\\jacob\\AppData\\Local\\Temp\\hamon-dcac8b3b8755-testpilot130-v1\\candidate-browser-v1' --chrome 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' --mode candidate --source 941c81c710e2742498fa3748a939434420b89fb2; exit $LASTEXITCODE",
+  "tp130_candidate_browser_start_v1": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 196176 (shell: powershell.exe)\nInitial output:\n\n⏳ Process is running. Use read_process_output to get more output."
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_candidate_browser_collected_v1": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"checks\": 218, \"downloads\": 14, \"managed_disconnect\": true, \"output\": \"C:\\\\Users\\\\jacob\\\\AppData\\\\Local\\\\Temp\\\\hamon-dcac8b3b8755-testpilot130-v1\\\\candidate-browser-v1\"}\r\n\n✅ Process completed with exit code 0 (runtime: 4.99s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  }
+}
