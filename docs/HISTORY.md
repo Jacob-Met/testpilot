@@ -111,6 +111,39 @@ size change or incomplete capture is `read_error`. Stop writers when you need
 a stable view: these checks do not provide a concurrent-writer snapshot or a
 hostile-path security boundary. Report paths are labels, not chronology.
 
+## Compare two selected generation reports
+
+To review changes without executing either run, first narrow discovery to generation
+reports:
+
+```sh
+python -B -m testpilot history --root saved-runs --kind generation --max-depth 2
+```
+
+Choose two report paths from the returned rows and assign their Before and After
+roles explicitly. Paths are relative to the selected root; sorted output does not
+establish chronology. Substitute your chosen paths in this example:
+
+```sh
+python -B -m testpilot compare --before saved-runs/earlier/report.json --after saved-runs/later/report.json --out comparison.html
+```
+
+The comparison destination must be new and its parent must exist. History checks
+a native core record with a 16 MiB per-file limit; comparison applies its separate
+full input contract and 4 MiB limit. The contracts are separate: admission by either command does not guarantee
+admission by the other. For example, history requires the native `final.coverage`
+field, while comparison can accept an older/minimal final result without it. Recheck records use a different schema and are not
+comparison inputs.
+
+Open the resulting HTML and follow **Final diagnostics**. Its failure index links
+each recorded failed/error occurrence by report role and retained array position;
+repeated labels stay separate. Both original JSON downloads remain available.
+The [comparison guide](COMPARE.md) explains missing execution evidence, original
+bytes and the complete admission contract.
+
+A [runnable fictional walkthrough](../examples/saved-review/README.md) includes
+two compatible saved inputs and the exact commands to discover and compare them.
+
 ## Python API
 
 ```python

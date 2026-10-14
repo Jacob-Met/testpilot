@@ -1,0 +1,39 @@
+{
+  "complete": false,
+  "counts": {
+    "admitted": 0,
+    "bytes_read": 5587,
+    "candidate_files": 2,
+    "entries_seen": 4,
+    "matched": 0,
+    "problems": 2
+  },
+  "filters": {
+    "kind": "generation",
+    "query": null,
+    "statuses": []
+  },
+  "limits": {
+    "candidate_files": 1000,
+    "directory_entries": 20000,
+    "report_bytes": 16777216,
+    "total_bytes": 67108864
+  },
+  "max_depth": 1,
+  "notice": "Saved records only. Reported outcomes are historical; no tests or model calls were run. Results are complete only within the selected root, depth and stated budgets; paths are not chronology.",
+  "problems": [
+    {
+      "code": "invalid_report",
+      "message": "Not a supported generation or recheck core record.",
+      "path": "after/report.json"
+    },
+    {
+      "code": "invalid_report",
+      "message": "Not a supported generation or recheck core record.",
+      "path": "before/report.json"
+    }
+  ],
+  "root": "/workspace/scratch/dcac8b3b8755/testpilot-discovery-comparison-example/course/saved-runs",
+  "runs": [],
+  "schema": "testpilot.history/1"
+}

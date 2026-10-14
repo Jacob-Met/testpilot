@@ -17,6 +17,14 @@ If console delivery fails after publication, the complete comparison remains at 
 
 Cleanup of the private `.testpilot-compare-*.html` stage is best effort. A filesystem error removing that stage does not undo successful publication or replace an earlier write/publication error. The private stage may remain beside the output when removal fails; an already-published page still has its complete bytes. Other cleanup exceptions, including interruption, remain visible.
 
+To locate saved inputs first, use the [saved-run finder](HISTORY.md#compare-two-selected-generation-reports)
+with `--kind generation`. Choose the Before and After roles explicitly; finder
+order does not establish chronology. History's core-record admission and larger
+per-file bound differ from comparison's full input contract below, so discovery
+does not guarantee that a report is a valid comparison input. Conversely, a
+comparison-admissible report may fail history's core-record requirements.
+See the [runnable fictional walkthrough](../examples/saved-review/README.md).
+
 ## What the page shows
 
 | Section | Meaning |
