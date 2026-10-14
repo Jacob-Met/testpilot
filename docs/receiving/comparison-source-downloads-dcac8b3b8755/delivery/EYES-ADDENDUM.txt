@@ -1,0 +1,29 @@
+SAVE COMPLETE RETAINED BEFORE/AFTER SOURCE TEXT
+14 October 2026
+
+Mixed-file reading copy:
+https://drive.google.com/file/d/1lPc_9_MQ21MwUAhR9vtyYbpM8hsvLYQN/view
+Separate no-generated-files example:
+https://drive.google.com/file/d/1DmJXvzJi5II3iF9nrBmTM6UC_TcuQIVg/view
+Compact review kit:
+https://drive.google.com/file/d/1qklX0mXlk-9LCAWnA4kzsiv3hhe_ISng/view
+
+Download and open the saved HTML, or extract the whole kit and open mixed.html or empty.html. No JavaScript, Python, server, account or network is required. In mixed.html, go to Generated files and expand a file disclosure. Download Before source and Download After source save the complete retained decoded string as strict UTF-8. Fixed names such as testpilot-before-file-0.txt use the sorted zero-based file-union index. The displayed source path never selects a local destination.
+
+Empty strings download as real zero-byte files. An absent side has no action. An unpaired-surrogate side has an explicit unavailable note while its escaped text and complete original JSON remain. The fixture includes both directions of this condition. Retained text is fictional data; saving it neither executes nor validates it. Download before JSON and Download after JSON preserve the complete original report byte strings.
+
+The kit includes both pages, four original JSON files, ten actual source-text downloads, the exact candidate browser receipt, two mixed-page screenshots, OPEN.txt, RECEIVING.md and MANIFEST.json. Text files retain the receiver record prefix alongside the fixed browser filename. Existing diagnostics, failure/error links, file statuses, diffs and manual disclosure states remain unchanged. Print media exposes source text; physical printing and PDF fidelity were not tested. Before/After label supplied roles, not chronology or improvement.
+
+The independent original-first browser course passed80 comparisons/four JSON downloads; the candidate passed218/fourteen downloads on the unchanged observer, MSI/jacob Chrome154 with JavaScript disabled and sandbox enabled. Native keyboard saving at390 pixels, literal control characters/Unicode/line endings, two empty downloads, full original JSON and input/storage conservation were received. Only local file requests occurred. Managed context/browser/Playwright cleanup was observed, not a separate OS browser-exit measurement. Supported Python3.12 ordinary CLI qualification is separate:44 original and42 candidate checks, each four child outcomes0/0/2/2. The later occupied-output recovery refusal and outer-summary-stream limitation remain in the original record.
+
+Mixed HTML:32938bytes; SHA256 bddca883b7c33b7143ac2d65c6650e2847b8360d2d702803ab73034bdc13fbe0.
+Empty HTML:14607bytes; SHA256 0494bc0d1cd1db783f7ab4d01e8ba26449cccf17b6f56f9154c14ad376ce47bb.
+ZIP:99620bytes,22members/21payloads; SHA256 7aee1eea5d9396dd476fbc4140c24b9b0e6f519354893631f1097c3e6615371c.
+All three fresh saved GETs returned HTTP200 and whole-byte equality at04:45UTC, with local source custody preserved.
+
+PR131 is adopted on main7e2101c3324b108886edd7859a8602287da16a7b, exact reviewed tree957f6ada2772d10c47c23f7dc8bfc47b49c900a7. These saved pages retain the received941c81c710e2742498fa3748a939434420b89fb2 product epoch; no installed/deployed change is implied.
+https://github.com/Jacob-Met/testpilot/blob/7e2101c3324b108886edd7859a8602287da16a7b/docs/receiving/comparison-source-downloads-dcac8b3b8755/README.md
+
+Earlier walkthrough and reading examples — retained unchanged below
+
+

@@ -1,0 +1,61 @@
+{
+  "schema": "hamon.testpilot130-delivery-source/1",
+  "source_main": "7e2101c3324b108886edd7859a8602287da16a7b",
+  "scope": "Nine exact delivery-support/index payloads; no application change or new product course. Manifest excludes itself.",
+  "files": [
+    {
+      "path": "EYES-ADDENDUM.txt",
+      "bytes": 3494,
+      "sha256": "0fb6491b2372dad4fd95bc46a9ac572ed59c317cb222558bdab0886cac62fdca",
+      "git_blob": "54fbf2ec976f55e7e86c3065c0fe95abb11ecaac"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3603,
+      "sha256": "aac3279da07e2e5441921cb534165bf2e6645331f1b513e249e7bff0df61a0c5",
+      "git_blob": "045be3153778ca29d984af9196b218463237eb03"
+    },
+    {
+      "path": "package-receiving.json",
+      "bytes": 17349,
+      "sha256": "40694940661c5e895789b0e0e3f207c1bedbcccdd6b57f840907c30ddc0ced2e",
+      "git_blob": "41e9a18c5ef5d76a82761ddd624b697d9c4ce3ef"
+    },
+    {
+      "path": "package.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "package.stdout.txt",
+      "bytes": 500,
+      "sha256": "688d769bdffba8e2b90205fa2337c7b224d860ef9d08fbc1f25784d0df646a34",
+      "git_blob": "6fe04c339503b27955c2b911cb3363cce4df595d"
+    },
+    {
+      "path": "package/OPEN.txt",
+      "bytes": 3742,
+      "sha256": "6f263cef3befb83d4908e836e45c9c32335f525aa7e02cab9e7a2069c9e065f1",
+      "git_blob": "6ceb4eac400ab2e4339d7ca3efe2da17c46591a8"
+    },
+    {
+      "path": "saved-drive-receiving.json",
+      "bytes": 3891,
+      "sha256": "9e2d5ff4a0d3349754440b38763dbec095ad5974ea019d4393202482644dcfac",
+      "git_blob": "b2e4cfdb0c7ae9d5d7a58c0823cc3ede1c6632a0"
+    },
+    {
+      "path": "selected-manifest.json",
+      "bytes": 3687,
+      "sha256": "8517e980c1c9bc8bd29869855964d65414ebdbf2cab0eac50c855e41b889fe60",
+      "git_blob": "e0a7d4336d31ad3268e6ea2b6ae8ac9ed7094f25"
+    },
+    {
+      "path": "shared-readback.json",
+      "bytes": 479,
+      "sha256": "3a9e4f4e58e7bc9ae0856d15ecead03e3f7675686ef61090e51c50d50809a0a0",
+      "git_blob": "910eda025ed521ff2d6cebfafb5c71dec8c4e178"
+    }
+  ]
+}
