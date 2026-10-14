@@ -1,0 +1,232 @@
+{
+  "schema": "hamon.testpilot130.independent-criteria/1",
+  "frozen_at": "2026-10-14T03:47:27.041974+00:00",
+  "original_commit": "3441b6a2e708977ebfc75400d795501f357f656c",
+  "original_tree": "6ad610e7b901d34298b4eff0c3c85f517d5b8df2",
+  "original_packet": "431e88207343fc5ad1b78faabd6f6abfed7bf16e",
+  "renderer": "0fd6c65058fd847342633a28fe6c8c8157b8cfc5",
+  "reader": "11d8bbd4939b749760bd2b5fc26326a79ece1e40",
+  "fixtures": {
+    "before.json": {
+      "bytes": 2843,
+      "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+      "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+    },
+    "after.json": {
+      "bytes": 2379,
+      "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+      "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+    },
+    "empty-before.json": {
+      "bytes": 1011,
+      "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+      "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+    },
+    "empty-after.json": {
+      "bytes": 783,
+      "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+      "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+    },
+    "before-null.json": {
+      "bytes": 1855,
+      "sha256": "48d9df2beb88716c3fbb6bcdafcef70488715b08c1116b48054b9cb6ad83ff57",
+      "git_blob": "83cbe00bad9acd7370650821fb782c9afb2ad1dc"
+    },
+    "after-null.json": {
+      "bytes": 1464,
+      "sha256": "2a29ad3d0a9aa447f51d2c59e1d32f76fbded04ed2ecdc987fd7967e20d75c87",
+      "git_blob": "2b89b95f151af9eb852867b637f8d41b0ba66523"
+    }
+  },
+  "files": [
+    {
+      "index": 0,
+      "path": "../removed \u03a9.py",
+      "status": "removed",
+      "before": {
+        "state": "download",
+        "text": "removed\r\n\tkeep spaces  ",
+        "filename": "testpilot-before-file-0.txt",
+        "base64": "cmVtb3ZlZA0KCWtlZXAgc3BhY2VzICA=",
+        "bytes": 23,
+        "sha256": "61cd173916ef78d32d63172a2b02015498f843ebc275efa5429a98019344f492",
+        "git_blob": "df3a4f457a1698929d7671c438f945b912ba3392"
+      },
+      "after": {
+        "state": "absent"
+      }
+    },
+    {
+      "index": 1,
+      "path": "C:\\kept\\added.py",
+      "status": "added",
+      "before": {
+        "state": "absent"
+      },
+      "after": {
+        "state": "download",
+        "text": "\ufeffBOM is recorded\r\n\u03a9\t  ",
+        "filename": "testpilot-after-file-1.txt",
+        "base64": "77u/Qk9NIGlzIHJlY29yZGVkDQrOqQkgIA==",
+        "bytes": 25,
+        "sha256": "5d43a0a2701a83b3d057325eac5f8e6a326dd26a7d652cad0fb439929a7deadd",
+        "git_blob": "f1439dcc2ca852c99a015c738a2401f2e02165e9"
+      }
+    },
+    {
+      "index": 2,
+      "path": "empty.py",
+      "status": "unchanged",
+      "before": {
+        "state": "download",
+        "text": "",
+        "filename": "testpilot-before-file-2.txt",
+        "base64": "",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      },
+      "after": {
+        "state": "download",
+        "text": "",
+        "filename": "testpilot-after-file-2.txt",
+        "base64": "",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+      }
+    },
+    {
+      "index": 3,
+      "path": "lone-high.py",
+      "status": "changed",
+      "before": {
+        "state": "unpaired",
+        "text": "high \ud800 retained"
+      },
+      "after": {
+        "state": "download",
+        "text": "valid after high \u03a9\r\n",
+        "filename": "testpilot-after-file-3.txt",
+        "base64": "dmFsaWQgYWZ0ZXIgaGlnaCDOqQ0K",
+        "bytes": 21,
+        "sha256": "9847f30ea767b046ca76a71a24afee9215e3798d7702b6fe4791e98aee2c629d",
+        "git_blob": "b50a832583e8725587d4e05b698ec21a047196b0"
+      }
+    },
+    {
+      "index": 4,
+      "path": "lone-low.py",
+      "status": "changed",
+      "before": {
+        "state": "download",
+        "text": "valid before low\u0000\n",
+        "filename": "testpilot-before-file-4.txt",
+        "base64": "dmFsaWQgYmVmb3JlIGxvdwAK",
+        "bytes": 18,
+        "sha256": "623a4d5d001cc128dc2e63069eede08485c39f11ec5cb2bb1a0b65ded17a8b7c",
+        "git_blob": "75b877662d35bb6f9aa693f4bc4ade53fcf2b635"
+      },
+      "after": {
+        "state": "unpaired",
+        "text": "low \udfff retained"
+      }
+    },
+    {
+      "index": 5,
+      "path": "paired.py",
+      "status": "unchanged",
+      "before": {
+        "state": "download",
+        "text": "\n\ud83d\ude00 caf\u00e9\n",
+        "filename": "testpilot-before-file-5.txt",
+        "base64": "CvCfmIAgY2Fmw6kK",
+        "bytes": 12,
+        "sha256": "d2874e08cef9d1508d8d52d0dcc763d5e639c8527954a536786856b3bee9b932",
+        "git_blob": "eb8d21ccca709b82abc7ecb32b772ecdbd6852bc"
+      },
+      "after": {
+        "state": "download",
+        "text": "\n\ud83d\ude00 caf\u00e9\n",
+        "filename": "testpilot-after-file-5.txt",
+        "base64": "CvCfmIAgY2Fmw6kK",
+        "bytes": 12,
+        "sha256": "d2874e08cef9d1508d8d52d0dcc763d5e639c8527954a536786856b3bee9b932",
+        "git_blob": "eb8d21ccca709b82abc7ecb32b772ecdbd6852bc"
+      }
+    },
+    {
+      "index": 6,
+      "path": "same.py",
+      "status": "changed",
+      "before": {
+        "state": "download",
+        "text": "  BEGIN\r\n\t\u03a9 \u4e2d \ud83d\ude00\u0000\u001b[31m <script>DISPLAY ONLY</script>\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  ",
+        "filename": "testpilot-before-file-6.txt",
+        "base64": "ICBCRUdJTg0KCc6pIOS4rSDwn5iAABtbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+DWJhcmUKMDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkKVFJBSUwgVFdPICA=",
+        "bytes": 875,
+        "sha256": "bb019bdfcdbe6ebf37a7abb367662d608d9024407d3f155beea9f9a565de3736",
+        "git_blob": "aa4cc23568765ee7c478246aa60e066929fd28b3"
+      },
+      "after": {
+        "state": "download",
+        "text": "  BEGIN\r\n\t\u03a9 \u4e2d \ud83d\ude00\u0000\u001b[31m <script>DISPLAY ONLY</script>\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  \r\nAFTER\n",
+        "filename": "testpilot-after-file-6.txt",
+        "base64": "ICBCRUdJTg0KCc6pIOS4rSDwn5iAABtbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+DWJhcmUKMDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkKVFJBSUwgVFdPICANCkFGVEVSCg==",
+        "bytes": 883,
+        "sha256": "0b58222378416b029715ca301b9ab46e8d6d885d91f6e6bc5af5dcb26d2b1c20",
+        "git_blob": "7b404c3b72b01240f1413836e06ce168442deee5"
+      }
+    }
+  ],
+  "cases": {
+    "mixed": [
+      "before.json",
+      "after.json"
+    ],
+    "empty": [
+      "empty-before.json",
+      "empty-after.json"
+    ]
+  },
+  "negative_cases": {
+    "null-before": [
+      "before-null.json",
+      "after.json"
+    ],
+    "null-after": [
+      "before.json",
+      "after-null.json"
+    ]
+  },
+  "selectors": {
+    "file": "#file-{index}",
+    "link": "a.generated-source-download",
+    "unavailable": "p.generated-source-unavailable",
+    "attributes": [
+      "data-file-index",
+      "data-role"
+    ],
+    "label": "Download {Before|After} source"
+  },
+  "counts": {
+    "mixed_files": 7,
+    "valid_source_downloads": 10,
+    "unpaired_notes": 2,
+    "absent_sides": 2,
+    "empty_payloads": 2,
+    "original_browser_downloads": 4,
+    "candidate_browser_downloads": 14
+  },
+  "contract": [
+    "Strict decoded UTF-8 bytes, including literal leading FEFF, no added BOM or normalization.",
+    "Unchanged files retain both labeled roles; missing side has no link; unpaired surrogate has no lossy link.",
+    "Fixed sorted-union index filenames, not path-derived destination names.",
+    "Full original file table/diffs/source display and all other sections equal the original baseline.",
+    "Same initial disclosures and manual state after actions; native keyboard save; 390px document fit.",
+    "Print-media full source visibility, not physical print/PDF; no script, remote request, storage or source execution.",
+    "Original raw Before/After JSON downloaded exactly, including BOM/CRLF and numeric spelling.",
+    "Complete admitted inputs and observer bytes/stat conserved; managed cleanup recorded truthfully."
+  ],
+  "scope": "Two fictional comparison pairs, four ordinary CLI cases, passive saved-page viewing and native downloads only. No test, model, provider, sandbox task, history discovery or repository mutation."
+}

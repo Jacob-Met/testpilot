@@ -1,0 +1,78 @@
+{
+  "schema": "hamon.exact-artifact-manifest/1",
+  "scope": "Source preparation and two distinct authored unit courses. Independent browser qualification is published separately.",
+  "files": [
+    {
+      "path": "base-metadata.json",
+      "bytes": 6272,
+      "sha256": "542d0077eea76cc9c9598294bf3c88376135ac437ac7e5f30024236384904d46",
+      "git_blob": "96807b723b781252f9044fd70a77865c6b342451"
+    },
+    {
+      "path": "product-metadata.json",
+      "bytes": 1352,
+      "sha256": "187ec6b72d801bb3bbb8e082ec2df492d8226788a82f8b3a186f0293d2d6e9e5",
+      "git_blob": "68bacc3b6fd4ba31da533119741016be4398319b"
+    },
+    {
+      "path": "original-source-packet.json",
+      "bytes": 224824,
+      "sha256": "60b2867c539db095977e98d6c9dc1238889ca296ba92c847b636c14753dcc67a",
+      "git_blob": "431e88207343fc5ad1b78faabd6f6abfed7bf16e"
+    },
+    {
+      "path": "candidate-source-packet.json",
+      "bytes": 225943,
+      "sha256": "e8d94074cd53f09fb72fb4a1acb0935f28f8fabca07be4f4eb116e1cd566ca63",
+      "git_blob": "bbf9cdec519681ef03f3a4422ecc0b6b9d9d64d2"
+    },
+    {
+      "path": "source.diff",
+      "bytes": 13306,
+      "sha256": "a161119cfb7840d2264e00e62a3b80f062942b406c2b1863c694e798caabd7ba",
+      "git_blob": "eef8d6fc7eb7f65e09be9ec61f48c012aa07c26e"
+    },
+    {
+      "path": "author-original-v1/receiving.json",
+      "bytes": 13550,
+      "sha256": "8e8a3e2d05500e1e88a530b3896361f4f584005476245b0d5b9e4381fa0b15c2",
+      "git_blob": "f755e2e107c3c660931f2da3d7bbaae02180c19b"
+    },
+    {
+      "path": "author-original-v1/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "author-original-v1/stderr.txt",
+      "bytes": 5310,
+      "sha256": "7e47300972e930cef50f019d3d0ec962ae2880a79cc633c9f8d67b785704190c",
+      "git_blob": "bad8df97a38bb5dd082a95f01cd846edf70fdbbb"
+    },
+    {
+      "path": "author-candidate-v1/receiving.json",
+      "bytes": 13532,
+      "sha256": "00ee905b3455613ed3b76fa52a30d6a69c3098beb8e4b8189d19034e5453e0bf",
+      "git_blob": "642a4c662d477aec19e344ecd140374d0cfd5625"
+    },
+    {
+      "path": "author-candidate-v1/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "git_blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "author-candidate-v1/stderr.txt",
+      "bytes": 1331,
+      "sha256": "25fdeaeca569c2fba2eaeb40e6400201152ef352aa649d2099744b16569a54cc",
+      "git_blob": "f9dc3ccd5b033f06e50483a1e0ef157cae40fb55"
+    },
+    {
+      "path": "AUTHOR-RECEIVING.md",
+      "bytes": 3108,
+      "sha256": "0d354db9108208376221ee1abef2bfdd26c4826edca42e1ad6345eef3eedaa90",
+      "git_blob": "8afdb25a83870bc9f1c9ba832ab06c6cee923a18"
+    }
+  ]
+}

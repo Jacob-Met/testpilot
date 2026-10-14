@@ -1,0 +1,73 @@
+test_complete_literal_utf8_including_recorded_feff_and_long_source (test_compare_generated_downloads.GeneratedDownloads.test_complete_literal_utf8_including_recorded_feff_and_long_source) ... FAIL
+test_empty_maps_do_not_add_controls_or_change_absence (test_compare_generated_downloads.GeneratedDownloads.test_empty_maps_do_not_add_controls_or_change_absence) ... ok
+test_fixed_roles_and_existing_file_order_keep_each_source (test_compare_generated_downloads.GeneratedDownloads.test_fixed_roles_and_existing_file_order_keep_each_source) ... FAIL
+test_ordinary_cli_saves_source_links_without_executing_text (test_compare_generated_downloads.GeneratedDownloads.test_ordinary_cli_saves_source_links_without_executing_text) ... FAIL
+test_original_json_and_script_free_contract_remain_exact (test_compare_generated_downloads.GeneratedDownloads.test_original_json_and_script_free_contract_remain_exact) ... ok
+test_recorded_paths_cannot_select_a_filename_or_create_markup (test_compare_generated_downloads.GeneratedDownloads.test_recorded_paths_cannot_select_a_filename_or_create_markup) ... FAIL
+test_unpaired_surrogate_is_local_to_its_side (test_compare_generated_downloads.GeneratedDownloads.test_unpaired_surrogate_is_local_to_its_side) ... FAIL
+
+======================================================================
+FAIL: test_complete_literal_utf8_including_recorded_feff_and_long_source (test_compare_generated_downloads.GeneratedDownloads.test_complete_literal_utf8_including_recorded_feff_and_long_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/dcac8b3b8755/testpilot130-author/original-source/tests/test_compare_generated_downloads.py", line 94, in test_complete_literal_utf8_including_recorded_feff_and_long_source
+    self.assertEqual(len(links), 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_fixed_roles_and_existing_file_order_keep_each_source (test_compare_generated_downloads.GeneratedDownloads.test_fixed_roles_and_existing_file_order_keep_each_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/dcac8b3b8755/testpilot130-author/original-source/tests/test_compare_generated_downloads.py", line 82, in test_fixed_roles_and_existing_file_order_keep_each_source
+    self.assertEqual(len(links), len(expected))
+AssertionError: 0 != 6
+
+======================================================================
+FAIL: test_ordinary_cli_saves_source_links_without_executing_text (test_compare_generated_downloads.GeneratedDownloads.test_ordinary_cli_saves_source_links_without_executing_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/dcac8b3b8755/testpilot130-author/original-source/tests/test_compare_generated_downloads.py", line 152, in test_ordinary_cli_saves_source_links_without_executing_text
+    self.assertEqual([payload(x) for x in links], [b"raise RuntimeError('data only')\r\n", b""])
+AssertionError: Lists differ: [] != [b"raise RuntimeError('data only')\r\n", b'']
+
+Second list contains 2 additional elements.
+First extra element 0:
+b"raise RuntimeError('data only')\r\n"
+
+- []
++ [b"raise RuntimeError('data only')\r\n", b'']
+
+======================================================================
+FAIL: test_recorded_paths_cannot_select_a_filename_or_create_markup (test_compare_generated_downloads.GeneratedDownloads.test_recorded_paths_cannot_select_a_filename_or_create_markup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/dcac8b3b8755/testpilot130-author/original-source/tests/test_compare_generated_downloads.py", line 116, in test_recorded_paths_cannot_select_a_filename_or_create_markup
+    self.assertEqual([x["download"] for x in found.source_links()],
+AssertionError: Lists differ: [] != ['testpilot-before-file-0.txt', 'testpilot-after-file-0.txt']
+
+Second list contains 2 additional elements.
+First extra element 0:
+'testpilot-before-file-0.txt'
+
+- []
++ ['testpilot-before-file-0.txt', 'testpilot-after-file-0.txt']
+
+======================================================================
+FAIL: test_unpaired_surrogate_is_local_to_its_side (test_compare_generated_downloads.GeneratedDownloads.test_unpaired_surrogate_is_local_to_its_side)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/dcac8b3b8755/testpilot130-author/original-source/tests/test_compare_generated_downloads.py", line 105, in test_unpaired_surrogate_is_local_to_its_side
+    self.assertEqual([(x["data-file-index"], x["data-role"], payload(x)) for x in found.source_links()],
+AssertionError: Lists differ: [] != [('0', 'after', b'valid \xf0\x9f\x98\x80'), ('1', 'before', b'valid \xce\xa9')]
+
+Second list contains 2 additional elements.
+First extra element 0:
+('0', 'after', b'valid \xf0\x9f\x98\x80')
+
+- []
++ [('0', 'after', b'valid \xf0\x9f\x98\x80'), ('1', 'before', b'valid \xce\xa9')]
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.078s
+
+FAILED (failures=5)

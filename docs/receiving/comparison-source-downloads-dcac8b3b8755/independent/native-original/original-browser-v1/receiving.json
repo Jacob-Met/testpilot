@@ -1,0 +1,2019 @@
+{
+  "schema": "hamon.testpilot130.browser/1",
+  "mode": "original",
+  "source": "3441b6a2e708977ebfc75400d795501f357f656c",
+  "started_at": "2026-10-14T03:58:21.072778+00:00",
+  "runtime": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "playwright": "1.61.0",
+    "host": "MSI",
+    "user": "jacob",
+    "chrome": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "chromium_sandbox": true,
+    "browser_version": "154.0.8037.97"
+  },
+  "checks": [
+    {
+      "name": "frozen criteria",
+      "actual": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "expected": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "passed": true
+    },
+    {
+      "name": "producer passed",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "producer preserved",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "producer source",
+      "actual": "3441b6a2e708977ebfc75400d795501f357f656c",
+      "expected": "3441b6a2e708977ebfc75400d795501f357f656c",
+      "passed": true
+    },
+    {
+      "name": "packet source",
+      "actual": "3441b6a2e708977ebfc75400d795501f357f656c",
+      "expected": "3441b6a2e708977ebfc75400d795501f357f656c",
+      "passed": true
+    },
+    {
+      "name": "packet identity bound",
+      "actual": {
+        "bytes": 224824,
+        "sha256": "60b2867c539db095977e98d6c9dc1238889ca296ba92c847b636c14753dcc67a",
+        "git_blob": "431e88207343fc5ad1b78faabd6f6abfed7bf16e"
+      },
+      "expected": {
+        "bytes": 224824,
+        "sha256": "60b2867c539db095977e98d6c9dc1238889ca296ba92c847b636c14753dcc67a",
+        "git_blob": "431e88207343fc5ad1b78faabd6f6abfed7bf16e"
+      },
+      "passed": true
+    },
+    {
+      "name": "criteria identity bound",
+      "actual": {
+        "bytes": 12074,
+        "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+        "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e"
+      },
+      "expected": {
+        "bytes": 12074,
+        "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+        "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e"
+      },
+      "passed": true
+    },
+    {
+      "name": "four ordinary CLI outcomes",
+      "actual": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "expected": [
+        0,
+        0,
+        2,
+        2
+      ],
+      "passed": true
+    },
+    {
+      "name": "original source pin",
+      "actual": "3441b6a2e708977ebfc75400d795501f357f656c",
+      "expected": "3441b6a2e708977ebfc75400d795501f357f656c",
+      "passed": true
+    },
+    {
+      "name": "original packet pin",
+      "actual": "431e88207343fc5ad1b78faabd6f6abfed7bf16e",
+      "expected": "431e88207343fc5ad1b78faabd6f6abfed7bf16e",
+      "passed": true
+    },
+    {
+      "name": "complete admitted path set",
+      "actual": [
+        "after.json",
+        "before.json",
+        "criteria.json",
+        "empty-after.json",
+        "empty-before.json",
+        "empty.html",
+        "mixed.html",
+        "producer.json",
+        "receive_browser.py",
+        "source-packet.json"
+      ],
+      "expected": [
+        "after.json",
+        "before.json",
+        "criteria.json",
+        "empty-after.json",
+        "empty-before.json",
+        "empty.html",
+        "mixed.html",
+        "producer.json",
+        "receive_browser.py",
+        "source-packet.json"
+      ],
+      "passed": true
+    },
+    {
+      "name": "executed observer admitted",
+      "actual": {
+        "bytes": 16201,
+        "sha256": "5eb8526d466c763c14100f60e3a7cfbf85c92ed0b18bbd43cc0ab784a820eb22",
+        "git_blob": "f8c96085e148a2996ed036fb7f50fcec543c212e"
+      },
+      "expected": {
+        "bytes": 16201,
+        "sha256": "5eb8526d466c763c14100f60e3a7cfbf85c92ed0b18bbd43cc0ab784a820eb22",
+        "git_blob": "f8c96085e148a2996ed036fb7f50fcec543c212e"
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed ordinary CLI HTML",
+      "actual": {
+        "bytes": 27886,
+        "sha256": "ecdc9933d758fbbbf44dc253ea8faa7781258c106541925b711e5597aac0de50",
+        "git_blob": "dbe5c4e5eebcfc2b59b37eac7b3281946850fecc"
+      },
+      "expected": {
+        "bytes": 27886,
+        "sha256": "ecdc9933d758fbbbf44dc253ea8faa7781258c106541925b711e5597aac0de50",
+        "git_blob": "dbe5c4e5eebcfc2b59b37eac7b3281946850fecc"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture before.json",
+      "actual": {
+        "bytes": 2843,
+        "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+        "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+      },
+      "expected": {
+        "bytes": 2843,
+        "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+        "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture after.json",
+      "actual": {
+        "bytes": 2379,
+        "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+        "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+      },
+      "expected": {
+        "bytes": 2379,
+        "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+        "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+      },
+      "passed": true
+    },
+    {
+      "name": "empty ordinary CLI HTML",
+      "actual": {
+        "bytes": 14607,
+        "sha256": "0494bc0d1cd1db783f7ab4d01e8ba26449cccf17b6f56f9154c14ad376ce47bb",
+        "git_blob": "58f5af0a1907e0603c92eff557ac2f204b78e46d"
+      },
+      "expected": {
+        "bytes": 14607,
+        "sha256": "0494bc0d1cd1db783f7ab4d01e8ba26449cccf17b6f56f9154c14ad376ce47bb",
+        "git_blob": "58f5af0a1907e0603c92eff557ac2f204b78e46d"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture empty-before.json",
+      "actual": {
+        "bytes": 1011,
+        "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+        "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+      },
+      "expected": {
+        "bytes": 1011,
+        "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+        "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+      },
+      "passed": true
+    },
+    {
+      "name": "fixture empty-after.json",
+      "actual": {
+        "bytes": 783,
+        "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+        "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+      },
+      "expected": {
+        "bytes": 783,
+        "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+        "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed title",
+      "actual": "Compare saved TestPilot runs",
+      "expected": "Compare saved TestPilot runs",
+      "passed": true
+    },
+    {
+      "name": "mixed CSP",
+      "actual": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "expected": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "passed": true
+    },
+    {
+      "name": "mixed no scripts",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "mixed file IDs",
+      "actual": [
+        "file-0",
+        "file-1",
+        "file-2",
+        "file-3",
+        "file-4",
+        "file-5",
+        "file-6"
+      ],
+      "expected": [
+        "file-0",
+        "file-1",
+        "file-2",
+        "file-3",
+        "file-4",
+        "file-5",
+        "file-6"
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed literal file table",
+      "actual": [
+        [
+          "../removed \u03a9.py",
+          "removed",
+          "23",
+          "Absent"
+        ],
+        [
+          "C:\\kept\\added.py",
+          "added",
+          "Absent",
+          "22"
+        ],
+        [
+          "empty.py",
+          "unchanged",
+          "0",
+          "0"
+        ],
+        [
+          "lone-high.py",
+          "changed",
+          "15",
+          "20"
+        ],
+        [
+          "lone-low.py",
+          "changed",
+          "18",
+          "14"
+        ],
+        [
+          "paired.py",
+          "unchanged",
+          "8",
+          "8"
+        ],
+        [
+          "same.py",
+          "changed",
+          "869",
+          "877"
+        ]
+      ],
+      "expected": [
+        [
+          "../removed \u03a9.py",
+          "removed",
+          "23",
+          "Absent"
+        ],
+        [
+          "C:\\kept\\added.py",
+          "added",
+          "Absent",
+          "22"
+        ],
+        [
+          "empty.py",
+          "unchanged",
+          "0",
+          "0"
+        ],
+        [
+          "lone-high.py",
+          "changed",
+          "15",
+          "20"
+        ],
+        [
+          "lone-low.py",
+          "changed",
+          "18",
+          "14"
+        ],
+        [
+          "paired.py",
+          "unchanged",
+          "8",
+          "8"
+        ],
+        [
+          "same.py",
+          "changed",
+          "869",
+          "877"
+        ]
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed initial file disclosures",
+      "actual": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        false,
+        true,
+        true,
+        false,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed original JSON anchors",
+      "actual": [
+        {
+          "id": "download-before",
+          "label": "Download before JSON",
+          "name": "before-report.json",
+          "href": "data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo="
+        },
+        {
+          "id": "download-after",
+          "label": "Download after JSON",
+          "name": "after-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        }
+      ],
+      "expected": [
+        {
+          "id": "download-before",
+          "label": "Download before JSON",
+          "name": "before-report.json",
+          "href": "data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo="
+        },
+        {
+          "id": "download-after",
+          "label": "Download after JSON",
+          "name": "after-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed retained diagnostic occurrence index",
+      "actual": [
+        {
+          "href": "#diagnostic-before-case-1",
+          "text": "Before case 1 \u00b7 failed \u00b7 repeat <case> \u03a9"
+        },
+        {
+          "href": "#diagnostic-after-case-1",
+          "text": "After case 1 \u00b7 error \u00b7 repeat <case> \u03a9"
+        }
+      ],
+      "expected": [
+        {
+          "href": "#diagnostic-before-case-1",
+          "text": "Before case 1 \u00b7 failed \u00b7 repeat <case> \u03a9"
+        },
+        {
+          "href": "#diagnostic-after-case-1",
+          "text": "After case 1 \u00b7 error \u00b7 repeat <case> \u03a9"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed source actions absent",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "mixed source unavailable notes absent",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "mixed-before unique link",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "mixed-before native filename",
+      "actual": "before-report.json",
+      "expected": "before-report.json",
+      "passed": true
+    },
+    {
+      "name": "mixed-before visible action",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-before suggested filename",
+      "actual": "before-report.json",
+      "expected": "before-report.json",
+      "passed": true
+    },
+    {
+      "name": "mixed-before download failure",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "mixed-before saved identity",
+      "actual": {
+        "bytes": 2843,
+        "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+        "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+      },
+      "expected": {
+        "bytes": 2843,
+        "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+        "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed-before whole bytes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-after unique link",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "mixed-after native filename",
+      "actual": "after-report.json",
+      "expected": "after-report.json",
+      "passed": true
+    },
+    {
+      "name": "mixed-after visible action",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mixed-after suggested filename",
+      "actual": "after-report.json",
+      "expected": "after-report.json",
+      "passed": true
+    },
+    {
+      "name": "mixed-after download failure",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "mixed-after saved identity",
+      "actual": {
+        "bytes": 2379,
+        "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+        "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+      },
+      "expected": {
+        "bytes": 2379,
+        "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+        "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed-after whole bytes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mixed390 document fit",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "mixed print complete source visibility",
+      "actual": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "expected": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed print preserves disclosures",
+      "actual": [
+        {
+          "id": "",
+          "open": false
+        },
+        {
+          "id": "file-0",
+          "open": true
+        },
+        {
+          "id": "file-1",
+          "open": true
+        },
+        {
+          "id": "file-2",
+          "open": false
+        },
+        {
+          "id": "file-3",
+          "open": true
+        },
+        {
+          "id": "file-4",
+          "open": true
+        },
+        {
+          "id": "file-5",
+          "open": true
+        },
+        {
+          "id": "file-6",
+          "open": true
+        },
+        {
+          "id": "diagnostic-before-case-1",
+          "open": false
+        },
+        {
+          "id": "diagnostic-before-case-2",
+          "open": false
+        },
+        {
+          "id": "",
+          "open": false
+        },
+        {
+          "id": "diagnostic-after-case-1",
+          "open": true
+        },
+        {
+          "id": "",
+          "open": false
+        }
+      ],
+      "expected": [
+        {
+          "id": "",
+          "open": false
+        },
+        {
+          "id": "file-0",
+          "open": true
+        },
+        {
+          "id": "file-1",
+          "open": true
+        },
+        {
+          "id": "file-2",
+          "open": false
+        },
+        {
+          "id": "file-3",
+          "open": true
+        },
+        {
+          "id": "file-4",
+          "open": true
+        },
+        {
+          "id": "file-5",
+          "open": true
+        },
+        {
+          "id": "file-6",
+          "open": true
+        },
+        {
+          "id": "diagnostic-before-case-1",
+          "open": false
+        },
+        {
+          "id": "diagnostic-before-case-2",
+          "open": false
+        },
+        {
+          "id": "",
+          "open": false
+        },
+        {
+          "id": "diagnostic-after-case-1",
+          "open": true
+        },
+        {
+          "id": "",
+          "open": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "mixed complete fixed view after actions",
+      "actual": {
+        "title": "Compare saved TestPilot runs",
+        "csp": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+        "sections": {
+          "results": "<h2>Recorded results</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Values retained from each saved run\"><table><caption>Values retained from each saved run</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded status</td><td>failed</td><td>failed</td></tr><tr><td>Selected targets</td><td>2</td><td>1</td></tr><tr><td>Retained generated files</td><td>6</td><td>6</td></tr><tr><td>Tests written (reported)</td><td>6</td><td>6</td></tr><tr><td>Repair rounds used / allowed</td><td>0 / 1</td><td>0 / 1</td></tr><tr><td>JUnit availability</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Complete-suite recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr><tr><td>Generated-case recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr></tbody></table></div><p class=\"note\">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p>",
+          "source": "<h2>Selected-source context</h2><p class=\"note\">Targets are grouped by their recorded path and qualified name. Repeated labels stay as separate records. These reports do not establish a full repository, commit, test configuration, or execution-environment identity.</p><details><summary>src/literal \u03a9.py::same</summary><div class=\"detail\"><div class=\"columns\"><div><h3>Before</h3><p class=\"note\">Separate record 1 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre><p class=\"note\">Separate record 2 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div><div><h3>After</h3><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"After selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div></div></div></details>",
+          "diagnostics": "<h2>Final diagnostics</h2><nav class=\"case-index\" aria-label=\"Recorded failed and error cases\"><p><strong>Failed and error cases</strong> \u00b7 2 retained rows</p><ul><li><a href=\"#diagnostic-before-case-1\">Before case 1 \u00b7 failed \u00b7 repeat &lt;case&gt; \u03a9</a></li><li><a href=\"#diagnostic-after-case-1\">After case 1 \u00b7 error \u00b7 repeat &lt;case&gt; \u03a9</a></li></ul><p class=\"note\">Case positions refer to each report's retained array. Repeated labels stay separate; these links do not establish identical tests or complete execution.</p></nav><div class=\"columns\"><div><h3>Before</h3><p class=\"prose\">before fixture</p><p class=\"note\">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class=\"prose\">before retained summary</p><details id=\"diagnostic-before-case-1\"><summary><span class=\"pill\">failed</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: ../removed \u03a9.py</p><pre tabindex=\"0\" aria-label=\"Recorded test diagnostic\"><code>Literal failure &lt;tag&gt;\\r\n</code></pre></div></details><details id=\"diagnostic-before-case-2\"><summary><span class=\"pill\">passed</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: Not attributed to a generated file</p><p>No diagnostic text recorded.</p></div></details><details><summary>Recorded pytest output \u00b7 last 3,000 characters</summary><div class=\"detail\"><pre tabindex=\"0\" aria-label=\"Recorded pytest output tail\"><code>Recorded output only\n</code></pre></div></details></div><div><h3>After</h3><p class=\"prose\">after fixture</p><p class=\"note\">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class=\"prose\">after retained summary</p><details id=\"diagnostic-after-case-1\"><summary><span class=\"pill\">error</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: Not attributed to a generated file</p><pre tabindex=\"0\" aria-label=\"Recorded test diagnostic\"><code>Literal error\n</code></pre></div></details><details><summary>Recorded pytest output \u00b7 last 3,000 characters</summary><div class=\"detail\"><pre tabindex=\"0\" aria-label=\"Recorded pytest output tail\"><code>Recorded output only\n</code></pre></div></details></div></div>",
+          "coverage": "<h2>Recorded coverage</h2><p class=\"note\">Each column retains its own source and selection denominators. The reported change is within that original run.</p><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original within-run measurements\"><table><caption>Original within-run measurements</caption><thead><tr><th scope=\"col\">Measurement</th><th scope=\"col\">Before report</th><th scope=\"col\">After report</th></tr></thead><tbody><tr><td>Total before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Total after generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Within-run total change</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Executable changed lines</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines after generation</td><td>Unavailable</td><td>Unavailable</td></tr></tbody></table></div>",
+          "usage": "<h2>Recorded usage</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original totals and completeness flags\"><table><caption>Original totals and completeness flags</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded total tokens</td><td>0</td><td>0</td></tr><tr><td>Token basis</td><td>Provider-reported</td><td>Provider-reported</td></tr><tr><td>Recorded total cost</td><td>Unpriced / incomplete</td><td>Unpriced / incomplete</td></tr></tbody></table></div><p class=\"note\">Prices and currency amounts retain the original run\u2019s configuration. Incomplete cost stays unpriced.</p><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No model calls are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No model calls are recorded.</p></div></div>",
+          "rounds": "<h2>Saved generation and repair rounds</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div></div>",
+          "originals": "<h2>Original reports</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Exact input byte identities\"><table><caption>Exact input byte identities</caption><thead><tr><th scope=\"col\">Label</th><th scope=\"col\">Source filename</th><th scope=\"col\">Bytes</th><th scope=\"col\">SHA256</th></tr></thead><tbody><tr><td>Before</td><td>before.json</td><td>2843</td><td>028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524</td></tr><tr><td>After</td><td>after.json</td><td>2379</td><td>abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81</td></tr></tbody></table></div><div class=\"actions\">\n<a class=\"button\" id=\"download-before\" download=\"before-report.json\" href=\"data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo=\">Download before JSON</a>\n<a class=\"button\" id=\"download-after\" download=\"after-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download after JSON</a>\n</div><p class=\"note\">The downloads keep the complete original input bytes, including extra fields and formatting.</p>"
+        },
+        "fileTable": [
+          [
+            "../removed \u03a9.py",
+            "removed",
+            "23",
+            "Absent"
+          ],
+          [
+            "C:\\kept\\added.py",
+            "added",
+            "Absent",
+            "22"
+          ],
+          [
+            "empty.py",
+            "unchanged",
+            "0",
+            "0"
+          ],
+          [
+            "lone-high.py",
+            "changed",
+            "15",
+            "20"
+          ],
+          [
+            "lone-low.py",
+            "changed",
+            "18",
+            "14"
+          ],
+          [
+            "paired.py",
+            "unchanged",
+            "8",
+            "8"
+          ],
+          [
+            "same.py",
+            "changed",
+            "869",
+            "877"
+          ]
+        ],
+        "files": [
+          {
+            "id": "file-0",
+            "summary": "removed../removed \u03a9.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/../removed \u03a9.py\n+++ after/../removed \u03a9.py\n@@ -1,2 +0,0 @@\n-removed\\r\n-\tkeep spaces  \n\\ No newline at end of file\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "removed\\r\n\tkeep spaces  "
+              }
+            ],
+            "absent": [
+              "File absent."
+            ],
+            "omitted": []
+          },
+          {
+            "id": "file-1",
+            "summary": "addedC:\\kept\\added.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/C:\\kept\\added.py\n+++ after/C:\\kept\\added.py\n@@ -0,0 +1,2 @@\n+\ufeffBOM is recorded\\r\n+\u03a9\t  \n\\ No newline at end of file\n"
+              },
+              {
+                "label": "After generated source",
+                "text": "\ufeffBOM is recorded\\r\n\u03a9\t  "
+              }
+            ],
+            "absent": [
+              "File absent."
+            ],
+            "omitted": []
+          },
+          {
+            "id": "file-2",
+            "summary": "unchangedempty.py",
+            "headings": [],
+            "pre": [
+              {
+                "label": "Identical saved generated source",
+                "text": ""
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-3",
+            "summary": "changedlone-high.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/lone-high.py\n+++ after/lone-high.py\n@@ -1 +1 @@\n-high \\ud800 retained\n\\ No newline at end of file\n+valid after high \u03a9\\r\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "high \\ud800 retained"
+              },
+              {
+                "label": "After generated source",
+                "text": "valid after high \u03a9\\r\n"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-4",
+            "summary": "changedlone-low.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/lone-low.py\n+++ after/lone-low.py\n@@ -1 +1 @@\n-valid before low\\x00\n+low \\udfff retained\n\\ No newline at end of file\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "valid before low\\x00\n"
+              },
+              {
+                "label": "After generated source",
+                "text": "low \\udfff retained"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-5",
+            "summary": "unchangedpaired.py",
+            "headings": [],
+            "pre": [
+              {
+                "label": "Identical saved generated source",
+                "text": "\n\ud83d\ude00 caf\u00e9\n"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-6",
+            "summary": "changedsame.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/same.py\n+++ after/same.py\n@@ -1,4 +1,5 @@\n   BEGIN\\r\n \t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n 01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\n-TRAIL TWO  \n\\ No newline at end of file\n+TRAIL TWO  \\r\n+AFTER\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "  BEGIN\\r\n\t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  "
+              },
+              {
+                "label": "After generated source",
+                "text": "  BEGIN\\r\n\t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  \\r\nAFTER\n"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          }
+        ],
+        "originals": [
+          {
+            "id": "download-before",
+            "label": "Download before JSON",
+            "name": "before-report.json",
+            "href": "data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo="
+          },
+          {
+            "id": "download-after",
+            "label": "Download after JSON",
+            "name": "after-report.json",
+            "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+          }
+        ],
+        "index": [
+          {
+            "href": "#diagnostic-before-case-1",
+            "text": "Before case 1 \u00b7 failed \u00b7 repeat <case> \u03a9"
+          },
+          {
+            "href": "#diagnostic-after-case-1",
+            "text": "After case 1 \u00b7 error \u00b7 repeat <case> \u03a9"
+          }
+        ]
+      },
+      "expected": {
+        "title": "Compare saved TestPilot runs",
+        "csp": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+        "sections": {
+          "results": "<h2>Recorded results</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Values retained from each saved run\"><table><caption>Values retained from each saved run</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded status</td><td>failed</td><td>failed</td></tr><tr><td>Selected targets</td><td>2</td><td>1</td></tr><tr><td>Retained generated files</td><td>6</td><td>6</td></tr><tr><td>Tests written (reported)</td><td>6</td><td>6</td></tr><tr><td>Repair rounds used / allowed</td><td>0 / 1</td><td>0 / 1</td></tr><tr><td>JUnit availability</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Complete-suite recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr><tr><td>Generated-case recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr></tbody></table></div><p class=\"note\">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p>",
+          "source": "<h2>Selected-source context</h2><p class=\"note\">Targets are grouped by their recorded path and qualified name. Repeated labels stay as separate records. These reports do not establish a full repository, commit, test configuration, or execution-environment identity.</p><details><summary>src/literal \u03a9.py::same</summary><div class=\"detail\"><div class=\"columns\"><div><h3>Before</h3><p class=\"note\">Separate record 1 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre><p class=\"note\">Separate record 2 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div><div><h3>After</h3><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"After selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div></div></div></details>",
+          "diagnostics": "<h2>Final diagnostics</h2><nav class=\"case-index\" aria-label=\"Recorded failed and error cases\"><p><strong>Failed and error cases</strong> \u00b7 2 retained rows</p><ul><li><a href=\"#diagnostic-before-case-1\">Before case 1 \u00b7 failed \u00b7 repeat &lt;case&gt; \u03a9</a></li><li><a href=\"#diagnostic-after-case-1\">After case 1 \u00b7 error \u00b7 repeat &lt;case&gt; \u03a9</a></li></ul><p class=\"note\">Case positions refer to each report's retained array. Repeated labels stay separate; these links do not establish identical tests or complete execution.</p></nav><div class=\"columns\"><div><h3>Before</h3><p class=\"prose\">before fixture</p><p class=\"note\">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class=\"prose\">before retained summary</p><details id=\"diagnostic-before-case-1\"><summary><span class=\"pill\">failed</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: ../removed \u03a9.py</p><pre tabindex=\"0\" aria-label=\"Recorded test diagnostic\"><code>Literal failure &lt;tag&gt;\\r\n</code></pre></div></details><details id=\"diagnostic-before-case-2\"><summary><span class=\"pill\">passed</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: Not attributed to a generated file</p><p>No diagnostic text recorded.</p></div></details><details><summary>Recorded pytest output \u00b7 last 3,000 characters</summary><div class=\"detail\"><pre tabindex=\"0\" aria-label=\"Recorded pytest output tail\"><code>Recorded output only\n</code></pre></div></details></div><div><h3>After</h3><p class=\"prose\">after fixture</p><p class=\"note\">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class=\"prose\">after retained summary</p><details id=\"diagnostic-after-case-1\"><summary><span class=\"pill\">error</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: Not attributed to a generated file</p><pre tabindex=\"0\" aria-label=\"Recorded test diagnostic\"><code>Literal error\n</code></pre></div></details><details><summary>Recorded pytest output \u00b7 last 3,000 characters</summary><div class=\"detail\"><pre tabindex=\"0\" aria-label=\"Recorded pytest output tail\"><code>Recorded output only\n</code></pre></div></details></div></div>",
+          "coverage": "<h2>Recorded coverage</h2><p class=\"note\">Each column retains its own source and selection denominators. The reported change is within that original run.</p><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original within-run measurements\"><table><caption>Original within-run measurements</caption><thead><tr><th scope=\"col\">Measurement</th><th scope=\"col\">Before report</th><th scope=\"col\">After report</th></tr></thead><tbody><tr><td>Total before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Total after generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Within-run total change</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Executable changed lines</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines after generation</td><td>Unavailable</td><td>Unavailable</td></tr></tbody></table></div>",
+          "usage": "<h2>Recorded usage</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original totals and completeness flags\"><table><caption>Original totals and completeness flags</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded total tokens</td><td>0</td><td>0</td></tr><tr><td>Token basis</td><td>Provider-reported</td><td>Provider-reported</td></tr><tr><td>Recorded total cost</td><td>Unpriced / incomplete</td><td>Unpriced / incomplete</td></tr></tbody></table></div><p class=\"note\">Prices and currency amounts retain the original run\u2019s configuration. Incomplete cost stays unpriced.</p><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No model calls are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No model calls are recorded.</p></div></div>",
+          "rounds": "<h2>Saved generation and repair rounds</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div></div>",
+          "originals": "<h2>Original reports</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Exact input byte identities\"><table><caption>Exact input byte identities</caption><thead><tr><th scope=\"col\">Label</th><th scope=\"col\">Source filename</th><th scope=\"col\">Bytes</th><th scope=\"col\">SHA256</th></tr></thead><tbody><tr><td>Before</td><td>before.json</td><td>2843</td><td>028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524</td></tr><tr><td>After</td><td>after.json</td><td>2379</td><td>abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81</td></tr></tbody></table></div><div class=\"actions\">\n<a class=\"button\" id=\"download-before\" download=\"before-report.json\" href=\"data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo=\">Download before JSON</a>\n<a class=\"button\" id=\"download-after\" download=\"after-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download after JSON</a>\n</div><p class=\"note\">The downloads keep the complete original input bytes, including extra fields and formatting.</p>"
+        },
+        "fileTable": [
+          [
+            "../removed \u03a9.py",
+            "removed",
+            "23",
+            "Absent"
+          ],
+          [
+            "C:\\kept\\added.py",
+            "added",
+            "Absent",
+            "22"
+          ],
+          [
+            "empty.py",
+            "unchanged",
+            "0",
+            "0"
+          ],
+          [
+            "lone-high.py",
+            "changed",
+            "15",
+            "20"
+          ],
+          [
+            "lone-low.py",
+            "changed",
+            "18",
+            "14"
+          ],
+          [
+            "paired.py",
+            "unchanged",
+            "8",
+            "8"
+          ],
+          [
+            "same.py",
+            "changed",
+            "869",
+            "877"
+          ]
+        ],
+        "files": [
+          {
+            "id": "file-0",
+            "summary": "removed../removed \u03a9.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/../removed \u03a9.py\n+++ after/../removed \u03a9.py\n@@ -1,2 +0,0 @@\n-removed\\r\n-\tkeep spaces  \n\\ No newline at end of file\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "removed\\r\n\tkeep spaces  "
+              }
+            ],
+            "absent": [
+              "File absent."
+            ],
+            "omitted": []
+          },
+          {
+            "id": "file-1",
+            "summary": "addedC:\\kept\\added.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/C:\\kept\\added.py\n+++ after/C:\\kept\\added.py\n@@ -0,0 +1,2 @@\n+\ufeffBOM is recorded\\r\n+\u03a9\t  \n\\ No newline at end of file\n"
+              },
+              {
+                "label": "After generated source",
+                "text": "\ufeffBOM is recorded\\r\n\u03a9\t  "
+              }
+            ],
+            "absent": [
+              "File absent."
+            ],
+            "omitted": []
+          },
+          {
+            "id": "file-2",
+            "summary": "unchangedempty.py",
+            "headings": [],
+            "pre": [
+              {
+                "label": "Identical saved generated source",
+                "text": ""
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-3",
+            "summary": "changedlone-high.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/lone-high.py\n+++ after/lone-high.py\n@@ -1 +1 @@\n-high \\ud800 retained\n\\ No newline at end of file\n+valid after high \u03a9\\r\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "high \\ud800 retained"
+              },
+              {
+                "label": "After generated source",
+                "text": "valid after high \u03a9\\r\n"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-4",
+            "summary": "changedlone-low.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/lone-low.py\n+++ after/lone-low.py\n@@ -1 +1 @@\n-valid before low\\x00\n+low \\udfff retained\n\\ No newline at end of file\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "valid before low\\x00\n"
+              },
+              {
+                "label": "After generated source",
+                "text": "low \\udfff retained"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-5",
+            "summary": "unchangedpaired.py",
+            "headings": [],
+            "pre": [
+              {
+                "label": "Identical saved generated source",
+                "text": "\n\ud83d\ude00 caf\u00e9\n"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          },
+          {
+            "id": "file-6",
+            "summary": "changedsame.py",
+            "headings": [
+              "Before",
+              "After"
+            ],
+            "pre": [
+              {
+                "label": "Saved source difference",
+                "text": "--- before/same.py\n+++ after/same.py\n@@ -1,4 +1,5 @@\n   BEGIN\\r\n \t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n 01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\n-TRAIL TWO  \n\\ No newline at end of file\n+TRAIL TWO  \\r\n+AFTER\n"
+              },
+              {
+                "label": "Before generated source",
+                "text": "  BEGIN\\r\n\t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  "
+              },
+              {
+                "label": "After generated source",
+                "text": "  BEGIN\\r\n\t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  \\r\nAFTER\n"
+              }
+            ],
+            "absent": [],
+            "omitted": []
+          }
+        ],
+        "originals": [
+          {
+            "id": "download-before",
+            "label": "Download before JSON",
+            "name": "before-report.json",
+            "href": "data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo="
+          },
+          {
+            "id": "download-after",
+            "label": "Download after JSON",
+            "name": "after-report.json",
+            "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+          }
+        ],
+        "index": [
+          {
+            "href": "#diagnostic-before-case-1",
+            "text": "Before case 1 \u00b7 failed \u00b7 repeat <case> \u03a9"
+          },
+          {
+            "href": "#diagnostic-after-case-1",
+            "text": "After case 1 \u00b7 error \u00b7 repeat <case> \u03a9"
+          }
+        ]
+      },
+      "passed": true
+    },
+    {
+      "name": "mixed storage unchanged",
+      "actual": {
+        "localStorage": {},
+        "sessionStorage": {}
+      },
+      "expected": {
+        "localStorage": {},
+        "sessionStorage": {}
+      },
+      "passed": true
+    },
+    {
+      "name": "empty title",
+      "actual": "Compare saved TestPilot runs",
+      "expected": "Compare saved TestPilot runs",
+      "passed": true
+    },
+    {
+      "name": "empty CSP",
+      "actual": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "expected": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "passed": true
+    },
+    {
+      "name": "empty no scripts",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "empty file IDs",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "empty literal file table",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "empty initial file disclosures",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "empty original JSON anchors",
+      "actual": [
+        {
+          "id": "download-before",
+          "label": "Download before JSON",
+          "name": "before-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        },
+        {
+          "id": "download-after",
+          "label": "Download after JSON",
+          "name": "after-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        }
+      ],
+      "expected": [
+        {
+          "id": "download-before",
+          "label": "Download before JSON",
+          "name": "before-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        },
+        {
+          "id": "download-after",
+          "label": "Download after JSON",
+          "name": "after-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "empty retained diagnostic occurrence index",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "empty source actions absent",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "empty source unavailable notes absent",
+      "actual": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "name": "empty-before unique link",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "empty-before native filename",
+      "actual": "before-report.json",
+      "expected": "before-report.json",
+      "passed": true
+    },
+    {
+      "name": "empty-before visible action",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "empty-before suggested filename",
+      "actual": "before-report.json",
+      "expected": "before-report.json",
+      "passed": true
+    },
+    {
+      "name": "empty-before download failure",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "empty-before saved identity",
+      "actual": {
+        "bytes": 1011,
+        "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+        "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+      },
+      "expected": {
+        "bytes": 1011,
+        "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+        "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+      },
+      "passed": true
+    },
+    {
+      "name": "empty-before whole bytes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "empty-after unique link",
+      "actual": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "empty-after native filename",
+      "actual": "after-report.json",
+      "expected": "after-report.json",
+      "passed": true
+    },
+    {
+      "name": "empty-after visible action",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "empty-after suggested filename",
+      "actual": "after-report.json",
+      "expected": "after-report.json",
+      "passed": true
+    },
+    {
+      "name": "empty-after download failure",
+      "actual": null,
+      "expected": null,
+      "passed": true
+    },
+    {
+      "name": "empty-after saved identity",
+      "actual": {
+        "bytes": 783,
+        "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+        "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+      },
+      "expected": {
+        "bytes": 783,
+        "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+        "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+      },
+      "passed": true
+    },
+    {
+      "name": "empty-after whole bytes",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "empty390 document fit",
+      "actual": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "empty print complete source visibility",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "empty print preserves disclosures",
+      "actual": [
+        {
+          "id": "",
+          "open": false
+        }
+      ],
+      "expected": [
+        {
+          "id": "",
+          "open": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "name": "empty complete fixed view after actions",
+      "actual": {
+        "title": "Compare saved TestPilot runs",
+        "csp": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+        "sections": {
+          "results": "<h2>Recorded results</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Values retained from each saved run\"><table><caption>Values retained from each saved run</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded status</td><td>failed</td><td>failed</td></tr><tr><td>Selected targets</td><td>2</td><td>1</td></tr><tr><td>Retained generated files</td><td>0</td><td>0</td></tr><tr><td>Tests written (reported)</td><td>0</td><td>0</td></tr><tr><td>Repair rounds used / allowed</td><td>0 / 1</td><td>0 / 1</td></tr><tr><td>JUnit availability</td><td>No test result recorded</td><td>No test result recorded</td></tr><tr><td>Complete-suite recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr><tr><td>Generated-case recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr></tbody></table></div><p class=\"note\">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p>",
+          "source": "<h2>Selected-source context</h2><p class=\"note\">Targets are grouped by their recorded path and qualified name. Repeated labels stay as separate records. These reports do not establish a full repository, commit, test configuration, or execution-environment identity.</p><details><summary>src/literal \u03a9.py::same</summary><div class=\"detail\"><div class=\"columns\"><div><h3>Before</h3><p class=\"note\">Separate record 1 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre><p class=\"note\">Separate record 2 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div><div><h3>After</h3><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"After selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div></div></div></details>",
+          "diagnostics": "<h2>Final diagnostics</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"prose\">before fixture</p><p class=\"empty\">No final test result is recorded.</p></div><div><h3>After</h3><p class=\"prose\">after fixture</p><p class=\"empty\">No final test result is recorded.</p></div></div>",
+          "coverage": "<h2>Recorded coverage</h2><p class=\"note\">Each column retains its own source and selection denominators. The reported change is within that original run.</p><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original within-run measurements\"><table><caption>Original within-run measurements</caption><thead><tr><th scope=\"col\">Measurement</th><th scope=\"col\">Before report</th><th scope=\"col\">After report</th></tr></thead><tbody><tr><td>Total before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Total after generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Within-run total change</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Executable changed lines</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines after generation</td><td>Unavailable</td><td>Unavailable</td></tr></tbody></table></div>",
+          "usage": "<h2>Recorded usage</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original totals and completeness flags\"><table><caption>Original totals and completeness flags</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded total tokens</td><td>0</td><td>0</td></tr><tr><td>Token basis</td><td>Provider-reported</td><td>Provider-reported</td></tr><tr><td>Recorded total cost</td><td>Unpriced / incomplete</td><td>Unpriced / incomplete</td></tr></tbody></table></div><p class=\"note\">Prices and currency amounts retain the original run\u2019s configuration. Incomplete cost stays unpriced.</p><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No model calls are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No model calls are recorded.</p></div></div>",
+          "rounds": "<h2>Saved generation and repair rounds</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div></div>",
+          "originals": "<h2>Original reports</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Exact input byte identities\"><table><caption>Exact input byte identities</caption><thead><tr><th scope=\"col\">Label</th><th scope=\"col\">Source filename</th><th scope=\"col\">Bytes</th><th scope=\"col\">SHA256</th></tr></thead><tbody><tr><td>Before</td><td>empty-before.json</td><td>1011</td><td>c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89</td></tr><tr><td>After</td><td>empty-after.json</td><td>783</td><td>fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec</td></tr></tbody></table></div><div class=\"actions\">\n<a class=\"button\" id=\"download-before\" download=\"before-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download before JSON</a>\n<a class=\"button\" id=\"download-after\" download=\"after-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download after JSON</a>\n</div><p class=\"note\">The downloads keep the complete original input bytes, including extra fields and formatting.</p>"
+        },
+        "fileTable": [],
+        "files": [],
+        "originals": [
+          {
+            "id": "download-before",
+            "label": "Download before JSON",
+            "name": "before-report.json",
+            "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+          },
+          {
+            "id": "download-after",
+            "label": "Download after JSON",
+            "name": "after-report.json",
+            "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+          }
+        ],
+        "index": []
+      },
+      "expected": {
+        "title": "Compare saved TestPilot runs",
+        "csp": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+        "sections": {
+          "results": "<h2>Recorded results</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Values retained from each saved run\"><table><caption>Values retained from each saved run</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded status</td><td>failed</td><td>failed</td></tr><tr><td>Selected targets</td><td>2</td><td>1</td></tr><tr><td>Retained generated files</td><td>0</td><td>0</td></tr><tr><td>Tests written (reported)</td><td>0</td><td>0</td></tr><tr><td>Repair rounds used / allowed</td><td>0 / 1</td><td>0 / 1</td></tr><tr><td>JUnit availability</td><td>No test result recorded</td><td>No test result recorded</td></tr><tr><td>Complete-suite recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr><tr><td>Generated-case recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr></tbody></table></div><p class=\"note\">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p>",
+          "source": "<h2>Selected-source context</h2><p class=\"note\">Targets are grouped by their recorded path and qualified name. Repeated labels stay as separate records. These reports do not establish a full repository, commit, test configuration, or execution-environment identity.</p><details><summary>src/literal \u03a9.py::same</summary><div class=\"detail\"><div class=\"columns\"><div><h3>Before</h3><p class=\"note\">Separate record 1 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre><p class=\"note\">Separate record 2 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div><div><h3>After</h3><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"After selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div></div></div></details>",
+          "diagnostics": "<h2>Final diagnostics</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"prose\">before fixture</p><p class=\"empty\">No final test result is recorded.</p></div><div><h3>After</h3><p class=\"prose\">after fixture</p><p class=\"empty\">No final test result is recorded.</p></div></div>",
+          "coverage": "<h2>Recorded coverage</h2><p class=\"note\">Each column retains its own source and selection denominators. The reported change is within that original run.</p><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original within-run measurements\"><table><caption>Original within-run measurements</caption><thead><tr><th scope=\"col\">Measurement</th><th scope=\"col\">Before report</th><th scope=\"col\">After report</th></tr></thead><tbody><tr><td>Total before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Total after generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Within-run total change</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Executable changed lines</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines after generation</td><td>Unavailable</td><td>Unavailable</td></tr></tbody></table></div>",
+          "usage": "<h2>Recorded usage</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original totals and completeness flags\"><table><caption>Original totals and completeness flags</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded total tokens</td><td>0</td><td>0</td></tr><tr><td>Token basis</td><td>Provider-reported</td><td>Provider-reported</td></tr><tr><td>Recorded total cost</td><td>Unpriced / incomplete</td><td>Unpriced / incomplete</td></tr></tbody></table></div><p class=\"note\">Prices and currency amounts retain the original run\u2019s configuration. Incomplete cost stays unpriced.</p><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No model calls are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No model calls are recorded.</p></div></div>",
+          "rounds": "<h2>Saved generation and repair rounds</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div></div>",
+          "originals": "<h2>Original reports</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Exact input byte identities\"><table><caption>Exact input byte identities</caption><thead><tr><th scope=\"col\">Label</th><th scope=\"col\">Source filename</th><th scope=\"col\">Bytes</th><th scope=\"col\">SHA256</th></tr></thead><tbody><tr><td>Before</td><td>empty-before.json</td><td>1011</td><td>c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89</td></tr><tr><td>After</td><td>empty-after.json</td><td>783</td><td>fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec</td></tr></tbody></table></div><div class=\"actions\">\n<a class=\"button\" id=\"download-before\" download=\"before-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download before JSON</a>\n<a class=\"button\" id=\"download-after\" download=\"after-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download after JSON</a>\n</div><p class=\"note\">The downloads keep the complete original input bytes, including extra fields and formatting.</p>"
+        },
+        "fileTable": [],
+        "files": [],
+        "originals": [
+          {
+            "id": "download-before",
+            "label": "Download before JSON",
+            "name": "before-report.json",
+            "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+          },
+          {
+            "id": "download-after",
+            "label": "Download after JSON",
+            "name": "after-report.json",
+            "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+          }
+        ],
+        "index": []
+      },
+      "passed": true
+    },
+    {
+      "name": "empty storage unchanged",
+      "actual": {
+        "localStorage": {},
+        "sessionStorage": {}
+      },
+      "expected": {
+        "localStorage": {},
+        "sessionStorage": {}
+      },
+      "passed": true
+    },
+    {
+      "name": "actual saved download count",
+      "actual": 4,
+      "expected": 4,
+      "passed": true
+    },
+    {
+      "name": "only two local page requests",
+      "actual": [
+        "file:///C:/Users/jacob/AppData/Local/Temp/hamon-dcac8b3b8755-testpilot130-v1/original-inputs/mixed.html",
+        "file:///C:/Users/jacob/AppData/Local/Temp/hamon-dcac8b3b8755-testpilot130-v1/original-inputs/empty.html"
+      ],
+      "expected": [
+        "file:///C:/Users/jacob/AppData/Local/Temp/hamon-dcac8b3b8755-testpilot130-v1/original-inputs/mixed.html",
+        "file:///C:/Users/jacob/AppData/Local/Temp/hamon-dcac8b3b8755-testpilot130-v1/original-inputs/empty.html"
+      ],
+      "passed": true
+    },
+    {
+      "name": "no page errors",
+      "actual": [],
+      "expected": [],
+      "passed": true
+    },
+    {
+      "name": "context storage empty",
+      "actual": {
+        "cookies": [],
+        "origins": []
+      },
+      "expected": {
+        "cookies": [],
+        "origins": []
+      },
+      "passed": true
+    }
+  ],
+  "downloads": [
+    {
+      "record": "mixed-before",
+      "path": "mixed-before-before-report.json",
+      "bytes": 2843,
+      "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+      "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+    },
+    {
+      "record": "mixed-after",
+      "path": "mixed-after-after-report.json",
+      "bytes": 2379,
+      "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+      "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+    },
+    {
+      "record": "empty-before",
+      "path": "empty-before-before-report.json",
+      "bytes": 1011,
+      "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+      "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+    },
+    {
+      "record": "empty-after",
+      "path": "empty-after-after-report.json",
+      "bytes": 783,
+      "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+      "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+    }
+  ],
+  "fixed": {
+    "mixed": {
+      "title": "Compare saved TestPilot runs",
+      "csp": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "sections": {
+        "results": "<h2>Recorded results</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Values retained from each saved run\"><table><caption>Values retained from each saved run</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded status</td><td>failed</td><td>failed</td></tr><tr><td>Selected targets</td><td>2</td><td>1</td></tr><tr><td>Retained generated files</td><td>6</td><td>6</td></tr><tr><td>Tests written (reported)</td><td>6</td><td>6</td></tr><tr><td>Repair rounds used / allowed</td><td>0 / 1</td><td>0 / 1</td></tr><tr><td>JUnit availability</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Complete-suite recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr><tr><td>Generated-case recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr></tbody></table></div><p class=\"note\">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p>",
+        "source": "<h2>Selected-source context</h2><p class=\"note\">Targets are grouped by their recorded path and qualified name. Repeated labels stay as separate records. These reports do not establish a full repository, commit, test configuration, or execution-environment identity.</p><details><summary>src/literal \u03a9.py::same</summary><div class=\"detail\"><div class=\"columns\"><div><h3>Before</h3><p class=\"note\">Separate record 1 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre><p class=\"note\">Separate record 2 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div><div><h3>After</h3><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"After selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div></div></div></details>",
+        "diagnostics": "<h2>Final diagnostics</h2><nav class=\"case-index\" aria-label=\"Recorded failed and error cases\"><p><strong>Failed and error cases</strong> \u00b7 2 retained rows</p><ul><li><a href=\"#diagnostic-before-case-1\">Before case 1 \u00b7 failed \u00b7 repeat &lt;case&gt; \u03a9</a></li><li><a href=\"#diagnostic-after-case-1\">After case 1 \u00b7 error \u00b7 repeat &lt;case&gt; \u03a9</a></li></ul><p class=\"note\">Case positions refer to each report's retained array. Repeated labels stay separate; these links do not establish identical tests or complete execution.</p></nav><div class=\"columns\"><div><h3>Before</h3><p class=\"prose\">before fixture</p><p class=\"note\">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class=\"prose\">before retained summary</p><details id=\"diagnostic-before-case-1\"><summary><span class=\"pill\">failed</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: ../removed \u03a9.py</p><pre tabindex=\"0\" aria-label=\"Recorded test diagnostic\"><code>Literal failure &lt;tag&gt;\\r\n</code></pre></div></details><details id=\"diagnostic-before-case-2\"><summary><span class=\"pill\">passed</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: Not attributed to a generated file</p><p>No diagnostic text recorded.</p></div></details><details><summary>Recorded pytest output \u00b7 last 3,000 characters</summary><div class=\"detail\"><pre tabindex=\"0\" aria-label=\"Recorded pytest output tail\"><code>Recorded output only\n</code></pre></div></details></div><div><h3>After</h3><p class=\"prose\">after fixture</p><p class=\"note\">JUnit: Unavailable. Case rows retain recorded outcomes; their labels alone do not establish identical tests across runs.</p><p class=\"prose\">after retained summary</p><details id=\"diagnostic-after-case-1\"><summary><span class=\"pill\">error</span>repeat &lt;case&gt; \u03a9</summary><div class=\"detail\"><p class=\"meta\">Generated file: Not attributed to a generated file</p><pre tabindex=\"0\" aria-label=\"Recorded test diagnostic\"><code>Literal error\n</code></pre></div></details><details><summary>Recorded pytest output \u00b7 last 3,000 characters</summary><div class=\"detail\"><pre tabindex=\"0\" aria-label=\"Recorded pytest output tail\"><code>Recorded output only\n</code></pre></div></details></div></div>",
+        "coverage": "<h2>Recorded coverage</h2><p class=\"note\">Each column retains its own source and selection denominators. The reported change is within that original run.</p><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original within-run measurements\"><table><caption>Original within-run measurements</caption><thead><tr><th scope=\"col\">Measurement</th><th scope=\"col\">Before report</th><th scope=\"col\">After report</th></tr></thead><tbody><tr><td>Total before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Total after generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Within-run total change</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Executable changed lines</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines after generation</td><td>Unavailable</td><td>Unavailable</td></tr></tbody></table></div>",
+        "usage": "<h2>Recorded usage</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original totals and completeness flags\"><table><caption>Original totals and completeness flags</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded total tokens</td><td>0</td><td>0</td></tr><tr><td>Token basis</td><td>Provider-reported</td><td>Provider-reported</td></tr><tr><td>Recorded total cost</td><td>Unpriced / incomplete</td><td>Unpriced / incomplete</td></tr></tbody></table></div><p class=\"note\">Prices and currency amounts retain the original run\u2019s configuration. Incomplete cost stays unpriced.</p><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No model calls are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No model calls are recorded.</p></div></div>",
+        "rounds": "<h2>Saved generation and repair rounds</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div></div>",
+        "originals": "<h2>Original reports</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Exact input byte identities\"><table><caption>Exact input byte identities</caption><thead><tr><th scope=\"col\">Label</th><th scope=\"col\">Source filename</th><th scope=\"col\">Bytes</th><th scope=\"col\">SHA256</th></tr></thead><tbody><tr><td>Before</td><td>before.json</td><td>2843</td><td>028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524</td></tr><tr><td>After</td><td>after.json</td><td>2379</td><td>abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81</td></tr></tbody></table></div><div class=\"actions\">\n<a class=\"button\" id=\"download-before\" download=\"before-report.json\" href=\"data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo=\">Download before JSON</a>\n<a class=\"button\" id=\"download-after\" download=\"after-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download after JSON</a>\n</div><p class=\"note\">The downloads keep the complete original input bytes, including extra fields and formatting.</p>"
+      },
+      "fileTable": [
+        [
+          "../removed \u03a9.py",
+          "removed",
+          "23",
+          "Absent"
+        ],
+        [
+          "C:\\kept\\added.py",
+          "added",
+          "Absent",
+          "22"
+        ],
+        [
+          "empty.py",
+          "unchanged",
+          "0",
+          "0"
+        ],
+        [
+          "lone-high.py",
+          "changed",
+          "15",
+          "20"
+        ],
+        [
+          "lone-low.py",
+          "changed",
+          "18",
+          "14"
+        ],
+        [
+          "paired.py",
+          "unchanged",
+          "8",
+          "8"
+        ],
+        [
+          "same.py",
+          "changed",
+          "869",
+          "877"
+        ]
+      ],
+      "files": [
+        {
+          "id": "file-0",
+          "summary": "removed../removed \u03a9.py",
+          "headings": [
+            "Before",
+            "After"
+          ],
+          "pre": [
+            {
+              "label": "Saved source difference",
+              "text": "--- before/../removed \u03a9.py\n+++ after/../removed \u03a9.py\n@@ -1,2 +0,0 @@\n-removed\\r\n-\tkeep spaces  \n\\ No newline at end of file\n"
+            },
+            {
+              "label": "Before generated source",
+              "text": "removed\\r\n\tkeep spaces  "
+            }
+          ],
+          "absent": [
+            "File absent."
+          ],
+          "omitted": []
+        },
+        {
+          "id": "file-1",
+          "summary": "addedC:\\kept\\added.py",
+          "headings": [
+            "Before",
+            "After"
+          ],
+          "pre": [
+            {
+              "label": "Saved source difference",
+              "text": "--- before/C:\\kept\\added.py\n+++ after/C:\\kept\\added.py\n@@ -0,0 +1,2 @@\n+\ufeffBOM is recorded\\r\n+\u03a9\t  \n\\ No newline at end of file\n"
+            },
+            {
+              "label": "After generated source",
+              "text": "\ufeffBOM is recorded\\r\n\u03a9\t  "
+            }
+          ],
+          "absent": [
+            "File absent."
+          ],
+          "omitted": []
+        },
+        {
+          "id": "file-2",
+          "summary": "unchangedempty.py",
+          "headings": [],
+          "pre": [
+            {
+              "label": "Identical saved generated source",
+              "text": ""
+            }
+          ],
+          "absent": [],
+          "omitted": []
+        },
+        {
+          "id": "file-3",
+          "summary": "changedlone-high.py",
+          "headings": [
+            "Before",
+            "After"
+          ],
+          "pre": [
+            {
+              "label": "Saved source difference",
+              "text": "--- before/lone-high.py\n+++ after/lone-high.py\n@@ -1 +1 @@\n-high \\ud800 retained\n\\ No newline at end of file\n+valid after high \u03a9\\r\n"
+            },
+            {
+              "label": "Before generated source",
+              "text": "high \\ud800 retained"
+            },
+            {
+              "label": "After generated source",
+              "text": "valid after high \u03a9\\r\n"
+            }
+          ],
+          "absent": [],
+          "omitted": []
+        },
+        {
+          "id": "file-4",
+          "summary": "changedlone-low.py",
+          "headings": [
+            "Before",
+            "After"
+          ],
+          "pre": [
+            {
+              "label": "Saved source difference",
+              "text": "--- before/lone-low.py\n+++ after/lone-low.py\n@@ -1 +1 @@\n-valid before low\\x00\n+low \\udfff retained\n\\ No newline at end of file\n"
+            },
+            {
+              "label": "Before generated source",
+              "text": "valid before low\\x00\n"
+            },
+            {
+              "label": "After generated source",
+              "text": "low \\udfff retained"
+            }
+          ],
+          "absent": [],
+          "omitted": []
+        },
+        {
+          "id": "file-5",
+          "summary": "unchangedpaired.py",
+          "headings": [],
+          "pre": [
+            {
+              "label": "Identical saved generated source",
+              "text": "\n\ud83d\ude00 caf\u00e9\n"
+            }
+          ],
+          "absent": [],
+          "omitted": []
+        },
+        {
+          "id": "file-6",
+          "summary": "changedsame.py",
+          "headings": [
+            "Before",
+            "After"
+          ],
+          "pre": [
+            {
+              "label": "Saved source difference",
+              "text": "--- before/same.py\n+++ after/same.py\n@@ -1,4 +1,5 @@\n   BEGIN\\r\n \t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n 01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\n-TRAIL TWO  \n\\ No newline at end of file\n+TRAIL TWO  \\r\n+AFTER\n"
+            },
+            {
+              "label": "Before generated source",
+              "text": "  BEGIN\\r\n\t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  "
+            },
+            {
+              "label": "After generated source",
+              "text": "  BEGIN\\r\n\t\u03a9 \u4e2d \ud83d\ude00\\x00\\x1b[31m <script>DISPLAY ONLY</script>\\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  \\r\nAFTER\n"
+            }
+          ],
+          "absent": [],
+          "omitted": []
+        }
+      ],
+      "originals": [
+        {
+          "id": "download-before",
+          "label": "Download before JSON",
+          "name": "before-report.json",
+          "href": "data:application/json;base64,77u/ew0KICAic3RhdHVzIjogImZhaWxlZCIsDQogICJjaGFuZ2VkX2Z1bmN0aW9ucyI6IFsNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJzcmMvbGl0ZXJhbCBcdTAzYTkucHkiLA0KICAgICAgInF1YWxuYW1lIjogInNhbWUiLA0KICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsDQogICAgICAibGluZW5vIjogMSwNCiAgICAgICJlbmRfbGluZW5vIjogMiwNCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWw0KICAgICAgICAyDQogICAgICBdDQogICAgfQ0KICBdLA0KICAidGVzdF9maWxlcyI6IHsNCiAgICAic2FtZS5weSI6ICIgIEJFR0lOXHJcblx0XHUwM2E5IFx1NGUyZCBcdWQ4M2RcdWRlMDBcdTAwMDBcdTAwMWJbMzFtIDxzY3JpcHQ+RElTUExBWSBPTkxZPC9zY3JpcHQ+XHJiYXJlXG4wMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OVxuVFJBSUwgVFdPICAiLA0KICAgICJwYWlyZWQucHkiOiAiXG5cdWQ4M2RcdWRlMDAgY2FmXHUwMGU5XG4iLA0KICAgICJlbXB0eS5weSI6ICIiLA0KICAgICIuLi9yZW1vdmVkIFx1MDNhOS5weSI6ICJyZW1vdmVkXHJcblx0a2VlcCBzcGFjZXMgICIsDQogICAgImxvbmUtaGlnaC5weSI6ICJoaWdoIFx1ZDgwMCByZXRhaW5lZCIsDQogICAgImxvbmUtbG93LnB5IjogInZhbGlkIGJlZm9yZSBsb3dcdTAwMDBcbiINCiAgfSwNCiAgInRlc3RzX3dyaXR0ZW4iOiA2LA0KICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwNCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwNCiAgImZpbmFsIjogew0KICAgICJyZXR1cm5jb2RlIjogMSwNCiAgICAidGltZWRfb3V0IjogZmFsc2UsDQogICAgIm9rIjogZmFsc2UsDQogICAgImR1cmF0aW9uX3MiOiAwLjI1LA0KICAgICJvdXRwdXQiOiAiUmVjb3JkZWQgb3V0cHV0IG9ubHlcbiIsDQogICAgInN1bW1hcnkiOiAiYmVmb3JlIHJldGFpbmVkIHN1bW1hcnkiLA0KICAgICJwYXNzZWQiOiAxLA0KICAgICJmYWlsZWQiOiAxLA0KICAgICJlcnJvcnMiOiAwLA0KICAgICJza2lwcGVkIjogMCwNCiAgICAiY2FzZXMiOiBbDQogICAgICB7DQogICAgICAgICJub2RlaWQiOiAicmVwZWF0IDxjYXNlPiBcdTAzYTkiLA0KICAgICAgICAib3V0Y29tZSI6ICJmYWlsZWQiLA0KICAgICAgICAibWVzc2FnZSI6ICJMaXRlcmFsIGZhaWx1cmUgPHRhZz5cclxuIiwNCiAgICAgICAgImdlbmVyYXRlZF9maWxlIjogIi4uL3JlbW92ZWQgXHUwM2E5LnB5Ig0KICAgICAgfSwNCiAgICAgIHsNCiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsDQogICAgICAgICJvdXRjb21lIjogInBhc3NlZCIsDQogICAgICAgICJtZXNzYWdlIjogIiINCiAgICAgIH0NCiAgICBdLA0KICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwNCiAgICAiY292ZXJhZ2UiOiBudWxsDQogIH0sDQogICJjb3ZlcmFnZSI6IG51bGwsDQogICJsZWRnZXIiOiB7DQogICAgInRvdGFsX3Rva2VucyI6IDAsDQogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwNCiAgICAiY29zdF9pc19jb21wbGV0ZSI6IGZhbHNlLA0KICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsDQogICAgImJ5X21vZGVsIjoge30sDQogICAgImVudHJpZXMiOiBbXQ0KICB9LA0KICAicm91bmRzIjogW10sDQogICJwbGFuIjogIkZpY3Rpb25hbCBwYXNzaXZlIHNvdXJjZSBvbmx5IiwNCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLA0KICAicGF0Y2giOiAiIiwNCiAgInVua25vd24iOiB7DQogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLA0KICAgICJuZWdhdGl2ZV96ZXJvIjogLTAuMCwNCiAgICAidGV4dF9pZCI6ICIwMDA3Ig0KICB9DQp9DQo="
+        },
+        {
+          "id": "download-after",
+          "label": "Download after JSON",
+          "name": "after-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7CiAgICAibG9uZS1sb3cucHkiOiAibG93IFx1ZGZmZiByZXRhaW5lZCIsCiAgICAiQzpcXGtlcHRcXGFkZGVkLnB5IjogIlx1ZmVmZkJPTSBpcyByZWNvcmRlZFxyXG5cdTAzYTlcdCAgIiwKICAgICJzYW1lLnB5IjogIiAgQkVHSU5cclxuXHRcdTAzYTkgXHU0ZTJkIFx1ZDgzZFx1ZGUwMFx1MDAwMFx1MDAxYlszMW0gPHNjcmlwdD5ESVNQTEFZIE9OTFk8L3NjcmlwdD5ccmJhcmVcbjAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTIzNDU2Nzg5XG5UUkFJTCBUV08gIFxyXG5BRlRFUlxuIiwKICAgICJlbXB0eS5weSI6ICIiLAogICAgInBhaXJlZC5weSI6ICJcblx1ZDgzZFx1ZGUwMCBjYWZcdTAwZTlcbiIsCiAgICAibG9uZS1oaWdoLnB5IjogInZhbGlkIGFmdGVyIGhpZ2ggXHUwM2E5XHJcbiIKICB9LAogICJ0ZXN0c193cml0dGVuIjogNiwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IHsKICAgICJyZXR1cm5jb2RlIjogMSwKICAgICJ0aW1lZF9vdXQiOiBmYWxzZSwKICAgICJvayI6IGZhbHNlLAogICAgImR1cmF0aW9uX3MiOiAwLjI1LAogICAgIm91dHB1dCI6ICJSZWNvcmRlZCBvdXRwdXQgb25seVxuIiwKICAgICJzdW1tYXJ5IjogImFmdGVyIHJldGFpbmVkIHN1bW1hcnkiLAogICAgInBhc3NlZCI6IDAsCiAgICAiZmFpbGVkIjogMCwKICAgICJlcnJvcnMiOiAxLAogICAgInNraXBwZWQiOiAwLAogICAgImNhc2VzIjogWwogICAgICB7CiAgICAgICAgIm5vZGVpZCI6ICJyZXBlYXQgPGNhc2U+IFx1MDNhOSIsCiAgICAgICAgIm91dGNvbWUiOiAiZXJyb3IiLAogICAgICAgICJtZXNzYWdlIjogIkxpdGVyYWwgZXJyb3JcbiIKICAgICAgfQogICAgXSwKICAgICJqdW5pdF9hdmFpbGFibGUiOiBmYWxzZSwKICAgICJjb3ZlcmFnZSI6IG51bGwKICB9LAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        }
+      ],
+      "index": [
+        {
+          "href": "#diagnostic-before-case-1",
+          "text": "Before case 1 \u00b7 failed \u00b7 repeat <case> \u03a9"
+        },
+        {
+          "href": "#diagnostic-after-case-1",
+          "text": "After case 1 \u00b7 error \u00b7 repeat <case> \u03a9"
+        }
+      ]
+    },
+    "empty": {
+      "title": "Compare saved TestPilot runs",
+      "csp": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+      "sections": {
+        "results": "<h2>Recorded results</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Values retained from each saved run\"><table><caption>Values retained from each saved run</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded status</td><td>failed</td><td>failed</td></tr><tr><td>Selected targets</td><td>2</td><td>1</td></tr><tr><td>Retained generated files</td><td>0</td><td>0</td></tr><tr><td>Tests written (reported)</td><td>0</td><td>0</td></tr><tr><td>Repair rounds used / allowed</td><td>0 / 1</td><td>0 / 1</td></tr><tr><td>JUnit availability</td><td>No test result recorded</td><td>No test result recorded</td></tr><tr><td>Complete-suite recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr><tr><td>Generated-case recorded counts</td><td>Unavailable as complete execution evidence</td><td>Unavailable as complete execution evidence</td></tr></tbody></table></div><p class=\"note\">Tests written can count authored definitions when execution evidence is unavailable. A recorded pass or model diagnosis retains its original meaning; this view adds no test execution or correctness finding.</p>",
+        "source": "<h2>Selected-source context</h2><p class=\"note\">Targets are grouped by their recorded path and qualified name. Repeated labels stay as separate records. These reports do not establish a full repository, commit, test configuration, or execution-environment identity.</p><details><summary>src/literal \u03a9.py::same</summary><div class=\"detail\"><div class=\"columns\"><div><h3>Before</h3><p class=\"note\">Separate record 1 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre><p class=\"note\">Separate record 2 of 2</p><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"Before selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div><div><h3>After</h3><p class=\"meta\">Lines 1\u20132 \u00b7 changed lines: 2</p><pre tabindex=\"0\" aria-label=\"After selected source\"><code>def display_only():\n    return \"\u03a9\"\n</code></pre></div></div></div></details>",
+        "diagnostics": "<h2>Final diagnostics</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"prose\">before fixture</p><p class=\"empty\">No final test result is recorded.</p></div><div><h3>After</h3><p class=\"prose\">after fixture</p><p class=\"empty\">No final test result is recorded.</p></div></div>",
+        "coverage": "<h2>Recorded coverage</h2><p class=\"note\">Each column retains its own source and selection denominators. The reported change is within that original run.</p><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original within-run measurements\"><table><caption>Original within-run measurements</caption><thead><tr><th scope=\"col\">Measurement</th><th scope=\"col\">Before report</th><th scope=\"col\">After report</th></tr></thead><tbody><tr><td>Total before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Total after generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Within-run total change</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Executable changed lines</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines before generation</td><td>Unavailable</td><td>Unavailable</td></tr><tr><td>Changed lines after generation</td><td>Unavailable</td><td>Unavailable</td></tr></tbody></table></div>",
+        "usage": "<h2>Recorded usage</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Original totals and completeness flags\"><table><caption>Original totals and completeness flags</caption><thead><tr><th scope=\"col\">Field</th><th scope=\"col\">Before</th><th scope=\"col\">After</th></tr></thead><tbody><tr><td>Recorded total tokens</td><td>0</td><td>0</td></tr><tr><td>Token basis</td><td>Provider-reported</td><td>Provider-reported</td></tr><tr><td>Recorded total cost</td><td>Unpriced / incomplete</td><td>Unpriced / incomplete</td></tr></tbody></table></div><p class=\"note\">Prices and currency amounts retain the original run\u2019s configuration. Incomplete cost stays unpriced.</p><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No model calls are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No model calls are recorded.</p></div></div>",
+        "rounds": "<h2>Saved generation and repair rounds</h2><div class=\"columns\"><div><h3>Before</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div><div><h3>After</h3><p class=\"empty\">No generation or repair rounds are recorded.</p></div></div>",
+        "originals": "<h2>Original reports</h2><div class=\"scroll\" tabindex=\"0\" role=\"region\" aria-label=\"Exact input byte identities\"><table><caption>Exact input byte identities</caption><thead><tr><th scope=\"col\">Label</th><th scope=\"col\">Source filename</th><th scope=\"col\">Bytes</th><th scope=\"col\">SHA256</th></tr></thead><tbody><tr><td>Before</td><td>empty-before.json</td><td>1011</td><td>c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89</td></tr><tr><td>After</td><td>empty-after.json</td><td>783</td><td>fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec</td></tr></tbody></table></div><div class=\"actions\">\n<a class=\"button\" id=\"download-before\" download=\"before-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download before JSON</a>\n<a class=\"button\" id=\"download-after\" download=\"after-report.json\" href=\"data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K\">Download after JSON</a>\n</div><p class=\"note\">The downloads keep the complete original input bytes, including extra fields and formatting.</p>"
+      },
+      "fileTable": [],
+      "files": [],
+      "originals": [
+        {
+          "id": "download-before",
+          "label": "Download before JSON",
+          "name": "before-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAic3JjL2xpdGVyYWwgXHUwM2E5LnB5IiwKICAgICAgInF1YWxuYW1lIjogInNhbWUiLAogICAgICAic291cmNlIjogImRlZiBkaXNwbGF5X29ubHkoKTpcbiAgICByZXR1cm4gXCJcdTAzYTlcIlxuIiwKICAgICAgImxpbmVubyI6IDEsCiAgICAgICJlbmRfbGluZW5vIjogMiwKICAgICAgImNoYW5nZWRfbGluZXMiOiBbCiAgICAgICAgMgogICAgICBdCiAgICB9CiAgXSwKICAidGVzdF9maWxlcyI6IHt9LAogICJ0ZXN0c193cml0dGVuIjogMCwKICAicmVwYWlyX3JvdW5kc191c2VkIjogMCwKICAibWF4X3JlcGFpcl9yb3VuZHMiOiAxLAogICJmaW5hbCI6IG51bGwsCiAgImNvdmVyYWdlIjogbnVsbCwKICAibGVkZ2VyIjogewogICAgInRvdGFsX3Rva2VucyI6IDAsCiAgICAidG90YWxfY29zdF91c2QiOiAwLAogICAgImNvc3RfaXNfY29tcGxldGUiOiBmYWxzZSwKICAgICJ0b2tlbnNfZXN0aW1hdGVkIjogZmFsc2UsCiAgICAiYnlfbW9kZWwiOiB7fSwKICAgICJlbnRyaWVzIjogW10KICB9LAogICJyb3VuZHMiOiBbXSwKICAicGxhbiI6ICJGaWN0aW9uYWwgcGFzc2l2ZSBzb3VyY2Ugb25seSIsCiAgIm1lc3NhZ2UiOiAiYmVmb3JlIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        },
+        {
+          "id": "download-after",
+          "label": "Download after JSON",
+          "name": "after-report.json",
+          "href": "data:application/json;base64,ewogICJzdGF0dXMiOiAiZmFpbGVkIiwKICAiY2hhbmdlZF9mdW5jdGlvbnMiOiBbCiAgICB7CiAgICAgICJwYXRoIjogInNyYy9saXRlcmFsIFx1MDNhOS5weSIsCiAgICAgICJxdWFsbmFtZSI6ICJzYW1lIiwKICAgICAgInNvdXJjZSI6ICJkZWYgZGlzcGxheV9vbmx5KCk6XG4gICAgcmV0dXJuIFwiXHUwM2E5XCJcbiIsCiAgICAgICJsaW5lbm8iOiAxLAogICAgICAiZW5kX2xpbmVubyI6IDIsCiAgICAgICJjaGFuZ2VkX2xpbmVzIjogWwogICAgICAgIDIKICAgICAgXQogICAgfQogIF0sCiAgInRlc3RfZmlsZXMiOiB7fSwKICAidGVzdHNfd3JpdHRlbiI6IDAsCiAgInJlcGFpcl9yb3VuZHNfdXNlZCI6IDAsCiAgIm1heF9yZXBhaXJfcm91bmRzIjogMSwKICAiZmluYWwiOiBudWxsLAogICJjb3ZlcmFnZSI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJ0b3RhbF90b2tlbnMiOiAwLAogICAgInRvdGFsX2Nvc3RfdXNkIjogMCwKICAgICJjb3N0X2lzX2NvbXBsZXRlIjogZmFsc2UsCiAgICAidG9rZW5zX2VzdGltYXRlZCI6IGZhbHNlLAogICAgImJ5X21vZGVsIjoge30sCiAgICAiZW50cmllcyI6IFtdCiAgfSwKICAicm91bmRzIjogW10sCiAgInBsYW4iOiAiRmljdGlvbmFsIHBhc3NpdmUgc291cmNlIG9ubHkiLAogICJtZXNzYWdlIjogImFmdGVyIGZpeHR1cmUiLAogICJwYXRjaCI6ICIiLAogICJ1bmtub3duIjogewogICAgInByZXNlcnZlX3NwZWxsaW5nIjogMWUyLAogICAgIm5lZ2F0aXZlX3plcm8iOiAtMC4wLAogICAgInRleHRfaWQiOiAiMDAwNyIKICB9Cn0K"
+        }
+      ],
+      "index": []
+    }
+  },
+  "requests": [
+    "file:///C:/Users/jacob/AppData/Local/Temp/hamon-dcac8b3b8755-testpilot130-v1/original-inputs/mixed.html",
+    "file:///C:/Users/jacob/AppData/Local/Temp/hamon-dcac8b3b8755-testpilot130-v1/original-inputs/empty.html"
+  ],
+  "page_errors": [],
+  "passed": true,
+  "managed_disconnect": true,
+  "scope": "Passive fictional saved comparisons only; no generated source/test/model/provider execution. Print media and managed disconnect only, not physical print/PDF or separately measured OS Chrome exit.",
+  "before": {
+    "after.json": {
+      "bytes": 2379,
+      "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+      "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff",
+      "mode": 33206,
+      "mtime_ns": "1791950199717698000",
+      "inode": "281474985631310"
+    },
+    "before.json": {
+      "bytes": 2843,
+      "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+      "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb",
+      "mode": 33206,
+      "mtime_ns": "1791950199725773500",
+      "inode": "2533274799316553"
+    },
+    "criteria.json": {
+      "bytes": 12074,
+      "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+      "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "mode": 33206,
+      "mtime_ns": "1791950199734312600",
+      "inode": "281474985631312"
+    },
+    "empty-after.json": {
+      "bytes": 783,
+      "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+      "git_blob": "3493391692777378d2407a1cd77239586b534f27",
+      "mode": 33206,
+      "mtime_ns": "1791950199739317900",
+      "inode": "562949962341967"
+    },
+    "empty-before.json": {
+      "bytes": 1011,
+      "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+      "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f",
+      "mode": 33206,
+      "mtime_ns": "1791950199744787100",
+      "inode": "1688849869184586"
+    },
+    "empty.html": {
+      "bytes": 14607,
+      "sha256": "0494bc0d1cd1db783f7ab4d01e8ba26449cccf17b6f56f9154c14ad376ce47bb",
+      "git_blob": "58f5af0a1907e0603c92eff557ac2f204b78e46d",
+      "mode": 33206,
+      "mtime_ns": "1791950199749761500",
+      "inode": "281474985631313"
+    },
+    "mixed.html": {
+      "bytes": 27886,
+      "sha256": "ecdc9933d758fbbbf44dc253ea8faa7781258c106541925b711e5597aac0de50",
+      "git_blob": "dbe5c4e5eebcfc2b59b37eac7b3281946850fecc",
+      "mode": 33206,
+      "mtime_ns": "1791950199765156100",
+      "inode": "281474985631314"
+    },
+    "producer.json": {
+      "bytes": 31387,
+      "sha256": "15ac0e54c3a4411285869797587d0bf396fb4ef437b933f5afc9474fe7534f06",
+      "git_blob": "cc22f08d3b03af180b9c75435102885be0243975",
+      "mode": 33206,
+      "mtime_ns": "1791950199784771300",
+      "inode": "281474985631315"
+    },
+    "receive_browser.py": {
+      "bytes": 16201,
+      "sha256": "5eb8526d466c763c14100f60e3a7cfbf85c92ed0b18bbd43cc0ab784a820eb22",
+      "git_blob": "f8c96085e148a2996ed036fb7f50fcec543c212e",
+      "mode": 33206,
+      "mtime_ns": "1791950199790345100",
+      "inode": "281474985631316"
+    },
+    "source-packet.json": {
+      "bytes": 224824,
+      "sha256": "60b2867c539db095977e98d6c9dc1238889ca296ba92c847b636c14753dcc67a",
+      "git_blob": "431e88207343fc5ad1b78faabd6f6abfed7bf16e",
+      "mode": 33206,
+      "mtime_ns": "1791950199799860700",
+      "inode": "281474985631317"
+    }
+  },
+  "criteria": {
+    "bytes": 12074,
+    "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+    "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e"
+  },
+  "producer": {
+    "bytes": 31387,
+    "sha256": "15ac0e54c3a4411285869797587d0bf396fb4ef437b933f5afc9474fe7534f06",
+    "git_blob": "cc22f08d3b03af180b9c75435102885be0243975"
+  },
+  "packet": {
+    "bytes": 224824,
+    "sha256": "60b2867c539db095977e98d6c9dc1238889ca296ba92c847b636c14753dcc67a",
+    "git_blob": "431e88207343fc5ad1b78faabd6f6abfed7bf16e"
+  },
+  "context_closed": true,
+  "playwright_stopped": true,
+  "after": {
+    "after.json": {
+      "bytes": 2379,
+      "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+      "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff",
+      "mode": 33206,
+      "mtime_ns": "1791950199717698000",
+      "inode": "281474985631310"
+    },
+    "before.json": {
+      "bytes": 2843,
+      "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+      "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb",
+      "mode": 33206,
+      "mtime_ns": "1791950199725773500",
+      "inode": "2533274799316553"
+    },
+    "criteria.json": {
+      "bytes": 12074,
+      "sha256": "2f7627aa971ba49ca3c7824280bbb7acba36fe853506fd4d3825c1768491d96e",
+      "git_blob": "413c9d8e9b2d3d9f6fa18829c7feacf53d23ea2e",
+      "mode": 33206,
+      "mtime_ns": "1791950199734312600",
+      "inode": "281474985631312"
+    },
+    "empty-after.json": {
+      "bytes": 783,
+      "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+      "git_blob": "3493391692777378d2407a1cd77239586b534f27",
+      "mode": 33206,
+      "mtime_ns": "1791950199739317900",
+      "inode": "562949962341967"
+    },
+    "empty-before.json": {
+      "bytes": 1011,
+      "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+      "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f",
+      "mode": 33206,
+      "mtime_ns": "1791950199744787100",
+      "inode": "1688849869184586"
+    },
+    "empty.html": {
+      "bytes": 14607,
+      "sha256": "0494bc0d1cd1db783f7ab4d01e8ba26449cccf17b6f56f9154c14ad376ce47bb",
+      "git_blob": "58f5af0a1907e0603c92eff557ac2f204b78e46d",
+      "mode": 33206,
+      "mtime_ns": "1791950199749761500",
+      "inode": "281474985631313"
+    },
+    "mixed.html": {
+      "bytes": 27886,
+      "sha256": "ecdc9933d758fbbbf44dc253ea8faa7781258c106541925b711e5597aac0de50",
+      "git_blob": "dbe5c4e5eebcfc2b59b37eac7b3281946850fecc",
+      "mode": 33206,
+      "mtime_ns": "1791950199765156100",
+      "inode": "281474985631314"
+    },
+    "producer.json": {
+      "bytes": 31387,
+      "sha256": "15ac0e54c3a4411285869797587d0bf396fb4ef437b933f5afc9474fe7534f06",
+      "git_blob": "cc22f08d3b03af180b9c75435102885be0243975",
+      "mode": 33206,
+      "mtime_ns": "1791950199784771300",
+      "inode": "281474985631315"
+    },
+    "receive_browser.py": {
+      "bytes": 16201,
+      "sha256": "5eb8526d466c763c14100f60e3a7cfbf85c92ed0b18bbd43cc0ab784a820eb22",
+      "git_blob": "f8c96085e148a2996ed036fb7f50fcec543c212e",
+      "mode": 33206,
+      "mtime_ns": "1791950199790345100",
+      "inode": "281474985631316"
+    },
+    "source-packet.json": {
+      "bytes": 224824,
+      "sha256": "60b2867c539db095977e98d6c9dc1238889ca296ba92c847b636c14753dcc67a",
+      "git_blob": "431e88207343fc5ad1b78faabd6f6abfed7bf16e",
+      "mode": 33206,
+      "mtime_ns": "1791950199799860700",
+      "inode": "281474985631317"
+    }
+  },
+  "preserved": true,
+  "artifacts": {
+    "empty-390.png": {
+      "bytes": 31987,
+      "sha256": "2e9f20fa64e0c327d3e67e4a12a795e71372ae4e98ace0f76c377ddc5ede66ef",
+      "git_blob": "554d51f8569438df4b6f23c4eefccf9ad7548fa7"
+    },
+    "empty-after-after-report.json": {
+      "bytes": 783,
+      "sha256": "fe4b2600e6c9c9d125a17d7ee134980a6996779cf202b9fa4bdbdeffc7cdffec",
+      "git_blob": "3493391692777378d2407a1cd77239586b534f27"
+    },
+    "empty-before-before-report.json": {
+      "bytes": 1011,
+      "sha256": "c44b38187ec2fa76356a91fb30e217c30b5461cf5b1f3b3350a73045c1442b89",
+      "git_blob": "f4df4b94fcefc8330296b05351058cb9ce32299f"
+    },
+    "empty-desktop.png": {
+      "bytes": 48452,
+      "sha256": "5bc4efc30b46d1302aef3c949d44ccec0fc7daec54e196126eafba4259970216",
+      "git_blob": "53e02359fcddb2ffe5ce38e9626b8acf81399d44"
+    },
+    "mixed-390.png": {
+      "bytes": 16999,
+      "sha256": "4e3336bb2650314161fa2c2c0b91700fd56a526da07dbf087717bbd8a8e9f509",
+      "git_blob": "0a113f7c712f6ad720ad83177d8848affbe49bd6"
+    },
+    "mixed-after-after-report.json": {
+      "bytes": 2379,
+      "sha256": "abd0eb1895eb3c98daa397efd29b2fc6cef3e6b45fa775a3203ff21c2edfdb81",
+      "git_blob": "ccbbfc1beb95a02f5025f331a7f97a8e50e49bff"
+    },
+    "mixed-before-before-report.json": {
+      "bytes": 2843,
+      "sha256": "028ba422845c747650bb3e9fb13941be1ed30b8c57fd23b0ca9070848159a524",
+      "git_blob": "62c5c4ba97c67317b697c6bbdf82ac97175c94eb"
+    },
+    "mixed-desktop.png": {
+      "bytes": 33064,
+      "sha256": "c138552304a54e8fbdd28de364282f3dad494fb68451cd24172c9855f141a782",
+      "git_blob": "cd3fededdbac25118feaba3758a426c642a78245"
+    }
+  },
+  "finished_at": "2026-10-14T03:58:23.173310+00:00"
+}

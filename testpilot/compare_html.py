@@ -149,6 +149,28 @@ def _targets(before: SavedReport, after: SavedReport) -> str:
     return body
 
 
+def _generated_downloads(change: dict, index: int) -> str:
+    links, notes = [], []
+    for role in ("before", "after"):
+        value = change[role]
+        if value is None:
+            continue
+        attributes = f'data-file-index="{index}" data-role="{role}"'
+        try:
+            raw = value.encode("utf-8")
+        except UnicodeEncodeError:
+            notes.append(f'<p class="note generated-source-unavailable" {attributes}>'
+                         f'{role.title()} source download unavailable: this retained string contains an '
+                         'unpaired surrogate. Use its escaped display or original report JSON.</p>')
+            continue
+        encoded = base64.b64encode(raw).decode("ascii")
+        links.append(f'<a class="button generated-source-download" {attributes} '
+                     f'download="testpilot-{role}-file-{index}.txt" '
+                     f'href="data:text/plain;charset=utf-8;base64,{encoded}">'
+                     f'Download {role.title()} source</a>')
+    return ('<div class="actions">' + "".join(links) + '</div>' if links else '') + "".join(notes)
+
+
 def _files(before: SavedReport, after: SavedReport) -> str:
     changes = file_changes(before, after)
     body = '<p class="note">File labels are exact saved paths. “Unchanged” means the two saved source strings are equal. A changed filename stays an addition/removal; no rename or test-equivalence inference is made.</p>'
@@ -175,6 +197,7 @@ def _files(before: SavedReport, after: SavedReport) -> str:
                 detail += '<p class="empty">File absent.</p>' if change[key] is None else _pre(change[key], role + " generated source")
                 detail += "</div>"
             detail += "</div>"
+        detail += _generated_downloads(change, i)
         body += _details(title, detail, opened=change["status"] != "unchanged", identity="file-" + str(i))
     return body
 

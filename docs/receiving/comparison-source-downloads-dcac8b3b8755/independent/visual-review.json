@@ -1,0 +1,38 @@
+{
+  "kind": "bounded human-style image inspection of actual received PNGs",
+  "candidate": [
+    {
+      "path": "native-candidate/candidate-browser-v1/empty-390.png",
+      "bytes": 31987,
+      "sha256": "2e9f20fa64e0c327d3e67e4a12a795e71372ae4e98ace0f76c377ddc5ede66ef",
+      "git_blob": "554d51f8569438df4b6f23c4eefccf9ad7548fa7"
+    },
+    {
+      "path": "native-candidate/candidate-browser-v1/empty-desktop.png",
+      "bytes": 48452,
+      "sha256": "5bc4efc30b46d1302aef3c949d44ccec0fc7daec54e196126eafba4259970216",
+      "git_blob": "53e02359fcddb2ffe5ce38e9626b8acf81399d44"
+    },
+    {
+      "path": "native-candidate/candidate-browser-v1/mixed-390.png",
+      "bytes": 19839,
+      "sha256": "8f9af939c1fc83f7340e54bd067abc40f0287158c01d0c24f9acbd286981fc17",
+      "git_blob": "09b667756c95fa284230c7ed46bca9c20960b692"
+    },
+    {
+      "path": "native-candidate/candidate-browser-v1/mixed-desktop.png",
+      "bytes": 37963,
+      "sha256": "bb377c5a280f0fe16bebfec744472ce55d2ac5b24594bbb2538541fad2da3662",
+      "git_blob": "a6afc32de731f6b82a5a4148144551d1feebbaa5"
+    }
+  ],
+  "findings": [
+    "Mixed390: the added-file After source link and preceding Before source link are readable/in bounds; escaped source remains visible.",
+    "Mixed desktop: per-side link and explicit Before unpaired-surrogate note are readable alongside the full escaped source.",
+    "Empty390 and desktop: no generated-file controls, unchanged selected-source context and no-final-test message are readable."
+  ],
+  "limits": [
+    "Static screenshots only; full literal semantics and all download bytes come from the raw218-check course.",
+    "No physical printer/PDF, every pixel, assistive-technology or separately measured OS Chrome exit claim."
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "status": "failed",
+  "changed_functions": [
+    {
+      "path": "src/literal \u03a9.py",
+      "qualname": "same",
+      "source": "def display_only():\n    return \"\u03a9\"\n",
+      "lineno": 1,
+      "end_lineno": 2,
+      "changed_lines": [
+        2
+      ]
+    }
+  ],
+  "test_files": {
+    "lone-low.py": "low \udfff retained",
+    "C:\\kept\\added.py": "\ufeffBOM is recorded\r\n\u03a9\t  ",
+    "same.py": "  BEGIN\r\n\t\u03a9 \u4e2d \ud83d\ude00\u0000\u001b[31m <script>DISPLAY ONLY</script>\rbare\n01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789\nTRAIL TWO  \r\nAFTER\n",
+    "empty.py": "",
+    "paired.py": "\n\ud83d\ude00 caf\u00e9\n",
+    "lone-high.py": "valid after high \u03a9\r\n"
+  },
+  "tests_written": 6,
+  "repair_rounds_used": 0,
+  "max_repair_rounds": 1,
+  "final": {
+    "returncode": 1,
+    "timed_out": false,
+    "ok": false,
+    "duration_s": 0.25,
+    "output": "Recorded output only\n",
+    "summary": "after retained summary",
+    "passed": 0,
+    "failed": 0,
+    "errors": 1,
+    "skipped": 0,
+    "cases": [
+      {
+        "nodeid": "repeat <case> \u03a9",
+        "outcome": "error",
+        "message": "Literal error\n"
+      }
+    ],
+    "junit_available": false,
+    "coverage": null
+  },
+  "coverage": null,
+  "ledger": {
+    "total_tokens": 0,
+    "total_cost_usd": 0,
+    "cost_is_complete": false,
+    "tokens_estimated": false,
+    "by_model": {},
+    "entries": []
+  },
+  "rounds": [],
+  "plan": "Fictional passive source only",
+  "message": "after fixture",
+  "patch": "",
+  "unknown": {
+    "preserve_spelling": 1e2,
+    "negative_zero": -0.0,
+    "text_id": "0007"
+  }
+}

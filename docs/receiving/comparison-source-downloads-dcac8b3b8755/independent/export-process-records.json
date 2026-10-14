@@ -1,0 +1,31 @@
+{
+  "tp130_candidate_export_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 190620 (shell: powershell.exe)\nInitial output:\n{\"files\": 20, \"packet\": {\"bytes\": 685729, \"sha256\": \"99a3da1bc6443d3906ea5b355766b4417b5271da4528f236f3ebafee817696ee\", \"git_blob\": \"09dab6cb24d974d7776cceee2fb5a83d22f72762\", \"mode\": 33206, \"mtime_ns\": \"1791952180472872300\", \"inode\": \"3940649682870219\"}, \"carrier\": {\"bytes\": 272355, \"sha256\": \"cbb74180d39ba1d38d40c932d783b6072c045f0feb2642188e52645892de82ab\", \"git_blob\": \"1fae862df1de6f54244f6173a07a0a3f27f9e7f5\", \"mode\": 33206, \"mtime_ns\": \"1791952180484255900\", \"inode\": \"1970324845895630\"}, \"watched\": 50, \"preserved\": true}\r\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_candidate_export_0": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"files\": 20, \"packet\": {\"bytes\": 685729, \"sha256\": \"99a3da1bc6443d3906ea5b355766b4417b5271da4528f236f3ebafee817696ee\", \"git_blob\": \"09dab6cb24d974d7776cceee2fb5a83d22f72762\", \"mode\": 33206, \"mtime_ns\": \"1791952180472872300\", \"inode\": \"3940649682870219\"}, \"carrier\": {\"bytes\": 272355, \"sha256\": \"cbb74180d39ba1d38d40c932d783b6072c045f0feb2642188e52645892de82ab\", \"git_blob\": \"1fae862df1de6f54244f6173a07a0a3f27f9e7f5\", \"mode\": 33206, \"mtime_ns\": \"1791952180484255900\", \"inode\": \"1970324845895630\"}, \"watched\": 50, \"preserved\": true}\r\n\n✅ Process completed with exit code 0 (runtime: 0.46s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

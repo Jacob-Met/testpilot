@@ -1,0 +1,109 @@
+{
+  "tp130_preflight_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 179860 (shell: powershell.exe)\nInitial output:\n{\"host\": \"MSI\", \"user\": \"jacob\", \"python\": \"3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]\", \"executable\": \"C:\\\\Python314\\\\python.exe\", \"playwright\": \"1.61.0\", \"chrome\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\", \"chrome_exists\": true, \"free_C\": 70278230016, \"free_D\": 428073693184}\r\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_preflight_collected": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"host\": \"MSI\", \"user\": \"jacob\", \"python\": \"3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]\", \"executable\": \"C:\\\\Python314\\\\python.exe\", \"playwright\": \"1.61.0\", \"chrome\": \"C:\\\\Program Files\\\\Google\\\\Chrome\\\\Application\\\\chrome.exe\", \"chrome_exists\": true, \"free_C\": 70278230016, \"free_D\": 428073693184}\r\n\n✅ Process completed with exit code 0 (runtime: 0.97s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_stage_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 192264 (shell: powershell.exe)\nInitial output:\n{\"passed\": true, \"files\": 10, \"root\": \"C:\\\\Users\\\\jacob\\\\AppData\\\\Local\\\\Temp\\\\hamon-dcac8b3b8755-testpilot130-v1\"}\r\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_stage_collected": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"files\": 10, \"root\": \"C:\\\\Users\\\\jacob\\\\AppData\\\\Local\\\\Temp\\\\hamon-dcac8b3b8755-testpilot130-v1\"}\r\n\n✅ Process completed with exit code 0 (runtime: 0.82s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_original_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 188904 (shell: powershell.exe)\nInitial output:\n{\"passed\": true, \"checks\": 80, \"downloads\": 4, \"managed_disconnect\": true, \"output\": \"C:\\\\Users\\\\jacob\\\\AppData\\\\Local\\\\Temp\\\\hamon-dcac8b3b8755-testpilot130-v1\\\\original-browser-v1\"}\r\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_original_collected": {
+    "content": [
+      {
+        "type": "text",
+        "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"passed\": true, \"checks\": 80, \"downloads\": 4, \"managed_disconnect\": true, \"output\": \"C:\\\\Users\\\\jacob\\\\AppData\\\\Local\\\\Temp\\\\hamon-dcac8b3b8755-testpilot130-v1\\\\original-browser-v1\"}\r\n\n✅ Process completed with exit code 0 (runtime: 2.85s)"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_original_export_start": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Process started with PID 196184 (shell: powershell.exe)\nInitial output:\n{\"files\": 10, \"packet\": {\"bytes\": 445874, \"sha256\": \"dd3a3c8b9766025419d0593d9b97a018bc6d81e9992dd4d72e7b8308ee7a89d5\", \"git_blob\": \"4c4e96278a218991ca6a7cea3cb57cfdf2b2d769\", \"mode\": 33206, \"mtime_ns\": \"1791950604502002600\", \"inode\": \"3096224752737882\"}, \"carrier\": {\"bytes\": 231907, \"sha256\": \"d330c53bfed34d676c4fd1fa96e668c5c95d95687b55af07616beff7e2e83ddc\", \"git_blob\": \"1537504c85820a8a8d49f133aa31e34edfb80c0a\", \"mode\": 33206, \"mtime_ns\": \"1791950604512164700\", \"inode\": \"9288674240372350\"}, \"watched\": 20, \"preserved\": true}\r\n"
+      },
+      {
+        "type": "text",
+        "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+      }
+    ],
+    "isError": false
+  },
+  "tp130_original_export_0": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "[Reading 2 new lines (total: 2 lines)]\n\n{\"files\": 10, \"packet\": {\"bytes\": 445874, \"sha256\": \"dd3a3c8b9766025419d0593d9b97a018bc6d81e9992dd4d72e7b8308ee7a89d5\", \"git_blob\": \"4c4e96278a218991ca6a7cea3cb57cfdf2b2d769\", \"mode\": 33206, \"mtime_ns\": \"1791950604502002600\", \"inode\": \"3096224752737882\"}, \"carrier\": {\"bytes\": 231907, \"sha256\": \"d330c53bfed34d676c4fd1fa96e668c5c95d95687b55af07616beff7e2e83ddc\", \"git_blob\": \"1537504c85820a8a8d49f133aa31e34edfb80c0a\", \"mode\": 33206, \"mtime_ns\": \"1791950604512164700\", \"inode\": \"9288674240372350\"}, \"watched\": 20, \"preserved\": true}\r\n\n✅ Process completed with exit code 0 (runtime: 0.43s)"
+        },
+        {
+          "type": "text",
+          "text": "\n[executed on device: MSI (edc358ed-5ad6-4036-b7aa-8667bf0e14e0)]"
+        }
+      ],
+      "isError": false
+    }
+  }
+}

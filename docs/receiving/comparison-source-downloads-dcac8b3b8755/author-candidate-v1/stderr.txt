@@ -1,0 +1,12 @@
+test_complete_literal_utf8_including_recorded_feff_and_long_source (test_compare_generated_downloads.GeneratedDownloads.test_complete_literal_utf8_including_recorded_feff_and_long_source) ... ok
+test_empty_maps_do_not_add_controls_or_change_absence (test_compare_generated_downloads.GeneratedDownloads.test_empty_maps_do_not_add_controls_or_change_absence) ... ok
+test_fixed_roles_and_existing_file_order_keep_each_source (test_compare_generated_downloads.GeneratedDownloads.test_fixed_roles_and_existing_file_order_keep_each_source) ... ok
+test_ordinary_cli_saves_source_links_without_executing_text (test_compare_generated_downloads.GeneratedDownloads.test_ordinary_cli_saves_source_links_without_executing_text) ... ok
+test_original_json_and_script_free_contract_remain_exact (test_compare_generated_downloads.GeneratedDownloads.test_original_json_and_script_free_contract_remain_exact) ... ok
+test_recorded_paths_cannot_select_a_filename_or_create_markup (test_compare_generated_downloads.GeneratedDownloads.test_recorded_paths_cannot_select_a_filename_or_create_markup) ... ok
+test_unpaired_surrogate_is_local_to_its_side (test_compare_generated_downloads.GeneratedDownloads.test_unpaired_surrogate_is_local_to_its_side) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.388s
+
+OK
