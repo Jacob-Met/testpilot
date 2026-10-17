@@ -1,0 +1,81 @@
+{
+  "schema": "testpilot-witness-mac-peer-review/1",
+  "verdict": "PASS",
+  "reviewer": "0553c522566e/estate_tools",
+  "scope": "Source/controller and sealed artifact/raw-record consistency review plus direct viewing of both saved screenshots; no new browser/native/product or witness execution and no integration approval.",
+  "packet": {
+    "bytes": 399420,
+    "sha256": "a890b4bb96e9a2b564e9ec79aa26cd604a830db51490cbafb972369acbea9906",
+    "members": 92,
+    "payloads": 91,
+    "drive": "https://drive.google.com/file/d/16K64rMxzSeFAPmRnWCCqeodEylc_lJ7O/view"
+  },
+  "source": {
+    "baseline": "11f4d6c42621bb6b26159726641a19bbd7aa086b",
+    "candidate": "30a15ce3d9bc089eecb4892574606975b5fc2c3d",
+    "evidence_head": "3d7206666f12b6ef5ae9f20527672e1d39da8e21",
+    "observed_main": "247ad1ae8e873fcd52935633015158a1060091af",
+    "recorded_pipeline": "ca2e6c72743c5d3866f3f14189f1d4c3405f60bf",
+    "fresh_64_git_blob_bindings": true,
+    "all_32_candidate_files_match_evidence_head": true,
+    "31_original_runtime_files_match_observed_main": true,
+    "recorded_source_pin_count": 27,
+    "recorded_pins_match_fresh_pipeline_tree": true
+  },
+  "source_delta": {
+    "app": "One new artifact binding; removing it recovers every original byte.",
+    "html": "Independent-witness description and explicit link; removing these recovers every original byte.",
+    "other_runtime_and_recorded_files_unchanged": true
+  },
+  "original": {
+    "node_exit": 1,
+    "prior_passes": 6,
+    "expected_failure": "witness download action available",
+    "source_control_files_preserved": 70
+  },
+  "candidate": {
+    "node_exit": 0,
+    "checks_pass": 34,
+    "real_downloads": 4,
+    "source_control_files_preserved": 70
+  },
+  "verified": {
+    "crc_unique_safe_paths_all_payload_sizes_hashes_modes": true,
+    "all_64_intake_decoded_bodies_equal_archive": true,
+    "all_recorded_artifact_descriptors_match_bytes": true,
+    "four_actual_downloads_match_source_and_recorded_witness": true,
+    "raw_stdout_stderr_and_command_browser_native_records_bound": true,
+    "original_first_frozen_controller_and_all_70_full_maps_equal": true,
+    "post_packaging_full_maps_equal": true,
+    "eight_candidate_server_requests_HTTP200_match_exact_source_bytes": true,
+    "page_recorded_requests_match_owned_server_records": true,
+    "both_owned_browser_server_close_records_agree": true
+  },
+  "controller": {
+    "bytes": 8984,
+    "sha256": "242e983e8ccaba3baa6f11bc1a3b820d6e1121c0e116b1cc4baab12daa654e47",
+    "wrapper_sha256": "df564afc6ca765424af3d5024bc831d9ab12880fc9aa27a87d8b00583ef95a90"
+  },
+  "native_receipt_sha256": {
+    "original": "161727fc3c543b18042c4554811ad2d06f8010a6a101145aa84eaf932a3a5ee1",
+    "candidate": "cc1a5a57c8f49e2f772baa3f5abc8b319cae95f18f60de08d5baa7f5a5e199b9"
+  },
+  "visual_review": {
+    "desktop": [
+      1280,
+      960
+    ],
+    "compact": [
+      390,
+      844
+    ],
+    "finding": "Both saved images directly viewed: witness action legible and contained, with explanatory distinction from generated patch."
+  },
+  "limits": [
+    "Source-informed observer had prior source/artifact exposure and uses upstream recorded fixtures; not a blind test.",
+    "Existing source/evidence epoch and recorded pipeline epoch remain distinct; no pipeline, model/provider or witness execution is performed by this review.",
+    "Network claim is limited to page interception and owned server records, not system-wide traffic.",
+    "No 105-check Linux-suite rerun, full accessibility/native-touch/Safari acceptance, current-main composition, installed adoption, deployment or integration approval.",
+    "Extracted native packaging verifier result and fresh Drive byte readback were reported by the operator outside this ZIP; this review independently verified the local sealed archive and inspected its packager/checker."
+  ]
+}
