@@ -14,6 +14,7 @@ from . import __version__
 from .diff import DiffFormatError, DiffSourceError, changed_functions, parse_unified_diff
 from .history import run_history_command
 from .loop import TestPilot, render_report, write_outputs
+from .limits import nonnegative_integer
 from .model import ModelError, RoutingConfig, make_client
 from .recheck import run_recheck_command
 from .regression import run_regression_command
@@ -33,6 +34,13 @@ def _positive_timeout(value: str) -> float:
             "timeout must be a positive finite number of seconds"
         )
     return seconds
+
+
+def _nonnegative_limit(value: str) -> int:
+    try:
+        return nonnegative_integer(int(value), name="limit")
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError("must be a nonnegative integer") from exc
 
 
 def _python_executable(value: str) -> str:
@@ -110,13 +118,13 @@ def main(argv: list[str] | None = None) -> int:
                    help="default: $TESTPILOT_BACKEND or scripted")
     r.add_argument("--script", help="dir of canned responses for the scripted backend")
     r.add_argument("--base-url", help="override OpenAI-compatible base URL")
-    r.add_argument("--rounds", type=int, default=3, help="max repair rounds (default 3)")
+    r.add_argument("--rounds", type=_nonnegative_limit, default=3, help="nonnegative max repair rounds (default 3)")
     r.add_argument("--timeout", type=_positive_timeout, default=60.0, help="positive finite pytest timeout per run, seconds")
     r.add_argument("--no-coverage", dest="coverage", action="store_const", const=False, default=None,
                    help="run pytest without optional coverage measurement (default: automatic when installed)")
     r.add_argument("--python", type=_python_executable, metavar="EXECUTABLE",
                    help="project Python for all test runs; path or PATH command (default: this interpreter)")
-    r.add_argument("--max-tokens", type=int, default=None, help="total token budget for the run")
+    r.add_argument("--max-tokens", type=_nonnegative_limit, default=None, help="nonnegative total token budget for the run")
     r.add_argument("--pytest-k", metavar="EXPR",
                    help="native pytest keyword expression for baseline, generation and every repair")
     r.add_argument("--pytest-m", metavar="EXPR",
