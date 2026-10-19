@@ -90,6 +90,10 @@ text-conversion helpers are disabled for this read; the repository's Git
 configuration stays unchanged. Saved-file and stdin `--diff` inputs retain their
 existing decoding and selection behavior.
 
+`--git-base` requires Git 2.24 or newer. The supplied base is passed as a Git
+revision. Values beginning with a dash are rejected before Git runs, so they
+cannot change the diff mode or write a file.
+
 Add `--no-coverage` to `run` to execute pytest without optional coverage measurement. The choice applies to the baseline, generated tests and every repair round, including when you select a project interpreter with `--python`. Reports then show coverage as unavailable; actual test failures and exit codes still determine the run's result. Omit the flag to keep automatic coverage when the selected interpreter has it installed.
 
 For `run`, `--timeout` must be a positive finite number of seconds (default 60). Invalid limits are rejected as configuration errors before reading the diff, constructing a model client, starting tests or replacing saved reports. Fractional seconds and scientific notation are supported.
