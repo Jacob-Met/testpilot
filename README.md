@@ -4,7 +4,7 @@ TestPilot takes a git repo and a diff. It writes pytest tests for the Python fun
 
 Built for the Nebius x NVIDIA Global AI Hackathon (Coding & Agentic Engineering track). It is designed to run on **Nebius Token Factory** with **NVIDIA Nemotron** models.
 
-> **Status:** everything here runs locally against a deterministic `ScriptedModel` stub. It has **not** been run against Token Factory yet, because no API key exists. The eval numbers below show the pipeline works. They say nothing about model quality.
+> **Status (2026-10-30):** The bundled evaluation and browser replay use deterministic `ScriptedModel` replies and make **zero live model calls**. Their numbers demonstrate the local pipeline, not Nemotron model quality. The Token Factory client is implemented, and separate model-catalog and `chat/completions` smoke checks are reported in [Running on Nebius Token Factory](#running-on-nebius-token-factory); those checks are not an end-to-end live-model evaluation. Live runs require an API key and can incur usage charges.
 
 ## How it works
 
