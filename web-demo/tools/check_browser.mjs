@@ -94,6 +94,25 @@ try {
     check(`${viewport.name}: keyboard End`, await page.locator('#stage-tab-3').getAttribute('aria-selected') === 'true');
     await page.keyboard.press('Home');
     check(`${viewport.name}: keyboard Home`, await page.locator('#stage-tab-0').getAttribute('aria-selected') === 'true');
+    // A replay is navigable history, not just a final URL. Test actual Back/Forward.
+    await page.goto(`${origin}/?case=calc_clamp&stage=1&ref=browser-check`);
+    await page.locator('#replay[aria-busy="false"]').waitFor();
+    await page.locator('#next').click();
+    await page.locator('#next').click();
+    await page.goBack();
+    await page.locator('#stage-tab-1[aria-selected="true"]').waitFor();
+    check(`${viewport.name}: Back restores prior replay stage`, await page.locator('#stage-tab-1').getAttribute('aria-selected') === 'true');
+    check(`${viewport.name}: history preserves unrelated query parameters`, new URL(page.url()).searchParams.get('ref') === 'browser-check');
+    await page.goForward();
+    await page.locator('#stage-tab-2[aria-selected="true"]').waitFor();
+    check(`${viewport.name}: Forward restores replay stage`, await page.locator('#stage-tab-2').getAttribute('aria-selected') === 'true');
+    await page.locator('[data-case="stats_median"]').click();
+    await page.goBack();
+    await page.locator('[data-case="calc_clamp"][aria-pressed="true"]').waitFor();
+    check(`${viewport.name}: Back restores fixture and stage`, await page.locator('#stage-tab-2').getAttribute('aria-selected') === 'true');
+    await page.goForward();
+    await page.locator('[data-case="stats_median"][aria-pressed="true"]').waitFor();
+    check(`${viewport.name}: Forward restores fixture and its first stage`, await page.locator('#stage-tab-0').getAttribute('aria-selected') === 'true');
     await page.goto(`${origin}/?case=stats_median&stage=4`);
     await page.locator('#replay[aria-busy="false"]').waitFor();
     check(`${viewport.name}: exact fixture/stage deep link`, await page.locator('[data-case="stats_median"]').getAttribute('aria-pressed') === 'true' && await page.locator('#stage-tab-3').getAttribute('aria-selected') === 'true');
