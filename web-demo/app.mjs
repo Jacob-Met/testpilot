@@ -153,6 +153,7 @@ function render() {
   artifact('download-patch', item, 'testpilot.patch');
   artifact('download-record', item, 'record.json');
   artifact('download-log', item, 'generated.log');
+  artifact('download-witness', item, 'witness.py');
   $('previous').disabled = stage === 0;
   $('next').disabled = false;
   $('next').textContent = ['Inspect tests →', 'Read recorded run →', 'Check oracle →', 'Start over ↻'][stage];

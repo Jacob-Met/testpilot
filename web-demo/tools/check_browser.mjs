@@ -64,6 +64,8 @@ try {
     for (const item of dataset.cases) {
       await page.locator(`[data-case="${item.id}"]`).click();
       check(`${viewport.name}/${item.id}: fixture switch resets stage and retains focus`, await page.locator('#stage-tab-0').getAttribute('aria-selected') === 'true' && await page.evaluate(() => document.activeElement.dataset.case) === item.id);
+      check(`${viewport.name}/${item.id}: independent witness download is present`, await page.locator('#download-witness').count() === 1);
+      check(`${viewport.name}/${item.id}: independent witness has an explicit label`, (await page.locator('#download-witness').innerText()).includes('boundary witness') && (await page.locator('.evidence-card').innerText()).includes('independently authored'));
       for (let i = 0; i < 4; i++) {
         check(`${viewport.name}/${item.id}: stage ${i + 1} selected`, await page.locator(`#stage-tab-${i}`).getAttribute('aria-selected') === 'true');
         check(`${viewport.name}/${item.id}: stage ${i + 1} fits viewport`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
@@ -75,9 +77,10 @@ try {
       }
       const rendered = await page.locator('#stage-content').innerText();
       check(`${viewport.name}/${item.id}: oracle and independent witness visible`, rendered.includes('Boundary witness') && rendered.includes(item.witness.trim()));
-      for (const [id, filename] of [['download-patch', 'testpilot.patch'], ['download-record', 'record.json'], ['download-log', 'generated.log']]) {
+      for (const [id, filename] of [['download-patch', 'testpilot.patch'], ['download-record', 'record.json'], ['download-log', 'generated.log'], ['download-witness', 'witness.py']]) {
         const [download] = await Promise.all([page.waitForEvent('download'), page.locator(`#${id}`).click()]);
         const dest = path.join(output, 'downloads', `${viewport.name}-${item.id}-${filename}`);
+        check(`${viewport.name}/${item.id}: fixture-qualified ${filename} name`, download.suggestedFilename() === `${item.id}-${filename}`);
         await download.saveAs(dest);
         const bytes = await readFile(dest);
         const sha256 = createHash('sha256').update(bytes).digest('hex');

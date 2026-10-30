@@ -33,7 +33,9 @@ remote font, API key or external service is needed to replay the recording.
 
 The stage tabs support Left/Right, Home and End keys. Fixture and stage query
 parameters are shareable, for example `?case=stats_median&stage=4`. Download links
-serve the exact generated patch, case JSON and complete generated-test log.
+serve the exact generated patch, case JSON, complete generated-test log and the
+independently authored boundary witness. The witness download is named for its
+fixture and stays separate from the generated patch and the oracle fix.
 
 ## Recording provenance
 
