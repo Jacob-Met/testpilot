@@ -1,0 +1,18 @@
+diff --git a/calc.py b/calc.py
+index 9f221a6..cfe4453 100644
+--- a/calc.py
++++ b/calc.py
+@@ -5,6 +5,13 @@ def add(a, b):
+     return a + b
+ 
+ 
++def clamp(x, lo, hi):
++    """Clamp x into the closed interval [lo, hi]."""
++    if lo > hi:
++        raise ValueError("lo must be <= hi")
++    return max(hi, min(lo, x))
++
++
+ def mean(values):
+     if not values:
+         raise ValueError("mean of empty sequence")

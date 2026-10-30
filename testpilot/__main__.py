@@ -106,7 +106,7 @@ def main(argv: list[str] | None = None) -> int:
     g = r.add_mutually_exclusive_group(required=True)
     g.add_argument("--diff", help="unified diff file ('-' for stdin)")
     g.add_argument("--git-base", help="diff the working tree against this git ref")
-    r.add_argument("--backend", choices=["scripted", "tokenfactory", "openai"], default=None,
+    r.add_argument("--backend", choices=["scripted", "nebius", "tokenfactory", "openai"], default=None,
                    help="default: $TESTPILOT_BACKEND or scripted")
     r.add_argument("--script", help="dir of canned responses for the scripted backend")
     r.add_argument("--base-url", help="override OpenAI-compatible base URL")

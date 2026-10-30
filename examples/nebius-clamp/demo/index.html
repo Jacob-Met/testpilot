@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestPilot terminal replay</title>
+<style>
+  :root { --bg: #0f1115; --fg: #d7dae0; --muted: #7d8590; --bad: #ff7b72; --ok: #7ee787; --accent: #79c0ff; }
+  body { margin: 0; background: var(--bg); color: var(--fg); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 16px; }
+  .bar { font: 13px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--muted); margin-bottom: 8px; }
+  .term { background: #161a21; border: 1px solid #2a303a; border-radius: 8px; padding: 16px 18px;
+          font: 14px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre-wrap;
+          word-break: break-word; min-height: 460px; }
+  .cmd { color: var(--accent); }
+  .verdict { color: var(--bad); font-weight: 600; }
+  .hl { color: var(--ok); }
+  .controls { margin-top: 10px; font: 13px/1.4 ui-monospace, Menlo, monospace; color: var(--muted); }
+  button { background: #21262d; color: var(--fg); border: 1px solid #30363d; border-radius: 6px;
+           padding: 4px 10px; font: inherit; cursor: pointer; margin-right: 6px; }
+  @media (max-width: 480px) { .term { font-size: 12.5px; padding: 12px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar">TestPilot CLI · replay of a recorded live run against Nemotron on Nebius Token Factory · output unedited</div>
+  <div id="term" class="term" aria-live="off"></div>
+  <div class="controls">
+    <button id="replay" type="button">Replay</button>
+    <button id="all" type="button">Show all</button>
+    <span id="status"></span>
+  </div>
+</div>
+<script>
+(() => {
+  const term = document.getElementById("term");
+  const status = document.getElementById("status");
+  const replayBtn = document.getElementById("replay");
+  const allBtn = document.getElementById("all");
+  let lines = [];
+  let timer = null;
+
+  function render(line) {
+    const span = document.createElement("span");
+    if (line.startsWith("$ ")) span.className = "cmd";
+    else if (line.startsWith("# TestPilot report")) span.className = "verdict";
+    else if (/^\s*- (Final run|Repair rounds)/.test(line)) span.className = "hl";
+    span.textContent = line + "\n";
+    term.appendChild(span);
+  }
+
+  function play() {
+    clearTimeout(timer);
+    term.textContent = "";
+    let i = 0;
+    const step = () => {
+      if (i < lines.length) {
+        render(lines[i++]);
+        status.textContent = `${i}/${lines.length} lines`;
+        timer = setTimeout(step, lines[i - 1].startsWith("$ ") ? 900 : 180);
+      } else {
+        status.textContent = `${lines.length} lines (end of recorded output)`;
+      }
+    };
+    step();
+  }
+
+  function showAll() {
+    clearTimeout(timer);
+    term.textContent = "";
+    lines.forEach(render);
+    status.textContent = `${lines.length} lines (end of recorded output)`;
+  }
+
+  replayBtn.addEventListener("click", play);
+  allBtn.addEventListener("click", showAll);
+
+  // The file is the verbatim stdout+stderr of one real CLI run; nothing is generated here.
+  fetch("run-output.txt", { cache: "no-store" })
+    .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.text(); })
+    .then(text => { lines = text.replace(/\n$/, "").split("\n"); play(); })
+    .catch(err => { status.textContent = `could not load run-output.txt (${err.message})`; });
+})();
+</script>
+</body>
+</html>

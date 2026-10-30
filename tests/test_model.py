@@ -86,6 +86,10 @@ def test_make_client(tmp_path):
     assert isinstance(c, OpenAICompatClient) and c.base_url == TOKEN_FACTORY_BASE_URL
     c2 = make_client("openai", env={"NEBIUS_API_KEY": "k", "TESTPILOT_BASE_URL": "http://localhost:8000/v1"})
     assert c2.base_url == "http://localhost:8000/v1/"
+    nb = make_client("nebius", env={"NEBIUS_API_KEY": "k"})
+    assert isinstance(nb, OpenAICompatClient) and nb.base_url == TOKEN_FACTORY_BASE_URL
+    with pytest.raises(ModelError, match="NEBIUS_API_KEY"):
+        make_client("nebius", env={})
     with pytest.raises(ModelError):
         make_client("scripted", env={})
     with pytest.raises(ModelError):

@@ -15,10 +15,10 @@ Scoring (one sample per case, so pass@1 = solved / cases):
                  bug-revealing. A green test suite on buggy code is a miss.
 
 With the scripted backend the numbers measure the pipeline (parsing, sandbox,
-repair loop, scoring), not a model. Run with --backend tokenfactory to measure
+repair loop, scoring), not a model. Run with --backend nebius to measure
 a real model; the script/ dirs are then ignored.
 
-    python -m eval.harness [--backend scripted|tokenfactory] [--rounds 3] [--out eval/results]
+    python -m eval.harness [--backend scripted|nebius] [--rounds 3] [--out eval/results]
 """
 from __future__ import annotations
 
@@ -125,7 +125,7 @@ def render_table(rows: list[dict], summary: dict, backend: str) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="eval.harness")
-    ap.add_argument("--backend", default="scripted", choices=["scripted", "tokenfactory", "openai"])
+    ap.add_argument("--backend", default="scripted", choices=["scripted", "nebius", "tokenfactory", "openai"])
     ap.add_argument("--rounds", type=int, default=3)
     ap.add_argument("--timeout", type=float, default=10.0)
     ap.add_argument("--case", action="append", help="run only these case names")
