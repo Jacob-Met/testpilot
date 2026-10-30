@@ -94,6 +94,12 @@ Add `--no-coverage` to `run` to execute pytest without optional coverage measure
 
 For `run`, `--timeout` must be a positive finite number of seconds (default 60). Invalid limits are rejected as configuration errors before reading the diff, constructing a model client, starting tests or replacing saved reports. Fractional seconds and scientific notation are supported.
 
+`--rounds` and `--max-tokens` require nonnegative whole integers. Invalid counts
+are rejected before work starts. Zero rounds still generates and verifies tests;
+a zero token budget permits no model calls. Python callers receive `ValueError`
+for invalid counts at `TestPilot` construction. See [generation limits](docs/generation-limits.md)
+for zero-budget baseline behavior and the limit checked between model calls.
+
 ## Choose functions explicitly
 
 To select which **pytest cases execute**, add `--pytest-k 'parser and not slow'`
