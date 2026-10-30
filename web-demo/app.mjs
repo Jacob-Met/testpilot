@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: Apache-2.0
 const $ = (id) => document.getElementById(id);
 const stageNames = ['Diff inspection', 'Generated tests', 'Recorded execution', 'Ground-truth replay'];
+const stageTitles = (item) => [`A small change to ${item.function}().`, 'What the fixture asks to test.', 'Read the actual test result.', 'Does the fix satisfy the tests?'];
 let dataset;
 let selected = 0;
 let stage = 0;
@@ -42,17 +43,27 @@ function validate(data) {
   return data;
 }
 
+// One diff line becomes a gutter marker plus text, so adds and removes read at a glance.
+function diffRow(line) {
+  if (line.startsWith('@@')) return ['hunk', '', line];
+  if (line.startsWith('+++') || line.startsWith('---') || /^(diff |index )/.test(line)) return ['meta', '', line];
+  if (line.startsWith('+')) return ['add', '+', line.slice(1)];
+  if (line.startsWith('-')) return ['remove', '-', line.slice(1)];
+  return ['context', ' ', line.startsWith(' ') ? line.slice(1) : line];
+}
+
 function codeCard(title, content, kind = 'recorded source', diff = false) {
   const card = element('div', undefined, 'code-card');
   const heading = element('div', undefined, 'code-heading');
   heading.append(element('span', title), element('span', kind, 'code-kind'));
-  const pre = element('pre');
+  const pre = element('pre', undefined, diff ? 'diff' : undefined);
   const code = element('code');
   if (diff) {
     for (const line of content.split('\n')) {
-      const color = line.startsWith('+') && !line.startsWith('+++') ? ' added' :
-        line.startsWith('-') && !line.startsWith('---') ? ' removed' : line.startsWith('@@') ? ' hunk' : '';
-      code.append(element('span', line || ' ', `code-line${color}`));
+      const [kindName, gutter, text] = diffRow(line);
+      const row = element('span', undefined, `code-line ${kindName}`);
+      row.append(element('span', gutter || ' ', 'gutter'), element('span', text || ' ', 'code-text'));
+      code.append(row);
     }
   } else code.textContent = content;
   pre.append(code);
@@ -61,24 +72,24 @@ function codeCard(title, content, kind = 'recorded source', diff = false) {
 }
 
 function metrics(items) {
-  const row = element('div', undefined, 'metrics');
+  const row = element('div', undefined, 'diff-stats');
   for (const [label, value, unit] of items) {
-    const card = element('div', undefined, 'metric');
-    card.append(element('span', label), element('strong', String(value)), element('small', unit));
-    row.append(card);
+    const span = element('span', label);
+    span.append(element('strong', String(value)), document.createTextNode(` ${unit}`));
+    row.append(span);
   }
   return row;
 }
 
 function verdict(title, text, tone = '') {
-  const box = element('div', undefined, `verdict ${tone}`);
+  const box = element('div', undefined, `verdict-box ${tone}`);
   box.append(element('h3', title), element('p', text));
   return box;
 }
 
 function runCard(title, run, note) {
   const card = element('section', undefined, 'run-card');
-  card.append(element('h3', title), element('div', `${run.passed} pass / ${run.failed} fail`, `run-counts${run.failed ? ' failed' : ''}`),
+  card.append(element('h3', title), element('span', `${run.passed} pass / ${run.failed} fail`, `run-counts${run.failed ? ' failed' : ''}`),
     element('p', `Process exit ${run.returncode}. ${note}`));
   return card;
 }
@@ -91,6 +102,78 @@ function artifact(id, item, filename) {
   a.dataset.sha256 = item.files[filename].sha256;
 }
 
+// The headline verdict is the recorded outcome of the fixture, stated before any stage is opened.
+function headline(item) {
+  return item.kind === 'caught'
+    ? { text: `Bug found in ${item.module}: ${item.bug}.`, tone: 'failure', kicker: `${item.title} · ${item.subtitle}` }
+    : { text: `Tests pass, but the regression remains in ${item.module}: ${item.bug}.`, tone: 'warning', kicker: `${item.title} · ${item.subtitle}` };
+}
+
+function column(label, className, nodes, enter = true) {
+  const col = element('section', undefined, `col ${className}${enter ? ' enter' : ''}`);
+  col.append(element('h3', label, 'col-label'), ...nodes);
+  return col;
+}
+
+function diffColumn(item, enter) {
+  return column('Input diff', 'col-diff', [
+    codeCard(item.module, item.diff, 'input diff', true),
+    metrics([['existing suite', item.runs.baseline.passed, 'pass'], ['generated', item.tests_written, 'new tests'], ['fixture', `${selected + 1}`, 'of 2']]),
+  ], enter);
+}
+
+function testsColumn(item, enter, withWitness) {
+  const plan = element('div', undefined, 'plan');
+  plan.append(element('span', 'Recorded planner reply', 'plan-label'), element('div', item.plan, 'plan-body'));
+  const nodes = [plan];
+  for (const [name, content] of Object.entries(item.generated_tests)) nodes.push(codeCard(name, content, 'generated test'));
+  if (withWitness) nodes.push(codeCard('independent boundary witness', item.witness, 'authored control'));
+  nodes.push(element('p', `${item.scripted_calls} authored replies were consumed; ${item.repair_rounds} repair round${item.repair_rounds === 1 ? '' : 's'} used. No live model was called.`, 'context-note'));
+  return column('Generated tests', 'col-tests', nodes, enter);
+}
+
+function pendingColumn(label, className, text) {
+  return column(label, `${className} pending`, [element('p', text, 'pending')], false);
+}
+
+function timeline(steps) {
+  const list = element('ol', undefined, 'timeline');
+  for (const step of steps) {
+    const li = element('li', undefined, step.tone || '');
+    li.append(element('strong', step.title, step.cls || ''), element('span', step.detail, 'detail'));
+    list.append(li);
+  }
+  return list;
+}
+
+function runsColumn(item, stage, enter) {
+  const run = item.runs.generated;
+  const headlineText = item.kind === 'caught' ? 'Code bug suspected — failing assertions retained' : 'Generated suite passed — boundary still untested';
+  if (stage === 2) {
+    return column('Run and repairs', 'col-run', [
+      timeline([
+        { title: 'Existing suite on changed code', detail: `${item.runs.baseline.passed} pass / ${item.runs.baseline.failed} fail`, tone: item.runs.baseline.failed ? 'fail' : 'pass' },
+        { title: 'Generated tests', detail: `${run.passed} pass / ${run.failed} fail · process exit ${run.returncode}`, tone: run.failed ? 'fail' : 'pass' },
+        { title: 'Repair reply', detail: `${item.repair_rounds} round${item.repair_rounds === 1 ? '' : 's'} · ${item.scripted_calls} authored replies`, tone: '' },
+        { title: headlineText, detail: item.message, tone: item.kind === 'caught' ? 'fail verdict-step' : 'warn verdict-step', cls: 'verdict-title' },
+      ]),
+      codeCard('pytest / generated tests', run.output, 'output excerpt'),
+    ], enter);
+  }
+  const compare = element('div', undefined, 'run-grid');
+  compare.append(runCard('Generated tests · changed code', item.runs.generated, 'Same generated assertions.'),
+    runCard('Generated tests · oracle fix', item.runs.fixed, 'Ground-truth source substituted.'),
+    runCard('Boundary witness · changed code', item.runs.witness_buggy, 'Independent authored control.'),
+    runCard('Boundary witness · oracle fix', item.runs.witness_fixed, 'Identical boundary assertion.'));
+  const details = element('details', undefined, 'run-details');
+  details.append(element('summary', 'Inspect the ground-truth source and passing output'), codeCard(item.module, item.oracle, 'fixture oracle'), codeCard('pytest / oracle-fixed source', item.runs.fixed.output, 'output excerpt'));
+  return column('Oracle check', 'col-run', [
+    compare,
+    verdict(item.kind === 'caught' ? 'The regression distinguishes the buggy and fixed code.' : 'Green generated tests missed this regression.', item.kind === 'caught' ? 'The tests fail before the ground-truth fix and pass after it. The fixture oracle was never shown to ScriptedModel.' : 'An independently authored even-length witness exposes the missed bug. It is separate from the generated patch and was never supplied to ScriptedModel.', item.kind === 'caught' ? '' : 'warning'),
+    details,
+  ], enter);
+}
+
 function render() {
   const item = dataset.cases[selected];
   $('case-list').replaceChildren(...dataset.cases.map((entry, index) => {
@@ -98,14 +181,17 @@ function render() {
     button.type = 'button';
     button.setAttribute('aria-pressed', String(index === selected));
     button.dataset.case = entry.id;
-    button.append(element('span', `FIXTURE 0${index + 1}`, 'case-number'), element('strong', entry.title),
-      element('small', entry.subtitle), element('span', '↗', 'case-arrow'));
+    button.append(element('strong', entry.title), element('small', entry.subtitle));
     button.addEventListener('click', () => {
       selected = index; stage = 0; render();
       $('case-list').querySelector(`[data-case="${entry.id}"]`).focus();
     });
     return button;
   }));
+  const head = headline(item);
+  $('verdict-text').textContent = head.text;
+  $('verdict-mark').dataset.tone = head.tone;
+  $('verdict-kicker').textContent = head.kicker;
   for (const tab of $('stages').querySelectorAll('button')) {
     const active = Number(tab.dataset.stage) === stage;
     tab.setAttribute('aria-selected', String(active));
@@ -115,48 +201,36 @@ function render() {
   panel.replaceChildren();
   panel.setAttribute('aria-labelledby', `stage-tab-${stage}`);
   const heading = element('div', undefined, 'stage-heading');
-  const titles = [`A small change to ${item.function}().`, 'What the fixture asks to test.', 'Read the actual test result.', 'Does the fix satisfy the tests?'];
-  heading.append(element('h2', titles[stage]), element('span', stage === 3 ? 'ORACLE CHECK' : 'RECORDED EVIDENCE', 'badge'));
+  heading.append(element('h2', stageTitles(item)[stage]), element('span', stage === 3 ? 'ORACLE CHECK' : 'RECORDED EVIDENCE', 'badge'));
   panel.append(heading);
+  const description = [
+    'The existing suite passes on this changed implementation. The next stage shows the authored planner reply and the tests produced by the recorded pipeline.',
+    'These are the actual authored fixture replies consumed by ScriptedModel. The pipeline runs the generated files together with the existing repository tests.',
+    item.kind === 'caught' ? 'The recorded tests expose the changed implementation. A failing assertion is useful evidence: TestPilot keeps it when the authored repair reply identifies a code bug.' : 'The generated suite passes, but the even-length regression remains outside these assertions. Continue to the independent boundary witness before treating this as a fix.',
+    item.explanation,
+  ][stage];
+  panel.append(element('p', description, 'stage-description'));
+  const columns = element('div', undefined, 'columns');
   if (stage === 0) {
-    panel.append(element('p', item.bug, 'stage-description'), metrics([
-      ['EXISTING SUITE', item.runs.baseline.passed, 'pass'], ['GENERATED TESTS', item.tests_written, 'new'], ['FIXTURE', selected + 1, 'of 2'],
-    ]), codeCard(item.module, item.diff, 'input diff', true),
-    element('p', 'The existing suite passes on this changed implementation. The next stage shows the authored planner reply and the tests produced by the recorded pipeline.', 'context-note'));
+    columns.append(diffColumn(item, true),
+      pendingColumn('Generated tests', 'col-tests', 'TestPilot writes tests for the changed function. Step 02 shows them.'),
+      pendingColumn('Run and repairs', 'col-run', 'The recorded run appears in step 03.'));
   } else if (stage === 1) {
-    panel.append(element('p', 'These are the actual authored fixture replies consumed by ScriptedModel. The pipeline runs the generated files together with the existing repository tests.', 'stage-description'));
-    const plan = element('div', undefined, 'plan-card');
-    plan.append(element('span', 'RECORDED PLANNER REPLY', 'section-label'), element('div', item.plan));
-    panel.append(plan);
-    for (const [name, content] of Object.entries(item.generated_tests)) panel.append(codeCard(name, content, 'generated test'));
-    panel.append(element('p', `${item.scripted_calls} authored replies were consumed; ${item.repair_rounds} repair round${item.repair_rounds === 1 ? '' : 's'} used. No live model was called.`, 'context-note'));
+    columns.append(diffColumn(item, false), testsColumn(item, true, false),
+      pendingColumn('Run and repairs', 'col-run', 'The recorded run appears in step 03.'));
   } else if (stage === 2) {
-    const run = item.runs.generated;
-    panel.append(element('p', item.kind === 'caught' ? 'The recorded tests expose the changed implementation. A failing assertion is useful evidence: TestPilot keeps it when the authored repair reply identifies a code bug.' : 'The generated suite passes, but the even-length regression remains outside these assertions. Continue to the independent boundary witness before treating this as a fix.', 'stage-description'));
-    panel.append(verdict(item.kind === 'caught' ? 'Code bug suspected — failing assertions retained' : 'Generated suite passed — boundary still untested', item.message, item.kind === 'caught' ? 'failure' : 'warning'));
-    panel.append(metrics([['PASSED', run.passed, 'tests'], ['FAILED', run.failed, 'tests'], ['PROCESS EXIT', run.returncode, 'recorded']]));
-    panel.append(codeCard('pytest / generated tests', run.output, 'output excerpt'));
+    columns.append(diffColumn(item, false), testsColumn(item, false, false), runsColumn(item, 2, true));
   } else {
-    panel.append(element('p', item.explanation, 'stage-description'));
-    const comparison = element('div', undefined, 'compare-grid');
-    comparison.append(runCard('Generated tests · changed code', item.runs.generated, 'Same generated assertions.'),
-      runCard('Generated tests · oracle fix', item.runs.fixed, 'Ground-truth source substituted.'));
-    panel.append(comparison, verdict(item.kind === 'caught' ? 'The regression distinguishes the buggy and fixed code.' : 'Green generated tests missed this regression.', item.kind === 'caught' ? 'The tests fail before the ground-truth fix and pass after it. The fixture oracle was never shown to ScriptedModel.' : 'An independently authored even-length witness exposes the missed bug. It is separate from the generated patch and was never supplied to ScriptedModel.', item.kind === 'caught' ? '' : 'warning'));
-    const witness = element('div', undefined, 'compare-grid');
-    witness.append(runCard('Boundary witness · changed code', item.runs.witness_buggy, 'Independent authored control.'),
-      runCard('Boundary witness · oracle fix', item.runs.witness_fixed, 'Identical boundary assertion.'));
-    panel.append(witness, codeCard('independent boundary witness', item.witness, 'authored control'));
-    const details = element('details', undefined, 'run-details');
-    details.append(element('summary', 'Inspect the ground-truth source and passing output'), codeCard(item.module, item.oracle, 'fixture oracle'), codeCard('pytest / oracle-fixed source', item.runs.fixed.output, 'output excerpt'));
-    panel.append(details);
+    columns.append(diffColumn(item, false), testsColumn(item, false, true), runsColumn(item, 3, true));
   }
+  panel.append(columns);
   artifact('download-patch', item, 'testpilot.patch');
   artifact('download-record', item, 'record.json');
   artifact('download-log', item, 'generated.log');
   $('previous').disabled = stage === 0;
   $('next').disabled = false;
   $('next').textContent = ['Inspect tests →', 'Read recorded run →', 'Check oracle →', 'Start over ↻'][stage];
-  $('step-count').textContent = `Step ${stage + 1} of 4`;
+  $('step-count').textContent = `Step ${stage + 1} of 4 · ${stageNames[stage]}`;
   $('case-position').textContent = item.id;
   $('announcement').textContent = `${item.title}. ${stageNames[stage]}. Step ${stage + 1} of 4.`;
   const url = new URL(location.href);
