@@ -118,7 +118,7 @@ function column(label, className, nodes, enter = true) {
 function diffColumn(item, enter) {
   return column('Input diff', 'col-diff', [
     codeCard(item.module, item.diff, 'input diff', true),
-    metrics([['existing suite', item.runs.baseline.passed, 'pass'], ['generated', item.tests_written, 'new tests'], ['fixture', `${selected + 1}`, 'of 2']]),
+    metrics([['existing suite', item.runs.baseline.passed, 'pass'], ['generated', item.tests_written, 'new tests']]),
   ], enter);
 }
 
@@ -201,7 +201,7 @@ function render() {
   panel.replaceChildren();
   panel.setAttribute('aria-labelledby', `stage-tab-${stage}`);
   const heading = element('div', undefined, 'stage-heading');
-  heading.append(element('h2', stageTitles(item)[stage]), element('span', stage === 3 ? 'ORACLE CHECK' : 'RECORDED EVIDENCE', 'badge'));
+  heading.append(element('h2', stageTitles(item)[stage]), element('span', stage === 3 ? 'Oracle check' : 'Recorded evidence', 'badge'));
   panel.append(heading);
   const description = [
     'The existing suite passes on this changed implementation. The next stage shows the authored planner reply and the tests produced by the recorded pipeline.',
@@ -213,11 +213,11 @@ function render() {
   const columns = element('div', undefined, 'columns');
   if (stage === 0) {
     columns.append(diffColumn(item, true),
-      pendingColumn('Generated tests', 'col-tests', 'TestPilot writes tests for the changed function. Step 02 shows them.'),
-      pendingColumn('Run and repairs', 'col-run', 'The recorded run appears in step 03.'));
+      pendingColumn('Generated tests', 'col-tests', 'Shown in the Tests stage.'),
+      pendingColumn('Run and repairs', 'col-run', 'Shown in the Run stage.'));
   } else if (stage === 1) {
     columns.append(diffColumn(item, false), testsColumn(item, true, false),
-      pendingColumn('Run and repairs', 'col-run', 'The recorded run appears in step 03.'));
+      pendingColumn('Run and repairs', 'col-run', 'Shown in the Run stage.'));
   } else if (stage === 2) {
     columns.append(diffColumn(item, false), testsColumn(item, false, false), runsColumn(item, 2, true));
   } else {
@@ -231,7 +231,7 @@ function render() {
   $('next').disabled = false;
   $('next').textContent = ['Inspect tests →', 'Read recorded run →', 'Check oracle →', 'Start over ↻'][stage];
   $('step-count').textContent = `Step ${stage + 1} of 4 · ${stageNames[stage]}`;
-  $('case-position').textContent = item.id;
+  $('case-position').textContent = `Fixture ${selected + 1} of ${dataset.cases.length}`;
   $('announcement').textContent = `${item.title}. ${stageNames[stage]}. Step ${stage + 1} of 4.`;
   const url = new URL(location.href);
   url.searchParams.set('case', item.id);

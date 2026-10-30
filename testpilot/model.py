@@ -229,7 +229,8 @@ class RoutingConfig:
 def make_client(backend: str | None = None, *, script: str | Path | None = None,
                 base_url: str | None = None, api_key: str | None = None,
                 env: dict | None = None) -> ChatClient:
-    """Build a client. ``backend`` is ``scripted`` (default) or ``tokenfactory``/``openai``."""
+    """Build a client. ``backend`` is ``scripted`` (default), ``nebius`` (alias ``tokenfactory``),
+    or ``openai`` (any OpenAI-compatible endpoint, set with ``base_url``/``TESTPILOT_BASE_URL``)."""
     env = os.environ if env is None else env
     backend = (backend or env.get("TESTPILOT_BACKEND") or "scripted").lower()
     if backend == "scripted":
@@ -237,7 +238,7 @@ def make_client(backend: str | None = None, *, script: str | Path | None = None,
         if not script:
             raise ModelError("scripted backend needs --script DIR (or TESTPILOT_SCRIPT)")
         return ScriptedModel.from_dir(script)
-    if backend in ("tokenfactory", "openai"):
+    if backend in ("nebius", "tokenfactory", "openai"):
         return OpenAICompatClient(
             base_url=base_url or env.get("TESTPILOT_BASE_URL") or TOKEN_FACTORY_BASE_URL,
             api_key=api_key or env.get("NEBIUS_API_KEY"),

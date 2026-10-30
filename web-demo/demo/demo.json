@@ -1,0 +1,20 @@
+{
+  "url": "http://localhost:4302/",
+  "width": 1440,
+  "height": 900,
+  "steps": [
+    {"say": "TestPilot helps developers check a code change. It writes tests for the functions the change touched, runs them, and reports what it found.", "do": [{"wait": 600}]},
+    {"say": "This page replays two recorded runs. The first one starts with a small change to a clamp function, which keeps a number inside a range.", "do": [{"wait": 600}]},
+    {"say": "The verdict comes first. The generated tests found a real bug: the function swaps its low and high limits, so every value in range comes back as the high limit.", "do": [{"wait": 600}]},
+    {"say": "Next, the tests TestPilot wrote for that change.", "do": [{"click": "#stage-tab-1"}]},
+    {"say": "Then the run. The tests fail on the changed code. TestPilot keeps those failures, because they point at the bug.", "do": [{"click": "#stage-tab-2"}]},
+    {"say": "Last, the check against the fixed version of the code. The same tests pass once the limits are the right way round.", "do": [{"click": "#stage-tab-3"}]},
+    {"say": "The second example is harder. Here the generated tests pass, even though a bug remains.", "do": [{"click": "[data-case=\"stats_median\"]"}]},
+    {"say": "The bug is in the median function. For a list with an even number of items, it returns one middle value, not the average of the two.", "do": [{"click": "#stage-tab-0"}]},
+    {"say": "The generated tests only use odd-length lists, so they all pass.", "do": [{"click": "#stage-tab-2"}]},
+    {"say": "A separate boundary check, written by hand, uses an even-length list. It fails on the same code, and passes after the fix.", "do": [{"click": "#stage-tab-3"}]},
+    {"say": "Each result has a download for the exact patch, the case record, and the full log, so every line can be checked.", "do": [{"wait": 600}]},
+    {"say": "Nothing here calls a model. The replies were written ahead of time, and the test runs were recorded, as the label under the verdict says.", "do": [{"wait": 600}]},
+    {"say": "That is the whole loop: a change, generated tests, a run, and a check against the fix.", "do": [{"wait": 600}]}
+  ]
+}

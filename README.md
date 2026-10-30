@@ -202,7 +202,7 @@ base_url="https://api.tokenfactory.nebius.com/v1/"
 api_key=os.environ.get("NEBIUS_API_KEY")
 ```
 
-TestPilot's client posts to `{base_url}chat/completions` with a `Bearer` key. Switching from the stub needs only a backend flag, the base URL (which is the default), and a key:
+TestPilot's client posts to `{base_url}chat/completions` with a `Bearer` key. Switching from the stub needs only a backend flag, the base URL (which is the default), and a key. `--backend nebius` is the named Token Factory backend; `tokenfactory` is kept as an alias:
 
 ```bash
 export NEBIUS_API_KEY=...                     # never commit this
@@ -210,11 +210,11 @@ export TESTPILOT_PLANNER_MODEL=nvidia/nemotron-3-super-120b-a12b
 export TESTPILOT_EDITOR_MODEL=nvidia/Nemotron-3_5-Lightning
 export TESTPILOT_PRICES='{"nvidia/nemotron-3-super-120b-a12b":[IN,OUT],"nvidia/Nemotron-3_5-Lightning":[IN,OUT]}'  # USD per 1M tokens, from the pricing page
 
-python -m testpilot run --backend tokenfactory --repo . --git-base main --out out/pr
-python -m eval.harness --backend tokenfactory
+python -m testpilot run --backend nebius --repo . --git-base main --out out/pr
+python -m eval.harness --backend nebius
 ```
 
-The default model IDs come from the Token Factory docs' August 2026 deprecation notice (<https://docs.tokenfactory.nebius.com/august-2026-deprecation-notice>). That page names `nvidia/nemotron-3-super-120b-a12b` and `nvidia/Nemotron-3_5-Lightning` as current replacement models. **Check both against the live model catalog before relying on them.** To use a self-hosted or other OpenAI-compatible endpoint, set `TESTPILOT_BASE_URL`.
+The default model IDs come from the Token Factory docs' August 2026 deprecation notice (<https://docs.tokenfactory.nebius.com/august-2026-deprecation-notice>). That page names `nvidia/nemotron-3-super-120b-a12b` and `nvidia/Nemotron-3_5-Lightning` as current replacement models. On 2026-10-30 both IDs were listed by `GET /v1/models` and each answered a live `chat/completions` request with `max_tokens=1500`; the same catalog also lists `nvidia/Nemotron-3-Ultra-550b-a55b`. Re-check the catalog if the IDs stop working. To use a self-hosted or other OpenAI-compatible endpoint, set `TESTPILOT_BASE_URL`.
 
 ## Eval (scripted stub)
 

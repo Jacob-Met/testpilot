@@ -1,0 +1,16 @@
+$ python -m testpilot run --backend nebius --repo examples/nebius-clamp/repo --diff examples/nebius-clamp/change.diff --out out/nebius_clamp_demo
+# TestPilot report: **suspected_code_bug**
+
+The `clamp` function in `calc.py` contains an incorrect implementation: `return max(hi, min(lo, x))` evaluates the bounds in the wrong order, causing it to return `hi` for values inside the interval and `hi` for values below `lo`. The correct clamping formula is `min(hi, max(lo, x))`, which properly constrains `x` to the closed interval `[lo, hi]`. Swapping to the standard formula fixes all failing test cases and aligns the function's behavior with the expected semantics.
+
+- Changed functions: calc.py::clamp
+- Tests written: 7 in tests/test_testpilot_generated.py
+- Repair rounds used: 2/3
+- Final run: 7 passed, 2 failed, 0 errors, 0 skipped (rc=1); generated: 5 passed of 7 collected in 2.334s
+- Coverage: unavailable
+- Tokens: 11610; cost: unpriced (set TESTPILOT_PRICES)
+  - `nvidia/nemotron-3-super-120b-a12b`: 1 calls, 146 in / 811 out
+  - `nvidia/Nemotron-3_5-Lightning`: 3 calls, 2710 in / 7943 out
+
+wrote out/nebius_clamp_demo/testpilot.patch, out/nebius_clamp_demo/report.json, out/nebius_clamp_demo/report.md, out/nebius_clamp_demo/report.html
+exit=1
