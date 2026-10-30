@@ -6,6 +6,14 @@ let dataset;
 let selected = 0;
 let stage = 0;
 
+// URL state must be reversible with browser Back/Forward, including fixture switches.
+function routeFromLocation() {
+  const params = new URL(location.href).searchParams;
+  selected = Math.max(0, dataset.cases.findIndex((item) => item.id === params.get('case')));
+  const requestedStage = Number(params.get('stage'));
+  stage = Number.isInteger(requestedStage) && requestedStage >= 1 && requestedStage <= 4 ? requestedStage - 1 : 0;
+}
+
 function element(tag, text, className) {
   const node = document.createElement(tag);
   if (text !== undefined) node.textContent = text;
@@ -174,7 +182,7 @@ function runsColumn(item, stage, enter) {
   ], enter);
 }
 
-function render() {
+function render(historyMode = 'push') {
   const item = dataset.cases[selected];
   $('case-list').replaceChildren(...dataset.cases.map((entry, index) => {
     const button = element('button', undefined, 'case-button');
@@ -236,7 +244,9 @@ function render() {
   const url = new URL(location.href);
   url.searchParams.set('case', item.id);
   url.searchParams.set('stage', String(stage + 1));
-  history.replaceState(null, '', url);
+  if (url.href !== location.href) {
+    history[historyMode === 'replace' ? 'replaceState' : 'pushState'](null, '', url);
+  }
 }
 
 $('stages').addEventListener('click', (event) => {
@@ -255,19 +265,24 @@ $('stages').addEventListener('keydown', (event) => {
 $('previous').addEventListener('click', () => { if (dataset && stage > 0) { stage--; render(); } });
 $('next').addEventListener('click', () => { if (dataset) { stage = (stage + 1) % 4; render(); } });
 
+// A history traversal changes the selected fixture and stage without creating
+// another history entry (which would trap the user in the replay).
+window.addEventListener('popstate', () => {
+  if (!dataset) return;
+  routeFromLocation();
+  render('replace');
+});
+
 try {
   const response = await fetch('data/replays.json');
   if (!response.ok) throw new Error(`Recorded evidence could not be loaded (${response.status}).`);
   dataset = validate(await response.json());
-  const params = new URL(location.href).searchParams;
-  selected = Math.max(0, dataset.cases.findIndex((item) => item.id === params.get('case')));
-  const requestedStage = Number(params.get('stage'));
-  stage = Number.isInteger(requestedStage) && requestedStage >= 1 && requestedStage <= 4 ? requestedStage - 1 : 0;
+  routeFromLocation();
   $('source-link').href = `https://github.com/Jacob-Met/testpilot/commit/${dataset.source.commit}`;
   $('source-link').textContent = dataset.source.commit.slice(0, 12);
   $('runtime').textContent = `Python ${dataset.execution.python} · pytest ${dataset.execution.pytest}`;
   $('recorded-at').textContent = new Date(dataset.recorded_at).toISOString().replace('T', ' ').slice(0, 19) + ' UTC';
-  render();
+  render('replace');
   $('replay').setAttribute('aria-busy', 'false');
 } catch (error) {
   $('replay').hidden = true;
