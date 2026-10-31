@@ -31,7 +31,7 @@ not reliably allow its JSON fetch; the page reports a loading error instead of
 inventing a result. All runtime assets are local. No package installation,
 remote font, API key or external service is needed to replay the recording.
 
-The download bar automatically verifies the three served artifacts for the selected
+The download bar automatically verifies the four served artifacts for the selected
 fixture against the captured SHA-256 and byte counts before enabling links. Links
 download the **verified in-memory bytes**, so a later network change cannot
 silently swap the downloaded payload. A missing or modified file locks the

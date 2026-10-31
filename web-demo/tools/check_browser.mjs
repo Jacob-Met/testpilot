@@ -65,8 +65,9 @@ try {
       await page.locator(`[data-case="${item.id}"]`).click();
       check(`${viewport.name}/${item.id}: fixture switch resets stage and retains focus`, await page.locator('#stage-tab-0').getAttribute('aria-selected') === 'true' && await page.evaluate(() => document.activeElement.dataset.case) === item.id);
       await page.locator('#integrity-status[data-state="verified"]').waitFor();
+      check(`${viewport.name}/${item.id}: boundary witness is independently labeled`, (await page.locator('#download-witness').innerText()).includes('boundary witness') && (await page.locator('#download-witness').getAttribute('title')).includes('Independently authored control'));
       check(`${viewport.name}/${item.id}: browser SHA-256 verification unlocks checked bytes`,
-        (await page.locator('#integrity-status').innerText()).includes('3/3') &&
+        (await page.locator('#integrity-status').innerText()).includes('4/4') &&
         await page.locator('#download-patch').getAttribute('data-sha256') === item.files['testpilot.patch'].sha256 &&
         (await page.locator('#download-patch').getAttribute('href')).startsWith('blob:'));
       for (let i = 0; i < 4; i++) {
@@ -80,7 +81,7 @@ try {
       }
       const rendered = await page.locator('#stage-content').innerText();
       check(`${viewport.name}/${item.id}: oracle and independent witness visible`, rendered.includes('Boundary witness') && rendered.includes(item.witness.trim()));
-      for (const [id, filename] of [['download-patch', 'testpilot.patch'], ['download-record', 'record.json'], ['download-log', 'generated.log']]) {
+      for (const [id, filename] of [['download-patch', 'testpilot.patch'], ['download-record', 'record.json'], ['download-log', 'generated.log'], ['download-witness', 'witness.py']]) {
         const [download] = await Promise.all([page.waitForEvent('download'), page.locator(`#${id}`).click()]);
         const dest = path.join(output, 'downloads', `${viewport.name}-${item.id}-${filename}`);
         await download.saveAs(dest);
@@ -135,7 +136,8 @@ try {
   await damaged.locator('#integrity-status[data-state="failed"]').waitFor();
   check('altered downloaded bytes are refused', (await damaged.locator('#integrity-status').innerText()).includes('mismatch') &&
     await damaged.locator('#download-patch').getAttribute('href') === null &&
-    await damaged.locator('#download-record').getAttribute('href') === null);
+    await damaged.locator('#download-record').getAttribute('href') === null &&
+    await damaged.locator('#download-witness').getAttribute('href') === null);
   await tampered.close();
 
   const missing = await browser.newContext();
@@ -146,6 +148,23 @@ try {
   check('missing artifact keeps all downloads locked', (await incomplete.locator('#integrity-status').innerText()).includes('HTTP 404') &&
     await incomplete.locator('#download-log').getAttribute('href') === null);
   await missing.close();
+
+  for (const broken of [
+    { label: 'same-size witness corruption', status: 200, body: 'x'.repeat(dataset.cases[0].files['witness.py'].bytes), error: 'SHA-256 mismatch' },
+    { label: 'unavailable witness', status: 404, body: 'gone', error: 'HTTP 404' },
+  ]) {
+    const ctx = await browser.newContext();
+    await ctx.route('**/data/cases/calc_clamp/witness.py', route =>
+      route.fulfill({ status: broken.status, body: broken.body, contentType: 'text/plain' }));
+    const page = await ctx.newPage();
+    await page.goto(origin);
+    await page.locator('#integrity-status[data-state="failed"]').waitFor();
+    const hrefs = await Promise.all(['download-patch', 'download-record', 'download-log', 'download-witness'].map(id =>
+      page.locator(`#${id}`).getAttribute('href')));
+    check(`${broken.label} locks all four recorded downloads`,
+      (await page.locator('#integrity-status').innerText()).includes(broken.error) && hrefs.every(h => h === null));
+    await ctx.close();
+  }
 
   const stale = await browser.newContext();
   await stale.route('**/data/cases/calc_clamp/testpilot.patch', async route => {
@@ -160,7 +179,8 @@ try {
   await switched.waitForTimeout(450);
   check('late prior-fixture verification cannot unlock a different fixture',
     await switched.locator('#download-patch').getAttribute('download') === 'stats_median-testpilot.patch' &&
-    await switched.locator('#download-patch').getAttribute('data-sha256') === dataset.cases[1].files['testpilot.patch'].sha256);
+    await switched.locator('#download-patch').getAttribute('data-sha256') === dataset.cases[1].files['testpilot.patch'].sha256 &&
+    await switched.locator('#download-witness').getAttribute('data-sha256') === dataset.cases[1].files['witness.py'].sha256);
   await stale.close();
 
   const negative = await browser.newContext();

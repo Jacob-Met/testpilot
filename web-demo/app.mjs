@@ -108,6 +108,7 @@ const downloadable = [
   ['download-patch', 'testpilot.patch'],
   ['download-record', 'record.json'],
   ['download-log', 'generated.log'],
+  ['download-witness', 'witness.py'],
 ];
 let integrityCase = null;
 let integrityEpoch = 0;
@@ -130,7 +131,7 @@ async function verifyDownloads(item) {
   blockDownloads();
   const status = $('integrity-status');
   status.dataset.state = 'checking';
-  status.textContent = 'Checking 3 recorded downloads against SHA-256…';
+  status.textContent = 'Checking 4 recorded downloads against SHA-256…';
   try {
     if (!globalThis.crypto?.subtle) throw new Error('SHA-256 requires HTTPS or localhost');
     const checked = await Promise.all(downloadable.map(async ([id, name]) => {
@@ -157,7 +158,7 @@ async function verifyDownloads(item) {
       link.removeAttribute('aria-disabled');
     }
     status.dataset.state = 'verified';
-    status.textContent = '3/3 download bytes verified · SHA-256';
+    status.textContent = '4/4 download bytes verified · SHA-256';
   } catch (error) {
     if (epoch !== integrityEpoch) return;
     status.dataset.state = 'failed';
