@@ -50,6 +50,18 @@ The stage tabs support Left/Right, Home and End keys. Fixture and stage query
 parameters are shareable, for example `?case=stats_median&stage=4`. Download links
 serve the exact generated patch, case JSON and complete generated-test log.
 
+## Compare the two recorded outcomes
+
+Open contrast.html through the same local static server, or select **Compare
+both fixtures** in the main replay. Its synchronized four-stage laboratory view
+places the caught regression next to the missed one, with an independent control
+for each. The stage and left/right order have shareable URL parameters, working
+Back/Forward history, keyboard tabs and explicit links to each fixture's
+SHA-256-verified single replay. The comparison reads only the saved recording;
+it does **not** generate tests, call models, execute Python, or attest the
+capture's authorship. It is not an accuracy benchmark or a before/after pair.
+Use the maintained check_contrast.mjs receiver for Chromium verification.
+
 ## Recording provenance
 
 `source-pin.json` identifies the original TestPilot commit and the 27 source,
