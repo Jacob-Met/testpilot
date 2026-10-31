@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
+import { recordedRunIsCoherent } from './run-coherence.mjs';
 // Passive two-fixture evidence contrast. No model, test runner or external dependency.
 const $ = (id) => document.getElementById(id);
 const names = ['Change', 'Generated tests', 'Execution', 'Independent control'];
@@ -28,9 +29,7 @@ function validate(data) {
       throw new Error('Capture is missing evidence fields.');
     for (const key of ['baseline', 'generated', 'fixed', 'witness_buggy', 'witness_fixed']) {
       const r = c.runs?.[key];
-      if (!r || !Number.isInteger(r.passed) || !Number.isInteger(r.failed) ||
-          r.errors || r.timed_out || r.skipped || typeof r.output !== 'string' ||
-          typeof r.ok !== 'boolean') throw new Error('Recorded test run is incomplete.');
+      if (!recordedRunIsCoherent(r)) throw new Error('Recorded test run is incomplete or contradictory.');
     }
     if (!c.runs.baseline.ok || !c.runs.fixed.ok || c.runs.witness_buggy.ok ||
         !c.runs.witness_fixed.ok ||
@@ -119,6 +118,11 @@ function lane(item, id, ordinal) {
           'The generated assertions fail on the changed code and pass with the oracle fix.' :
           'The generated assertions pass on the buggy code. A separately authored boundary witness fails there and passes with the oracle fix.'),
       section('04 / Independently authored witness', item.witness, true));
+    const traces = elt('details', undefined, 'oracle-details witness-traces');
+    traces.append(elt('summary', 'Inspect original independent pytest traces'),
+      section('Recorded witness · changed code', item.runs.witness_buggy.output, true),
+      section('Recorded witness · oracle fix', item.runs.witness_fixed.output, true));
+    content.append(traces);
     const details = elt('details', undefined, 'oracle-details');
     details.append(elt('summary', 'Inspect the retained ground-truth source'),
       section('Fixture oracle (never supplied to ScriptedModel)', item.oracle, true));
