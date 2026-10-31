@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Two independent recorded TestPilot fixtures, their generated assertions and their authored boundary controls, placed side by side.">
+  <title>TestPilot — Evidence contrast</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contrast.css">
+  <script type="module" src="contrast.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#comparison">Skip to evidence</a>
+  <div class="contrast-page">
+    <header class="contrast-topbar">
+      <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">▲</span>TestPilot<span class="brand-section">regression replay</span></a>
+      <a class="back-to-replay" href="./">← Single-fixture replay</a>
+      <span class="mode"><span class="dot" aria-hidden="true"></span>Captured execution · offline</span>
+    </header>
+    <div id="load-error" class="load-error" role="alert" hidden></div>
+    <main id="contrast" aria-busy="true">
+      <section class="contrast-intro" aria-labelledby="page-title">
+        <p class="eyebrow"><span class="rule"></span> BOUNDARY LAB / 02 RECORDED CASES</p>
+        <h1 id="page-title">Same tool.<br><em>Different proof.</em></h1>
+        <p class="deck">One generated suite exposes the regression. Another passes while a bug survives. Follow both recordings together, then inspect the independent control.</p>
+        <p class="provenance"><strong>Recorded evidence, not a live evaluation.</strong> Authored ScriptedModel replies and actual saved Python runs. The fixture oracle was not provided to the model.</p>
+      </section>
+      <div class="contrast-controls">
+        <div class="contrast-stages" id="stages" role="tablist" aria-label="Synchronized evidence stages">
+          <button id="stage-tab-0" role="tab" data-stage="0" aria-selected="true" aria-controls="comparison">01 <span>Change</span></button>
+          <button id="stage-tab-1" role="tab" data-stage="1" aria-selected="false" tabindex="-1" aria-controls="comparison">02 <span>Generated tests</span></button>
+          <button id="stage-tab-2" role="tab" data-stage="2" aria-selected="false" tabindex="-1" aria-controls="comparison">03 <span>Execution</span></button>
+          <button id="stage-tab-3" role="tab" data-stage="3" aria-selected="false" tabindex="-1" aria-controls="comparison">04 <span>Independent control</span></button>
+        </div>
+        <button id="swap" class="swap-button" type="button" aria-label="Swap the two fixture columns">↔ Swap sides</button>
+      </div>
+      <div id="comparison" class="contrast-grid" role="tabpanel" aria-labelledby="stage-tab-0" tabindex="0">
+        <p class="loading">Loading the recording…</p>
+      </div>
+      <nav class="contrast-footer-nav" aria-label="Compare stage controls">
+        <button id="previous" class="button quiet" type="button" disabled>← Previous evidence</button>
+        <p id="stage-position" aria-live="polite">Step 1 of 4</p>
+        <button id="next" class="button solid" type="button" disabled>Next evidence →</button>
+      </nav>
+    </main>
+    <footer class="contrast-footnote">02 independently authored fixture oracles · 00 live model calls · No cross-fixture accuracy claim. <span id="capture-source"></span></footer>
+  </div>
+</body>
+</html>
