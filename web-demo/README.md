@@ -31,6 +31,12 @@ not reliably allow its JSON fetch; the page reports a loading error instead of
 inventing a result. All runtime assets are local. No package installation,
 remote font, API key or external service is needed to replay the recording.
 
+A **verified evidence ZIP** lets reviewers take all four checked artifacts, a
+machine-readable manifest of their SHA-256 values and sizes, and a short provenance
+warning in one download. It is assembled only from the bytes already verified
+in the browser, never from a second network fetch. ZIP CRCs guard against archive
+corruption; the recorded SHA-256 declarations are not a publisher signature.
+
 The download bar automatically verifies the four served artifacts for the selected
 fixture against the captured SHA-256 and byte counts before enabling links. Links
 download the **verified in-memory bytes**, so a later network change cannot

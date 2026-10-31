@@ -2,6 +2,7 @@
 // Native browser acceptance. Uses an installed Playwright/Chromium when supplied.
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { createServer } from 'node:http';
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
@@ -35,6 +36,17 @@ const options = { headless: true };
 if (process.env.TESTPILOT_BROWSER_EXECUTABLE) options.executablePath = process.env.TESTPILOT_BROWSER_EXECUTABLE;
 let browser;
 let error;
+
+function inspectArchive(filename) {
+  const python = [
+    'import json, sys, zipfile, hashlib',
+    'with zipfile.ZipFile(sys.argv[1]) as z:',
+    '  assert z.testzip() is None',
+    '  records = {n: {"sha256": hashlib.sha256(z.read(n)).hexdigest(), "bytes": len(z.read(n))} for n in z.namelist()}',
+    '  print(json.dumps({"records": records, "manifest": json.loads(z.read("manifest.json"))}))',
+  ].join('\n');
+  return JSON.parse(execFileSync('python3', ['-c', python, filename], { encoding: 'utf8' }));
+}
 
 function check(label, value) {
   checks.push({ label, passed: Boolean(value) });
@@ -90,6 +102,21 @@ try {
         check(`${viewport.name}/${item.id}: exact ${filename} download`, sha256 === item.files[filename].sha256 && bytes.length === item.files[filename].bytes);
         downloads.push({ viewport: viewport.name, case: item.id, filename, bytes: bytes.length, sha256 });
       }
+      const [archiveDownload] = await Promise.all([page.waitForEvent('download'), page.locator('#download-bundle').click()]);
+      const archiveDest = path.join(output, 'downloads', viewport.name + '-' + item.id + '-verified-evidence.zip');
+      await archiveDownload.saveAs(archiveDest);
+      const archive = inspectArchive(archiveDest);
+      const required = ['testpilot.patch', 'record.json', 'generated.log', 'witness.py', 'manifest.json', 'README.txt'];
+      check(viewport.name + '/' + item.id + ': ZIP has six intact entries',
+        required.every(name => archive.records[name]) && Object.keys(archive.records).length === required.length);
+      check(viewport.name + '/' + item.id + ': ZIP preserves all four verified bytes',
+        required.slice(0, 4).every(name => archive.records[name].sha256 === item.files[name].sha256 &&
+          archive.records[name].bytes === item.files[name].bytes));
+      check(viewport.name + '/' + item.id + ': bundle manifest preserves fixture and independent-witness warning',
+        archive.manifest.fixture === item.id && archive.manifest.source_commit === dataset.source.commit &&
+        archive.manifest.witness.includes('independently authored') &&
+        required.slice(0, 4).every(name => archive.manifest.artifacts[name].sha256 === item.files[name].sha256));
+      downloads.push({ viewport: viewport.name, case: item.id, filename: 'verified-evidence.zip', bytes: (await readFile(archiveDest)).length });
       if (item.id === 'stats_median' && viewport.name === 'phone') await page.screenshot({ path: path.join(output, 'phone.png'), fullPage: true });
     }
     await page.locator('#stage-tab-0').click();
@@ -137,7 +164,8 @@ try {
   check('altered downloaded bytes are refused', (await damaged.locator('#integrity-status').innerText()).includes('mismatch') &&
     await damaged.locator('#download-patch').getAttribute('href') === null &&
     await damaged.locator('#download-record').getAttribute('href') === null &&
-    await damaged.locator('#download-witness').getAttribute('href') === null);
+    await damaged.locator('#download-witness').getAttribute('href') === null &&
+    await damaged.locator('#download-bundle').getAttribute('href') === null);
   await tampered.close();
 
   const missing = await browser.newContext();
@@ -146,7 +174,8 @@ try {
   await incomplete.goto(origin);
   await incomplete.locator('#integrity-status[data-state="failed"]').waitFor();
   check('missing artifact keeps all downloads locked', (await incomplete.locator('#integrity-status').innerText()).includes('HTTP 404') &&
-    await incomplete.locator('#download-log').getAttribute('href') === null);
+    await incomplete.locator('#download-log').getAttribute('href') === null &&
+    await incomplete.locator('#download-bundle').getAttribute('href') === null);
   await missing.close();
 
   for (const broken of [
@@ -159,9 +188,9 @@ try {
     const page = await ctx.newPage();
     await page.goto(origin);
     await page.locator('#integrity-status[data-state="failed"]').waitFor();
-    const hrefs = await Promise.all(['download-patch', 'download-record', 'download-log', 'download-witness'].map(id =>
+    const hrefs = await Promise.all(['download-patch', 'download-record', 'download-log', 'download-witness', 'download-bundle'].map(id =>
       page.locator(`#${id}`).getAttribute('href')));
-    check(`${broken.label} locks all four recorded downloads`,
+    check(`${broken.label} locks all downloads including bundle`,
       (await page.locator('#integrity-status').innerText()).includes(broken.error) && hrefs.every(h => h === null));
     await ctx.close();
   }
@@ -180,7 +209,8 @@ try {
   check('late prior-fixture verification cannot unlock a different fixture',
     await switched.locator('#download-patch').getAttribute('download') === 'stats_median-testpilot.patch' &&
     await switched.locator('#download-patch').getAttribute('data-sha256') === dataset.cases[1].files['testpilot.patch'].sha256 &&
-    await switched.locator('#download-witness').getAttribute('data-sha256') === dataset.cases[1].files['witness.py'].sha256);
+    await switched.locator('#download-witness').getAttribute('data-sha256') === dataset.cases[1].files['witness.py'].sha256 &&
+    await switched.locator('#download-bundle').getAttribute('download') === 'stats_median-verified-evidence.zip');
   await stale.close();
 
   const negative = await browser.newContext();
