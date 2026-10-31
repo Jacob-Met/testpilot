@@ -31,6 +31,15 @@ not reliably allow its JSON fetch; the page reports a loading error instead of
 inventing a result. All runtime assets are local. No package installation,
 remote font, API key or external service is needed to replay the recording.
 
+The download bar automatically verifies the three served artifacts for the selected
+fixture against the captured SHA-256 and byte counts before enabling links. Links
+download the **verified in-memory bytes**, so a later network change cannot
+silently swap the downloaded payload. A missing or modified file locks the
+downloads and displays the failing artifact; changing fixtures rechecks the new
+bundle. Verification requires HTTPS or localhost (as does Web Crypto). Matching
+the capture's own manifest is an internal consistency check, **not** a signature
+or an independent assertion of who recorded the evidence.
+
 The stage tabs support Left/Right, Home and End keys. Fixture and stage query
 parameters are shareable, for example `?case=stats_median&stage=4`. Download links
 serve the exact generated patch, case JSON and complete generated-test log.

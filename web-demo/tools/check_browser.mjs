@@ -64,6 +64,11 @@ try {
     for (const item of dataset.cases) {
       await page.locator(`[data-case="${item.id}"]`).click();
       check(`${viewport.name}/${item.id}: fixture switch resets stage and retains focus`, await page.locator('#stage-tab-0').getAttribute('aria-selected') === 'true' && await page.evaluate(() => document.activeElement.dataset.case) === item.id);
+      await page.locator('#integrity-status[data-state="verified"]').waitFor();
+      check(`${viewport.name}/${item.id}: browser SHA-256 verification unlocks checked bytes`,
+        (await page.locator('#integrity-status').innerText()).includes('3/3') &&
+        await page.locator('#download-patch').getAttribute('data-sha256') === item.files['testpilot.patch'].sha256 &&
+        (await page.locator('#download-patch').getAttribute('href')).startsWith('blob:'));
       for (let i = 0; i < 4; i++) {
         check(`${viewport.name}/${item.id}: stage ${i + 1} selected`, await page.locator(`#stage-tab-${i}`).getAttribute('aria-selected') === 'true');
         check(`${viewport.name}/${item.id}: stage ${i + 1} fits viewport`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
@@ -122,6 +127,42 @@ try {
     if (viewport.name === 'desktop') await page.screenshot({ path: path.join(output, 'desktop.png'), fullPage: true });
     await context.close();
   }
+  const tampered = await browser.newContext();
+  await tampered.route('**/data/cases/calc_clamp/testpilot.patch', route =>
+    route.fulfill({ status: 200, body: 'tampered evidence', contentType: 'application/octet-stream' }));
+  const damaged = await tampered.newPage();
+  await damaged.goto(origin);
+  await damaged.locator('#integrity-status[data-state="failed"]').waitFor();
+  check('altered downloaded bytes are refused', (await damaged.locator('#integrity-status').innerText()).includes('mismatch') &&
+    await damaged.locator('#download-patch').getAttribute('href') === null &&
+    await damaged.locator('#download-record').getAttribute('href') === null);
+  await tampered.close();
+
+  const missing = await browser.newContext();
+  await missing.route('**/data/cases/calc_clamp/generated.log', route => route.fulfill({ status: 404, body: 'gone' }));
+  const incomplete = await missing.newPage();
+  await incomplete.goto(origin);
+  await incomplete.locator('#integrity-status[data-state="failed"]').waitFor();
+  check('missing artifact keeps all downloads locked', (await incomplete.locator('#integrity-status').innerText()).includes('HTTP 404') &&
+    await incomplete.locator('#download-log').getAttribute('href') === null);
+  await missing.close();
+
+  const stale = await browser.newContext();
+  await stale.route('**/data/cases/calc_clamp/testpilot.patch', async route => {
+    await new Promise(resolve => setTimeout(resolve, 350));
+    await route.continue();
+  });
+  const switched = await stale.newPage();
+  await switched.goto(origin);
+  await switched.locator('#replay[aria-busy="false"]').waitFor();
+  await switched.locator('[data-case="stats_median"]').click();
+  await switched.locator('#integrity-status[data-state="verified"]').waitFor();
+  await switched.waitForTimeout(450);
+  check('late prior-fixture verification cannot unlock a different fixture',
+    await switched.locator('#download-patch').getAttribute('download') === 'stats_median-testpilot.patch' &&
+    await switched.locator('#download-patch').getAttribute('data-sha256') === dataset.cases[1].files['testpilot.patch'].sha256);
+  await stale.close();
+
   const negative = await browser.newContext();
   await negative.route('**/data/replays.json', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ ...dataset, execution: { ...dataset.execution, live_model_calls: 1 } }) }));
   const bad = await negative.newPage();
