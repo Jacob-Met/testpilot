@@ -43,6 +43,7 @@
           <a id="download-patch" class="download" aria-disabled="true">test patch</a>
           <a id="download-record" class="download" aria-disabled="true">case record</a>
           <a id="download-log" class="download" aria-disabled="true">full log</a>
+          <span id="integrity-status" class="integrity-status" data-state="checking" role="status" aria-live="polite">Checking recorded downloads…</span>
         </div>
       </div>
 
@@ -60,6 +61,7 @@
       <details class="source-card">
         <summary>Source and recording</summary>
         <dl><dt>TestPilot source</dt><dd><a id="source-link" target="_blank" rel="noreferrer">Loading source…</a></dd><dt>Recorded runtime</dt><dd id="runtime">Loading…</dd><dt>Recorded at</dt><dd id="recorded-at">Loading…</dd></dl>
+        <p>Before enabling downloads, this browser checks the served artifact bytes against the recording’s declared SHA-256 and byte counts. Download links preserve the checked bytes; this checks internal consistency, not independent authorship or a cryptographic signature.</p>
         <p>Fixture inputs and pipeline source are hash checked before and after capture. These two examples demonstrate behavior, not model quality.</p>
       </details>
     </footer>
