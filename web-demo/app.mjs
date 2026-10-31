@@ -94,12 +94,67 @@ function runCard(title, run, note) {
   return card;
 }
 
-function artifact(id, item, filename) {
-  const a = $(id);
-  a.href = item.files[filename].url;
-  a.download = `${item.id}-${filename}`;
-  a.removeAttribute('aria-disabled');
-  a.dataset.sha256 = item.files[filename].sha256;
+// The capture manifest declares hashes; the browser checks the actual served bytes
+// and downloads exactly those checked bytes, not a later mutable network response.
+const downloadable = [
+  ['download-patch', 'testpilot.patch'],
+  ['download-record', 'record.json'],
+  ['download-log', 'generated.log'],
+];
+let integrityCase = null;
+let integrityEpoch = 0;
+let verifiedObjectURLs = [];
+
+function blockDownloads() {
+  for (const url of verifiedObjectURLs) URL.revokeObjectURL(url);
+  verifiedObjectURLs = [];
+  for (const [id] of downloadable) {
+    const link = $(id);
+    link.removeAttribute('href');
+    link.removeAttribute('download');
+    link.removeAttribute('data-sha256');
+    link.setAttribute('aria-disabled', 'true');
+  }
+}
+
+async function verifyDownloads(item) {
+  const epoch = ++integrityEpoch;
+  blockDownloads();
+  const status = $('integrity-status');
+  status.dataset.state = 'checking';
+  status.textContent = 'Checking 3 recorded downloads against SHA-256…';
+  try {
+    if (!globalThis.crypto?.subtle) throw new Error('SHA-256 requires HTTPS or localhost');
+    const checked = await Promise.all(downloadable.map(async ([id, name]) => {
+      const file = item.files[name];
+      if (!file) throw new Error(`Missing ${name} declaration`);
+      const response = await fetch(file.url, { cache: 'no-store', mode: 'same-origin', redirect: 'error' });
+      if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
+      const bytes = await response.arrayBuffer();
+      if (bytes.byteLength !== file.bytes) throw new Error(`${name}: byte count mismatch`);
+      const digest = await crypto.subtle.digest('SHA-256', bytes);
+      const sha256 = Array.from(new Uint8Array(digest), part => part.toString(16).padStart(2, '0')).join('');
+      if (sha256 !== file.sha256) throw new Error(`${name}: SHA-256 mismatch`);
+      return { id, name, sha256, bytes };
+    }));
+    // A previous fixture must never unlock the currently selected fixture.
+    if (epoch !== integrityEpoch) return;
+    for (const entry of checked) {
+      const url = URL.createObjectURL(new Blob([entry.bytes], { type: 'application/octet-stream' }));
+      verifiedObjectURLs.push(url);
+      const link = $(entry.id);
+      link.href = url;
+      link.download = `${item.id}-${entry.name}`;
+      link.dataset.sha256 = entry.sha256;
+      link.removeAttribute('aria-disabled');
+    }
+    status.dataset.state = 'verified';
+    status.textContent = '3/3 download bytes verified · SHA-256';
+  } catch (error) {
+    if (epoch !== integrityEpoch) return;
+    status.dataset.state = 'failed';
+    status.textContent = `Evidence mismatch: ${error.message}. Downloads locked.`;
+  }
 }
 
 // The headline verdict is the recorded outcome of the fixture, stated before any stage is opened.
@@ -224,9 +279,11 @@ function render() {
     columns.append(diffColumn(item, false), testsColumn(item, false, true), runsColumn(item, 3, true));
   }
   panel.append(columns);
-  artifact('download-patch', item, 'testpilot.patch');
-  artifact('download-record', item, 'record.json');
-  artifact('download-log', item, 'generated.log');
+  // Stage changes preserve already verified bytes; fixture changes recheck.
+  if (integrityCase !== item.id) {
+    integrityCase = item.id;
+    void verifyDownloads(item);
+  }
   $('previous').disabled = stage === 0;
   $('next').disabled = false;
   $('next').textContent = ['Inspect tests →', 'Read recorded run →', 'Check oracle →', 'Start over ↻'][stage];
