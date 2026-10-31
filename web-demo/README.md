@@ -60,6 +60,17 @@ Back/Forward history, keyboard tabs and explicit links to each fixture's
 SHA-256-verified single replay. The comparison reads only the saved recording;
 it does **not** generate tests, call models, execute Python, or attest the
 capture's authorship. It is not an accuracy benchmark or a before/after pair.
+At the **Independent control** stage, expand **Inspect original independent
+pytest traces** in either column to read the recorded failing and corrected
+witness outputs, not just their pass/fail summary. These traces and counts are
+bundled recordings, not re-executed tests.
+
+Both the single replay and contrast view reject recorded test counts that
+contradict their green/red verdict: counts must be nonnegative integers,
+include at least one executed test, contain no errors, skips or timeouts, and
+a successful run must have zero failed assertions. This is a visible
+internal-consistency safeguard, **not** verification of the recorded
+stdout's authorship or truthfulness.
 Use the maintained check_contrast.mjs receiver for Chromium verification.
 
 ## Recording provenance
