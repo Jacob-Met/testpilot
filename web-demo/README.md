@@ -65,6 +65,14 @@ pytest traces** in either column to read the recorded failing and corrected
 witness outputs, not just their pass/fail summary. These traces and counts are
 bundled recordings, not re-executed tests.
 
+Both pages now verify each displayed case against the separately saved
+`record.json`: its exact bytes must match the recorded SHA-256 and length,
+and every displayed narrative, run and file declaration must match the saved
+record. The single replay downloads the already verified record bytes rather
+than fetching a potentially changed copy. This detects accidental mismatch
+and one-sided tampering, **not** a forged manifest and record together,
+publisher authenticity, or independent truth of the recorded tests.
+
 Both the single replay and contrast view reject recorded test counts that
 contradict their green/red verdict: counts must be nonnegative integers,
 include at least one executed test, contain no errors, skips or timeouts, and

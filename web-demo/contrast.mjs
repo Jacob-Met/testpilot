@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: Apache-2.0
 import { recordedRunIsCoherent } from './run-coherence.mjs';
+import { verifyCaptureRecords } from './verified-records.mjs';
 // Passive two-fixture evidence contrast. No model, test runner or external dependency.
 const $ = (id) => document.getElementById(id);
 const names = ['Change', 'Generated tests', 'Execution', 'Independent control'];
@@ -183,8 +184,9 @@ try {
   const response = await fetch('data/replays.json', {cache:'no-store'});
   if (!response.ok) throw new Error('Recording unavailable (HTTP ' + response.status + ').');
   capture = validate(await response.json());
+  await verifyCaptureRecords(capture);
   restore(); render('replace');
-  $('capture-source').textContent = 'Source ' + capture.source.commit.slice(0, 12);
+  $('capture-source').textContent = 'Source ' + capture.source.commit.slice(0, 12) + ' · 2/2 record bytes SHA-256 checked';
 } catch (err) {
   $('load-error').textContent = 'Cannot compare this recording: ' + err.message;
   $('load-error').hidden = false;
