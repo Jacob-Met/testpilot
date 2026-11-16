@@ -8,6 +8,7 @@ import os
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 from . import __version__
@@ -54,12 +55,25 @@ def _read_diff(args) -> str:
     else:
         # Target parsing consumes a raw source patch with fixed path prefixes.
         # User display settings and diff helpers must not replace that input.
-        raw = subprocess.run(
-            ["git", "-C", args.repo, "diff", "--no-ext-diff", "--no-textconv",
-             "--no-color", "--src-prefix=a/", "--dst-prefix=b/",
-             args.git_base, "--", "*.py"],
+        # Git's stat refresh can write .git/index even with --no-optional-locks.
+        # Give it a disposable copy; reading a diff must not mutate the project.
+        index_path = subprocess.run(
+            ["git", "-C", args.repo, "rev-parse", "--path-format=absolute",
+             "--git-path", "index"],
             check=True, capture_output=True,
-        ).stdout
+        ).stdout.removesuffix(b"\n")
+        with tempfile.TemporaryDirectory(prefix="testpilot-index-") as temp:
+            shadow_index = Path(temp) / "index"
+            shutil.copy2(os.fsdecode(index_path), shadow_index)
+            env = os.environ.copy()
+            env["GIT_INDEX_FILE"] = str(shadow_index)
+            raw = subprocess.run(
+                ["git", "--no-optional-locks", "-C", args.repo,
+                 "diff", "--no-ext-diff", "--no-textconv",
+                 "--no-color", "--src-prefix=a/", "--dst-prefix=b/",
+                 args.git_base, "--", "*.py"],
+                check=True, capture_output=True, env=env,
+            ).stdout
     if isinstance(raw, str):  # Direct callers may provide a text-only stream.
         return raw
     # Keep the former universal-newline behavior and preserve undecodable bytes.

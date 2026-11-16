@@ -148,6 +148,13 @@ class GitDiffConfigurationTests(unittest.TestCase):
         self.git("config", "diff.noprefix", "true")
         self.assertEqual(self.preview(), [])
 
+    def test_stat_only_change_does_not_rewrite_project_index(self):
+        # Git refreshes cached file stats even if the file bytes are unchanged.
+        self.subject.write_text("def answer():\n    return 1\n", encoding="utf-8")
+        stat = self.subject.stat()
+        os.utime(self.subject, ns=(stat.st_atime_ns, stat.st_mtime_ns + 10_000_000_000))
+        self.assertEqual(self.preview(), [])
+
     def test_generation_uses_the_same_raw_git_selection(self):
         self.git("config", "color.ui", "always")
         self.git("config", "diff.noprefix", "true")
