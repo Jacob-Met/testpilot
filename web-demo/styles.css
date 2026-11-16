@@ -290,3 +290,6 @@ code { display: block; font: inherit; white-space: pre; line-height: 1.6; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* Native entry to the paired evidence contrast. */
+.contrast-entry { font: 12px var(--mono); color: var(--accent); white-space: nowrap; text-underline-offset: 4px; }
