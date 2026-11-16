@@ -134,6 +134,10 @@ a { color: var(--accent); }
 .download:hover { color: var(--text); text-decoration-color: var(--accent); }
 .download:active { color: var(--accent); }
 .download[aria-disabled="true"] { pointer-events: none; opacity: 0.45; }
+.integrity-status { flex: 1 0 100%; text-align: right; color: var(--muted); font: 11px/1.4 var(--mono); }
+.integrity-status[data-state="verified"] { color: var(--pass); }
+.integrity-status[data-state="failed"] { color: var(--fail); }
+
 
 /* Step controls sit directly above the evidence so the next move is always in view */
 .step-actions {

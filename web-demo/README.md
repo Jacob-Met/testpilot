@@ -31,6 +31,21 @@ not reliably allow its JSON fetch; the page reports a loading error instead of
 inventing a result. All runtime assets are local. No package installation,
 remote font, API key or external service is needed to replay the recording.
 
+A **verified evidence ZIP** lets reviewers take all four checked artifacts, a
+machine-readable manifest of their SHA-256 values and sizes, and a short provenance
+warning in one download. It is assembled only from the bytes already verified
+in the browser, never from a second network fetch. ZIP CRCs guard against archive
+corruption; the recorded SHA-256 declarations are not a publisher signature.
+
+The download bar automatically verifies the four served artifacts for the selected
+fixture against the captured SHA-256 and byte counts before enabling links. Links
+download the **verified in-memory bytes**, so a later network change cannot
+silently swap the downloaded payload. A missing or modified file locks the
+downloads and displays the failing artifact; changing fixtures rechecks the new
+bundle. Verification requires HTTPS or localhost (as does Web Crypto). Matching
+the capture's own manifest is an internal consistency check, **not** a signature
+or an independent assertion of who recorded the evidence.
+
 The stage tabs support Left/Right, Home and End keys. Fixture and stage query
 parameters are shareable, for example `?case=stats_median&stage=4`. Download links
 serve the exact generated patch, case JSON and complete generated-test log.
