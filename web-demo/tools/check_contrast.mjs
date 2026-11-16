@@ -152,6 +152,27 @@ try {
     await numericPage.locator('#load-error').isVisible() &&
     await numericPage.locator('.evidence-lane').count()===0);
   await incoherent.close();
+  // Independent changed-input controls: a green exit and per-test outcomes
+  // must agree with the aggregate verdict, not only with the aggregate counts.
+  for (const [label, breakEvidence] of [
+    ['nonzero exit code on a green run', capture => { capture.cases[1].runs.generated.returncode = 1; }],
+    ['failed case hidden by green aggregate', capture => { capture.cases[1].runs.generated.cases[0].outcome = 'failed'; }],
+  ]) {
+    const corrupt = await browser.newContext();
+    await corrupt.route('**/data/replays.json', route => {
+      const changed = structuredClone(dataset);
+      breakEvidence(changed);
+      return route.fulfill({status: 200, contentType: 'application/json', body: JSON.stringify(changed)});
+    });
+    const suspect = await corrupt.newPage();
+    suspect.on('pageerror', e => errors.push(String(e)));
+    await suspect.goto(origin + '/contrast.html');
+    await suspect.locator('#contrast[aria-busy="false"]').waitFor();
+    check(`comparison refuses ${label}`,
+      await suspect.locator('#load-error').isVisible() &&
+      await suspect.locator('.evidence-lane').count() === 0);
+    await corrupt.close();
+  }
   check('no remote browser requests',external.length===0);
   check('no page-script exceptions',errors.length===0);
 } catch(err) {failure=String(err.stack||err);}

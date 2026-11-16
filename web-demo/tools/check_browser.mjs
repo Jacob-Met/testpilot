@@ -236,6 +236,26 @@ try {
     await inconsistentPage.locator('#replay').isHidden() &&
     (await inconsistentPage.locator('#load-error').innerText()).includes('incomplete'));
   await incoherent.close();
+  // Independent changed-input controls: a green exit and per-test outcomes
+  // must agree with the aggregate verdict, not only with the aggregate counts.
+  for (const [label, breakEvidence] of [
+    ['nonzero exit code on a green run', capture => { capture.cases[1].runs.generated.returncode = 1; }],
+    ['failed case hidden by green aggregate', capture => { capture.cases[1].runs.generated.cases[0].outcome = 'failed'; }],
+  ]) {
+    const corrupt = await browser.newContext();
+    await corrupt.route('**/data/replays.json', route => {
+      const changed = structuredClone(dataset);
+      breakEvidence(changed);
+      return route.fulfill({status: 200, contentType: 'application/json', body: JSON.stringify(changed)});
+    });
+    const suspect = await corrupt.newPage();
+    await suspect.goto(origin);
+    await suspect.locator('#load-error:not([hidden])').waitFor();
+    check(`single replay refuses ${label}`,
+      await suspect.locator('#replay').isHidden() &&
+      (await suspect.locator('#load-error').innerText()).includes('incomplete'));
+    await corrupt.close();
+  }
   check('no external browser requests', externalRequests.length === 0);
   check('no browser page errors', pageErrors.length === 0);
 } catch (e) { error = String(e.stack || e); }

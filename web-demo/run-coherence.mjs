@@ -8,8 +8,19 @@ export function recordedRunIsCoherent(run) {
       !Number.isSafeInteger(run.errors) || run.errors !== 0 ||
       !Number.isSafeInteger(run.skipped) || run.skipped !== 0 ||
       run.timed_out !== false || typeof run.ok !== 'boolean' ||
-      typeof run.output !== 'string') return false;
+      typeof run.output !== 'string' ||
+      !Number.isSafeInteger(run.returncode) ||
+      !Array.isArray(run.cases)) return false;
   const total = run.passed + run.failed;
-  return Number.isSafeInteger(total) && total > 0 &&
-    run.ok === (run.failed === 0);
+  if (!Number.isSafeInteger(total) || total === 0 ||
+      run.cases.length !== total ||
+      run.ok !== (run.failed === 0 && run.returncode === 0) ||
+      (run.returncode === 0) !== (run.failed === 0)) return false;
+  const observed = {passed: 0, failed: 0};
+  for (const test of run.cases) {
+    if (!test || !['passed', 'failed'].includes(test.outcome) ||
+        typeof test.nodeid !== 'string' || !test.nodeid) return false;
+    observed[test.outcome]++;
+  }
+  return observed.passed === run.passed && observed.failed === run.failed;
 }
