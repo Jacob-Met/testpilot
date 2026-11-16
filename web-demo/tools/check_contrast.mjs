@@ -38,7 +38,7 @@ if (process.env.TESTPILOT_BROWSER_EXECUTABLE) options.executablePath = process.e
 let browser, failure;
 try {
   browser = await chromium.launch(options);
-  for (const vp of [{name:'desktop',width:1440,height:1000},{name:'phone',width:390,height:844}]) {
+  for (const vp of [{name:'desktop',width:1440,height:1000},{name:'phone',width:390,height:844},{name:'compact',width:320,height:700}]) {
     const context = await browser.newContext({viewport:{width:vp.width,height:vp.height},reducedMotion:'reduce'});
     await context.route('**/*', route => {
       const url = route.request().url();
@@ -55,6 +55,14 @@ try {
     check(vp.name+': distinct default fixture positions', await page.locator('.evidence-lane').first().getAttribute('data-fixture')===cases[0].id &&
       await page.locator('.evidence-lane').last().getAttribute('data-fixture')===cases[1].id);
     check(vp.name+': no viewport overflow', await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    check(vp.name+': every stage reachable without hidden horizontal tabs',
+      await page.locator('#stages').evaluate(rail => {
+        const visible = rail.getBoundingClientRect();
+        return [...rail.querySelectorAll('button')].every(button => {
+          const r = button.getBoundingClientRect();
+          return r.left >= visible.left - 1 && r.right <= visible.right + 1;
+        });
+      }));
     check(vp.name+': diff exact retained evidence for both sides',
       await page.locator('.evidence-lane').first().innerText().then(x=>x.includes(cases[0].bug)) &&
       await page.locator('.evidence-lane').last().innerText().then(x=>x.includes(cases[1].bug)));
@@ -72,6 +80,13 @@ try {
       oracle.includes(cases[1].witness.trim()) && oracle.includes('BLIND SPOT REVEALED') && oracle.includes('REGRESSION EXPOSED'));
     check(vp.name+': link targets each verified replay stage', (await page.locator('#open-left').getAttribute('href')).includes('stage=4') &&
       (await page.locator('#open-right').getAttribute('href')).includes(cases[1].id));
+    await page.locator('.evidence-lane').first().locator('.witness-traces summary').click();
+    check(vp.name+': original independent changed-code pytest is inspectable',
+      (await page.locator('.evidence-lane').first().locator('.witness-traces').innerText())
+        .includes(cases[0].runs.witness_buggy.output.trim()));
+    check(vp.name+': original independent fixed-code pytest is inspectable',
+      (await page.locator('.evidence-lane').first().locator('.witness-traces').innerText())
+        .includes(cases[0].runs.witness_fixed.output.trim()));
     check(vp.name+': no terminal next advance', await page.locator('#next').isDisabled());
     check(vp.name+': terminal stage fits viewport', await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
     await page.screenshot({path:path.join(output,vp.name+'-oracle.png'),fullPage:true});
@@ -128,6 +143,44 @@ try {
     await page.locator('#load-error').isVisible() && await page.locator('.evidence-lane').count()===0 &&
     (await page.locator('#load-error').innerText()).includes('contradicts'));
   await broken.close();
+  // Changed-input control: a recorded "green" verdict must agree with test counts.
+  const incoherent = await browser.newContext();
+  await incoherent.route('**/data/replays.json', route => {
+    const changed = structuredClone(dataset);
+    changed.cases[1].runs.generated.passed = 0;
+    changed.cases[1].runs.generated.failed = 5;
+    // The claim remains "ok": the exact contradiction this verifier must refuse.
+    return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(changed)});
+  });
+  const numericPage = await incoherent.newPage();
+  numericPage.on('pageerror', e => errors.push(String(e)));
+  await numericPage.goto(origin+'/contrast.html');
+  await numericPage.locator('#contrast[aria-busy="false"]').waitFor();
+  check('contradictory green verdict and failed counts is visibly refused',
+    await numericPage.locator('#load-error').isVisible() &&
+    await numericPage.locator('.evidence-lane').count()===0);
+  await incoherent.close();
+  // Independent changed-input controls: a green exit and per-test outcomes
+  // must agree with the aggregate verdict, not only with the aggregate counts.
+  for (const [label, breakEvidence] of [
+    ['nonzero exit code on a green run', capture => { capture.cases[1].runs.generated.returncode = 1; }],
+    ['failed case hidden by green aggregate', capture => { capture.cases[1].runs.generated.cases[0].outcome = 'failed'; }],
+  ]) {
+    const corrupt = await browser.newContext();
+    await corrupt.route('**/data/replays.json', route => {
+      const changed = structuredClone(dataset);
+      breakEvidence(changed);
+      return route.fulfill({status: 200, contentType: 'application/json', body: JSON.stringify(changed)});
+    });
+    const suspect = await corrupt.newPage();
+    suspect.on('pageerror', e => errors.push(String(e)));
+    await suspect.goto(origin + '/contrast.html');
+    await suspect.locator('#contrast[aria-busy="false"]').waitFor();
+    check(`comparison refuses ${label}`,
+      await suspect.locator('#load-error').isVisible() &&
+      await suspect.locator('.evidence-lane').count() === 0);
+    await corrupt.close();
+  }
   check('no remote browser requests',external.length===0);
   check('no page-script exceptions',errors.length===0);
 } catch(err) {failure=String(err.stack||err);}

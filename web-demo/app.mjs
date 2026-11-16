@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
+import { recordedRunIsCoherent } from './run-coherence.mjs';
 const $ = (id) => document.getElementById(id);
 const stageNames = ['Diff inspection', 'Generated tests', 'Recorded execution', 'Ground-truth replay'];
 const stageTitles = (item) => [`A small change to ${item.function}().`, 'What the fixture asks to test.', 'Read the actual test result.', 'Does the fix satisfy the tests?'];
@@ -33,7 +34,7 @@ function validate(data) {
     ids.add(item.id);
     for (const name of ['baseline', 'generated', 'fixed', 'witness_buggy', 'witness_fixed']) {
       const run = item.runs?.[name];
-      if (!run || !Number.isInteger(run.passed) || !Number.isInteger(run.failed) || run.errors || run.timed_out || run.skipped) {
+      if (!recordedRunIsCoherent(run)) {
         throw new Error('A required fixture run is incomplete.');
       }
     }
