@@ -173,6 +173,117 @@ function zipStore(files) {
   return new Blob([...payloads, ...directory, end], { type: 'application/zip' });
 }
 
+
+function offlineEvidencePage(item, checked) {
+  // Render from the already SHA-checked record bytes using the same visual
+  // components as the live replay. The exported document has no JavaScript.
+  const recordEntry = checked.find(entry => entry.name === 'record.json');
+  if (!recordEntry) throw new Error('Offline view requires a verified record');
+  const record = JSON.parse(new TextDecoder('utf-8', {fatal: true}).decode(recordEntry.bytes));
+  if (record.id !== item.id) throw new Error('Offline view record identity differs');
+  const title = record.title + ' · TestPilot offline evidence';
+  const offline = document.implementation.createHTMLDocument(title);
+  const viewport = offline.createElement('meta');
+  viewport.name = 'viewport';
+  viewport.content = 'width=device-width,initial-scale=1';
+  offline.head.append(viewport);
+  const style = offline.createElement('style');
+  const existingCSS = [...document.styleSheets].flatMap(sheet =>
+    [...sheet.cssRules].map(rule => rule.cssText)).join('\n');
+  if (!existingCSS.includes('.columns')) throw new Error('Offline view has no replay style');
+  style.textContent = existingCSS + '\n' + [
+    '.offline-page .offline-header { justify-content: space-between; }',
+    '.offline-page .mode { display:inline-flex; white-space:normal; }',
+    '.offline-page .offline-nav { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; padding:14px 0 24px; border-bottom:1px solid var(--line); }',
+    '.offline-page .offline-nav a { background:var(--raised); border:1px solid var(--line); padding:12px; text-decoration:none; color:var(--text); font:600 13px var(--sans); }',
+    '.offline-page .offline-nav a:hover { border-color:var(--accent); color:var(--accent); }',
+    '.offline-page .offline-stage { padding:34px 0 42px; border-bottom:1px solid var(--line); scroll-margin-top:12px; }',
+    '.offline-page .columns { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr)); gap:22px; }',
+    '.offline-page .col, .offline-page .col + .col { padding:0; border:0; }',
+    '.offline-page .stage-heading h2 { font-size:clamp(20px,2.6vw,28px); }',
+    '.offline-page .offline-files { display:flex; flex-wrap:wrap; gap:10px; margin:16px 0; }',
+    '.offline-page .offline-files a { border:1px solid var(--line); background:var(--raised); padding:8px 11px; }',
+    '.offline-page .offline-hint { color:var(--muted); font:12px/1.7 var(--sans); max-width:78ch; }',
+    '.offline-page pre { white-space:pre-wrap; overflow-wrap:anywhere; }',
+    '@media(max-width:700px) { .offline-page .offline-nav { grid-template-columns:repeat(2,minmax(0,1fr)); } .offline-page .columns { grid-template-columns:minmax(0,1fr); } }',
+    '@media print { .offline-page details { display:block; } .offline-page .offline-nav { display:none; } }',
+  ].join('\n');
+  offline.head.append(style);
+
+  const page = element('div', undefined, 'page offline-page');
+  const header = element('header', undefined, 'topbar offline-header');
+  header.append(element('span', '▲ TestPilot / evidence capsule', 'brand'),
+    element('span', 'OFFLINE · NO SERVER REQUIRED', 'mode'));
+  page.append(header);
+
+  const head = headline(record);
+  const hero = element('section', undefined, 'verdict-band');
+  const heroBody = element('div', undefined, 'verdict-body');
+  const kicker = element('p', record.title + ' · ' + record.subtitle, 'kicker');
+  const heading = element('h1', undefined, 'verdict');
+  const mark = element('span', undefined, 'status-mark');
+  mark.dataset.tone = head.tone;
+  heading.append(mark, element('span', head.text));
+  heroBody.append(kicker, heading,
+    element('p', 'Four recorded stages · authored ScriptedModel replies · no live model calls', 'verdict-meta'));
+  hero.append(heroBody);
+  page.append(hero);
+
+  const navigation = element('nav', undefined, 'offline-nav');
+  navigation.setAttribute('aria-label', 'Evidence stages');
+  const labels = ['01 · Input diff', '02 · Generated tests', '03 · Test execution', '04 · Independent control'];
+  for (let index = 0; index < 4; index++) {
+    const link = element('a', labels[index]);
+    link.href = '#stage-' + index;
+    navigation.append(link);
+  }
+  page.append(navigation);
+
+  const introductions = [
+    'The saved change diff is the input to this run. Inspect the exact recorded source below.',
+    'These are the authored planner reply and generated assertions retained with the case.',
+    'The generated tests ran alongside the existing tests. Read the actual saved process result, not merely a green count.',
+    'The independently authored boundary witness was never supplied to ScriptedModel. Compare its outcome on the changed and oracle-fixed source.',
+  ];
+  for (let index = 0; index < 4; index++) {
+    const section = element('section', undefined, 'offline-stage');
+    section.id = 'stage-' + index;
+    const subhead = element('div', undefined, 'stage-heading');
+    subhead.append(element('h2', stageTitles(record)[index]),
+      element('span', String(index + 1) + ' / 4', 'badge'));
+    section.append(subhead, element('p', introductions[index], 'stage-description'));
+    const columns = element('div', undefined, 'columns');
+    if (index === 0) columns.append(diffColumn(record, false));
+    if (index === 1) columns.append(testsColumn(record, false, false));
+    if (index === 2) columns.append(runsColumn(record, 2, false));
+    if (index === 3) columns.append(
+      column('Independent control', 'col-tests', [
+        codeCard('boundary witness / witness.py', record.witness, 'independently authored'),
+        element('p', record.explanation, 'context-note'),
+      ], false), runsColumn(record, 3, false));
+    section.append(columns);
+    page.append(section);
+  }
+
+  const raw = element('section', undefined, 'offline-stage');
+  raw.append(element('h2', 'Original files in this ZIP'),
+    element('p', 'These four source payloads were checked against their recorded SHA-256 and byte lengths before export.', 'stage-description'));
+  const files = element('div', undefined, 'offline-files');
+  for (const name of ['testpilot.patch', 'record.json', 'generated.log', 'witness.py']) {
+    const link = element('a', name);
+    link.href = './' + name;
+    files.append(link);
+  }
+  raw.append(files);
+  page.append(raw);
+  const footer = element('footer', undefined, 'footer');
+  footer.append(element('p', 'Fixture ' + record.id + ' · source commit ' + dataset.source.commit + ' · captured ' + dataset.recorded_at, 'offline-hint'),
+    element('p', 'This document was rendered from SHA-checked record.json bytes. The saved run and boundary assertions were not executed again. Recorded digests are internal consistency checks, not a publisher signature or independent authentication of this capture.', 'offline-hint'));
+  page.append(footer);
+  offline.body.append(page);
+  return new TextEncoder().encode('<!doctype html>\n' + offline.documentElement.outerHTML);
+}
+
 function evidenceBundle(item, checked) {
   const metadata = {
     schema: 'testpilot.verified-evidence.v1',
@@ -182,14 +293,18 @@ function evidenceBundle(item, checked) {
     verification: 'Browser-checked SHA-256 and byte length against recorded metadata; not an independently authenticated signature',
     artifacts: Object.fromEntries(checked.map(({ name, sha256, bytes }) =>
       [name, { sha256, bytes: bytes.byteLength }])),
-    witness: 'witness.py is an independently authored control; it is not a generated TestPilot patch'
+    witness: 'witness.py is an independently authored control; it is not a generated TestPilot patch',
+    offline_view: 'VIEW.html is a self-contained, script-free four-stage reader derived from the checked record.json bytes'
   };
   const encoder = new TextEncoder();
+  const view = offlineEvidencePage(item, checked);
   return zipStore([
     ...checked.map(({ name, bytes }) => ({ name, bytes: new Uint8Array(bytes) })),
+    { name: 'VIEW.html', bytes: view },
     { name: 'manifest.json', bytes: encoder.encode(JSON.stringify(metadata, null, 2) + '\n') },
     { name: 'README.txt', bytes: encoder.encode(
       'TestPilot offline recorded evidence for ' + item.id + '\n' +
+      'Open VIEW.html after extracting the ZIP to read all four stages offline.\n' +
       'All four artifact payloads were checked in the browser before this ZIP was built.\n' +
       'See manifest.json for recorded SHA-256, size and source commit.\n' +
       'The capture manifest is not a cryptographic signature of the publisher.\n' +

@@ -33,8 +33,13 @@ remote font, API key or external service is needed to replay the recording.
 
 A **verified evidence ZIP** lets reviewers take all four checked artifacts, a
 machine-readable manifest of their SHA-256 values and sizes, and a short provenance
-warning in one download. It is assembled only from the bytes already verified
-in the browser, never from a second network fetch. ZIP CRCs guard against archive
+warning in one download. After extracting the ZIP, open **VIEW.html** directly:
+it presents all four recorded stages, generated tests, process outcomes and
+independent witness with the same visual components as the hosted replay. The
+standalone page requires no web server, JavaScript, network or installed tools.
+It is rendered from the byte-verified case record during export. The ZIP is
+assembled only from the bytes already verified in the browser, never from a
+second network fetch. ZIP CRCs guard against archive
 corruption; the recorded SHA-256 declarations are not a publisher signature.
 
 The download bar automatically verifies the four served artifacts for the selected

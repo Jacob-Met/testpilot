@@ -106,8 +106,8 @@ try {
       const archiveDest = path.join(output, 'downloads', viewport.name + '-' + item.id + '-verified-evidence.zip');
       await archiveDownload.saveAs(archiveDest);
       const archive = inspectArchive(archiveDest);
-      const required = ['testpilot.patch', 'record.json', 'generated.log', 'witness.py', 'manifest.json', 'README.txt'];
-      check(viewport.name + '/' + item.id + ': ZIP has six intact entries',
+      const required = ['testpilot.patch', 'record.json', 'generated.log', 'witness.py', 'manifest.json', 'README.txt', 'VIEW.html'];
+      check(viewport.name + '/' + item.id + ': ZIP includes a standalone offline proof',
         required.every(name => archive.records[name]) && Object.keys(archive.records).length === required.length);
       check(viewport.name + '/' + item.id + ': ZIP preserves all four verified bytes',
         required.slice(0, 4).every(name => archive.records[name].sha256 === item.files[name].sha256 &&
@@ -117,6 +117,51 @@ try {
         archive.manifest.witness.includes('independently authored') &&
         required.slice(0, 4).every(name => archive.manifest.artifacts[name].sha256 === item.files[name].sha256));
       downloads.push({ viewport: viewport.name, case: item.id, filename: 'verified-evidence.zip', bytes: (await readFile(archiveDest)).length });
+
+      // Open the extracted archive directly through file://. It must be a
+      // usable proof, not just a ZIP entry checked by metadata.
+      const unpacked = path.join(output, 'downloads', viewport.name + '-' + item.id + '-offline');
+      const extract = [
+        'import sys, zipfile',
+        'from pathlib import Path',
+        'target = Path(sys.argv[2]); target.mkdir(parents=True, exist_ok=True)',
+        'with zipfile.ZipFile(sys.argv[1]) as archive:',
+        '  assert all("/" not in name and "\\\\" not in name for name in archive.namelist())',
+        '  archive.extractall(target)',
+      ].join('\n');
+      execFileSync('python3', ['-c', extract, archiveDest, unpacked]);
+      const offlineContext = await browser.newContext({
+        viewport: {width: viewport.width, height: viewport.height},
+        reducedMotion: 'reduce',
+      });
+      const offlinePage = await offlineContext.newPage();
+      const offlineRequests = [];
+      const offlineErrors = [];
+      offlinePage.on('request', request => offlineRequests.push(request.url()));
+      offlinePage.on('pageerror', error => offlineErrors.push(String(error)));
+      await offlinePage.goto(pathToFileURL(path.join(unpacked, 'VIEW.html')).href);
+      check(viewport.name + '/' + item.id + ': ZIP opens standalone file evidence',
+        await offlinePage.locator('.offline-page').count() === 1 &&
+        await offlinePage.locator('section.offline-stage').count() === 5);
+      check(viewport.name + '/' + item.id + ': offline verdict and witness match the saved record',
+        (await offlinePage.locator('.verdict').innerText()).includes(item.bug) &&
+        (await offlinePage.locator('#stage-3').innerText()).includes(item.witness.trim()));
+      check(viewport.name + '/' + item.id + ': offline four-stage navigation works',
+        await offlinePage.locator('nav.offline-nav a').count() === 4);
+      await offlinePage.locator('nav.offline-nav a[href="#stage-3"]').click();
+      check(viewport.name + '/' + item.id + ': offline anchor reaches independent control',
+        new URL(offlinePage.url()).hash === '#stage-3' &&
+        await offlinePage.locator('#stage-3').isVisible());
+      check(viewport.name + '/' + item.id + ': offline page fits its real viewport',
+        await offlinePage.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      check(viewport.name + '/' + item.id + ': offline HTML has no network or script dependency',
+        offlineRequests.every(url => url.startsWith('file:')) && offlineErrors.length === 0 &&
+        !(await readFile(path.join(unpacked, 'VIEW.html'), 'utf8')).includes('<script'));
+      if (item.id === 'stats_median' && viewport.name === 'phone') {
+        await offlinePage.screenshot({path: path.join(output, 'offline-phone.png'), fullPage: true});
+      }
+      await offlineContext.close();
+
       if (item.id === 'stats_median' && viewport.name === 'phone') await page.screenshot({ path: path.join(output, 'phone.png'), fullPage: true });
     }
     await page.locator('#stage-tab-0').click();
