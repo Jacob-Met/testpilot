@@ -38,7 +38,7 @@ if (process.env.TESTPILOT_BROWSER_EXECUTABLE) options.executablePath = process.e
 let browser, failure;
 try {
   browser = await chromium.launch(options);
-  for (const vp of [{name:'desktop',width:1440,height:1000},{name:'phone',width:390,height:844}]) {
+  for (const vp of [{name:'desktop',width:1440,height:1000},{name:'phone',width:390,height:844},{name:'compact',width:320,height:700}]) {
     const context = await browser.newContext({viewport:{width:vp.width,height:vp.height},reducedMotion:'reduce'});
     await context.route('**/*', route => {
       const url = route.request().url();
@@ -55,6 +55,14 @@ try {
     check(vp.name+': distinct default fixture positions', await page.locator('.evidence-lane').first().getAttribute('data-fixture')===cases[0].id &&
       await page.locator('.evidence-lane').last().getAttribute('data-fixture')===cases[1].id);
     check(vp.name+': no viewport overflow', await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    check(vp.name+': every stage reachable without hidden horizontal tabs',
+      await page.locator('#stages').evaluate(rail => {
+        const visible = rail.getBoundingClientRect();
+        return [...rail.querySelectorAll('button')].every(button => {
+          const r = button.getBoundingClientRect();
+          return r.left >= visible.left - 1 && r.right <= visible.right + 1;
+        });
+      }));
     check(vp.name+': diff exact retained evidence for both sides',
       await page.locator('.evidence-lane').first().innerText().then(x=>x.includes(cases[0].bug)) &&
       await page.locator('.evidence-lane').last().innerText().then(x=>x.includes(cases[1].bug)));
