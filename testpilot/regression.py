@@ -43,10 +43,10 @@ def _git(repo: Path, *args: str, limit: int = 4096) -> bytes:
     # replacements, optional locks, or a promisor's on-demand network fetch.
     env = {k: v for k, v in os.environ.items() if not k.upper().startswith("GIT_")}
     env.update(GIT_CONFIG_NOSYSTEM="1", GIT_CONFIG_GLOBAL=os.devnull,
-               GIT_TERMINAL_PROMPT="0")
+               GIT_TERMINAL_PROMPT="0", GIT_NO_LAZY_FETCH="1")
     try:
         result = subprocess.run(
-            ["git", "--no-replace-objects", "--no-lazy-fetch", "--no-optional-locks",
+            ["git", "--no-replace-objects", "--no-optional-locks",
              "-C", str(repo), *args], capture_output=True, env=env, timeout=_GIT_TIMEOUT,
         )
     except (OSError, subprocess.TimeoutExpired) as exc:

@@ -164,6 +164,7 @@ try {
   // must agree with the aggregate verdict, not only with the aggregate counts.
   for (const [label, breakEvidence] of [
     ['nonzero exit code on a green run', capture => { capture.cases[1].runs.generated.returncode = 1; }],
+    ['interrupted pytest run as a completed failure', capture => { capture.cases[0].runs.generated.returncode = 2; }],
     ['failed case hidden by green aggregate', capture => { capture.cases[1].runs.generated.cases[0].outcome = 'failed'; }],
   ]) {
     const corrupt = await browser.newContext();

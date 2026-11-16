@@ -14,8 +14,8 @@ export function recordedRunIsCoherent(run) {
   const total = run.passed + run.failed;
   if (!Number.isSafeInteger(total) || total === 0 ||
       run.cases.length !== total ||
-      run.ok !== (run.failed === 0 && run.returncode === 0) ||
-      (run.returncode === 0) !== (run.failed === 0)) return false;
+      run.returncode !== (run.failed === 0 ? 0 : 1) ||
+      run.ok !== (run.failed === 0)) return false;
   const observed = {passed: 0, failed: 0};
   for (const test of run.cases) {
     if (!test || !['passed', 'failed'].includes(test.outcome) ||

@@ -77,7 +77,7 @@ class RecheckOutputStagingTests(unittest.TestCase):
     def setUp(self):
         self.workspace = tempfile.TemporaryDirectory()
         self.addCleanup(self.workspace.cleanup)
-        self.root = Path(self.workspace.name)
+        self.root = Path(self.workspace.name).resolve()
         self.repo = self.root / "project"
         self.repo.mkdir()
         (self.repo / "keep.txt").write_bytes(b"original project bytes")

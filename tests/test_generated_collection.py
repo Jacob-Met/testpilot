@@ -6,6 +6,7 @@ import json
 import os
 import shutil
 import subprocess
+import tempfile
 import sys
 from pathlib import Path
 
@@ -86,6 +87,26 @@ def test_configured_roots_and_project_hooks_are_preserved(tmp_path):
     assert result.tests_written == 1
     assert "outside configured suite" not in result.final["output"]
     assert snapshots(repo) == before
+
+
+def test_project_testpaths_survive_symlinked_sandbox_directory(tmp_path, monkeypatch):
+    repo = project(tmp_path)
+    (repo / "historical").mkdir()
+    (repo / "historical/test_ambient.py").write_text(
+        "raise AssertionError('outside configured suite')\n")
+    physical = tmp_path / "sandbox-physical"
+    physical.mkdir()
+    alias = tmp_path / "sandbox-link"
+    try:
+        alias.symlink_to(physical, target_is_directory=True)
+    except (OSError, NotImplementedError):
+        pytest.skip("directory symlinks unavailable")
+    monkeypatch.setattr(tempfile, "tempdir", str(alias))
+    result = run_pytest(repo, {"tests/test_generated.py":
+                               "def test_generated(): assert True\n"}, coverage=False)
+    assert result.ok, result.output
+    assert result.passed == 2
+    assert "outside configured suite" not in result.output
 
 
 def test_generated_file_runs_once_when_normal_discovery_already_covers_it(tmp_path):
