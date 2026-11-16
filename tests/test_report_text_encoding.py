@@ -105,7 +105,7 @@ def raw_filename_repo(tmp_path):
     git(repo, "-c", "user.name=TestPilot fixture", "-c", "user.email=fixture@example.invalid",
         "commit", "-q", "-m", "authored fixture baseline")
     path.write_bytes(b"def measure(value):\n    return value + 2\n")
-    diff = git(repo, "diff", "HEAD").stdout.decode("ascii")
+    diff = git(repo, "-c", "core.quotePath=true", "diff", "HEAD").stdout.decode("ascii")
     assert "\\377" in diff, "the actual Git diff must carry the raw filename byte"
     generated = (
         "import os\nimport runpy\n\n"

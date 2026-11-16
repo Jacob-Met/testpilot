@@ -278,7 +278,7 @@ def run_pytest(repo: str | Path, extra_files: dict[str, str] | None = None, *, t
             else:
                 dest.write_text(content, encoding="utf-8")
         junit = tdp / "junit.xml"
-        options = ["-q", "-p", "no:cacheprovider", "--rootdir", str(work), "-o", "addopts=",
+        options = ["-q", "-p", "no:cacheprovider", "--rootdir", str(work.resolve()), "-o", "addopts=",
               "-o", "junit_family=xunit2", f"--junitxml={junit}", *pytest_args]
         generated_files = sorted(extra_files or {})
         pt = ["-m", "pytest", *options]
