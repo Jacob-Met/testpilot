@@ -256,6 +256,31 @@ try {
       (await suspect.locator('#load-error').innerText()).includes('incomplete'));
     await corrupt.close();
   }
+  const recordBytes = await readFile(path.join(root, 'data/cases/calc_clamp/record.json'), 'utf8');
+  const validChangedRecord = recordBytes.replace('"bug": "clamp()', '"bug": "Clamp()');
+  assert.notEqual(validChangedRecord, recordBytes, 'changed-input control must modify the record');
+  assert.equal(Buffer.byteLength(validChangedRecord), Buffer.byteLength(recordBytes));
+  // A displayed narrative is only verified when it matches its downloaded
+  // SHA-checked record. The manifest alone must not author a green story.
+  for (const [label, path, mutate] of [
+    ['forged inline bug claim', '**/data/replays.json', () => {
+      const changed = structuredClone(dataset);
+      changed.cases[0].bug = 'FORGED BUG CLAIM NEVER PRESENT IN RECORD';
+      return JSON.stringify(changed);
+    }],
+    ['same-size valid JSON record corruption', '**/data/cases/calc_clamp/record.json',
+      () => validChangedRecord],
+  ]) {
+    const context = await browser.newContext();
+    await context.route(path, route =>
+      route.fulfill({status: 200, contentType: 'application/json', body: mutate()}));
+    const page = await context.newPage();
+    await page.goto(origin);
+    await page.locator('#replay[aria-busy="false"], #load-error:not([hidden])').first().waitFor();
+    check(`single replay refuses ${label} against source record`,
+      await page.locator('#load-error').isVisible() && await page.locator('#replay').isHidden());
+    await context.close();
+  }
   check('no external browser requests', externalRequests.length === 0);
   check('no browser page errors', pageErrors.length === 0);
 } catch (e) { error = String(e.stack || e); }

@@ -181,6 +181,33 @@ try {
       await suspect.locator('.evidence-lane').count() === 0);
     await corrupt.close();
   }
+  const recordBytes = await readFile(path.join(root, 'data/cases/calc_clamp/record.json'), 'utf8');
+  const validChangedRecord = recordBytes.replace('"bug": "clamp()', '"bug": "Clamp()');
+  assert.notEqual(validChangedRecord, recordBytes, 'changed-input control must modify the record');
+  assert.equal(Buffer.byteLength(validChangedRecord), Buffer.byteLength(recordBytes));
+  // The displayed story must agree with the separately hashed record.json,
+  // even if its aggregate verdict fields are internally consistent.
+  for (const [label, path, mutate] of [
+    ['forged inline bug claim', '**/data/replays.json', () => {
+      const changed = structuredClone(dataset);
+      changed.cases[0].bug = 'FORGED BUG CLAIM NEVER PRESENT IN RECORD';
+      return JSON.stringify(changed);
+    }],
+    ['same-size valid JSON record corruption', '**/data/cases/calc_clamp/record.json',
+      () => validChangedRecord],
+  ]) {
+    const corrupt = await browser.newContext();
+    await corrupt.route(path, route =>
+      route.fulfill({status: 200, contentType: 'application/json', body: mutate()}));
+    const suspect = await corrupt.newPage();
+    suspect.on('pageerror', e => errors.push(String(e)));
+    await suspect.goto(origin + '/contrast.html');
+    await suspect.locator('#contrast[aria-busy="false"]').waitFor();
+    check(`comparison refuses ${label} against source record`,
+      await suspect.locator('#load-error').isVisible() &&
+      await suspect.locator('.evidence-lane').count() === 0);
+    await corrupt.close();
+  }
   check('no remote browser requests',external.length===0);
   check('no page-script exceptions',errors.length===0);
 } catch(err) {failure=String(err.stack||err);}

@@ -1,9 +1,11 @@
 // SPDX-License-Identifier: Apache-2.0
 import { recordedRunIsCoherent } from './run-coherence.mjs';
+import { verifyCaptureRecords } from './verified-records.mjs';
 const $ = (id) => document.getElementById(id);
 const stageNames = ['Diff inspection', 'Generated tests', 'Recorded execution', 'Ground-truth replay'];
 const stageTitles = (item) => [`A small change to ${item.function}().`, 'What the fixture asks to test.', 'Read the actual test result.', 'Does the fix satisfy the tests?'];
 let dataset;
+let verifiedRecords = new Map();
 let selected = 0;
 let stage = 0;
 
@@ -230,6 +232,12 @@ async function verifyDownloads(item) {
     const checked = await Promise.all(downloadable.map(async ([id, name]) => {
       const file = item.files[name];
       if (!file) throw new Error(`Missing ${name} declaration`);
+      if (name === 'record.json') {
+        const cached = verifiedRecords.get(item.id);
+        if (!cached || cached.sha256 !== file.sha256 || cached.bytes.byteLength !== file.bytes)
+          throw new Error(`${name}: verified record no longer matches declaration`);
+        return {id, name, sha256: cached.sha256, bytes: cached.bytes};
+      }
       const response = await fetch(file.url, { cache: 'no-store', mode: 'same-origin', redirect: 'error' });
       if (!response.ok) throw new Error(`${name}: HTTP ${response.status}`);
       const bytes = await response.arrayBuffer();
@@ -437,6 +445,7 @@ try {
   const response = await fetch('data/replays.json');
   if (!response.ok) throw new Error(`Recorded evidence could not be loaded (${response.status}).`);
   dataset = validate(await response.json());
+  verifiedRecords = await verifyCaptureRecords(dataset);
   routeFromLocation();
   $('source-link').href = `https://github.com/Jacob-Met/testpilot/commit/${dataset.source.commit}`;
   $('source-link').textContent = dataset.source.commit.slice(0, 12);
